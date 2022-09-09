@@ -1,0 +1,60 @@
+/* Meaning should always be conveyed through HTML, 
+while webpage design/ styles belong in the CSS part! */
+
+/* or */
+
+/* Seperate content from presentation */
+
+body {
+    color: #414141; /* dark gray */
+    background-color: #EEEEEE; /* light gray */
+    font-size: 18px;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.6em;
+}
+
+/* Der Webbrowser versucht die Schriftarten von links nach rechts zu interpretieren. 
+Kann er mit einer Schriftart nicht arbeiten, so probiert er die nächste aus, 
+bis er schlussendlich die Standard-Schriftsans-serif nutzt.*/
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Helvetica", "Arial", sans-serif;
+    font-weight: normal;
+}
+
+/* define style of unordered lists */
+ul {
+    list-style-type: circle;
+}
+
+/* define style of ordered lists */
+ol {
+    list-style-type: lower-roman;
+}
+
+a {
+    /* keine Unterstriche bei Links -> a steht für Links: <a href... */
+    text-decoration: none;
+}
+
+/* define alignment of parapraph text elements 
+other accepted values: right, center, justify */
+p {
+    text-align: left;
+}
+
+/* (You probably shouldn't do this) -> It's not suggested to do this for real websites */
+em {
+    font-weight: bold;
+    font-style: normal;
+}
+
+strong {
+    font-weight: normal;
+    font-style: italic;
+}

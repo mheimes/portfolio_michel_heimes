@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<!--lang defines the page's default language-->
+<html lang="en">
+    <head>
+        <title>Images</title>
+        <!--Charset defines the character set we want to use for our webpage.-->
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <h1>Images</h1>
+        <p>This page covers common image formats, but you may also be looking for <a href="links.html">links</a> and <a href="misc/extras.html">useful extras</a>.</p>
+
+        <!--The width attribute within the <img> sets an explicit dimension for the image.-->
+        <!--There's a corresponding height attribute, as well.-->
+        <!--Setting only one of them will cause the image to scale proportionally, while defining both will stretch the image.-->
+
+        <!--The width and height attributes can be useful, but it's usually better to set image dimensions with CSS so you can alter them with media queries.-->
+
+        <h2>JPGs</h2>
+        <p>JPG images are good for photos. They are designed for handling large color palettes without exorbitantly increasing file size.</p>
+        <img src="images/mochi.jpg" width="75" alt="A mochi ball in a bubble">
+
+        <h2>GIFs</h2>
+        <p>GIFs are good for animations. They are limited in terms of color palette - never use them for photos.</p>
+        <img src="images/mochi.gif" width="75" alt="A dancing mochi ball"/>
+
+        <h2>PNGs</h2>
+        <p>PNGs are good for diagrams and icons - anything that's not a photo or animated.<br>
+        For photos, a PNG file of the same quality (as perceived by the human eye) would generally be bigger than an equivalent JPG file.</p>
+        <img src="images/mochi.png" width="75" alt="A mochi ball"/>
+
+        <h2>SVGs</h2>
+        <p>SVGs are <em>amazing</em>. Use them wherever you can.<br>
+        It's a vector-based graphics, meaning it can scale up or down to <em>any</em> dimension without loss of quality.<br>
+        They are great for responsive design!</p>
+        <img src="images/mochi.svg" alt="A mochi ball with Bézier handles"/>
+    </body>
+</html>

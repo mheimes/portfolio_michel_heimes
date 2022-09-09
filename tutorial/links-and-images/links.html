@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<!--lang defines the page's default language-->
+<html lang="en">
+    <head>
+        <title>Links</title>
+        <!--Charset defines the character set we want to use for our webpage.-->
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <h1>Links</h1>
+        <!--Use <a> to refer to a different site by clicking the element wrapped in the <a> </a> tags.-->
+        <!--To make it work, it needs a reference where to point to.-->
+        <!--So, add href='some_html_file' to it like: <a href='images.html'> -->
+        <!--' ' geht genau so wie " "!-->
+        <p>This example is about links and <a href='images.html'>images</a>.</p>
+
+        <p>This particular page is about links! There are three kinds of links:</p>
+
+        <ul>
+            <!--Use Absolute links to direct users to a different website.-->
+            <!--durch den Zusatz: target= "_blank" wird die absolute Webseite in einem neuen Tab geöffnet.-->
+            <li>Absolute links, link to <a href='https://developer.mozilla.org/en-US/docs/Web/HTML' target="_blank">Mozilla Developer Network</a>, which is a very good resource for web developers.</li>
+            <!--Use Relative links to direct users to another file/ page from my own website.-->
+            <!--Wichtig: Da sich extras.html NICHT (!) im selben Ordner befindet wie links.html...-->
+            <!--... muss im relative Link außerdem auf den misc Ordner referenziert werden.-->
+            <li>Relative Links, link to our <a href='misc/extras.html'>extras page</a>.</li>
+            <li>Link to the <a href='/spaces%20are%20bad.html'>"Spaces are bad"</a> file.</li>
+            <!--This won't work for our local HTML files-->
+            <li>Root-relative links link to the <a href='/'>home page</a> of our website, but thise aren't useful to us right now since they don't work for our local HTML files.</li>
+        </ul>
+    </body>
+</html>

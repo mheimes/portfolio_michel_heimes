@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <title>Dummy</title>
+        <!-- <link/> element is just like the <a> element, but ut's only meant to be inside the <head> -->
+        <!-- rel defines the relationship between the resource and the HTML document -->
+        <link rel="stylesheet" href="styles.css"/>
+        <!-- The <style> element always lives in the <head> of a web page,
+        which makes sense because it's metadata, not actual content.-->
+        <!-- Anything you would put in our styles.css file can live in this 
+        <style> element. It uses the exact same CSS syntax as an external file.-->
+        <style>
+            body {
+                color: #0000FF; /* Blue */
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Dummy</h1>
+
+        <p>This is a dummy page that helps us demonstrate reusable CSS stylesheets. <a href="hello-css.html">Go back</a>.</p>
+
+        <!-- Like page-specific styles, this is the same CSS syntax we've been working with.
+        However, since it's an attrubute, it needs to be condensed to a single line.-->
+        <!-- Inline styles are most specific way to define CSS.-->
+        <!-- Inline styles should be avoided at all costs because they make it IMPOSSIBLE 
+        to alter styles from an external stylesheet.-->
+        <!-- Instead of inline styles use CSS classes!-->
+        <p>Want to try crossing out an <a href="nowhere.html" style="color: #990000; text-decoration: line-through;">obsolete link</a>? This is your chance!</p>
+    </body>
+</html>

@@ -1,0 +1,93 @@
+/* Descriptions: 
+
+padding: space directly around the content e.g. text
+
+border: line/ any type of graphic border around the padding
+
+margin: Margins define the space outside of an element’s border. Or, rather, the space between a box and its surrounding boxes.
+
+*/
+
+/* "*" is the universal CSS selector. Different browsers have different default styles for all 
+of their HTML elements, making it difficult to create consistent stylesheets.
+It’s usually a good idea to override default styles to a predictable value.
+It should be added at the top of the CSS. */
+* {
+    margin: 0px;
+    padding: 0px;
+    /* All my boxes are converted to "border-box"es by default now - which is a best practise anyway! */
+    box-sizing: border-box;
+}
+
+h1, p {
+    background-color: #DDE0E3;    /* Light gray */
+}
+
+h1 {
+    padding: 50px;
+    border-bottom: 1px solid #5D6063;
+}
+
+p {
+    padding-top: 2em;
+    padding-bottom: 2em;
+    padding-left: 1em;
+    padding-right: 1em;
+
+    /* Can also be written like that: */
+    padding: 2em 1em; /* vertical horizontal */
+    /* oder */
+    padding: 2em 1em 2em 1em; /* geht im Uhrzeigersinn: top right bottom left */
+    
+    /* Vertical Margin Collapse: 
+    When you have two boxes with vertical margins sitting 
+    right next to each other, they will collapse. Only the biggest one is displayed.
+    So: not 25px (from top of lower block) + 50px (from bottom of upper block) = 75px of margin 
+    but the smaller one (25px) will collapse and not be displayed! */
+    margin-top: 25px;
+    margin-bottom: 50px;
+
+    /* 
+    Avoid Margin Collapse:
+    Add an invisible element in between two blocks within the html file, in order to prevent different margins to collapse!
+    -->     <div style="padding-top: 1px"></div>
+    */
+}
+
+
+em, strong {
+    background-color: #B2D6FF;    /* Light blue */
+    /* Keeping the "em" and "strong" elements inline elements! */
+    display: inline; /* This is the default for em and strong anyway so it's not really neccessary! */
+    
+    /* Turning the "em" and "strong" elements from inline elements to block elements too! */
+    /* display: block; */
+}
+
+strong {
+    margin: 50px;
+    padding: 50px;
+}
+
+div {
+    color: #FFF;
+    background-color: #5995DA;
+    font-weight: bold;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #5D6063;
+    border-radius: 5px;
+
+    /* If this line isn't added, the width of  <div> elements will fill the whole width of the browser window - paddings, borders and margins are added though. */
+    width: 200px;
+    /* This setting makes sure that the width of the whole box is set to 200px.
+    Before, the 200px from "width: " only referred to the width if the content itself.
+    The padding and border spaces were added automatically! */
+    /* Using "border-sizing: border-box" for all your boxes is considered a best practice among modern web developers! */
+    box-sizing: border-box;
+    margin: 20px auto; /* vertical horizontal */
+}
+
+body {
+    text-align: center;
+}

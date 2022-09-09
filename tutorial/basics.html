@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<!--lang defines the page's default language-->
+<html lang="en">
+    <head>
+        <title>Interneting is easy!</title>
+        <!-- Metadata goes here-->
+        <!--Charset defines the character set we want to use for our webpage.-->
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <h1>Interneting is easy!</h1>
+        <p>First we need to learn some basic HTML!</p>
+        <p>This is my second paragraph!<br>Is this a new line within the paragraph?<br></p>
+
+        <h2>Headings</h2>
+        <p>Headings define the outline of your site. There are six level of headings.</p>
+
+        <h2>Lists:</h2>
+        <p>This is how you make an unordered list:</p>
+        <ul>
+            <li>Add a "ul" element (it stands for unordered list)</li>
+            <li>Add each item in its own "li" element</li>
+            <li>They don't need to be in any particular order</li>
+            <li>Never add any other elements directly in an unordered list apart from "li" elements!</li>
+            <ul>
+                <li>Test - unordered list within an unordered list</li>
+                <ul>
+                    <li>Again an unordered list within an unordered list, within an unordered list.</li>
+                    <ul>
+                        <li>An unordered list within an unordered list, within an unordered list, within an unordered list.</li>
+                        <ul>
+                            <li>An unordered list within an unordered list, within an unordered list, within an unordered list, within an unordered list.</li>
+                        </ul>
+                    </ul>
+                </ul>
+            </ul>
+            <li>Instead, you should wrap paragraphs etc. with "li" tags.</li>
+        </ul>
+
+        <p>This is what an ordered list should look like:</p>
+
+        <ol>
+            <li>Notice the new "ol" element wrapping everything.</li>
+            <li>But, the list item elements are the same (li).</li>
+            <li>Also note how the numbers increment on their own</li>
+            <li>You should be noticing things in this precise order, because this is an ordered list.</li>
+        </ol>
+
+        <h2>Inline Elements:</h2>
+        <!--<em> stands for "emphasis" and renders the wrapped font as italics-->
+        <p><em>Sometimes</em>, you need to draw attention to a particular word or phrase.</p>
+        <!--<strong> renders the wrapped font in bold.-->
+        <p>Other times you need to <strong>strong</strong>ly emphasize the importance of a word or phrase.</p>
+        <!--Combining Italic and Bold -> 1. strong, 2. em works but also: 1. em, 2. strong!-->
+        <p><strong><em>And sometimes you need to shout!</em></strong></p>
+        <p><em><strong>This way works too?</strong></em></p>
+
+        <h2>Empty Elements:</h2>
+
+        <p>Thank's for reading! Interneting should be getting easier now.</p>
+
+        <p>Regards,<br/>
+        The Authors</p>
+
+        <!--Think about the <hr/> element that it carries less significance than the separation created by a new heading element, but more significance than a new paragrap. -->
+        <hr/>
+
+        <p>P.S. this page might look like crap, but we'll fix that with some CSS soon.</p>
+
+        <h2>Blockquote:</h2>
+
+        <blockquote>This is a blockquote.
+            <blockquote>This is a blockquote inside a blockquote.</blockquote>
+        </blockquote>
+    </body>
+</html>
