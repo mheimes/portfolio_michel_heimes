@@ -17,7 +17,15 @@ a {
     font-family: Courier;
     /*line-height: 100%;*/
     font-size: 100%;
-} 
+}
+
+.description_text_less_margin_top {
+    margin-top: 1rem;
+}
+
+.description_text_even_less_margin_bottom {
+    margin-bottom: 0rem;
+}
 
 .headline {
     color: #2e2727;
@@ -38,11 +46,27 @@ a {
     margin-bottom: 1rem;
 }
 
+.extra_headline_content {
+    font-size: 300%;
+}
+
 .text_content {
-    font-weight:lighter;
-    font-size: 100%;
+    font-size: 110%;
     margin-bottom: 1rem;
-    line-height: 130%;
+    line-height: 150%;
+}
+
+.subheadline_content_difference_to_text_content {
+    font-family: Courier;
+    font-size: 125%;
+    line-height: 160%;
+    padding: 4rem;
+}
+
+.subheadline_content_difference_to_text_content_2 {
+    font-family: Courier;
+    font-size: 125%;
+    line-height: 160%;
 }
 
 .container {
@@ -183,6 +207,7 @@ a {
 .boxed_text_projects {
     margin-left: 34%;
     margin-right: 34%;
+    margin-bottom: 5rem;
 }
 
 .boxed_text_experiences {
@@ -199,6 +224,24 @@ a {
 
 .container_extra_padding {
     padding: 2rem;
+    padding-bottom: 5rem;
+}
+
+.container_extra_padding_concepts {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.container_extra_padding_end_of_concepts {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2rem;
+}
+
+.container_less_padding_flags {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 0rem;
 }
 
 .container_me_2 {
@@ -238,4 +281,65 @@ a {
     width: auto;
     height: 22rem;
     padding: 2rem;
+    padding-right: 1rem;
+}
+
+.image_toilet_1 {
+    width: auto;
+    height: 22rem;
+
+    padding-left: 2rem;
+    padding-top: 11rem;
+    padding-right: 1rem;
+    padding-bottom: 2rem;
+}
+
+.image_toilet_2 {
+    width: auto;
+    height: 17rem;
+    padding-left: 5rem;
+    padding-top: 3rem;
+    padding-right: 1rem;
+    padding-bottom: 2rem;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.image_toilet_3 {
+    width: auto;
+    height: 17rem;  
+    padding-left: 1rem;
+    padding-top: 3rem;
+    padding-right: 0rem;
+    padding-bottom: 2rem;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.image_toilet_4 {
+    width: auto;
+    height: 17rem;  
+    padding-left: 1rem;
+    padding-top: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 5rem;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.image_marble_1 {
+    width: auto;
+    height: 17rem;
+    padding-left: 5rem;
+    padding-top: 3rem;
+    padding-right: 1rem;
+}
+
+.image_marble_2 {
+    width: auto;
+    height: 30rem;  
+    padding-left: 0rem;
+    padding-top: 2rem;
+    padding-right: 1rem;
+    padding-bottom: 7rem;
 }
