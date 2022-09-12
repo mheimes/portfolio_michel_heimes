@@ -13,11 +13,14 @@ a {
 }
 
 .description-text {
-    margin: 3rem 10rem 3rem 10rem;
+    margin: 3rem 10rem 3rem 5rem;
+    font-family: Courier;
+    /*line-height: 100%;*/
+    font-size: 100%;
 } 
 
 .headline {
-    color: #554F4F;
+    color: #2e2727;
     font-family: "SF Mono";
     font-weight: 900;  
     font-size:1250%;
@@ -25,6 +28,21 @@ a {
     line-height: 73%;
     height:fit-content; 
     margin: 2rem;
+}
+
+.headline_content {
+    color: #2e2727;
+    font-family: Courier;
+    font-weight: 200;
+    font-size: 200%;
+    margin-bottom: 1rem;
+}
+
+.text_content {
+    font-weight:lighter;
+    font-size: 100%;
+    margin-bottom: 1rem;
+    line-height: 130%;
 }
 
 .container {
@@ -44,6 +62,11 @@ a {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+.gif_small_page_header {
+    width: 25rem;
+    height: auto;
 }
 
 .startOptions {
@@ -78,7 +101,9 @@ a {
   box-sizing: border-box;
   color: #000;
   cursor: pointer;
-  display: inline-flex;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   fill: #000;
   font-family: SF Mono;
   font-size: 16px;
@@ -121,9 +146,16 @@ a {
 }
 
 .subheadlines {
-    color: #554F4F;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #2e2727;
     font-size: 250%;
-    font-weight: 850;
+    font-weight: 800;
+}
+
+.subheadline_hyphen {
+    letter-spacing: 30px;
 }
 
 .subheadlines_container {
@@ -131,3 +163,79 @@ a {
     justify-content: space-evenly; /*Hintergrund: ich habe den Subheader in 3 Teile zerteilt und nutze nun "justify-content: space-evenly" um diese drei Teile in gleichen Abständen zueinander anzuordnen und mehr Abstand zwischen "---" und "xxx" zu bringen.*/
 }
 
+.boxed_text {
+    color: white;
+    font-family: "SF Mono";
+    font-weight: 800;  
+    font-size: 400%;
+    line-height: 73%;
+    height:fit-content; 
+    margin-left: 42%;
+    margin-right: 42%;
+    margin-bottom: 4rem;
+    margin-top: 2rem;
+    text-align: center;
+
+    background-color: #2e2727;
+    border: 30px solid #2e2727;
+}
+
+.boxed_text_projects {
+    margin-left: 34%;
+    margin-right: 34%;
+}
+
+.boxed_text_experiences {
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.container_me_1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+.container_extra_padding {
+    padding: 2rem;
+}
+
+.container_me_2 {
+    display: flex;
+    flex-direction: column;
+    /*justify-content: space-evenly;*/
+    row-gap: 0rem;
+}
+
+.container_me_3 {
+    display: flex;
+    flex-direction: row;
+    /*justify-content: space-between;*/
+    flex-basis: 100px;
+    flex-grow: 0;
+	flex-shrink: 0;
+}
+
+.container_me_4 {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.text_me {
+    margin: 3rem 10rem 3rem 5rem;
+    font-family: Courier;
+    line-height: 150%;
+    font-size: 130%;
+}
+
+.image_me {
+    width: auto;
+    height: 50rem;
+}
+
+.image_sneaker {
+    width: auto;
+    height: 22rem;
+    padding: 2rem;
+}
