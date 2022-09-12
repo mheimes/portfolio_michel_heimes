@@ -41,9 +41,9 @@ a {
 }
 
 .gif {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .startOptions {
