@@ -40,6 +40,12 @@ a {
     height: auto;
 }
 
+.gif {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .startOptions {
     display: flex; /* */
     flex-direction: column;
