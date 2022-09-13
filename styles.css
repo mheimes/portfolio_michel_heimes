@@ -412,3 +412,22 @@ a {
     height: auto;
     margin: auto;
 }
+
+.image_logo_pluggi {
+    margin-top: 8rem;
+    margin-left: -5rem;
+    margin-right: 1rem;
+    width: 15rem;
+}
+
+.images_tool_heckathon_flexbox {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.images_tool_heckathon {
+    width: 30%;
+    height: auto;
+    margin: auto;
+}
