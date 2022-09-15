@@ -9,7 +9,7 @@ a {
 }
 
 .text-container {
-    font-family: "SF Mono";
+    font-family: 'SF Mono', sans-serif;
 }
 
 .description-text {
@@ -29,17 +29,6 @@ a {
 
 .description_text_less_margin_right {
     margin-right: 1rem;
-}
-
-.headline {
-    color: #2e2727;
-    font-family: "SF Mono";
-    font-weight: 900;  
-    font-size:1250%;
-    text-align: center;
-    line-height: 73%;
-    height:fit-content; 
-    margin: 2rem;
 }
 
 .headline_content {
@@ -148,9 +137,9 @@ a {
   margin-left: 7rem;
   margin-top: 2rem;
   fill: #000;
-  font-family: SF Mono;
+  font-family: 'SF Mono', sans-serif;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 650;
   height: 48px;
   justify-content: center;
   letter-spacing: -.8px;
@@ -198,7 +187,7 @@ a {
     justify-content: space-between;
     color: #2e2727;
     font-size: 250%;
-    font-weight: 800;
+    font-weight: 650;
 }
 
 .subheadline_hyphen {
@@ -212,8 +201,8 @@ a {
 
 .boxed_text {
     color: white;
-    font-family: "SF Mono";
-    font-weight: 800;  
+    font-family: 'SF Mono', sans-serif;
+    font-weight: 650;  
     font-size: 400%;
     line-height: 73%;
     height:fit-content; 
