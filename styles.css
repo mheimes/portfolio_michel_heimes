@@ -1,5 +1,5 @@
 /* Mobile Styles */
-@media (max-width:550px) {
+@media (max-device-width:550px) {
     body {
         margin: 0;
         background-color:rgb(130, 130, 130);
@@ -482,7 +482,7 @@
 
 
 /* Tablet Styles */
-@media (min-width:551px) {
+@media (min-device-width:551px) {
     body {
         margin: 0;
         background-color: rgb(162, 162, 162);
@@ -986,7 +986,7 @@
 
 
 /* Desktop Styles */
-@media (min-width:992px) {
+@media (min-device-width:992px) {
     body {
         margin: 0;
         background-color: #E4E4E4;
