@@ -995,7 +995,7 @@
 
 
 /* Desktop Styles */
-@media (min-device-width:1401px) {
+@media (min-width:1401px) {
     body {
         margin: 0;
         background-color: #E4E4E4;
