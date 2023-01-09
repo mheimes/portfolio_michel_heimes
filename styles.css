@@ -1023,6 +1023,10 @@
 
 
 
+
+/* @media (max-device-width:550px)
+
+
 /* Mobile Styles */
 @media (max-device-width:1300px) {
     body {
@@ -1116,7 +1120,7 @@
     }
     
     .image {
-        width: 15rem;
+        width: 22rem;
         height: auto;
     }
     
