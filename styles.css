@@ -5,7 +5,7 @@
 @media (max-width:1290px) {
     body {
         margin: 0;
-        background-color:rgb(130, 130, 130);
+        background-color: #E4E4E4;
     }
 
     html {
@@ -494,7 +494,7 @@
 @media (min-width:1291px) {
     body {
         margin: 0;
-        background-color: rgb(162, 162, 162);
+        background-color: #E4E4E4;
     }
     
     html {
