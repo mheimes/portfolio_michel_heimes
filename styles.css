@@ -22,7 +22,7 @@
     }
     
     .description-text {
-        margin: 3rem 10rem 3rem 5rem;
+        margin: 3rem 5rem 3rem 5rem;
         font-family: Courier;
         /*line-height: 100%;*/
         font-size: 100%;
@@ -514,7 +514,7 @@
     }
     
     .description-text {
-        margin: 3rem 10rem 3rem 5rem;
+        margin: 3rem 5rem 3rem 5rem;
         font-family: Courier;
         /*line-height: 100%;*/
         font-size: 100%;
@@ -716,6 +716,8 @@
         margin-bottom: 4rem;
         margin-top: 2rem;
         text-align: center;
+        display: flex;
+        justify-content: center;
     
         background-color: #2e2727;
         border: 30px solid #2e2727;
