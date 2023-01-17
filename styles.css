@@ -32,7 +32,7 @@
         margin: 3rem 5rem 3rem 5rem;
         font-family: Courier;
         /*line-height: 100%;*/
-        font-size: 100%;
+        /* font-size: 100%; */
     }
     
     .description_text_less_margin_top {
@@ -69,7 +69,7 @@
     }
     
     .text_content {
-        font-size: 85%;
+        font-size: 110%;
         margin-bottom: 1rem;
         line-height: 150%;
     }
