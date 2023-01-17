@@ -67,14 +67,14 @@
     }
     
     .text_content {
-        font-size: 110%;
+        font-size: 14px;
         margin-bottom: 1rem;
-        line-height: 150%;
+        line-height: 120%;
     }
 
     @media (min-width:1291px) {
         .text_content {
-            font-size: 110%;
+            font-size: 14px;
             margin-bottom: 1rem;
             line-height: 150%;
         }
@@ -91,7 +91,6 @@
         font-family: Courier;
         font-size: 125%;
         line-height: 160%;
-        margin-right: 3rem;
     }
     
     .little_less_margin_bottom {
@@ -305,7 +304,7 @@
     
     .container_me_1 {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: flex-start;
         flex-direction: row;
     }
@@ -325,15 +324,14 @@
             flex-direction: row;
         }
     }
-    
-    .container_extra_padding {
-        padding: 2rem;
-        padding-bottom: 5rem;
+
+    .extra_margin_right {
+        margin-right: 3rem;
     }
     
-    .container_extra_padding_concepts {
-        padding-left: 2rem;
-        padding-right: 2rem;
+    .container_extra_padding {
+        padding: 2rem 0rem 0rem 0rem;
+        padding-bottom: 5rem;
     }
     
     .container_extra_padding_end_of_concepts {
@@ -490,7 +488,7 @@
         height: 18rem;
         padding-left: 5rem;
         padding-top: 9rem;
-        padding-right: 0rem;
+        padding-right: 1rem;
         padding-bottom: 0rem;
     }
     
