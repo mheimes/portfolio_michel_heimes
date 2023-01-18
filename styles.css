@@ -37,7 +37,7 @@
     }
     
     .headline_content {
-        color: #2e2727;
+        color: #1f1f1f; /* 2e2727 */
         font-family: Courier;
         font-weight: 200;
         font-size: 32px; /* 200% */
@@ -137,7 +137,7 @@
         font-family: 'SF Mono', sans-serif;
         font-weight: 650;  
         font-size: 48px; /* 300% */
-        color: #2e2727;
+        color: #1f1f1f;
     }
 
     @media (min-width:1291px) {
@@ -150,7 +150,7 @@
             font-family: 'SF Mono', sans-serif;
             font-weight: 650;  
             font-size: 28px; /* 180% */
-            color: #2e2727;
+            color: #1f1f1f;
         }
     }
     
@@ -232,7 +232,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        color: #2e2727;
+        color: #1f1f1f;
         font-size: 40px; /* 250% */
         font-weight: 650;
     }
@@ -261,8 +261,8 @@
         display: flex;
         justify-content: center;
     
-        background-color: #2e2727;
-        border: 30px solid #2e2727;
+        background-color: #1f1f1f;
+        border: 30px solid #1f1f1f;
     }
     
     .boxed_text_projects {
