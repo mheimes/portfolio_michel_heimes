@@ -60,14 +60,14 @@
     .text_content {
         font-size: 14px;
         margin-bottom: 1rem;
-        line-height: 120%;
+        line-height: 140%;
     }
 
     @media (min-width:1291px) {
         .text_content {
             font-size: 14px;
             margin-bottom: 1rem;
-            line-height: 150%;
+            line-height: 140%;
         }
     }
     
