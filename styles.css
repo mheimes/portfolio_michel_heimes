@@ -389,7 +389,7 @@
     
     .image_toilet_1 {
         width: auto;
-        height: 22rem;
+        height: 20rem;
         padding-top: 11rem;
         padding-right: 1rem;
         padding-bottom: 2rem;
@@ -407,7 +407,7 @@
     }
     
     .image_toilet_2 {
-        width: 24rem;
+        width: 20rem;
         height: auto;
         padding-left: 5rem;
         padding-top: 3rem;
@@ -431,7 +431,7 @@
     }
     
     .image_toilet_3 {
-        width: 24rem;
+        width: 20rem;
         height: auto;
         padding-left: 5rem;
         padding-top: 1rem;
@@ -456,8 +456,8 @@
     
     .image_toilet_4 {
         width: auto;
-        height: 12rem;  
-        padding-left: 1rem;
+        height: 11rem;  
+        padding-left: 0rem;
         padding-top: 1rem;
         padding-right: 1rem;
         padding-bottom: 5rem;
