@@ -1,0 +1,1223 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Pizza machen am 19.02.2023</title>
+	<style>
+		/* cspell:disable-file */
+		/* webkit printing magic: print all background colors */
+		html {
+			-webkit-print-color-adjust: exact;
+		}
+
+		* {
+			box-sizing: border-box;
+			-webkit-print-color-adjust: exact;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		@media only screen {
+			body {
+				margin: 2em auto;
+				max-width: 900px;
+				color: rgb(55, 53, 47);
+			}
+		}
+
+		body {
+			line-height: 1.5;
+			white-space: pre-wrap;
+		}
+
+		a,
+		a.visited {
+			color: inherit;
+			text-decoration: underline;
+		}
+
+		.pdf-relative-link-path {
+			font-size: 80%;
+			color: #444;
+		}
+
+		h1,
+		h2,
+		h3 {
+			letter-spacing: -0.01em;
+			line-height: 1.2;
+			font-weight: 600;
+			margin-bottom: 0;
+		}
+
+		.page-title {
+			font-size: 2.5rem;
+			font-weight: 700;
+			margin-top: 0;
+			margin-bottom: 0.75em;
+		}
+
+		h1 {
+			font-size: 1.875rem;
+			margin-top: 1.875rem;
+		}
+
+		h2 {
+			font-size: 1.5rem;
+			margin-top: 1.5rem;
+		}
+
+		h3 {
+			font-size: 1.25rem;
+			margin-top: 1.25rem;
+		}
+
+		.source {
+			border: 1px solid #ddd;
+			border-radius: 3px;
+			padding: 1.5em;
+			word-break: break-all;
+		}
+
+		.callout {
+			border-radius: 3px;
+			padding: 1rem;
+		}
+
+		figure {
+			margin: 1.25em 0;
+			page-break-inside: avoid;
+		}
+
+		figcaption {
+			opacity: 0.5;
+			font-size: 85%;
+			margin-top: 0.5em;
+		}
+
+		mark {
+			background-color: transparent;
+		}
+
+		.indented {
+			padding-left: 1.5em;
+		}
+
+		hr {
+			background: transparent;
+			display: block;
+			width: 100%;
+			height: 1px;
+			visibility: visible;
+			border: none;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+		}
+
+		img {
+			max-width: 100%;
+		}
+
+		@media only print {
+			img {
+				max-height: 100vh;
+				object-fit: contain;
+			}
+		}
+
+		@page {
+			margin: 1in;
+		}
+
+		.collection-content {
+			font-size: 0.875rem;
+		}
+
+		.column-list {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.column {
+			padding: 0 1em;
+		}
+
+		.column:first-child {
+			padding-left: 0;
+		}
+
+		.column:last-child {
+			padding-right: 0;
+		}
+
+		.table_of_contents-item {
+			display: block;
+			font-size: 0.875rem;
+			line-height: 1.3;
+			padding: 0.125rem;
+		}
+
+		.table_of_contents-indent-1 {
+			margin-left: 1.5rem;
+		}
+
+		.table_of_contents-indent-2 {
+			margin-left: 3rem;
+		}
+
+		.table_of_contents-indent-3 {
+			margin-left: 4.5rem;
+		}
+
+		.table_of_contents-link {
+			text-decoration: none;
+			opacity: 0.7;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid rgba(55, 53, 47, 0.09);
+			border-collapse: collapse;
+		}
+
+		table {
+			border-left: none;
+			border-right: none;
+		}
+
+		th,
+		td {
+			font-weight: normal;
+			padding: 0.25em 0.5em;
+			line-height: 1.5;
+			min-height: 1.5em;
+			text-align: left;
+		}
+
+		th {
+			color: rgba(55, 53, 47, 0.6);
+		}
+
+		ol,
+		ul {
+			margin: 0;
+			margin-block-start: 0.6em;
+			margin-block-end: 0.6em;
+		}
+
+		li>ol:first-child,
+		li>ul:first-child {
+			margin-block-start: 0.6em;
+		}
+
+		ul>li {
+			list-style: disc;
+		}
+
+		ul.to-do-list {
+			padding-inline-start: 0;
+		}
+
+		ul.to-do-list>li {
+			list-style: none;
+		}
+
+		.to-do-children-checked {
+			text-decoration: line-through;
+			opacity: 0.375;
+		}
+
+		ul.toggle>li {
+			list-style: none;
+		}
+
+		ul {
+			padding-inline-start: 1.7em;
+		}
+
+		ul>li {
+			padding-left: 0.1em;
+		}
+
+		ol {
+			padding-inline-start: 1.6em;
+		}
+
+		ol>li {
+			padding-left: 0.2em;
+		}
+
+		.mono ol {
+			padding-inline-start: 2em;
+		}
+
+		.mono ol>li {
+			text-indent: -0.4em;
+		}
+
+		.toggle {
+			padding-inline-start: 0em;
+			list-style-type: none;
+		}
+
+		/* Indent toggle children */
+		.toggle>li>details {
+			padding-left: 1.7em;
+		}
+
+		.toggle>li>details>summary {
+			margin-left: -1.1em;
+		}
+
+		.selected-value {
+			display: inline-block;
+			padding: 0 0.5em;
+			background: rgba(206, 205, 202, 0.5);
+			border-radius: 3px;
+			margin-right: 0.5em;
+			margin-top: 0.3em;
+			margin-bottom: 0.3em;
+			white-space: nowrap;
+		}
+
+		.collection-title {
+			display: inline-block;
+			margin-right: 1em;
+		}
+
+		.page-description {
+			margin-bottom: 2em;
+		}
+
+		.simple-table {
+			margin-top: 1em;
+			font-size: 0.875rem;
+			empty-cells: show;
+		}
+
+		.simple-table td {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table th {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table-header-color {
+			background: rgb(247, 246, 243);
+			color: black;
+		}
+
+		.simple-table-header {
+			font-weight: 500;
+		}
+
+		time {
+			opacity: 0.5;
+		}
+
+		.icon {
+			display: inline-block;
+			max-width: 1.2em;
+			max-height: 1.2em;
+			text-decoration: none;
+			vertical-align: text-bottom;
+			margin-right: 0.5em;
+		}
+
+		img.icon {
+			border-radius: 3px;
+		}
+
+		.user-icon {
+			width: 1.5em;
+			height: 1.5em;
+			border-radius: 100%;
+			margin-right: 0.5rem;
+		}
+
+		.user-icon-inner {
+			font-size: 0.8em;
+		}
+
+		.text-icon {
+			border: 1px solid #000;
+			text-align: center;
+		}
+
+		.page-cover-image {
+			display: block;
+			object-fit: cover;
+			width: 100%;
+			max-height: 30vh;
+		}
+
+		.page-header-icon {
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+
+		.page-header-icon-with-cover {
+			margin-top: -0.72em;
+			margin-left: 0.07em;
+		}
+
+		.page-header-icon img {
+			border-radius: 3px;
+		}
+
+		.link-to-page {
+			margin: 1em 0;
+			padding: 0;
+			border: none;
+			font-weight: 500;
+		}
+
+		p>.user {
+			opacity: 0.5;
+		}
+
+		td>.user,
+		td>time {
+			white-space: nowrap;
+		}
+
+		input[type="checkbox"] {
+			transform: scale(1.5);
+			margin-right: 0.6em;
+			vertical-align: middle;
+		}
+
+		p {
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.image {
+			border: none;
+			margin: 1.5em 0;
+			padding: 0;
+			border-radius: 0;
+			text-align: center;
+		}
+
+		.code,
+		code {
+			background: rgba(135, 131, 120, 0.15);
+			border-radius: 3px;
+			padding: 0.2em 0.4em;
+			border-radius: 3px;
+			font-size: 85%;
+			tab-size: 2;
+		}
+
+		code {
+			color: #eb5757;
+		}
+
+		.code {
+			padding: 1.5em 1em;
+		}
+
+		.code-wrap {
+			white-space: pre-wrap;
+			word-break: break-all;
+		}
+
+		.code>code {
+			background: none;
+			padding: 0;
+			font-size: 100%;
+			color: inherit;
+		}
+
+		blockquote {
+			font-size: 1.25em;
+			margin: 1em 0;
+			padding-left: 1em;
+			border-left: 3px solid rgb(55, 53, 47);
+		}
+
+		.bookmark {
+			text-decoration: none;
+			max-height: 8em;
+			padding: 0;
+			display: flex;
+			width: 100%;
+			align-items: stretch;
+		}
+
+		.bookmark-title {
+			font-size: 0.85em;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			height: 1.75em;
+			white-space: nowrap;
+		}
+
+		.bookmark-text {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.bookmark-info {
+			flex: 4 1 180px;
+			padding: 12px 14px 14px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.bookmark-image {
+			width: 33%;
+			flex: 1 1 180px;
+			display: block;
+			position: relative;
+			object-fit: cover;
+			border-radius: 1px;
+		}
+
+		.bookmark-description {
+			color: rgba(55, 53, 47, 0.6);
+			font-size: 0.75em;
+			overflow: hidden;
+			max-height: 4.5em;
+			word-break: break-word;
+		}
+
+		.bookmark-href {
+			font-size: 0.75em;
+			margin-top: 0.25em;
+		}
+
+		.sans {
+			font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+		}
+
+		.code {
+			font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+		}
+
+		.serif {
+			font-family: Lyon-Text, Georgia, ui-serif, serif;
+		}
+
+		.mono {
+			font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+		}
+
+		.pdf .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR';
+		}
+
+		.pdf .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.pdf .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR';
+		}
+
+		.pdf .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.highlight-default {
+			color: rgba(55, 53, 47, 1);
+		}
+
+		.highlight-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.highlight-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.highlight-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.highlight-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.highlight-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.highlight-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.highlight-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.highlight-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.highlight-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.highlight-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.highlight-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.highlight-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.highlight-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.highlight-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.highlight-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.highlight-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.highlight-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.highlight-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.block-color-default {
+			color: inherit;
+			fill: inherit;
+		}
+
+		.block-color-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.block-color-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.block-color-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.block-color-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.block-color-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.block-color-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.block-color-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.block-color-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.block-color-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.block-color-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.block-color-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.block-color-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.block-color-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.block-color-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.block-color-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.block-color-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.block-color-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.block-color-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.select-value-color-interactiveBlue {
+			background-color: rgba(35, 131, 226, .07);
+		}
+
+		.select-value-color-pink {
+			background-color: rgba(245, 224, 233, 1);
+		}
+
+		.select-value-color-purple {
+			background-color: rgba(232, 222, 238, 1);
+		}
+
+		.select-value-color-green {
+			background-color: rgba(219, 237, 219, 1);
+		}
+
+		.select-value-color-gray {
+			background-color: rgba(227, 226, 224, 1);
+		}
+
+		.select-value-color-translucentGray {
+			background-color: rgba(255, 255, 255, 0.0375);
+		}
+
+		.select-value-color-orange {
+			background-color: rgba(250, 222, 201, 1);
+		}
+
+		.select-value-color-brown {
+			background-color: rgba(238, 224, 218, 1);
+		}
+
+		.select-value-color-red {
+			background-color: rgba(255, 226, 221, 1);
+		}
+
+		.select-value-color-yellow {
+			background-color: rgba(253, 236, 200, 1);
+		}
+
+		.select-value-color-blue {
+			background-color: rgba(211, 229, 239, 1);
+		}
+
+		.select-value-color-pageGlass {
+			background-color: undefined;
+		}
+
+		.select-value-color-washGlass {
+			background-color: undefined;
+		}
+
+		.checkbox {
+			display: inline-flex;
+			vertical-align: text-bottom;
+			width: 16;
+			height: 16;
+			background-size: 16px;
+			margin-left: 2px;
+			margin-right: 5px;
+		}
+
+		.checkbox-on {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+
+		.checkbox-off {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+	</style>
+</head>
+
+<body>
+	<article id="b9b125fa-c04d-4dc5-89e1-63e8171587e0" class="page sans">
+		<header>
+			<h1 class="page-title">Pizza machen am 19.02.2023</h1>
+			<p class="page-description"></p>
+			<table class="properties">
+				<tbody>
+					<tr class="property-row property-row-created_time">
+						<th><span class="icon property-icon"><svg viewBox="0 0 16 16"
+									style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden"
+									class="typesCreatedAt">
+									<path
+										d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM4.54102 8.91211H7.99316C8.30078 8.91211 8.54004 8.67285 8.54004 8.37207V3.8877C8.54004 3.58691 8.30078 3.34766 7.99316 3.34766C7.69238 3.34766 7.45312 3.58691 7.45312 3.8877V7.83203H4.54102C4.2334 7.83203 4.00098 8.06445 4.00098 8.37207C4.00098 8.67285 4.2334 8.91211 4.54102 8.91211Z">
+									</path>
+								</svg></span>Created</th>
+						<td><time>@February 19, 2023 2:14 PM</time></td>
+					</tr>
+					<tr class="property-row property-row-multi_select">
+						<th><span class="icon property-icon"><svg viewBox="0 0 16 16"
+									style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden"
+									class="typesMultipleSelect">
+									<path
+										d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z">
+									</path>
+								</svg></span>Tags</th>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</header>
+		<div class="page-body">
+			<p id="f5333d2e-c001-4f68-b19d-e9e150d41dbc" class="">Simple Funghi:</p>
+			<figure id="387a8d50-7e16-429d-bdff-eb9927369710" class="image"><a
+					href="Pizza%20machen%20am%2019%2002%202023%20b9b125fac04d4dc589e163e8171587e0/IMG_2644.heic"><img
+						src="Pizza%20machen%20am%2019%2002%202023%20b9b125fac04d4dc589e163e8171587e0/IMG_2644.heic" /></a>
+			</figure>
+			<p id="0fa4b2c3-ad64-4fce-8331-105f2b0c4ca5" class="">Baked Vegs 2:</p>
+			<figure id="38cd136f-4c4e-4a53-9c65-27c764165fef" class="image"><a
+					href="Pizza%20machen%20am%2019%2002%202023%20b9b125fac04d4dc589e163e8171587e0/IMG_2642.heic"><img
+						src="Pizza%20machen%20am%2019%2002%202023%20b9b125fac04d4dc589e163e8171587e0/IMG_2642.heic" /></a>
+			</figure>
+			<h3 id="7adbe459-4599-4a34-8126-4900f824a38d" class=""><strong>Weitere Erkenntnisse:</strong></h3>
+			<p id="1344a43a-ed11-478a-ad8a-2f57524501fb" class=""><strong>Es ist wichtig, dass der Pizzastein vor dem
+					Zubereiten der Pizzen gereinigt wird bzw. währenddessen immer wieder vom Ruß befreit wird. Ansonsten
+					ergeben sich bittere und angebrannt schmeckende Noten am Boden!!</strong></p>
+			<p id="a760e802-974f-4e9f-9e2f-c0ed4e6de6bc" class="">
+			</p>
+			<p id="634fd727-cde5-4afd-b39c-6ba6f791e37b" class="">Teig zubereitet am 15.02.2023.</p>
+			<p id="fa141e13-ffd2-4c2f-85dd-7f1cdf17af8f" class="">70% Hydration, per Hand geknetet - ca. 15 min
+				weitergeknetet, nachdem alles Mehl drin war.</p>
+			<p id="a24fab7b-c7c2-444d-bc5b-84a99319958a" class="">Bei Raumtemperatur für ca. 72h gehen gelassen
+				(Stockgare), anschließend für ca. 24h in Stückgare.</p>
+			<p id="15664e05-1e8c-4043-a1b2-b80a4d5c236a" class="">Teig zerläuft sehr stark und ist sehr klebrig
+				(deutlich zu stark).
+				→ Hätte es durch irgendetwas vermieden werden können? z. B. Längeres Kneten (mit Teig-Knetmaschine) oder
+				andere Reihenfolge in welcher die Zutaten hinzugefügt werden (Mehl langsamer/ schneller hinzufügen?!)
+			</p>
+			<p id="97cc8f85-0d30-4584-87ab-bb825b8f7bee" class="">Weitere Erkenntnis: Nachdem der Teig bereits viele
+				Stunden gegangen ist (ca. 72h) und ich ihn von der Stockgare in die Stückgare bringen wollte, stellte
+				ich wie zuvor beschrieben fest, dass der Teig noch sehr feucht und dadurch klebrig ist. Als ich einzelne
+				Teigballen erneut mit etwas mehr Mehl testweise verkneten wollte stellte ich fest, dass ich dadurch nur
+				noch mehr Feuchtigkeit aus dem Teig herauskitzelte. Die Teigballen wurden durch das Kneten (und mehr
+				Mehl?!) also noch einmal klebriger. → Vielleicht könnte dies behoben werden, wenn man den Teig in dieser
+				Stufe länger kneten würde?!</p>
+			<h3 id="d053e7aa-5ff8-4c66-a558-dd772d71db65" class="">Geplante Pizzen:</h3>
+			<ul id="45e6a8d7-b052-494b-a188-600589e5a9ff" class="toggle">
+				<li>
+					<details open="">
+						<summary><strong>Baked Vegs 1</strong></summary>
+						<ol type="1" id="faf076d7-2c04-4efe-a029-e7a717017a92" class="numbered-list" start="1">
+							<li>Boden aus Parmesan</li>
+						</ol>
+						<ol type="1" id="f89d9456-fe6d-4691-ae90-0afb9933cf54" class="numbered-list" start="2">
+							<li>(vorgebackenes und durchaus abgekühltes) Backofen-Gemüse als Topping (nicht zu überladen
+								viel)</li>
+						</ol>
+						<ol type="1" id="3a909a2f-36b1-417c-915e-51144e9095b9" class="numbered-list" start="3">
+							<li>Etwas Büffelmozzarella (für den Pizza-Vibe)</li>
+						</ol>
+						<p id="8d3d2493-4a0e-427d-bad3-81d7f3b3a180" class="">Optional - nach dem Backen:</p>
+						<ol type="1" id="50661e90-a098-46ec-bb13-788c1f5f06c4" class="numbered-list" start="3">
+							<li>Yogurt Dip mit Salz/ Pfeffer/ Zitrone/ geriebener Ingwer on top (nachdem aus Ofen)</li>
+						</ol>
+						<p id="e38a9b7f-84db-40bf-8847-51c9ed01a38d" class=""><strong>→ Doch nicht gemacht</strong></p>
+					</details>
+				</li>
+			</ul>
+			<ul id="93588b2f-4c4b-41eb-83d8-52efb95a815f" class="toggle">
+				<li>
+					<details open="">
+						<summary><strong>Baked Vegs 2</strong></summary>
+						<ol type="1" id="1e1df315-ae4b-4799-a9de-844cdce6d8f2" class="numbered-list" start="1">
+							<li>Pesto selber machen mit sehr viel extra Parmesan (+ evtl. viel extra Sesam) und als
+								Boden verteilen (Käseschicht-Ersatz)</li>
+						</ol>
+						<ol type="1" id="1cc26abf-cf67-4aa6-b375-e1631637cae4" class="numbered-list" start="2">
+							<li>(vorgebackenes und durchaus abgekühltes) Backofen-Gemüse als Topping (nicht zu überladen
+								viel)</li>
+						</ol>
+						<ol type="1" id="c67ab5b7-77d0-4992-a878-c5a3cfd12e73" class="numbered-list" start="3">
+							<li>Etwas Büffelmozzarella (für den Pizza-Vibe)</li>
+						</ol>
+						<p id="efdf592f-fcc6-4719-b1a1-de9d76622726" class="">Nach dem Backen:</p>
+						<ol type="1" id="8974ccb5-c8d0-45e4-9a76-96f49c52961f" class="numbered-list" start="3">
+							<li>Yogurt Dip mit Salz/ Pfeffer/ Zitrone/ geriebener Ingwer on top (nachdem aus Ofen)</li>
+						</ol>
+						<p id="170940af-fe9b-4462-88f7-bc50c7100ebd" class=""><strong>→ Schmeckt gut und kam auch
+								relativ gut an, ist jedoch relativ fettig aufgrund des Öls aus dem Pesto und dem vom
+								Ofengemüse; Yogurt-Dip neutralisiert gut! → evtl. schauen, dass man das Öl
+								reduziert.</strong></p>
+					</details>
+				</li>
+			</ul>
+			<ul id="252868e5-dcef-4fcc-90e3-1f9cd4eef1c4" class="toggle">
+				<li>
+					<details open="">
+						<summary><strong>Focaccia-Brot</strong></summary>
+						<p id="43f82c5e-46c0-4726-aa50-a53ed96d7806" class="">Pizzateigballen mit allen Fingerspitzen
+							gleichzeitig leicht bearbeiten, dass der Ballen zu einem brotförmigen Gebilde aber nicht zu
+							flach wird. Folgend mit Olivenöl besteichen und mit grobem Meersalz und Rosmarin bestreuen.
+						</p>
+						<p id="2a94768f-5553-4da7-bd8e-1ca8502473ef" class=""><strong>→ Sollte bei geringerer Hitze und
+								dafür etwas länger gebacken werden → War innen noch etwas zu wenig durch im Vergleich zu
+								äußeren verkohlten Stellen</strong></p>
+					</details>
+				</li>
+			</ul>
+			<ul id="beb0ee7e-f247-4c4f-87b5-26188d786db4" class="toggle">
+				<li>
+					<details open="">
+						<summary><strong>Simple Funghi</strong></summary>
+						<ol type="1" id="643eb6a1-452d-4d33-bbc9-9916fd43f088" class="numbered-list" start="1">
+							<li>Boden: Bestes Olivenöl</li>
+						</ol>
+						<ol type="1" id="78f902f1-42df-4593-9434-40e89084bbf9" class="numbered-list" start="2">
+							<li>Eingelegte (Austern-) Pilze (z. B. eingelegt in Sojasauce o. ä. - Konsistenz ähnlich zu
+								Fleisch) - Marinade:</li>
+						</ol>
+						<ol type="1" id="92031dab-e418-4117-99ad-24381810eecb" class="numbered-list" start="3">
+							<li>Büffelmozzarella</li>
+						</ol>
+						<p id="bb9f019a-7a48-487a-adf5-0ee763d8c430" class=""><strong>→ Kam sehr gut an, ist durch die
+								Schärfe aber auch relativ extrem im Geschmack, weshalb man sie sich eher teilen muss,
+								als sie alleine ganz zu essen. → Die Schärfe in kommenden Iterationen eher reduzieren
+								und auch mit anderen Pilzen arbeiten.</strong></p>
+						<p id="be6922fe-5643-4a17-8d78-e652decd5668" class=""><strong>→ Wirkte etwas zu trocken → Boden
+								mit der Ölmarinade einpinseln ODER Tomatensauce darauf verteilen!</strong></p>
+					</details>
+				</li>
+			</ul>
+			<ul id="85631e3a-5d65-40f8-9efa-9147f0b62d90" class="toggle">
+				<li>
+					<details open="">
+						<summary><strong>Margherita Made Wrong</strong></summary>
+						<ol type="1" id="80b0a8bd-314e-4b14-8121-8d11af222ff5" class="numbered-list" start="1">
+							<li>Boden: Büffelmozzarella</li>
+						</ol>
+						<ol type="1" id="125b2129-0406-41e8-a62b-fdc86f31a0ff" class="numbered-list" start="2">
+							<li>Nachdem gebacken gute Tomatensauße aus Dosierungsflasche in Streifen auf Pizza verteilen
+								(nicht zu flüssig, damit man es gut anrichten kann, leicht dickflüssig aber trotzdem
+								frisch im Geschmack → San Marzano Tomaten; evtl. geschmacksneutrale Zutat nur hierbei
+								hinzufügen, sodass Konsistenz dickflüssiger)</li>
+						</ol>
+						<ol type="1" id="82a6b0e3-ca7a-4595-b9ff-cde0ad34bb5b" class="numbered-list" start="3">
+							<li>Selbstgemachtes Basilikum Pesto mit kleiner Dosierungsflasche punktiert auf der Pizza
+								verteilen; Pesto: Basilikum (bevorzugt Krim-Basilikum wegen des intensiven Geschmacks)
+								und Olivenöl</li>
+						</ol>
+						<p id="ec9820bc-1b48-425b-a14e-b315bbfced8e" class=""><strong>→ Klassiker; kommt sehr gut an wie
+								immer → Ist eine der wenigen Pizzen, von denen man eine ganze alleine essen
+								könnte.</strong></p>
+					</details>
+				</li>
+			</ul>
+			<ul id="58cb269f-ea14-4c94-995e-dd72d39ad1c3" class="toggle">
+				<li>
+					<details open="">
+						<summary><strong>Holy Guacamole</strong></summary>
+						<ol type="1" id="c3a7ce5d-b6ae-4996-bb1e-3e39058e64f1" class="numbered-list" start="1">
+							<li>Boden: Parmesan</li>
+						</ol>
+						<p id="85be0a5e-3d38-4205-b9e1-7adb26e416d0" class="">Nach dem Backen:</p>
+						<ol type="1" id="8efb471d-8c78-455f-80b4-6112441db434" class="numbered-list" start="2">
+							<li>Selbstgemachte Guacamole darauf verteilen (mit viel Zitrone u. Salz, ein wenig Sahne
+								(kein Muss!), leichter Schärfe (z. B. durch Sriracha-Sauce) und Cherry-Tomaten für den
+								frischeren Geschmack → Alles püriert)</li>
+						</ol>
+						<ol type="1" id="20e080d8-0a45-416f-9c36-1d9603711649" class="numbered-list" start="3">
+							<li>Ruccula; “bunte” Cherry-Tomaten (gelb, orang, rot) entweder vierteln/ halbieren oder
+								vorher kochen, die Haut abziehen und darauf verteilen; selbstgemachte Süßkartoffel-Chips
+								(mit Käsereibe in dünne Scheiben schneiden und mit ein wenig Öl + Salz vermengen (nicht
+								triefend!), möglichst nicht-überlappend auf Backblech verteilen und bei 150° Umluft
+								backen bis goldbraun → ca. 20-30 min) → Rezept auf grillkamerade.de</li>
+						</ol>
+						<p id="459af920-e15a-4d3d-8715-05d1386dd9cc" class=""><strong>→ Kam auch wie immer sehr gut an,
+								ist aber relativ extrem, wodurch man davon alleine keine Ganze essen kann. → In
+								kommenden Iterationen die extremen Geschmäcker reduzieren (insbesondere die Guacamole
+								neutraler gestalten)!</strong></p>
+					</details>
+				</li>
+			</ul>
+			<ul id="86b68c3e-b7f0-49d1-a7e8-c2dc01d2247b" class="toggle">
+				<li>
+					<details open="">
+						<summary><strong>Rosa - evtl. heute rauslassen! (too much!)</strong></summary>
+						<ol type="1" id="71a02bec-34ce-4da0-b6cc-38d187d46aa4" class="numbered-list" start="1">
+							<li>Boden: Parmesan</li>
+						</ol>
+						<ol type="1" id="70db9340-9af3-44f5-a6d4-58d76eeae8f8" class="numbered-list" start="2">
+							<li>Rote Zwiebeln in dünnen Scheiben</li>
+						</ol>
+						<ol type="1" id="9d271b95-c952-46da-8301-d27e98046f5f" class="numbered-list" start="3">
+							<li>Rosmarin</li>
+						</ol>
+						<p id="c72d5448-c6fe-491c-bad5-4914a53aaeb3" class="">Gebacken bis fast fertig - dann kurz
+							rausholen und drauf:</p>
+						<ol type="1" id="7deb0bc7-967b-4368-880b-fb37a4e4b68b" class="numbered-list" start="5">
+							<li>crunched Pistazien darauf verteilen</li>
+						</ol>
+						<p id="589d6eae-fdac-4873-8343-49e705659b3f" class=""><strong>→ War lecker und kam gut an, ist
+								jedoch etwas trockener, wodurch es nicht den “OG” Pizza-Vibe hat!</strong></p>
+						<p id="0603f922-918f-46d3-81e9-b29c4412dd4b" class=""><strong>→ Pistazien wirklich nur ganz kurz
+								in den Ofen → Sind selbst innerhalb der ca. 30 Sekunden in denen Sie im Ofen waren gut
+								angebrannt!</strong></p>
+						<p id="4061c219-fc80-4a53-b609-b825ce2b0585" class=""><strong>→ Irgendwas ändern/ hinzufügen,
+								sodass die Pizza etwas mehr juicy ist?!</strong></p>
+					</details>
+				</li>
+			</ul>
+			<ul id="67ab02c6-7cf4-4afc-82e0-9203432a90a3" class="toggle">
+				<li>
+					<details open="">
+						<summary><strong>Sweet Hell</strong></summary>
+						<ol type="1" id="e3cf1be3-ddbd-435f-a948-d5350ce3eca2" class="numbered-list" start="1">
+							<li>Boden: San Marzano Tomatensauce</li>
+						</ol>
+						<ol type="1" id="f70f0ca2-4035-47db-b017-95b297022fb6" class="numbered-list" start="2">
+							<li>Fior Di Latte Mozzarella</li>
+						</ol>
+						<ol type="1" id="547d8e0c-1d48-4882-a2da-e4ab4bceef88" class="numbered-list" start="3">
+							<li>Italienische Salami</li>
+						</ol>
+						<ol type="1" id="6d728c22-7556-4018-b37d-31e5df0b33f4" class="numbered-list" start="4">
+							<li>Chilli-Öl (Olivenöl + Chilliflocken + braune scharfe asiatische Sauce)</li>
+						</ol>
+						<p id="15cf8fe8-7045-4d00-83ed-c22163db39fc" class="">Gebacken bis fast fertig - dann kurz
+							rausholen und drauf:</p>
+						<ol type="1" id="b0fa1a28-9fd7-4e46-bf59-e18b1ab956ad" class="numbered-list" start="5">
+							<li>(Zuvor) angeröstete in Honig “getränkte” Walnüsse darauf verteilen (noch einmal kurz in
+								den Ofen)</li>
+						</ol>
+						<p id="c1a44d17-de4b-4002-b42b-ac27ef956a9f" class="">→ Evtl. am Ende noch einmal mit Chilli-Öl
+							finishen</p>
+						<p id="1bfc8d6b-3fb6-40a2-878d-573ec760e23d" class="">→ Süße und Schärfe sollen im Einklang
+							sein, wenn dann soll Süße des Honigs überwiegen!</p>
+						<p id="b936fb65-1235-4bf8-ba85-72d83c36fe28" class=""><strong>→ Klassiker, kommt sehr gut an!
+								Einige der wenigen Pizzen, von denen man alleine eine ganze essen könnte!</strong></p>
+					</details>
+				</li>
+			</ul>
+			<ul id="53231f2e-39c0-4f9d-bd92-7e45c6b38667" class="toggle">
+				<li>
+					<details open="">
+						<summary><strong>Late Breakfast</strong></summary>
+						<ol type="1" id="c0d48f91-23a6-4513-ae73-e7665b76ce93" class="numbered-list" start="1">
+							<li>Boden: geschmolzene Butter gepinselt auf Pizzateig UND/ ODER leicht geschlagenes Eigelb
+								auf Pizza verteilen</li>
+						</ol>
+						<ol type="1" id="64c0f2f4-a171-46ea-84b5-513cef4d49a4" class="numbered-list" start="2">
+							<li>Baconstreifen darauf verteilen</li>
+						</ol>
+						<ol type="1" id="0945e153-5145-422c-9c55-3ab864b27467" class="numbered-list" start="3">
+							<li>evtl. Büffelmozzarella dezent (für den Pizza-Vibe)</li>
+						</ol>
+						<p id="613c85a0-32c3-4d4d-9702-6354c47f7e24" class="">Nach dem Backen:</p>
+						<ol type="1" id="5b37900b-ef36-404f-b59f-2aac90cfefa6" class="numbered-list" start="3">
+							<li>Eigelb darauf verteilen (getrennt vom Eiweiß und leicht in kochendem Wasser abgekocht)
+								und mit Meersalz bestreuen; evtl. noch frische Petersilie/ Schnittlauch darüber
+								verteilen</li>
+						</ol>
+						<p id="2e7982b4-371d-4f28-b58e-602a0f23cf26" class=""><strong>→ War etwas trocken; Saucyness hat
+								etwas gefehlt → Eigelb hat Geschmackskick gegeben!</strong></p>
+					</details>
+				</li>
+			</ul>
+			<h3 id="05503800-640c-47c0-be37-eaa0bedf8ea6" class="">Dafür vorbereiten: </h3>
+			<ul id="ec5ab2eb-aefb-42eb-928b-cec3722410a9" class="to-do-list">
+				<li>
+					<div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Parmesan reiben (alles
+						was vorhanden ist probably)</span>
+					<div class="indented"></div>
+				</li>
+			</ul>
+			<ul id="1eb96657-a054-4d62-b50f-965eca333b07" class="to-do-list">
+				<li>
+					<div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Yogurt-Dip vorbereiten
+						mit Zitrone, Salz, Pfeffer und geriebenem Ingwer</span>
+					<div class="indented"></div>
+				</li>
+			</ul>
+			<ul id="89269622-3f90-4542-87c9-d1f2ec07544c" class="to-do-list">
+				<li>
+					<div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Pilze in grobe Stücke
+						schneiden und einlegen in …?</span>
+					<div class="indented"></div>
+				</li>
+			</ul>
+			<ul id="0eac7cf3-21c0-4458-b08c-e52f8c301db4" class="to-do-list">
+				<li>
+					<div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Ofengemüse schneiden,
+						mit Olivenöl bestreichen und backen</span>
+					<div class="indented"></div>
+				</li>
+			</ul>
+			<ul id="c5de16e9-8863-4f1a-90ab-4cd3d8c1b853" class="to-do-list">
+				<li>
+					<div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Basilikum
+						zupfen</span>
+					<div class="indented"></div>
+				</li>
+			</ul>
+			<ul id="32ee5664-2ca1-43d0-b45d-8ea104e1b680" class="to-do-list">
+				<li>
+					<div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Süßkartoffel Chips
+						machen</span>
+					<div class="indented"></div>
+				</li>
+			</ul>
+			<ul id="5552e773-9f46-417e-9cb9-9c618ed7c782" class="to-do-list">
+				<li>
+					<div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Pesto Nr. 1 machen
+						bzw. normales Pesto up-pimpen mit einiges an Parmesans + frischem Basilikum (+ Sesam?)</span>
+					<div class="indented"></div>
+				</li>
+			</ul>
+			<ul id="a8a17d29-ed53-44d3-80b2-6e0253d2bd41" class="to-do-list">
+				<li>
+					<div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Pesto Nr. 2 machen:
+						Lediglich aus frischem Basilikum + Olivenöl</span>
+					<div class="indented"></div>
+				</li>
+			</ul>
+			<ul id="5cd4f806-aebd-4098-b005-ad06c6a70562" class="to-do-list">
+				<li>
+					<div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Rosmarin zupfen</span>
+					<div class="indented"></div>
+				</li>
+			</ul>
+			<ul id="3a280a8b-9f45-406c-aecf-c9a91ee17749" class="to-do-list">
+				<li>
+					<div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Mozzarella schneiden
+						(in grobe Stücke und auch in Kleinere, getrennt voneinander)</span>
+					<div class="indented"></div>
+				</li>
+			</ul>
+			<ul id="ea02f695-4b0f-4e0b-82dc-8ea8cd9442ec" class="to-do-list">
+				<li>
+					<div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Tomaten aus Dose
+						zermanschen + Teil abfüllen und etwas pürieren (für Margherita Reverse)</span>
+					<div class="indented"></div>
+				</li>
+			</ul>
+			<ul id="ed75e3fb-f3a7-4bd7-826c-dbca969f01c9" class="to-do-list">
+				<li>
+					<div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Guacamole
+						zubereiten</span>
+					<div class="indented"></div>
+				</li>
+			</ul>
+			<ul id="8cd35358-6fbb-4e2b-b9f8-02f830fd2117" class="to-do-list">
+				<li>
+					<div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Cherrytomaten waschen,
+						kochen und häuten</span>
+					<div class="indented"></div>
+				</li>
+			</ul>
+			<ul id="0e39f389-3400-4e34-8e4d-590ca6fd3b0a" class="to-do-list">
+				<li>
+					<div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Ruccula waschen</span>
+					<div class="indented"></div>
+				</li>
+			</ul>
+			<ul id="d453afb2-a406-46eb-9198-55e7636054a3" class="to-do-list">
+				<li>
+					<div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Chilli-Öl zubereiten
+						(falls nicht mehr vorhanden)</span>
+					<div class="indented"></div>
+				</li>
+			</ul>
+			<ul id="135d063b-77be-4d07-9484-65afb588816f" class="to-do-list">
+				<li>
+					<div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Walnüsse anrösten und
+						mit Honig vermengen</span>
+					<div class="indented"></div>
+				</li>
+			</ul>
+		</div>
+	</article>
+</body>
+
+</html>

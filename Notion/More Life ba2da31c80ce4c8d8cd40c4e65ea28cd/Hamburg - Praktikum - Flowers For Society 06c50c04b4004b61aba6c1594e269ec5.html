@@ -1,0 +1,2345 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Hamburg - Praktikum - Flowers For Society</title>
+	<style>
+		/* cspell:disable-file */
+		/* webkit printing magic: print all background colors */
+		html {
+			-webkit-print-color-adjust: exact;
+		}
+
+		* {
+			box-sizing: border-box;
+			-webkit-print-color-adjust: exact;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		@media only screen {
+			body {
+				margin: 2em auto;
+				max-width: 900px;
+				color: rgb(55, 53, 47);
+			}
+		}
+
+		body {
+			line-height: 1.5;
+			white-space: pre-wrap;
+		}
+
+		a,
+		a.visited {
+			color: inherit;
+			text-decoration: underline;
+		}
+
+		.pdf-relative-link-path {
+			font-size: 80%;
+			color: #444;
+		}
+
+		h1,
+		h2,
+		h3 {
+			letter-spacing: -0.01em;
+			line-height: 1.2;
+			font-weight: 600;
+			margin-bottom: 0;
+		}
+
+		.page-title {
+			font-size: 2.5rem;
+			font-weight: 700;
+			margin-top: 0;
+			margin-bottom: 0.75em;
+		}
+
+		h1 {
+			font-size: 1.875rem;
+			margin-top: 1.875rem;
+		}
+
+		h2 {
+			font-size: 1.5rem;
+			margin-top: 1.5rem;
+		}
+
+		h3 {
+			font-size: 1.25rem;
+			margin-top: 1.25rem;
+		}
+
+		.source {
+			border: 1px solid #ddd;
+			border-radius: 3px;
+			padding: 1.5em;
+			word-break: break-all;
+		}
+
+		.callout {
+			border-radius: 3px;
+			padding: 1rem;
+		}
+
+		figure {
+			margin: 1.25em 0;
+			page-break-inside: avoid;
+		}
+
+		figcaption {
+			opacity: 0.5;
+			font-size: 85%;
+			margin-top: 0.5em;
+		}
+
+		mark {
+			background-color: transparent;
+		}
+
+		.indented {
+			padding-left: 1.5em;
+		}
+
+		hr {
+			background: transparent;
+			display: block;
+			width: 100%;
+			height: 1px;
+			visibility: visible;
+			border: none;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+		}
+
+		img {
+			max-width: 100%;
+		}
+
+		@media only print {
+			img {
+				max-height: 100vh;
+				object-fit: contain;
+			}
+		}
+
+		@page {
+			margin: 1in;
+		}
+
+		.collection-content {
+			font-size: 0.875rem;
+		}
+
+		.column-list {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.column {
+			padding: 0 1em;
+		}
+
+		.column:first-child {
+			padding-left: 0;
+		}
+
+		.column:last-child {
+			padding-right: 0;
+		}
+
+		.table_of_contents-item {
+			display: block;
+			font-size: 0.875rem;
+			line-height: 1.3;
+			padding: 0.125rem;
+		}
+
+		.table_of_contents-indent-1 {
+			margin-left: 1.5rem;
+		}
+
+		.table_of_contents-indent-2 {
+			margin-left: 3rem;
+		}
+
+		.table_of_contents-indent-3 {
+			margin-left: 4.5rem;
+		}
+
+		.table_of_contents-link {
+			text-decoration: none;
+			opacity: 0.7;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid rgba(55, 53, 47, 0.09);
+			border-collapse: collapse;
+		}
+
+		table {
+			border-left: none;
+			border-right: none;
+		}
+
+		th,
+		td {
+			font-weight: normal;
+			padding: 0.25em 0.5em;
+			line-height: 1.5;
+			min-height: 1.5em;
+			text-align: left;
+		}
+
+		th {
+			color: rgba(55, 53, 47, 0.6);
+		}
+
+		ol,
+		ul {
+			margin: 0;
+			margin-block-start: 0.6em;
+			margin-block-end: 0.6em;
+		}
+
+		li>ol:first-child,
+		li>ul:first-child {
+			margin-block-start: 0.6em;
+		}
+
+		ul>li {
+			list-style: disc;
+		}
+
+		ul.to-do-list {
+			padding-inline-start: 0;
+		}
+
+		ul.to-do-list>li {
+			list-style: none;
+		}
+
+		.to-do-children-checked {
+			text-decoration: line-through;
+			opacity: 0.375;
+		}
+
+		ul.toggle>li {
+			list-style: none;
+		}
+
+		ul {
+			padding-inline-start: 1.7em;
+		}
+
+		ul>li {
+			padding-left: 0.1em;
+		}
+
+		ol {
+			padding-inline-start: 1.6em;
+		}
+
+		ol>li {
+			padding-left: 0.2em;
+		}
+
+		.mono ol {
+			padding-inline-start: 2em;
+		}
+
+		.mono ol>li {
+			text-indent: -0.4em;
+		}
+
+		.toggle {
+			padding-inline-start: 0em;
+			list-style-type: none;
+		}
+
+		/* Indent toggle children */
+		.toggle>li>details {
+			padding-left: 1.7em;
+		}
+
+		.toggle>li>details>summary {
+			margin-left: -1.1em;
+		}
+
+		.selected-value {
+			display: inline-block;
+			padding: 0 0.5em;
+			background: rgba(206, 205, 202, 0.5);
+			border-radius: 3px;
+			margin-right: 0.5em;
+			margin-top: 0.3em;
+			margin-bottom: 0.3em;
+			white-space: nowrap;
+		}
+
+		.collection-title {
+			display: inline-block;
+			margin-right: 1em;
+		}
+
+		.page-description {
+			margin-bottom: 2em;
+		}
+
+		.simple-table {
+			margin-top: 1em;
+			font-size: 0.875rem;
+			empty-cells: show;
+		}
+
+		.simple-table td {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table th {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table-header-color {
+			background: rgb(247, 246, 243);
+			color: black;
+		}
+
+		.simple-table-header {
+			font-weight: 500;
+		}
+
+		time {
+			opacity: 0.5;
+		}
+
+		.icon {
+			display: inline-block;
+			max-width: 1.2em;
+			max-height: 1.2em;
+			text-decoration: none;
+			vertical-align: text-bottom;
+			margin-right: 0.5em;
+		}
+
+		img.icon {
+			border-radius: 3px;
+		}
+
+		.user-icon {
+			width: 1.5em;
+			height: 1.5em;
+			border-radius: 100%;
+			margin-right: 0.5rem;
+		}
+
+		.user-icon-inner {
+			font-size: 0.8em;
+		}
+
+		.text-icon {
+			border: 1px solid #000;
+			text-align: center;
+		}
+
+		.page-cover-image {
+			display: block;
+			object-fit: cover;
+			width: 100%;
+			max-height: 30vh;
+		}
+
+		.page-header-icon {
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+
+		.page-header-icon-with-cover {
+			margin-top: -0.72em;
+			margin-left: 0.07em;
+		}
+
+		.page-header-icon img {
+			border-radius: 3px;
+		}
+
+		.link-to-page {
+			margin: 1em 0;
+			padding: 0;
+			border: none;
+			font-weight: 500;
+		}
+
+		p>.user {
+			opacity: 0.5;
+		}
+
+		td>.user,
+		td>time {
+			white-space: nowrap;
+		}
+
+		input[type="checkbox"] {
+			transform: scale(1.5);
+			margin-right: 0.6em;
+			vertical-align: middle;
+		}
+
+		p {
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.image {
+			border: none;
+			margin: 1.5em 0;
+			padding: 0;
+			border-radius: 0;
+			text-align: center;
+		}
+
+		.code,
+		code {
+			background: rgba(135, 131, 120, 0.15);
+			border-radius: 3px;
+			padding: 0.2em 0.4em;
+			border-radius: 3px;
+			font-size: 85%;
+			tab-size: 2;
+		}
+
+		code {
+			color: #eb5757;
+		}
+
+		.code {
+			padding: 1.5em 1em;
+		}
+
+		.code-wrap {
+			white-space: pre-wrap;
+			word-break: break-all;
+		}
+
+		.code>code {
+			background: none;
+			padding: 0;
+			font-size: 100%;
+			color: inherit;
+		}
+
+		blockquote {
+			font-size: 1.25em;
+			margin: 1em 0;
+			padding-left: 1em;
+			border-left: 3px solid rgb(55, 53, 47);
+		}
+
+		.bookmark {
+			text-decoration: none;
+			max-height: 8em;
+			padding: 0;
+			display: flex;
+			width: 100%;
+			align-items: stretch;
+		}
+
+		.bookmark-title {
+			font-size: 0.85em;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			height: 1.75em;
+			white-space: nowrap;
+		}
+
+		.bookmark-text {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.bookmark-info {
+			flex: 4 1 180px;
+			padding: 12px 14px 14px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.bookmark-image {
+			width: 33%;
+			flex: 1 1 180px;
+			display: block;
+			position: relative;
+			object-fit: cover;
+			border-radius: 1px;
+		}
+
+		.bookmark-description {
+			color: rgba(55, 53, 47, 0.6);
+			font-size: 0.75em;
+			overflow: hidden;
+			max-height: 4.5em;
+			word-break: break-word;
+		}
+
+		.bookmark-href {
+			font-size: 0.75em;
+			margin-top: 0.25em;
+		}
+
+		.sans {
+			font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+		}
+
+		.code {
+			font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+		}
+
+		.serif {
+			font-family: Lyon-Text, Georgia, ui-serif, serif;
+		}
+
+		.mono {
+			font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+		}
+
+		.pdf .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR';
+		}
+
+		.pdf .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.pdf .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR';
+		}
+
+		.pdf .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.highlight-default {
+			color: rgba(55, 53, 47, 1);
+		}
+
+		.highlight-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.highlight-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.highlight-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.highlight-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.highlight-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.highlight-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.highlight-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.highlight-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.highlight-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.highlight-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.highlight-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.highlight-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.highlight-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.highlight-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.highlight-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.highlight-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.highlight-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.highlight-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.block-color-default {
+			color: inherit;
+			fill: inherit;
+		}
+
+		.block-color-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.block-color-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.block-color-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.block-color-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.block-color-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.block-color-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.block-color-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.block-color-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.block-color-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.block-color-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.block-color-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.block-color-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.block-color-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.block-color-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.block-color-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.block-color-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.block-color-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.block-color-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.select-value-color-interactiveBlue {
+			background-color: rgba(35, 131, 226, .07);
+		}
+
+		.select-value-color-pink {
+			background-color: rgba(245, 224, 233, 1);
+		}
+
+		.select-value-color-purple {
+			background-color: rgba(232, 222, 238, 1);
+		}
+
+		.select-value-color-green {
+			background-color: rgba(219, 237, 219, 1);
+		}
+
+		.select-value-color-gray {
+			background-color: rgba(227, 226, 224, 1);
+		}
+
+		.select-value-color-translucentGray {
+			background-color: rgba(255, 255, 255, 0.0375);
+		}
+
+		.select-value-color-orange {
+			background-color: rgba(250, 222, 201, 1);
+		}
+
+		.select-value-color-brown {
+			background-color: rgba(238, 224, 218, 1);
+		}
+
+		.select-value-color-red {
+			background-color: rgba(255, 226, 221, 1);
+		}
+
+		.select-value-color-yellow {
+			background-color: rgba(253, 236, 200, 1);
+		}
+
+		.select-value-color-blue {
+			background-color: rgba(211, 229, 239, 1);
+		}
+
+		.select-value-color-pageGlass {
+			background-color: undefined;
+		}
+
+		.select-value-color-washGlass {
+			background-color: undefined;
+		}
+
+		.checkbox {
+			display: inline-flex;
+			vertical-align: text-bottom;
+			width: 16;
+			height: 16;
+			background-size: 16px;
+			margin-left: 2px;
+			margin-right: 5px;
+		}
+
+		.checkbox-on {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+
+		.checkbox-off {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+	</style>
+</head>
+
+<body>
+	<article id="06c50c04-b400-4b61-aba6-c1594e269ec5" class="page sans">
+		<header>
+			<div class="page-header-icon undefined"><span class="icon">🍔</span></div>
+			<h1 class="page-title">Hamburg - Praktikum - Flowers For Society</h1>
+			<p class="page-description"></p>
+		</header>
+		<div class="page-body">
+			<h3 id="4f403b54-5188-482f-a288-8a457a735b31" class="">Bewerbung:</h3>
+			<figure id="5e1112c0-49f4-4e09-9b3a-320d5d7077e1">
+				<div class="source"><a
+						href="Hamburg%20-%20Praktikum%20-%20Flowers%20For%20Society%2006c50c04b4004b61aba6c1594e269ec5/Lebenslauf_Michel_Heimes.pdf">Lebenslauf_Michel_Heimes.pdf</a>
+				</div>
+			</figure>
+			<figure id="f8036323-f2cd-4a72-a370-91e94e5dc773">
+				<div class="source"><a
+						href="Hamburg%20-%20Praktikum%20-%20Flowers%20For%20Society%2006c50c04b4004b61aba6c1594e269ec5/Motivationsschreiben_Michel_Heimes.pdf">Motivationsschreiben_Michel_Heimes.pdf</a>
+				</div>
+			</figure>
+			<h3 id="2a4c3057-4e6b-448a-bc9e-35218d8502f7" class="">Stadtteile Go-To (Wohnen):</h3>
+			<ul id="219ca774-89d2-44e3-b77b-1bf19f20917b" class="bulleted-list">
+				<li style="list-style-type:disc">Alles in unmittelbarer Nähe westlich von der Alster: Eimsbüttel,
+					Hoheluft, Rotherbaum, Altona Nord, Altona, Sternschanze, St. Georg (teilsabhängig), Ottensen<ul
+						id="7e4f2c22-9dca-4a87-a605-d682d66de52c" class="bulleted-list">
+						<li style="list-style-type:circle">Schwer zu bekommen + teuer</li>
+					</ul>
+				</li>
+			</ul>
+			<ul id="b4873597-8b29-4544-9632-7ecbfd486f2d" class="bulleted-list">
+				<li style="list-style-type:disc">Hohenfelde (Ostufer der Alster), Uhlenhorst und Eppendorf sind auch
+					sehr beliebt</li>
+			</ul>
+			<ul id="60dc8f5f-e90b-4367-8709-15ade77f82ec" class="bulleted-list">
+				<li style="list-style-type:disc">Eppendorf + Pöseldorf wohl nice aber sehr teuer</li>
+			</ul>
+			<ul id="dea4eebe-9f1b-45a8-932a-3f4874aa1c57" class="bulleted-list">
+				<li style="list-style-type:disc">Um Altona herum (eher östlich von Altona Bahnhof) “ist auch sehr
+					chillig”<ul id="bddabae9-5cf1-474b-b018-54266ad50ac8" class="bulleted-list">
+						<li style="list-style-type:circle">Von Altona kommt man wohl gut zu Dammtor, was in der Nähe vom
+							Praktikum ist.</li>
+					</ul>
+				</li>
+			</ul>
+			<figure id="507ae6a2-eeff-4076-8aa9-6d5f9cf06d97" class="image"><a
+					href="Hamburg%20-%20Praktikum%20-%20Flowers%20For%20Society%2006c50c04b4004b61aba6c1594e269ec5/Hamburg-Go-To.jpeg"><img
+						style="width:473px"
+						src="Hamburg%20-%20Praktikum%20-%20Flowers%20For%20Society%2006c50c04b4004b61aba6c1594e269ec5/Hamburg-Go-To.jpeg" /></a>
+			</figure>
+			<h3 id="9253c012-cb1f-4902-8bee-79cf994759a8" class="">Stadtteile No-Go (Wohnen) - hiervon fernhalten:</h3>
+			<ul id="91a33b10-5c8d-4032-8c19-b68bf31f4eb4" class="bulleted-list">
+				<li style="list-style-type:disc">St. Georg (teilabhängig), Barmbek, Billbrook, Wilhelmsburg, Billstedt,
+					Borgfelde, Hamm (je nach Lage)</li>
+			</ul>
+			<ul id="5341dbed-75b4-4ce9-b056-6f0eb79e52ea" class="bulleted-list">
+				<li style="list-style-type:disc">Südlich der Elbe (Assi Gegend)</li>
+			</ul>
+			<p id="c28753f1-a591-47df-88e5-1fa44144a36a" class="">
+			</p>
+			<h3 id="8b30832c-dff2-4085-9185-998a31c38a71" class="">Tickets buchen Hamburg-Köln:</h3>
+			<ul id="58c0d0db-d513-41b6-990e-8cea514ff0da" class="bulleted-list">
+				<li style="list-style-type:disc">Mind. 8 Tage vor Abfahrt buchen für günstigere Preise 15-30€ ansonsten
+					oft 40-60€!</li>
+			</ul>
+			<p id="5037618b-1a20-42fb-b480-f1f93c8fce3a" class="">
+			</p>
+			<h3 id="695612d2-551e-4e0e-a9e4-48a8b60cd62b" class="">Versicherung während des Praktikums:</h3>
+			<ul id="4e28040d-b26d-4dc7-a365-2df95ac815aa" class="bulleted-list">
+				<li style="list-style-type:disc">In Familienversicherung bleiben?<ul
+						id="b38eb06d-28de-4c3b-a363-2be71ec91fd3" class="bulleted-list">
+						<li style="list-style-type:circle">Nein, während dieses Praktikums nicht möglich, da Verdienst
+							zu hoch (dürfte nicht über ), auf Arbeitsstunden wird wohl nicht (so genau) geschaut.<ul
+								id="41867167-4066-4c43-83fc-a2bd07106e5f" class="bulleted-list">
+								<li style="list-style-type:square">Versicherung innerhalb von Werkstudentenvertrag
+									möglich! - Kosten: ca. 120€/ Monat</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<ul id="8d1c5c6e-b467-4186-a65e-89b28e529d30" class="bulleted-list">
+				<li style="list-style-type:disc">Erhalte ich weiterhin Kindergeld?</li>
+			</ul>
+			<ul id="6773b226-5235-4dc8-8672-9206cf73e390" class="bulleted-list">
+				<li style="list-style-type:disc">Unklarheit: Gelte ich als Werkstudent oder nicht? <a
+						href="https://www.tk.de/resource/blob/2033352/0154ec90ff871b37e4f3b1a14a4918cc/beratungsblatt-beschaeftigung-von-studenten-data.pdf">Quelle
+						der TK mit Infos</a>
+					<ul id="71a7be04-6794-4fba-9c11-6a5ef778e446" class="bulleted-list">
+						<li style="list-style-type:circle">Falls Werkstudent: Wöchentliche Arbeitszeit von &gt;20h wird
+							zwar überschritten, trotzdem sollte <strong>26-Wochen-Regelung</strong> greifen - wodurch
+							man Werkstudenten-Status behält:<blockquote id="d64bfed5-3cad-4976-ad1a-a4db87a87056"
+								class="">Der Status eines Werkstudenten bleibt erhalten, wenn das Ende des Zeitraums, in
+								dem der
+								Student mehr als 20 Stunden pro Woche arbeitet, bereits im Voraus bekannt ist und wenn
+								er innerhalb eines Zeitjahres (nicht Kalenderjahr) an höchstens 26 Wochen mit einer
+								Wochenarbeitszeit von mehr als 20 Stunden arbeitet.</blockquote>
+							<ul id="49657250-4b4e-4b86-943b-a598c1fb3993" class="bulleted-list">
+								<li style="list-style-type:square">Als Regelung gilt, dass diese Beschäftigung
+									grundsätzlich <strong>versicherungsfrei in der Kranken-, Pflege- und
+										Arbeitslosenversicherung </strong>ist.<strong> In der
+										Rentenversicherung</strong> <strong>besteht</strong> als Werkstudent
+									grundsätzlich <strong>Versicherungspflicht</strong>.</li>
+							</ul>
+						</li>
+					</ul>
+					<ul id="76d07828-8d59-44d4-9e98-bcd1bd930605" class="bulleted-list">
+						<li style="list-style-type:circle">Allerdings: Die <strong>Werkstudentenregelung findet keine
+								Anwendung</strong> bei einer Beschäftigung, die <strong>nicht während des
+								Studiums</strong> ausgeübt wird. Hierzu zählt:<ul
+								id="c2fa1bea-9297-4126-90e1-bfc58d9cce6c" class="bulleted-list">
+								<li style="list-style-type:square">eine Unterbrechung des Studiums durch ein
+									Urlaubssemester</li>
+							</ul>
+						</li>
+					</ul>
+					<p id="b4d54f65-00a9-4e1d-9abb-27af931aa232" class="">
+					</p>
+					<ul id="27f565ec-3759-4aea-aae7-5ddaa3598373" class="bulleted-list">
+						<li style="list-style-type:circle">Welche Sozialversicherungsbeiträge fallen an und wer zahlt
+							welchen Anteil (Arbeitgeber &amp; -nehmer)?
+							Normale Prozentsätze:<ul id="55e3399d-f0d9-49e0-ad94-76a7b759169d" class="bulleted-list">
+								<li style="list-style-type:square">14,6% Krankenversicherung (je 7,3% pro Arbeitgeber
+									&amp; -nehmer)</li>
+							</ul>
+							<ul id="de48a53c-7d16-458a-969d-9b0cb3b7567b" class="bulleted-list">
+								<li style="list-style-type:square">18,6% Rentenversicherung (je 9,3%)</li>
+							</ul>
+							<ul id="c96a44ff-ff28-4def-baaa-155340ca04b5" class="bulleted-list">
+								<li style="list-style-type:square">2,4% Arbeitslosenversicherung (je 1,2%)</li>
+							</ul>
+							<ul id="8480f9a9-8f3a-46c7-b583-f45a89572120" class="bulleted-list">
+								<li style="list-style-type:square">3,05% Pflegeversicherung (je 1,525%)</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<h3 id="0f06402d-36a0-4a23-bb0a-8b58980a7745" class="">Thema Steuern:</h3>
+			<ul id="abb9849c-8400-4df8-b4af-a73d34e4dc05" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>Fällt Einkommenssteuer an?</strong>
+					Verdienst in 5 Monaten 6.000€ + evtl. ein wenig durch Sneaker-Business und damit unterhalb von
+					Einkommenssteuer-Freigrenze von knapp 10.000€!<ul id="bacccf69-d097-4218-9450-f9e0144bea51"
+						class="bulleted-list">
+						<li style="list-style-type:circle">Lohnsteuer muss erst einmal gezahlt werden, dieses Geld
+							erhalte ich dann aber vermutlich komplett mit der Einkommensteuererklärung zurück!</li>
+					</ul>
+				</li>
+			</ul>
+			<ul id="09889584-fe7e-4313-95ab-ce04de165623" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>Gespräch mit Fr. Kleinschmidt:</strong>
+					<ul id="7026ea1a-2a15-4595-8a9b-d81bb35a68e5" class="bulleted-list">
+						<li style="list-style-type:circle">Bestätigung, dass nach den <a
+								href="Hamburg%20-%20Praktikum%20-%20Flowers%20For%20Society%2006c50c04b4004b61aba6c1594e269ec5.html">hier
+								drüber</a> beschriebenen Erkenntnissen.</li>
+					</ul>
+					<ul id="9fdad82a-e91e-4c37-8e20-12414d978037" class="bulleted-list">
+						<li style="list-style-type:circle">“<strong>Werbungskostenpauschbetrag</strong>” 1.000€ darf
+							jeder Arbeitnehmer abziehen, wodurch sich das zu versteuernde Einkommen um diesen Betrag
+							verringert.<ul id="214081fb-b7bb-45b4-b41f-326a705cb2e0" class="bulleted-list">
+								<li style="list-style-type:square">Beispiel:
+									Habe ich ein Einkommen aus dem Angestelltenverhältnis i. H. v. 6.000€, sowie
+									verdiene ich auf’s Jahr gesehen 4.500€ durch nebenberufliche (gewerbliche)
+									Einkünfte, so liegen meine Gesamteinnahmen mit 10.500€ eigentlich über dem
+									Existenzminimum und ich müsste auf den Differenzbetrag Einkommensteuer zahlen. Durch
+									den <strong>Werbungskostenpauschbetrag</strong> werden von den 6.000€ (aus dem
+									Angestelltenverhältnis) allerdings standardmäßig 1.000€ abgezogen, sodass mein zu
+									versteuerndes Einkommen mit 9.500€ unterhalb des Existenzminimums liegt und damit
+									steuerfrei ist.</li>
+							</ul>
+						</li>
+					</ul>
+					<ul id="b85dc397-c199-4c1c-986f-9fdc3485e458" class="bulleted-list">
+						<li style="list-style-type:circle">Weitere “<strong>Werbungskosten</strong>” können, falls
+							angefallen, angegeben werden.
+							Falls ich drohe mit meinen Einkünften in eine andere Steuerklasse zu rutschen, in der ich z.
+							B. weniger Geld bei der Einkommenssteuererklärung zurück bekomme als ich bei der
+							Lohnsteuererklärung abgebe, macht es Sinn sich noch einmal mit der Regelung der
+							“<strong>Verpflegungsmehraufwendung</strong>” vertraut zu machen (z. B. Fr. Kleinschmidt). →
+							Stichwort: “<strong>doppelte Haushaltsführung</strong>” (da Wohnung in HH <em>und</em> in
+							Köln)
+							Dieses Abrutschen in eine andere Steuerklasse ist dann der Fall, wenn die Gesamteinkünfte
+							aus dem Angestelltenverhältnis/ beruflichen Einkünften und nebenberuflichen Einkünften auf’s
+							Jahr gesehen mehr als das Existenzminimum von ca./ knapp 10.000€ betragen. → evtl. auch mehr
+							in 2023!</li>
+					</ul>
+				</li>
+			</ul>
+			<h3 id="16e35272-ea6e-4d99-9af8-794e49ecd860" class="">Möglichkeiten Wohnung (oder zumindest Anhaltspunkte):
+			</h3>
+			<ul id="47c78e2b-59fc-475c-9528-d762d7a775e5" class="bulleted-list">
+				<li style="list-style-type:disc">Lür kennt eine angehende Immobilienmaklerin aus HH</li>
+			</ul>
+			<ul id="22c39e6c-be1f-4b75-886b-e3adc4b17ca2" class="bulleted-list">
+				<li style="list-style-type:disc">Übergangsunterkunft bei Freund von Lürs Mutter</li>
+			</ul>
+			<ul id="0c86e6a0-6895-4a1b-8776-b6939304b9f1" class="bulleted-list">
+				<li style="list-style-type:disc">Übergangsunterkunft bei Pias Mutter + Pia (Lottes Freundin) - relativ
+					weit draußen</li>
+			</ul>
+			<ul id="568afa50-4d7d-4142-9481-7e623a9edd35" class="bulleted-list">
+				<li style="list-style-type:disc">Bekannte in Hamburg: Jonas, Louis, Noemi, Stella, Grace</li>
+			</ul>
+			<ul id="8d349ace-a124-4a1a-bdcc-4d6a5c08f9db" class="bulleted-list">
+				<li style="list-style-type:disc">Inserat (?) schalten bei <a
+						href="http://WG-Gesucht.de">WG-Gesucht.de</a> bzw. dort Leute anschreiben</li>
+			</ul>
+			<ul id="8b1d3b62-dab6-44d0-8e5a-11681199e391" class="bulleted-list">
+				<li style="list-style-type:disc">Instagram-Aufruf</li>
+			</ul>
+			<p id="ee143333-c214-4fb3-9cb3-5289b0893c7a" class="">
+			</p>
+			<h3 id="b38d8d63-24dd-4219-8bfe-c08795884970" class="">„Packliste“ - bzw. alles an das man nicht direkt
+				denken würde:</h3>
+			<ul id="359fd689-60d1-4d78-8361-75c94a2cc649" class="bulleted-list">
+				<li style="list-style-type:disc">Paketband + Paketbandroller</li>
+			</ul>
+			<ul id="5fcf5d56-3439-463d-bc43-dd4374776495" class="bulleted-list">
+				<li style="list-style-type:disc">Drucker</li>
+			</ul>
+			<ul id="c385aedf-43c0-4a96-a19f-058da2d1fdf6" class="bulleted-list">
+				<li style="list-style-type:disc">Nähe der Wohnung wenn möglich zu UPS/ DHL</li>
+			</ul>
+			<ul id="cf76ff98-f86c-43f8-b613-9ccecd821b63" class="bulleted-list">
+				<li style="list-style-type:disc">Yoga-Matte</li>
+			</ul>
+			<ul id="6203938b-7262-401e-ae38-b84a214e45f2" class="bulleted-list">
+				<li style="list-style-type:disc">Pizza-Ofen + Zubehör</li>
+			</ul>
+			<p id="ee7de20e-3126-49ba-bbc3-98661c1f6d99" class="">
+			</p>
+			<h3 id="59988127-8207-400a-8b27-972c3da20bda" class="">Leuten schreiben, sobald ich in HH angekommen bin:
+			</h3>
+			<ul id="04a77d9e-13b9-4b38-9fd6-a4b49be204c0" class="bulleted-list">
+				<li style="list-style-type:disc">Dante (er ist ab Mitte März wieder dort)</li>
+			</ul>
+			<ul id="67018fcc-a1bc-4dc4-9e08-d8dec6e31e44" class="bulleted-list">
+				<li style="list-style-type:disc">Noemi</li>
+			</ul>
+			<ul id="b37d18b8-5e2b-4a1d-ac7f-a6593ae82f26" class="bulleted-list">
+				<li style="list-style-type:disc">Jonas</li>
+			</ul>
+			<ul id="e0c8b65c-46c4-4c60-8258-a36e6fa4b567" class="bulleted-list">
+				<li style="list-style-type:disc">Louis</li>
+			</ul>
+			<ul id="a4331eb0-a1f3-4f9a-b858-ef57e872d98c" class="bulleted-list">
+				<li style="list-style-type:disc">Stella</li>
+			</ul>
+			<p id="5d43003b-172c-4d80-81ad-df3e74f01329" class="">
+			</p>
+			<h3 id="68ad96bb-4ce0-44c0-a7c6-a6f571a66c84" class="">Ausgaben Leben:</h3>
+			<table id="c40ad3d2-0764-404e-9f27-5203f2d90526" class="simple-table">
+				<tbody>
+					<tr id="7c9cb0b9-aad2-4775-968d-500553f48e44">
+						<td id="pabW" class="">Tag</td>
+						<td id="gf_=" class="" style="width:108px">Ausgabe Nr. 1</td>
+						<td id="sp[R" class="" style="width:99px">Nr. 1 Grund</td>
+						<td id="ksFF" class="" style="width:110px">Ausgabe Nr. 2</td>
+						<td id="vDgH" class="" style="width:108px">Nr. 2 Grund</td>
+						<td id="xf?p" class="" style="width:111px">Ausgabe Nr. 3</td>
+						<td id="N?c^" class="" style="width:106px">Nr. 3 Grund</td>
+					</tr>
+					<tr id="19af9c19-1514-47dc-b1ae-f807e3bf4a97">
+						<td id="pabW" class="">Mo., 27.02.2023</td>
+						<td id="gf_=" class="" style="width:108px">15€</td>
+						<td id="sp[R" class="" style="width:99px">Einkauf (Grundversorgung)</td>
+						<td id="ksFF" class="" style="width:110px">10€</td>
+						<td id="vDgH" class="" style="width:108px">Miles FAIL</td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="6f91429b-94a2-45ff-ba37-6f41d3cdfa5f">
+						<td id="pabW" class="">Di., 28.02.2023</td>
+						<td id="gf_=" class="" style="width:108px">18€</td>
+						<td id="sp[R" class="" style="width:99px">Bowl mit Jungs</td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="c217f786-79dc-476b-a289-0ecbe1f7ece0">
+						<td id="pabW" class="">Mi., 01.03.2023</td>
+						<td id="gf_=" class="" style="width:108px">14€</td>
+						<td id="sp[R" class="" style="width:99px">Mittagessen</td>
+						<td id="ksFF" class="" style="width:110px">7,50€</td>
+						<td id="vDgH" class="" style="width:108px">Drinks mit Noemi</td>
+						<td id="xf?p" class="" style="width:111px">2,33€</td>
+						<td id="N?c^" class="" style="width:106px">Bahnticket</td>
+					</tr>
+					<tr id="79214927-240a-4c95-ab12-40e9d317930b">
+						<td id="pabW" class="">Do., 02.03.2023</td>
+						<td id="gf_=" class="" style="width:108px">10€</td>
+						<td id="sp[R" class="" style="width:99px">Mittagessen</td>
+						<td id="ksFF" class="" style="width:110px">38€</td>
+						<td id="vDgH" class="" style="width:108px">Einkauf (Grundversorgung)</td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="3d6ea698-db21-42d3-957c-3e37346a81cf">
+						<td id="pabW" class="">Fr., 03.03.2023</td>
+						<td id="gf_=" class="" style="width:108px">11€</td>
+						<td id="sp[R" class="" style="width:99px">Mittagessen</td>
+						<td id="ksFF" class="" style="width:110px">11€</td>
+						<td id="vDgH" class="" style="width:108px">Einkauf (italienischer Supermarkt)</td>
+						<td id="xf?p" class="" style="width:111px">6€</td>
+						<td id="N?c^" class="" style="width:106px">Bahnticket + Bike Fee</td>
+					</tr>
+					<tr id="ef8aa2a0-4c58-440b-b4d8-50ad2dd93a68">
+						<td id="pabW" class="">Sa., 04.03.2023</td>
+						<td id="gf_=" class="" style="width:108px">4€</td>
+						<td id="sp[R" class="" style="width:99px">Einkauf (Klopapier)</td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="eee1f2f6-1149-41c8-9ed4-12db4bc6cddf">
+						<td id="pabW" class="">So., 05.03.2023</td>
+						<td id="gf_=" class="" style="width:108px">31€</td>
+						<td id="sp[R" class="" style="width:99px">Jill - Abendessen</td>
+						<td id="ksFF" class="" style="width:110px">2,33€</td>
+						<td id="vDgH" class="" style="width:108px">Bahnticket</td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="5722cbdc-5ac1-4fbd-849d-75d50d7b3bd8">
+						<td id="pabW" class=""><strong>Week Nr. 1</strong></td>
+						<td id="gf_=" class="" style="width:108px"><strong>103€</strong></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"><strong>69€</strong></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"><strong>8€</strong></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="401481a2-7a32-4797-b8b9-248d7dd2db1b">
+						<td id="pabW" class=""><strong>Week Nr. 1 insg.</strong></td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"><strong>180€</strong></td>
+					</tr>
+					<tr id="140eb095-865e-4b94-baa5-0b291ee8da9d">
+						<td id="pabW" class="">Mo., 06.03.2023</td>
+						<td id="gf_=" class="" style="width:108px">13€</td>
+						<td id="sp[R" class="" style="width:99px">Mittagessen (Pizza - Spaccaforno)</td>
+						<td id="ksFF" class="" style="width:110px">12€</td>
+						<td id="vDgH" class="" style="width:108px">Einkauf (Grundversorgung - Rewe)</td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="e9a93e41-d467-4b22-80b7-2affd8f0e6cd">
+						<td id="pabW" class="">Di., 07.03.2023</td>
+						<td id="gf_=" class="" style="width:108px">10€</td>
+						<td id="sp[R" class="" style="width:99px">Mittagessen (Brauhaus)</td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="cd73c63a-2e97-4aa4-bdbb-bf975c374c67">
+						<td id="pabW" class="">Mi., 08.03.2023</td>
+						<td id="gf_=" class="" style="width:108px">13€</td>
+						<td id="sp[R" class="" style="width:99px">Mittagessen (5Guys) + Getränk abends nach
+							Intervalllauf</td>
+						<td id="ksFF" class="" style="width:110px">16€</td>
+						<td id="vDgH" class="" style="width:108px">Einkauf für Frühst. (DM)</td>
+						<td id="xf?p" class="" style="width:111px">10€</td>
+						<td id="N?c^" class="" style="width:106px">Versandlabel (Gasflasche)</td>
+					</tr>
+					<tr id="4c9b32a0-1180-47ff-91f0-4ec88f2168f5">
+						<td id="pabW" class="">Do., 09.03.2023</td>
+						<td id="gf_=" class="" style="width:108px">14€</td>
+						<td id="sp[R" class="" style="width:99px">Mittagessen (L’Osteria)</td>
+						<td id="ksFF" class="" style="width:110px">5€</td>
+						<td id="vDgH" class="" style="width:108px">Einkauf (Grundversorgung - Rewe)</td>
+						<td id="xf?p" class="" style="width:111px">10€</td>
+						<td id="N?c^" class="" style="width:106px">Geschenk Nati</td>
+					</tr>
+					<tr id="7baee7e5-54b0-43c2-b6be-c3c03c156acc">
+						<td id="pabW" class="">Fr., 10.03.2023</td>
+						<td id="gf_=" class="" style="width:108px">10€</td>
+						<td id="sp[R" class="" style="width:99px">Mittagessen (Brauhaus)</td>
+						<td id="ksFF" class="" style="width:110px">4€</td>
+						<td id="vDgH" class="" style="width:108px">Einkauf (Grundversorgung - Rewe)</td>
+						<td id="xf?p" class="" style="width:111px">46€</td>
+						<td id="N?c^" class="" style="width:106px">Essen gehen mit Luna (eingeladen)</td>
+					</tr>
+					<tr id="a39d4e31-460c-42c3-8d6e-96bae38ed40a">
+						<td id="pabW" class="">Sa., 11.03.2023</td>
+						<td id="gf_=" class="" style="width:108px">17€</td>
+						<td id="sp[R" class="" style="width:99px">Einkauf (Grundversorgung - Kaufland)</td>
+						<td id="ksFF" class="" style="width:110px">7€</td>
+						<td id="vDgH" class="" style="width:108px">Bahnticket</td>
+						<td id="xf?p" class="" style="width:111px">24€</td>
+						<td id="N?c^" class="" style="width:106px">Dinner (Lokmam Köz)</td>
+					</tr>
+					<tr id="f5490aff-1958-471e-9c11-3a475c39bcbc">
+						<td id="pabW" class="">So., 12.03.2023</td>
+						<td id="gf_=" class="" style="width:108px">2€</td>
+						<td id="sp[R" class="" style="width:99px">Bäckerei</td>
+						<td id="ksFF" class="" style="width:110px">6€</td>
+						<td id="vDgH" class="" style="width:108px">Bahnticket</td>
+						<td id="xf?p" class="" style="width:111px">4€</td>
+						<td id="N?c^" class="" style="width:106px">2x Brezeln</td>
+					</tr>
+					<tr id="2e61f41a-9612-4e8c-8126-64bf1fd7840e">
+						<td id="pabW" class=""><strong>Week Nr. 2</strong></td>
+						<td id="gf_=" class="" style="width:108px"><strong>79€</strong></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"><strong>50€</strong></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"><strong>93,50€</strong></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="0bda101a-5de9-4b28-b131-b1c234a4bd8c">
+						<td id="pabW" class=""><strong>Sonstige Ausgaben</strong></td>
+						<td id="gf_=" class="" style="width:108px">45€ (noch ohne Fahrt CGN-HH nach Ostern!)</td>
+						<td id="sp[R" class="" style="width:99px">Züge HH-CGN-HH (letztes WE März + Ostern)</td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="366be84c-2f9d-4748-9b27-fb0703bc7b31">
+						<td id="pabW" class=""><strong>Week Nr. 2 insg.</strong></td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"><strong>269€</strong></td>
+					</tr>
+					<tr id="c9fd8939-a46e-4aed-b944-fdec0b8533c7">
+						<td id="pabW" class="">Mo., 13.03.2023</td>
+						<td id="gf_=" class="" style="width:108px">13€</td>
+						<td id="sp[R" class="" style="width:99px">Mittagessen (Bowl)</td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="1f0692f0-9c8e-4f71-93a7-85e9198a0057">
+						<td id="pabW" class="">Di., 14.03.2023</td>
+						<td id="gf_=" class="" style="width:108px">11€</td>
+						<td id="sp[R" class="" style="width:99px">Mittagessen (5Guys)</td>
+						<td id="ksFF" class="" style="width:110px">1€</td>
+						<td id="vDgH" class="" style="width:108px">Hefe (Einkauf)</td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="bc8e7632-82ba-4068-ad23-20c98eca3bd3">
+						<td id="pabW" class="">Mi., 15.03.2023</td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="db822e73-2af1-4922-a958-202faad87ca2">
+						<td id="pabW" class="">Do., 16.03.2023</td>
+						<td id="gf_=" class="" style="width:108px">12€</td>
+						<td id="sp[R" class="" style="width:99px">Mittagessen (L´Osteria)</td>
+						<td id="ksFF" class="" style="width:110px">19€</td>
+						<td id="vDgH" class="" style="width:108px">Einkauf (Pizza)</td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="ddc7d207-5dcf-4d02-a171-6a685637a037">
+						<td id="pabW" class="">Fr., 17.03.2023</td>
+						<td id="gf_=" class="" style="width:108px">9€</td>
+						<td id="sp[R" class="" style="width:99px">Mittagessen (Brauhaus)</td>
+						<td id="ksFF" class="" style="width:110px">14€</td>
+						<td id="vDgH" class="" style="width:108px">Eintritt Party + 1x Getränk</td>
+						<td id="xf?p" class="" style="width:111px">7€</td>
+						<td id="N?c^" class="" style="width:106px">2x Bahntickets</td>
+					</tr>
+					<tr id="afbfb338-8e75-49fd-ba4c-7b1cf8bad33f">
+						<td id="pabW" class="">Sa., 18.03.2023</td>
+						<td id="gf_=" class="" style="width:108px">15€</td>
+						<td id="sp[R" class="" style="width:99px">Einkauf (DM - Müsli)</td>
+						<td id="ksFF" class="" style="width:110px">11€</td>
+						<td id="vDgH" class="" style="width:108px">Einkauf (Grundversorgung - Edeka)</td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="b7ccfe42-2987-47b2-b604-1ea174bc629b">
+						<td id="pabW" class="">So., 19.03.2023</td>
+						<td id="gf_=" class="" style="width:108px">30€</td>
+						<td id="sp[R" class="" style="width:99px">Mittagessen (Blockhaus - Steak)</td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="f2c31fda-bbcf-4349-8fe8-cfc0bf8f6c28">
+						<td id="pabW" class=""><strong>Week Nr. 3</strong></td>
+						<td id="gf_=" class="" style="width:108px"><strong>96€</strong></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"><strong>45€</strong></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"><strong>7€</strong></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="aa88afdb-27cb-44cb-894b-c9934d98beaa">
+						<td id="pabW" class=""><strong>Sonstige Ausgaben</strong></td>
+						<td id="gf_=" class="" style="width:108px">26€</td>
+						<td id="sp[R" class="" style="width:99px">Fahrt CGN-HH nach Ostern!</td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="18cc3ce6-0afb-4e1b-9e12-3a3b975bf55a">
+						<td id="pabW" class=""><strong>Week Nr. 3 insg.</strong></td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"><strong>174€</strong></td>
+					</tr>
+					<tr id="6d28eff7-ada1-4b71-96fc-291964c802fd">
+						<td id="pabW" class="">Mo., 20.03.2023</td>
+						<td id="gf_=" class="" style="width:108px">12€</td>
+						<td id="sp[R" class="" style="width:99px">Mittagessen (Europapassage - Persisch)</td>
+						<td id="ksFF" class="" style="width:110px">7€</td>
+						<td id="vDgH" class="" style="width:108px">Einkauf (DM - Müsli)</td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="1fa6220c-4a22-4281-bb8f-06cb9b8193bb">
+						<td id="pabW" class="">Di., 21.03.2023</td>
+						<td id="gf_=" class="" style="width:108px">12€</td>
+						<td id="sp[R" class="" style="width:99px">Mittagessen (Europapassage - Persisch)</td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="2cb5e166-4bb9-4489-a24e-7fa6c70b3016">
+						<td id="pabW" class="">Mi., 22.03.2023</td>
+						<td id="gf_=" class="" style="width:108px">3€</td>
+						<td id="sp[R" class="" style="width:99px">Brezeln FFM</td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="65ccd2b0-10da-439d-a377-c9d0379023f4">
+						<td id="pabW" class="">Do., 23.03.2023</td>
+						<td id="gf_=" class="" style="width:108px">2€</td>
+						<td id="sp[R" class="" style="width:99px">Brezeln FFM</td>
+						<td id="ksFF" class="" style="width:110px">10€</td>
+						<td id="vDgH" class="" style="width:108px">Drinks (Hallmackenreuther)</td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="97a01331-6f3a-4d82-861a-e2b72bc4f7b7">
+						<td id="pabW" class="">Fr., 24.03.2023</td>
+						<td id="gf_=" class="" style="width:108px">7€</td>
+						<td id="sp[R" class="" style="width:99px">Einkauf (Rewe &amp; Penny)</td>
+						<td id="ksFF" class="" style="width:110px">30€</td>
+						<td id="vDgH" class="" style="width:108px">Drinks (Abends in Köln)</td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="5f5daf41-3920-4b77-8da8-96e25bd8b8da">
+						<td id="pabW" class="">Sa., 25.03.2023</td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="4c637611-4cef-43ba-b144-676d0ce5c988">
+						<td id="pabW" class="">So., 26.03.2023</td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="3cc854bc-c7ed-4186-b4da-6e454a565b75">
+						<td id="pabW" class=""><strong>Week Nr. 4</strong></td>
+						<td id="gf_=" class="" style="width:108px"><strong>36€</strong></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"><strong>47€</strong></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="c5acc6c7-18ca-46bb-8686-c57c470a1462">
+						<td id="pabW" class=""><strong>Sonstige Ausgaben</strong></td>
+						<td id="gf_=" class="" style="width:108px">26€</td>
+						<td id="sp[R" class="" style="width:99px">Zugticket FFM-CGN</td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="b58aa879-4c86-43ab-8ca9-ebdad99b2871">
+						<td id="pabW" class=""><strong>Week Nr. 4 insg.</strong></td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"><strong>109€</strong></td>
+					</tr>
+					<tr id="ec839499-d264-4be5-bd5f-963968fd8640">
+						<td id="pabW" class="">Mo., 27.03.2023</td>
+						<td id="gf_=" class="" style="width:108px">9€</td>
+						<td id="sp[R" class="" style="width:99px">Mittagessen (5Guys)</td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="567097cc-c68d-4602-85ec-16471c919587">
+						<td id="pabW" class="">Di., 28.03.2023</td>
+						<td id="gf_=" class="" style="width:108px">1€</td>
+						<td id="sp[R" class="" style="width:99px">Trinkgeld Paketshop</td>
+						<td id="ksFF" class="" style="width:110px">2.50€</td>
+						<td id="vDgH" class="" style="width:108px">Bike - Stadtrad</td>
+						<td id="xf?p" class="" style="width:111px">7.50€</td>
+						<td id="N?c^" class="" style="width:106px">Mittagessen (Brauhaus)</td>
+					</tr>
+					<tr id="c79e43d3-76bd-43ea-9612-53ac02c7a98d">
+						<td id="pabW" class="">Mi., 29.03.2023</td>
+						<td id="gf_=" class="" style="width:108px">0.50€</td>
+						<td id="sp[R" class="" style="width:99px">Einkauf (Jogurt)</td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="9bd6a227-7187-48b6-ab6a-69195d3d9b53">
+						<td id="pabW" class="">Do., 30.03.2023</td>
+						<td id="gf_=" class="" style="width:108px">13€</td>
+						<td id="sp[R" class="" style="width:99px">Mittagessen (L’Osteria)</td>
+						<td id="ksFF" class="" style="width:110px">5€</td>
+						<td id="vDgH" class="" style="width:108px">Tickets Bahn 2x</td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="30d483ac-e9f9-4213-8237-9a5cf3fae5b8">
+						<td id="pabW" class="">Fr., 31.03.2023</td>
+						<td id="gf_=" class="" style="width:108px">-</td>
+						<td id="sp[R" class="" style="width:99px">-</td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="8ba1a3b0-7436-4c7e-bc9e-cd94874fb903">
+						<td id="pabW" class="">Sa., 01.04.2023</td>
+						<td id="gf_=" class="" style="width:108px">3€</td>
+						<td id="sp[R" class="" style="width:99px">Kakaolimonade</td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="db574929-5b92-4056-b416-e16120aa51f3">
+						<td id="pabW" class="">So., 02.04.2023</td>
+						<td id="gf_=" class="" style="width:108px">14€</td>
+						<td id="sp[R" class="" style="width:99px">Abendessen (Kimo)</td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="771d4b84-2819-41dc-be62-9b4852be0e89">
+						<td id="pabW" class=""><strong>Week Nr. 5</strong></td>
+						<td id="gf_=" class="" style="width:108px"><strong>40.50€</strong></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"><strong>7.50€</strong></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"><strong>7.50€</strong></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="70af9914-05ba-4d71-8e71-1e71412088ae">
+						<td id="pabW" class=""><strong>Sonstige Ausgaben</strong></td>
+						<td id="gf_=" class="" style="width:108px">-</td>
+						<td id="sp[R" class="" style="width:99px">-</td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="9bc946d0-9eee-45f0-a227-b3443c471e15">
+						<td id="pabW" class=""><strong>Week Nr. 5 insg.</strong></td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"><strong>55.00€</strong></td>
+					</tr>
+					<tr id="eea3195e-6510-4b0b-9dff-6e89a47c424a">
+						<td id="pabW" class="">Mo., 03.04.2023</td>
+						<td id="gf_=" class="" style="width:108px">12.50€</td>
+						<td id="sp[R" class="" style="width:99px">Mittagessen (Brauhaus)</td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="f8cea6e3-7c66-4df2-adf4-03736b8b5e04">
+						<td id="pabW" class="">Di., 04.04.2023</td>
+						<td id="gf_=" class="" style="width:108px">9€</td>
+						<td id="sp[R" class="" style="width:99px">Mittagessen (Vapiano)</td>
+						<td id="ksFF" class="" style="width:110px">10€</td>
+						<td id="vDgH" class="" style="width:108px">Abendesse (Ramen - bei Noemi)</td>
+						<td id="xf?p" class="" style="width:111px">5€</td>
+						<td id="N?c^" class="" style="width:106px">Bahntickets (2x)</td>
+					</tr>
+					<tr id="9a957764-7f47-44a5-9c66-fcc390e617a7">
+						<td id="pabW" class="">Mi., 05.04.2023</td>
+						<td id="gf_=" class="" style="width:108px">11€</td>
+						<td id="sp[R" class="" style="width:99px">Mittagessen (Shiso Burger)</td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="536bb4a3-5bc7-4fc0-9147-324f815919d9">
+						<td id="pabW" class="">Do., 06.04.2023</td>
+						<td id="gf_=" class="" style="width:108px">Ostern in Saarburg!</td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="9044284f-e0ec-4232-ad9b-29e47ce2489b">
+						<td id="pabW" class="">Fr., 07.04.2023</td>
+						<td id="gf_=" class="" style="width:108px">Ostern in Saarburg!</td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="985afeee-69c1-4df6-ba06-05a3b8e11450">
+						<td id="pabW" class="">Sa., 08.04.2023</td>
+						<td id="gf_=" class="" style="width:108px">Ostern in Saarburg!</td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="8b3381f4-42ee-4e29-be5f-4b829ef4aca8">
+						<td id="pabW" class="">So., 09.04.2023</td>
+						<td id="gf_=" class="" style="width:108px">Ostern in Saarburg!</td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="c0a6f495-88ed-4534-b2d4-6403ba0419a9">
+						<td id="pabW" class=""><strong>Week Nr. 6</strong></td>
+						<td id="gf_=" class="" style="width:108px"><strong>32,50€</strong></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"><strong>10€</strong></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"><strong>5€</strong></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="300e59fe-a802-473c-8ff0-f08e5771e1d8">
+						<td id="pabW" class=""><strong>Sonstige Ausgaben</strong></td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="1c4ee6f9-487e-414d-b9be-7ff14895af45">
+						<td id="pabW" class=""><strong>Week Nr. 6 insg.</strong></td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"><strong>47,50€</strong></td>
+					</tr>
+					<tr id="3ae29157-d53e-4ce7-bda3-0fa1d1dc6aab">
+						<td id="pabW" class="">Mo., 10.04.2023</td>
+						<td id="gf_=" class="" style="width:108px">Ostern in Saarburg!</td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="904e3029-dd09-415f-96ba-f95e2452eacb">
+						<td id="pabW" class="">Di., 11.04.2023</td>
+						<td id="gf_=" class="" style="width:108px">2,50€</td>
+						<td id="sp[R" class="" style="width:99px">Bahnfahrt HH</td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="b4dd479e-b108-4c1a-a9b1-8b768b203c9a">
+						<td id="pabW" class="">Mi., 12.04.2023</td>
+						<td id="gf_=" class="" style="width:108px">14€</td>
+						<td id="sp[R" class="" style="width:99px">Mittagessen (Brauhaus)</td>
+						<td id="ksFF" class="" style="width:110px">18,50€</td>
+						<td id="vDgH" class="" style="width:108px">Einkauf Müsli (DM)</td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="144a3e55-ecc5-4718-9c93-19be903ae526">
+						<td id="pabW" class="">Do., 13.04.2023</td>
+						<td id="gf_=" class="" style="width:108px">12€</td>
+						<td id="sp[R" class="" style="width:99px">Mittagessen (Persisch)</td>
+						<td id="ksFF" class="" style="width:110px">28€</td>
+						<td id="vDgH" class="" style="width:108px">Einkauf Penny (Waschm., Klop., Fleisch f. Frikad.,
+							++)</td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="045965d1-8f70-480f-9f1e-33e36b98bfd9">
+						<td id="pabW" class="">Fr., 14.04.2023</td>
+						<td id="gf_=" class="" style="width:108px">9€</td>
+						<td id="sp[R" class="" style="width:99px">Mittagessen (Vapiano)</td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="34654994-4ce5-446c-b3a9-94bcc411d606">
+						<td id="pabW" class="">Sa., 15.04.2023</td>
+						<td id="gf_=" class="" style="width:108px">6,50€</td>
+						<td id="sp[R" class="" style="width:99px">Einkauf (Penny)</td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="a97f1ca5-b5bb-4419-8d24-86f20c07d563">
+						<td id="pabW" class="">So., 16.04.2023</td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="5e77ff92-a507-4caa-b483-40a1a440e03d">
+						<td id="pabW" class=""><strong>Week Nr. 7</strong></td>
+						<td id="gf_=" class="" style="width:108px"><strong>44€</strong></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"><strong>46,50€</strong></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="14b4a6ec-5578-475c-997e-22a0569b056f">
+						<td id="pabW" class=""><strong>Sonstige Ausgaben</strong></td>
+						<td id="gf_=" class="" style="width:108px">38,50€</td>
+						<td id="sp[R" class="" style="width:99px">Ticket CGN-HH (30.04./ 01.05.)</td>
+						<td id="ksFF" class="" style="width:110px">24,50€</td>
+						<td id="vDgH" class="" style="width:108px">Muji + DM (Geschenke Lotte + Luna)</td>
+						<td id="xf?p" class="" style="width:111px">60,50€</td>
+						<td id="N?c^" class="" style="width:106px">Geschenke Luna (Magazine → form+ Das Wetter)</td>
+					</tr>
+					<tr id="b789f4bb-d928-438b-ba54-d44d51dbf1df">
+						<td id="pabW" class=""><strong>Week Nr.7 insg.</strong></td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"><strong>214€</strong></td>
+					</tr>
+					<tr id="b6b90055-34bb-4c6f-a2b9-0ce4a03cf9b5">
+						<td id="pabW" class="">Mo., 17.04.2023</td>
+						<td id="gf_=" class="" style="width:108px">9€</td>
+						<td id="sp[R" class="" style="width:99px">Mittagessen (Vapiano)</td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="ff6ede75-1a2f-47c6-9988-46dcef64cd56">
+						<td id="pabW" class="">Di., 18.04.2023</td>
+						<td id="gf_=" class="" style="width:108px">12,50€</td>
+						<td id="sp[R" class="" style="width:99px">Mittagessen (Dolcetto)</td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="61534ad6-6839-4bb3-9850-fb86d163eeb6">
+						<td id="pabW" class="">Mi., 19.04.2023</td>
+						<td id="gf_=" class="" style="width:108px">12,50€</td>
+						<td id="sp[R" class="" style="width:99px">Mittagessen (Vapiano)</td>
+						<td id="ksFF" class="" style="width:110px">22,50€</td>
+						<td id="vDgH" class="" style="width:108px">Einkauf (Penny)</td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="e2e70699-7032-4c4b-b669-e4838a10e5ef">
+						<td id="pabW" class="">Do., 20.04.2023</td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="d654c947-e7b9-456e-8463-448ed64d9409">
+						<td id="pabW" class="">Fr., 21.04.2023</td>
+						<td id="gf_=" class="" style="width:108px">11,50€</td>
+						<td id="sp[R" class="" style="width:99px">Mittagessen (5Guys)</td>
+						<td id="ksFF" class="" style="width:110px">45€</td>
+						<td id="vDgH" class="" style="width:108px">Abendessen (Jill) → 2x Pizza :D</td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="a3462df4-d445-468a-8d2e-2d83683ab6bc">
+						<td id="pabW" class="">Sa., 22.04.2023</td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="0c7f2d04-fc0d-46d0-89c9-867935e4882e">
+						<td id="pabW" class="">So., 23.04.2023</td>
+						<td id="gf_=" class="" style="width:108px">18,50€</td>
+						<td id="sp[R" class="" style="width:99px">Mittag-/ Abendessen (Kimo) + Drink Mittags</td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="884ab012-7200-40d1-9fbb-cc5adecd639f">
+						<td id="pabW" class=""><strong>Week Nr. 8</strong></td>
+						<td id="gf_=" class="" style="width:108px"><strong>74€</strong></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"><strong>67,50€</strong></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="817e9774-ffba-4039-ad1b-643f1796ff5e">
+						<td id="pabW" class=""><strong>Sonstige Ausgaben</strong></td>
+						<td id="gf_=" class="" style="width:108px">78,50€</td>
+						<td id="sp[R" class="" style="width:99px">Halbmarathon Anmeldegebühr</td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="85f69b50-c2ed-46b1-91e9-b308833e0452">
+						<td id="pabW" class=""><strong>Week Nr. 8 insg.</strong></td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"><strong>220€</strong></td>
+					</tr>
+					<tr id="98ceda2d-b4ee-428e-9ac8-4571dc10ca6f">
+						<td id="pabW" class="">Mo., 24.04.2023</td>
+						<td id="gf_=" class="" style="width:108px">12€</td>
+						<td id="sp[R" class="" style="width:99px">Mittagessen (LÓsteria)</td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="8f0e70ac-0dd2-43b4-a529-72d18d191bd0">
+						<td id="pabW" class="">Di., 25.04.2023</td>
+						<td id="gf_=" class="" style="width:108px">9€</td>
+						<td id="sp[R" class="" style="width:99px">Mittagessen (Brauhaus)</td>
+						<td id="ksFF" class="" style="width:110px">17,50€</td>
+						<td id="vDgH" class="" style="width:108px">Einkauf (DM, Penny)</td>
+						<td id="xf?p" class="" style="width:111px">20€</td>
+						<td id="N?c^" class="" style="width:106px">Abendessen Jill’s</td>
+					</tr>
+					<tr id="1c24de89-5ca5-4120-b96e-d6730e961edc">
+						<td id="pabW" class="">Mi., 26.04.2023</td>
+						<td id="gf_=" class="" style="width:108px">12,50€</td>
+						<td id="sp[R" class="" style="width:99px">Mittagessen (Dolcetto)</td>
+						<td id="ksFF" class="" style="width:110px">11,50€</td>
+						<td id="vDgH" class="" style="width:108px">Abendessen (Farina meets Mehl)</td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="bb92f75a-5735-45ef-9278-a818aca62d0f">
+						<td id="pabW" class="">Do., 27.04.2023</td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="c81cd437-ca71-48dc-9608-52963929292c">
+						<td id="pabW" class="">Fr., 28.04.2023</td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="a60219df-e31e-4968-ac76-1ecec4327d8b">
+						<td id="pabW" class="">Sa., 29.04.2023</td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="85be3d52-87e0-41f6-b17e-f3e98fc041ee">
+						<td id="pabW" class="">So., 30.04.2023</td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="7892f1cc-c06a-4907-9294-43a0736efaf9">
+						<td id="pabW" class=""><strong>Week Nr. 9</strong></td>
+						<td id="gf_=" class="" style="width:108px"><strong>33,50€</strong></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"><strong>29€</strong></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"><strong>20€</strong></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="04cd3eae-37a2-47f1-b7ea-6a32a5bd1b46">
+						<td id="pabW" class=""><strong>Sonstige Ausgaben</strong></td>
+						<td id="gf_=" class="" style="width:108px">10,50€</td>
+						<td id="sp[R" class="" style="width:99px">Partylicht</td>
+						<td id="ksFF" class="" style="width:110px">20€</td>
+						<td id="vDgH" class="" style="width:108px">Kiste Getränke (Party Luna)</td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="8eaf6202-ae70-4d57-a3fc-5ca814acb813">
+						<td id="pabW" class=""><strong>Week Nr. 9 insg.</strong></td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"><strong>113€</strong></td>
+					</tr>
+					<tr id="133a735e-8c38-46c5-89b1-75dd1902b4de">
+						<td id="pabW" class="">Mo., 01.05.2023</td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="1ee986c4-fb12-4203-8c87-73b39838f01a">
+						<td id="pabW" class="">Di., 02.05.2023</td>
+						<td id="gf_=" class="" style="width:108px">11,00€</td>
+						<td id="sp[R" class="" style="width:99px">Mittagessen (Tagliere e Vino)</td>
+						<td id="ksFF" class="" style="width:110px">16€</td>
+						<td id="vDgH" class="" style="width:108px">Abendessen (Circus - “Testbestellung”)</td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="db60b3d5-bc8b-48ec-a2b7-1166161c3582">
+						<td id="pabW" class="">Mi., 03.05.2023</td>
+						<td id="gf_=" class="" style="width:108px">11,50€</td>
+						<td id="sp[R" class="" style="width:99px">Mittagessen (5Guys)</td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="69e23e6f-a1c9-4d31-9c18-ed2a2439b3db">
+						<td id="pabW" class="">Do., 04.05.2023</td>
+						<td id="gf_=" class="" style="width:108px">9€</td>
+						<td id="sp[R" class="" style="width:99px">Mittagessen (Vapiano)</td>
+						<td id="ksFF" class="" style="width:110px">13€</td>
+						<td id="vDgH" class="" style="width:108px">Einkauf (Penny)</td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="67fc33cb-fee8-4392-bed9-94d62d44561c">
+						<td id="pabW" class="">Fr., 05.05.2023</td>
+						<td id="gf_=" class="" style="width:108px">11,00€</td>
+						<td id="sp[R" class="" style="width:99px">Mittagessen (Tagliere e Vino)</td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="00ba8f65-4df0-43ba-bff9-4d6694825de4">
+						<td id="pabW" class="">Sa., 06.05.2023</td>
+						<td id="gf_=" class="" style="width:108px">37€</td>
+						<td id="sp[R" class="" style="width:99px">Abendessen (Jills)</td>
+						<td id="ksFF" class="" style="width:110px">11,50€</td>
+						<td id="vDgH" class="" style="width:108px">Einkauf (Penny)</td>
+						<td id="xf?p" class="" style="width:111px">5€</td>
+						<td id="N?c^" class="" style="width:106px">Snack (IKEA)</td>
+					</tr>
+					<tr id="98fb6fed-e600-4b8b-bd9a-812506e7fd83">
+						<td id="pabW" class="">So., 07.05.2023</td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="2109ec34-e420-4c3a-aebb-018e533d0cb4">
+						<td id="pabW" class=""><strong>Week Nr. 10</strong></td>
+						<td id="gf_=" class="" style="width:108px"><strong>79,50€</strong></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"><strong>40,50€</strong></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"><strong>5€</strong></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="5b7acae2-e80a-433b-bbf2-df43ce86620b">
+						<td id="pabW" class=""><strong>Sonstige Ausgaben</strong></td>
+						<td id="gf_=" class="" style="width:108px">30€</td>
+						<td id="sp[R" class="" style="width:99px">Bandtown Anmeldung + 1x Stunde</td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="35ac9b26-05de-4510-a78d-7ee8daea68a1">
+						<td id="pabW" class=""><strong>Week Nr. 10 insg.</strong></td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"><strong>155,00€</strong></td>
+					</tr>
+					<tr id="e2bc3aea-f5b9-4330-aa28-0ad1bfb73e6f">
+						<td id="pabW" class="">Mo., 08.05.2023</td>
+						<td id="gf_=" class="" style="width:108px">11,50€</td>
+						<td id="sp[R" class="" style="width:99px">Mittagessen (LOsteria)</td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="be07262a-b6de-4b34-9ed3-1cae5adbfcca">
+						<td id="pabW" class="">Di., 09.05.2023</td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="87497a62-7dba-4a46-a990-e214f747c00c">
+						<td id="pabW" class="">Mi., 10.05.2023</td>
+						<td id="gf_=" class="" style="width:108px">19€</td>
+						<td id="sp[R" class="" style="width:99px">Abendessen nach OMR</td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="a325b5ea-92d3-45ff-af69-e01c3e877ff1">
+						<td id="pabW" class="">Do., 11.05.2023</td>
+						<td id="gf_=" class="" style="width:108px">11€</td>
+						<td id="sp[R" class="" style="width:99px">Nachzahlung OMR Bändchenkosten</td>
+						<td id="ksFF" class="" style="width:110px">15,50€</td>
+						<td id="vDgH" class="" style="width:108px">Mittagessen (Stadtsalat)</td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="fe08dafa-393d-451d-a3c4-82d646412929">
+						<td id="pabW" class="">Fr., 12.05.2023</td>
+						<td id="gf_=" class="" style="width:108px">5€</td>
+						<td id="sp[R" class="" style="width:99px">Mittagessen (Add on: Bäcker)</td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="1f7688c1-c63d-494f-b5c8-de10f2f2d270">
+						<td id="pabW" class="">Sa., 13.05.2023</td>
+						<td id="gf_=" class="" style="width:108px">7€</td>
+						<td id="sp[R" class="" style="width:99px">Einkauf (Penny)</td>
+						<td id="ksFF" class="" style="width:110px">27,50€</td>
+						<td id="vDgH" class="" style="width:108px">Einkauf (DM)</td>
+						<td id="xf?p" class="" style="width:111px">14,50€</td>
+						<td id="N?c^" class="" style="width:106px">Abendessen (Falafel) + Weizen</td>
+					</tr>
+					<tr id="b5e80e76-8150-431c-9e8b-65aa00edf586">
+						<td id="pabW" class="">So., 14.05.2023</td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="e97ce2c2-1d1b-48a8-a044-cce7dd04ddd2">
+						<td id="pabW" class=""><strong>Week Nr. 11</strong></td>
+						<td id="gf_=" class="" style="width:108px"><strong>42€</strong></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"><strong>43€</strong></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"><strong>14,50€</strong></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="98949e90-e752-4917-8ace-7b3b92c03eff">
+						<td id="pabW" class=""><strong>Sonstige Ausgaben</strong></td>
+						<td id="gf_=" class="" style="width:108px">17,50€</td>
+						<td id="sp[R" class="" style="width:99px">Beteiligung Geburtstag Paul + Theatertickets</td>
+						<td id="ksFF" class="" style="width:110px">58€</td>
+						<td id="vDgH" class="" style="width:108px">Schüssel zum Teigkneten + Zimt</td>
+						<td id="xf?p" class="" style="width:111px">87€</td>
+						<td id="N?c^" class="" style="width:106px">Bahntickets HH-CGN-SRBG (CGN-SRBG fehlt noch!) +
+							Ticketbeteiligung Luna</td>
+					</tr>
+					<tr id="e3b30a27-b008-4254-8e52-c0eb0a6e97da">
+						<td id="pabW" class=""><strong>Week Nr. 11 insg.</strong></td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"><strong>273,50€</strong></td>
+					</tr>
+					<tr id="bb94e705-a627-47ac-9e9f-e948e4af803a">
+						<td id="pabW" class="">Mo., 15.05.2023</td>
+						<td id="gf_=" class="" style="width:108px">10€</td>
+						<td id="sp[R" class="" style="width:99px">Mittagessen (LOsteria)</td>
+						<td id="ksFF" class="" style="width:110px">21€</td>
+						<td id="vDgH" class="" style="width:108px">Einkauf (Penny)</td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="c01d8455-4838-4f3e-8afd-29724a4ad7e2">
+						<td id="pabW" class="">Di., 16.05.2023</td>
+						<td id="gf_=" class="" style="width:108px">12,50€</td>
+						<td id="sp[R" class="" style="width:99px">Mittagessen (Italiener)</td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="5a2e0059-88a7-4f38-9c2e-eb604fca2e78">
+						<td id="pabW" class="">Mi., 17.05.2023</td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="cbe65a03-fba8-4350-ba7f-c1e04c5235f7">
+						<td id="pabW" class="">Do., 18.05.2023</td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="802f3000-e5ab-478a-89a1-1e40eb6d1675">
+						<td id="pabW" class="">Fr., 19.05.2023</td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="bfb48964-fb88-4b1f-8d13-15983e05196f">
+						<td id="pabW" class="">Sa., 20.05.2023</td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="8bc4c21f-53d2-4fdc-8ba3-7ae6a295b218">
+						<td id="pabW" class="">So., 21.05.2023</td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="aaab49d4-5239-4d5c-967a-42baa804af1c">
+						<td id="pabW" class=""><strong>Week Nr. 12</strong></td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="faec498e-f6c3-4637-9eb7-61ad4b6cdfaf">
+						<td id="pabW" class=""><strong>Sonstige Ausgaben</strong></td>
+						<td id="gf_=" class="" style="width:108px">15€</td>
+						<td id="sp[R" class="" style="width:99px">Kunstbedarf (Nanu Nana)</td>
+						<td id="ksFF" class="" style="width:110px">21,50€</td>
+						<td id="vDgH" class="" style="width:108px">.SWOOSH-AF1 Box</td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="223630a9-1627-4c8b-b66c-6b3a5a78ccb9">
+						<td id="pabW" class=""><strong>Week Nr. 12 insg.</strong></td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="d1b1fa6c-cbfd-48ba-b1ef-32abf70c1691">
+						<td id="pabW" class="">Mo., 22.05.2023</td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="6ea36e6a-3099-407c-b7a6-33c31eb9a3f8">
+						<td id="pabW" class="">Di., 23.05.2023</td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="afe2b991-f5c1-4d08-a16a-94b8285543cd">
+						<td id="pabW" class="">Mi., 24.05.2023</td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="2083702e-d2b3-40f0-83d5-60fab420a1eb">
+						<td id="pabW" class="">Do., 25.05.2023</td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="ae437723-827b-4f1a-8092-5000b0da0ef4">
+						<td id="pabW" class="">Fr., 26.05.2023</td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="ef85b5b6-3850-49dc-a79e-028e98445dab">
+						<td id="pabW" class="">Sa., 27.05.2023</td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="4ddeb451-8a06-423b-ace0-4ee676896b54">
+						<td id="pabW" class="">So., 28.05.2023</td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="2145e9bd-2140-4bd2-a5fd-1c4c15dc6c13">
+						<td id="pabW" class=""><strong>Week Nr. 13</strong></td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="2c7a9f52-b5fe-40fb-980a-91b24873bac9">
+						<td id="pabW" class=""><strong>Sonstige Ausgaben</strong></td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="7a869219-cc6c-4dc3-b761-920f45273712">
+						<td id="pabW" class=""><strong>Week Nr. 13 insg.</strong></td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="9b51d115-088c-4685-96ce-8550391f1c12">
+						<td id="pabW" class="">Mo., 29.05.2023</td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="dd75d14e-3efe-4d8f-bb13-fe0fbacebb0e">
+						<td id="pabW" class="">Di., 30.05.2023</td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="65b08863-8e89-4308-9ab4-f58a93e71c19">
+						<td id="pabW" class="">Mi., 31.05.2023</td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="16d4b7a2-d40c-4988-a7fb-7834f389d1d6">
+						<td id="pabW" class="">Do., 01.06.2023</td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="e4fd95b6-dfcb-4f74-8c83-0eef43a733a9">
+						<td id="pabW" class="">Fr., 02.06.2023</td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="37bd2b9b-253d-4ae5-a121-212396423504">
+						<td id="pabW" class="">Sa., 03.06.2023</td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="b5e68887-19fd-480c-ab5e-940b3e163329">
+						<td id="pabW" class="">So., 04.06.2023</td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="ea45a39c-039f-4dec-a051-d1fc50432ddf">
+						<td id="pabW" class=""><strong>Week Nr. 14</strong></td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="1f1851fe-3e72-4175-8ed7-7736e46d08f5">
+						<td id="pabW" class=""><strong>Sonstige Ausgaben</strong></td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+					<tr id="72b8e22f-9edb-4696-becd-92b8c385dc7e">
+						<td id="pabW" class=""><strong>Week Nr.14 insg.</strong></td>
+						<td id="gf_=" class="" style="width:108px"></td>
+						<td id="sp[R" class="" style="width:99px"></td>
+						<td id="ksFF" class="" style="width:110px"></td>
+						<td id="vDgH" class="" style="width:108px"></td>
+						<td id="xf?p" class="" style="width:111px"></td>
+						<td id="N?c^" class="" style="width:106px"></td>
+					</tr>
+				</tbody>
+			</table>
+			<p id="019ad39b-8311-4fec-87f6-173d03b90fce" class="">
+			</p>
+		</div>
+	</article>
+</body>
+
+</html>

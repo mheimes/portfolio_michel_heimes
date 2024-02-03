@@ -1,0 +1,1056 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Sneaker Biz</title>
+	<style>
+		/* cspell:disable-file */
+		/* webkit printing magic: print all background colors */
+		html {
+			-webkit-print-color-adjust: exact;
+		}
+
+		* {
+			box-sizing: border-box;
+			-webkit-print-color-adjust: exact;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		@media only screen {
+			body {
+				margin: 2em auto;
+				max-width: 900px;
+				color: rgb(55, 53, 47);
+			}
+		}
+
+		body {
+			line-height: 1.5;
+			white-space: pre-wrap;
+		}
+
+		a,
+		a.visited {
+			color: inherit;
+			text-decoration: underline;
+		}
+
+		.pdf-relative-link-path {
+			font-size: 80%;
+			color: #444;
+		}
+
+		h1,
+		h2,
+		h3 {
+			letter-spacing: -0.01em;
+			line-height: 1.2;
+			font-weight: 600;
+			margin-bottom: 0;
+		}
+
+		.page-title {
+			font-size: 2.5rem;
+			font-weight: 700;
+			margin-top: 0;
+			margin-bottom: 0.75em;
+		}
+
+		h1 {
+			font-size: 1.875rem;
+			margin-top: 1.875rem;
+		}
+
+		h2 {
+			font-size: 1.5rem;
+			margin-top: 1.5rem;
+		}
+
+		h3 {
+			font-size: 1.25rem;
+			margin-top: 1.25rem;
+		}
+
+		.source {
+			border: 1px solid #ddd;
+			border-radius: 3px;
+			padding: 1.5em;
+			word-break: break-all;
+		}
+
+		.callout {
+			border-radius: 3px;
+			padding: 1rem;
+		}
+
+		figure {
+			margin: 1.25em 0;
+			page-break-inside: avoid;
+		}
+
+		figcaption {
+			opacity: 0.5;
+			font-size: 85%;
+			margin-top: 0.5em;
+		}
+
+		mark {
+			background-color: transparent;
+		}
+
+		.indented {
+			padding-left: 1.5em;
+		}
+
+		hr {
+			background: transparent;
+			display: block;
+			width: 100%;
+			height: 1px;
+			visibility: visible;
+			border: none;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+		}
+
+		img {
+			max-width: 100%;
+		}
+
+		@media only print {
+			img {
+				max-height: 100vh;
+				object-fit: contain;
+			}
+		}
+
+		@page {
+			margin: 1in;
+		}
+
+		.collection-content {
+			font-size: 0.875rem;
+		}
+
+		.column-list {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.column {
+			padding: 0 1em;
+		}
+
+		.column:first-child {
+			padding-left: 0;
+		}
+
+		.column:last-child {
+			padding-right: 0;
+		}
+
+		.table_of_contents-item {
+			display: block;
+			font-size: 0.875rem;
+			line-height: 1.3;
+			padding: 0.125rem;
+		}
+
+		.table_of_contents-indent-1 {
+			margin-left: 1.5rem;
+		}
+
+		.table_of_contents-indent-2 {
+			margin-left: 3rem;
+		}
+
+		.table_of_contents-indent-3 {
+			margin-left: 4.5rem;
+		}
+
+		.table_of_contents-link {
+			text-decoration: none;
+			opacity: 0.7;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid rgba(55, 53, 47, 0.09);
+			border-collapse: collapse;
+		}
+
+		table {
+			border-left: none;
+			border-right: none;
+		}
+
+		th,
+		td {
+			font-weight: normal;
+			padding: 0.25em 0.5em;
+			line-height: 1.5;
+			min-height: 1.5em;
+			text-align: left;
+		}
+
+		th {
+			color: rgba(55, 53, 47, 0.6);
+		}
+
+		ol,
+		ul {
+			margin: 0;
+			margin-block-start: 0.6em;
+			margin-block-end: 0.6em;
+		}
+
+		li>ol:first-child,
+		li>ul:first-child {
+			margin-block-start: 0.6em;
+		}
+
+		ul>li {
+			list-style: disc;
+		}
+
+		ul.to-do-list {
+			padding-inline-start: 0;
+		}
+
+		ul.to-do-list>li {
+			list-style: none;
+		}
+
+		.to-do-children-checked {
+			text-decoration: line-through;
+			opacity: 0.375;
+		}
+
+		ul.toggle>li {
+			list-style: none;
+		}
+
+		ul {
+			padding-inline-start: 1.7em;
+		}
+
+		ul>li {
+			padding-left: 0.1em;
+		}
+
+		ol {
+			padding-inline-start: 1.6em;
+		}
+
+		ol>li {
+			padding-left: 0.2em;
+		}
+
+		.mono ol {
+			padding-inline-start: 2em;
+		}
+
+		.mono ol>li {
+			text-indent: -0.4em;
+		}
+
+		.toggle {
+			padding-inline-start: 0em;
+			list-style-type: none;
+		}
+
+		/* Indent toggle children */
+		.toggle>li>details {
+			padding-left: 1.7em;
+		}
+
+		.toggle>li>details>summary {
+			margin-left: -1.1em;
+		}
+
+		.selected-value {
+			display: inline-block;
+			padding: 0 0.5em;
+			background: rgba(206, 205, 202, 0.5);
+			border-radius: 3px;
+			margin-right: 0.5em;
+			margin-top: 0.3em;
+			margin-bottom: 0.3em;
+			white-space: nowrap;
+		}
+
+		.collection-title {
+			display: inline-block;
+			margin-right: 1em;
+		}
+
+		.page-description {
+			margin-bottom: 2em;
+		}
+
+		.simple-table {
+			margin-top: 1em;
+			font-size: 0.875rem;
+			empty-cells: show;
+		}
+
+		.simple-table td {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table th {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table-header-color {
+			background: rgb(247, 246, 243);
+			color: black;
+		}
+
+		.simple-table-header {
+			font-weight: 500;
+		}
+
+		time {
+			opacity: 0.5;
+		}
+
+		.icon {
+			display: inline-block;
+			max-width: 1.2em;
+			max-height: 1.2em;
+			text-decoration: none;
+			vertical-align: text-bottom;
+			margin-right: 0.5em;
+		}
+
+		img.icon {
+			border-radius: 3px;
+		}
+
+		.user-icon {
+			width: 1.5em;
+			height: 1.5em;
+			border-radius: 100%;
+			margin-right: 0.5rem;
+		}
+
+		.user-icon-inner {
+			font-size: 0.8em;
+		}
+
+		.text-icon {
+			border: 1px solid #000;
+			text-align: center;
+		}
+
+		.page-cover-image {
+			display: block;
+			object-fit: cover;
+			width: 100%;
+			max-height: 30vh;
+		}
+
+		.page-header-icon {
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+
+		.page-header-icon-with-cover {
+			margin-top: -0.72em;
+			margin-left: 0.07em;
+		}
+
+		.page-header-icon img {
+			border-radius: 3px;
+		}
+
+		.link-to-page {
+			margin: 1em 0;
+			padding: 0;
+			border: none;
+			font-weight: 500;
+		}
+
+		p>.user {
+			opacity: 0.5;
+		}
+
+		td>.user,
+		td>time {
+			white-space: nowrap;
+		}
+
+		input[type="checkbox"] {
+			transform: scale(1.5);
+			margin-right: 0.6em;
+			vertical-align: middle;
+		}
+
+		p {
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.image {
+			border: none;
+			margin: 1.5em 0;
+			padding: 0;
+			border-radius: 0;
+			text-align: center;
+		}
+
+		.code,
+		code {
+			background: rgba(135, 131, 120, 0.15);
+			border-radius: 3px;
+			padding: 0.2em 0.4em;
+			border-radius: 3px;
+			font-size: 85%;
+			tab-size: 2;
+		}
+
+		code {
+			color: #eb5757;
+		}
+
+		.code {
+			padding: 1.5em 1em;
+		}
+
+		.code-wrap {
+			white-space: pre-wrap;
+			word-break: break-all;
+		}
+
+		.code>code {
+			background: none;
+			padding: 0;
+			font-size: 100%;
+			color: inherit;
+		}
+
+		blockquote {
+			font-size: 1.25em;
+			margin: 1em 0;
+			padding-left: 1em;
+			border-left: 3px solid rgb(55, 53, 47);
+		}
+
+		.bookmark {
+			text-decoration: none;
+			max-height: 8em;
+			padding: 0;
+			display: flex;
+			width: 100%;
+			align-items: stretch;
+		}
+
+		.bookmark-title {
+			font-size: 0.85em;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			height: 1.75em;
+			white-space: nowrap;
+		}
+
+		.bookmark-text {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.bookmark-info {
+			flex: 4 1 180px;
+			padding: 12px 14px 14px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.bookmark-image {
+			width: 33%;
+			flex: 1 1 180px;
+			display: block;
+			position: relative;
+			object-fit: cover;
+			border-radius: 1px;
+		}
+
+		.bookmark-description {
+			color: rgba(55, 53, 47, 0.6);
+			font-size: 0.75em;
+			overflow: hidden;
+			max-height: 4.5em;
+			word-break: break-word;
+		}
+
+		.bookmark-href {
+			font-size: 0.75em;
+			margin-top: 0.25em;
+		}
+
+		.sans {
+			font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+		}
+
+		.code {
+			font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+		}
+
+		.serif {
+			font-family: Lyon-Text, Georgia, ui-serif, serif;
+		}
+
+		.mono {
+			font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+		}
+
+		.pdf .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR';
+		}
+
+		.pdf .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.pdf .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR';
+		}
+
+		.pdf .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.highlight-default {
+			color: rgba(55, 53, 47, 1);
+		}
+
+		.highlight-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.highlight-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.highlight-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.highlight-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.highlight-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.highlight-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.highlight-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.highlight-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.highlight-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.highlight-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.highlight-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.highlight-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.highlight-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.highlight-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.highlight-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.highlight-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.highlight-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.highlight-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.block-color-default {
+			color: inherit;
+			fill: inherit;
+		}
+
+		.block-color-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.block-color-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.block-color-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.block-color-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.block-color-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.block-color-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.block-color-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.block-color-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.block-color-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.block-color-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.block-color-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.block-color-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.block-color-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.block-color-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.block-color-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.block-color-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.block-color-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.block-color-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.select-value-color-interactiveBlue {
+			background-color: rgba(35, 131, 226, .07);
+		}
+
+		.select-value-color-pink {
+			background-color: rgba(245, 224, 233, 1);
+		}
+
+		.select-value-color-purple {
+			background-color: rgba(232, 222, 238, 1);
+		}
+
+		.select-value-color-green {
+			background-color: rgba(219, 237, 219, 1);
+		}
+
+		.select-value-color-gray {
+			background-color: rgba(227, 226, 224, 1);
+		}
+
+		.select-value-color-translucentGray {
+			background-color: rgba(255, 255, 255, 0.0375);
+		}
+
+		.select-value-color-orange {
+			background-color: rgba(250, 222, 201, 1);
+		}
+
+		.select-value-color-brown {
+			background-color: rgba(238, 224, 218, 1);
+		}
+
+		.select-value-color-red {
+			background-color: rgba(255, 226, 221, 1);
+		}
+
+		.select-value-color-yellow {
+			background-color: rgba(253, 236, 200, 1);
+		}
+
+		.select-value-color-blue {
+			background-color: rgba(211, 229, 239, 1);
+		}
+
+		.select-value-color-pageGlass {
+			background-color: undefined;
+		}
+
+		.select-value-color-washGlass {
+			background-color: undefined;
+		}
+
+		.checkbox {
+			display: inline-flex;
+			vertical-align: text-bottom;
+			width: 16;
+			height: 16;
+			background-size: 16px;
+			margin-left: 2px;
+			margin-right: 5px;
+		}
+
+		.checkbox-on {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+
+		.checkbox-off {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+	</style>
+</head>
+
+<body>
+	<article id="c4ce6017-5508-4335-b242-457946d57ea4" class="page sans">
+		<header>
+			<h1 class="page-title">Sneaker Biz</h1>
+			<p class="page-description"></p>
+			<table class="properties">
+				<tbody>
+					<tr class="property-row property-row-date">
+						<th><span class="icon property-icon"><svg viewBox="0 0 16 16"
+									style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden"
+									class="typesDate">
+									<path
+										d="M3.29688 14.4561H12.7031C14.1797 14.4561 14.9453 13.6904 14.9453 12.2344V3.91504C14.9453 2.45215 14.1797 1.69336 12.7031 1.69336H3.29688C1.82031 1.69336 1.05469 2.45215 1.05469 3.91504V12.2344C1.05469 13.6973 1.82031 14.4561 3.29688 14.4561ZM3.27637 13.1162C2.70898 13.1162 2.39453 12.8154 2.39453 12.2207V5.9043C2.39453 5.30273 2.70898 5.00879 3.27637 5.00879H12.71C13.2842 5.00879 13.6055 5.30273 13.6055 5.9043V12.2207C13.6055 12.8154 13.2842 13.1162 12.71 13.1162H3.27637ZM6.68066 7.38086H7.08398C7.33008 7.38086 7.41211 7.30566 7.41211 7.05957V6.66309C7.41211 6.41699 7.33008 6.3418 7.08398 6.3418H6.68066C6.44141 6.3418 6.35938 6.41699 6.35938 6.66309V7.05957C6.35938 7.30566 6.44141 7.38086 6.68066 7.38086ZM8.92285 7.38086H9.31934C9.56543 7.38086 9.64746 7.30566 9.64746 7.05957V6.66309C9.64746 6.41699 9.56543 6.3418 9.31934 6.3418H8.92285C8.67676 6.3418 8.59473 6.41699 8.59473 6.66309V7.05957C8.59473 7.30566 8.67676 7.38086 8.92285 7.38086ZM11.1582 7.38086H11.5547C11.8008 7.38086 11.8828 7.30566 11.8828 7.05957V6.66309C11.8828 6.41699 11.8008 6.3418 11.5547 6.3418H11.1582C10.9121 6.3418 10.8301 6.41699 10.8301 6.66309V7.05957C10.8301 7.30566 10.9121 7.38086 11.1582 7.38086ZM4.44531 9.58203H4.84863C5.09473 9.58203 5.17676 9.50684 5.17676 9.26074V8.86426C5.17676 8.61816 5.09473 8.54297 4.84863 8.54297H4.44531C4.20605 8.54297 4.12402 8.61816 4.12402 8.86426V9.26074C4.12402 9.50684 4.20605 9.58203 4.44531 9.58203ZM6.68066 9.58203H7.08398C7.33008 9.58203 7.41211 9.50684 7.41211 9.26074V8.86426C7.41211 8.61816 7.33008 8.54297 7.08398 8.54297H6.68066C6.44141 8.54297 6.35938 8.61816 6.35938 8.86426V9.26074C6.35938 9.50684 6.44141 9.58203 6.68066 9.58203ZM8.92285 9.58203H9.31934C9.56543 9.58203 9.64746 9.50684 9.64746 9.26074V8.86426C9.64746 8.61816 9.56543 8.54297 9.31934 8.54297H8.92285C8.67676 8.54297 8.59473 8.61816 8.59473 8.86426V9.26074C8.59473 9.50684 8.67676 9.58203 8.92285 9.58203ZM11.1582 9.58203H11.5547C11.8008 9.58203 11.8828 9.50684 11.8828 9.26074V8.86426C11.8828 8.61816 11.8008 8.54297 11.5547 8.54297H11.1582C10.9121 8.54297 10.8301 8.61816 10.8301 8.86426V9.26074C10.8301 9.50684 10.9121 9.58203 11.1582 9.58203ZM4.44531 11.7832H4.84863C5.09473 11.7832 5.17676 11.708 5.17676 11.4619V11.0654C5.17676 10.8193 5.09473 10.7441 4.84863 10.7441H4.44531C4.20605 10.7441 4.12402 10.8193 4.12402 11.0654V11.4619C4.12402 11.708 4.20605 11.7832 4.44531 11.7832ZM6.68066 11.7832H7.08398C7.33008 11.7832 7.41211 11.708 7.41211 11.4619V11.0654C7.41211 10.8193 7.33008 10.7441 7.08398 10.7441H6.68066C6.44141 10.7441 6.35938 10.8193 6.35938 11.0654V11.4619C6.35938 11.708 6.44141 11.7832 6.68066 11.7832ZM8.92285 11.7832H9.31934C9.56543 11.7832 9.64746 11.708 9.64746 11.4619V11.0654C9.64746 10.8193 9.56543 10.7441 9.31934 10.7441H8.92285C8.67676 10.7441 8.59473 10.8193 8.59473 11.0654V11.4619C8.59473 11.708 8.67676 11.7832 8.92285 11.7832Z">
+									</path>
+								</svg></span>Last Review</th>
+						<td></td>
+					</tr>
+					<tr class="property-row property-row-formula">
+						<th><span class="icon property-icon"><svg viewBox="0 0 16 16"
+									style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden"
+									class="typesFormula">
+									<path
+										d="M5.04688 14.3604H11.2744C11.7324 14.3604 12.0537 14.0801 12.0537 13.6494C12.0537 13.2119 11.7324 12.9248 11.2744 12.9248H5.81934V12.8564L9.30566 8.82324C9.54492 8.57031 9.6748 8.29688 9.6748 8.0166C9.6748 7.73633 9.54492 7.45605 9.29883 7.20996L5.81934 3.2793V3.21094H11.2812C11.7393 3.21094 12.0537 2.92383 12.0537 2.48633C12.0537 2.05566 11.7393 1.77539 11.2812 1.77539H5.05371C4.34277 1.77539 3.95312 2.26758 3.95312 2.81445C3.95312 3.12207 4.07617 3.44336 4.33594 3.69629L8.15039 7.96875V8.05078L4.3291 12.4395C4.06934 12.6924 3.94629 13.0137 3.94629 13.3213C3.94629 13.8682 4.33594 14.3604 5.04688 14.3604Z">
+									</path>
+								</svg></span>Next Review</th>
+						<td></td>
+					</tr>
+					<tr class="property-row property-row-formula">
+						<th><span class="icon property-icon"><svg viewBox="0 0 16 16"
+									style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden"
+									class="typesFormula">
+									<path
+										d="M5.04688 14.3604H11.2744C11.7324 14.3604 12.0537 14.0801 12.0537 13.6494C12.0537 13.2119 11.7324 12.9248 11.2744 12.9248H5.81934V12.8564L9.30566 8.82324C9.54492 8.57031 9.6748 8.29688 9.6748 8.0166C9.6748 7.73633 9.54492 7.45605 9.29883 7.20996L5.81934 3.2793V3.21094H11.2812C11.7393 3.21094 12.0537 2.92383 12.0537 2.48633C12.0537 2.05566 11.7393 1.77539 11.2812 1.77539H5.05371C4.34277 1.77539 3.95312 2.26758 3.95312 2.81445C3.95312 3.12207 4.07617 3.44336 4.33594 3.69629L8.15039 7.96875V8.05078L4.3291 12.4395C4.06934 12.6924 3.94629 13.0137 3.94629 13.3213C3.94629 13.8682 4.33594 14.3604 5.04688 14.3604Z">
+									</path>
+								</svg></span>Overdue?</th>
+						<td>
+							<div class="checkbox checkbox-off"></div>
+						</td>
+					</tr>
+					<tr class="property-row property-row-number">
+						<th><span class="icon property-icon"><svg viewBox="0 0 16 16"
+									style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden"
+									class="typesNumber">
+									<path
+										d="M2.4834 10.9902H4.33594L3.75488 13.8887C3.74121 13.9639 3.72754 14.0664 3.72754 14.1416C3.72754 14.5381 3.99414 14.7637 4.39746 14.7637C4.81445 14.7637 5.09473 14.5449 5.18359 14.1143L5.80566 10.9902H8.79297L8.21191 13.8887C8.19824 13.9639 8.18457 14.0664 8.18457 14.1416C8.18457 14.5381 8.45117 14.7637 8.85449 14.7637C9.27148 14.7637 9.55176 14.5449 9.63379 14.1143L10.2627 10.9902H12.4502C12.9287 10.9902 13.2432 10.6758 13.2432 10.2109C13.2432 9.8418 12.9902 9.56836 12.6006 9.56836H10.5498L11.2129 6.28711H13.3662C13.8379 6.28711 14.1523 5.96582 14.1523 5.50098C14.1523 5.13184 13.9062 4.8584 13.5098 4.8584H11.5L12.0195 2.27441C12.0264 2.21973 12.0469 2.11035 12.0469 2.01465C12.0469 1.625 11.7666 1.39258 11.3633 1.39258C10.9053 1.39258 10.6797 1.63867 10.5977 2.05566L10.0303 4.8584H7.04297L7.5625 2.27441C7.57617 2.21973 7.58984 2.11035 7.58984 2.01465C7.58984 1.625 7.30957 1.39258 6.91309 1.39258C6.44824 1.39258 6.21582 1.63867 6.13379 2.05566L5.57324 4.8584H3.54297C3.06445 4.8584 2.75 5.18652 2.75 5.65137C2.75 6.03418 3.00293 6.28711 3.39258 6.28711H5.28613L4.62305 9.56836H2.63379C2.15527 9.56836 1.84082 9.89648 1.84082 10.3613C1.84082 10.7373 2.09375 10.9902 2.4834 10.9902ZM6.09277 9.56836L6.75586 6.28711H9.74316L9.08008 9.56836H6.09277Z">
+									</path>
+								</svg></span>Review Frequency</th>
+						<td></td>
+					</tr>
+					<tr class="property-row property-row-relation">
+						<th><span class="icon property-icon"><svg viewBox="0 0 16 16"
+									style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden"
+									class="typesRelation">
+									<path
+										d="M13.1475 10.5869V3.72363C13.1475 3.25195 12.833 2.93066 12.3477 2.93066H5.48438C5.02637 2.93066 4.70508 3.27246 4.70508 3.67578C4.70508 4.07227 5.05371 4.40039 5.46387 4.40039H7.89746L10.8438 4.30469L9.59961 5.39844L3.08496 11.9199C2.92773 12.0771 2.8457 12.2686 2.8457 12.46C2.8457 12.8564 3.20801 13.2256 3.61816 13.2256C3.80957 13.2256 3.99414 13.1504 4.15137 12.9932L10.6729 6.47168L11.7803 5.22754L11.6641 8.05762V10.6074C11.6641 11.0176 11.9922 11.373 12.4023 11.373C12.8057 11.373 13.1475 11.0312 13.1475 10.5869Z">
+									</path>
+								</svg></span>🗨️ Work Harder</th>
+						<td><a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Business%20Paypal%20fertig%20einrichten%20und%20Serkan%20seine%202095cc970dc24dd694c1b118fe62c89a.html">Business
+								Paypal fertig einrichten und Serkan seine 10€ senden (+ Lösung für Quittung
+								überlegen)</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Stockx%20Paket%20versenden%2030caece270344c5291c5a0360ebf90eb.html">Stockx
+								Paket versenden</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Sachverhalt%20kla%CC%88ren%20Ich%20zahle%2010%E2%82%AC%20an%20Person%20x%20u%CC%88be%206a943a7dcaef40dcaada14391ae67d68.html">Sachverhalt
+								klären: Ich zahle 10€ an Person x über mein Business Paypal (!) als
+								Aufwandsentschädigung für die Paketannahme - Wie kann ich digital einfach Rechnung
+								ausstellen, sodass ich die 10€ bei mir als Kosten verbuchen kann? / Muss ich Rechnungen/
+								Quittungen ausstellen, wenn ich Geld an eine Privatperson für ein im Unternehmen
+								genutztes Gut zahle?</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Rechnungs%20Template%20schreiben%20in%20EXCEL%20a59e492335784fd6a8724bc3ebe36263.html">Rechnungs
+								Template schreiben in EXCEL</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Leuten%20schreiben%20wegen%20SNKRS%20Verifizierung%20(4-5%20Le%20e740facd4617491d9bf32126183ef651.html">Leuten
+								schreiben wegen SNKRS Verifizierung (4-5 Leuten schreiben)</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/4%20Szenario%20Quittung%20Rechnung%20aufschreiben%20in%20Buch%20c65f0ef983b64bf79a630b7a57d32564.html">4.
+								Szenario Quittung/ Rechnung aufschreiben in Buch</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/EU%CC%88R%20weiter%20bearbeiten%20und%20nach%20Norm%20gestalten%20%E2%86%92%20f%204f3a4fb5150d48598cb91ffb428a5b68.html">EÜR
+								weiter bearbeiten und nach Norm gestalten → falls EÜR deutlich weniger Spalten benötigt
+								als die Liste für meinen persönlichen Überblick ebenfalls EXCEL Tabelle entsprechend
+								“programmieren”, dass nur relevante Felder in externe EÜR übertragen werden. </a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Bisherige%20Rechnungen%20Quittungen%20von%20Ka%CC%88ufen%20und%20Ve%20c943a631fd6a4acda1b5449512839d39.html">Bisherige
+								Rechnungen/ Quittungen von Käufen und Verkäufen sowohl physisch, als auch digital
+								abspeichern.</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/DONE%20Sachverhalt%20kla%CC%88ren,%20wie%20Retouren%20buchhalteri%209c19b27ecf0446f6b7a16d73d4837224.html">DONE:
+								Sachverhalt klären, wie Retouren buchhalterisch zu berücksichtigen sind und dies AUCH in
+								schwarzes Buch schreiben! → Stornorechnung erstellen bzw. die Stornorechnung die ich
+								erhalten habe (z. B. von Nike) abheften und entsprechend mit dem Hinweis einer
+								Gutschrift in meine Liste eintragen!</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Wales%20Bonner%2012%205%20versenden%20EBK%20a36f896435ca4a34be2fbeca04045e14.html">Wales
+								Bonner 12.5 versenden EBK</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Paypal%20Schritte%20vervollsta%CC%88ndigen%20zur%20Kontoverifiz%20bf080adde3374de092b092e23507db34.html">Paypal
+								Schritte vervollständigen zur Kontoverifizierung</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Frage%20kla%CC%88ren%20Muss%20ich%20Rechnungen%20fu%CC%88r%20Paypal%20Gebu%20b6369c79cb304dbebdd20af649bcc481.html">Frage
+								klären: Muss ich Rechnungen für Paypal Gebühren als “sonstige betriebliche Aufwendungen”
+								einfordern/ erstellen und abspeichern? → Transaktion als PDF herunterladen und
+								abspeichern?!</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Noch%20relevante%20Dateien%20wegen%20Sneaker%20Biz%20von%20iMac%20%20e72919c6263b4175990f7d5d39fa81a6.html">Noch
+								relevante Dateien wegen Sneaker Biz von iMac auf MacBook übertragen</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Recherche%20Muss%20ich%20alle%20Rechnungen%20Quittungen%20sowo%2054764a49526948d6bec3727769d2fd7e.html">Recherche:
+								Muss ich alle Rechnungen/ Quittungen sowohl digital, als auch physisch ablegen? →
+								Aufschreiben Aufbewahrung von Rechnungen AO (Abgabeordnung Paragraph 147) -&gt; digital/
+								physisch →
+								https://www.getmyinvoices.com/de/blog/papier-elektronische-rechnungen-aufbewahren-so-gehts/</a>,
+							<a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Unters%20Konten%20einrichten%20fu%CC%88r%20unters%20Arten%20der%20Aus%2022d28a6227a44fbbb7505a4d691a05f9.html">Unters.
+								Konten einrichten für unters. Arten der Ausgaben? - mache ich erstmal doch nicht</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Bei%20digitalem%20Ordnersystem%20der%20Rechnungen%20etc%20nebe%20d81b7d6f9ba842488be65f3e38aa877f.html">Bei
+								digitalem Ordnersystem der Rechnungen etc. neben Jahr außerdem monatsseparierte Ordner
+								anlegen.</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Rechnungen%20als%20PDF%20A%20(PDF%20Archiv)%20abspeichern%20anst%20db57c8393c274872aa313286057e369c.html">Rechnungen
+								als PDF/A (PDF Archiv) abspeichern anstatt nur als einfache PDF
+								(https://www.getmyinvoices.com/de/blog/papier-elektronische-rechnungen-aufbewahren-so-gehts/)</a>,
+							<a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/eBay%20Kleinanzeigen%20rechtliche%20Angaben%20vervollsta%CC%88n%206f6f3ed7959741419606c98dd874ead0.html">eBay
+								Kleinanzeigen rechtliche Angaben vervollständigen um AGB!</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Paket%20versenden%20StockX%20Samba%20WB%20red%207%205%2091ad03b146cf4965b26a358c234bd40d.html">Paket
+								versenden StockX Samba WB red 7.5</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Elster%20Formulare%20anschauen,%20einordnen%20und%20absenden%2063a5ad7af7b74976904a9be4a3e40c3f.html">Elster
+								Formulare anschauen, einordnen und absenden</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/tax@alias%20com%20o%20a%CC%88%20kontaktieren%20wegen%20Rechnungsadr%20305c2b834b6a4038bff3e9382c430e15.html">tax@alias.com
+								o.ä. kontaktieren wegen Rechnungsadresse (siehe Business email)</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/StockX%20Hyperwallet%20Business%20einrichten%20o%20a%CC%88%20(siehe%20dc9479b534414e45a1e2ee67fb32c51a.html">StockX
+								Hyperwallet Business einrichten o.ä. (siehe Business email)</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/StockX%20USt%20-ID%20hinterlegen%20e9f5ab0cf6ca448dbcf244ab19ec5285.html">StockX
+								USt.-ID hinterlegen</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/eBay%20Account%20m%20heimes%20sneaker@gmail%20com%20eBay%20Suppo%20e8c7a51f2cec4016869b0b3a5bddcfe4.html">eBay
+								Account m.heimes.sneaker@gmail.com eBay Support kontaktieren wegen Konto Sperrung →
+								Warum? (Vermutlich weil 2x Account auf Michel Heimes)</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Asphaltgold%20Accs%20fu%CC%88r%20Raffles%20auf%20den%20Handys%20einri%20aacfba09193a4af791e11eafadd0c07b.html">Asphaltgold
+								Accs für Raffles auf den Handys einrichten</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/StockX%20WB%20Samba%2010%205%20versenden%202013cef289354741867e0d0001c9f1bd.html">StockX
+								WB Samba 10.5 versenden</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Sachverhalt%20untersuchen%20recherchieren%20-%20betrifft%20e%204953e3b00204466384051bc40b4676ea.html">Sachverhalt
+								untersuchen/ recherchieren - betrifft ein volles Gewerbe und KEIN Kleingewerbe mehr: Wie
+								wird das Ausweisen der MwSt. steuerrechtlich geregelt, wenn ich Sneaker für mein Gewerbe
+								von Privatpersonen kaufe, die mir keine Rechnung (inkl. MwSt.) ausstellen können? Wie
+								bekomme ich die MwSt. von meinem Einkauf zurück, die ich beim Verkauf zahlen muss, wenn
+								ich aber keine Rechnung auf mich ausgestellt habe? (Kann ich einfach die Rechnung - z.
+								B. von Nike - vom Verkäufer nehmen, auf der die MwSt. aufgeführt ist + evtl. Art
+								Quittung, dass ich die Schuhe von ihm/ ihr gekauft habe und damit die MwSt.
+								“zurückfordern”, die ich beim Verkauf ausweise?) → Falls dies so geht, könnte ich somit
+								auch im Rahmen eines Gewerbes weiterhin Sneaker über Freunde bestellen. → Fr.
+								Kleinschmidt fragen → Differenzbesteuerung</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Samba%20WB%2010%205%20versenden%20Andreas%20Wacker%201e6de8410ec946c0a37744e45047e8f9.html">Samba
+								WB 10.5 versenden Andreas Wacker</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Mientus%20Paket%20bei%20UPS%20abholen%200c21c35284c241ffa2bd51d1b333cf59.html">Mientus
+								Paket bei UPS abholen</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Fragen%20sammeln%20und%20damit%20zu%20SteuerberaterIn!%20%E2%86%92%20@Fr%20e516e04cb1ec43518470ff01ad994828.html">Fragen
+								sammeln und damit zu SteuerberaterIn! → @Fragen an SteuerberaterIn </a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Emil%2010%E2%82%AC%20Paypal%20senden%20ee0e64bb2e734e5f87307baca5d558d8.html">Emil
+								10€ Paypal senden</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Robert%20Konter%20anrufen%20und%20nachfragen%20wegen%20Beratun%20a2464df17e374356a91ad7b6aa477ad7.html">Robert
+								Konter anrufen und nachfragen wegen Beratungsgespräch - Juppi richtet liebe Grüße
+								aus</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Jashar%2010%E2%82%AC%20bar%20geben%20fu%CC%88r%20einmalige%20Dienstleistung%207c6c807ff52340f5a3b3b4cdcb554130.html">Jashar
+								10€ bar geben für einmalige Dienstleistung Hilfe (bar)</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Neuen%20Steuerberater%20suchen%20und%20Termin%20machen%20wegen%20c24c97fcd2e54bd8b0df2afc998b5351.html">Neuen
+								Steuerberater suchen und Termin machen wegen Beratung zu meinen Fragen aus @Fragen an
+								SteuerberaterIn </a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Patta%20return%20(check%20mail%20+%20physical%20return)%202a20213ca84e438cabc70656ccb5ad9e.html">Patta
+								return (check mail + physical return)</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Patta%20Bestellung%20in%20Liste%20eintragen%20+%20return%20(+%20Du%20dbb63ee3210c4295b574070afd8f74a6.html">Patta
+								Bestellung in Liste eintragen + return (+ Dunks von heute → 17.10.22 +
+								Schreibwaren-Einkauf Rechnung hinzufügen)</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Aktuelle%20monatlichen%20Einnahmen%20in%20etwa%20berechnen%20u%208c79a5b38b10470c901b6693169089ad.html">Aktuelle
+								monatlichen Einnahmen in etwa berechnen und schauen, ob weitere Handyanschaffungen Sinn
+								machen → für SNKRS</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Sim-Karte%20einrichten%20und%20mit%20Code%20%E2%80%9Ccongstar2022%E2%80%9D%20d%203a7079038ad94d6ea56832428d61afbd.html">Sim-Karte
+								einrichten und mit Code “congstar2022” doppeltes Guthaben erhalten → Wird ca. am
+								14.01.2023 gutgeschrieben.</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Congstar%20auf%20entsprechende%20Mail%20antworten,%20damit%20m%20038aea5c76d0453cad023d770f7abd1c.html">Congstar
+								auf entsprechende Mail antworten, damit mir die 10€ auf mein Konto gutgeschrieben
+								werden!</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Curve%20Mail%20beantworten%20mit%20entsprechenden%20Dokument%208284d09d9dce4aba8d984cff6cdd4229.html">Curve
+								Mail beantworten mit entsprechenden Dokumenten</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/letztes%20iPhone%20soweit%20einrichten%20mit%20Apple%20ID,%20Nik%2014863777554b4a7aae4678e100e26de6.html">letztes
+								iPhone soweit einrichten mit Apple ID, Nike etc. </a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Mind%20ein%20weiteres%20iPhone%20besorgen%20-%20Ersatz%20fu%CC%88r%20ka%202d0cf5de790446098248242b7d5e9559.html">Mind.
+								ein weiteres iPhone besorgen - Ersatz für kaputtes iPhone 6s (aufgeblähter Akku)</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/SMS%20Authentifizierung%20mit%20Anthony%20durchfu%CC%88hren%20-%20N%201396d693baf047a0a2f72ef8703b8040.html">SMS
+								Authentifizierung mit Anthony durchführen - Nike</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Weitere%20Aufladekabel%20besorgen%20fu%CC%88r%20Sneaker-Handys%20%200984f6bbe16242b1a182b370e3b460c6.html">Weitere
+								Aufladekabel besorgen für Sneaker-Handys (ca. 29x) + 2x Aufladestation bestellen (die
+								selbe wie die, die ich bereits habe)</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Curve%20Card%20bei%20noch%20fehlenden%20Handys%20hinterlegen%20%E2%86%92%204ef43ffc5da34c3e9eee343e0ee5a1bd.html">Curve
+								Card bei noch fehlenden Handys hinterlegen → Nr. 5, 9, 10, 13, 14, 15, 16, 18, 30
+								(?)</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Neu%20gemachte%20Sim%20Karten%20(10x)%20stornieren%20-%20am%2020%201%20ecc51ac421df4eb19b1aace5c8ab33c0.html">Neu
+								gemachte Sim Karten (10x) stornieren - am 20.12.2023 sobald sie “aktiv” sind.</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Sneaker%20aus%20Liste%20weiter%20in%20Excel%20Tabelle%20eintrage%201dd64baf128a49a988bd9976d1fa39c2.html">Sneaker
+								aus Liste weiter in Excel Tabelle eintragen + Rechnungen erstellen/ abspeichern</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Maria%20Bescheid%20geben,%20dass%20Paket%20in%20Packstation%20li%20e95affe9e7e04f3b832b970fff868c46.html">Maria
+								Bescheid geben, dass Paket in Packstation liegt! → Liegt dort voraussichtlich bis zum
+								31.12.2022/ 01.01.2023 (Packstation 163, Neusser Str. 856, 50737 Köln)</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/SIM%20PINs%20bei%20Handys%20ankleben%20+%20Excel%20Liste%20machen,%202325cc03b8ad4c49af1303b6854afe2d.html">SIM
+								PINs bei Handys ankleben + Excel Liste machen, welches Handy welche SIM/ Nummer
+								hinterlegt hat + was die PIN ist</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Reverse%20UNC%20shippen%20zu%20StockX!%20412882d407d84b57a38c3b0c5efc7edb.html">Reverse
+								UNC shippen zu StockX! </a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Storno-Rechnungen%20erstellen%20bzw%20schauen%20ob%20ich%20wel%20211f77fd804945fe96d36c91d8f0cc47.html">Storno-Rechnungen
+								erstellen bzw. schauen ob ich welche habe und Sneaker Rückgaben so verbuchen!</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Eigene%20Apple%20IDs%20fu%CC%88r%20alle%20Handys%20mit%20noch%20der%20sel%203c22330d86534a81a3c83ae39ad6fa2b.html">Eigene
+								Apple IDs für alle Handys mit noch der selben jacobfuer…</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Handys%20so%20sortieren,%20sodass%20die%20im%20selben%20Netzwerk%20993138c22bac4cc39aa0ff7109e4e32a.html">Handys
+								so sortieren, sodass die im selben Netzwerk nicht direkt hintereinander kommen</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Hose%20bestellen%20fu%CC%88r%20Jacob%20-%20SKD%20(vorher%205%E2%82%AC%20Gutsche%20fd8a61c4306f46129f0a3efbba817a01.html">Hose
+								bestellen für Jacob - SKD (vorher 5€ Gutschein Code generieren!)</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Neue%20Kreditkarte%20als%20weitere%20Unternehmenskreditkar%20da577cb0bc334993b2819a16a7dc94e3.html">Neue
+								Kreditkarte als weitere Unternehmenskreditkarte beantragen die kein Limit hat (wie
+								Klarna Bankkonto) → Sowas wie N26</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Hannes%20Addy%20auf%20Mu%CC%88lheim%20anpassen,%20Leos%20Addy%20auf%20M%205564c3f6bafb4eb58f86623f133498e4.html">Hannes
+								Addy auf Mülheim anpassen, Leos Addy auf Monat anpassen, Britta ab 08.02. weg für 8
+								Wochen, dann NICHT mitmachen und Handy aus dem Verkehr ziehen → Rodins Account drauf
+								(der aktuell soweit ich weiß auf dem aufgeblasenen 6S ist.)</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Tommy%20Adresse%20rausnehmen%20(fu%CC%88r%20ca%20ein%20Jahr)%20-%20SNKR%203222787022754721ab079fecaac4f339.html">Tommy
+								Adresse rausnehmen (für ca. ein Jahr) - SNKRS </a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Bryan%20Adresse%20rausnehmen%20(fu%CC%88r%20mind%206%20Monate)%20-%20SN%200b9181436b8d4b11bdd69fdfd4185a3a.html">Bryan
+								Adresse rausnehmen (für mind. 6 Monate) - SNKRS </a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Britta%20Adresse%20rausnehmen%20(Kur%2008%2002%20-20%2003%20)%20-%20SN%2077100870b19948d28ce09d7e92d6f88e.html">Britta
+								Adresse rausnehmen (Kur: 08.02.-20.03.) - SNKRS</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/SVD%20-%20Accounts%20anlegen%20+%20mit%20Addys%20befu%CC%88llen%20+%20App%20f4c61dd360e348f285e3dd7726094249.html">SVD
+								- Accounts anlegen + mit Addys befüllen + Apple Pay</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Endlich%20Sneaker%20Rechnungen%20zusammentragen%20+%20erstel%2073422f6ac6e44ad0bb699242ff3a5291.html">Endlich
+								Sneaker Rechnungen zusammentragen + erstellen der letzten Monate</a>, <a
+								href="../Tasks%20c26303335bc4403f86225dce29719d22/Handys%20einrichten!%201c7ccf736d6641c49683a47f88ccd9fc.html">Handys
+								einrichten!</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</header>
+		<div class="page-body"></div>
+	</article>
+</body>
+
+</html>

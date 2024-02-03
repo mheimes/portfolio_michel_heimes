@@ -1,0 +1,2861 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Entrepreneurial Marketing (EM)</title>
+	<style>
+		/* cspell:disable-file */
+		/* webkit printing magic: print all background colors */
+		html {
+			-webkit-print-color-adjust: exact;
+		}
+
+		* {
+			box-sizing: border-box;
+			-webkit-print-color-adjust: exact;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		@media only screen {
+			body {
+				margin: 2em auto;
+				max-width: 900px;
+				color: rgb(55, 53, 47);
+			}
+		}
+
+		body {
+			line-height: 1.5;
+			white-space: pre-wrap;
+		}
+
+		a,
+		a.visited {
+			color: inherit;
+			text-decoration: underline;
+		}
+
+		.pdf-relative-link-path {
+			font-size: 80%;
+			color: #444;
+		}
+
+		h1,
+		h2,
+		h3 {
+			letter-spacing: -0.01em;
+			line-height: 1.2;
+			font-weight: 600;
+			margin-bottom: 0;
+		}
+
+		.page-title {
+			font-size: 2.5rem;
+			font-weight: 700;
+			margin-top: 0;
+			margin-bottom: 0.75em;
+		}
+
+		h1 {
+			font-size: 1.875rem;
+			margin-top: 1.875rem;
+		}
+
+		h2 {
+			font-size: 1.5rem;
+			margin-top: 1.5rem;
+		}
+
+		h3 {
+			font-size: 1.25rem;
+			margin-top: 1.25rem;
+		}
+
+		.source {
+			border: 1px solid #ddd;
+			border-radius: 3px;
+			padding: 1.5em;
+			word-break: break-all;
+		}
+
+		.callout {
+			border-radius: 3px;
+			padding: 1rem;
+		}
+
+		figure {
+			margin: 1.25em 0;
+			page-break-inside: avoid;
+		}
+
+		figcaption {
+			opacity: 0.5;
+			font-size: 85%;
+			margin-top: 0.5em;
+		}
+
+		mark {
+			background-color: transparent;
+		}
+
+		.indented {
+			padding-left: 1.5em;
+		}
+
+		hr {
+			background: transparent;
+			display: block;
+			width: 100%;
+			height: 1px;
+			visibility: visible;
+			border: none;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+		}
+
+		img {
+			max-width: 100%;
+		}
+
+		@media only print {
+			img {
+				max-height: 100vh;
+				object-fit: contain;
+			}
+		}
+
+		@page {
+			margin: 1in;
+		}
+
+		.collection-content {
+			font-size: 0.875rem;
+		}
+
+		.column-list {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.column {
+			padding: 0 1em;
+		}
+
+		.column:first-child {
+			padding-left: 0;
+		}
+
+		.column:last-child {
+			padding-right: 0;
+		}
+
+		.table_of_contents-item {
+			display: block;
+			font-size: 0.875rem;
+			line-height: 1.3;
+			padding: 0.125rem;
+		}
+
+		.table_of_contents-indent-1 {
+			margin-left: 1.5rem;
+		}
+
+		.table_of_contents-indent-2 {
+			margin-left: 3rem;
+		}
+
+		.table_of_contents-indent-3 {
+			margin-left: 4.5rem;
+		}
+
+		.table_of_contents-link {
+			text-decoration: none;
+			opacity: 0.7;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid rgba(55, 53, 47, 0.09);
+			border-collapse: collapse;
+		}
+
+		table {
+			border-left: none;
+			border-right: none;
+		}
+
+		th,
+		td {
+			font-weight: normal;
+			padding: 0.25em 0.5em;
+			line-height: 1.5;
+			min-height: 1.5em;
+			text-align: left;
+		}
+
+		th {
+			color: rgba(55, 53, 47, 0.6);
+		}
+
+		ol,
+		ul {
+			margin: 0;
+			margin-block-start: 0.6em;
+			margin-block-end: 0.6em;
+		}
+
+		li>ol:first-child,
+		li>ul:first-child {
+			margin-block-start: 0.6em;
+		}
+
+		ul>li {
+			list-style: disc;
+		}
+
+		ul.to-do-list {
+			padding-inline-start: 0;
+		}
+
+		ul.to-do-list>li {
+			list-style: none;
+		}
+
+		.to-do-children-checked {
+			text-decoration: line-through;
+			opacity: 0.375;
+		}
+
+		ul.toggle>li {
+			list-style: none;
+		}
+
+		ul {
+			padding-inline-start: 1.7em;
+		}
+
+		ul>li {
+			padding-left: 0.1em;
+		}
+
+		ol {
+			padding-inline-start: 1.6em;
+		}
+
+		ol>li {
+			padding-left: 0.2em;
+		}
+
+		.mono ol {
+			padding-inline-start: 2em;
+		}
+
+		.mono ol>li {
+			text-indent: -0.4em;
+		}
+
+		.toggle {
+			padding-inline-start: 0em;
+			list-style-type: none;
+		}
+
+		/* Indent toggle children */
+		.toggle>li>details {
+			padding-left: 1.7em;
+		}
+
+		.toggle>li>details>summary {
+			margin-left: -1.1em;
+		}
+
+		.selected-value {
+			display: inline-block;
+			padding: 0 0.5em;
+			background: rgba(206, 205, 202, 0.5);
+			border-radius: 3px;
+			margin-right: 0.5em;
+			margin-top: 0.3em;
+			margin-bottom: 0.3em;
+			white-space: nowrap;
+		}
+
+		.collection-title {
+			display: inline-block;
+			margin-right: 1em;
+		}
+
+		.page-description {
+			margin-bottom: 2em;
+		}
+
+		.simple-table {
+			margin-top: 1em;
+			font-size: 0.875rem;
+			empty-cells: show;
+		}
+
+		.simple-table td {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table th {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table-header-color {
+			background: rgb(247, 246, 243);
+			color: black;
+		}
+
+		.simple-table-header {
+			font-weight: 500;
+		}
+
+		time {
+			opacity: 0.5;
+		}
+
+		.icon {
+			display: inline-block;
+			max-width: 1.2em;
+			max-height: 1.2em;
+			text-decoration: none;
+			vertical-align: text-bottom;
+			margin-right: 0.5em;
+		}
+
+		img.icon {
+			border-radius: 3px;
+		}
+
+		.user-icon {
+			width: 1.5em;
+			height: 1.5em;
+			border-radius: 100%;
+			margin-right: 0.5rem;
+		}
+
+		.user-icon-inner {
+			font-size: 0.8em;
+		}
+
+		.text-icon {
+			border: 1px solid #000;
+			text-align: center;
+		}
+
+		.page-cover-image {
+			display: block;
+			object-fit: cover;
+			width: 100%;
+			max-height: 30vh;
+		}
+
+		.page-header-icon {
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+
+		.page-header-icon-with-cover {
+			margin-top: -0.72em;
+			margin-left: 0.07em;
+		}
+
+		.page-header-icon img {
+			border-radius: 3px;
+		}
+
+		.link-to-page {
+			margin: 1em 0;
+			padding: 0;
+			border: none;
+			font-weight: 500;
+		}
+
+		p>.user {
+			opacity: 0.5;
+		}
+
+		td>.user,
+		td>time {
+			white-space: nowrap;
+		}
+
+		input[type="checkbox"] {
+			transform: scale(1.5);
+			margin-right: 0.6em;
+			vertical-align: middle;
+		}
+
+		p {
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.image {
+			border: none;
+			margin: 1.5em 0;
+			padding: 0;
+			border-radius: 0;
+			text-align: center;
+		}
+
+		.code,
+		code {
+			background: rgba(135, 131, 120, 0.15);
+			border-radius: 3px;
+			padding: 0.2em 0.4em;
+			border-radius: 3px;
+			font-size: 85%;
+			tab-size: 2;
+		}
+
+		code {
+			color: #eb5757;
+		}
+
+		.code {
+			padding: 1.5em 1em;
+		}
+
+		.code-wrap {
+			white-space: pre-wrap;
+			word-break: break-all;
+		}
+
+		.code>code {
+			background: none;
+			padding: 0;
+			font-size: 100%;
+			color: inherit;
+		}
+
+		blockquote {
+			font-size: 1.25em;
+			margin: 1em 0;
+			padding-left: 1em;
+			border-left: 3px solid rgb(55, 53, 47);
+		}
+
+		.bookmark {
+			text-decoration: none;
+			max-height: 8em;
+			padding: 0;
+			display: flex;
+			width: 100%;
+			align-items: stretch;
+		}
+
+		.bookmark-title {
+			font-size: 0.85em;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			height: 1.75em;
+			white-space: nowrap;
+		}
+
+		.bookmark-text {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.bookmark-info {
+			flex: 4 1 180px;
+			padding: 12px 14px 14px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.bookmark-image {
+			width: 33%;
+			flex: 1 1 180px;
+			display: block;
+			position: relative;
+			object-fit: cover;
+			border-radius: 1px;
+		}
+
+		.bookmark-description {
+			color: rgba(55, 53, 47, 0.6);
+			font-size: 0.75em;
+			overflow: hidden;
+			max-height: 4.5em;
+			word-break: break-word;
+		}
+
+		.bookmark-href {
+			font-size: 0.75em;
+			margin-top: 0.25em;
+		}
+
+		.sans {
+			font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+		}
+
+		.code {
+			font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+		}
+
+		.serif {
+			font-family: Lyon-Text, Georgia, ui-serif, serif;
+		}
+
+		.mono {
+			font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+		}
+
+		.pdf .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR';
+		}
+
+		.pdf .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.pdf .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR';
+		}
+
+		.pdf .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.highlight-default {
+			color: rgba(55, 53, 47, 1);
+		}
+
+		.highlight-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.highlight-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.highlight-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.highlight-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.highlight-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.highlight-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.highlight-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.highlight-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.highlight-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.highlight-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.highlight-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.highlight-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.highlight-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.highlight-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.highlight-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.highlight-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.highlight-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.highlight-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.block-color-default {
+			color: inherit;
+			fill: inherit;
+		}
+
+		.block-color-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.block-color-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.block-color-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.block-color-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.block-color-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.block-color-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.block-color-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.block-color-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.block-color-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.block-color-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.block-color-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.block-color-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.block-color-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.block-color-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.block-color-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.block-color-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.block-color-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.block-color-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.select-value-color-interactiveBlue {
+			background-color: rgba(35, 131, 226, .07);
+		}
+
+		.select-value-color-pink {
+			background-color: rgba(245, 224, 233, 1);
+		}
+
+		.select-value-color-purple {
+			background-color: rgba(232, 222, 238, 1);
+		}
+
+		.select-value-color-green {
+			background-color: rgba(219, 237, 219, 1);
+		}
+
+		.select-value-color-gray {
+			background-color: rgba(227, 226, 224, 1);
+		}
+
+		.select-value-color-translucentGray {
+			background-color: rgba(255, 255, 255, 0.0375);
+		}
+
+		.select-value-color-orange {
+			background-color: rgba(250, 222, 201, 1);
+		}
+
+		.select-value-color-brown {
+			background-color: rgba(238, 224, 218, 1);
+		}
+
+		.select-value-color-red {
+			background-color: rgba(255, 226, 221, 1);
+		}
+
+		.select-value-color-yellow {
+			background-color: rgba(253, 236, 200, 1);
+		}
+
+		.select-value-color-blue {
+			background-color: rgba(211, 229, 239, 1);
+		}
+
+		.select-value-color-pageGlass {
+			background-color: undefined;
+		}
+
+		.select-value-color-washGlass {
+			background-color: undefined;
+		}
+
+		.checkbox {
+			display: inline-flex;
+			vertical-align: text-bottom;
+			width: 16;
+			height: 16;
+			background-size: 16px;
+			margin-left: 2px;
+			margin-right: 5px;
+		}
+
+		.checkbox-on {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+
+		.checkbox-off {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+	</style>
+</head>
+
+<body>
+	<article id="73221304-6265-4a72-aa57-35c3c311d800" class="page sans">
+		<header>
+			<div class="page-header-icon undefined"><span class="icon">📑</span></div>
+			<h1 class="page-title">Entrepreneurial Marketing (EM)</h1>
+			<p class="page-description"></p>
+		</header>
+		<div class="page-body">
+			<p id="749ce832-c170-4152-a5a9-f8bd147b46e1" class="">
+			</p>
+			<h3 id="ca964895-77f5-4050-a7ec-ee626fa8990d" class="">Behandelte Themen:</h3>
+			<ul id="1d910740-be50-4d62-8cde-6712f7acd969" class="bulleted-list">
+				<li style="list-style-type:disc"><a
+						href="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800.html">Business terms
+						- abbreviations</a></li>
+			</ul>
+			<ul id="4c580f26-01cd-4dda-aa8f-c5747ae9fb02" class="bulleted-list">
+				<li style="list-style-type:disc"><a
+						href="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800.html">Segmenting
+						customers</a></li>
+			</ul>
+			<ul id="3532252f-810e-4c8a-bc65-4d717fcf50c1" class="bulleted-list">
+				<li style="list-style-type:disc"><a
+						href="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800.html">Target
+						customers</a></li>
+			</ul>
+			<ul id="589cf2b0-191e-4a8d-aac4-571815cd8dda" class="bulleted-list">
+				<li style="list-style-type:disc"><a
+						href="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800.html">USP (Unique
+						Selling Point/ Proposition)</a></li>
+			</ul>
+			<ul id="029be47c-85b4-4e2f-89df-ae290b4adc5f" class="bulleted-list">
+				<li style="list-style-type:disc"><a
+						href="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800.html">Produktvermarktungs-
+						und Preisgestaltungsstrategie</a></li>
+			</ul>
+			<ul id="cc345358-09d5-4504-9c26-65bb5e5a93db" class="bulleted-list">
+				<li style="list-style-type:disc"><a
+						href="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800.html">Kano Modell
+						zur Analyse der Korrelation von </a><strong><a
+							href="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800.html">Kundenzufriedenheit</a></strong><a
+						href="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800.html"> und den
+						Produkteigenschaften</a></li>
+			</ul>
+			<ul id="0b8b6ffc-b268-42f4-aa52-4142e5ff514c" class="bulleted-list">
+				<li style="list-style-type:disc"><a
+						href="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800.html">Value
+						Proposition
+					</a>→ <a href="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800.html">Five Box
+						Positioning Tool</a>
+					→ <a href="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800.html">Value
+						Proposition Canvas</a></li>
+			</ul>
+			<ul id="218869ff-2737-4e7e-b0ff-5c761855d630" class="bulleted-list">
+				<li style="list-style-type:disc"><a
+						href="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800.html">Product-Market
+						Fit</a></li>
+			</ul>
+			<ul id="8d1d31cb-8190-48cf-bff8-e98ef2eccbf9" class="bulleted-list">
+				<li style="list-style-type:disc"><a
+						href="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800.html">Ideen-Testing
+						mit “Idea Cards”</a></li>
+			</ul>
+			<ul id="42e03a70-d17a-4552-8868-7e49d0a8034d" class="bulleted-list">
+				<li style="list-style-type:disc">Marketingplan
+					→ Elemente eines Marketingplans: <a
+						href="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800.html">Beschreibung
+						Nr. 1, </a><a
+						href="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800.html">Beschreibung
+						Nr. 2</a>
+					→ <a href="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800.html">Marketing
+						Team Roles</a> (muss mithilfe der <a
+						href="https://www.linkedin.com/learning/writing-a-marketing-plan-2020/unlock-the-power-of-a-written-marketing-plan">angegebenen
+						Ressource</a> noch vervollständigt werden!)
+					→ <a href="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800.html">TAM (Total
+						Addressable Market)</a>
+					→ <a href="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800.html">Types of
+						Competitors</a>
+					→ <a
+						href="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800.html">SWOT-Analyse</a>
+					(Instrument zur strategischen Planung und Positionierung eines Unternehmens)
+					→ <a href="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800.html">Product &amp;
+						Service Analysis</a> (Find your product/ service feature that’s most important to your
+					customers, which you can market best)
+					→ <a href="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800.html">Tactical
+						section </a>(4 Ps, Marketing Plan Rollout, Budget and Forecast section)<ul
+						id="0593c8fd-6ac1-4751-8c1b-6938b418029e" class="bulleted-list">
+						<li style="list-style-type:circle"><a
+								href="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800.html">AIDA-Modell</a>
+							in Promotion Phase des Marketings</li>
+					</ul>
+					<ul id="0e86bf8b-6e0e-45e0-8e87-c987411741f6" class="bulleted-list">
+						<li style="list-style-type:circle"><a
+								href="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800.html">Push
+								vs. Pull marketing</a></li>
+					</ul>
+					<ul id="70b325a0-6db5-4fd8-8dd2-e3e9ab369956" class="bulleted-list">
+						<li style="list-style-type:circle"><a
+								href="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800.html">SEO -
+								online marketing (keywords) - Tools</a></li>
+					</ul>
+				</li>
+			</ul>
+			<ul id="c4222128-fccc-481d-8f9c-c93d54af8a06" class="bulleted-list">
+				<li style="list-style-type:disc"><a
+						href="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800.html">KPI</a> (Key
+					Performance Indicator)</li>
+			</ul>
+			<p id="64069141-0c50-42d2-88d4-1aa11c95bddb" class="">
+			</p>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.875em;line-height:1.3">Business terms - abbreviations
+				</summary>
+				<div class="indented">
+					<ul id="c3d7ce8c-8653-4fd3-9f03-1fac9d128122" class="bulleted-list">
+						<li style="list-style-type:disc">MVP (Minimum viable product)</li>
+					</ul>
+					<ul id="42a69243-bb12-4915-ad2b-fe6584096719" class="bulleted-list">
+						<li style="list-style-type:disc">NPS (net promoter score) score
+							→ The likelihood that survey respondents would recommend a company, product, or a service to
+							a friend or colleague.</li>
+					</ul>
+					<ul id="9bcc420a-23a7-40ac-a5e0-7bcc3dda70c4" class="bulleted-list">
+						<li style="list-style-type:disc">Churn rate (Fluktuationsrate)</li>
+					</ul>
+					<ul id="c1320ba3-af25-408b-863a-c643a100fddb" class="bulleted-list">
+						<li style="list-style-type:disc"><a
+								href="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800.html">KPI</a>
+							(Key performance indicator)</li>
+					</ul>
+					<ul id="c05c44d5-7ff6-4f26-b1a1-6422eceffae7" class="bulleted-list">
+						<li style="list-style-type:disc">CSAT
+							→ Customer satisfaction rate (KPI for customer service and product quality in all kinds of
+							businesses)
+							→ Bestimmung anhand von Kundenbefragungen bei denen sie einen Wert auf einer Skala von 1-5
+							wählen sollen → Daraus wird CSAT in % bestimmt.</li>
+					</ul>
+					<ul id="b6183c4a-4463-440d-9d4c-74679885fafe" class="bulleted-list">
+						<li style="list-style-type:disc">RPC (Revenue per Contract)
+							→ Describes the profit on each sale
+							→ The RPC can be increased though efficient marketing</li>
+					</ul>
+					<ul id="237c974e-2edc-4173-b254-1060e7118275" class="bulleted-list">
+						<li style="list-style-type:disc">SVP
+							→ Senior Vice President</li>
+					</ul>
+					<ul id="108da813-c220-42c0-a4c1-70149d47dc74" class="bulleted-list">
+						<li style="list-style-type:disc">EVP
+							→ Executive Vice President (leitender Vizepräsident)
+							→ z. B. COO (Chief Operating Officer → Leitet das Tagesgeschäft eines Unternehmens)</li>
+					</ul>
+					<ul id="ec75c60c-7762-4f19-a1c1-e4eae63468c1" class="bulleted-list">
+						<li style="list-style-type:disc">USP (Unique Selling Proposition/ Point)
+							→ What you have what the competitors don’t have.
+							→ Examples: lowest costs, highest quality, most experience, first in it’s product class
+							<span style="border-bottom:0.05em solid">or</span> another trait that sets the offering
+							apart from the competition.
+							→ USP should be/ have:
+							1. Relevance → Should address a key success factor in the market.
+							2. Visibility → Has to be visible to the potential customers.
+							3. Sustainability (haltbar) → A company has to be able to maintain this advantage.</li>
+					</ul>
+					<ul id="4ce78df4-efef-4b93-8073-e66debc58831" class="bulleted-list">
+						<li style="list-style-type:disc">NDA (Non-disclosure agreement) =
+							Geheimhaltungsvereinbarung<strong>
+							</strong>→ Kann auch mit Investoren vereinbart werden
+							→ i. d. R. pitcht man im ersten Gespräch vor Investoren nur sein Konzept, nicht seine
+							Technologie. Vor allem wenn es sich dabei um eine besondere Technologie handelt die
+							verwendet wird, auf die andere nicht so schnell kommen würden! Wenn man später auch die
+							Technologie erklären soll, kann man die Unterschreibung eines NDA anfordern!</li>
+					</ul>
+					<ul id="59e31fee-bfac-469c-8907-1eed66edd2e7" class="bulleted-list">
+						<li style="list-style-type:disc">RTB (Reason to believe)
+							→ The proof and reasons why customers should trust a brand mission, promise, or other
+							emotional appeals.
+							→ Strong RTBs help a brand building it’s reputation within the market.</li>
+					</ul>
+					<ul id="bffe0ecb-e22c-41f0-9a62-1797dd2a9101" class="bulleted-list">
+						<li style="list-style-type:disc">Bounce-Rate (Absprungrate)
+							→ Wie viele verlassen Webseite gleich wieder?</li>
+					</ul>
+					<ul id="31ca651f-94fe-411a-bf42-c6c0b712172e" class="bulleted-list">
+						<li style="list-style-type:disc">Visits per Unique Visitors
+							→ Wie oft nutzen Nutzer die Webseite?</li>
+					</ul>
+					<ul id="574cdab1-2b14-4dc8-9ac3-7b10f95f7800" class="bulleted-list">
+						<li style="list-style-type:disc">Site-Stickiness (Verweildauer)
+							→ Wie lange bleiben die Nutzer auf der Seite?</li>
+					</ul>
+					<ul id="8e078730-6659-428d-83c8-dbaaa4898174" class="bulleted-list">
+						<li style="list-style-type:disc">SEO (Search Engine Optimization)
+							→ </li>
+					</ul>
+					<ul id="b013477a-3aff-4a69-968d-90c0ffe80237" class="bulleted-list">
+						<li style="list-style-type:disc">SEA (Search Engine Advertising)
+							→ </li>
+					</ul>
+					<ul id="0a77ea5c-ab5e-4fb0-9a2b-8261a1fb79f9" class="bulleted-list">
+						<li style="list-style-type:disc">CAC (Customer Acquisition Cost)
+							→ </li>
+					</ul>
+					<ul id="4b4101c8-412a-470a-af40-f6ab0844a259" class="bulleted-list">
+						<li style="list-style-type:disc">CTA (Call to Action)
+							→ </li>
+					</ul>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.875em;line-height:1.3">Marketing Foundations</summary>
+				<div class="indented">
+					<details open="">
+						<summary style="font-weight:600;font-size:1.5em;line-height:1.3"> <a
+								href="https://www.linkedin.com/learning/marketing-foundations-2/segmenting-your-customers">“Marketing
+								Foundations”</a>
+							<mark class="highlight-blue"><code>Content:
+Marketing Strategy
+→ Segmenting/ Targeting customers
+→ Positioning your message → USP, Preisentscheidung, Kundenzufriedenheit (Kano-Modell), Value Proposition</code></mark>
+						</summary>
+						<div class="indented">
+							<details open="">
+								<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Understanding
+									Marketing’s Role</summary>
+								<div class="indented">
+									<p id="33e09ae7-5409-4cd4-bdc8-3a0a8b53a858" class="">Not seen yet but basic infos
+										so not that necessary!</p>
+								</div>
+							</details>
+							<details open="">
+								<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Analyzing Your
+									Business</summary>
+								<div class="indented">
+									<p id="fc0a57da-5f4a-4e08-886e-8fcf2e997378" class="">Not seen yet but basic infos
+										so not that necessary!</p>
+									<p id="43bf7258-4ae7-4977-843d-2fd938626986" class="">Partially already worked on it
+										<a
+											href="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800.html">here</a>!
+									</p>
+								</div>
+							</details>
+							<details open="">
+								<summary style="font-weight:600;font-size:1.25em;line-height:1.3">(Developing your)
+									Marketing Strategy</summary>
+								<div class="indented">
+									<details open="">
+										<summary style="font-weight:600;font-size:1.25em;line-height:1.3">
+											<strong>Segmenting your customers</strong></summary>
+										<div class="indented">
+											<blockquote id="5c1b2b5b-3d88-47fb-8cfa-6ddba2ce294c" class="">Breaking
+												customers down into well-defined groups helps you focus only on the most
+												relevant customers and avoids wasting time and money on the less
+												relevant.</blockquote>
+											<ol type="1" id="babe9223-963e-445b-98e4-67e76cf03cb8" class="numbered-list"
+												start="1">
+												<li>Demographic segmentation
+													→ customers grouped by their characteristics, such as income level,
+													age, gender or their height and weight.
+													→ Useful for products tied to these special traits.</li>
+											</ol>
+											<ol type="1" id="56acf6b8-820c-4029-95d7-06e84994f62e" class="numbered-list"
+												start="2">
+												<li>Geographic segmentation
+													→ Physical location of customers
+													→ Where does opening stores and advertising the products/ services
+													make sense.</li>
+											</ol>
+											<ol type="1" id="6bfbe539-3e36-42e5-9089-ca7fabf55c6e" class="numbered-list"
+												start="3">
+												<li>Behavioral segmentation
+													→ Grouping customers by the things they do (hobbies and habits)
+													→ Also: How much do they purchase? How frequently do they purchase?
+													What is their price sensitivity?</li>
+											</ol>
+											<ol type="1" id="7534c245-a7fc-4f34-b5d0-b8f74ab11d8c" class="numbered-list"
+												start="4">
+												<li>Psychographic segmentation
+													→ Customer thought process (how they think)
+													→ Attitudes and aspirations (especially about the benefits that a
+													product or service delivers)
+													→ Examples: Need for prestige, Need for convenience (Bequemlichkeit)
+												</li>
+											</ol>
+											<p id="96a58051-6330-4167-96c6-b55401fc7ebf" class="">
+											</p>
+											<p id="bbcd4457-f040-47ef-8500-66f5bc0b8122" class="">All four types of
+												Customer Segmentation should be used!</p>
+											<ul id="b86d88c6-9756-4dbd-800d-bea243da5cc6" class="bulleted-list">
+												<li style="list-style-type:disc"><strong>Demographic and geographic
+														segmentation</strong> help quantify the market potential and
+													find the market areas that have the most opportunity.</li>
+											</ul>
+											<ul id="09d5094b-cc30-4b16-8d61-e4a8815cc477" class="bulleted-list">
+												<li style="list-style-type:disc"><strong>Behavioral
+														segmentation</strong> helps predicting sales and shopping
+													behavior.</li>
+											</ul>
+											<ul id="83953534-3344-4ef3-a13a-497f9e57c24b" class="bulleted-list">
+												<li style="list-style-type:disc"><strong>Psychographic
+														segmentation</strong> helps define and create value proposition
+													→ What you say to the market to attract and retain customers</li>
+											</ul>
+										</div>
+									</details>
+									<details open="">
+										<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Targeting your
+											Customers</summary>
+										<div class="indented">
+											<blockquote id="bf254576-f38c-4bb7-9a0a-eb92b0bce857" class="">Process of
+												narrowing down your audience to a selected group to find the largest
+												group of customers that are most willing to buying your products or
+												services based on your marketing appeal.</blockquote>
+										</div>
+									</details>
+									<details open="">
+										<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Positioning
+											your message</summary>
+										<div class="indented">
+											<p id="37f81ea6-cd1c-42ec-97ce-f81874bf6588" class=""><strong>USP</strong>
+												(Unique Selling Proposition/ Point)
+												→ Examples: lowest costs, highest quality, most experience, first in
+												it’s product class <span style="border-bottom:0.05em solid">or</span>
+												another trait that sets the offering apart from the competition.
+												→ <span style="border-bottom:0.05em solid">What you have what the
+													competitors don’t have.</span> </p>
+											<ul id="565b9d36-ee50-442a-b257-f6b534c8d12a" class="bulleted-list">
+												<li style="list-style-type:disc">USP should be/ have:
+													1. Relevance → Should address a key success factor in the market.
+													2. Visibility → Has to be visible to the potential customers.
+													3. Sustainability (haltbar) → A company has to be able to maintain
+													this advantage.</li>
+											</ul>
+											<p id="4a6dce5f-715e-412a-a7ce-078ac55e3cbc" class="">
+											</p>
+											<p id="c1b72801-624c-4ddf-a86e-6a1e17a4e882" class=""><strong>Strategien bei
+													der Preisentscheidung (bei i. d. R. physischen Artikeln, da digitale
+													Strategien heutzutage teils abweichen → Ein Anbieter und dennoch
+													günstigstes und “bestes” Angebot z. B. Amazon)</strong></p>
+											<ul id="3baead7f-b0e7-4f1f-b364-1386e6031361" class="bulleted-list">
+												<li style="list-style-type:disc">Kostenführerschaft
+													→ Ein Produkt zu Grundeigenschaften erschaffen das günstiger ist als
+													seine Mitbewerber.</li>
+											</ul>
+											<ul id="85cf193b-2cc0-4629-b440-ba4a4e7334c7" class="bulleted-list">
+												<li style="list-style-type:disc">Differenzierung
+													→ Bessere Qualität als die Konkurrenz Vertrauen zum Kunden, Leistung
+													+ Funktion, Beziehung + Marke<figure
+														id="d1852ad4-3efe-42e1-a74f-508df9bc549c" class="image"><a
+															href="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800/Qualitaets-Kostenfuehrerschaft.jpeg"><img
+																style="width:1617px"
+																src="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800/Qualitaets-Kostenfuehrerschaft.jpeg" /></a>
+													</figure>
+												</li>
+											</ul>
+											<p id="12f6667c-250b-42e4-b70f-269d00703035" class="">
+											</p>
+											<p id="faa10eca-076a-43d6-a8ca-cf11bf9e45ce" class=""><strong>Kano Modell
+													zur Analyse Kundenzufriedenheit-Produkteigenschaften</strong></p>
+											<ul id="1708c2dc-638d-4282-9a51-a38980b6640b" class="bulleted-list">
+												<li style="list-style-type:disc">Basisanforderungen = Hygienefaktoren
+													→ Must haves!
+													→ Sind sie nicht oder nur schlecht erfüllt, so sinkt die
+													Kundenzufriedenheit überproportional!
+													→ Sind sie vollkommen erfüllt, wirkt sich dies eher neutral auf die
+													Kundenzufriedenheit aus.</li>
+											</ul>
+											<ul id="3292f2cd-ffa1-4b74-8aa6-3f373ce18673" class="bulleted-list">
+												<li style="list-style-type:disc">Qualitäts-/ Leistungsanforderungen
+													→ Werden von Kunden explizit erwartet.
+													→ Haben entsprechend der Features einen direkten und linearen
+													Einfluss auf die Kundenzufriedenheit.
+													→ Viele Kunden vergleichen diese Merkmale/ Faktoren mit denen
+													anderen Unternehmen.</li>
+											</ul>
+											<ul id="43c0fbf4-3899-4c87-85c9-7a8ba3a0eee5" class="bulleted-list">
+												<li style="list-style-type:disc">Begeisterungs-/ Leistungsanforderungen
+													→ Sind keine must-have-Features aber begeistern und überzeugen zum
+													Kauf!
+													→ Sind temporär und werden nach und nach zur Normalität.
+													Entsprechend kann man sich nicht auf Begeisterungsfaktoren/
+													-merkmalen ausruhen!
+													→ Sind sie stark erfüllt, so steigt die Kundenzufriedenheit
+													überproportional!
+													→ Sind sie nicht oder nur schlecht erfüllt, wirkt sich dies eher
+													neutral auf die Kundenzufriedenheit aus.</li>
+											</ul>
+											<ul id="64c48c47-f847-4a69-9a17-f9362cc0752c" class="bulleted-list">
+												<li style="list-style-type:disc">Indifferenzzone
+													→ In diesem Bereich verhalten sich die Zufriedenheitswerte moderat,
+													außerhalb dieser Zone steigen und sinken die Zufriedenheitswerte
+													überproportional.</li>
+											</ul>
+											<figure id="1ef5e067-3702-4d57-8eb3-19fc403f0457" class="image"><a
+													href="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800/kano-modell-zur-analyse-kundenzufriedenheit-produkteigenschaften.png"><img
+														style="width:700px"
+														src="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800/kano-modell-zur-analyse-kundenzufriedenheit-produkteigenschaften.png" /></a>
+											</figure>
+											<p id="ec0240a7-8e3c-4563-b6bc-5e3eaa89907b" class="">
+											</p>
+											<p id="be93be23-aabc-4a69-b897-ac63317e6aba" class=""><strong>Value
+													Proposition (Wertversprechen)
+												</strong>→ A single-minded (zielstrebig) claim to change the customer’s
+												mind and cause them to do something.</p>
+											<p id="876cd17e-872f-40c2-9825-932edbc2a908" class=""><strong>How to define
+													the Value Proposition - Five Box Positioning Tool:</strong></p>
+											<ul id="0b544775-b0dc-442a-8875-f6defb159f6a" class="bulleted-list">
+												<li style="list-style-type:disc">Define current Do
+													→ What are customers doing today with respect to your product or
+													service category?</li>
+											</ul>
+											<ul id="4a9787c2-0b3a-4089-aac8-a429bfa622c7" class="bulleted-list">
+												<li style="list-style-type:disc">Define current Belief
+													→ What are customers’ current beliefs about the products and
+													services out in the market today?</li>
+											</ul>
+											<ul id="9c284858-a92f-4a06-bea2-425ba3e60aa6" class="bulleted-list">
+												<li style="list-style-type:disc">Desired Do
+													→ What do You want customers to do?</li>
+											</ul>
+											<ul id="745593f1-79df-4d62-bfe4-e069883c9496" class="bulleted-list">
+												<li style="list-style-type:disc">Desired Beliefs
+													→ What beliefs will lead to the “Desired Do”?</li>
+											</ul>
+											<ul id="e6f40019-7d0d-4eab-9308-279ba1de08bb" class="bulleted-list">
+												<li style="list-style-type:disc">Making a Claim
+													→ What claim must you make?
+													→ What supporting evidence do you have</li>
+											</ul>
+											<p id="3cde8439-1d65-4318-81dd-76f102e60087" class="">Example: </p>
+											<ol type="1" id="bdbb2669-8906-40fc-8a32-40ec34da33b9" class="numbered-list"
+												start="1">
+												<li>Current Do: “I use a traditional wallet, and it&#x27;s thick because
+													of all the stuff I carry.”</li>
+											</ol>
+											<ol type="1" id="bf956eb3-34aa-457a-90f6-8cc12a314774" class="numbered-list"
+												start="2">
+												<li>Current Belief: “I believe my wallet sticks out a lot, but all
+													wallets are the same.”</li>
+											</ol>
+											<ol type="1" id="43a5893e-9058-4d11-bc2d-30279136011e" class="numbered-list"
+												start="3">
+												<li>Desired Do: “I buy a slim wallet.”</li>
+											</ol>
+											<ol type="1" id="44d0cd5e-e0d7-4d2a-b277-dd3dba42bc1e" class="numbered-list"
+												start="4">
+												<li>Desired Belief: “I believe having a slim wallet carrying all the
+													same stuff is rather clever.”</li>
+											</ol>
+											<ol type="1" id="c74ba23d-fc3f-42ec-a014-ea457e802962" class="numbered-list"
+												start="5">
+												<li>The Claim: “Our wallets are better designed than traditional wallets
+													to carry all the stuff you have now but be much slimmer.”
+													→ To support that claim compare your wallet to the competition side
+													by side.
+													→ In other words: You want your value proposition supported with
+													strong reasons to believe.</li>
+											</ol>
+										</div>
+									</details>
+								</div>
+							</details>
+						</div>
+					</details>
+					<details open="">
+						<summary style="font-weight:600;font-size:1.5em;line-height:1.3">Value Proposition (Canvas) - <a
+								href="https://www.youtube.com/watch?v=pwRL4GiA8Ek">“Designing your Value Proposition by
+								Alex Osterwalder […]”</a>
+							<mark class="highlight-blue"><code>Content:
+→ Value Proposition Canvas to develop the customer segment, the value proposition and find the product market fit
+→ Testing ideas with “Test Cards”</code></mark>
+						</summary>
+						<div class="indented">
+							<p id="c617a237-681b-480c-ad30-3cd11e9b53e0" class=""><strong>Value Proposition
+									Canvas</strong></p>
+							<ul id="a0268133-9071-4f97-b347-8df8819aba31" class="bulleted-list">
+								<li style="list-style-type:disc">Important: <strong>Think of a typical customer
+									</strong>and design the VPC exclusively for him/ her (can still be a greater group
+									like “Upper middle class with US$100k/ yr income).</li>
+							</ul>
+							<ul id="ec16c4a2-c567-42a5-988e-74a5b22fff2e" class="bulleted-list">
+								<li style="list-style-type:disc"><strong>Shared language</strong> in a map to
+									communicate the findings concerning the customers across a team and every part of an
+									organization (tech, marketing, finance, …)</li>
+							</ul>
+							<ul id="bd270037-348f-4670-8a1a-48b80e943251" class="bulleted-list">
+								<li style="list-style-type:disc">Map the customers in an <strong>understandable manner
+										for everyone involved in a product/ service</strong>.</li>
+							</ul>
+							<h3 id="05cfce8b-a9e2-4cbb-b9d3-e3385bfb7bcf" class="">Observation part of the VPC (observe
+								the customer)/ Customer segment/ Customer profile:</h3>
+							<ol type="1" id="a57db1ea-d137-498a-b8d8-821124b53796" class="numbered-list" start="1">
+								<li><strong>Customer Jobs
+									</strong>→ Jobs to-be-done of a potential customer
+									→ What are the customers’ needs and what do they want in their life/ what’s
+									important to them?
+									→ Include different tasks, problems and wishes the customers are intended to deal
+									with.
+									→ Redefine the customer segment from the emotional (preferences, popularity), social
+									(reputation, sense of duty), and functional (practicability) perspectives.
+									→ Examples (Electric Car - Tesla): personal mobility, occasional long distance trip,
+									commute (pendeln) to work, be different from others, convey the images of success,
+									in synch with personal values</li>
+							</ol>
+							<ol type="1" id="31f84b13-2b83-4fd1-8b08-78acaf7827c3" class="numbered-list" start="2">
+								<li><strong>Pains</strong>
+									→ What are the pains of buyers (i.e. (das heißt) his/ her problems, risks,
+									obstacles, frustrations, …)
+									→ Outcome customers want to avoid
+									→ Examples (Electric Car - Tesla): lack of charging stations, …)</li>
+							</ol>
+							<ol type="1" id="db0f2698-bf29-4c8e-92c2-d8691ad42338" class="numbered-list" start="3">
+								<li><strong>Gains</strong>
+									→ What are the gains the customers get when they use the product
+									→ Outcome customers want to achieve
+									→ Should include the things that make customers satisfied or even happy rather than
+									simply being a converse of the pain.
+									→ May be quite existential and free of any extraordinary nature.
+									→ Examples (Electric Car - Tesla): performs like a sport car, high-end battery tech,
+									high safety rating, design, brand recognition, self-driving, range of 250-350km, …
+								</li>
+							</ol>
+							<figure id="37f76d3d-117c-445e-a2d1-4f8dd2211930" class="image"><a
+									href="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800/Bildschirmfoto_2022-10-26_um_14.48.25.png"><img
+										style="width:686px"
+										src="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800/Bildschirmfoto_2022-10-26_um_14.48.25.png" /></a>
+							</figure>
+							<p id="0dd156a3-1edb-4c86-aaf8-db400b630922" class="">
+							</p>
+							<ul id="88414149-67ac-488b-93de-a24020fa73db" class="bulleted-list">
+								<li style="list-style-type:disc">Once done with the steps below, <strong>order the items
+										of each category</strong> in importance from highest to lowest.</li>
+							</ul>
+							<h3 id="1fcf4006-eb68-4742-b85b-2c7af89e1e7d" class="">Design part of the VPC (make sense of
+								the observations)/ Value Proposition segment:</h3>
+							<ul id="9b29f7b3-4b45-4000-b61f-8d20fa49449d" class="bulleted-list">
+								<li style="list-style-type:disc">How to create value for the customer described in the
+									first part (the whole steps above) of the Value Proposition Canvas?
+									→ Result describes the <a
+										href="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800.html">Product
+										Market Fit</a>
+									→ Result consists of the choices of what to do and what not to do.</li>
+							</ul>
+							<ol type="1" id="09502aad-6c27-43fb-8a9b-3de4ee75b888" class="numbered-list" start="1">
+								<li><strong>Products and Services
+									</strong>→ Describe exact products and services you offer for this customer segment.
+									→ Make explicit how your products and services connect with the job’s pains and
+									gains of your customers.
+									This part is NOT about the features but about explaining how you create this
+									connection.
+									→ How do the products and services create value for the described customers
+									→ Examples (Electric Car - Tesla): great battery tech with 60-85 kWh, 8 year battery
+									warranty, various options to add, …</li>
+							</ol>
+							<ol type="1" id="bb324f13-bcc3-4f41-ad55-f241f8e5d6ce" class="numbered-list" start="2">
+								<li><strong>Pain Relievers
+									</strong>→ How do our products and services kill or relieve the pains from the first
+									part of the VPC?
+									→ Only address some of the pains (the most important once) since you cannot address
+									all.
+									→ Examples (Electric Car - Tesla): charging 45-90 km/h (addresses topics like
+									frequent charging or the fear of a dead battery), 5+2 seats (addresses the fear of
+									little spacing), range of 350-450km, safest car in the world, …</li>
+							</ol>
+							<ol type="1" id="fe2fd5fe-d276-4dd3-9e4b-9247567afd32" class="numbered-list" start="3">
+								<li><strong>Gain Creators
+									</strong>→ How do your P&amp;S produce gains your customers expect, want or desire?
+									→ Examples (Electric Car - Tesla): Performance 0-100km/h in 4.4sec, focus on design
+									&amp; style, high-tech 17” touch screen (for the techy feel in the car)<figure
+										id="331be6c7-b72b-4b6e-8c2b-78a62aace997" class="image"><a
+											href="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800/Bildschirmfoto_2022-10-26_um_15.50.08.png"><img
+												style="width:506px"
+												src="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800/Bildschirmfoto_2022-10-26_um_15.50.08.png" /></a>
+									</figure>
+								</li>
+							</ol>
+							<p id="0146f9c2-355c-4ea8-aa34-50acaf377e85" class="">
+							</p>
+							<figure id="dce80532-db9a-42d2-8928-60946f9a7082">
+								<div class="source"><a
+										href="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800/the-value-proposition-canvas-1.pdf">the-value-proposition-canvas-1.pdf</a>
+								</div>
+							</figure>
+							<p id="47b9bd59-c951-47da-885b-52cff7ce5b3b" class="">
+							</p>
+							<h3 id="8aec82d4-53a5-49b4-bf46-119398c42272" class="">Product-Market Fit</h3>
+							<ul id="fd5c4171-8d05-41d5-a817-ebfab74d1017" class="bulleted-list">
+								<li style="list-style-type:disc">Product-Market Fit is a <strong>scenario or
+										state</strong> of your product in which a company’s target customers are buying,
+									using, and telling others about the company’s product in numbers large enough to
+									sustain that product’s growth and profitability.
+									→ The right product is being brought together with the right market.
+									→ One of a company’s greatest goals is to reach Product-Market Fit.
+									→ Achieving product-market fit means a startup moves out of the learning phase and
+									into understanding its customers and having the first market-ready version of its
+									product.
+									It heralds (einläuten) the scaling phase in which startups take venture capital
+									companies on board to invest into growth.</li>
+							</ul>
+							<p id="27f35e6f-c925-46ce-a623-214823ca0ceb" class="">
+							</p>
+							<p id="e3a3fef6-e4f9-4cf5-bdf0-916663dd598b" class=""><strong>How to achieve Product-Market
+									Fit</strong>:</p>
+							<ol type="1" id="63ee3c80-6062-4378-ad32-2e9792e9afa6" class="numbered-list" start="1">
+								<li>Determine your target customers</li>
+							</ol>
+							<ol type="1" id="bcee0558-80e1-432a-bdaf-1a514e605dfd" class="numbered-list" start="2">
+								<li>Identify underserved needs of that customers</li>
+							</ol>
+							<ol type="1" id="23f00187-9dcd-4f0b-99db-ca1e34ffc502" class="numbered-list" start="3">
+								<li>Define your value proposition</li>
+							</ol>
+							<ol type="1" id="4aaf9654-e4ef-4b90-bb17-ae09dd11cfa7" class="numbered-list" start="4">
+								<li>Specify your minimum viable product (MVP) feature set</li>
+							</ol>
+							<ol type="1" id="96a95997-07c3-4e02-a444-1e8e089f6f28" class="numbered-list" start="5">
+								<li>Develop your MVP</li>
+							</ol>
+							<ol type="1" id="93f568c0-3511-415f-8751-4a557d269439" class="numbered-list" start="6">
+								<li>Test your MVP with customers</li>
+							</ol>
+							<p id="bc55b9a2-d8ca-4c76-9ad8-1d3c729beceb" class="">→ Then, based on those user tests and
+								surveys, use metrics like the ones suggested <a
+									href="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800.html">below</a>,
+								to determine if you’re headed in the right direction.</p>
+							<p id="42774cb9-f69e-418d-9571-13a493a59704" class="">
+							</p>
+							<p id="09905856-e990-4ff9-89ee-f129d9c3f52d" class=""><strong>How to measure the
+									Product-Market Fit</strong>:</p>
+							<ul id="726378a5-0f73-47db-a64c-69c7b3abbba0" class="bulleted-list">
+								<li style="list-style-type:disc">By an experiment:
+									If you ask existing customers how they would feel about it, if they couldn’t use the
+									product anymore and at least 40% say that they would be “very disappointed”, you
+									achieved product-market fit, according to Sean Ellis (marketing expert).</li>
+							</ul>
+							<ul id="0ecd9b25-c31a-48bd-8122-8095c345e6ba" class="bulleted-list">
+								<li style="list-style-type:disc">Product-Market Fit measurement signals by Andrew Chen:
+									<ul id="bf78327f-0a7d-4178-a040-9fd976924308" class="bulleted-list">
+										<li style="list-style-type:circle">When surveying potential customers or
+											allowing them to test your product, does some segment indicate they will
+											switch to your product?</li>
+									</ul>
+									<ul id="ac3db1c0-cf83-42cc-aaa0-079425c6de6e" class="bulleted-list">
+										<li style="list-style-type:circle">Are some users who have rejected similar
+											products on the market willing to try yours?</li>
+									</ul>
+									<ul id="acfc77b8-04a0-478d-9b3b-2ede9de8e4ae" class="bulleted-list">
+										<li style="list-style-type:circle">When user testing, do people group your
+											product accurately with the right competitive offerings?</li>
+									</ul>
+									<ul id="dd9dcbd5-1326-47c8-9d20-bcee3f8e8821" class="bulleted-list">
+										<li style="list-style-type:circle">Do users demonstrate an understanding of your
+											product’s differentiators or unique value proposition?</li>
+									</ul>
+									<ul id="302e05c0-9d3f-4474-bd92-4fa906ef4116" class="bulleted-list">
+										<li style="list-style-type:circle">How do your underlying metrics (such as
+											retention rates of users) measure up against those of your competitors?</li>
+									</ul>
+									<p id="ba1048db-aacb-4317-b3b7-ac4b27bfff4b" class="">→ To measure product success,
+										you will want to include a mix of both, qualitative and quantitative metrics.
+									</p>
+									<p id="5e1e95a0-1bd2-46a1-8c71-1334e7404514" class=""><strong>Quantitative</strong>:
+									</p>
+									<ul id="e368fc1b-0d2e-4589-996e-3753bf350129" class="bulleted-list">
+										<li style="list-style-type:circle">NPS (net promoter score) score
+											→ The likelihood that survey respondents would recommend a company, product,
+											or a service to a friend or colleague.</li>
+									</ul>
+									<ul id="33e0e809-35a5-4191-a024-6f727a4479c9" class="bulleted-list">
+										<li style="list-style-type:circle">Churn rate (Fluktuationsrate)</li>
+									</ul>
+									<ul id="67c81a23-3573-40ff-a569-97b5082cea93" class="bulleted-list">
+										<li style="list-style-type:circle">Growth rate</li>
+									</ul>
+									<ul id="294fbe01-ea20-4a6b-8f85-9b56e471e5ea" class="bulleted-list">
+										<li style="list-style-type:circle">Market share</li>
+									</ul>
+									<p id="24da2373-ca2e-4147-a97d-8f6dc4cca829" class=""><strong>Qualitative</strong>:
+									</p>
+									<ul id="37b85d5b-3d40-4f27-b31e-716a4428e389" class="bulleted-list">
+										<li style="list-style-type:circle">Word of mouth
+											→ Marc Andreessen: “If your customers talk about your product with others,
+											they effectively become your product’s sales reps.”</li>
+									</ul>
+									<ul id="4df3607a-c4b7-4ff5-b818-2ec3a4e98052" class="bulleted-list">
+										<li style="list-style-type:circle">Calls from the media or industry analysts
+											come in much more frequently, and coverage of your product and company
+											increases.</li>
+									</ul>
+								</li>
+							</ul>
+							<p id="4f3d389d-41a7-4380-af2d-be26bcf1dccd" class="">
+							</p>
+							<h3 id="66326ab6-6af7-451b-859d-bcf705139e69" class="">Idea Testing with a “Test Card”</h3>
+							<ul id="f8c76f17-c25e-455d-bc32-7785857c28dc" class="bulleted-list">
+								<li style="list-style-type:disc">Any idea/ feature still needs to be tested!</li>
+							</ul>
+							<ul id="91bbdb94-b2da-4b66-9bbd-81d1a3be284c" class="bulleted-list">
+								<li style="list-style-type:disc">Write different test cards for different idea
+									hypotheses and use them to test and validate your ideas/features with real people.
+									→ You ask yourself: What needs to be true for this feature/ pricing model/ etc. to
+									work out?</li>
+							</ul>
+							<figure id="b5b4e63e-f59f-44b8-9414-529da5f0d31b">
+								<div class="source"><a
+										href="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800/the-test-card-1.pdf">the-test-card-1.pdf</a>
+								</div>
+							</figure>
+						</div>
+					</details>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.875em;line-height:1.3">Marketingplan (und seine Elemente)
+					<code><mark class="highlight-blue">→ Team Roles, TAM, Competitors, SWOT, Product and Service Analysis, Tactical Section (incl. 4Ps)</mark></code>
+				</summary>
+				<div class="indented">
+					<blockquote id="5d95a919-b4c2-4a06-8a03-126452f1152e" class="">Der Marketingplan ist ein Bestandteil
+						eines Businessplans.</blockquote>
+					<blockquote id="7b593a9d-8ef2-430b-b977-8ef95c1a8813" class="">The real benefit of writing a
+						marketing plan is getting your team together and aligning about what’s most important to move
+						the business forward.</blockquote>
+					<p id="e09429e7-2030-4017-b21e-3182f97d3df9" class="">
+					</p>
+					<p id="4c7190d6-eb7b-46a8-9b65-77272d29a596" class=""><a
+							href="https://www.neuesunternehmertum.de/wissenskapital-start/wissenskapital/downloads/zum-businessplan/">NUK
+							Handbuch zur Erstellung eines Businessplans</a>
+						→ Soll eine gute Ressource sein an der man sich orientieren kann, wenn man einen Businessplan
+						erstellt!</p>
+					<details open="">
+						<summary style="font-weight:600;font-size:1.5em;line-height:1.3">Elemente eines Marketingplans
+						</summary>
+						<div class="indented">
+							<ul id="7bc8835b-bcea-4683-80bf-08fa8d5ebbb6" class="bulleted-list">
+								<li style="list-style-type:disc">Mission/ Vision</li>
+							</ul>
+							<ul id="ca7c1f80-1618-4cc0-bdce-e672c9a6d67d" class="bulleted-list">
+								<li style="list-style-type:disc">Market analysis
+									→ Environment
+									→ Actors
+									→ Competitors
+									→ Customers
+									→ Own company</li>
+							</ul>
+							<ul id="57da13e4-c575-4987-969e-0059ac774b23" class="bulleted-list">
+								<li style="list-style-type:disc">Marketing strategy</li>
+							</ul>
+							<ul id="8513853e-8d5a-4364-ad6b-2a28a451e94a" class="bulleted-list">
+								<li style="list-style-type:disc">Marketing mix/ tactical plan
+									4 Ps:
+									→ Product
+									→ Price
+									→ Place
+									→ Proposition</li>
+							</ul>
+							<ul id="ffc05270-6c3d-4fd4-a0ec-9d777aa8c5c4" class="bulleted-list">
+								<li style="list-style-type:disc">Market entry plan</li>
+							</ul>
+							<ul id="148e981c-93a4-43b1-a4f9-917ed0905c86" class="bulleted-list">
+								<li style="list-style-type:disc">Sales estimation/ forecast</li>
+							</ul>
+						</div>
+					</details>
+					<details open="">
+						<summary style="font-weight:600;font-size:1.5em;line-height:1.3"><a
+								href="https://www.linkedin.com/learning/writing-a-marketing-plan-2020/unlock-the-power-of-a-written-marketing-plan">“Writing
+								a Marketing Plan”</a></summary>
+						<div class="indented">
+							<details open="">
+								<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Marketing Plan
+								</summary>
+								<div class="indented">
+									<ol type="1" id="e3670bd3-50a3-4457-929b-75be9fd3e502" class="numbered-list"
+										start="1">
+										<li>Analysis → Competitors, own product and market</li>
+									</ol>
+									<ol type="1" id="bdd71eba-33fe-4f73-bf28-2115b6f65d88" class="numbered-list"
+										start="2">
+										<li>Strategy → How is product positioned in market?</li>
+									</ol>
+									<ol type="1" id="64cfc2d3-a12d-4c47-b688-2b5b083c03ec" class="numbered-list"
+										start="3">
+										<li>Tactical → Price, Product, Place, Promotion (Art und Weise)</li>
+									</ol>
+									<ol type="1" id="72d059cd-6c94-4b79-8392-2d121c2a9b22" class="numbered-list"
+										start="4">
+										<li>Implementation → Details of Who, What, When, Where</li>
+									</ol>
+									<ol type="1" id="78868222-1f92-4956-a5ac-ca0dade3890b" class="numbered-list"
+										start="5">
+										<li>Financial → Budget, expected future revenue → Defines how to measure success
+										</li>
+									</ol>
+								</div>
+							</details>
+							<details open="">
+								<summary style="font-weight:600;font-size:1.25em;line-height:1.3"><strong>Marketing Team
+										Roles:</strong></summary>
+								<div class="indented">
+									<ul id="5d491084-9c67-4069-baf1-4ad20fe354f1" class="bulleted-list">
+										<li style="list-style-type:disc">Finance
+											→ Allocate budget
+											→ Measure results
+											→ Improve ROI/ ROMI (Return on marketing investment)</li>
+									</ul>
+									<ul id="5600d2d0-8ac9-47a8-ae4c-73f15c1a4941" class="bulleted-list">
+										<li style="list-style-type:disc">…</li>
+									</ul>
+									<ul id="2ce02ee6-98c4-44f6-b3ab-d39876bbbf4e" class="bulleted-list">
+										<li style="list-style-type:disc">…</li>
+									</ul>
+									<p id="ea6997e4-aef9-4d0c-b6f2-c67fd698b45d" class="">
+									</p>
+								</div>
+							</details>
+							<details open="">
+								<summary style="font-weight:600;font-size:1.25em;line-height:1.3"><strong>TAM (Total
+										Addressable Market):</strong></summary>
+								<div class="indented">
+									<p id="64f7916a-2ee9-4cc5-b358-ca52e17b3396" class="">Total sales of
+										<strong><strong><strong>all</strong></strong></strong> companies in your
+										industry plus potential sales from any qualified customer who hasn’t yet
+										purchased in the category.</p>
+									<h3 id="9a4618ca-9604-4be6-816b-2f69def3ff3d" class=""><mark
+											class="highlight-teal_background"><em>Total industry sales / TAM = Market
+												penetration or % of total market reached (lower number is
+												good!)</em></mark></h3>
+									<h3 id="c09d0246-58ba-4c8a-ab8a-912fc532d478" class=""><mark
+											class="highlight-teal_background"><em>Total industry sales of [Company X] /
+												Total industry sales = Revenue Market Share (lower number is good! →
+												much upside potential)</em></mark></h3>
+									<p id="dccb64ce-02d5-4059-b48a-724b196e6ccb" class="">
+									</p>
+									<p id="60fd025a-9fb4-4d75-bc7b-e51ba214521d" class=""><strong>TAM Groups:</strong>
+									</p>
+									<ol type="1" id="3fd209d4-83cc-4ed1-a4e4-fbea29738eb9" class="numbered-list"
+										start="1">
+										<li>Qualified customers not buying anything</li>
+									</ol>
+									<ol type="1" id="0b16ea3d-7af1-4ad6-9fa1-1fa3c7b0bf9f" class="numbered-list"
+										start="2">
+										<li>Current loyal exclusive customers</li>
+									</ol>
+									<ol type="1" id="f31e27e8-112e-42d5-81e5-8ca6ff4b797d" class="numbered-list"
+										start="3">
+										<li>Customers buying from you and competitor</li>
+									</ol>
+									<ol type="1" id="39200deb-dd58-4abe-900f-3723beebd844" class="numbered-list"
+										start="4">
+										<li>Customers exclusively buying from competition</li>
+									</ol>
+								</div>
+							</details>
+							<details open="">
+								<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Competitors</summary>
+								<div class="indented">
+									<ul id="6327d183-c3fb-41fc-b0a4-b1a781cdbcca" class="bulleted-list">
+										<li style="list-style-type:disc">Direct → Sells same product/ service and
+											delivers same benefits</li>
+									</ul>
+									<ul id="4457ad2d-e8a2-4e45-b40b-ba9cc2e29f2c" class="bulleted-list">
+										<li style="list-style-type:disc">Indirect → Sells similar product/ service with
+											different benefits</li>
+									</ul>
+									<ul id="a94fa161-b761-42d4-a49c-72f10bea21b0" class="bulleted-list">
+										<li style="list-style-type:disc">Substitute → Sells unrelated product/ service
+											that can substitute for yours → Ersatzprodukt</li>
+									</ul>
+								</div>
+							</details>
+							<details open="">
+								<summary style="font-weight:600;font-size:1.25em;line-height:1.3">SWOT Analysis
+								</summary>
+								<div class="indented">
+									<ul id="43cabc88-98d4-4924-91e7-3406282379db" class="bulleted-list">
+										<li style="list-style-type:disc"><strong>S</strong>trength → Things own company
+											does well (assets, techs, processes, unique capabilities)</li>
+									</ul>
+									<ul id="270b45db-51af-4fdd-8ac7-672c22d9bd86" class="bulleted-list">
+										<li style="list-style-type:disc"><strong>W</strong>eaknesses → Areas that need
+											improvement</li>
+									</ul>
+									<ul id="b0ae5bda-610a-4ab9-a2e6-d4219836f30d" class="bulleted-list">
+										<li style="list-style-type:disc"><strong>O</strong>pportunities → Favorable
+											situations that can positively effect the business</li>
+									</ul>
+									<ul id="77e72db0-0b28-42fe-95ec-49f9d25784a8" class="bulleted-list">
+										<li style="list-style-type:disc"><strong>T</strong>hreats → Favorable situations
+											that can negatively effect the business</li>
+									</ul>
+								</div>
+							</details>
+							<details open="">
+								<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Product and Service
+									Analysis</summary>
+								<div class="indented">
+									<ol type="1" id="a73b2b0a-8f62-44fd-9120-dc8171de756f" class="numbered-list"
+										start="1">
+										<li>Write down all the features of your product/ service + their benefits</li>
+									</ol>
+									<table id="042208d6-69bb-49ac-99f5-db7f46e48e3e" class="simple-table">
+										<tbody>
+											<tr id="e7e48ba4-dbb0-47d7-9fef-a308179eb11a">
+												<td id="FvVR" class="">Feature One</td>
+												<td id="J[C\" class="">Feature Two</td>
+												<td id="mYNO" class="">Feature Three</td>
+											</tr>
+											<tr id="a79d4031-2809-49e4-969b-0ca85e0a6769">
+												<td id="FvVR" class="">Benefit</td>
+												<td id="J[C\" class="">Benefit</td>
+												<td id="mYNO" class="">Benefit</td>
+											</tr>
+										</tbody>
+									</table>
+									<ol type="1" id="72b1df5e-e888-478f-bdf2-99516d4e22f3" class="numbered-list"
+										start="2">
+										<li>Then have a look at your customer analysis and especially the list of
+											benefits they are likely to want in order from highest to lowest in
+											importance.</li>
+									</ol>
+									<table id="503514c4-a6f2-468b-86a1-6f59b46a75fa" class="simple-table">
+										<tbody>
+											<tr id="1159d690-751a-43fc-95ac-607b36d5e902">
+												<td id="Hi_X" class="">Low Importance</td>
+												<td id="ysTv" class="">Middle Importance</td>
+												<td id="eS\^" class="">High Importance</td>
+											</tr>
+											<tr id="6be70356-a66f-4b8a-8fcf-47e20e86a2dd">
+												<td id="Hi_X" class="">Benefits</td>
+												<td id="ysTv" class="">Benefits</td>
+												<td id="eS\^" class="">Benefits</td>
+											</tr>
+										</tbody>
+									</table>
+									<p id="c6dec98f-1389-4b3b-b50e-90e3a09b39dc" class="">→ Goal: Match benefits of your
+										product/ service to the list of benefits sought by customers.</p>
+									<p id="4b077b17-e906-4b51-8b0e-6e2b0e220084" class="">
+									</p>
+									<ol type="1" id="fd116703-d74f-4d26-9cd2-dd08fd148125" class="numbered-list"
+										start="3">
+										<li>Look for gaps between the benefits you offer and the benefits the customer
+											want!</li>
+									</ol>
+									<ol type="1" id="9a661013-d789-4d84-98e0-05da834f8c1d" class="numbered-list"
+										start="4">
+										<li>Do step 1. again with the competition’s product/ service and compare their
+											benefits with yours.
+											→ Validate each benefit category and find out who’s benefits perform/ are
+											better, weaker or the same.
+											→ Ideally, you want to find a feature and benefit in your product/ service
+											that performs better than the competition <span
+												style="border-bottom:0.05em solid">and</span> is rated high in
+											importance by the customer.</li>
+									</ol>
+								</div>
+							</details>
+							<details open="">
+								<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Value Proposition
+								</summary>
+								<div class="indented">
+									<p id="32381209-ffad-49ba-93d1-f892be3f2da0" class="">Claim addressing why a benefit
+										is important or how your product in superior in delivering that benefit.</p>
+									<p id="afefc2a2-ab7c-454d-b4fe-df68fa0102c2" class="">Mehr Inhalte dazu <a
+											href="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800.html">hier</a>.
+									</p>
+								</div>
+							</details>
+							<details open="">
+								<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Tactical Section (4
+									Ps)</summary>
+								<div class="indented">
+									<p id="b4316cde-1cdc-4f15-a9f7-1571ef0b0265" class=""><strong>Describe 4 Ps in
+											detail</strong> (Product, Price, Promotion, Place):</p>
+									<ul id="b5c94f1b-085a-4555-8c31-0dbba8332f50" class="toggle">
+										<li>
+											<details open="">
+												<summary><strong>Product</strong> and Service Programs</summary>
+												<p id="6331850a-694b-44f9-9705-69b6d05d155f" class="">→ Includes
+													t<strong>he entire experience of buying an using a product</strong>
+												</p>
+												<ul id="afe5ef43-3a6a-4c76-aeea-57f2c78aa2da" class="bulleted-list">
+													<li style="list-style-type:disc">Product and service performance
+														→ Product design
+														→ Tactical design
+														→ Packaging
+														→ People involved with customers</li>
+												</ul>
+												<p id="2f9c6abe-8c12-479e-9ed3-bdb7090c6eee" class="">→ Start by listing
+													the changes or improvements needed in your product and services.
+													Look at your <a
+														href="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800.html">product
+														service analysis</a> and your positioning statement.</p>
+												<ul id="ab8673dd-ebad-4dcb-be53-a977f32d6a1c" class="bulleted-list">
+													<li style="list-style-type:disc">Consider Product Support
+														→ List any other assets or activities needed that go into
+														supporting the products and services (e.g. installation services
+														for product, repair facilities, customer training programs,
+														customers service desk, etc.)</li>
+												</ul>
+												<ul id="b55d77f3-93de-4e60-9363-cef94df973b4" class="bulleted-list">
+													<li style="list-style-type:disc">Supplemental Parts or Services
+														→ Do you sell accessories or spare parts?
+														→ Do you offer a warranty or return policy?</li>
+												</ul>
+												<p id="72756865-ed19-429b-bb33-0943c32269ee" class="">
+												</p>
+												<p id="e2a66591-23eb-4480-be6d-5d60ac835c89" class="">
+													<strong>Entrepreneurial challenges in product policy:</strong></p>
+												<ul id="ec936a59-19bc-42c5-ad89-8c3f520e5b68" class="bulleted-list">
+													<li style="list-style-type:disc">Scarce (Slack) resources, can
+														handle only limited complexity</li>
+												</ul>
+												<ul id="77e9c152-5677-4dd4-9423-11c14515b784" class="bulleted-list">
+													<li style="list-style-type:disc">&quot;Zero&quot; (or at least
+														little) tolerance for failure in product development since most
+														start-ups are single-product companies -&gt; no
+														cross-subsidizing</li>
+												</ul>
+												<ul id="535a6f0e-347b-4ea0-b329-0819ee868a47" class="bulleted-list">
+													<li style="list-style-type:disc">Product development is often
+														limited to the existing competencies and resources</li>
+												</ul>
+												<ul id="5200c5b8-c5e1-46ce-9aad-0364c35b1ccd" class="bulleted-list">
+													<li style="list-style-type:disc">Especially with innovative
+														technologies involved the &quot;right&quot; mix of
+														product/service
+														characteristics is often difficult to determine → compare
+														&quot;strategy as a bottom-up process&quot;</li>
+												</ul>
+												<p id="610aad59-d23e-481a-ace4-bd187baabf84" class=""><strong>Remedies
+														for entrepreneurial challenges:</strong></p>
+												<ul id="a6eabbab-bd2d-4a24-b032-f07a26dc52c3" class="bulleted-list">
+													<li style="list-style-type:disc">Experimentation</li>
+												</ul>
+												<ul id="07565a62-1eda-4d64-a97e-9f7a601fce68" class="bulleted-list">
+													<li style="list-style-type:disc">Early customer integration
+														→ Lean Startup logic e. g. MVPs (very basic product with focus
+														on key value), mock sales (present a product as it would already
+														exist and sell it), crowdfunding</li>
+												</ul>
+												<ul id="ce163b32-cd9e-4f3f-a256-05404566d2f2" class="bulleted-list">
+													<li style="list-style-type:disc">Creative branding</li>
+												</ul>
+												<ul id="0fcef567-9809-4228-94d2-25505dcde3b8" class="bulleted-list">
+													<li style="list-style-type:disc">Partnering?</li>
+												</ul>
+												<p id="d89cad07-448e-4965-8b75-502532395577" class="">
+												</p>
+											</details>
+										</li>
+									</ul>
+									<ul id="14d40928-1314-4c9d-977f-e0107783043b" class="toggle">
+										<li>
+											<details open="">
+												<summary><strong>Pricing</strong> approach</summary>
+												<blockquote id="2aedeb48-453a-4edc-93ae-5e7556c94f0f" class="">When a
+													customer first sees the price, that’s a critical time to remind them
+													of the value they’re getting for their money!</blockquote>
+												<p id="fd4bbfbe-22b0-4338-afd0-66adb1fe2f94" class="">
+												</p>
+												<p id="9f5e9238-8360-4396-8185-19acec613e7e" class=""><strong>Pricing
+														Plan/ Model</strong></p>
+												<ul id="3dc539db-94b8-4cff-a756-a5c4bd76d361" class="bulleted-list">
+													<li style="list-style-type:disc">Revenue models<ul
+															id="355b521c-f4d3-42d5-85fd-999bea3d5e22"
+															class="bulleted-list">
+															<li style="list-style-type:circle">Core product
+																→ one-time payment for an economic good/ asset (FFP2
+																mask)
+																→ subscription, membership fee (gym)
+																→ user fee (Nutzungsgebühr) (e-scooter)
+																→ rental, leasing ()
+																→ IP licensing → Franchise (McDonalds)
+																→ broker fees (eBay)
+																→ Werbung (Google, private Fernsehsender)
+																→ Freemium
+																→ Spenden (Open source Produkte z. B. Wikipedia)</li>
+														</ul>
+														<ul id="d2967c2d-e014-422b-8422-ac1262f47686"
+															class="bulleted-list">
+															<li style="list-style-type:circle">Additional services</li>
+														</ul>
+													</li>
+												</ul>
+												<ul id="b1310fc4-3882-48d4-994a-ae42e04e2b36" class="bulleted-list">
+													<li style="list-style-type:disc">Cost-plus pricing model</li>
+												</ul>
+												<ul id="9cde52a2-2673-4f91-9c08-40d1b369e99c" class="bulleted-list">
+													<li style="list-style-type:disc">Value-based pricing model</li>
+												</ul>
+												<ul id="bc1cf484-8018-4c55-b168-93c47c4e61b5" class="bulleted-list">
+													<li style="list-style-type:disc">Hourly pricing model (service)</li>
+												</ul>
+												<ul id="8b49fe60-235d-4e31-b640-584c47e189e0" class="bulleted-list">
+													<li style="list-style-type:disc">Fixed pricing model</li>
+												</ul>
+												<ul id="add85c70-d67e-4583-8644-4de18027022b" class="bulleted-list">
+													<li style="list-style-type:disc">Equity pricing model
+														(Aktienkurs-Modell)</li>
+												</ul>
+												<ul id="e8b9a938-2a0b-4976-9f46-cf1b50c853c6" class="bulleted-list">
+													<li style="list-style-type:disc">Performance-based pricing model
+													</li>
+												</ul>
+												<ul id="2c024d8d-57b0-4c3d-b274-7b0db11ed096" class="bulleted-list">
+													<li style="list-style-type:disc">Retainer pricing model
+														→ pre-paid amount + rest after reaching a set time or set number
+														of deliverables/ services</li>
+												</ul>
+												<p id="0020647e-8dfa-4fc3-95ae-15b8162c270c" class="">
+												</p>
+												<p id="5ff5231d-1ca5-4930-b1ac-9e1a50072fb8" class="">
+													<strong>Pricing</strong></p>
+												<ul id="d5bed7e2-5bf4-4a78-9f3f-303c7c77a39a" class="bulleted-list">
+													<li style="list-style-type:disc">Describe Pricing Strategy<ul
+															id="b44f0a4d-89e2-41dc-a423-a995900508df"
+															class="bulleted-list">
+															<li style="list-style-type:circle">Comparing to competition
+																→ Compare prices to competition
+																→ Explain price differences</li>
+														</ul>
+														<ul id="8b1f6856-090a-44d9-b295-ebdef53bb757"
+															class="bulleted-list">
+															<li style="list-style-type:circle">Grow the market
+																→ Show your prices are a good value
+																→ Don’t make comparison to other products</li>
+														</ul>
+														<p id="95fc2f6c-3bba-46bd-b072-0cea159b5b36" class="">→ Consider
+															target audience and positioning</p>
+														<p id="71592cf9-3ac6-4824-aea8-e7034c58acf6" class="">→ Include
+															complete price list</p>
+														<p id="4348d772-a2cb-4dd7-9dfd-d8e90dd1f556" class="">→ Describe
+															any additional costs</p>
+														<p id="6522abe4-a44a-4d62-93f0-8e307a751dd8" class="">→
+															Coordinate with finance and sales team</p>
+													</li>
+												</ul>
+												<ul id="96774d38-07a3-4312-b952-f9ee2329894c" class="bulleted-list">
+													<li style="list-style-type:disc">Setting a price (best/ realistic
+														choice especially in a start up)<ul
+															id="d07e7ca7-9bcc-4ccf-8dc9-519d5e3a6b30"
+															class="bulleted-list">
+															<li style="list-style-type:circle">Value delivered to
+																customer – „Customer value-based pricing“
+																→ Proactive pricing approach based on how much the
+																customer is willing and able to pay for product/ service
+																received
+																→ Depends on perceived value delivered to customer</li>
+														</ul>
+														<ul id="c21f3194-c0da-4515-99d6-266e3648f70b"
+															class="bulleted-list">
+															<li style="list-style-type:circle">Pricing of competition/
+																market price
+																→ Reactive pricing behavior (price reacts to price
+																changes on the market/ competition)
+																→ Price is perceived as a given (view taken from
+																“classic” economics)</li>
+														</ul>
+														<ul id="da061906-cca8-45c7-aa26-113761c5eb0a"
+															class="bulleted-list">
+															<li style="list-style-type:circle">Internal costs -
+																“Cost-plus pricing” (see above <a
+																	href="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800.html">Pricing
+																	Plan/ Model</a>!)
+																→ Frequently used with public sector projects
+																→ Potentially problematic due to circular argument</li>
+														</ul>
+													</li>
+												</ul>
+												<ul id="6521a64e-ca14-45cf-9856-b05ec8f973e0" class="bulleted-list">
+													<li style="list-style-type:disc">Price management over time</li>
+												</ul>
+												<ul id="38a0c9b2-8097-4b87-9423-d9620ac8635a" class="bulleted-list">
+													<li style="list-style-type:disc">Pricing Communication
+														→ Dictate when price will be communicated
+														→ <strong>Educate customers on value before telling them the
+															price!</strong></li>
+												</ul>
+												<p id="8a8fd43b-2196-4811-9397-dfd471f3ecf2" class="">
+												</p>
+												<p id="d266a5bf-931b-4373-886b-8eb1a5919455" class=""><strong>Strategien
+														bei der Preisentscheidung (bei i. d. R. physischen Artikeln, da
+														digitale Strategien heutzutage teils abweichen → Ein Anbieter
+														und dennoch günstigstes und “bestes” Angebot z. B.
+														Amazon)</strong></p>
+												<ul id="13f288e6-d560-4ce2-8372-30a74596ae85" class="bulleted-list">
+													<li style="list-style-type:disc">Kostenführerschaft
+														→ Ein Produkt zu Grundeigenschaften erschaffen das günstiger ist
+														als seine Mitbewerber.</li>
+												</ul>
+												<ul id="80e283a7-7236-4bd9-9d51-1c69ad3129d4" class="bulleted-list">
+													<li style="list-style-type:disc">Differenzierung
+														→ Leistung/ Funktion/ Beziehung/ Marke haben
+														Alleinstellungsmerkmal → Bessere Qualität oder mehr Vertrauen
+														zum Kunden als die Konkurrenz</li>
+												</ul>
+												<p id="5c6ece0f-e9aa-4314-810b-eb5f1f8e0ee2" class="">
+												</p>
+												<p id="302c3374-5329-4f64-a21b-c1cad2c8b3e3" class="">
+													<strong>Entrepreneurial challenges in pricing policy:</strong></p>
+												<ul id="81477f62-4399-4939-9267-e29162690c47" class="bulleted-list">
+													<li style="list-style-type:disc">Most concepts or theories analyzing
+														price as a competitive advantage argue in favor of established
+														companies (experience curve, product life cycle etc.) „Size does
+														matter&quot;</li>
+												</ul>
+												<ul id="743fe135-4dd9-43fb-b7a6-330003fc297f" class="bulleted-list">
+													<li style="list-style-type:disc">Products competing on price tend to
+														be low-margin businesses</li>
+												</ul>
+												<ul id="7b5de8e7-32db-4358-9b67-49d842f9d571" class="bulleted-list">
+													<li style="list-style-type:disc">The “right” price for innovative
+														products, however, is often difficult to set (cannot be done
+														based on extrapolation or market experience)</li>
+												</ul>
+												<p id="f6143a20-6d40-4aa4-81a9-816cb9c2043b" class=""><strong>Remedies
+														for entrepreneurial challenges:</strong></p>
+												<ul id="f31c94f2-5925-4976-955a-353b2173b9b4" class="bulleted-list">
+													<li style="list-style-type:disc">Differentiation rather than price
+														leadership</li>
+												</ul>
+												<ul id="6f4e9d56-9f28-4a42-b051-7cd5b1dab1e8" class="bulleted-list">
+													<li style="list-style-type:disc">Price based on
+														→ variable cost?
+														→ “value” e. g. time saved, quality improvement</li>
+												</ul>
+												<ul id="058f2b67-3ac0-40eb-9df8-5d328ecc19ff" class="bulleted-list">
+													<li style="list-style-type:disc">Experimentation: Prices are not set
+														in stone</li>
+												</ul>
+												<p id="0bbbfb2d-cc09-4902-aefc-f6d839869899" class="">
+												</p>
+											</details>
+										</li>
+									</ul>
+									<ul id="6ecc1339-9127-4fa6-916d-55ee332a72f5" class="toggle">
+										<li>
+											<details open="">
+												<summary><strong>Promotion</strong> and Marketing</summary>
+												<blockquote id="2fb1eb12-9ca8-43b7-9592-830da238c524" class="">All the
+													ways you tell your customers about your products and services so
+													they consider buying.</blockquote>
+												<ul id="54a02ec9-ebb8-4a54-bc35-c43700dfb31e" class="bulleted-list">
+													<li style="list-style-type:disc">Promotion Plan
+														→ Describe who you’re promoting to (target audience from the
+														strategy section)
+														→ Be as detailed as possible
+														→ Include any insights about your customers during the analysis
+														phase of your plan.
+														→ Describe communication approach
+														→ Describe traditional (e. g. advertising) and current methods
+														(e. g. digital assets like your website)</li>
+												</ul>
+												<ul id="0416830c-1c27-4168-91c4-832ccc0104bc" class="bulleted-list">
+													<li style="list-style-type:disc">Promotion Plan No. 2<ol type="1"
+															id="fe90a335-b567-4e54-9fc8-910c5df15813"
+															class="numbered-list" start="1">
+															<li>Determine the objectives of the program</li>
+														</ol>
+														<ol type="1" id="a7014518-f28f-467d-a13d-bb2b42bdeb91"
+															class="numbered-list" start="2">
+															<li>Select the message you want to communicate
+																→ includes the value proposition &amp; <a
+																	href="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800.html">RTBs
+																	(Reasons to believe)</a></li>
+														</ol>
+														<ol type="1" id="ff453ff2-739c-4429-b4e4-ca5f2f7065c2"
+															class="numbered-list" start="3">
+															<li>Select the target audience to receive the message</li>
+														</ol>
+														<ol type="1" id="c7e5463b-1db3-4a53-87a4-5c0975808eff"
+															class="numbered-list" start="4">
+															<li>Select the media that will carry the message</li>
+														</ol>
+														<ol type="1" id="3ae5109b-9170-4bb5-8cb6-aa9af730f86a"
+															class="numbered-list" start="5">
+															<li>Create material that you send to the market</li>
+														</ol>
+													</li>
+												</ul>
+												<ul id="41555eb3-b58d-453f-b570-4dc33f89dd90" class="bulleted-list">
+													<li style="list-style-type:disc">Social Media Uses - <strong>Give
+															each site a different job!</strong>
+														For example:<ul id="8e910c6b-7f7a-44be-bb6f-a7fe88dd6a62"
+															class="bulleted-list">
+															<li style="list-style-type:circle">Twitter
+																→ Announce new products</li>
+														</ul>
+														<ul id="509484db-6883-4368-9576-863ffc65d8a5"
+															class="bulleted-list">
+															<li style="list-style-type:circle">Facebook
+																→ Feature customers using product</li>
+														</ul>
+														<ul id="ed8adeab-2245-4849-aced-14a757dcc717"
+															class="bulleted-list">
+															<li style="list-style-type:circle">Instagram
+																→ Highlight your support team</li>
+														</ul>
+														<p id="69e2e6bf-0c04-4355-a810-1a634308aa16" class="">
+															<strong>The listen-join-shape model:</strong></p>
+														<ol type="1" id="aa2e4323-e2ea-47b2-91ff-eef961a84a46"
+															class="numbered-list" start="1">
+															<li>Listen to the conversation
+																→ Look up company related search terms on Social Media/
+																Google/ etc. like your product’s, brand’s or company’s
+																name
+																→ Listen to what the customer audience says/ discusses
+																about you</li>
+														</ol>
+														<ol type="1" id="b6dc076c-d472-4166-b9b8-33eab50e6ad5"
+															class="numbered-list" start="2">
+															<li>Join the conversation<ul
+																	id="1eb2917e-2184-4463-b50a-b6339e3806bf"
+																	class="bulleted-list">
+																	<li style="list-style-type:disc">Write respectful
+																		and honest comments on social media in your
+																		company’s name when you have something relevant
+																		to say in response to a (potential) customer.
+																		Examples:
+																		→ Resolve a customer complaint
+																		→ Correct misinformation
+																		→ …</li>
+																</ul>
+															</li>
+														</ol>
+														<ol type="1" id="bc3c86e0-e4de-4bc0-907d-b1f7b616be4e"
+															class="numbered-list" start="3">
+															<li>Shape the conversation<ul
+																	id="12244696-0104-4eb4-81ad-12e55d7877c5"
+																	class="bulleted-list">
+																	<li style="list-style-type:disc">Share information
+																		that supports your value proposition</li>
+																</ul>
+																<ul id="333038ad-bb77-4942-a51c-e8a84f714b0a"
+																	class="bulleted-list">
+																	<li style="list-style-type:disc">Create comments on
+																		sites that support your promotional objective
+																	</li>
+																</ul>
+															</li>
+														</ol>
+														<p id="153ca3d1-8e55-4bbb-9ab2-537e2be46ce5" class="">
+														</p>
+													</li>
+												</ul>
+												<ul id="6c1df779-61e5-47f8-97c7-7b46607b1119" class="bulleted-list">
+													<li style="list-style-type:disc"><strong>AIDA-Modell</strong>
+														<ul id="f5d50b29-2351-4432-bb2e-f81c3295b5cc"
+															class="bulleted-list">
+															<li style="list-style-type:circle">
+																<strong>A</strong>wareness
+																→ Grab the customers attention and deeply engage with
+																them. Target audience will become curious about the
+																product.
+																→ Customer asks: “<strong>What is it?</strong>”
+																→ Increased brand awareness and effective messaging
+																→ Example:<ul id="794c48bb-823d-47ef-8ee4-8860aef9d5ad"
+																	class="bulleted-list">
+																	<li style="list-style-type:square">Content-marketing
+																		to attract visitors to your website</li>
+																</ul>
+															</li>
+														</ul>
+														<ul id="a40161eb-807a-4ecf-a303-f824a2d00458"
+															class="bulleted-list">
+															<li style="list-style-type:circle"><strong>I</strong>nterest
+																→ Once target audience is aware and gains interest, the
+																goal is to get them to think: “<strong>I like
+																	it.</strong>”
+																→ Content must be persuasive and engaging
+																→ This stage is about holding the customers’ attention.
+																→ Example: <ul id="e8c20aba-ab6a-4c9c-af86-5ffcf0479cd1"
+																	class="bulleted-list">
+																	<li style="list-style-type:square">“Hook” interested
+																		visitors with engaging storytelling that
+																		demonstrates the <em>why</em> behind your
+																		solution.</li>
+																</ul>
+																<ul id="28f65b14-d065-400c-a357-19c5c7a507be"
+																	class="bulleted-list">
+																	<li style="list-style-type:square">Convey
+																		information in a way that stimulates empathy and
+																		curiosity.</li>
+																</ul>
+															</li>
+														</ul>
+														<ul id="38d67eb7-2a73-4cba-8a4e-ab7fd9013bf1"
+															class="bulleted-list">
+															<li style="list-style-type:circle"><strong>D</strong>esire
+																→ Goal is to change “I like it.” to “<strong>I want
+																	it.</strong>”
+																→ Cementing trust in brand and product
+																→ Keep serving content
+																→ Make sure interested people:<ul
+																	id="5b113a4c-df87-440a-95a4-da2434521d00"
+																	class="bulleted-list">
+																	<li style="list-style-type:square">subscribe to your
+																		blog</li>
+																</ul>
+																<ul id="82e29eee-afe4-41c0-9b46-b6074e0609a2"
+																	class="bulleted-list">
+																	<li style="list-style-type:square">follow you on
+																		social media</li>
+																</ul>
+																<ul id="e19681ab-48cb-425c-807f-cc591317a124"
+																	class="bulleted-list">
+																	<li style="list-style-type:square">download your
+																		offers</li>
+																</ul>
+																<p id="a2aae7fc-12dc-4ccb-a392-e7f4eb24a39d" class="">→
+																	The more (interested) people interact with your
+																	brand, the more they’ll trust you
+																	→ Examples:</p>
+																<ul id="4d4c567f-ce2d-4c00-baf0-d19e05f9261c"
+																	class="bulleted-list">
+																	<li style="list-style-type:square">Establish social
+																		proof with case studies and testimonials</li>
+																</ul>
+																<ul id="297b3431-fb1a-4f28-889c-12d5e508a8be"
+																	class="bulleted-list">
+																	<li style="list-style-type:square">“Before and
+																		After” style content → stimulate desire, while
+																		gaining trust<ul
+																			id="9ab33d0f-6643-41ae-b855-0c7cf9845314"
+																			class="bulleted-list">
+																			<li style="list-style-type:disc">HowTo:
+																				Institute a gap (Lücke schaffen/
+																				erstellen/ aufzeigen) between <em>where
+																					they are</em> and <em>where they
+																					could be</em> with your solution.<ul
+																					id="e957e69b-e9d6-4cf2-8d5f-320044aff679"
+																					class="bulleted-list">
+																					<li style="list-style-type:circle">
+																						Example: &quot;Convert 60% more
+																						PPC leads into bookings using
+																						Black Propeller&#x27;s secret
+																						weapon.”
+																						→ Helps a prospect envision a
+																						future with this product
+																						(<em>What would my life be like
+																							if I achieve similar
+																							results?</em>)</li>
+																				</ul>
+																			</li>
+																		</ul>
+																	</li>
+																</ul>
+															</li>
+														</ul>
+														<ul id="4ca932e6-49b8-40d6-a466-0b9dbcff2521"
+															class="bulleted-list">
+															<li style="list-style-type:circle"><strong>A</strong>ction
+																→ Goal is to get them to decide: “<strong>I’m getting
+																	it.</strong>”
+																→ This step (<a
+																	href="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800.html">CTA
+																	→ Call to action</a>) should be…<ul
+																	id="bdf36ccd-68eb-474c-9ed0-cd0248fe7411"
+																	class="bulleted-list">
+																	<li style="list-style-type:square">… connected to
+																		low-friction but high-incentive calls to action.
+																		(geringe Reibung, hoher Anreiz)</li>
+																</ul>
+																<ul id="eeee78b6-b9ed-47f5-a108-461084ba53ad"
+																	class="bulleted-list">
+																	<li style="list-style-type:square">… “high value”. →
+																		You must help them in some way.</li>
+																</ul>
+																<ul id="f1de0a4f-9a90-4816-9f39-8166f1d2e57b"
+																	class="bulleted-list">
+																	<li style="list-style-type:square">… prominent,
+																		clear and uncomplicated.
+																		→ Buttons and banners that spell out what action
+																		they must take and what they get if they do.
+																	</li>
+																</ul>
+															</li>
+														</ul>
+													</li>
+												</ul>
+												<p id="a8626a31-5df1-49e3-9d69-b55b3ac98071" class="">
+												</p>
+												<ul id="d7714288-e1a7-40ad-9d4f-b08821fb8f37" class="bulleted-list">
+													<li style="list-style-type:disc">Push vs. Pull marketing<ul
+															id="256e0dad-910b-4b35-b945-82619ee63f14"
+															class="bulleted-list">
+															<li style="list-style-type:circle">Push marketing:
+																→ Also known as direct response marketing/ content
+																marketing/ outbound marketing
+																→ Focus on sales and getting quicker conversions
+																→ Thoughtful marketing that targets a specific message
+																to a particular audience
+																→ Used to target new leads and new customers, reaching
+																an audience who may have not heard of you yet
+																→ Examples:<ul id="79cbca03-a8f2-4c2f-b507-c722e1b9e761"
+																	class="bulleted-list">
+																	<li style="list-style-type:square">email offers,
+																		printed mailers, broadcast spots, point-of-sale
+																		displays</li>
+																</ul>
+																<ul id="a2ba6a62-e25b-4ffc-a3a7-b939cd2a8ffe"
+																	class="bulleted-list">
+																	<li style="list-style-type:square">Anything that
+																		pushes specific advertising outward.</li>
+																</ul>
+															</li>
+														</ul>
+														<ul id="489eaf35-1bfd-43b3-82cd-e5888d720927"
+															class="bulleted-list">
+															<li style="list-style-type:circle">Pull marketing:
+																→ Also known as inbound marketing
+																→ Actively pulling prospects onto your site or drawing
+																them to your product
+																→ Focus on maximizing awareness of brand
+																→ Pull marketing uses brand awareness and visibility to
+																pull leads to your site
+																→ Web-based strategy: You reach out to many customers to
+																attract some who may be interested
+																→ You’re convincing customers to seek out to your
+																product on their own rather than directly targeting
+																them.
+																→ Examples:<ul id="03e9e2ff-ff4c-47d8-816d-6e9dd2a5895f"
+																	class="bulleted-list">
+																	<li style="list-style-type:square">SEO, Social
+																		Media, cross promotion (collaborating with
+																		another existing brand to build brand awareness
+																		and trust)</li>
+																</ul>
+															</li>
+														</ul>
+													</li>
+												</ul>
+												<p id="ead51a0f-6464-4a2e-bd3f-b5013bb625f8" class="">
+												</p>
+												<ul id="4386ef1f-b208-43bf-b4a5-45c3982d711a" class="bulleted-list">
+													<li style="list-style-type:disc">Auswahlkriterien der
+														Werbemessage-Verbreitung<ol type="1"
+															id="15a62b49-77b1-43db-9b97-6d86f04ca423"
+															class="numbered-list" start="1">
+															<li>Zielgruppe
+																→ regional/ global
+																→ Streuverluste beachten</li>
+														</ol>
+														<ol type="1" id="f72a323b-a055-4324-acd3-b07a81f198b3"
+															class="numbered-list" start="2">
+															<li>Fit</li>
+														</ol>
+														<ol type="1" id="b6bcddae-c713-403c-b45c-c7e64b2fd808"
+															class="numbered-list" start="3">
+															<li>Gestaltungsmöglichkeiten/ -qualität</li>
+														</ol>
+														<ol type="1" id="2b6ba601-0f12-45e4-abfc-444fafc6d1f6"
+															class="numbered-list" start="4">
+															<li>Kosten + Emotion
+																→ absolut = totale Ausgaben (€)
+																→ relativ = Wirtschaftlichkeit</li>
+														</ol>
+													</li>
+												</ul>
+												<p id="35091f93-d20d-4790-a2fa-a699d2b09fea" class="">
+												</p>
+												<ul id="e3b45603-552a-4f62-84c9-ccbd6c38c5eb" class="bulleted-list">
+													<li style="list-style-type:disc">Choose the right (online) keywords
+														for your business<ul id="7dcedc88-ad71-4581-9182-b810d12e7ecd"
+															class="bulleted-list">
+															<li style="list-style-type:circle"><a
+																	href="https://ads.google.com/intl/de_de/home/tools/keyword-planner/">Google
+																	Ads: Keyword-Planer</a></li>
+														</ul>
+														<ul id="33d8aabe-2371-40b2-ab32-bb919dd7111e"
+															class="bulleted-list">
+															<li style="list-style-type:circle"><a
+																	href="https://www.google.com/trends/correlate/">Google
+																	Correlate</a></li>
+														</ul>
+														<ul id="008f258f-4ba9-4b51-b51a-5957af50a967"
+															class="bulleted-list">
+															<li style="list-style-type:circle"><a
+																	href="https://keywordtool.io/">Keyword Tool</a></li>
+														</ul>
+														<ul id="5792435d-f840-4fde-b0fc-f505dc154270"
+															class="bulleted-list">
+															<li style="list-style-type:circle"><a
+																	href="http://gookey.co/">GooKey</a></li>
+														</ul>
+														<ul id="fbf7ae35-d3f0-4de2-9c3e-e9269562a17c"
+															class="bulleted-list">
+															<li style="list-style-type:circle"><a
+																	href="https://www.keywordrevealer.com/">Keyword
+																	Revealer</a></li>
+														</ul>
+													</li>
+												</ul>
+												<p id="8d931f91-bb17-42eb-8873-cd5ae7e822a6" class="">
+												</p>
+												<ul id="76b760b4-ed3a-4e7f-bef6-0059cc7c7aad" class="bulleted-list">
+													<li style="list-style-type:disc">Challenges and possible approaches
+														of startups in promotion/ communication<ul
+															id="594c4a62-f160-40b6-8ceb-9360552044b1"
+															class="bulleted-list">
+															<li style="list-style-type:circle">Entrepreneurial
+																Challenges in promotion/ communication
+																→ Negligable (vernachlässigbar) or no turnover
+																→ Small or non-existent customer base
+																→ Unknown brand
+																→ Scarce resources, especially tight budgets (also
+																compare „The Cash-burn Problem&quot;)
+																→ Efficiency/ effectiveness of communication/ marketing
+																channels not yet clear (→ elasticities)
+																→ Lack of well-defined and tested messages (often
+																related to diffuse situation in product definition)</li>
+														</ul>
+														<ul id="0774161f-845c-4c9d-985d-a8feaaf664b4"
+															class="bulleted-list">
+															<li style="list-style-type:circle">Possible innovative
+																approaches
+																→ Identify and effectively address (potential) initial
+																customers very focused
+																→ Choose very cost-efficient mediums
+																→ Find creative messages
+																→ Find multiplier (viral marketing)
+																→ Or gain massive funding!
+																→ PR (Public Relations - Öffentlichkeitsarbeit)</li>
+														</ul>
+													</li>
+												</ul>
+												<p id="1e37b7fd-ddc7-4d16-8d41-bc5c033e1290" class="">
+												</p>
+											</details>
+										</li>
+									</ul>
+									<ul id="89bbd128-69fd-4057-8484-c40f80ef8e17" class="toggle">
+										<li>
+											<details open="">
+												<summary><strong>Place</strong>/ Distribution/ channel design</summary>
+												<p id="50e93e7b-b1a9-4610-ba1f-42675fdfcce4" class="">
+													<strong>Distribution Plan</strong></p>
+												<blockquote id="075327eb-c8ba-41e5-b1a3-5135b6ec557f" class="">A pathway
+													to get your products or services to the customer.</blockquote>
+												<p id="ad7e6d3d-987b-408c-a436-df9557b58dab" class="">
+												</p>
+												<p id="b252948b-668b-426d-b1e2-9612830fd8e7" class=""><strong>Three
+														different categories of things that are moved and distributed
+														throughout the distributing process:</strong></p>
+												<ol type="1" id="8a6918ca-8b2a-4b7d-91bc-e774b5ad9407"
+													class="numbered-list" start="1">
+													<li>Product
+														→ Flows from manufacturer/ reseller to the customer (Length,
+														Breath, Depth of channel and different channel partners play a
+														role)</li>
+												</ol>
+												<ol type="1" id="be83df01-9f17-43e3-89fe-8d689a2b91f7"
+													class="numbered-list" start="2">
+													<li>Money
+														→ money, credit card balances, financing, negotiations and
+														perhaps contracting</li>
+												</ol>
+												<ol type="1" id="7e7c3620-3d4d-4bfa-b9da-556726ac8575"
+													class="numbered-list" start="3">
+													<li>Information
+														→ Flows in both directions → from me to the customer and vice
+														versa.
+														→ can be information about: product, price, availability,
+														promotional message (value proposition), new product(s)</li>
+												</ol>
+												<p id="89daba52-0732-45dc-b75c-a350d906b9a8" class="">
+												</p>
+												<p id="f6cee94e-f0b3-4605-9560-b65d5e4d4752" class=""><strong>Length of
+														channel
+													</strong>→ The number of intermediaries (Vermittler) between you and
+													the customer.</p>
+												<p id="e07aa52e-811c-41bc-8083-8dab957487f2" class="">Possibilities:</p>
+												<ol type="1" id="7bb6f176-45a2-470b-a390-c49fec8e7916"
+													class="numbered-list" start="1">
+													<li>Sell direct
+														→ Short channel length</li>
+												</ol>
+												<ol type="1" id="078d3577-8163-4270-8cef-fd2446d8d85e"
+													class="numbered-list" start="2">
+													<li>Sell indirect
+														→ Longer channel length
+														→ Hire partners to ship your product, warehouse and sell your
+														product.</li>
+												</ol>
+												<p id="24b0e2c5-a638-42f8-bc34-4331e7b7371b" class="">
+												</p>
+												<p id="6784d3b6-e583-46f2-b51b-8598f62b2263" class=""><strong>Breadth of
+														channel
+													</strong>→ The number of outlets of each type of partner
+													→ e. g. exclusive distribution → just a few outlets are selling your
+													products/ services (comparison between “Tiffany &amp; Co.” and
+													“Starbucks” )</p>
+												<p id="a81a18fb-cec6-49f9-bdeb-b823d71acd3c" class="">
+												</p>
+												<p id="16ccf330-7e0c-47ab-9a95-7f9e62ef78c4" class=""><strong>Depth of
+														channel</strong></p>
+												<p id="cfcacb7a-b5da-4d33-8bbb-af869234613b" class="">→ How much of the
+													channel you own and control versus having a third party do it for
+													you.</p>
+												<p id="4544e368-757e-41e6-9075-cb530f64337c" class="">
+												</p>
+												<p id="82e688b6-cf34-4750-9864-6878850ffeed" class=""><strong>Assign
+														Channel Member Roles</strong></p>
+												<ul id="869fc005-966c-45e3-8da9-b6ee9ccc6dc7" class="bulleted-list">
+													<li style="list-style-type:disc">List actions needed to get product
+														to customer
+														→ Packaging
+														→ Shipping
+														→ Warehouse
+														→ Retailing</li>
+												</ul>
+												<ul id="d6416bbe-cfd0-4afa-a8db-fbcc88e924d8" class="bulleted-list">
+													<li style="list-style-type:disc">Use the list above to assign roles
+														to the most appropriate channel member
+														→ Wholesaler
+														→ Retailer
+														→ Shipping</li>
+												</ul>
+											</details>
+										</li>
+									</ul>
+									<p id="f8f16bed-0f36-4b6e-848f-544f926ac20d" class="">
+									</p>
+									<p id="2154d633-5cf5-4e56-909e-4eadf069f3ae" class=""><strong>Marketing Plan Rollout
+										</strong>→ Decide communication timeline
+										→ List and invite important personnel (Mitarbeiter)
+										→ Outline program responsibilities
+										→ Show implementation timelines
+										→ Include implementation details
+										→ Set up KPIs (Key Performance Indicators → help you keep track of your overall
+										strategy and your individual marketing programs) → Each KPI should have a target
+										of what you expect to happen plus a high and low number around that target. You
+										and your planning team should agree in advance what action you’ll take if those
+										thresholds are exceeded (high or low).
+									</p>
+									<blockquote id="e533fdd5-f928-418c-b3dc-96a3f351b40d" class="">Good marketers not
+										only reach their marketing goals, but the also know whether those goals were
+										achieved the way they expected them to be achieved.
+										They also take immediate action when they detect something is going in the wrong
+										direction.
+										A well written marketing plan helps you and your team do just that.</blockquote>
+									<p id="b4ae8c00-ff50-4218-aea2-b1dbca93aa02" class="">
+									</p>
+									<p id="703ba2c4-e031-44b8-8932-e50d16dce10f" class=""><strong>Budget and Forecast
+											Section</strong></p>
+									<ul id="6ffb8121-b9f1-42cb-a1d5-7dfe59b02cad" class="bulleted-list">
+										<li style="list-style-type:disc">Budget Development
+											→ Decide expenditure and allocate it (top-down approach)
+											→ Combine all teams’ forecasted budgets that they think are needed to
+											achieve revenue forecasts (bottom-up approach)</li>
+									</ul>
+									<ul id="fe4d883a-84b7-467d-b281-737dad0f982a" class="bulleted-list">
+										<li style="list-style-type:disc">Effectiveness Forecast
+											→ Revenue
+											→ Units sold
+											→ New customers
+											→ …</li>
+									</ul>
+									<p id="adad4b82-8fdd-4c20-aace-21f26293b7b5" class=""><em>Make sure that goals are
+											specific, measurable, actionable, realistic and time-bound!</em></p>
+									<p id="4b777675-096e-418d-a8ee-1aabf3d07c3e" class="">
+									</p>
+									<p id="d949d5db-a23f-4316-b074-9c874652a3a5" class=""><strong>KPI (Key Performance
+											Indicator)</strong></p>
+									<ul id="ba1dbb4c-0497-408c-838e-119b812415a7" class="bulleted-list">
+										<li style="list-style-type:disc">A Key Performance Indicator aka KPI is a
+											measurable value that demonstrates how effectively a company is achieving
+											key business objectives.
+											→ This can be: number of sales made, revenue made, number of new costumers,
+											…
+											→ KPIs shouldn’t spur additional questions, they should do the opposite:
+											inspire action!
+											→ KPIs help to estimate how fast you are getting closer to a certain goal
+											even before you reach it and whether you are likely to reach it.
+											<span style="border-bottom:0.05em solid">Example</span>:
+											<em>So, you set your KPI: sell 1,000 apples this month. Whether that’s 250
+												apples per week or you sell all 1,000 in the first 3 days, your KPI is
+												to reach that 1K mark. When it’s the second week of September and you’ve
+												sold 550 apples, you can look at your KPI and know that you’re on track
+												to achieve your goal.</em>
+										</li>
+									</ul>
+									<ul id="6a66544c-a14d-499c-b960-2fa449f4bbd9" class="bulleted-list">
+										<li style="list-style-type:disc">A good KPI is realistic, straightforward and
+											easy to measure
+											<span style="border-bottom:0.05em solid">They should be…
+											</span>→ … <strong>aligned</strong> with the overall business strategy and
+											outcomes
+											→ … <strong>actionable</strong>. You need to be able to outline the steps
+											you’ll take to reach the KPI.
+											→ <strong>realistic</strong>.
+											→ <strong>measurable</strong> and include metrics to track your progress
+											against your KPI.
+										</li>
+									</ul>
+									<ul id="19fdfa0e-dc3b-419c-bd00-11559c6ff82d" class="bulleted-list">
+										<li style="list-style-type:disc">Distinction (Unterscheidung) between:
+											→ <strong>High-level KPIs</strong>: They look at the performance of the
+											business as a whole.
+											<span style="border-bottom:0.05em solid">Example</span>: Increase MRR
+											(monthly recurring revenue) by 20% by the end of the fiscal year
+											→ <strong>Low-level KPIs</strong>: They look at the performance of certain
+											departments, teams or individuals (which contributes to the overall business
+											goal/ KPI)
+											<span style="border-bottom:0.05em solid">Example</span>: A KPI of a sales
+											team member could be to increase inbound leads by 50% by the end of Q3
+										</li>
+									</ul>
+									<p id="9b55fd71-6a75-4cdf-9afb-121c024cd516" class="">
+									</p>
+									<details open="">
+										<summary style="font-weight:600;font-size:1.25em;line-height:1.3"><a
+												href="https://www.youtube.com/watch?v=A2t-yhFaUC0">Developing the
+												tactical phase</a></summary>
+										<div class="indented">
+											<ul id="2079799c-d97f-400f-b60f-b6d32310e00b" class="bulleted-list">
+												<li style="list-style-type:disc">How to build the right products &amp;
+													services?<ol type="1" id="994baf17-3837-4d84-a2d0-e458a504a65f"
+														class="numbered-list" start="1">
+														<li><a
+																href="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800.html">Product
+																and Service analysis</a></li>
+													</ol>
+													<ol type="1" id="9bdc6d79-db82-42f4-a866-15cdfedc480b"
+														class="numbered-list" start="2">
+														<li><a
+																href="Entrepreneurial%20Marketing%20(EM)%207322130462654a72aa5735c3c311d800.html">Customer
+																analysis</a></li>
+													</ol>
+													<ol type="1" id="3af321ee-5bdd-44ed-bdb5-3b01d20e8e6b"
+														class="numbered-list" start="3">
+														<li>Value proposition</li>
+													</ol>
+												</li>
+											</ul>
+										</div>
+									</details>
+								</div>
+							</details>
+						</div>
+					</details>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.875em;line-height:1.3">Go-to-market strategy</summary>
+				<div class="indented">
+					<ul id="07c3c9f8-377c-43ec-8903-f39a6488a1f8" class="bulleted-list">
+						<li style="list-style-type:disc">When?<ul id="17b1df74-c5a7-4dd8-803f-2bc63c74dbd0"
+								class="bulleted-list">
+								<li style="list-style-type:circle">strategic considerations (e.g. pioneering strategy)
+								</li>
+							</ul>
+							<ul id="6ca9f14e-9e9d-460c-a58f-0a00c910e453" class="bulleted-list">
+								<li style="list-style-type:circle">tactical considerations (e.g. seasonal effects or
+									days of
+									the week)</li>
+							</ul>
+							<ul id="fa920a4c-2c03-4b7d-9611-824cab152b77" class="bulleted-list">
+								<li style="list-style-type:circle">pre-marketing before product launch</li>
+							</ul>
+						</li>
+					</ul>
+					<ul id="25bd9310-c582-4b6f-855c-3ff6ce7ba80f" class="bulleted-list">
+						<li style="list-style-type:disc">Where?<ul id="ab6de3e1-6c21-4713-b41d-243583bfa819"
+								class="bulleted-list">
+								<li style="list-style-type:circle">General target groups</li>
+							</ul>
+							<ul id="995cf904-850c-4b69-a91b-d427d5256044" class="bulleted-list">
+								<li style="list-style-type:circle">Consideration of innovators/early adopters</li>
+							</ul>
+							<ul id="7b6867dd-3e55-4551-9d1a-5b2323617941" class="bulleted-list">
+								<li style="list-style-type:circle">Geographic distribution of the new product</li>
+							</ul>
+						</li>
+					</ul>
+					<ul id="ace37d77-59dc-48c6-a52c-8e9aa9f18d7b" class="bulleted-list">
+						<li style="list-style-type:disc">How?<p id="e2e9874d-c6fc-45e9-8ed8-72b635456765" class="">
+								Design of marketing instruments</p>
+							<ul id="acf8fb23-8549-4525-b9de-ae311dad6880" class="bulleted-list">
+								<li style="list-style-type:circle">Product: When is the product ready/available? How
+									should the product be designed?</li>
+							</ul>
+							<ul id="cadedc1e-6995-41cb-87c1-93506e7a2e96" class="bulleted-list">
+								<li style="list-style-type:circle">Price: At what price will it arrive on the market?
+									Discount
+									at start? Free trail?</li>
+							</ul>
+							<ul id="6e1f2440-9675-4770-9bb4-32895fa29cd7" class="bulleted-list">
+								<li style="list-style-type:circle">Communication: Where and how should it be
+									advertised? (Radical innovation, or only product
+									modification). Special events? Trade fairs?</li>
+							</ul>
+							<ul id="52adbc60-208c-4ffd-ba8f-f162617b4c65" class="bulleted-list">
+								<li style="list-style-type:circle">Sales: Where should the product be available? When
+									and
+									how to adquire sales partners?</li>
+							</ul>
+						</li>
+					</ul>
+					<p id="625bb4d7-5535-4ea9-9b66-8d0b3f8982dc" class="">
+					</p>
+					<p id="28c94805-2ab6-41f2-abb8-6e1c8af33d8f" class=""><strong>What are the advantages/ disadvantages
+							of being the first to market?</strong></p>
+					<ul id="e45d9e9e-1897-4825-a2a0-030addff48e2" class="bulleted-list">
+						<li style="list-style-type:disc">Advantages:<ul id="4b9221fc-a7fe-43c9-8b1f-0e57a3f5f4b2"
+								class="bulleted-list">
+								<li style="list-style-type:circle">Keine Konkurrenz zu Beginn</li>
+							</ul>
+							<ul id="81f549c3-4fb9-493f-94f0-4ce82775023d" class="bulleted-list">
+								<li style="list-style-type:circle">Preishoheit</li>
+							</ul>
+							<ul id="6358a160-63c0-4693-aded-d7ea04ca8cf5" class="bulleted-list">
+								<li style="list-style-type:circle">‘Die’ Marke (Tempo etc)</li>
+							</ul>
+							<ul id="a5c362be-aa4d-4217-bd1c-0731712dd39b" class="bulleted-list">
+								<li style="list-style-type:circle">Einzige Anfrage bei Vertriebspartnern -&gt; Chance
+									mehr Mehrwert mit neuem Produkt</li>
+							</ul>
+							<ul id="b1fbb3a2-7062-4373-9381-90e6639ba01e" class="bulleted-list">
+								<li style="list-style-type:circle">Bild der Produktart kann durch die eigene Umsetzung
+									geprägt werden</li>
+							</ul>
+							<ul id="fe6db657-aa1f-4092-8f4f-4788b866c85b" class="bulleted-list">
+								<li style="list-style-type:circle">Produktgestaltung -&gt; Art / Design / Menge</li>
+							</ul>
+							<ul id="cd5b4782-f458-4e39-9788-d6912448cfd6" class="bulleted-list">
+								<li style="list-style-type:circle">Dauerhafter Vorteil, dass man immer einen Schritt
+									weiter ist als die Konkurrenz</li>
+							</ul>
+						</li>
+					</ul>
+					<ul id="f0146b70-b5e2-4745-b445-5d59d8b4fd68" class="bulleted-list">
+						<li style="list-style-type:disc">Disadvantages:<ul id="40491f5c-67df-4e3e-9369-6061ad997610"
+								class="bulleted-list">
+								<li style="list-style-type:circle">Keine Bekanntheit für das Produkt</li>
+							</ul>
+							<ul id="2d203c4c-a9f0-4670-b481-bd6941846ae1" class="bulleted-list">
+								<li style="list-style-type:circle">Vertriebspartner finden ist schwerer</li>
+							</ul>
+							<ul id="a5d0f38a-f89d-4cb6-8626-087bebf828d6" class="bulleted-list">
+								<li style="list-style-type:circle">Kein Kennwerte von anderen Unternehmen zum Vergleich
+								</li>
+							</ul>
+							<ul id="0315a33c-9f1b-4c2f-8ebb-06445c1e0217" class="bulleted-list">
+								<li style="list-style-type:circle">Ängste/ Befürchtungen über Nachteile des Produkts
+									sind noch sehr präsent</li>
+							</ul>
+							<ul id="254dbe50-c1e4-4b5f-9a50-c6671cf53137" class="bulleted-list">
+								<li style="list-style-type:circle">Marke setzt sich nicht durch und Kopie übernimmt
+									Marktanteil</li>
+							</ul>
+							<ul id="7fcfc509-b07f-4844-b0e0-617d76822a25" class="bulleted-list">
+								<li style="list-style-type:circle">Preisanpassung von Konkurrenz -&gt; Unterbietung</li>
+							</ul>
+							<ul id="23c582b3-4c28-4d97-a7d5-74503089ed85" class="bulleted-list">
+								<li style="list-style-type:circle">Konkurrenz Verbessert Produkt</li>
+							</ul>
+							<ul id="04c0fdba-14b3-4a42-8c0d-d9e5a140aecd" class="bulleted-list">
+								<li style="list-style-type:circle">Man kann sich an keinen Kennwerten orientieren und
+									der Erfolg des Produkts ist ungewisser als bei etablierten Produkten</li>
+							</ul>
+							<ul id="a4c6c595-472b-4d27-9fd4-c6243daa571d" class="bulleted-list">
+								<li style="list-style-type:circle">Noch kein Markt(potenzial)</li>
+							</ul>
+						</li>
+					</ul>
+					<p id="d48f8d57-07ff-4728-87c5-013b0967c2ea" class="">
+					</p>
+					<p id="5185a467-ef7e-43f4-972b-302816212e14" class=""><strong>What could be seasonal
+							effects?</strong></p>
+					<ul id="81eacabb-6578-4b66-bb62-028ac5c40e4f" class="bulleted-list">
+						<li style="list-style-type:disc">Holidays</li>
+					</ul>
+					<ul id="a9828e24-5f12-44fc-8860-5e4d55e407d9" class="bulleted-list">
+						<li style="list-style-type:disc">Flu Season</li>
+					</ul>
+					<ul id="73243782-a2ae-442d-9085-26be75f93672" class="bulleted-list">
+						<li style="list-style-type:disc">Temperature &amp; Weather</li>
+					</ul>
+					<ul id="308f1b76-f7c8-4b37-b8f1-683b4d5b3591" class="bulleted-list">
+						<li style="list-style-type:disc">general mood according to season</li>
+					</ul>
+					<ul id="9a61c890-ccf4-4120-83e2-c24e81c38877" class="bulleted-list">
+						<li style="list-style-type:disc">Not really seasonal: War and resulting saving measures</li>
+					</ul>
+					<p id="bad327ba-ccf6-4d16-ae55-803d9415e946" class=""><strong>How could you find out if there are
+							any?</strong></p>
+					<ul id="cc6aa140-79e8-4601-8240-d2d4cda5349f" class="bulleted-list">
+						<li style="list-style-type:disc">research &amp; compare to similar products</li>
+					</ul>
+					<ul id="0f05a953-0e9b-4871-b4cb-91cbfd129d8c" class="bulleted-list">
+						<li style="list-style-type:disc">compare sales in different conditions (seasons)</li>
+					</ul>
+					<ul id="e1930033-8007-4e73-b262-1ad854d8bfaa" class="bulleted-list">
+						<li style="list-style-type:disc">Using Google Trends</li>
+					</ul>
+					<p id="dfe943d8-65aa-4475-863b-0441fb473d4d" class="">
+					</p>
+					<p id="93b871fc-bd98-42e2-bb7e-62246a8447b6" class=""><strong>What parts of the month or week are
+							more suitable for product launches? Why is that so?</strong></p>
+					<ul id="6a05d233-887b-4311-acb7-31fefcf15270" class="bulleted-list">
+						<li style="list-style-type:disc">Beginning of the month → More money (can also be at the end of
+							the month)</li>
+					</ul>
+					<ul id="970cfe0e-dba9-4aea-a959-8e82ab534067" class="bulleted-list">
+						<li style="list-style-type:disc">might depend on the product</li>
+					</ul>
+					<ul id="f3523dcb-9449-468e-81a4-e10be7e43f4b" class="bulleted-list">
+						<li style="list-style-type:disc">End of the week so customers have more time to interact with
+							the product</li>
+					</ul>
+					<ul id="d19ea051-833d-45de-b705-0a3b618d10b4" class="bulleted-list">
+						<li style="list-style-type:disc">Monday less consume (B2B &amp; B2C → orders etc. from weekday
+							have to be handled first) &amp; Friday also less consume since many people are already in
+							the weekend with their head (except for events, trades, etc. that go over the weekend).</li>
+					</ul>
+					<ul id="1220d765-33a3-4e35-9ae0-5394a370c7ae" class="bulleted-list">
+						<li style="list-style-type:disc">Tuesdays, Wednesdays and Thursdays make more sense for many
+							product launches.</li>
+					</ul>
+					<ul id="1b5f633e-d94b-4634-80d4-af18f6c256c0" class="bulleted-list">
+						<li style="list-style-type:disc">Depending on the niche, there can be a lot of sales at the end
+							of the year because many companies have to spend a certain budget by the end of the year
+							(reasons: tax reasons or because some parts of a company have certain budgets that they
+							haven&#x27;t fully spent yet but want to spend in order to maintain the same amount next
+							year - and no one says, &quot;Looks like you don&#x27;t need that much, we&#x27;ll cut your
+							budget&quot;).</li>
+					</ul>
+					<p id="f415b99d-1bd3-4ab3-87b0-22c7a21359d2" class="">
+					</p>
+					<p id="e3311b24-c49a-44e1-b0da-ad96635e03c1" class="">
+					</p>
+				</div>
+			</details>
+			<p id="e1a1a747-ce0e-4c8b-a281-ec6e8ce736c7" class="">
+			</p>
+		</div>
+	</article>
+</body>
+
+</html>

@@ -1,0 +1,1002 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Chapter 5 - Team - Shippo</title>
+	<style>
+		/* cspell:disable-file */
+		/* webkit printing magic: print all background colors */
+		html {
+			-webkit-print-color-adjust: exact;
+		}
+
+		* {
+			box-sizing: border-box;
+			-webkit-print-color-adjust: exact;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		@media only screen {
+			body {
+				margin: 2em auto;
+				max-width: 900px;
+				color: rgb(55, 53, 47);
+			}
+		}
+
+		body {
+			line-height: 1.5;
+			white-space: pre-wrap;
+		}
+
+		a,
+		a.visited {
+			color: inherit;
+			text-decoration: underline;
+		}
+
+		.pdf-relative-link-path {
+			font-size: 80%;
+			color: #444;
+		}
+
+		h1,
+		h2,
+		h3 {
+			letter-spacing: -0.01em;
+			line-height: 1.2;
+			font-weight: 600;
+			margin-bottom: 0;
+		}
+
+		.page-title {
+			font-size: 2.5rem;
+			font-weight: 700;
+			margin-top: 0;
+			margin-bottom: 0.75em;
+		}
+
+		h1 {
+			font-size: 1.875rem;
+			margin-top: 1.875rem;
+		}
+
+		h2 {
+			font-size: 1.5rem;
+			margin-top: 1.5rem;
+		}
+
+		h3 {
+			font-size: 1.25rem;
+			margin-top: 1.25rem;
+		}
+
+		.source {
+			border: 1px solid #ddd;
+			border-radius: 3px;
+			padding: 1.5em;
+			word-break: break-all;
+		}
+
+		.callout {
+			border-radius: 3px;
+			padding: 1rem;
+		}
+
+		figure {
+			margin: 1.25em 0;
+			page-break-inside: avoid;
+		}
+
+		figcaption {
+			opacity: 0.5;
+			font-size: 85%;
+			margin-top: 0.5em;
+		}
+
+		mark {
+			background-color: transparent;
+		}
+
+		.indented {
+			padding-left: 1.5em;
+		}
+
+		hr {
+			background: transparent;
+			display: block;
+			width: 100%;
+			height: 1px;
+			visibility: visible;
+			border: none;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+		}
+
+		img {
+			max-width: 100%;
+		}
+
+		@media only print {
+			img {
+				max-height: 100vh;
+				object-fit: contain;
+			}
+		}
+
+		@page {
+			margin: 1in;
+		}
+
+		.collection-content {
+			font-size: 0.875rem;
+		}
+
+		.column-list {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.column {
+			padding: 0 1em;
+		}
+
+		.column:first-child {
+			padding-left: 0;
+		}
+
+		.column:last-child {
+			padding-right: 0;
+		}
+
+		.table_of_contents-item {
+			display: block;
+			font-size: 0.875rem;
+			line-height: 1.3;
+			padding: 0.125rem;
+		}
+
+		.table_of_contents-indent-1 {
+			margin-left: 1.5rem;
+		}
+
+		.table_of_contents-indent-2 {
+			margin-left: 3rem;
+		}
+
+		.table_of_contents-indent-3 {
+			margin-left: 4.5rem;
+		}
+
+		.table_of_contents-link {
+			text-decoration: none;
+			opacity: 0.7;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid rgba(55, 53, 47, 0.09);
+			border-collapse: collapse;
+		}
+
+		table {
+			border-left: none;
+			border-right: none;
+		}
+
+		th,
+		td {
+			font-weight: normal;
+			padding: 0.25em 0.5em;
+			line-height: 1.5;
+			min-height: 1.5em;
+			text-align: left;
+		}
+
+		th {
+			color: rgba(55, 53, 47, 0.6);
+		}
+
+		ol,
+		ul {
+			margin: 0;
+			margin-block-start: 0.6em;
+			margin-block-end: 0.6em;
+		}
+
+		li>ol:first-child,
+		li>ul:first-child {
+			margin-block-start: 0.6em;
+		}
+
+		ul>li {
+			list-style: disc;
+		}
+
+		ul.to-do-list {
+			padding-inline-start: 0;
+		}
+
+		ul.to-do-list>li {
+			list-style: none;
+		}
+
+		.to-do-children-checked {
+			text-decoration: line-through;
+			opacity: 0.375;
+		}
+
+		ul.toggle>li {
+			list-style: none;
+		}
+
+		ul {
+			padding-inline-start: 1.7em;
+		}
+
+		ul>li {
+			padding-left: 0.1em;
+		}
+
+		ol {
+			padding-inline-start: 1.6em;
+		}
+
+		ol>li {
+			padding-left: 0.2em;
+		}
+
+		.mono ol {
+			padding-inline-start: 2em;
+		}
+
+		.mono ol>li {
+			text-indent: -0.4em;
+		}
+
+		.toggle {
+			padding-inline-start: 0em;
+			list-style-type: none;
+		}
+
+		/* Indent toggle children */
+		.toggle>li>details {
+			padding-left: 1.7em;
+		}
+
+		.toggle>li>details>summary {
+			margin-left: -1.1em;
+		}
+
+		.selected-value {
+			display: inline-block;
+			padding: 0 0.5em;
+			background: rgba(206, 205, 202, 0.5);
+			border-radius: 3px;
+			margin-right: 0.5em;
+			margin-top: 0.3em;
+			margin-bottom: 0.3em;
+			white-space: nowrap;
+		}
+
+		.collection-title {
+			display: inline-block;
+			margin-right: 1em;
+		}
+
+		.page-description {
+			margin-bottom: 2em;
+		}
+
+		.simple-table {
+			margin-top: 1em;
+			font-size: 0.875rem;
+			empty-cells: show;
+		}
+
+		.simple-table td {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table th {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table-header-color {
+			background: rgb(247, 246, 243);
+			color: black;
+		}
+
+		.simple-table-header {
+			font-weight: 500;
+		}
+
+		time {
+			opacity: 0.5;
+		}
+
+		.icon {
+			display: inline-block;
+			max-width: 1.2em;
+			max-height: 1.2em;
+			text-decoration: none;
+			vertical-align: text-bottom;
+			margin-right: 0.5em;
+		}
+
+		img.icon {
+			border-radius: 3px;
+		}
+
+		.user-icon {
+			width: 1.5em;
+			height: 1.5em;
+			border-radius: 100%;
+			margin-right: 0.5rem;
+		}
+
+		.user-icon-inner {
+			font-size: 0.8em;
+		}
+
+		.text-icon {
+			border: 1px solid #000;
+			text-align: center;
+		}
+
+		.page-cover-image {
+			display: block;
+			object-fit: cover;
+			width: 100%;
+			max-height: 30vh;
+		}
+
+		.page-header-icon {
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+
+		.page-header-icon-with-cover {
+			margin-top: -0.72em;
+			margin-left: 0.07em;
+		}
+
+		.page-header-icon img {
+			border-radius: 3px;
+		}
+
+		.link-to-page {
+			margin: 1em 0;
+			padding: 0;
+			border: none;
+			font-weight: 500;
+		}
+
+		p>.user {
+			opacity: 0.5;
+		}
+
+		td>.user,
+		td>time {
+			white-space: nowrap;
+		}
+
+		input[type="checkbox"] {
+			transform: scale(1.5);
+			margin-right: 0.6em;
+			vertical-align: middle;
+		}
+
+		p {
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.image {
+			border: none;
+			margin: 1.5em 0;
+			padding: 0;
+			border-radius: 0;
+			text-align: center;
+		}
+
+		.code,
+		code {
+			background: rgba(135, 131, 120, 0.15);
+			border-radius: 3px;
+			padding: 0.2em 0.4em;
+			border-radius: 3px;
+			font-size: 85%;
+			tab-size: 2;
+		}
+
+		code {
+			color: #eb5757;
+		}
+
+		.code {
+			padding: 1.5em 1em;
+		}
+
+		.code-wrap {
+			white-space: pre-wrap;
+			word-break: break-all;
+		}
+
+		.code>code {
+			background: none;
+			padding: 0;
+			font-size: 100%;
+			color: inherit;
+		}
+
+		blockquote {
+			font-size: 1.25em;
+			margin: 1em 0;
+			padding-left: 1em;
+			border-left: 3px solid rgb(55, 53, 47);
+		}
+
+		.bookmark {
+			text-decoration: none;
+			max-height: 8em;
+			padding: 0;
+			display: flex;
+			width: 100%;
+			align-items: stretch;
+		}
+
+		.bookmark-title {
+			font-size: 0.85em;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			height: 1.75em;
+			white-space: nowrap;
+		}
+
+		.bookmark-text {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.bookmark-info {
+			flex: 4 1 180px;
+			padding: 12px 14px 14px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.bookmark-image {
+			width: 33%;
+			flex: 1 1 180px;
+			display: block;
+			position: relative;
+			object-fit: cover;
+			border-radius: 1px;
+		}
+
+		.bookmark-description {
+			color: rgba(55, 53, 47, 0.6);
+			font-size: 0.75em;
+			overflow: hidden;
+			max-height: 4.5em;
+			word-break: break-word;
+		}
+
+		.bookmark-href {
+			font-size: 0.75em;
+			margin-top: 0.25em;
+		}
+
+		.sans {
+			font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+		}
+
+		.code {
+			font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+		}
+
+		.serif {
+			font-family: Lyon-Text, Georgia, ui-serif, serif;
+		}
+
+		.mono {
+			font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+		}
+
+		.pdf .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR';
+		}
+
+		.pdf .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.pdf .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR';
+		}
+
+		.pdf .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.highlight-default {
+			color: rgba(55, 53, 47, 1);
+		}
+
+		.highlight-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.highlight-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.highlight-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.highlight-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.highlight-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.highlight-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.highlight-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.highlight-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.highlight-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.highlight-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.highlight-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.highlight-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.highlight-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.highlight-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.highlight-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.highlight-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.highlight-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.highlight-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.block-color-default {
+			color: inherit;
+			fill: inherit;
+		}
+
+		.block-color-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.block-color-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.block-color-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.block-color-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.block-color-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.block-color-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.block-color-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.block-color-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.block-color-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.block-color-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.block-color-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.block-color-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.block-color-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.block-color-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.block-color-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.block-color-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.block-color-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.block-color-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.select-value-color-interactiveBlue {
+			background-color: rgba(35, 131, 226, .07);
+		}
+
+		.select-value-color-pink {
+			background-color: rgba(245, 224, 233, 1);
+		}
+
+		.select-value-color-purple {
+			background-color: rgba(232, 222, 238, 1);
+		}
+
+		.select-value-color-green {
+			background-color: rgba(219, 237, 219, 1);
+		}
+
+		.select-value-color-gray {
+			background-color: rgba(227, 226, 224, 1);
+		}
+
+		.select-value-color-translucentGray {
+			background-color: rgba(255, 255, 255, 0.0375);
+		}
+
+		.select-value-color-orange {
+			background-color: rgba(250, 222, 201, 1);
+		}
+
+		.select-value-color-brown {
+			background-color: rgba(238, 224, 218, 1);
+		}
+
+		.select-value-color-red {
+			background-color: rgba(255, 226, 221, 1);
+		}
+
+		.select-value-color-yellow {
+			background-color: rgba(253, 236, 200, 1);
+		}
+
+		.select-value-color-blue {
+			background-color: rgba(211, 229, 239, 1);
+		}
+
+		.select-value-color-pageGlass {
+			background-color: undefined;
+		}
+
+		.select-value-color-washGlass {
+			background-color: undefined;
+		}
+
+		.checkbox {
+			display: inline-flex;
+			vertical-align: text-bottom;
+			width: 16;
+			height: 16;
+			background-size: 16px;
+			margin-left: 2px;
+			margin-right: 5px;
+		}
+
+		.checkbox-on {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+
+		.checkbox-off {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+	</style>
+</head>
+
+<body>
+	<article id="f7fd92a4-8d16-4b97-bfb6-191599e4d951" class="page sans">
+		<header>
+			<div class="page-header-icon undefined"><span class="icon">👥</span></div>
+			<h1 class="page-title">Chapter 5 - Team - Shippo</h1>
+			<p class="page-description"></p>
+		</header>
+		<div class="page-body">
+			<p id="732a9bff-cb00-450a-9b37-b8bd4b7ad60b" class="">
+			</p>
+			<h3 id="9c0512bd-82da-463f-a6cf-d35bf14c3351" class="">Tipps zum Team/ Umfeld + generell:</h3>
+			<ul id="fc960b1e-145d-41e7-b200-c637c529f3ff" class="bulleted-list">
+				<li style="list-style-type:disc">Umgib dich mit Menschen die deine Ideen ernst nehmen - good energy
+					people</li>
+			</ul>
+			<ul id="4d704f93-d36d-40a6-9b6d-4bc86dfde77a" class="bulleted-list">
+				<li style="list-style-type:disc">Get feedback from early customers as early as possible!</li>
+			</ul>
+			<p id="eb96150e-3a46-408b-9db4-29fbbdc91a22" class="">
+			</p>
+			<h3 id="b735fe54-2bd7-4927-9a29-0d3099bd1652" class="">Wie findet man die richtigen Mitgründer*innen?</h3>
+			<ul id="9c159599-13ba-4a80-92b5-5a39e332e2d2" class="bulleted-list">
+				<li style="list-style-type:disc">Zwei Aspekte sind entscheidend:
+					<strong>1. sich ergänzende Kompetenzen - Hardskills</strong>
+					<strong>2. zusammenpassende Softskills</strong> (z. B. Menschen die optimistisch, leidenschaftlich,
+					lösungsorientiert und entscheidungsfreudig denken und agieren) + Menschen die selber gerne mehr
+					Einfluss haben und etwas bewegen wollen und dafür das Risiko von mehr Unsicherheit eingehen.
+				</li>
+			</ul>
+			<ul id="e392a1a9-b9bb-4474-b219-ac228627eccc" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>Für unterschiedliche Etappen im Startup werden unterschiedliche
+						Mitarbeiter/ Kompetenzen gebraucht.</strong>
+					→ Anfangs:
+					Generalisten: Menschen die alles machen könnten → z. B. Ingenieure sind gleichzeitig auch
+					Kundensupport
+					→ Wenn Company scaled und größer wird:
+					Expert*innen: Menschen die in ihrer speziellen Domäne besonders gut sind wie z. B. Marketing,
+					Kundensupport, etc.</li>
+			</ul>
+			<ul id="c875912f-6f55-442f-a541-8fde3ad43f16" class="bulleted-list">
+				<li style="list-style-type:disc">A Co-Founder who shares the <strong>same vision</strong> is extremely
+					valuable for the <strong>emotional support and motivation</strong> - “You are in this together!”
+				</li>
+			</ul>
+			<ul id="4f105483-ade9-4fde-90b9-d65799c4ead4" class="bulleted-list">
+				<li style="list-style-type:disc">Difference between a friendship and a co-founder relationship:
+					→ <strong>In a co-founder relationship you try to get somewhere together.</strong> This comes with
+					general responsibilities and <strong>responsibilities towards the team-members, customers and
+						investors</strong>. It also comes with <strong>difficult conversations</strong> you might not
+					have in a normal friendship and <strong>trust between the co-founders that you’re in this
+						together</strong>.</li>
+			</ul>
+			<ul id="6153380f-b2ea-4da3-b778-2168f7653dcd" class="bulleted-list">
+				<li style="list-style-type:disc">Hinweis von meiner Seite:
+					<strong>Abgleichen der Big-5</strong> der potenziellen Co-Founder bzw. neuer Mitarbeiter mit den
+					eigenen bzw. denen des Unternehmens
+					→ Die Mitarbeiter-Rekrutierung ist daher eine der Aufgaben die Unternehmensgründer*innen selber
+					übernehmen sollten.
+				</li>
+			</ul>
+			<blockquote id="1669c3fe-82b7-4929-b971-959a5dbd1118" class=""><em>“As company grows you get from more
+					generalized skillsets into more specialized skillsets.”</em></blockquote>
+			<blockquote id="998ff601-8d0a-405b-8dd1-3b59229524ce" class=""><em>There are two different types in the
+					startup industry. </em><em><strong>Builders</strong></em><em> - people who take you
+				</em><em><strong>from zero to one</strong></em><em> and are really excited about building - and
+				</em><em><strong>Scalers</strong></em><em> - who take you </em><em><strong>from one to
+						one-hundred</strong></em><em>, people who are scaling things up.</em></blockquote>
+			<blockquote id="771f4b45-17b3-434e-ab6a-8cce6e5d0ac3" class=""><em><strong>People who are good at scaling
+						might not be good at building</strong></em><em> and </em><em><strong>people who are good at
+						building might not be good at scaling</strong></em><em>.
+					It’s just two different types of skillsets. </em></blockquote>
+			<p id="4f61506e-9b81-43b5-9118-a052f6336fb5" class="">
+			</p>
+			<h3 id="a65df46e-4d65-486b-94c8-72f04c7c8660" class="">What a good team needs:</h3>
+			<ol type="1" id="9d99462d-a255-406a-ab29-58ae671a9c14" class="numbered-list" start="1">
+				<li><strong>A shared mission</strong>
+					→ A northstar that the team is working towards; everybody is oriented on the same path and goals.
+				</li>
+			</ol>
+			<ol type="1" id="08bd09f9-931d-44de-939c-50711ca636c1" class="numbered-list" start="2">
+				<li><strong>The right competencies within the team</strong></li>
+			</ol>
+			<ol type="1" id="a486501b-6e04-457c-9ac9-6671bc1848dc" class="numbered-list" start="3">
+				<li><strong>People who care</strong>
+					→ about the mission AND about others!</li>
+			</ol>
+			<p id="c65033d6-764d-4d12-b813-419fff4843d7" class="">
+			</p>
+			<h3 id="32f4c072-bd13-43ee-9bb0-85f613b792b6" class="">Praktische Tipps und Aufgaben:</h3>
+			<ul id="92361ab3-0e87-459a-8393-8883d7039bfc" class="bulleted-list">
+				<li style="list-style-type:disc">Trust and believe in yourself</li>
+			</ul>
+			<ul id="f4459735-6cf2-49bc-8aca-9fe670f6187b" class="bulleted-list">
+				<li style="list-style-type:disc">Just start it now, start small</li>
+			</ul>
+			<ul id="26e24361-96d9-4abe-8d81-e5f505c979f2" class="bulleted-list">
+				<li style="list-style-type:disc">Set measurable goals</li>
+			</ul>
+			<ul id="8575fcff-4d33-4d8e-bdd9-60a152eb22d3" class="bulleted-list">
+				<li style="list-style-type:disc">Ask myself:
+					→ What are the tasks that give me energy and what kind of tasks drain my energy?
+					→ Founding a business is not a sprint but a marathon. You can only stay in the business for many
+					years when the things you do are the things that continuously give you energy.
+					Optimize your role for the things that give you energy and find other people (co-founders and team,
+					members) for the other side.</li>
+			</ul>
+			<p id="18518f5b-0665-4c22-b66c-fde09703b799" class="">
+			</p>
+			<h3 id="e552c270-b6bf-4111-97e5-4c382a6e472c" class="">Reflektionsaufgabe<strong><strong>: Welche Aufgaben
+						und Tätigkeiten erfüllen dich?</strong></strong></h3>
+			<p id="8efe468e-b053-4a41-88bb-36798cd35025" class="">Frage Nr. 1:
+				Welche Aufgaben oder Aufgabenbereiche machen die Spass und geben dir Energie? (Dies können sehr konkrete
+				Tätigkeiten sein, wie z.B. Menschen beraten, Menschen behandeln, Hardware bauen, etc. oder aber auch
+				Aufgabenbereiche, wie z.B. &quot;Ich arbeite gerne mit Zahlen.&quot;)
+
+				Antwort zu Frage Nr. 1:</p>
+			<ul id="15712a1c-8c7e-4966-b6c1-f5fc608fbd02" class="bulleted-list">
+				<li style="list-style-type:disc">Events organisieren</li>
+			</ul>
+			<ul id="819aed1c-da51-4e87-8a3f-a4a1099ec0d6" class="bulleted-list">
+				<li style="list-style-type:disc">Mich kreativ ausleben</li>
+			</ul>
+			<ul id="e3264091-adbd-4d94-8ab0-915e1bae227e" class="bulleted-list">
+				<li style="list-style-type:disc">Mit Menschen netzwerken, die interessante Interessen- und
+					Expert*innengebiete haben</li>
+			</ul>
+			<ul id="8deee369-5191-4c26-99aa-f26777947a3d" class="bulleted-list">
+				<li style="list-style-type:disc">Mich mit Themen beschäftigen mit denen sich nicht sonderlich viele
+					Menschen beschäftigen, die in der Zukunft, wie ich denke, aber eine große Rolle spielen werden.</li>
+			</ul>
+			<ul id="d434c64a-b3dd-4629-8a46-3b148305c2eb" class="bulleted-list">
+				<li style="list-style-type:disc">Arbeit die nahe an der eigenen Vision des Projektes liegen wie der
+					Umsetzung neuer Features die das eigene Unternehmens/ Projekt-Ökosystem dahingehend erweitern, was
+					man sich zu beginn vorgestellt hat oder wohin es sich entwickelt.</li>
+			</ul>
+			<p id="dbaa1bf6-4070-449d-8d75-f10fd89e4b59" class="">
+			</p>
+			<p id="c7aec426-3621-4690-9d13-8049d0ffe5df" class="">Frage Nr. 2:
+				Für welche Aufgaben oder Aufgabenbereiche musst du dich überwinden und sie nehmen dir Energie? (Dies
+				können sehr konkrete Tätigkeiten sein, wie z.B. Menschen beraten, Menschen behandeln, Hardware bauen,
+				etc. oder aber auch Aufgabenbereiche, wie z.B. &quot;Ich arbeite gerne mit Zahlen.&quot;)
+
+				Antwort zu Frage Nr. 2:</p>
+			<ul id="bf42e8ff-8dba-4bb4-acb1-f0a7ea751ccc" class="bulleted-list">
+				<li style="list-style-type:disc">Erledigung von Aufgaben zu deren vollständigen Erledigung es nicht
+					zwangsgeblich erforderlich ist, dass ich sie selber erledigt. (z. B. alltägliche Aufgaben die einen
+					nicht näher zum Ziel bringen sondern nach deren Erledigung man eher quasi wieder bei &quot;0&quot;
+					ist: Gegenstände hin und her tragen/ besorgen; Pakete zur Post bringen; etc.)</li>
+			</ul>
+			<ul id="10b59bd8-4fe7-47cf-aa92-77ecfe8e841a" class="bulleted-list">
+				<li style="list-style-type:disc">Unterhaltungen im Unternehmenskontext die allerdings nicht meinen
+					Wertevorstellungen oder Interessen entsprechen.</li>
+			</ul>
+			<ul id="b8d80263-0012-4f05-b424-4fa33555de88" class="bulleted-list">
+				<li style="list-style-type:disc">Unproduktive Arbeitsweisen bei denen ich weiß, dass ich gerade und in
+					Zukunft deutlich mehr (unnötige) Zeit auf die Aufgabe verwende, als wenn ich die Arbeitsweise oder
+					das Tool mit dem ich arbeite ändere.</li>
+			</ul>
+			<p id="15ae39f4-daa6-4dff-8f7e-41b0d1b7e857" class="">
+			</p>
+			<p id="0024b0ca-2c93-4b88-8a15-c02ad0a5c2a4" class="">
+			</p>
+			<h3 id="71de003f-779a-43ba-adc2-7d6ba77a3e7e" class="">Weiterführendes Material:</h3>
+			<p id="18bb0c29-0445-46b5-b5cc-97314eb09463" class="">Scott Uhrig, The Little White Book of Recruiting for
+				Startups: Avoid Failures, Hire the Best Person for the Job, and Drive Your Company Toward Success</p>
+			<p id="6c4525e7-1e41-4d85-bba9-2fd4a9678782" class=""><a
+					href="https://phys.org/news/2021-09-successful-startups-friendships-business-teams.html">The most
+					successful startups mix friendships and business to build teams, research finds</a></p>
+			<p id="4b218b69-1187-4176-a74a-493d8f4e6a39" class=""><a
+					href="https://startuptalky.com/how-build-great-startup-team/">How To Build a Great Startup Team</a>
+			</p>
+			<p id="5cfc06ea-8c7d-4c28-ad61-8649fbd63c36" class="">Podcasts die Laura Behrens Wu im Video nennt: 
+				<a href="https://open.spotify.com/show/22fi0RqfoBACCuQDv97wFO">Invest like the Best</a>
+				<a href="https://www.npr.org/podcasts/510313/how-i-built-this?t=1634468685404">How I Built This</a>
+			</p>
+		</div>
+	</article>
+</body>
+
+</html>

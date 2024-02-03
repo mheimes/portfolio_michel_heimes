@@ -1,0 +1,1076 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Startup - Business</title>
+	<style>
+		/* cspell:disable-file */
+		/* webkit printing magic: print all background colors */
+		html {
+			-webkit-print-color-adjust: exact;
+		}
+
+		* {
+			box-sizing: border-box;
+			-webkit-print-color-adjust: exact;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #E4E4E4;
+		}
+
+		@media only screen {
+			body {
+				margin: 2em auto;
+				max-width: 90%;
+				color: rgb(55, 53, 47);
+			}
+		}
+
+		body {
+			line-height: 1.5;
+			white-space: normal;
+		}
+
+		a,
+		a.visited {
+			color: inherit;
+			text-decoration: underline;
+		}
+
+		.pdf-relative-link-path {
+			font-size: 80%;
+			color: #444;
+		}
+
+		h1,
+		h2,
+		h3 {
+			letter-spacing: -0.01em;
+			line-height: 1.2;
+			font-weight: 600;
+			margin-bottom: 0;
+		}
+
+		.page-title {
+			font-size: 2.5rem;
+			font-weight: 700;
+			margin-top: 0;
+			margin-bottom: 0.75em;
+		}
+
+		h1 {
+			font-size: 1.875rem;
+			margin-top: 1.875rem;
+		}
+
+		h2 {
+			font-size: 1.5rem;
+			margin-top: 1.5rem;
+		}
+
+		h3 {
+			font-size: 1.25rem;
+			margin-top: 1.25rem;
+		}
+
+		.source {
+			border: 1px solid #ddd;
+			border-radius: 3px;
+			padding: 1.5em;
+			word-break: break-all;
+		}
+
+		.callout {
+			border-radius: 3px;
+			padding: 1rem;
+		}
+
+		figure {
+			margin: 1.25em 0;
+			page-break-inside: avoid;
+		}
+
+		figcaption {
+			opacity: 0.5;
+			font-size: 85%;
+			margin-top: 0.5em;
+		}
+
+		mark {
+			background-color: transparent;
+		}
+
+		.indented {
+			padding-left: 1.5em;
+		}
+
+		hr {
+			background: transparent;
+			display: block;
+			width: 100%;
+			height: 1px;
+			visibility: visible;
+			border: none;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+		}
+
+		img {
+			max-width: 100%;
+		}
+
+		@media only print {
+			img {
+				max-height: 100vh;
+				object-fit: contain;
+			}
+		}
+
+		@page {
+			margin: 1in;
+		}
+
+		.collection-content {
+			font-size: 0.875rem;
+		}
+
+		.column-list {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.column {
+			padding: 0 1em;
+		}
+
+		.column:first-child {
+			padding-left: 0;
+		}
+
+		.column:last-child {
+			padding-right: 0;
+		}
+
+		.table_of_contents-item {
+			display: block;
+			font-size: 0.875rem;
+			line-height: 1.3;
+			padding: 0.125rem;
+		}
+
+		.table_of_contents-indent-1 {
+			margin-left: 1.5rem;
+		}
+
+		.table_of_contents-indent-2 {
+			margin-left: 3rem;
+		}
+
+		.table_of_contents-indent-3 {
+			margin-left: 4.5rem;
+		}
+
+		.table_of_contents-link {
+			text-decoration: none;
+			opacity: 0.7;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid rgba(55, 53, 47, 0.09);
+			border-collapse: collapse;
+		}
+
+		table {
+			border-left: none;
+			border-right: none;
+		}
+
+		th,
+		td {
+			font-weight: normal;
+			padding: 0.25em 0.5em;
+			line-height: 1.5;
+			min-height: 1.5em;
+			text-align: left;
+		}
+
+		th {
+			color: rgba(55, 53, 47, 0.6);
+		}
+
+		ol,
+		ul {
+			margin: 0;
+			margin-block-start: 0.6em;
+			margin-block-end: 0.6em;
+		}
+
+		li>ol:first-child,
+		li>ul:first-child {
+			margin-block-start: 0.6em;
+		}
+
+		ul>li {
+			list-style: disc;
+		}
+
+		ul.to-do-list {
+			padding-inline-start: 0;
+		}
+
+		ul.to-do-list>li {
+			list-style: none;
+		}
+
+		.to-do-children-checked {
+			text-decoration: line-through;
+			opacity: 0.375;
+		}
+
+		ul.toggle>li {
+			list-style: none;
+		}
+
+		ul {
+			padding-inline-start: 1.7em;
+		}
+
+		ul>li {
+			padding-left: 0.1em;
+		}
+
+		ol {
+			padding-inline-start: 1.6em;
+		}
+
+		ol>li {
+			padding-left: 0.2em;
+		}
+
+		.mono ol {
+			padding-inline-start: 2em;
+		}
+
+		.mono ol>li {
+			text-indent: -0.4em;
+		}
+
+		.toggle {
+			padding-inline-start: 0em;
+			list-style-type: none;
+		}
+
+		/* Indent toggle children */
+		.toggle>li>details {
+			padding-left: 1.7em;
+		}
+
+		.toggle>li>details>summary {
+			margin-left: -1.1em;
+		}
+
+		.selected-value {
+			display: inline-block;
+			padding: 0 0.5em;
+			background: rgba(206, 205, 202, 0.5);
+			border-radius: 3px;
+			margin-right: 0.5em;
+			margin-top: 0.3em;
+			margin-bottom: 0.3em;
+			white-space: nowrap;
+		}
+
+		.collection-title {
+			display: inline-block;
+			margin-right: 1em;
+		}
+
+		.page-description {
+			margin-bottom: 2em;
+		}
+
+		.simple-table {
+			margin-top: 1em;
+			font-size: 0.875rem;
+			empty-cells: show;
+		}
+
+		.simple-table td {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table th {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table-header-color {
+			background: rgb(247, 246, 243);
+			color: black;
+		}
+
+		.simple-table-header {
+			font-weight: 500;
+		}
+
+		time {
+			opacity: 0.5;
+		}
+
+		.icon {
+			display: inline-block;
+			max-width: 1.2em;
+			max-height: 1.2em;
+			text-decoration: none;
+			vertical-align: text-bottom;
+			margin-right: 0.5em;
+		}
+
+		img.icon {
+			border-radius: 3px;
+		}
+
+		.user-icon {
+			width: 1.5em;
+			height: 1.5em;
+			border-radius: 100%;
+			margin-right: 0.5rem;
+		}
+
+		.user-icon-inner {
+			font-size: 0.8em;
+		}
+
+		.text-icon {
+			border: 1px solid #000;
+			text-align: center;
+		}
+
+		.page-cover-image {
+			display: block;
+			object-fit:cover;
+			width: 100%;
+			max-height: 30vh;
+		}
+
+		.page-header-icon {
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+
+		.page-header-icon-with-cover {
+			margin-top: -0.72em;
+			margin-left: 0.07em;
+		}
+
+		.page-header-icon img {
+			border-radius: 3px;
+		}
+
+		.link-to-page {
+			margin: 1em 0;
+			padding: 0;
+			border: none;
+			font-weight: 500;
+		}
+
+		p>.user {
+			opacity: 0.5;
+		}
+
+		td>.user,
+		td>time {
+			white-space: nowrap;
+		}
+
+		input[type="checkbox"] {
+			transform: scale(1.5);
+			margin-right: 0.6em;
+			vertical-align: middle;
+		}
+
+		p {
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.image {
+			border: none;
+			margin: 1.5em 0;
+			padding: 0;
+			border-radius: 0;
+			text-align: center;
+		}
+
+		.code,
+		code {
+			background: rgba(135, 131, 120, 0.15);
+			border-radius: 3px;
+			padding: 0.2em 0.4em;
+			border-radius: 3px;
+			font-size: 85%;
+			tab-size: 2;
+		}
+
+		code {
+			color: #eb5757;
+		}
+
+		.code {
+			padding: 1.5em 1em;
+		}
+
+		.code-wrap {
+			white-space: pre-wrap;
+			word-break: break-all;
+		}
+
+		.code>code {
+			background: none;
+			padding: 0;
+			font-size: 100%;
+			color: inherit;
+		}
+
+		blockquote {
+			font-size: 1.25em;
+			margin: 1em 0;
+			padding-left: 1em;
+			border-left: 3px solid rgb(55, 53, 47);
+		}
+
+		.bookmark {
+			text-decoration: none;
+			max-height: 8em;
+			padding: 0;
+			display: flex;
+			width: 100%;
+			align-items: stretch;
+		}
+
+		.bookmark-title {
+			font-size: 0.85em;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			height: 1.75em;
+			white-space: nowrap;
+		}
+
+		.bookmark-text {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.bookmark-info {
+			flex: 4 1 180px;
+			padding: 12px 14px 14px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.bookmark-image {
+			width: 33%;
+			flex: 1 1 180px;
+			display: block;
+			position: relative;
+			object-fit: cover;
+			border-radius: 1px;
+		}
+
+		.bookmark-description {
+			color: rgba(55, 53, 47, 0.6);
+			font-size: 0.75em;
+			overflow: hidden;
+			max-height: 4.5em;
+			word-break: break-word;
+		}
+
+		.bookmark-href {
+			font-size: 0.75em;
+			margin-top: 0.25em;
+		}
+
+		.sans {
+			font-family: 'SF Mono', sans-serif, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+		}
+
+		.code {
+			font-family: 'SF Mono', sans-serif, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+		}
+
+		.serif {
+			font-family: 'SF Mono', sans-serif, Lyon-Text, Georgia, ui-serif, serif;
+		}
+
+		.mono {
+			font-family: 'SF Mono', sans-serif, iawriter-mono, Nitti, Menlo, Courier, monospace;
+		}
+
+		.pdf .sans {
+			font-family: 'SF Mono', sans-serif, Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .sans {
+			font-family: 'SF Mono', sans-serif, Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .sans {
+			font-family: 'SF Mono', sans-serif, Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .sans {
+			font-family: 'SF Mono', sans-serif, Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR';
+		}
+
+		.pdf .code {
+			font-family: 'SF Mono', sans-serif, Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .code {
+			font-family: 'SF Mono', sans-serif, Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .code {
+			font-family: 'SF Mono', sans-serif, Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .code {
+			font-family: 'SF Mono', sans-serif, Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.pdf .serif {
+			font-family: 'SF Mono', sans-serif, PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .serif {
+			font-family: 'SF Mono', sans-serif, PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .serif {
+			font-family: 'SF Mono', sans-serif, PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .serif {
+			font-family: 'SF Mono', sans-serif, PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR';
+		}
+
+		.pdf .mono {
+			font-family: 'SF Mono', sans-serif, PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .mono {
+			font-family: 'SF Mono', sans-serif, PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .mono {
+			font-family: 'SF Mono', sans-serif, PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .mono {
+			font-family: 'SF Mono', sans-serif, PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.highlight-default {
+			color: rgba(55, 53, 47, 1);
+		}
+
+		.highlight-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.highlight-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.highlight-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.highlight-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.highlight-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.highlight-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.highlight-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.highlight-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.highlight-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.highlight-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.highlight-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.highlight-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.highlight-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.highlight-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.highlight-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.highlight-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.highlight-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.highlight-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.block-color-default {
+			color: inherit;
+			fill: inherit;
+		}
+
+		.block-color-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.block-color-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.block-color-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.block-color-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.block-color-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.block-color-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.block-color-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.block-color-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.block-color-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.block-color-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.block-color-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.block-color-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.block-color-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.block-color-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.block-color-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.block-color-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.block-color-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.block-color-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.select-value-color-interactiveBlue {
+			background-color: rgba(35, 131, 226, .07);
+		}
+
+		.select-value-color-pink {
+			background-color: rgba(245, 224, 233, 1);
+		}
+
+		.select-value-color-purple {
+			background-color: rgba(232, 222, 238, 1);
+		}
+
+		.select-value-color-green {
+			background-color: rgba(219, 237, 219, 1);
+		}
+
+		.select-value-color-gray {
+			background-color: rgba(227, 226, 224, 1);
+		}
+
+		.select-value-color-translucentGray {
+			background-color: rgba(255, 255, 255, 0.0375);
+		}
+
+		.select-value-color-orange {
+			background-color: rgba(250, 222, 201, 1);
+		}
+
+		.select-value-color-brown {
+			background-color: rgba(238, 224, 218, 1);
+		}
+
+		.select-value-color-red {
+			background-color: rgba(255, 226, 221, 1);
+		}
+
+		.select-value-color-yellow {
+			background-color: rgba(253, 236, 200, 1);
+		}
+
+		.select-value-color-blue {
+			background-color: rgba(211, 229, 239, 1);
+		}
+
+		.select-value-color-pageGlass {
+			background-color: undefined;
+		}
+
+		.select-value-color-washGlass {
+			background-color: undefined;
+		}
+
+		.checkbox {
+			display: inline-flex;
+			vertical-align: text-bottom;
+			width: 16;
+			height: 16;
+			background-size: 16px;
+			margin-left: 2px;
+			margin-right: 5px;
+		}
+
+		.checkbox-on {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+
+		.checkbox-off {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+	</style>
+</head>
+
+<body>
+	<article id="65e727a1-2fb7-4d55-9697-9b4da033517c" class="page sans">
+		<header>
+			<h1 class="page-title">Startup - Business</h1>
+			<p class="page-description"></p>
+		</header>
+		<div class="page-body">
+			<h1 id="c6404ffa-3512-4e14-b0fe-8d8c59faee14" class=""><mark
+					class="highlight-purple_background">General</mark></h1>
+			<figure id="ed2f5845-a519-4429-963a-e5f28bf0c1a8" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Vision%20ed2f5845a5194429963ae5f28bf0c1a8.html"><span
+						class="icon">🧿</span>Vision</a></figure>
+			<figure id="6d99565c-27e7-47b8-9b81-419e48d27f30" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Meine%20Big%205%20for%20Life%206d99565c27e747b89b81419e48d27f30.html"><span
+						class="icon">🧳</span>Meine Big 5 for Life</a></figure>
+			<figure id="9d56d65b-0432-4ddc-867f-b22827fd1974" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Business%20Know-How%209d56d65b04324ddc867fb22827fd1974.html"><span
+						class="icon">🏰</span>Business Know-How</a></figure>
+			<figure id="8c3ddf34-ae41-499f-87b3-aec0e422883d" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Versicherungen%20bei%20Selbststa%CC%88ndigkeit%208c3ddf34ae41499f87b3aec0e422883d.html"><span
+						class="icon">📃</span>Versicherungen bei Selbstständigkeit</a></figure>
+			<figure id="c3509768-400f-44e9-a74a-8b4dbe4528c6" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Stipendien%20c3509768400f44e9a74a8b4dbe4528c6.html"><span
+						class="icon">🏦</span>Stipendien</a></figure>
+			<figure id="0c36b40d-0c55-4484-a14a-51c7706619d3" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Know-how%20Support%20(staatliche)%20Fo%CC%88rdermittel%200c36b40d0c554484a14a51c7706619d3.html"><span
+						class="icon">🦸🏼</span>Know-how Support (staatliche) Fördermittel</a></figure>
+			<figure id="5334664d-aa02-4854-b7dd-45adedea3223" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Finanzierungs-Arten%205334664daa024854b7dd45adedea3223.html"><span
+						class="icon">💸</span>Finanzierungs-Arten</a></figure>
+			<figure id="8af3b23d-edec-4c2b-b9a5-933e1406899f" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Learnings%20von%20Jonas%20-%20E-Commerce%208af3b23dedec4c2bb9a5933e1406899f.html"><span
+						class="icon">📦</span>Learnings von Jonas - E-Commerce</a></figure>
+			<figure id="c075b562-1fad-4630-9a7e-0a6880760f68" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Nachhall-%20tiges%20Pra%CC%88sentieren%20c075b5621fad46309a7e0a6880760f68.html"><span
+						class="icon">🗣️</span>Nachhall- tiges Präsentieren</a></figure>
+			<figure id="a7fb3b94-a2af-460d-9e27-4db66ac12d5d" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/(Startup)%20Pitch%20a7fb3b94a2af460d9e274db66ac12d5d.html"><span
+						class="icon">📣</span>(Startup) Pitch</a></figure>
+			<figure id="af6edd6b-b8aa-4b5e-aca6-c9d500a5c3da" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Steuern%20auf%20Mitarbeiter%20af6edd6bb8aa4b5eaca6c9d500a5c3da.html"><span
+						class="icon">🚕</span>Steuern auf Mitarbeiter</a></figure>
+			<figure id="1c28d9f4-e78b-421e-bae0-1dad9efd0886" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Anmeldung%20eines%20Unternehmens%201c28d9f4e78b421ebae01dad9efd0886.html"><span
+						class="icon">🏁</span>Anmeldung eines Unternehmens</a></figure>
+			<figure id="491052bc-7e80-434f-90b6-a29d864e61a5" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/UI%20UX%20491052bc7e80434f90b6a29d864e61a5.html"><span
+						class="icon">🌉</span>UI/UX</a></figure>
+			<figure id="acbdec41-6fe3-45c6-9e95-e7492650dab0" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/SEO%20acbdec416fe345c69e95e7492650dab0.html"><span
+						class="icon">🔍</span>SEO</a></figure>
+			<figure id="87cf8cb1-ede5-408d-b6ac-0586642b56fb" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Motivationsschreiben%20Flowers%20for%20Society%2087cf8cb1ede5408db6ac0586642b56fb.html"><span
+						class="icon">💐</span>Motivationsschreiben Flowers for Society</a></figure>
+			<figure id="6c74966b-a1b0-4233-b0f1-f8cb919a8892" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/How%20to%20start%20a%20startup%20-%20by%20Sam%20Altman%206c74966ba1b04233b0f1f8cb919a8892.html"><span
+						class="icon">🏸</span>How to start a startup - by Sam Altman</a></figure>
+			<figure id="fbdbd08c-6a90-4770-bc8b-62209c329cf2" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Praktikum%20Flowers%20For%20Society%20fbdbd08c6a904770bc8b62209c329cf2.html"><span
+						class="icon">💮</span>Praktikum Flowers For Society</a></figure>
+			<figure id="c8f1ae77-d66c-4239-a107-cc81ee697240" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Kurzwahltaste%20c8f1ae77d66c4239a107cc81ee697240.html"><span
+						class="icon">☎️</span>Kurzwahltaste</a></figure>
+			<br>
+			<h1 id="366a8523-00d3-49c4-a8bd-3a54a79b738d" class=""><mark class="highlight-gray_background">Industry People</mark></h1>
+			<figure id="9926d6c7-0028-4f1c-b9cd-2d5d5e6cc3b7" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Patricia%20Reiners%20-%20UX%20Designerin%209926d6c700284f1cb9cd2d5d5e6cc3b7.html"><span
+						class="icon">↔️</span>Patricia Reiners - UX Designerin</a></figure>
+			<figure id="e25bee2a-3a94-4e71-bc97-82112104b006" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Freund%20von%20Jenny%20Royeck%20(TASCHEN)%20-%20Espresso%20Bar%20e25bee2a3a944e71bc9782112104b006.html"><span
+						class="icon">☕</span>Freund von Jenny Royeck (TASCHEN) - Espresso Bar</a></figure>
+			<br>
+						<h1 id="efb8c3b8-560e-468d-8fec-c244538c5247" class=""><mark class="highlight-red_background">Learnings von Startup Foundern &amp; Co.</mark></h1>
+			<figure id="9382a898-f094-4f07-b8cf-b0dc6f255484" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Deel%20-%20Alex%20Bouaziz%20&amp;%20Shuo%20Wang%209382a898f0944f07b8cfb0dc6f255484.html"><span
+						class="icon">📄</span>Deel - Alex Bouaziz &amp; Shuo Wang</a></figure>
+			<figure id="cb9164cf-0314-4f7f-9533-e8ea9c41164a" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Twitch%20Y-Combinator%20-%20Michael%20Seibel%20cb9164cf03144f7f9533e8ea9c41164a.html"><span
+						class="icon">📺</span>Twitch/ Y-Combinator - Michael Seibel</a></figure>
+			
+						<br>
+			<h1 id="d858207a-1e59-4fca-80e2-6be2232627ff" class=""><mark class="highlight-yellow_background">Makers of Tomorrow:</mark></h1>
+			<figure id="912a0c79-bcbd-4e49-b51b-e87a149c97a6" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Chapter%201%20-%20Mindset%20-%20Amboss%20912a0c79bcbd4e49b51be87a149c97a6.html"><span
+						class="icon">🧠</span>Chapter 1 - Mindset - Amboss</a></figure>
+			<figure id="da64cd79-c153-4a22-9281-e7ab85b1194e" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Chapter%202%20-%20Ideengenerierung%20-%20Kittyhawk%20da64cd79c1534a229281e7ab85b1194e.html"><span
+						class="icon">💡</span>Chapter 2 - Ideengenerierung - Kittyhawk</a></figure>
+			<figure id="8a88e920-30e8-48f1-b10b-064159702ee3" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Chapter%203%20-%20Markt%20-%20Amorelie%208a88e92030e848f1b10b064159702ee3.html"><span
+						class="icon">🛒</span>Chapter 3 - Markt - Amorelie</a></figure>
+			<figure id="f91e0d1c-478f-4073-86f8-ec963b62de79" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Chapter%204%20-%20MVP%20(Minimum%20Viable%20Product)%20-%20SoundCl%20f91e0d1c478f407386f8ec963b62de79.html"><span
+						class="icon">🎲</span>Chapter 4 - MVP (Minimum Viable Product) - SoundCloud/ Dance</a></figure>
+			<figure id="f7fd92a4-8d16-4b97-bfb6-191599e4d951" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Chapter%205%20-%20Team%20-%20Shippo%20f7fd92a48d164b97bfb6191599e4d951.html"><span
+						class="icon">👥</span>Chapter 5 - Team - Shippo</a></figure>
+			<figure id="c6f28927-1b0c-4a3d-b904-fe6d40297f37" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Chapter%206%20-%20Unternehmenskultur%20-%20Plusdental%20c6f289271b0c4a3db904fe6d40297f37.html"><span
+						class="icon">🏰</span>Chapter 6 - Unternehmenskultur - Plusdental</a></figure>
+			<figure id="a6599646-6e2b-4007-b541-6802faf5c626" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Chapter%207%20-%20Produkt-Markt-Fit%20-%20You%20com%20a65996466e2b4007b5416802faf5c626.html"><span
+						class="icon">💯</span>Chapter 7 - Produkt-Markt-Fit - You.com</a></figure>
+			<figure id="15dc711d-74d6-4952-9ab7-64b789b75b96" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Chapter%208%20-%20Gescha%CC%88ftsmodelle%20-%20Celonis%2015dc711d74d649529ab764b789b75b96.html"><span
+						class="icon">🌊</span>Chapter 8 - Geschäftsmodelle - Celonis</a></figure>
+			<figure id="544133ab-881d-43a9-81d4-4b66948b7ce7" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Chapter%209%20-%20Finanzierung%20&amp;%20Netzwerken%20-%20Andreessen%20544133ab881d43a981d44b66948b7ce7.html"><span
+						class="icon">🏦</span>Chapter 9 - Finanzierung &amp; Netzwerken - Andreessen Horrowitz</a>
+			</figure>
+			<figure id="9262ffe3-c499-46e7-9ca8-0fc660ef1535" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Chapter%2010%20-%20Scaling%20-%20GetYourGuide%209262ffe3c49946e79ca80fc660ef1535.html"><span
+						class="icon">🚌</span>Chapter 10 - Scaling - GetYourGuide</a></figure>
+			<br>
+			<h1 id="3c95ee73-a3c6-4b2d-b8d4-08f6d176c3a7" class=""><mark class="highlight-brown_background">Startup Class - Sam Altman:</mark></h1>
+			<figure id="85d7db2a-01c3-4603-885e-b5ae51083257" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Lecture%201%20-%20How%20to%20Start%20a%20Startup%20(Sam%20Altman%20&amp;%20D%2085d7db2a01c34603885eb5ae51083257.html"><span
+						class="icon">🆕</span>Lecture 1 - How to Start a Startup (Sam Altman &amp; Dustin Moskovitz)</a>
+			</figure>
+			<figure id="5583499c-606f-4241-9655-b0e19f586677" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Lecture%202%20-%20Team%20and%20Execution%20(Sam%20Altman)%205583499c606f42419655b0e19f586677.html"><span
+						class="icon">👥</span>Lecture 2 - Team and Execution (Sam Altman)</a></figure>
+			<br>
+			<h1 id="1ff96eab-c965-4212-b564-9e0ee70226a0" class=""><mark class="highlight-red_background">Unternehmen die mich inspirieren:</mark></h1>
+			<figure id="051c238b-b594-4f36-85f0-f1f4c06c3945" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Liquid%20Death%20051c238bb5944f3685f0f1f4c06c3945.html"><span
+						class="icon">☠️</span>Liquid Death</a></figure>
+			
+			<br>
+			<h1 id="8da43648-7541-4f58-b81c-5b6e9cf57c5c" class=""><mark class="highlight-blue_background">Business Ideen:</mark></h1>
+			<figure id="0bd8443e-ff97-4514-a4a3-0bd7a9810521" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Buchungs-Handelplattform%20(durch%20NFTs)%200bd8443eff974514a4a30bd7a9810521.html"><span
+						class="icon">🏨</span>Buchungs-Handelplattform (durch NFTs)</a></figure>
+			<figure id="78c00900-e0cf-4fff-9f67-71a0a283846f" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/(Video)%20Stock%20Footage%20Editor%20and%20Distributor%2078c00900e0cf4fff9f6771a0a283846f.html"><span
+						class="icon">▶️</span>(Video) Stock Footage Editor and Distributor</a></figure>
+			<figure id="b7481b52-27eb-4749-bb4d-e2e16c67fbb3" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Make%20something%20people%20love%20b7481b5227eb4749bb4de2e16c67fbb3.html"><span
+						class="icon">❤️</span>Make something people love</a></figure>
+			<figure id="1170f690-6a00-40b8-b529-feef291d149c" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Precious%20Authentification%20Cards%201170f6906a0040b8b529feef291d149c.html"><span
+						class="icon">💳</span>Precious Authentification Cards </a></figure>
+			<figure id="0fcb9e8f-4d04-4cb9-b89b-fcfae0631746" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Teim%20-%20Smart%20audio%20transcription%20for%20self-reflecti%200fcb9e8f4d044cb9b89bfcfae0631746.html"><span
+						class="icon">📝</span>Teim - Smart audio transcription for self-reflection </a></figure>
+			<figure id="fef6e663-b0e8-49fe-bf35-5c8c602ed542" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Natural%20Flavored%20Water%20fef6e663b0e849febf355c8c602ed542.html"><span
+						class="icon">🫐</span>Natural Flavored Water</a></figure>
+			<figure id="416fb022-c5b8-44f6-9d80-fa1a7a3c1d54" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Sole%20Food%20416fb022c5b844f69d80fa1a7a3c1d54.html"><span
+						class="icon">🍔</span>Sole Food</a></figure>
+			<figure id="99f721f6-00c5-4df9-a9a1-8744374de7b8" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Insight%2099f721f600c54df9a9a18744374de7b8.html"><span
+						class="icon">🎫</span>Insight</a></figure>
+			<figure id="78b3c7b6-8326-4d82-97ef-092e832ba94e" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Brand%20Ambassador%20Army%2078b3c7b683264d8297ef092e832ba94e.html"><span
+						class="icon">🥷🏼</span>Brand Ambassador Army</a></figure>
+			<figure id="9fa81c94-2123-43e0-b66c-5d9fc45fad08" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/DOS%20-%20%E2%80%9CDrone-Show%20on%20Steroids%E2%80%9D%209fa81c94212343e0b66c5d9fc45fad08.html"><span
+						class="icon">🛸</span>DOS - “Drone-Show on Steroids”</a></figure>
+			<figure id="bc380061-1b7c-44b4-b5c0-1cdfbf66a32d" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/TheShitCompany%20bc3800611b7c44b4b5c01cdfbf66a32d.html"><span
+						class="icon">💩</span>TheShitCompany</a></figure>
+			<figure id="803d9497-8fd2-414f-88e8-4597da17fa36" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Eat%20cheaper%20-%20Restaurant%20Cheat%20Code%20-%20Empower%20your%20803d94978fd2414f88e84597da17fa36.html"><span
+						class="icon">🍽️</span>Eat cheaper - Restaurant Cheat Code - Empower your network</a></figure>
+			<figure id="db8a1c7b-444d-4a1b-a879-fe33099beed7" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Social-%20Cloud-Banking%20(DeFi)%20db8a1c7b444d4a1ba879fe33099beed7.html"><span
+						class="icon">🏦</span>Social-/ Cloud-Banking (DeFi)</a></figure>
+			<figure id="c1f6f907-2ffd-4c3b-97e1-280fab2a53b6" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Sta%CC%88rkere%20Communitys%20(durch%20NFT%20Tech)%20c1f6f9072ffd4c3b97e1280fab2a53b6.html"><span
+						class="icon">👥</span>Stärkere Communitys (durch NFT Tech)</a></figure>
+			<figure id="f781c3f3-8d87-4c39-8cee-5a641c145712" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Pizza-Reisegewerbe%20f781c3f38d874c398cee5a641c145712.html"><span
+						class="icon">🍕</span>Pizza-Reisegewerbe</a></figure>
+			<figure id="b67c762f-f83f-4a2d-ade6-c595fe4cf0d2" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Pizza-Box%20b67c762ff83f4a2dade6c595fe4cf0d2.html"><span
+						class="icon">🥡</span>Pizza-Box</a></figure>
+			<figure id="4de784c8-8452-4387-90b1-7991ae19d844" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Web3%200%20O%CC%88kosystem%204de784c88452438790b17991ae19d844.html"><span
+						class="icon">⛓️</span>Web3.0 Ökosystem</a></figure>
+			<figure id="7adc380b-ee49-4221-9716-b003c60b019b" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Beratung%20und%20Projektrealisierung%20im%20Community-Bere%207adc380bee4942219716b003c60b019b.html"><span
+						class="icon">⛏️</span>Beratung und Projektrealisierung im Community-Bereich für Lifestyle Brands
+				</a></figure>
+			<figure id="33f73c29-83b4-432e-912d-8da65e30742e" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/NFT%20Ticket%20App%20-%20Grasshopper%2033f73c2983b4432e912d8da65e30742e.html"><span
+						class="icon">🎫</span>NFT Ticket App - Grasshopper</a></figure>
+			<figure id="8737d135-6bcb-4d17-a041-c925b22296ab" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Organisation%20gemeinsame%20Aktionen%20in%20Freundesgruppe%208737d1356bcb4d17a041c925b22296ab.html"><span
+						class="icon">🎭</span>Organisation gemeinsame Aktionen in Freundesgruppen</a></figure>
+			<figure id="7e9abea6-825e-431c-b0c0-a290ae21c835" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/NFTs%20for%20physical%20goods%207e9abea6825e431cb0c0a290ae21c835.html"><span
+						class="icon">💾</span>NFTs for physical goods</a></figure>
+			<figure id="33c48016-64c0-4b63-8e7b-8f4471771b7c" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Sneaker%20Plattform%2033c4801664c04b638e7b8f4471771b7c.html"><span
+						class="icon">👟</span>Sneaker Plattform</a></figure>
+			<figure id="c637ba36-83a7-461a-980a-3c6b0de586c1" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Drohnen-Quickcommerce%20c637ba3683a7461a980a3c6b0de586c1.html"><span
+						class="icon">🚁</span>Drohnen-Quickcommerce </a></figure>
+			<figure id="766127e4-1f0f-406f-972a-7e2438a69550" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Plattform%20-%20%E2%80%9CResell%20made%20easy%E2%80%9D%20766127e41f0f406f972a7e2438a69550.html"><span
+						class="icon">🔄</span>Plattform - “Resell made easy”</a></figure>
+			<figure id="db34dd6c-340a-4059-9c4a-30ecaf19a894" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Service%20Produktion%20von%20Produkt-Videoanleitungen%20db34dd6c340a40599c4a30ecaf19a894.html"><span
+						class="icon">📹</span>Service: Produktion von Produkt-Videoanleitungen</a></figure>
+			<figure id="4b2bb32e-8fef-4d5b-9a15-5bf6ae7f3969" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Intuitive%20Zahnpasta%204b2bb32e8fef4d5b9a155bf6ae7f3969.html"><span
+						class="icon">🪥</span>Intuitive Zahnpasta</a></figure>
+			<figure id="c6ca1c8c-1026-4249-9503-b7c45f666efd" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Sneaker-Cleaning%20bei%20Lifestyle%20Events%20c6ca1c8c102642499503b7c45f666efd.html"><span
+						class="icon">🧼</span>Sneaker-Cleaning bei Lifestyle Events </a></figure>
+			<figure id="0e6ceadd-9f6f-49f6-811a-8bfa8d5ae48f" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Soul-bound-token%20-%20O%CC%88kosystem%200e6ceadd9f6f49f6811a8bfa8d5ae48f.html"><span
+						class="icon">🎓</span>Soul-bound-token - Ökosystem</a></figure>
+			<figure id="c24d418e-ca9e-4314-9256-91ba3d86cddb" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Deo%20Parfum%20gegen%20nervige%20Insekten%20c24d418eca9e4314925691ba3d86cddb.html"><span
+						class="icon">🦟</span>Deo/ Parfum gegen nervige Insekten</a></figure>
+			<figure id="74d40bab-c3ee-4ab0-a831-0733e6e6cf94" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Newsletter-Tech%2074d40babc3ee4ab0a8310733e6e6cf94.html"><span
+						class="icon">📧</span>Newsletter-Tech </a></figure>
+			<figure id="f1a63635-54d8-4a3d-a748-f23c3dbc36d0" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Social%20Media%20Schnittstelle%20f1a6363554d84a3da748f23c3dbc36d0.html"><span
+						class="icon">📱</span>Social Media Schnittstelle</a></figure>
+			<figure id="086e1148-15b5-4e79-b278-5ca505d56aa2" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Service%20fu%CC%88r%20optimierten%20Kundensupport%20086e114815b54e79b2785ca505d56aa2.html"><span
+						class="icon">📞</span>Service für optimierten Kundensupport</a></figure>
+			<figure id="e5ab558c-755b-4b71-a2a5-b35f36426084" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Studien-Plattform%20e5ab558c755b4b71a2a5b35f36426084.html"><span
+						class="icon">📒</span>Studien-Plattform</a></figure>
+			<figure id="6aff200e-9512-4ce5-95fd-925b96ba7d0a" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Tokenized%20Social%20Media%20Count%20Labels%206aff200e95124ce595fd925b96ba7d0a.html"><span
+						class="icon">🏷️</span>Tokenized Social Media Count Labels</a></figure>
+			<figure id="07c27059-a41e-4884-a44e-e0a3cffa16ad" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Fractured%20NFT%20Co-Ownership%2007c27059a41e4884a44ee0a3cffa16ad.html"><span
+						class="icon">📁</span>Fractured NFT Co-Ownership</a></figure>
+			<figure id="d8cfde02-1dfc-4bad-ac14-05fc71941019" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Gru%CC%88nderzentrum%20-%20be%20employed%20selfemployed%20d8cfde021dfc4badac1405fc71941019.html"><span
+						class="icon">🏛️</span>Gründerzentrum - be employed selfemployed</a></figure>
+			<figure id="71ba2397-769d-43b3-b228-a912346c8487" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Flughafen%20Service%20-%20unerlaubte%20Gegensta%CC%88nde%2071ba2397769d43b3b228a912346c8487.html"><span
+						class="icon">🛫</span>Flughafen Service - unerlaubte Gegenstände</a></figure>
+			<figure id="47625c13-b224-467f-aa6f-d7e1296a8c4e" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Plattformu%CC%88bergreifende%20Kommunikationsplattform%2047625c13b224467faa6fd7e1296a8c4e.html"><span
+						class="icon">📡</span>Plattformübergreifende Kommunikationsplattform</a></figure>
+			<figure id="8f46f013-8620-4124-a8e5-74a2c1b80449" class="link-to-page"><a
+					href="Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c/Krankheitsdiagnose%208f46f01386204124a8e574a2c1b80449.html"><span
+						class="icon">🦠</span>Krankheitsdiagnose</a></figure>
+		</div>
+	</article>
+</body>
+
+</html>

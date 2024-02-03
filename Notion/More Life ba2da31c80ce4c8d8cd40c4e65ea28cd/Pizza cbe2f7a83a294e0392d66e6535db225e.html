@@ -1,0 +1,2083 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Pizza</title>
+	<style>
+		/* cspell:disable-file */
+		/* webkit printing magic: print all background colors */
+		html {
+			-webkit-print-color-adjust: exact;
+		}
+
+		* {
+			box-sizing: border-box;
+			-webkit-print-color-adjust: exact;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		@media only screen {
+			body {
+				margin: 2em auto;
+				max-width: 900px;
+				color: rgb(55, 53, 47);
+			}
+		}
+
+		body {
+			line-height: 1.5;
+			white-space: pre-wrap;
+		}
+
+		a,
+		a.visited {
+			color: inherit;
+			text-decoration: underline;
+		}
+
+		.pdf-relative-link-path {
+			font-size: 80%;
+			color: #444;
+		}
+
+		h1,
+		h2,
+		h3 {
+			letter-spacing: -0.01em;
+			line-height: 1.2;
+			font-weight: 600;
+			margin-bottom: 0;
+		}
+
+		.page-title {
+			font-size: 2.5rem;
+			font-weight: 700;
+			margin-top: 0;
+			margin-bottom: 0.75em;
+		}
+
+		h1 {
+			font-size: 1.875rem;
+			margin-top: 1.875rem;
+		}
+
+		h2 {
+			font-size: 1.5rem;
+			margin-top: 1.5rem;
+		}
+
+		h3 {
+			font-size: 1.25rem;
+			margin-top: 1.25rem;
+		}
+
+		.source {
+			border: 1px solid #ddd;
+			border-radius: 3px;
+			padding: 1.5em;
+			word-break: break-all;
+		}
+
+		.callout {
+			border-radius: 3px;
+			padding: 1rem;
+		}
+
+		figure {
+			margin: 1.25em 0;
+			page-break-inside: avoid;
+		}
+
+		figcaption {
+			opacity: 0.5;
+			font-size: 85%;
+			margin-top: 0.5em;
+		}
+
+		mark {
+			background-color: transparent;
+		}
+
+		.indented {
+			padding-left: 1.5em;
+		}
+
+		hr {
+			background: transparent;
+			display: block;
+			width: 100%;
+			height: 1px;
+			visibility: visible;
+			border: none;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+		}
+
+		img {
+			max-width: 100%;
+		}
+
+		@media only print {
+			img {
+				max-height: 100vh;
+				object-fit: contain;
+			}
+		}
+
+		@page {
+			margin: 1in;
+		}
+
+		.collection-content {
+			font-size: 0.875rem;
+		}
+
+		.column-list {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.column {
+			padding: 0 1em;
+		}
+
+		.column:first-child {
+			padding-left: 0;
+		}
+
+		.column:last-child {
+			padding-right: 0;
+		}
+
+		.table_of_contents-item {
+			display: block;
+			font-size: 0.875rem;
+			line-height: 1.3;
+			padding: 0.125rem;
+		}
+
+		.table_of_contents-indent-1 {
+			margin-left: 1.5rem;
+		}
+
+		.table_of_contents-indent-2 {
+			margin-left: 3rem;
+		}
+
+		.table_of_contents-indent-3 {
+			margin-left: 4.5rem;
+		}
+
+		.table_of_contents-link {
+			text-decoration: none;
+			opacity: 0.7;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid rgba(55, 53, 47, 0.09);
+			border-collapse: collapse;
+		}
+
+		table {
+			border-left: none;
+			border-right: none;
+		}
+
+		th,
+		td {
+			font-weight: normal;
+			padding: 0.25em 0.5em;
+			line-height: 1.5;
+			min-height: 1.5em;
+			text-align: left;
+		}
+
+		th {
+			color: rgba(55, 53, 47, 0.6);
+		}
+
+		ol,
+		ul {
+			margin: 0;
+			margin-block-start: 0.6em;
+			margin-block-end: 0.6em;
+		}
+
+		li>ol:first-child,
+		li>ul:first-child {
+			margin-block-start: 0.6em;
+		}
+
+		ul>li {
+			list-style: disc;
+		}
+
+		ul.to-do-list {
+			padding-inline-start: 0;
+		}
+
+		ul.to-do-list>li {
+			list-style: none;
+		}
+
+		.to-do-children-checked {
+			text-decoration: line-through;
+			opacity: 0.375;
+		}
+
+		ul.toggle>li {
+			list-style: none;
+		}
+
+		ul {
+			padding-inline-start: 1.7em;
+		}
+
+		ul>li {
+			padding-left: 0.1em;
+		}
+
+		ol {
+			padding-inline-start: 1.6em;
+		}
+
+		ol>li {
+			padding-left: 0.2em;
+		}
+
+		.mono ol {
+			padding-inline-start: 2em;
+		}
+
+		.mono ol>li {
+			text-indent: -0.4em;
+		}
+
+		.toggle {
+			padding-inline-start: 0em;
+			list-style-type: none;
+		}
+
+		/* Indent toggle children */
+		.toggle>li>details {
+			padding-left: 1.7em;
+		}
+
+		.toggle>li>details>summary {
+			margin-left: -1.1em;
+		}
+
+		.selected-value {
+			display: inline-block;
+			padding: 0 0.5em;
+			background: rgba(206, 205, 202, 0.5);
+			border-radius: 3px;
+			margin-right: 0.5em;
+			margin-top: 0.3em;
+			margin-bottom: 0.3em;
+			white-space: nowrap;
+		}
+
+		.collection-title {
+			display: inline-block;
+			margin-right: 1em;
+		}
+
+		.page-description {
+			margin-bottom: 2em;
+		}
+
+		.simple-table {
+			margin-top: 1em;
+			font-size: 0.875rem;
+			empty-cells: show;
+		}
+
+		.simple-table td {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table th {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table-header-color {
+			background: rgb(247, 246, 243);
+			color: black;
+		}
+
+		.simple-table-header {
+			font-weight: 500;
+		}
+
+		time {
+			opacity: 0.5;
+		}
+
+		.icon {
+			display: inline-block;
+			max-width: 1.2em;
+			max-height: 1.2em;
+			text-decoration: none;
+			vertical-align: text-bottom;
+			margin-right: 0.5em;
+		}
+
+		img.icon {
+			border-radius: 3px;
+		}
+
+		.user-icon {
+			width: 1.5em;
+			height: 1.5em;
+			border-radius: 100%;
+			margin-right: 0.5rem;
+		}
+
+		.user-icon-inner {
+			font-size: 0.8em;
+		}
+
+		.text-icon {
+			border: 1px solid #000;
+			text-align: center;
+		}
+
+		.page-cover-image {
+			display: block;
+			object-fit: cover;
+			width: 100%;
+			max-height: 30vh;
+		}
+
+		.page-header-icon {
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+
+		.page-header-icon-with-cover {
+			margin-top: -0.72em;
+			margin-left: 0.07em;
+		}
+
+		.page-header-icon img {
+			border-radius: 3px;
+		}
+
+		.link-to-page {
+			margin: 1em 0;
+			padding: 0;
+			border: none;
+			font-weight: 500;
+		}
+
+		p>.user {
+			opacity: 0.5;
+		}
+
+		td>.user,
+		td>time {
+			white-space: nowrap;
+		}
+
+		input[type="checkbox"] {
+			transform: scale(1.5);
+			margin-right: 0.6em;
+			vertical-align: middle;
+		}
+
+		p {
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.image {
+			border: none;
+			margin: 1.5em 0;
+			padding: 0;
+			border-radius: 0;
+			text-align: center;
+		}
+
+		.code,
+		code {
+			background: rgba(135, 131, 120, 0.15);
+			border-radius: 3px;
+			padding: 0.2em 0.4em;
+			border-radius: 3px;
+			font-size: 85%;
+			tab-size: 2;
+		}
+
+		code {
+			color: #eb5757;
+		}
+
+		.code {
+			padding: 1.5em 1em;
+		}
+
+		.code-wrap {
+			white-space: pre-wrap;
+			word-break: break-all;
+		}
+
+		.code>code {
+			background: none;
+			padding: 0;
+			font-size: 100%;
+			color: inherit;
+		}
+
+		blockquote {
+			font-size: 1.25em;
+			margin: 1em 0;
+			padding-left: 1em;
+			border-left: 3px solid rgb(55, 53, 47);
+		}
+
+		.bookmark {
+			text-decoration: none;
+			max-height: 8em;
+			padding: 0;
+			display: flex;
+			width: 100%;
+			align-items: stretch;
+		}
+
+		.bookmark-title {
+			font-size: 0.85em;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			height: 1.75em;
+			white-space: nowrap;
+		}
+
+		.bookmark-text {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.bookmark-info {
+			flex: 4 1 180px;
+			padding: 12px 14px 14px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.bookmark-image {
+			width: 33%;
+			flex: 1 1 180px;
+			display: block;
+			position: relative;
+			object-fit: cover;
+			border-radius: 1px;
+		}
+
+		.bookmark-description {
+			color: rgba(55, 53, 47, 0.6);
+			font-size: 0.75em;
+			overflow: hidden;
+			max-height: 4.5em;
+			word-break: break-word;
+		}
+
+		.bookmark-href {
+			font-size: 0.75em;
+			margin-top: 0.25em;
+		}
+
+		.sans {
+			font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+		}
+
+		.code {
+			font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+		}
+
+		.serif {
+			font-family: Lyon-Text, Georgia, ui-serif, serif;
+		}
+
+		.mono {
+			font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+		}
+
+		.pdf .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR';
+		}
+
+		.pdf .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.pdf .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR';
+		}
+
+		.pdf .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.highlight-default {
+			color: rgba(55, 53, 47, 1);
+		}
+
+		.highlight-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.highlight-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.highlight-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.highlight-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.highlight-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.highlight-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.highlight-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.highlight-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.highlight-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.highlight-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.highlight-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.highlight-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.highlight-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.highlight-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.highlight-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.highlight-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.highlight-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.highlight-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.block-color-default {
+			color: inherit;
+			fill: inherit;
+		}
+
+		.block-color-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.block-color-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.block-color-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.block-color-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.block-color-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.block-color-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.block-color-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.block-color-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.block-color-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.block-color-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.block-color-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.block-color-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.block-color-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.block-color-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.block-color-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.block-color-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.block-color-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.block-color-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.select-value-color-interactiveBlue {
+			background-color: rgba(35, 131, 226, .07);
+		}
+
+		.select-value-color-pink {
+			background-color: rgba(245, 224, 233, 1);
+		}
+
+		.select-value-color-purple {
+			background-color: rgba(232, 222, 238, 1);
+		}
+
+		.select-value-color-green {
+			background-color: rgba(219, 237, 219, 1);
+		}
+
+		.select-value-color-gray {
+			background-color: rgba(227, 226, 224, 1);
+		}
+
+		.select-value-color-translucentGray {
+			background-color: rgba(255, 255, 255, 0.0375);
+		}
+
+		.select-value-color-orange {
+			background-color: rgba(250, 222, 201, 1);
+		}
+
+		.select-value-color-brown {
+			background-color: rgba(238, 224, 218, 1);
+		}
+
+		.select-value-color-red {
+			background-color: rgba(255, 226, 221, 1);
+		}
+
+		.select-value-color-yellow {
+			background-color: rgba(253, 236, 200, 1);
+		}
+
+		.select-value-color-blue {
+			background-color: rgba(211, 229, 239, 1);
+		}
+
+		.select-value-color-pageGlass {
+			background-color: undefined;
+		}
+
+		.select-value-color-washGlass {
+			background-color: undefined;
+		}
+
+		.checkbox {
+			display: inline-flex;
+			vertical-align: text-bottom;
+			width: 16;
+			height: 16;
+			background-size: 16px;
+			margin-left: 2px;
+			margin-right: 5px;
+		}
+
+		.checkbox-on {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+
+		.checkbox-off {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+	</style>
+</head>
+
+<body>
+	<article id="cbe2f7a8-3a29-4e03-92d6-6e6535db225e" class="page sans">
+		<header>
+			<div class="page-header-icon undefined"><span class="icon">🍕</span></div>
+			<h1 class="page-title">Pizza</h1>
+			<p class="page-description"></p>
+		</header>
+		<div class="page-body">
+			<details open="">
+				<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Pro Tips - Besserer Teig</summary>
+				<div class="indented">
+					<ul id="ceec19e1-80a7-4718-9493-f248b432f2cb" class="toggle">
+						<li>
+							<details open="">
+								<summary><strong>Protein-Anteil im Mehl</strong></summary>
+								<ul id="0473669c-0d38-4c12-a7ee-a2edf2a7506a" class="bulleted-list">
+									<li style="list-style-type:disc">Je höher der Protein-Anteil im Mehl, desto mehr
+										Luft kann sich im Teig sammeln und desto fluffiger wird dieser.
+										→ 12,5-13% ist gut, mehr ist besser (für neapolitanische Pizza) (z. B 13,5g)
+									</li>
+								</ul>
+								<ul id="31f6e144-5a1e-47eb-8b99-155d331906cc" class="bulleted-list">
+									<li style="list-style-type:disc">Weitere Merkmale (Je höher der Eiweißgehalt des
+										Mehls, …)<ul id="58a2c50a-9268-4021-93b7-3029a58f05ac" class="bulleted-list">
+											<li style="list-style-type:circle">… umso elastischer/ dehnfähiger wird der
+												Teig.</li>
+										</ul>
+										<ul id="d93bd607-f915-4745-95a7-7fe175c44894" class="bulleted-list">
+											<li style="list-style-type:circle">… umso mehr Wasser kann das Mehl
+												aufnehmen.</li>
+										</ul>
+										<ul id="76690c9f-9d34-45ba-a934-2af999b06675" class="bulleted-list">
+											<li style="list-style-type:circle">… umso länger kann man den Teig gehen
+												lassen.</li>
+										</ul>
+									</li>
+								</ul>
+							</details>
+						</li>
+					</ul>
+					<ul id="b583836b-f2b8-46be-a241-c91ecd4e5677" class="toggle">
+						<li>
+							<details open="">
+								<summary><strong>Festerer Pizzaboden</strong></summary>
+								<ul id="42c5ba9f-2579-4743-aace-a8d8fd7f1431" class="bulleted-list">
+									<li style="list-style-type:disc">Problem des labbrigen Bodens evtl. dadurch lösen,
+										dass man Pizza vor dem herausnehmen hochnimmt und die Flammen von unten an die
+										Pizza dran kommen lässt.</li>
+								</ul>
+							</details>
+						</li>
+					</ul>
+					<ul id="0bc09931-0f95-47f7-906d-c966f7fbd559" class="toggle">
+						<li>
+							<details open="">
+								<summary><strong>Mehr Luft im Teig</strong></summary>
+								<ul id="2849ed3e-9e04-4116-bc9b-e394cd3869db" class="bulleted-list">
+									<li style="list-style-type:disc">Mehrfaches Stretch and Fold ist enorm wichtig! →
+										Siehe <a href="https://www.youtube.com/watch?v=ArtTJIgZ8Ms">dieses</a> Video
+									</li>
+								</ul>
+							</details>
+						</li>
+					</ul>
+					<ul id="dc6b257b-f146-46af-af86-b9626c572a51" class="toggle">
+						<li>
+							<details open="">
+								<summary><strong>Verlaufen des Teiges vermeiden</strong></summary>
+								<ul id="9e568ca3-b994-4c97-897d-46b9882b8e5e" class="bulleted-list">
+									<li style="list-style-type:disc">Zimmertemperatur nicht zu hoch (normal ca. 19°C)
+									</li>
+								</ul>
+								<ul id="9db3fa0d-9561-44f5-af90-3fbe2e8a9476" class="bulleted-list">
+									<li style="list-style-type:disc">Stückgare maximal 5h - eher längere Stockgare</li>
+								</ul>
+								<ul id="6dc75e8c-35af-4b53-9fb8-e580c52a473e" class="bulleted-list">
+									<li style="list-style-type:disc">Stockgare im Kühlschrank bei ca. 4°C z. B. über
+										Nacht<ul id="ba64603d-dab6-49b0-be4f-5cbc424f5834" class="bulleted-list">
+											<li style="list-style-type:circle">Bei höherer Temperatur im Kühlschrank (z.
+												B. 7°C) eher etwas kürzer dort gehen lassen (herum testen!)</li>
+										</ul>
+									</li>
+								</ul>
+							</details>
+						</li>
+					</ul>
+					<ul id="e3cec3a2-a166-4fa3-8dab-1825c66e2691" class="toggle">
+						<li>
+							<details open="">
+								<summary><strong>Unterschiedliche Mehlarten u. ihre Eigenschaften</strong></summary>
+								<ul id="c0ffb68a-8efc-4064-875b-afbc11701209" class="toggle">
+									<li>
+										<details open="">
+											<summary><strong>Kennwerte</strong></summary>
+											<ul id="148c7ac0-3073-435d-a4ed-1afb2fdc2dde" class="bulleted-list">
+												<li style="list-style-type:disc"><strong>W-Wert</strong>
+													<ul id="d576ab46-7d0c-4bff-a8fc-041b29b92d41" class="bulleted-list">
+														<li style="list-style-type:circle">Auch “Backstärke”</li>
+													</ul>
+													<ul id="6927031b-ee15-4222-83f8-d94374080aed" class="bulleted-list">
+														<li style="list-style-type:circle">Wird ermittelt, indem man
+															eine bestimmte Teigmenge nimmt und diese aufbläst. Je größer
+															die Teigkugel wird, bevor sie platzt, umso höher ist der
+															W-Wert (und so schneller sie platzt, umso geringer ist der
+															W-Wert). </li>
+													</ul>
+													<ul id="9d9e96f5-5573-44f6-8477-53d5524f67e2" class="bulleted-list">
+														<li style="list-style-type:circle"><strong>Mehlen mit geringerem
+																W-Wert dürfen nicht ganz so viel Wasser hinzugegeben
+																werden (z. B. 55% Hydration) und die Gehzeiten sind
+																relativ gering.</strong> Wenn <strong>schneller
+																Pizzateig</strong> gemacht werden soll, macht es Sinn
+															einen Mehl mit einem geringen W-Wert zu verwenden.</li>
+													</ul>
+													<ul id="88f93d05-3cfa-495c-ab3d-a82d7f4f3872" class="bulleted-list">
+														<li style="list-style-type:circle"><strong>Möchte man einen Teig
+																machen, welcher lange gehen soll und eine hohe Hydration
+																hat (6x-80%), so muss man ein Mehl mit einem hohen
+																W-Wert verwenden.</strong></li>
+													</ul>
+												</li>
+											</ul>
+											<ul id="1913f9f4-34d5-4feb-ab48-1895e8c62b8d" class="bulleted-list">
+												<li style="list-style-type:disc"><strong>Protein- bzw.
+														Eiweißgehalt</strong>
+													<ul id="6313f952-41a1-4828-8897-ddaf8bf42ea4" class="bulleted-list">
+														<li style="list-style-type:circle">Umso höher der Eiweißgehalt
+															des Mehls ist, umso elastischer/ dehnfähiger wird der Teig,
+															umso mehr Wasser kann das Mehl aufnehmen und umso länger
+															kann man den Teig gehen lassen.</li>
+													</ul>
+												</li>
+											</ul>
+										</details>
+									</li>
+								</ul>
+								<ul id="3bfe573c-bdad-401f-b050-21398cbada0d" class="toggle">
+									<li>
+										<details open="">
+											<summary><strong>Caputo Mehle</strong></summary>
+											<ul id="fa1239e9-98af-42f1-9f94-eed6b9a2c23c" class="bulleted-list">
+												<li style="list-style-type:disc"><strong>Classica</strong>
+													<ul id="8476310c-800f-4498-bad7-81988c479e41" class="bulleted-list">
+														<li style="list-style-type:circle"><strong>Eigentlich kein
+																richtiges Pizzamehl sondern eher für andere Teig-Arten
+																gedacht.</strong></li>
+													</ul>
+													<ul id="386a9550-3c53-4ad3-bfd1-2cc9a2f0f1f8" class="bulleted-list">
+														<li style="list-style-type:circle"><span
+																style="border-bottom:0.05em solid">Eiweißgehalt:
+																11-12%</span></li>
+													</ul>
+													<ul id="c912d773-8b5e-4c9c-8ea0-3a224599c719" class="bulleted-list">
+														<li style="list-style-type:circle"><span
+																style="border-bottom:0.05em solid">W-Wert:
+																200-230</span></li>
+													</ul>
+												</li>
+											</ul>
+											<ul id="c0617b80-f725-4d23-a2b4-ce5bcc4b52c3" class="bulleted-list">
+												<li style="list-style-type:disc"><strong>Pizzeria</strong>
+													<ul id="44f4bc14-0a85-432a-9361-88c824e6b05e" class="bulleted-list">
+														<li style="list-style-type:circle">Dieses Mehl ist ein
+															<strong>eher schwaches Mehl</strong>, was die Backstärke
+															(W-Wert) betrifft und ist daher <strong>eher für kurze
+																Gehzeiten geeignet. (5-12h?! → Gerne updaten, wenn
+																genauere Zeiten bekannt!)</strong></li>
+													</ul>
+													<ul id="a0cd4cbf-3890-40ba-8de9-d73cdc742175" class="bulleted-list">
+														<li style="list-style-type:circle"><span
+																style="border-bottom:0.05em solid">Eiweißgehalt:
+																12-13%</span></li>
+													</ul>
+													<ul id="d5c29c44-b64b-41bd-887c-8b6bff577470" class="bulleted-list">
+														<li style="list-style-type:circle"><span
+																style="border-bottom:0.05em solid">W-Wert:
+																260-270</span></li>
+													</ul>
+												</li>
+											</ul>
+											<ul id="078fba11-a9a5-4d44-bcc1-7c5dc81f3938" class="bulleted-list">
+												<li style="list-style-type:disc"><strong>Nuvola</strong>
+													<ul id="5e415d8d-d748-4cac-934d-8093e80a362d" class="bulleted-list">
+														<li style="list-style-type:circle">Soll einen ganz <strong>enorm
+																fluffigen Rand</strong> ergeben</li>
+													</ul>
+													<ul id="02572720-4f69-41ac-8cc7-cf1ae17c1891" class="bulleted-list">
+														<li style="list-style-type:circle">Laut Caputo wird dem Mehl
+															wohl etwas Zucker zugesetzt, wodurch die Hefe besser
+															arbeiten kann und der Teig entsprechend mehr aufgeht.</li>
+													</ul>
+													<ul id="c00cdecf-80e9-4156-be63-806e13898d85" class="bulleted-list">
+														<li style="list-style-type:circle"><strong>Gehzeit nicht zu
+																lang, da nicht allzu hoher W-Wert!</strong></li>
+													</ul>
+													<ul id="aa16ccb9-5b78-4676-b83f-70fff2ef5b1a" class="bulleted-list">
+														<li style="list-style-type:circle"><span
+																style="border-bottom:0.05em solid">Eiweißgehalt:
+																12,5%</span></li>
+													</ul>
+													<ul id="1ad675ae-7f0b-478a-88a1-541575ef73d3" class="bulleted-list">
+														<li style="list-style-type:circle"><span
+																style="border-bottom:0.05em solid">W-Wert:
+																260-280</span></li>
+													</ul>
+												</li>
+											</ul>
+											<ul id="e366f0da-d673-411e-b499-c9f3f1bcd237" class="bulleted-list">
+												<li style="list-style-type:disc"><strong>Nuvola Super</strong>
+													<ul id="1a47d3fa-2d3b-4f89-997d-3ac26d8a3274" class="bulleted-list">
+														<li style="list-style-type:circle">Soll einen sogar <strong>noch
+																fluffigeren Rand</strong> ergeben, als das Nuvola.</li>
+													</ul>
+													<ul id="6258076e-7c15-47b7-8e95-e09a1d4c07cd" class="bulleted-list">
+														<li style="list-style-type:circle">Laut Caputo wird dem Mehl
+															wohl etwas Zucker zugesetzt, wodurch die Hefe besser
+															arbeiten kann und der Teig entsprechend mehr aufgeht.</li>
+													</ul>
+													<ul id="50311d52-32a2-40f3-8f5e-7c2b0b1b6a1a" class="bulleted-list">
+														<li style="list-style-type:circle"><span
+																style="border-bottom:0.05em solid">Eiweißgehalt:
+																13,5%</span></li>
+													</ul>
+													<ul id="03972662-930f-4c93-819d-c3e0fe2f620f" class="bulleted-list">
+														<li style="list-style-type:circle"><span
+																style="border-bottom:0.05em solid">W-Wert: 320-340 (sehr
+																backstarkes Mehl)</span></li>
+													</ul>
+												</li>
+											</ul>
+											<ul id="187eb6e0-78f7-4705-b467-24acd9fcec87" class="bulleted-list">
+												<li style="list-style-type:disc"><strong>Cuoco (übers. “Koch”)</strong>
+													<ul id="cc5b35f1-39ae-4212-9e9b-8766a84201ea" class="bulleted-list">
+														<li style="list-style-type:circle">Lieblingsmehl von Waldi
+															(Waldis Pizza Kanal) → Er verwendet es fast ausschließlich
+														</li>
+													</ul>
+													<ul id="0cf967d0-ba8f-4afd-b332-7724b9eb9c4e" class="bulleted-list">
+														<li style="list-style-type:circle">Allround-Mehl (nicht nur für
+															Pizza zu verwenden, sondern auch für Gebäck, Nudeln, etc.)
+														</li>
+													</ul>
+													<ul id="5cc7c207-6dd3-484f-8d2d-e57bc1e4b91b" class="bulleted-list">
+														<li style="list-style-type:circle"><strong>Für längere Gehzeiten
+																geeignet.
+																→ Ab 24h, bis zu 72h</strong> (Entwickelt einen
+															besonderen Geschmack, wenn es länger geht)</li>
+													</ul>
+													<ul id="c58e30e2-2c2d-41a6-9590-c154893a1409" class="bulleted-list">
+														<li style="list-style-type:circle"><span
+																style="border-bottom:0.05em solid">Eiweißgehalt:
+																13%</span></li>
+													</ul>
+													<ul id="1b5b0702-5a34-4f57-8ff8-3a6bb16129a7" class="bulleted-list">
+														<li style="list-style-type:circle"><span
+																style="border-bottom:0.05em solid">W-Wert: 300-320
+																(relativ backstarkes Mehl)</span></li>
+													</ul>
+													<ul id="3db6ca4e-d281-45c4-9bec-494ae12045af" class="bulleted-list">
+														<li style="list-style-type:circle">Verwendete Hydration: 65%<ul
+																id="73f7e1f1-e9f8-4226-8df8-e6842d5807f8"
+																class="bulleted-list">
+																<li style="list-style-type:square">Man kann auch höher
+																	gehen! 70% verträgt das Mehl leicht!</li>
+															</ul>
+														</li>
+													</ul>
+												</li>
+											</ul>
+											<ul id="b0301cf2-c4fe-4aba-8099-a28a28ffe53e" class="bulleted-list">
+												<li style="list-style-type:disc"><strong>Manitoba Oro</strong>
+													<ul id="27e880dc-4d12-4dee-8aad-1a6663bed697" class="bulleted-list">
+														<li style="list-style-type:circle">Wird aus besonders starkem
+															Weizen hergestellt und kommt ursprünglich aus Kanada
+															(Manitoba ist Region in Kanada).</li>
+													</ul>
+													<ul id="07a2b63c-4b52-4b21-8de1-be5fd82c8363" class="bulleted-list">
+														<li style="list-style-type:circle">Hat wohl einen <strong>nicht
+																sooo tollen Geschmack</strong>, deshalb evtl. <strong>in
+																Kombination mit anderen Mehlen verwenden</strong>!<ul
+																id="0e4e3433-87f2-403c-8175-bf3f6c7b4608"
+																class="bulleted-list">
+																<li style="list-style-type:square">z. B. 75% Cuoco, 25%
+																	Manitoba Oro → Resultiert in besonders elastischem
+																	Teig</li>
+															</ul>
+														</li>
+													</ul>
+													<ul id="3ff625ef-6d36-4b8f-a34f-3041cdd1c41c" class="bulleted-list">
+														<li style="list-style-type:circle"><strong>Hohe Hydration (mind.
+																70%) und sehr lange Gehzeit (48-72h) verwenden</strong>,
+															sodass sich der Teig richtig entwickelt.</li>
+													</ul>
+													<ul id="8636133a-2347-4266-bac7-08250d29f169" class="bulleted-list">
+														<li style="list-style-type:circle"><span
+																style="border-bottom:0.05em solid">Eiweißgehalt:
+																14-14,5%</span></li>
+													</ul>
+													<ul id="a4753f93-5b4c-4ac2-9583-754f616d2548" class="bulleted-list">
+														<li style="list-style-type:circle"><span
+																style="border-bottom:0.05em solid">W-Wert: 360-380
+																(enorm starkes Mehl)</span></li>
+													</ul>
+												</li>
+											</ul>
+										</details>
+									</li>
+								</ul>
+								<ul id="0fa2c7d8-9bf6-4f0f-a07c-daf5ebac4076" class="toggle">
+									<li>
+										<details open="">
+											<summary><strong>5 Stangioni (C(h)inco Stagioni)</strong></summary>
+											<ul id="d2af05be-23ab-4652-bfa0-96e0c674b619" class="bulleted-list">
+												<li style="list-style-type:disc">Caputo &gt; 5 Stagioni wenn es um
+													neapoletanische Pizza geht</li>
+											</ul>
+											<ul id="61b4630c-c967-4139-87a1-47acdd2e2016" class="bulleted-list">
+												<li style="list-style-type:disc">Pizza mit <strong>5 Stagioni</strong>
+													Mehl wird am Rand <strong>weniger braun</strong> als eine, die mit
+													Caputo Mehl gebacken wird (unter gleichen Bedingungen)</li>
+											</ul>
+										</details>
+									</li>
+								</ul>
+							</details>
+						</li>
+					</ul>
+					<ul id="5a7a466f-6617-4363-a350-1271e4e94078" class="toggle">
+						<li>
+							<details open="">
+								<summary><strong>Pizzateig einfrieren</strong></summary>
+								<ul id="f2b62f3e-ee06-4e2b-868f-484ba0d40387" class="toggle">
+									<li>
+										<details open="">
+											<summary><strong>Pizzateigvorbereitung</strong></summary>
+											<ol type="1" id="470f787c-e191-47e5-a9c8-76c04e85f0b2" class="numbered-list"
+												start="1">
+												<li>Teig wie gewohnt vorbereiten.</li>
+											</ol>
+											<ol type="1" id="fd06e34b-ef4b-48b1-a38a-315a70f98159" class="numbered-list"
+												start="2">
+												<li>Stockgare mind. 1h</li>
+											</ol>
+											<ol type="1" id="9eff7493-8342-4205-9d47-939d3df37b8b" class="numbered-list"
+												start="3">
+												<li>Pizzaballen formen</li>
+											</ol>
+											<ol type="1" id="450e349c-fcc7-4bb7-8696-761484abcf24" class="numbered-list"
+												start="4">
+												<li>Teig mind. 12h in den Kühlschrank (16-24h auch möglich!) .<ol
+														type="a" id="cf0481c8-2c10-46d6-8dce-5a2eafcfc324"
+														class="numbered-list" start="1">
+														<li>Am einfachsten ist dies in der Pizzabox selber.</li>
+													</ol>
+												</li>
+											</ol>
+											<ol type="1" id="f6222c85-cb80-4546-8cdf-8f6a022af6f1" class="numbered-list"
+												start="5">
+												<li>Teig über Nacht bzw. für ca. 6-10h in der Tiefkühltruhe einfrieren
+													lassen.<ol type="a" id="41626abc-b6b1-4672-95fe-32ec9929d7df"
+														class="numbered-list" start="1">
+														<li>Am einfachsten ist dies in der Pizzabox selber.</li>
+													</ol>
+													<ol type="a" id="5651e971-1d62-41f9-a6af-eff72b403f9c"
+														class="numbered-list" start="2">
+														<li>Kürzer geht auch, hauptsache der Teig ist schon fester
+															gefroren!</li>
+													</ol>
+												</li>
+											</ol>
+											<ol type="1" id="c97dfbc9-bcdd-4476-ac1b-d3d5ffcb679e" class="numbered-list"
+												start="6">
+												<li>Teig aus Tiefkühltruhe entnehmen, in Gefrierbeutel geben, Luftdicht
+													verpacken und erneut in die Gefriertruhe geben (bis man ihn nutzen
+													möchte).<ol type="a" id="f4919b30-5eea-4c2b-b4cc-741cee4282a0"
+														class="numbered-list" start="1">
+														<li>Es ist enorm wichtig, dass man die <strong>Teigballen
+																luftdicht verpackt</strong>, da es sonst zu
+															<strong>Gefrierbrand</strong> kommt (Wirkt sich negativ auf
+															den Geschmack aus)!
+															Dies entsteht, wenn Frischluft an die Lebensmittel gelangt.
+														</li>
+													</ol>
+													<ol type="a" id="38c48fed-0df4-44f7-9e89-138ca13547ea"
+														class="numbered-list" start="2">
+														<li>Es ist <span style="border-bottom:0.05em solid">kein</span>
+															Problem, <strong>mehrere gefrorene Teigballen in einen
+																Gefrierbeutel</strong> zu geben!</li>
+													</ol>
+													<ol type="a" id="94fd98b5-567a-49b5-8aa6-59e3ba9f5b4c"
+														class="numbered-list" start="3">
+														<li>Im Idealfall <strong>vakumiert</strong> man <strong>die
+																Teigballen ein</strong>.</li>
+													</ol>
+												</li>
+											</ol>
+										</details>
+									</li>
+								</ul>
+								<ul id="e0d783cf-02a2-4559-a5a7-ebedc72209ef" class="toggle">
+									<li>
+										<details open="">
+											<summary><strong>Pizza Zubereitung</strong></summary>
+											<ol type="1" id="c0e038e2-e155-4dd6-983f-c0239e780bd7" class="numbered-list"
+												start="1">
+												<li>Teiglinge aus Gefrierschrank entnehmen und zum Auftauen z. B. in
+													Pizzaballenbox geben</li>
+											</ol>
+											<ol type="1" id="a763aaed-710f-488f-8e25-578d64968a65" class="numbered-list"
+												start="2">
+												<li>Teig bei Raumtemperatur 4-6h auftauen und gehen lassen.</li>
+											</ol>
+											<ol type="1" id="4a9d65f0-481a-4a92-aa0c-f2da50337975" class="numbered-list"
+												start="3">
+												<li>Pizza wie gewohnt zubereiten.</li>
+											</ol>
+										</details>
+									</li>
+								</ul>
+							</details>
+						</li>
+					</ul>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Kosten/ Mengen</summary>
+				<div class="indented">
+					<ul id="3d1e5bae-b915-4a86-88f4-16f6653a1f75" class="toggle">
+						<li>
+							<details open="">
+								<summary>Margherita</summary>
+								<p id="27a1bc64-c824-44a5-83ff-154fa67f7245" class=""><strong>Herstellungsmenge &amp;
+										-preis pro Margherita:</strong></p>
+								<ul id="c96231d1-737b-4b50-8a9d-f4e954d5bd56" class="bulleted-list">
+									<li style="list-style-type:disc">Teig: 270g, <strong>0,40-0,50€</strong> (Mehlpreis:
+										2,30-2,80€/kg)</li>
+								</ul>
+								<ul id="9f3e7a74-2047-4d7e-ad87-cad6ab805639" class="bulleted-list">
+									<li style="list-style-type:disc">San Marzano Tomatensauce: 100g (Endprodukt) vs.
+										160g (Einkaufsmenge vor dem “Filtern”), <strong>0,62-1,08€</strong> (je nach
+										Einkaufspreis: 3,88€/ kg → <a
+											href="https://www.waldispizza.de/pizzazutaten/tomaten/sanmarzanosolania6x3000">günstig</a>
+										vs. 6,73€/ kg → <a
+											href="https://www.waldispizza.de/La-Fiammante-San-Marzano-Tomate-DOP-400g">teurer</a>)
+									</li>
+								</ul>
+								<ul id="b4caf8bd-8287-48ed-a3d4-bb43b62eaae5" class="bulleted-list">
+									<li style="list-style-type:disc">Mozzarella: 100g, <strong>1,26€</strong> (12,60€/
+										kg)</li>
+								</ul>
+								<ul id="30346f9f-dab7-43b0-8267-ea72a8cfaa5a" class="bulleted-list">
+									<li style="list-style-type:disc">Parmesan: 5g, <strong>0,13€</strong> (4,00€/ 150g |
+										26,66€/ kg)</li>
+								</ul>
+								<ul id="141c9aec-3393-4624-b5f2-efa8d8e8f648" class="bulleted-list">
+									<li style="list-style-type:disc">Basilikum: 1/ 16 Pflanze, <strong>0,11€</strong>
+										(1,80€/ Pflanze)</li>
+								</ul>
+								<ul id="a56e1cf9-7acb-4d34-a0b6-f23acc3bcd31" class="bulleted-list">
+									<li style="list-style-type:disc">Olivenöl: 12,5ml, <strong>0,09€</strong> (7,00€/ l)
+									</li>
+								</ul>
+								<p id="857cb172-7e44-46d4-b36b-5b0faf54a9bf" class=""><strong>Gesamt:
+										2,61€-3,17€</strong></p>
+								<p id="d8615669-cd47-4b4b-998c-a51fa908d021" class="">→ exkl. potentieller
+									Versandkosten!</p>
+							</details>
+						</li>
+					</ul>
+					<ul id="0e2e3efd-3f6a-476a-98d4-982d2676e895" class="toggle">
+						<li>
+							<details open="">
+								<summary>veg. Margherita</summary>
+								<p id="3414fba2-42b2-4ec8-8d67-22fcaf9a4268" class=""><strong>Herstellungsmenge &amp;
+										-preis pro Margherita: </strong></p>
+								<ul id="2814c8a3-3847-4d88-b454-ccbf8bb6cb19" class="bulleted-list">
+									<li style="list-style-type:disc">Teig: 270g, <strong>0,40-0,50€</strong> (Mehlpreis:
+										2,30-2,80€/kg)</li>
+								</ul>
+								<ul id="b35d09df-ccc9-44f5-9ecb-3f91f7333c27" class="bulleted-list">
+									<li style="list-style-type:disc">San Marzano Tomatensauce: 100g (Endprodukt) vs.
+										160g (Einkaufsmenge vor dem “Filtern”), <strong>0,62-1,08€</strong> (je nach
+										Einkaufspreis: 3,88€/ kg → <a
+											href="https://www.waldispizza.de/pizzazutaten/tomaten/sanmarzanosolania6x3000">günstig</a>
+										vs. 6,73€/ kg → <a
+											href="https://www.waldispizza.de/La-Fiammante-San-Marzano-Tomate-DOP-400g">teurer</a>)
+									</li>
+								</ul>
+								<ul id="26294a5f-3905-4b45-81dd-43508306bf0a" class="bulleted-list">
+									<li style="list-style-type:disc">Mozzarella: 100g, <strong>1,26€</strong> (12,60€/
+										kg)</li>
+								</ul>
+								<ul id="5e409176-de1a-4e38-aad8-b13292d6b12a" class="bulleted-list">
+									<li style="list-style-type:disc">Parmesan: 5g, <strong>0,13€</strong> (4,00€/ 150g |
+										26,66€/ kg)</li>
+								</ul>
+								<ul id="45295898-8431-47e8-88d1-5dc7f0d19faf" class="bulleted-list">
+									<li style="list-style-type:disc">Basilikum: 1/ 16 Pflanze, <strong>0,11€</strong>
+										(1,80€/ Pflanze)</li>
+								</ul>
+								<ul id="878aaee4-f3e4-410a-84c7-b2ee2559e335" class="bulleted-list">
+									<li style="list-style-type:disc">Olivenöl: 12,5ml, <strong>0,09€</strong> (7,00€/ l)
+									</li>
+								</ul>
+								<p id="410b2035-196d-4640-982d-54d7aa031e0b" class=""><strong>Gesamt:
+										2,61€-3,17€</strong></p>
+								<p id="2c0f0073-c37b-4f85-acf7-47d8e315f166" class="">→ exkl. potentieller
+									Versandkosten!</p>
+							</details>
+						</li>
+					</ul>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Biga-Vorteig</summary>
+				<div class="indented">
+					<p id="31fd5443-b217-4677-b0aa-a284786d7a2a" class="">Italienischer Vorteig mit dem Ziel einen
+						aromatischeren Teig zu erhalten (nussig und säuerliche Aromen).
+						→ Dazu sehr fluffig!</p>
+					<p id="c427bfd4-c7aa-40ee-a9f6-1d8efb256877" class=""><strong>Bedeutung 100% Biga:
+						</strong>Im Biga Vorteig ist bereits 100% des verwendeten Mehls enthalten und es wird in
+						folgenden Schritten kein weiteres Mehl mehr hinzugefügt.</p>
+					<ul id="9e011f71-6e29-4580-92b5-c766d8737211" class="bulleted-list">
+						<li style="list-style-type:disc"><strong>Zutaten Biga Vorteig:</strong>
+							<ul id="a81d6693-c845-46b1-8f3a-e332c767fa8f" class="bulleted-list">
+								<li style="list-style-type:circle">ca. 1kg Mehl</li>
+							</ul>
+							<ul id="a4fe728e-db9b-46c7-ad57-c0c2b9b57f0e" class="bulleted-list">
+								<li style="list-style-type:circle">500ml kaltes Leitungswasser (ca. 50% Hydration)</li>
+							</ul>
+							<ul id="f5487de6-1616-4258-b19b-dac9d066052b" class="bulleted-list">
+								<li style="list-style-type:circle">3g frische Hefe</li>
+							</ul>
+						</li>
+					</ul>
+					<ul id="cab6c179-55d3-42db-8c89-eb3c79da6208" class="bulleted-list">
+						<li style="list-style-type:disc"><strong>Zubereitung Biga Vorteig:</strong>
+							<ol type="1" id="5047f1df-dd10-41e7-a54e-fbc5278d5889" class="numbered-list" start="1">
+								<li>Hefe in Wasser auflösen</li>
+							</ol>
+							<ol type="1" id="d129b862-e37a-423c-ae08-70ab7158eaae" class="numbered-list" start="2">
+								<li>Mehl in Teigballen-Box verteilen</li>
+							</ol>
+							<ol type="1" id="21e19d42-ad75-4202-b6a7-8af83b0b93b6" class="numbered-list" start="3">
+								<li>1/2 des Hefe-Wassers zum Mehl geben und mit kreisenden Bewegungen der Box mit dem
+									Mehl vermengen → mit der Hand reinzugehen ist auch in Ordnung. Hauptsache man knetet
+									den Teig nicht zu einem homogenen Teig. Die Masse soll viele kleine Klumpen ergeben.
+								</li>
+							</ol>
+							<ol type="1" id="bfd8412e-9e26-4a12-b60d-72aac0f5a00e" class="numbered-list" start="4">
+								<li>Den Rest des Wassers hinzufügen und den selben Vorgang wie bei 3. wiederholen,
+									solange bis das vollständige Mehl eingearbeitet wurde.</li>
+							</ol>
+							<ol type="1" id="dc2faf26-3515-4961-8143-fa30f81a82aa" class="numbered-list" start="5">
+								<li>Biga für 12-16h bei Raumtemperatur gehen lassen (in nicht ganz luftdichtem
+									Behältnis)</li>
+							</ol>
+						</li>
+					</ul>
+					<ul id="fbe6aba3-13a5-47d1-a0a4-95a0a9059811" class="bulleted-list">
+						<li style="list-style-type:disc"><strong>Weitere Zutaten für vollständige Bearbeitung des
+								Pizzateigs:</strong>
+							<ul id="33b8ef63-e59c-4524-812e-435d37468b33" class="bulleted-list">
+								<li style="list-style-type:circle">200ml kaltes Leitungswasser</li>
+							</ul>
+							<ul id="776a2d0c-151c-4a40-924e-724f3071cec1" class="bulleted-list">
+								<li style="list-style-type:circle">25g Meersalz</li>
+							</ul>
+						</li>
+					</ul>
+					<ul id="9dc0b37c-68d6-46b5-8789-ec48b59a27d2" class="bulleted-list">
+						<li style="list-style-type:disc"><strong>Pizzateig vervollständigen - Verwendung von
+								Knetmaschine wird empfohlen:</strong>
+							<ol type="1" id="71315e1b-1f4b-40a0-9b46-d09869b9e1ec" class="numbered-list" start="1">
+								<li>Wasser aufsplitten. Salz zu der einen Hälfte zugeben und auflösen.</li>
+							</ol>
+							<ol type="1" id="2331b50a-af82-4aec-8779-ff82c2308567" class="numbered-list" start="2">
+								<li>Biga Vorteig in Knetmaschine geben und die Hälfte des Wassers ohne das Salz (nach
+									und nach) hinzugeben.</li>
+							</ol>
+							<ol type="1" id="7d7a645f-5838-422a-b242-b46eb0cdb030" class="numbered-list" start="3">
+								<li>Nach und nach z. B. je 25ml das restliche Wasser mit dem Salz hinzugeben und den
+									Teig kneten, bis er eine schöne Konsistenz hat.</li>
+							</ol>
+							<ol type="1" id="2d948e26-4766-4163-b94f-ac1fe0fad903" class="numbered-list" start="4">
+								<li>Kurz vor Ende Meersalz hinzugeben und in Teig einarbeiten lassen</li>
+							</ol>
+							<ol type="1" id="b473c392-c666-43c7-bcc6-490fe53c0390" class="numbered-list" start="5">
+								<li>Teig aus Knetmaschine holen und Teig für 12h (Stockgare) in den Kühlschrank</li>
+							</ol>
+							<ol type="1" id="ff572ac0-ec9f-42fb-8900-5cdcca304fa9" class="numbered-list" start="6">
+								<li>Teiglinge aufteilen (6x) und Teig bei Raumtemperatur für 4-6h gehen lassen</li>
+							</ol>
+						</li>
+					</ul>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Poolish-Vorteig</summary>
+				<div class="indented">
+					<ul id="4275d6e3-813f-485b-953b-6b282fd260f3" class="bulleted-list">
+						<li style="list-style-type:disc">Säuerlicher Geschmack im Teig (im Vergleich zum Biga-Vorteig,
+							wo der Geschmack eher nussig wird)</li>
+					</ul>
+					<ul id="157cfc3a-eae7-43d4-86ba-e340bd734639" class="bulleted-list">
+						<li style="list-style-type:disc">Knusprigerer/ Festerer Rand</li>
+					</ul>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Römische Pizza</summary>
+				<div class="indented">
+					<p id="3c403961-5284-4c10-90d2-2fea3c858edf" class="">Römische Pizza ist nicht fluffig, dünner und
+						knuspriger (insbesondere der Rand).</p>
+					<p id="97bc8336-aa06-4499-bed4-931a25020e76" class="">Herstellung (6x á 275g):</p>
+					<ul id="87a7e166-bc58-4044-85ee-72bfdbdd180e" class="bulleted-list">
+						<li style="list-style-type:disc"><strong>Zutaten:</strong>
+							<ul id="c1cfb001-5c62-4c52-a03c-307400846158" class="bulleted-list">
+								<li style="list-style-type:circle">ca. 1kg Mehl</li>
+							</ul>
+							<ul id="05bf94a8-a89f-4e97-93bb-cc9e0a13b02e" class="bulleted-list">
+								<li style="list-style-type:circle">580ml kaltes Leitungswasser (ca. 58% Hydration)</li>
+							</ul>
+							<ul id="b3596efb-b3f9-44a0-bbca-dea9c008ca6c" class="bulleted-list">
+								<li style="list-style-type:circle">1,5g frische Hefe</li>
+							</ul>
+							<ul id="73d9cb2f-89de-4f06-8aa3-712ddae021ce" class="bulleted-list">
+								<li style="list-style-type:circle">30ml Olivenöl (Rapsöl geht auch und macht die Pizza
+									wohl noch krosser)</li>
+							</ul>
+							<ul id="7c855561-7139-4600-8850-1b0aaf8a9982" class="bulleted-list">
+								<li style="list-style-type:circle">30g Meersalz</li>
+							</ul>
+						</li>
+					</ul>
+					<ul id="7e5095c9-f34f-416e-956b-fe4dbc16bad9" class="bulleted-list">
+						<li style="list-style-type:disc"><strong>Zubereitung:</strong>
+							<ol type="1" id="f463c094-8353-4438-bb3b-3a0234d487f0" class="numbered-list" start="1">
+								<li>Hefe in Wasser auflösen</li>
+							</ol>
+							<ol type="1" id="b110d50a-f141-4539-a16b-833d8ee43857" class="numbered-list" start="2">
+								<li>ca. 1/2 des Mehles hinzugeben und zu flüssigem Teig vermengen</li>
+							</ol>
+							<ol type="1" id="82aa481d-c84f-41b2-9e7c-8bdf3b0f37b7" class="numbered-list" start="3">
+								<li>Öl und Salz hinzugeben und vermengen</li>
+							</ol>
+							<ol type="1" id="1f7b8cfe-141b-49bc-8bb0-abe567987aa2" class="numbered-list" start="4">
+								<li>restliches Mehl hinzugeben, vermengen und zu Teig kneten</li>
+							</ol>
+							<ol type="1" id="e7c1a29c-52e2-4813-8e6c-546c5e59293c" class="numbered-list" start="5">
+								<li>1h Stockgare bei Raumtemperatur</li>
+							</ol>
+							<ol type="1" id="61b09b1e-b419-4146-bef4-2ce5c543bf85" class="numbered-list" start="6">
+								<li>12h Stückgare in Kühlschrank</li>
+							</ol>
+							<ol type="1" id="7409d6e5-ab7e-490c-89bb-4eb5d1a0ed45" class="numbered-list" start="7">
+								<li>4h gehen lassen bei Raumtemperatur</li>
+							</ol>
+							<ol type="1" id="ef404bb1-18ec-4694-9a07-f8ebc3a9f4e4" class="numbered-list" start="8">
+								<li>Ausrollen mit Nudelholz (!) → flacher Rand!</li>
+							</ol>
+							<ol type="1" id="367bfac5-0e68-4854-8b33-2af5f6ea58b3" class="numbered-list" start="9">
+								<li>3-5min be 300-350 Grad Celsius backen </li>
+							</ol>
+						</li>
+					</ul>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Vegane Käse-Alternativen</summary>
+				<div class="indented">
+					<ul id="43c1b9be-1f57-4425-b805-27890641e79e" class="bulleted-list">
+						<li style="list-style-type:disc">Vorschlag von Bryan: bei Dans Bio Supermarkt schauen</li>
+					</ul>
+					<ul id="c10c177e-972c-4968-bd78-2a88c937ba8d" class="bulleted-list">
+						<li style="list-style-type:disc">Tasting bei <a
+								href="https://eat.razzo-pizza.com/?gclid=CjwKCAiAwomeBhBWEiwAM43YILxecwlChDlwcTnVMT--pb4hewwQ3E4H9gj-QCuzxbmrevbuki2COxoCG0IQAvD_BwE">Razzo</a>
+							in Köln: Nicht sonderlich überzeugt von Cashew Fior di Latte (von der Konsistenz her
+							erinnert es eher an Haferschleim)</li>
+					</ul>
+					<ul id="eba132e5-a2d5-40d2-a725-47f943733e0a" class="toggle">
+						<li>
+							<details open="">
+								<summary><a href="https://vanozza.de/">Vanozza</a> - veganer Mozzarella-Ersatz</summary>
+								<ul id="72275625-343d-4820-85ac-5cd7665350e1" class="bulleted-list">
+									<li style="list-style-type:disc">Wird genutzt von 485Grad und anderen Pizzerien -
+										Soll schmilzen und “cremige Fäden” ziehen!</li>
+								</ul>
+								<ul id="6cd92ea0-f600-42f2-90fb-abf31276c073" class="bulleted-list">
+									<li style="list-style-type:disc">Preis: ca. 14-15€/ kg → ca. 1€/ Pizza bei </li>
+								</ul>
+								<ul id="940154b4-036d-4f41-99e6-aa2f8fdb07eb" class="bulleted-list">
+									<li style="list-style-type:disc">Roh-Konsistenz und Farbe ähnelt schon einmal sehr
+										normalem Mozzarella - wenn auch etwas dunkler</li>
+								</ul>
+								<ul id="56a6bd58-f7ae-43d0-97a7-8c16f6dc3d3a" class="bulleted-list">
+									<li style="list-style-type:disc">Roher/ kalter Zustand:<ul
+											id="7a0dec50-4ad8-41a6-96a2-3b3d82ed8386" class="bulleted-list">
+											<li style="list-style-type:circle">Gummiartige Konsistenz die ziehbar ist
+												und auch leicht “Fäden” zieht</li>
+										</ul>
+									</li>
+								</ul>
+								<ul id="c845a5b9-6a52-4595-a7be-efc6b072112d" class="bulleted-list">
+									<li style="list-style-type:disc">Gebackener/ heißer Zustand: <ul
+											id="4de670dd-835f-41fd-864d-20ae4cca7dbc" class="bulleted-list">
+											<li style="list-style-type:circle">Ist direkt aus dem Ofen etwas heißer als
+												normaler (Büffel-) Mozzarella und hält die Hitze etwas länger (1-2 min
+												länger abkühlen lassen, damit man sich nicht verbrennt!)</li>
+										</ul>
+										<ul id="4bed3d91-69cd-4e40-8e67-dcb3cfdc6768" class="bulleted-list">
+											<li style="list-style-type:circle">Ist gebacken etwas flüssiger als normaler
+												Mozzarella, bekommt aber wieder eine sehr ähnliche Struktur, wenn er
+												etwas abgekühlt ist (Dauer noch ungewiss)</li>
+										</ul>
+									</li>
+								</ul>
+								<ul id="45314b0b-5ce3-4613-8ed8-0d56770a4d88" class="bulleted-list">
+									<li style="list-style-type:disc">Geschmacklich ist er natürlich etwas anders als
+										normaler Mozzarella, kommt aber bisher am nächsten daran<figure
+											id="6c2e08a9-47b4-44e9-9875-43f1dd4b3191" class="image"><a
+												href="Pizza%20cbe2f7a83a294e0392d66e6535db225e/597D709B-1EB3-418A-B8B1-C9BF0269F8C1.jpg"><img
+													style="width:3024px"
+													src="Pizza%20cbe2f7a83a294e0392d66e6535db225e/597D709B-1EB3-418A-B8B1-C9BF0269F8C1.jpg" /></a>
+										</figure>
+										<figure id="f443800e-5428-4637-b1d5-e87c237424c9" class="image"><a
+												href="Pizza%20cbe2f7a83a294e0392d66e6535db225e/686E3C58-FBB6-4994-98B5-697609AF8592.jpg"><img
+													style="width:3024px"
+													src="Pizza%20cbe2f7a83a294e0392d66e6535db225e/686E3C58-FBB6-4994-98B5-697609AF8592.jpg" /></a>
+										</figure>
+										<figure id="f80ad576-a0e3-4c24-925e-dd542f370ac2" class="image"><a
+												href="Pizza%20cbe2f7a83a294e0392d66e6535db225e/44CDF727-43A4-4B6F-95BC-C969161A414E.jpg"><img
+													style="width:3024px"
+													src="Pizza%20cbe2f7a83a294e0392d66e6535db225e/44CDF727-43A4-4B6F-95BC-C969161A414E.jpg" /></a>
+										</figure>
+										<figure id="793d0922-1675-4af3-b92a-ddfd6b2e1534" class="image"><a
+												href="Pizza%20cbe2f7a83a294e0392d66e6535db225e/5390053D-A72C-43E4-9274-D7EB3D7D0A2F.jpg"><img
+													style="width:2316px"
+													src="Pizza%20cbe2f7a83a294e0392d66e6535db225e/5390053D-A72C-43E4-9274-D7EB3D7D0A2F.jpg" /></a>
+										</figure>
+										<figure id="fee875dc-edfd-457b-acfc-405bb6c0f669" class="image"><a
+												href="Pizza%20cbe2f7a83a294e0392d66e6535db225e/F351C509-66F2-4508-841C-FB0FAE388B2E.jpg"><img
+													style="width:3024px"
+													src="Pizza%20cbe2f7a83a294e0392d66e6535db225e/F351C509-66F2-4508-841C-FB0FAE388B2E.jpg" /></a>
+										</figure>
+										<figure id="9575c286-f5a9-40e6-966b-95bd4c49dd0d" class="image"><a
+												href="Pizza%20cbe2f7a83a294e0392d66e6535db225e/20A4F370-B41B-4A2E-9823-65B3ACD0DCB6.jpg"><img
+													style="width:3024px"
+													src="Pizza%20cbe2f7a83a294e0392d66e6535db225e/20A4F370-B41B-4A2E-9823-65B3ACD0DCB6.jpg" /></a>
+										</figure>
+										<figure id="3424dfa0-81ed-4726-a9ee-79b990863429" class="image"><a
+												href="Pizza%20cbe2f7a83a294e0392d66e6535db225e/EF6A71A1-A451-442F-A9BE-24355D587119.jpg"><img
+													style="width:3024px"
+													src="Pizza%20cbe2f7a83a294e0392d66e6535db225e/EF6A71A1-A451-442F-A9BE-24355D587119.jpg" /></a>
+										</figure>
+									</li>
+								</ul>
+							</details>
+						</li>
+					</ul>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Fragen Pizzaherstellung &amp; Co.
+				</summary>
+				<div class="indented">
+					<ol type="1" id="059f4115-cf8b-4b87-a9bc-0da4128bd354" class="numbered-list" start="1">
+						<li>Unterschiedliche Arten von Pizza-Öfen (Gas, Elektro, größer/ kleiner) in Bezug auf die
+							Qualität und Kapazität und darauf, was bei einem Pizzastand bei einem Event (mit „minimal
+							complexity“) Sinn macht.</li>
+					</ol>
+					<ol type="1" id="d52c07da-046f-4fdc-904c-406dccc342c2" class="numbered-list" start="2">
+						<li>Wie plant man gut mit Teig, wenn die Menge der benötigten Pizzen (z. B. bei einem Event)
+							unklar ist, insb. bzgl. kühlen/ nicht kühlen (Aufbewahrung)? (Im konkreteren Case:
+							„Pizzastand Low Complexity bei Event“)</li>
+					</ol>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Pizza-Kreationen</summary>
+				<div class="indented">
+					<p id="47f7db22-b3d7-401f-9890-6fb24c322490" class=""><strong>Nicht zu sehr weggehen vom
+							Pizza-Gedanken! Nicht bloß irgendwelche Zutaten auf Pizza hauen, sondern (fast) immer in
+							Kombination mit Tomatensauce, Mozzarella, Parmesan, o. Ä.</strong></p>
+					<ul id="5978877f-c5a3-410c-a7db-f125dd7256e9" class="toggle">
+						<li>
+							<details open="">
+								<summary><strong>Baked Vegs 1</strong></summary>
+								<ol type="1" id="115637d5-4ca9-44e1-aaf9-0050634ae9ab" class="numbered-list" start="1">
+									<li>Boden aus Parmesan</li>
+								</ol>
+								<ol type="1" id="98fa9c19-3b95-478d-9b0b-7b9c5329a2bd" class="numbered-list" start="2">
+									<li>(vorgebackenes und durchaus abgekühltes) Backofen-Gemüse als Topping (nicht zu
+										überladen viel)</li>
+								</ol>
+								<p id="5a2bdf62-8911-44c7-a25a-6a7b30f6c1d4" class="">Optional - nach dem Backen:</p>
+								<ol type="1" id="5d13fd70-632d-4c68-8011-88d7bd11f80f" class="numbered-list" start="3">
+									<li>Yogurt Dip mit Salz/ Pfeffer/ Zitrone/ geriebener Ingwer on top (nachdem aus
+										Ofen)</li>
+								</ol>
+							</details>
+						</li>
+					</ul>
+					<ul id="16ee4a30-fa2f-4dd4-bc8f-a80b66302cff" class="toggle">
+						<li>
+							<details open="">
+								<summary><strong>Baked Vegs 2</strong></summary>
+								<ol type="1" id="9574f18d-5533-4c07-b200-763ce332e7d5" class="numbered-list" start="1">
+									<li>Pesto selber machen mit sehr viel extra Parmesan (+ evtl. viel extra Sesam) und
+										als Boden verteilen (Käseschicht-Ersatz)</li>
+								</ol>
+								<ol type="1" id="4a530267-fe5c-45ac-b8f9-75c1c7f9061d" class="numbered-list" start="2">
+									<li>(vorgebackenes und durchaus abgekühltes) Backofen-Gemüse als Topping (nicht zu
+										überladen viel)</li>
+								</ol>
+								<ol type="1" id="83e4d39d-931c-41aa-ba40-b47497b6f597" class="numbered-list" start="3">
+									<li>Etwas Büffelmozzarella (für den Pizza-Vibe)</li>
+								</ol>
+								<p id="4e11693e-2bcf-4cce-bb66-a19b53a11289" class="">Nach dem Backen:</p>
+								<ol type="1" id="65b8d109-335d-4a6b-a0d9-258a7437c74b" class="numbered-list" start="3">
+									<li>Yogurt Dip mit Salz/ Pfeffer/ Zitrone/ geriebener Ingwer on top (nachdem aus
+										Ofen)</li>
+								</ol>
+								<p id="87853f41-ada3-4f40-b8f2-159d8ffd7545" class=""><strong>→ Schmeckt gut und kam
+										auch relativ gut an, ist jedoch relativ fettig aufgrund des Öls aus dem Pesto
+										und dem vom Ofengemüse; Yogurt-Dip neutralisiert gut! → evtl. schauen, dass man
+										das Öl reduziert.</strong></p>
+							</details>
+						</li>
+					</ul>
+					<ul id="26874f49-4ab6-453c-89df-c2526d99da5b" class="toggle">
+						<li>
+							<details open="">
+								<summary><strong>Focaccia-Brot</strong></summary>
+								<p id="a285128b-eaff-4e3a-b676-a78022be93b3" class="">Pizzateigballen mit allen
+									Fingerspitzen gleichzeitig leicht bearbeiten, dass der Ballen zu einem brotförmigen
+									Gebilde aber nicht zu flach wird. Folgend mit Olivenöl besteichen und mit grobem
+									Meersalz und Rosmarin bestreuen.</p>
+								<p id="5029d940-20fb-42be-8e90-aeee90684d59" class=""><strong>→ Sollte bei geringerer
+										Hitze und dafür etwas länger gebacken werden → War innen noch etwas zu wenig
+										durch im Vergleich zu äußeren verkohlten Stellen</strong></p>
+							</details>
+						</li>
+					</ul>
+					<ul id="6ceec65c-5e4d-4f60-9753-e1afe9e46c33" class="toggle">
+						<li>
+							<details open="">
+								<summary><strong>Simple Funghi</strong></summary>
+								<ol type="1" id="8a000f6a-58f1-4129-8872-7e23ee34f2c0" class="numbered-list" start="1">
+									<li>Boden: Bestes Olivenöl</li>
+								</ol>
+								<ol type="1" id="8e1c8627-078b-4f21-9164-968c0dd40436" class="numbered-list" start="2">
+									<li>Eingelegte (Austern-) Pilze (z. B. eingelegt in Sojasauce o. ä. - Konsistenz
+										ähnlich zu Fleisch) - Marinade: Sojasauce, Öl, Sesamöl, Lunas Chili Sauce,
+										Paprikapulver, Rosmarin, brauner Zucker, Pfeffer (herum probieren wieviel von
+										was; nicht zuuu scharf machen!)</li>
+								</ol>
+								<ol type="1" id="82dff9ac-892f-4919-bfef-bbb575849cb4" class="numbered-list" start="3">
+									<li>Büffelmozzarella</li>
+								</ol>
+								<p id="d06717be-9a8c-423e-ae57-7364eb43ec1e" class=""><strong>→ Kam sehr gut an, ist
+										durch die Schärfe aber auch relativ extrem im Geschmack, weshalb man sie sich
+										eher teilen muss, als sie alleine ganz zu essen. → Die Schärfe in kommenden
+										Iterationen eher reduzieren und auch mit anderen Pilzen arbeiten.</strong></p>
+								<p id="3f52ca6c-6807-4625-a9a2-62948786e3b3" class=""><strong>→ Wirkte etwas zu trocken
+										→ Boden mit der Ölmarinade einpinseln ODER Tomatensauce darauf
+										verteilen!</strong></p>
+							</details>
+						</li>
+					</ul>
+					<ul id="e5994072-bec9-4657-a9fc-cbbfdf3d82f5" class="toggle">
+						<li>
+							<details open="">
+								<summary><strong>Margherita Made Wrong</strong></summary>
+								<ol type="1" id="9eccb775-002b-4199-b92d-76e54e91520c" class="numbered-list" start="1">
+									<li>Boden: Büffelmozzarella</li>
+								</ol>
+								<ol type="1" id="dcf7b70c-6d03-4d76-b8f2-b64593461a16" class="numbered-list" start="2">
+									<li>Nachdem gebacken gute Tomatensauße aus Dosierungsflasche in Streifen auf Pizza
+										verteilen (nicht zu flüssig, damit man es gut anrichten kann, leicht dickflüssig
+										aber trotzdem frisch im Geschmack → San Marzano Tomaten; evtl.
+										geschmacksneutrale Zutat nur hierbei hinzufügen, sodass Konsistenz
+										dickflüssiger)</li>
+								</ol>
+								<ol type="1" id="c9c5ae74-796d-4afe-bb12-82d22fb4f878" class="numbered-list" start="3">
+									<li>Selbstgemachtes Basilikum Pesto mit kleiner Dosierungsflasche punktiert auf der
+										Pizza verteilen; Pesto: Basilikum (bevorzugt Krim-Basilikum wegen des intensiven
+										Geschmacks) und Olivenöl</li>
+								</ol>
+								<p id="cd477587-ead0-4981-9c3e-d6d69e5b7619" class=""><strong>→ Klassiker; kommt sehr
+										gut an wie immer → Ist eine der wenigen Pizzen, von denen man eine ganze alleine
+										essen könnte.</strong></p>
+							</details>
+						</li>
+					</ul>
+					<ul id="b1421902-457b-481b-ade9-545c09a0158b" class="toggle">
+						<li>
+							<details open="">
+								<summary><strong>Holy Guacamole</strong></summary>
+								<ol type="1" id="4d464e4c-1226-406b-b8a3-ab50fdd05794" class="numbered-list" start="1">
+									<li>Boden: Parmesan</li>
+								</ol>
+								<p id="5ea1d269-6796-44f2-92a3-f5e13805e02e" class="">Nach dem Backen:</p>
+								<ol type="1" id="10657e6e-a553-4d0f-91ee-57af417a274d" class="numbered-list" start="2">
+									<li>Selbstgemachte Guacamole darauf verteilen (mit viel Zitrone u. Salz, ein wenig
+										Sahne (kein Muss!), leichter Schärfe (z. B. durch Sriracha-Sauce) und
+										Cherry-Tomaten für den frischeren Geschmack → Alles püriert)</li>
+								</ol>
+								<ol type="1" id="3709f683-34b5-4fb3-abe9-a082bc823b7e" class="numbered-list" start="3">
+									<li>Ruccula; “bunte” Cherry-Tomaten (gelb, orang, rot) entweder vierteln/ halbieren
+										oder vorher kochen, die Haut abziehen und darauf verteilen; selbstgemachte
+										Süßkartoffel-Chips (mit Käsereibe in dünne Scheiben schneiden und mit ein wenig
+										Öl + Salz vermengen (nicht triefend!), möglichst nicht-überlappend auf Backblech
+										verteilen und bei 150° Umluft backen bis goldbraun → ca. 20-30 min) → Rezept auf
+										grillkamerade.de</li>
+								</ol>
+								<p id="4d4ec70d-9e2d-4c3d-8610-a8c09ebc1243" class=""><strong>→ Kam auch wie immer sehr
+										gut an, ist aber relativ extrem, wodurch man davon alleine keine Ganze essen
+										kann. → In kommenden Iterationen die extremen Geschmäcker reduzieren
+										(insbesondere die Guacamole neutraler gestalten)!</strong></p>
+							</details>
+						</li>
+					</ul>
+					<ul id="563cf26a-c238-41cf-bee7-1c70baedaa33" class="toggle">
+						<li>
+							<details open="">
+								<summary><strong>Rosa</strong></summary>
+								<ol type="1" id="1324dddd-0f41-4477-bc63-72972da76167" class="numbered-list" start="1">
+									<li>Boden: Parmesan</li>
+								</ol>
+								<ol type="1" id="72dbabb0-bf4b-4b85-858d-63104c4e1174" class="numbered-list" start="2">
+									<li>Rote Zwiebeln in dünnen Scheiben</li>
+								</ol>
+								<ol type="1" id="89f8a6b7-e162-4047-8566-0db76f5419d9" class="numbered-list" start="3">
+									<li>Rosmarin</li>
+								</ol>
+								<p id="c67df593-b2cb-45b9-a377-7315387eb311" class="">Gebacken bis fast fertig - dann
+									kurz rausholen und drauf:</p>
+								<ol type="1" id="f7d102b9-b79e-4e53-922f-3bfb48e9b2cd" class="numbered-list" start="5">
+									<li>crunched Pistazien darauf verteilen</li>
+								</ol>
+								<p id="13d6f9e0-303b-48ac-a0b9-88dcc4331b6a" class=""><strong>→ War lecker und kam gut
+										an, ist jedoch etwas trockener, wodurch es nicht den “OG” Pizza-Vibe
+										hat!</strong></p>
+								<p id="e7995269-616a-4bf2-b8bf-8e8622ac4d79" class=""><strong>→ Pistazien wirklich nur
+										ganz kurz in den Ofen → Sind selbst innerhalb der ca. 30 Sekunden in denen Sie
+										im Ofen waren gut angebrannt!</strong></p>
+								<p id="92415f73-a145-4af7-901d-b268ceaeeb6d" class=""><strong>→ Irgendwas ändern/
+										hinzufügen, sodass die Pizza etwas mehr juicy ist?!</strong></p>
+							</details>
+						</li>
+					</ul>
+					<ul id="765c83a3-abb3-4898-b5b5-75dff2d8c055" class="toggle">
+						<li>
+							<details open="">
+								<summary><strong>Sweet Hell</strong></summary>
+								<ol type="1" id="92ea21c0-0c13-4d60-819a-ce96737cd2e3" class="numbered-list" start="1">
+									<li>Boden: San Marzano Tomatensauce</li>
+								</ol>
+								<ol type="1" id="9ff72011-2827-46e2-a436-48db2b4a9da4" class="numbered-list" start="2">
+									<li>Fior Di Latte Mozzarella</li>
+								</ol>
+								<ol type="1" id="12d5ced5-f064-476f-9dc9-f01b904b2100" class="numbered-list" start="3">
+									<li>Italienische Salami</li>
+								</ol>
+								<ol type="1" id="0b6b2967-4988-4a60-9652-731c93333296" class="numbered-list" start="4">
+									<li>Chilli-Öl (Olivenöl + Chilliflocken + braune scharfe asiatische Sauce)</li>
+								</ol>
+								<p id="8ac9e14c-e4c8-428c-adb0-d6456baf4c86" class="">Gebacken bis fast fertig - dann
+									kurz rausholen und drauf:</p>
+								<ol type="1" id="49128799-af7c-4fad-982a-195bb223c674" class="numbered-list" start="5">
+									<li>(Zuvor) angeröstete in Honig “getränkte” Walnüsse darauf verteilen (noch einmal
+										kurz in den Ofen)</li>
+								</ol>
+								<p id="6a6399e9-542d-4bb3-b62d-1bd0b2931c15" class="">→ Evtl. am Ende noch einmal mit
+									Chilli-Öl finishen</p>
+								<p id="fef10a13-6f2f-46ff-9179-6e39adabbbf1" class="">→ Süße und Schärfe sollen im
+									Einklang sein, wenn dann soll Süße des Honigs überwiegen!</p>
+								<p id="fdc11767-5572-4d50-a83f-352a26c9cfa4" class=""><strong>→ Klassiker, kommt sehr
+										gut an! Einige der wenigen Pizzen, von denen man alleine eine ganze essen
+										könnte!</strong></p>
+							</details>
+						</li>
+					</ul>
+					<ul id="02f879a2-4a23-45b5-91a5-32339fa9603c" class="toggle">
+						<li>
+							<details open="">
+								<summary><strong>Marinara</strong></summary>
+								<ol type="1" id="0f7ff19c-df00-4db2-becd-1d5225a46204" class="numbered-list" start="1">
+									<li>Boden: San Marzano Tomatensauce </li>
+								</ol>
+								<ol type="1" id="fa3c5060-dc76-4208-955d-ad2101442da1" class="numbered-list" start="2">
+									<li>Dünne Knoblauchstreifen</li>
+								</ol>
+							</details>
+						</li>
+					</ul>
+					<ul id="b66aadb9-c8c9-4dad-9b61-ba48dbcf5aac" class="toggle">
+						<li>
+							<details open="">
+								<summary><strong>Late Breakfast</strong></summary>
+								<ol type="1" id="e3938c26-bf07-4aa2-9d95-8fcb8e76bddd" class="numbered-list" start="1">
+									<li>Boden: geschmolzene Butter gepinselt auf Pizzateig UND/ ODER leicht geschlagenes
+										Eigelb auf Pizza verteilen</li>
+								</ol>
+								<ol type="1" id="fb01454f-c927-4c0e-bb21-9639ca23a17f" class="numbered-list" start="2">
+									<li>Baconstreifen darauf verteilen</li>
+								</ol>
+								<ol type="1" id="265a2f3a-0f97-4a61-8b81-669a52aa8a6b" class="numbered-list" start="3">
+									<li>evtl. Büffelmozzarella dezent (für den Pizza-Vibe)</li>
+								</ol>
+								<p id="a29c6337-d92b-45b3-a69c-e4818523496e" class="">Nach dem Backen:</p>
+								<ol type="1" id="f5501ebc-48f7-4c2b-9c42-a381ddabdb12" class="numbered-list" start="3">
+									<li>Eigelb darauf verteilen (getrennt vom Eiweiß und leicht in kochendem Wasser
+										abgekocht) und mit Meersalz bestreuen; evtl. noch frische Petersilie/
+										Schnittlauch darüber verteilen</li>
+								</ol>
+								<p id="3730e519-4c03-4f71-955a-5edd1742a8bb" class=""><strong>→ War etwas trocken;
+										Saucyness hat etwas gefehlt → Eigelb hat Geschmackskick gegeben!</strong></p>
+							</details>
+						</li>
+					</ul>
+					<p id="aa9b5d29-5f6c-4d46-9d6f-85f05f1aab85" class=""><span
+							style="border-bottom:0.05em solid"><strong>Bisher noch nicht ausprobiert:</strong></span>
+					</p>
+					<ul id="a5f66020-92f0-4290-bb07-ce621f057269" class="toggle">
+						<li>
+							<details open="">
+								<summary><strong>Hokkaido-Chilliyogurt-Koriander</strong></summary>
+								<p id="1c3ab1ff-5f72-4729-a6f1-bbf055e06f68" class="">Boden aus Parmesan,
+									Hokkaido-Kürbis vorher im Ofen gebacken in nicht zu dicken Scheiben verteilen,
+									nachdem fertig gebacken: Chilliyogurt-Dip und Koriander-Dip darüber verteilen</p>
+								<figure id="4bd672a5-f40b-40a1-80c3-ddecf3de6754" class="image"><a
+										href="Pizza%20cbe2f7a83a294e0392d66e6535db225e/IMG_2638.heic"><img
+											src="Pizza%20cbe2f7a83a294e0392d66e6535db225e/IMG_2638.heic" /></a></figure>
+							</details>
+						</li>
+					</ul>
+					<ul id="f0033f30-9654-45f1-9da3-eb41f8f4eef2" class="toggle">
+						<li>
+							<details open="">
+								<summary><strong>Green Masters</strong></summary>
+								<ol type="1" id="f8282f75-5d77-453a-8945-6239ef7181cf" class="numbered-list" start="1">
+									<li>Boden: Selbstgemachte grüne Pesto Art (evtl. mit viel Parmesan, welcher dann
+										knusprig werden kann)</li>
+								</ol>
+								<ol type="1" id="cda0dd59-27eb-451f-bce8-ff7225344ca5" class="numbered-list" start="2">
+									<li>Art Grünkohl (inspirieren lassen von persischer, äthiopischer und deutscher
+										Küche)</li>
+								</ol>
+								<ol type="1" id="9a9b27a9-90b1-4276-af5a-2a5511f9eff1" class="numbered-list" start="3">
+									<li>Bester Büffelmozzarella in großen Stücken</li>
+								</ol>
+							</details>
+						</li>
+					</ul>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Interessante Zutaten (Kombinationen)
+				</summary>
+				<div class="indented">
+					<ul id="be39590c-4279-439f-9e63-5ba53b7e634b" class="bulleted-list">
+						<li style="list-style-type:disc">Eigelb (vorher getrennt von Eiweiß und kurz in kochendem Wasser
+							“abgekocht”) <strong>und</strong> …</li>
+					</ul>
+					<ul id="bb684ef4-498a-4cf0-8c47-b17656699af1" class="bulleted-list">
+						<li style="list-style-type:disc">Salbei (in Butter angeröstet) <strong>und</strong> …</li>
+					</ul>
+					<ul id="f6b2350e-06ed-4dda-892f-c1638f4e41ec" class="bulleted-list">
+						<li style="list-style-type:disc">(Saure?!) Gurken einlegen in Sauce (wie im Glas) mit Knoblauch
+							und (Thai) Chillies</li>
+					</ul>
+					<ul id="cbb7bc04-a535-496e-94ce-53d34dd6202c" class="bulleted-list">
+						<li style="list-style-type:disc">Eingelegte Algen</li>
+					</ul>
+					<ul id="44457131-c138-4cd7-874f-be81385733a7" class="bulleted-list">
+						<li style="list-style-type:disc">Kimchi selber machen und auf Pizza als Belag machen (bereits
+							vor dem Backen drauf!) <strong>und</strong> Sesam drauf machen als Topping, wenn Pizza
+							fertig</li>
+					</ul>
+					<ul id="c14afc9b-ef3e-49fa-9e10-c9b25cca1358" class="bulleted-list">
+						<li style="list-style-type:disc">Gebratene Artischocken</li>
+					</ul>
+					<ul id="292bdfc5-d808-49a5-a63b-d4d4121c9f3d" class="bulleted-list">
+						<li style="list-style-type:disc">Roher Lachs relativ dünn geschnitten - aber auch nicht zu dünn,
+							sodass juicyness bleibt</li>
+					</ul>
+					<ul id="077d45b6-5515-419c-abb1-0f190aa78ea0" class="bulleted-list">
+						<li style="list-style-type:disc">Brokkoli verwenden bzw. nur die kleinen grünen Kügelchen-Köpfe
+							(vorher z. B. dünsten oder anbraten)</li>
+					</ul>
+					<ul id="be813e90-bea5-4614-9f61-cff2cd4d27b0" class="bulleted-list">
+						<li style="list-style-type:disc">Kartoffeln in ganz dünnen Scheiben als Chips - evtl. schon
+							vorher im Ofen geröstet und dann drüber gemacht als topping! -&gt; das selbe mit blauen
+							Kartoffeln und mit Süßkartoffeln machen!</li>
+					</ul>
+					<ul id="b4e0c970-d0e7-4719-8eb5-f5275615bbd8" class="bulleted-list">
+						<li style="list-style-type:disc">Pfifferlinge + Rotkohl!!! + blaue Kartoffeln</li>
+					</ul>
+					<ul id="2f06f321-eaca-4e6a-a13d-980407758a32" class="bulleted-list">
+						<li style="list-style-type:disc">Gutes rohes Fleisch in kleinen Stücken in der Pfanne leicht
+							anbraten und dann auf Pizza</li>
+					</ul>
+					<ul id="4ceb15f2-89af-412f-874d-2db0885c10d6" class="bulleted-list">
+						<li style="list-style-type:disc">Eine Pizza mit sehr grobem, dicken Honig <strong>und</strong>
+							…?</li>
+					</ul>
+					<ul id="74357254-cf96-44f8-8e0f-64bece0b54dd" class="bulleted-list">
+						<li style="list-style-type:disc">Mit vorher bereits (selbst) eingelegten Zutaten arbeiten -
+							(Zwiebeln, Knoblauch, Tomate, Paprika, etc.)</li>
+					</ul>
+					<ul id="41e828e6-fa5c-4b73-91ba-bc5234fd8c04" class="bulleted-list">
+						<li style="list-style-type:disc">Blütenblätter</li>
+					</ul>
+					<ul id="ca9a63a0-0d0e-46a9-ac4b-cb96002c2db7" class="bulleted-list">
+						<li style="list-style-type:disc">Gorgonzola</li>
+					</ul>
+					<ul id="6879424c-b46c-4d69-9e87-0b44742ba8e0" class="bulleted-list">
+						<li style="list-style-type:disc">Zitronen</li>
+					</ul>
+					<ul id="37f7455b-f589-403b-bd3e-46b57b3403fb" class="bulleted-list">
+						<li style="list-style-type:disc">Irgendwie Kaffe dezent einbauen</li>
+					</ul>
+					<ul id="c779fc9d-0843-4205-9254-e47fa4a9129c" class="bulleted-list">
+						<li style="list-style-type:disc">Gutes Hackfleisch, vorher in kleinen Stückchen angebraten,
+							Ähnlichkeiten zu türkischer Pizza</li>
+					</ul>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Vision/ Präsentation</summary>
+				<div class="indented">
+					<p id="65404d63-27a6-4168-b218-bfdadffa2914" class=""><strong>Bewerbung der Pizza:</strong></p>
+					<ul id="125c02b0-dfd2-43bd-b2b7-5f7b2dd44992" class="bulleted-list">
+						<li style="list-style-type:disc">Fokus auf ausgewählten Zutaten und extravaganten Kombinationen.
+							Insgesamt ist das Bild der Pizza das einer Reise.</li>
+					</ul>
+					<ul id="e15b228c-29f7-4837-8b68-b2aa17b562d9" class="bulleted-list">
+						<li style="list-style-type:disc">Darstellen durch diverse Macro-Aufnahme von den
+							unterschiedlichen Zutaten von Ole, woraus ein Trailer entsteht.</li>
+					</ul>
+					<p id="bcdf6348-8fac-4ea5-849f-391c100826b9" class=""><strong>Pizza-Restaurant Idee:</strong></p>
+					<ul id="e6c036a8-b209-43bc-be58-bf556c879b63" class="bulleted-list">
+						<li style="list-style-type:disc">Konzept des Teilens „Sharing is Caring“<ul
+								id="949869aa-b9d1-481a-bd07-23b3d5f36494" class="bulleted-list">
+								<li style="list-style-type:circle">Man teilt die Pizza unter allen Gästen und bekommt
+									mit folgenden Bestellungen immer wieder Nachschub.</li>
+							</ul>
+							<ul id="cdddd11d-88c0-42db-9362-9a6a99bcfa24" class="bulleted-list">
+								<li style="list-style-type:circle">Fördert das Zusammengehörigkeitsgefühl und den
+									Zusammenhalt</li>
+							</ul>
+						</li>
+					</ul>
+					<p id="227741e6-6d7d-44b2-9842-450ba14f32b3" class=""><strong>Pizza-Pop-Up:</strong></p>
+					<ul id="186a4616-135d-45fe-b69a-ad0477b30519" class="bulleted-list">
+						<li style="list-style-type:disc">App/ Webseite auf die man durch Google-Suche oder über QR-Code
+							kommt.<ul id="5db3d809-e52a-4c9e-87ed-302d82948f16" class="bulleted-list">
+								<li style="list-style-type:circle">Aktuelles Menü (verfügbare Pizzen) kann dort
+									eingesehen und direkt darüber bestellt werden.<p
+										id="fef314e5-9a5c-4ac4-b87e-a0c121dab322" class=""><strong>Praktisch,
+											da:</strong></p>
+									<ol type="1" id="85a208b6-2527-46cb-a42b-b101618d15d2" class="numbered-list"
+										start="1">
+										<li>Man kann die Schlange beim Pizzastand verlassen, da man über die App/
+											Webseite sehen kann, wann die Pizza fertig und abholbereit ist - kein ewiges
+											in der Schlange stehen mehr!</li>
+									</ol>
+									<ol type="1" id="86f25a81-ee0f-43d7-98b8-c18c64ba7e09" class="numbered-list"
+										start="2">
+										<li>Man spart sich die Person die an der Kasse steht, da es keine Person
+											braucht, die Bestellungen und das Geld entgegen nimmt - evtl. Lösung
+											überlegen für Menschen, deren Akku leer ist, die kein Paypal o. ä. haben
+											oder warum auch immer nur bar zahlen können oder wollen.</li>
+									</ol>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<p id="712f2ce9-efb5-484e-b6c3-0d32669a9f3d" class="">
+					</p>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Pizza-Diary</summary>
+				<div class="indented">
+					<div id="0c1f497d-510d-468a-ae3b-9176acd01f6a" class="collection-content">
+						<h4 class="collection-title"></h4>
+						<table class="collection-content">
+							<thead>
+								<tr>
+									<th><span class="icon property-icon"><svg viewBox="0 0 16 16"
+												style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden"
+												class="typesTitle">
+												<path
+													d="M0.637695 13.1914C1.0957 13.1914 1.32812 13 1.47852 12.5215L2.24414 10.3887H6.14746L6.90625 12.5215C7.05664 13 7.2959 13.1914 7.74707 13.1914C8.22559 13.1914 8.5332 12.9043 8.5332 12.4531C8.5332 12.2891 8.50586 12.1523 8.44434 11.9678L5.41602 3.79199C5.2041 3.21777 4.82129 2.9375 4.19922 2.9375C3.60449 2.9375 3.21484 3.21777 3.0166 3.78516L-0.0322266 12.002C-0.09375 12.1797 -0.121094 12.3232 -0.121094 12.4668C-0.121094 12.918 0.166016 13.1914 0.637695 13.1914ZM2.63379 9.12402L4.17871 4.68066H4.21973L5.76465 9.12402H2.63379ZM12.2793 13.2324C13.3115 13.2324 14.2891 12.6787 14.7129 11.8037H14.7402V12.5762C14.7471 12.9863 15.0273 13.2393 15.4238 13.2393C15.834 13.2393 16.1143 12.9795 16.1143 12.5215V8.00977C16.1143 6.49902 14.9658 5.52148 13.1543 5.52148C11.7666 5.52148 10.6592 6.08887 10.2695 6.99121C10.1943 7.15527 10.1533 7.3125 10.1533 7.46289C10.1533 7.81152 10.4062 8.04395 10.7686 8.04395C11.0215 8.04395 11.2129 7.94824 11.3496 7.73633C11.7529 6.99121 12.2861 6.65625 13.1064 6.65625C14.0977 6.65625 14.6992 7.20996 14.6992 8.1123V8.67285L12.5664 8.7959C10.7686 8.8916 9.77734 9.69824 9.77734 11.0107C9.77734 12.3369 10.8096 13.2324 12.2793 13.2324ZM12.6621 12.1387C11.8008 12.1387 11.2129 11.667 11.2129 10.9561C11.2129 10.2725 11.7598 9.82129 12.7578 9.75977L14.6992 9.62988V10.3203C14.6992 11.3457 13.7969 12.1387 12.6621 12.1387Z">
+												</path>
+											</svg></span>Name</th>
+									<th><span class="icon property-icon"><svg viewBox="0 0 16 16"
+												style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden"
+												class="typesCreatedAt">
+												<path
+													d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM4.54102 8.91211H7.99316C8.30078 8.91211 8.54004 8.67285 8.54004 8.37207V3.8877C8.54004 3.58691 8.30078 3.34766 7.99316 3.34766C7.69238 3.34766 7.45312 3.58691 7.45312 3.8877V7.83203H4.54102C4.2334 7.83203 4.00098 8.06445 4.00098 8.37207C4.00098 8.67285 4.2334 8.91211 4.54102 8.91211Z">
+												</path>
+											</svg></span>Created</th>
+									<th><span class="icon property-icon"><svg viewBox="0 0 16 16"
+												style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden"
+												class="typesMultipleSelect">
+												<path
+													d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z">
+												</path>
+											</svg></span>Tags</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr id="b9b125fa-c04d-4dc5-89e1-63e8171587e0">
+									<td class="cell-title"><a
+											href="Pizza%20cbe2f7a83a294e0392d66e6535db225e/Untitled%20Database%200c1f497d510d468aae3b9176acd01f6a/Pizza%20machen%20am%2019%2002%202023%20b9b125fac04d4dc589e163e8171587e0.html">Pizza
+											machen am 19.02.2023</a></td>
+									<td class="cell-q_Bz"><time>@February 19, 2023 2:14 PM</time></td>
+									<td class="cell-jFdh"></td>
+								</tr>
+								<tr id="98606237-c5f0-409c-95d3-36fa8dfdd4a6">
+									<td class="cell-title"><a
+											href="Pizza%20cbe2f7a83a294e0392d66e6535db225e/Untitled%20Database%200c1f497d510d468aae3b9176acd01f6a/Pizza%20machen%20am%2025%2002%202023%2098606237c5f0409c95d336fa8dfdd4a6.html">Pizza
+											machen am 25.02.2023</a></td>
+									<td class="cell-q_Bz"><time>@February 19, 2023 2:14 PM</time></td>
+									<td class="cell-jFdh"></td>
+								</tr>
+								<tr id="edf38166-524b-4948-8b96-a1a1b5aacbab">
+									<td class="cell-title"><a
+											href="Pizza%20cbe2f7a83a294e0392d66e6535db225e/Untitled%20Database%200c1f497d510d468aae3b9176acd01f6a/Pizza%20machen%20am%2019%2005%202023%20edf38166524b49488b96a1a1b5aacbab.html">Pizza
+											machen am 19.05.2023</a></td>
+									<td class="cell-q_Bz"><time>@May 20, 2023 11:18 AM</time></td>
+									<td class="cell-jFdh"></td>
+								</tr>
+								<tr id="00abd997-0b4b-483a-9307-7f1d27a2cbf2">
+									<td class="cell-title"><a
+											href="Pizza%20cbe2f7a83a294e0392d66e6535db225e/Untitled%20Database%200c1f497d510d468aae3b9176acd01f6a/Pizza%20machen%20am%2024%2005%202023%2000abd9970b4b483a93077f1d27a2cbf2.html">Pizza
+											machen am 24.05.2023</a></td>
+									<td class="cell-q_Bz"><time>@May 23, 2023 12:29 AM</time></td>
+									<td class="cell-jFdh"></td>
+								</tr>
+								<tr id="f07d8dd0-f2bd-48d2-9b94-b05d1e46397f">
+									<td class="cell-title"><a
+											href="Pizza%20cbe2f7a83a294e0392d66e6535db225e/Untitled%20Database%200c1f497d510d468aae3b9176acd01f6a/Pizza%20machen%20am%2028%2005%202023%20f07d8dd0f2bd48d29b94b05d1e46397f.html">Pizza
+											machen am 28.05.2023</a></td>
+									<td class="cell-q_Bz"><time>@May 29, 2023 7:24 PM</time></td>
+									<td class="cell-jFdh"></td>
+								</tr>
+							</tbody>
+						</table><br /><br />
+					</div>
+				</div>
+			</details>
+		</div>
+	</article>
+</body>
+
+</html>

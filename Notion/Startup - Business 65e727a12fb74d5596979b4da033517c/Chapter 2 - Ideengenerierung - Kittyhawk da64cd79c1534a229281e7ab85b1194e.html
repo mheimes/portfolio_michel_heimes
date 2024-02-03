@@ -1,0 +1,1066 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Chapter 2 - Ideengenerierung - Kittyhawk</title>
+	<style>
+		/* cspell:disable-file */
+		/* webkit printing magic: print all background colors */
+		html {
+			-webkit-print-color-adjust: exact;
+		}
+
+		* {
+			box-sizing: border-box;
+			-webkit-print-color-adjust: exact;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		@media only screen {
+			body {
+				margin: 2em auto;
+				max-width: 900px;
+				color: rgb(55, 53, 47);
+			}
+		}
+
+		body {
+			line-height: 1.5;
+			white-space: pre-wrap;
+		}
+
+		a,
+		a.visited {
+			color: inherit;
+			text-decoration: underline;
+		}
+
+		.pdf-relative-link-path {
+			font-size: 80%;
+			color: #444;
+		}
+
+		h1,
+		h2,
+		h3 {
+			letter-spacing: -0.01em;
+			line-height: 1.2;
+			font-weight: 600;
+			margin-bottom: 0;
+		}
+
+		.page-title {
+			font-size: 2.5rem;
+			font-weight: 700;
+			margin-top: 0;
+			margin-bottom: 0.75em;
+		}
+
+		h1 {
+			font-size: 1.875rem;
+			margin-top: 1.875rem;
+		}
+
+		h2 {
+			font-size: 1.5rem;
+			margin-top: 1.5rem;
+		}
+
+		h3 {
+			font-size: 1.25rem;
+			margin-top: 1.25rem;
+		}
+
+		.source {
+			border: 1px solid #ddd;
+			border-radius: 3px;
+			padding: 1.5em;
+			word-break: break-all;
+		}
+
+		.callout {
+			border-radius: 3px;
+			padding: 1rem;
+		}
+
+		figure {
+			margin: 1.25em 0;
+			page-break-inside: avoid;
+		}
+
+		figcaption {
+			opacity: 0.5;
+			font-size: 85%;
+			margin-top: 0.5em;
+		}
+
+		mark {
+			background-color: transparent;
+		}
+
+		.indented {
+			padding-left: 1.5em;
+		}
+
+		hr {
+			background: transparent;
+			display: block;
+			width: 100%;
+			height: 1px;
+			visibility: visible;
+			border: none;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+		}
+
+		img {
+			max-width: 100%;
+		}
+
+		@media only print {
+			img {
+				max-height: 100vh;
+				object-fit: contain;
+			}
+		}
+
+		@page {
+			margin: 1in;
+		}
+
+		.collection-content {
+			font-size: 0.875rem;
+		}
+
+		.column-list {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.column {
+			padding: 0 1em;
+		}
+
+		.column:first-child {
+			padding-left: 0;
+		}
+
+		.column:last-child {
+			padding-right: 0;
+		}
+
+		.table_of_contents-item {
+			display: block;
+			font-size: 0.875rem;
+			line-height: 1.3;
+			padding: 0.125rem;
+		}
+
+		.table_of_contents-indent-1 {
+			margin-left: 1.5rem;
+		}
+
+		.table_of_contents-indent-2 {
+			margin-left: 3rem;
+		}
+
+		.table_of_contents-indent-3 {
+			margin-left: 4.5rem;
+		}
+
+		.table_of_contents-link {
+			text-decoration: none;
+			opacity: 0.7;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid rgba(55, 53, 47, 0.09);
+			border-collapse: collapse;
+		}
+
+		table {
+			border-left: none;
+			border-right: none;
+		}
+
+		th,
+		td {
+			font-weight: normal;
+			padding: 0.25em 0.5em;
+			line-height: 1.5;
+			min-height: 1.5em;
+			text-align: left;
+		}
+
+		th {
+			color: rgba(55, 53, 47, 0.6);
+		}
+
+		ol,
+		ul {
+			margin: 0;
+			margin-block-start: 0.6em;
+			margin-block-end: 0.6em;
+		}
+
+		li>ol:first-child,
+		li>ul:first-child {
+			margin-block-start: 0.6em;
+		}
+
+		ul>li {
+			list-style: disc;
+		}
+
+		ul.to-do-list {
+			padding-inline-start: 0;
+		}
+
+		ul.to-do-list>li {
+			list-style: none;
+		}
+
+		.to-do-children-checked {
+			text-decoration: line-through;
+			opacity: 0.375;
+		}
+
+		ul.toggle>li {
+			list-style: none;
+		}
+
+		ul {
+			padding-inline-start: 1.7em;
+		}
+
+		ul>li {
+			padding-left: 0.1em;
+		}
+
+		ol {
+			padding-inline-start: 1.6em;
+		}
+
+		ol>li {
+			padding-left: 0.2em;
+		}
+
+		.mono ol {
+			padding-inline-start: 2em;
+		}
+
+		.mono ol>li {
+			text-indent: -0.4em;
+		}
+
+		.toggle {
+			padding-inline-start: 0em;
+			list-style-type: none;
+		}
+
+		/* Indent toggle children */
+		.toggle>li>details {
+			padding-left: 1.7em;
+		}
+
+		.toggle>li>details>summary {
+			margin-left: -1.1em;
+		}
+
+		.selected-value {
+			display: inline-block;
+			padding: 0 0.5em;
+			background: rgba(206, 205, 202, 0.5);
+			border-radius: 3px;
+			margin-right: 0.5em;
+			margin-top: 0.3em;
+			margin-bottom: 0.3em;
+			white-space: nowrap;
+		}
+
+		.collection-title {
+			display: inline-block;
+			margin-right: 1em;
+		}
+
+		.page-description {
+			margin-bottom: 2em;
+		}
+
+		.simple-table {
+			margin-top: 1em;
+			font-size: 0.875rem;
+			empty-cells: show;
+		}
+
+		.simple-table td {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table th {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table-header-color {
+			background: rgb(247, 246, 243);
+			color: black;
+		}
+
+		.simple-table-header {
+			font-weight: 500;
+		}
+
+		time {
+			opacity: 0.5;
+		}
+
+		.icon {
+			display: inline-block;
+			max-width: 1.2em;
+			max-height: 1.2em;
+			text-decoration: none;
+			vertical-align: text-bottom;
+			margin-right: 0.5em;
+		}
+
+		img.icon {
+			border-radius: 3px;
+		}
+
+		.user-icon {
+			width: 1.5em;
+			height: 1.5em;
+			border-radius: 100%;
+			margin-right: 0.5rem;
+		}
+
+		.user-icon-inner {
+			font-size: 0.8em;
+		}
+
+		.text-icon {
+			border: 1px solid #000;
+			text-align: center;
+		}
+
+		.page-cover-image {
+			display: block;
+			object-fit: cover;
+			width: 100%;
+			max-height: 30vh;
+		}
+
+		.page-header-icon {
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+
+		.page-header-icon-with-cover {
+			margin-top: -0.72em;
+			margin-left: 0.07em;
+		}
+
+		.page-header-icon img {
+			border-radius: 3px;
+		}
+
+		.link-to-page {
+			margin: 1em 0;
+			padding: 0;
+			border: none;
+			font-weight: 500;
+		}
+
+		p>.user {
+			opacity: 0.5;
+		}
+
+		td>.user,
+		td>time {
+			white-space: nowrap;
+		}
+
+		input[type="checkbox"] {
+			transform: scale(1.5);
+			margin-right: 0.6em;
+			vertical-align: middle;
+		}
+
+		p {
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.image {
+			border: none;
+			margin: 1.5em 0;
+			padding: 0;
+			border-radius: 0;
+			text-align: center;
+		}
+
+		.code,
+		code {
+			background: rgba(135, 131, 120, 0.15);
+			border-radius: 3px;
+			padding: 0.2em 0.4em;
+			border-radius: 3px;
+			font-size: 85%;
+			tab-size: 2;
+		}
+
+		code {
+			color: #eb5757;
+		}
+
+		.code {
+			padding: 1.5em 1em;
+		}
+
+		.code-wrap {
+			white-space: pre-wrap;
+			word-break: break-all;
+		}
+
+		.code>code {
+			background: none;
+			padding: 0;
+			font-size: 100%;
+			color: inherit;
+		}
+
+		blockquote {
+			font-size: 1.25em;
+			margin: 1em 0;
+			padding-left: 1em;
+			border-left: 3px solid rgb(55, 53, 47);
+		}
+
+		.bookmark {
+			text-decoration: none;
+			max-height: 8em;
+			padding: 0;
+			display: flex;
+			width: 100%;
+			align-items: stretch;
+		}
+
+		.bookmark-title {
+			font-size: 0.85em;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			height: 1.75em;
+			white-space: nowrap;
+		}
+
+		.bookmark-text {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.bookmark-info {
+			flex: 4 1 180px;
+			padding: 12px 14px 14px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.bookmark-image {
+			width: 33%;
+			flex: 1 1 180px;
+			display: block;
+			position: relative;
+			object-fit: cover;
+			border-radius: 1px;
+		}
+
+		.bookmark-description {
+			color: rgba(55, 53, 47, 0.6);
+			font-size: 0.75em;
+			overflow: hidden;
+			max-height: 4.5em;
+			word-break: break-word;
+		}
+
+		.bookmark-href {
+			font-size: 0.75em;
+			margin-top: 0.25em;
+		}
+
+		.sans {
+			font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+		}
+
+		.code {
+			font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+		}
+
+		.serif {
+			font-family: Lyon-Text, Georgia, ui-serif, serif;
+		}
+
+		.mono {
+			font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+		}
+
+		.pdf .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR';
+		}
+
+		.pdf .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.pdf .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR';
+		}
+
+		.pdf .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.highlight-default {
+			color: rgba(55, 53, 47, 1);
+		}
+
+		.highlight-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.highlight-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.highlight-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.highlight-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.highlight-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.highlight-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.highlight-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.highlight-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.highlight-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.highlight-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.highlight-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.highlight-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.highlight-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.highlight-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.highlight-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.highlight-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.highlight-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.highlight-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.block-color-default {
+			color: inherit;
+			fill: inherit;
+		}
+
+		.block-color-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.block-color-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.block-color-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.block-color-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.block-color-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.block-color-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.block-color-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.block-color-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.block-color-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.block-color-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.block-color-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.block-color-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.block-color-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.block-color-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.block-color-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.block-color-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.block-color-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.block-color-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.select-value-color-interactiveBlue {
+			background-color: rgba(35, 131, 226, .07);
+		}
+
+		.select-value-color-pink {
+			background-color: rgba(245, 224, 233, 1);
+		}
+
+		.select-value-color-purple {
+			background-color: rgba(232, 222, 238, 1);
+		}
+
+		.select-value-color-green {
+			background-color: rgba(219, 237, 219, 1);
+		}
+
+		.select-value-color-gray {
+			background-color: rgba(227, 226, 224, 1);
+		}
+
+		.select-value-color-translucentGray {
+			background-color: rgba(255, 255, 255, 0.0375);
+		}
+
+		.select-value-color-orange {
+			background-color: rgba(250, 222, 201, 1);
+		}
+
+		.select-value-color-brown {
+			background-color: rgba(238, 224, 218, 1);
+		}
+
+		.select-value-color-red {
+			background-color: rgba(255, 226, 221, 1);
+		}
+
+		.select-value-color-yellow {
+			background-color: rgba(253, 236, 200, 1);
+		}
+
+		.select-value-color-blue {
+			background-color: rgba(211, 229, 239, 1);
+		}
+
+		.select-value-color-pageGlass {
+			background-color: undefined;
+		}
+
+		.select-value-color-washGlass {
+			background-color: undefined;
+		}
+
+		.checkbox {
+			display: inline-flex;
+			vertical-align: text-bottom;
+			width: 16;
+			height: 16;
+			background-size: 16px;
+			margin-left: 2px;
+			margin-right: 5px;
+		}
+
+		.checkbox-on {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+
+		.checkbox-off {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+	</style>
+</head>
+
+<body>
+	<article id="da64cd79-c153-4a22-9281-e7ab85b1194e" class="page sans">
+		<header>
+			<div class="page-header-icon undefined"><span class="icon">💡</span></div>
+			<h1 class="page-title">Chapter 2 - Ideengenerierung - Kittyhawk</h1>
+			<p class="page-description"></p>
+		</header>
+		<div class="page-body">
+			<p id="b7e64e08-cc5a-48ad-bca9-36dab289ac3c" class="">Sebastian Thrun</p>
+			<p id="35da421d-36fd-4b9a-99c3-09430ee694c1" class="">
+			</p>
+			<ul id="4d24b188-a117-4e85-8f07-d20e62d4648a" class="bulleted-list">
+				<li style="list-style-type:disc">Ist CEO von Kittyhawk (Flugtaxis)</li>
+			</ul>
+			<ul id="60b4c966-4a2f-4a35-8432-f87c7efd5f3f" class="bulleted-list">
+				<li style="list-style-type:disc">Ist Prof. an der Stanford University</li>
+			</ul>
+			<ul id="298562db-81f9-4cfb-993d-4af0298decde" class="bulleted-list">
+				<li style="list-style-type:disc">Ging mit 27 Jahren nach Pittsburgh als Prof.</li>
+			</ul>
+			<ul id="49a20af4-117e-4fe6-ab35-c675ed254da1" class="bulleted-list">
+				<li style="list-style-type:disc">Hat mit Studenten Projekt gestartet/ Unternehmen gegründet, welches
+					später von Google aufgekauft und zu Google Street View wurde. </li>
+			</ul>
+			<ul id="229cf15a-1426-4e43-a7aa-e2987aa3579f" class="bulleted-list">
+				<li style="list-style-type:disc">Hat Udacity gegründed → Education Company</li>
+			</ul>
+			<ul id="cf865458-d347-4526-b4fb-a83cdce9d0a8" class="bulleted-list">
+				<li style="list-style-type:disc">Er hat zwei Maxime im Leben: “I wanna make the world a better place.”
+					und “I want to learn as much and as long as I can.”</li>
+			</ul>
+			<ul id="469eb5f3-fd0b-4144-84e7-c2fc68c54e70" class="bulleted-list">
+				<li style="list-style-type:disc">Probleme werden nicht alleinne gelöst, sondern in Zusammenarbeit mit
+					anderen Menschen</li>
+			</ul>
+			<p id="beb07c33-27ff-4551-9c99-7fb2166aaa0c" class="">
+			</p>
+			<p id="9c6f9ba7-1e46-4bb9-8cde-b17c48313a13" class="">Fehlerkultur:</p>
+			<ul id="080c1171-fa38-437b-827c-6c324131024d" class="bulleted-list">
+				<li style="list-style-type:disc">Grundprinzip der Innovation ist es, etwas zu machen, was zuvor noch
+					niemand anderes gemacht hat. Daher weiß auch niemand so richtig, was der richtige Weg ist.</li>
+			</ul>
+			<ul id="28aa31bc-58a5-4386-88ba-db88ab71a275" class="bulleted-list">
+				<li style="list-style-type:disc">Wenn man sich etwas versucht aufzubauen, gibt es zwei mögliche
+					Ausgänge:
+					1. Es funktioniert und man lernt dadurch
+					2. Es funktioniert und man lernt trotzdem dadurch</li>
+			</ul>
+			<ul id="ab53f7d8-0ced-4096-b526-2082d2f2cdc2" class="bulleted-list">
+				<li style="list-style-type:disc">Grundsatz: “Ich bin bereit jeden Fehler zu machen, nur nicht den selben
+					Fehler zweimal. Das ist wirklich entscheidend.”</li>
+			</ul>
+			<ul id="7feb2e5d-186f-421e-86be-4099f8b8c4a4" class="bulleted-list">
+				<li style="list-style-type:disc">Ganz wichtig: Nicht emotional handeln! Führt zu extrem unvorteilhaften
+					Fehlern!</li>
+			</ul>
+			<ul id="8bdc76ee-0ce7-44d0-952d-46c5aa9864ec" class="bulleted-list">
+				<li style="list-style-type:disc">Sebastians Vorgehensweise bezüglich Entscheidungen von oben: Keinen
+					Konsensus haben, einfach Sachen machen und schauen was passiert
+					→ Nicht erst einmal an hunderten Meetings teilnehmen und abwarten was entschieden wird.
+					→ <strong>Dabei ist jedoch stets der Fokus auf der Firma wichtig und nicht auf sich selber. Nur
+						dadurch kann man dieses Verhalten auch rechtfertigen.</strong></li>
+			</ul>
+			<ul id="d8baa78d-381f-4e5c-9e08-21550042d584" class="bulleted-list">
+				<li style="list-style-type:disc">Zitat von Aristoteles nach dem er sich richtet:
+					“Das Problem ist nicht, dass wir zu hoch zielen und dann das Ziel nicht erreichen. Sondern das
+					Problem ist, dass wir zu tief zielen und das Ziel dann auch erreichen.”</li>
+			</ul>
+			<ul id="40fe5941-912f-4bcc-9cef-ee95a90981c9" class="bulleted-list">
+				<li style="list-style-type:disc">Kritisieren/ Kritik an neuen Ideen in unserer Gesellschaft (vor allem
+					in Deutschland) zieht Menschen nach unten und nimmt ihnen ihre Visionen/ nimmt ihnen die Energie. Da
+					durchzukommen und den Stolz und die Vision beizubehalten, ist garnicht so einfach. → Deutlich
+					einfacher in den USA (vor allem im Silicon Valley)</li>
+			</ul>
+			<ul id="7292e16c-dfce-44ba-bbc9-4e2192612a64" class="bulleted-list">
+				<li style="list-style-type:disc">Optimismus behalten: Erfindungen die für uns heute völliger Alltag
+					sind, waren vor 100 Jahren völlig undenkbar (Vergleich: Videotelefonie und Beamen) und so wird es
+					auch in 100 Jahren von jetzt wieder der Fall sein (vermutlich auch schon deutlich früher).
+					→<strong> Man muss an Dinge glauben die eigentlich “garnicht möglich” sind.</strong></li>
+			</ul>
+			<p id="5f1bd50e-34ba-4ed0-9faf-6542151f474e" class="">
+			</p>
+			<p id="8f2f757d-389b-4d9b-b05b-0a500ce4a665" class="">Wie finde ich eine Geschäftsidee:</p>
+			<ul id="790ec345-7486-4958-bee7-87f4f5673161" class="bulleted-list">
+				<li style="list-style-type:disc">Mit der Vision anfangen
+					→ Wie wird die Welt verbessert?
+					→ Welches Problem will ich beheben?</li>
+			</ul>
+			<ul id="2eaa5279-566d-4d48-b922-87a60b6ce3de" class="bulleted-list">
+				<li style="list-style-type:disc">Klarheit darüber haben, wo es hingehen soll, was die Vision/ das
+					übergeordnete Ziel ist.
+					→ Es funktioniert nicht, als Firma zwei Gipfel gleichzeitig zu besteigen.</li>
+			</ul>
+			<ul id="3ab6bdc8-8702-4c6e-a57f-32b28855121b" class="bulleted-list">
+				<li style="list-style-type:disc">“Sei arrogant genug für große Vision und humble genug mit deiner Idee
+					lernen zu wollen.”</li>
+			</ul>
+			<ul id="d0f5e845-8b46-4027-a7a1-ad7efbaf97d8" class="bulleted-list">
+				<li style="list-style-type:disc">Mit wem spricht man über (Geschäfts-) Ideen die man hat:
+					→ Mit unterschiedlichen Menschen sprechen und zwar mit welchen aus dem Feld aber auch mit welche die
+					gar nichts mit dem Feld zu tun haben, in dem sich die Geschäftsidee bewegt (z. B. eigene
+					Großmutter).
+					→ Abkoppeln von Menschen, die lediglich der Kritik wegen die eigene Idee kritisieren und einen
+					deshalb vielleicht sogar nicht mögen
+					→ <strong>“Ein Experte ist ein großes Problem für Innovation. Die Experten sind Experten der
+						Vergangenheit. Sie kennen sich damit aus, wie Sachen heutzutage gemacht werden und schauen unter
+						Umständen nicht über den Tellerrand hinweg.”</strong>
+					→ Er hat eine relativ feste Regel:
+					<strong>“Wenn ich innovativ arbeite, höre ich keine Experten an. Ich suche mir Leute, die mit einem
+						offenen Mindset Sachen neu angehen und neu betrachten können und nicht bereits wissen, wie die
+						Sache gemacht wird. Wenn man weiß, wie es gemacht wird, hat man relativ wenig Kapazität das
+						ganze noch zu überdenken und neu zu machen.”</strong>
+				</li>
+			</ul>
+			<ul id="ad14874d-c4eb-4a41-bff4-722c5e85b7d6" class="bulleted-list">
+				<li style="list-style-type:disc">Zwei Arten des Denkens:
+					1. Denken in Analogien (z. B. “Ich ziehe mir heute ein Hemd an, weil es sich über Jahrzehnte
+					etabliert hat, dass Menschen in bestimmten Situationen Hemden tragen.”)
+					2. Denken in First Principles - prinzipielles/ logisches Denken</li>
+			</ul>
+			<ul id="af79cbec-ee3c-4e9c-b864-ce2b2a8e34a5" class="bulleted-list">
+				<li style="list-style-type:disc">Wenn man eine Idee hat, damit in die Diskussion mit anderen Menschen
+					gehen um zu sehen, wie sie darüber denken. Die Idee wird (abhängig von der Art der Gesprächspartner)
+					in der Regel nicht geklaut, weshalb dies eine valide Herangehensweise ist.</li>
+			</ul>
+			<ul id="d3272871-3195-4f3e-8054-4dfc13d766f5" class="bulleted-list">
+				<li style="list-style-type:disc">Nicht auf die Idee fokussieren, sondern auf das Problem und die Vision.
+					→ Oftmals falsche Herangehensweise an Unternehmensgründung bzw. Ideenfindung für Geschäftsidee.
+					<strong>NICHT</strong>: “Ich habe diesen Roboter erfunden, der laufen und mit Menschen kommunizieren
+					kann, jetzt überlege ich mir, wie ich diesen im Rahmen einer Geschäftsidee einsetzen kann.
+					Ah, man könnte ihn für die Altenpflege einsetzen denn dort gibt es einen Personalmangel und der
+					Roboter kann einiger dieser Probleme bestimmt lösen.”
+					<strong>SONDERN</strong>: “Was ist das Problem? Mit betroffenen Personen sprechen und herausfinden,
+					wo Pain Points sind und wie sie sich vorstellen könnten, dass das Problem gelöst werden kann. Was
+					ist der sinnvollste und einfachste Weg, dieses Problem zu lösen?”
+					→ Hierbei entfällt der Gedanke des Roboters in der Regeln und es gibt wesentlich sinnvollere und
+					einfachere Herangehensweisen.
+				</li>
+			</ul>
+			<h3 id="c544fe0f-d168-4e5e-8c39-5bc436473a78" class="">
+				Wie wird Erfolg definiert:</h3>
+			<ul id="2a799675-b246-43c5-8102-d37ad6dba013" class="bulleted-list">
+				<li style="list-style-type:disc">Sich selber überlegen und für sich definieren, was die Idee erfolgreich
+					machen würde bzw. welches Ergebnis als Erfolg betrachtet werden kann.
+					→ Metriken definieren, was man mit der Idee wirklich erreichen möchte!</li>
+			</ul>
+			<p id="a3cc1e96-991a-47d8-a709-f9171459e8ea" class="">
+			</p>
+			<h3 id="a1d8ddf5-3a5d-49ae-b61e-b18b2145c113" class="">Praktische Tipps und Aufgaben:</h3>
+			<ul id="1acb3b6e-a244-4fff-b4dd-75405a19fb82" class="bulleted-list">
+				<li style="list-style-type:disc">Tipp:
+					Radikaler Optimismus und Po­si­ti­vi­tät!
+					→ Sehen was gut läuft in der Welt oder auch lokal: Kein Krieg in Deutschland, mehr als genug Essen
+					für BürgerInnen (zumindest in den meisten westlichen Ländern)</li>
+			</ul>
+			<ul id="ef8baabd-1f1a-4583-b340-fb692cfabf01" class="bulleted-list">
+				<li style="list-style-type:disc">Aufgabe:
+					Frage drei Familienmitglieder oder Freunde was deren größtes Problem ist (z. B. “Was bewegt dich
+					jeden Tag?”), ohne ein Wort zu sprechen.
+					→ Anschließend darüber nachdenken, mit welcher Technologie man das Problem lösen kann.
+					→ Danach zurück zu dieser Person gehen und ihr die Problemlösung präsentieren- schauen, ob die
+					Person lächelt.</li>
+			</ul>
+			<p id="b0fb5036-d6f1-40d3-9a82-60dd1879cc40" class="">
+			</p>
+			<h3 id="872408cc-550a-453c-b890-fc4aa7534890" class=""><strong><strong>Reflektionsaufgabe</strong></strong>:
+			</h3>
+			<p id="dac4b5f9-1dc4-4001-a646-bdbaefc78ab0" class="">Frage Nr. 1:
+				Welche Alltagsprobleme nerven dich? Was sind Dinge, bei denen du denkst: Das sollte anderes
+				funktionieren?</p>
+			<p id="c8097450-7c7d-4f3e-83b7-864cc100419e" class="">Antwort zu Frage Nr. 1:</p>
+			<ul id="ef8b6714-1f16-4e0a-a452-27fa04589d54" class="bulleted-list">
+				<li style="list-style-type:disc">Viele kleine Baustellen im Alltag, die erst einmal abgearbeitet werden
+					müssen, damit man mit den großen, wirklich relevanten Themen anfangen kann. (z. B. Wäsche machen,
+					putzen, einkaufen gehen, Ordnung schaffen - insgesamt: Sich um den Haushalt kümmern)</li>
+			</ul>
+			<ul id="81ff5cf5-706a-44ce-a2b8-4d9ba21027b7" class="bulleted-list">
+				<li style="list-style-type:disc">Ich möchte mich mehr mit Menschen zu Themen austauschen die mich
+					interessieren wie Web3.0 und in denen ich mir eine Gründung vorstellen kann, jedoch ist die
+					Community dafür hier in meiner Heimatstadt (Köln) noch recht klein und es gibt nicht viele
+					Anlaufstellen.</li>
+			</ul>
+			<p id="584ab44f-3954-4231-819b-a0db048bf72b" class="">
+			</p>
+			<p id="3f4ebe5d-4fd1-4371-a44d-784c1d16f3df" class="">Frage Nr. 2:
+				Sprich auch mit Menschen in deinem Umfeld darüber, welche Dinge ihnen einfallen und trag sie dann hier
+				ein .</p>
+			<p id="149713d5-acf5-43a6-a1a4-5dc4600e55f5" class="">Antwort zu Frage Nr. 2:</p>
+			<ul id="a6829c6d-6607-4332-96e7-d321796f4f42" class="bulleted-list">
+				<li style="list-style-type:disc">Lebensmittel im Kühlschrank werden schlecht, da man den Überblick
+					darüber verliert, was man alles in welchen Mengen hat.</li>
+			</ul>
+			<ul id="465e3c24-328f-4690-bfc9-37eb29ded90a" class="bulleted-list">
+				<li style="list-style-type:disc">Lebensmitteleinkauf findet in der Regel nicht in den Mengen statt, die
+					man auch tatsächlich benötigt, sondern in vorgefertigten Standardgrößen. Dadurch kommt es auch zu
+					dem hiervor beschriebenen Problem, dass Lebensmittel schlecht werden, nicht mehr verzehrt werden
+					können und weggeschmissen werden müssen.</li>
+			</ul>
+			<ul id="1673ed18-0f55-41cd-881c-69b6ff361d41" class="bulleted-list">
+				<li style="list-style-type:disc">Achtloser Umgang der Menschen mit ihrer Umwelt z. B. in der Form, dass
+					Müll überall achtlos hingeschmissen wird.</li>
+			</ul>
+			<p id="f0957cd1-524b-43f6-b5af-c13182ebeb53" class="">
+			</p>
+			<p id="119b65ce-bfae-4ca2-91af-785e08adcb44" class="">Frage Nr. 3:
+				Entwickle für eines der identifizierten Probleme eine erste Lösungsidee. Wichtig: Überspringe nicht
+				Schritt 1 und 2!</p>
+			<p id="c7cc89ea-11ef-441f-be07-968afb86adc5" class="">Antwort zu Frage Nr. 3:
+				Problem Nr. 2:
+				Ich möchte mich mehr mit Menschen zu Themen austauschen die mich interessieren wie Web3.0 und in denen
+				ich mir eine Gründung vorstellen kann, jedoch ist die Community dafür hier in meiner Heimatstadt (Köln)
+				noch recht klein und es gibt nicht viele Anlaufstellen.
+				Lösung Nr. 2:
+				Genau diese Tatsache, dass es noch wenig Community in meiner Heimatstadt zu diesem Thema gibt ist
+				interessant und kann mir in die Karten spielen, wenn ich selber eine solche aufbaue. Dadurch könnte ich
+				den &quot;First Mover Vorteil&quot; ausnutzen. Erst einmal gilt es herauszufinden, ob es in Köln
+				überhaupt genügend interessierte Leute in dem Bereich gibt und über welche Kanäle dieser erreicht werden
+				können.Dafür bietet sich über die Veranstaltung von lokalen Events, zu denen man z. B. mit free Pizza
+				lockt und in denen z. B. Vorträge gehalten werden, auch stadtübergreifende Maßnahmen an, wie der Aufbau
+				eigener Social Media Kanäle über die ein Mehrwert für die Community generiert wird. Vorstellbar dafür
+				sind Newsletter (eMail, LinkedIn, ...), Podcasts und Videos zu dem Thema (z. B. über Youtube).Über
+				diesen Weg kann ich mir selber eine Community aufbauen und diese zu einem späteren Zeitpunkt auch
+				nutzen, wenn es zum Beispiel um die Startup/ Unternehmensgründung geht (Arbeitnehmer und Interessierte
+				Personen mit einbeziehen und das entstandene Netzwerk nutzen).Später sind auch weitere
+				Veranstaltungsformate denkbar wie Ausstellungen und Messen.</p>
+			<p id="e7ab3912-dc4f-481a-a157-5d9c5c67b755" class="">Frage Nr. 3:
+			</p>
+			<p id="4ff40949-b24e-40c5-ad28-4ad221361222" class="">Antwort zu Frage Nr. 3:</p>
+			<p id="3ad0dca6-78e7-4214-8df8-6796e9e8b340" class="">
+			</p>
+			<h3 id="451f7881-0c77-4868-a922-4b8333f6e8df" class="">Weiterführende Literatur:</h3>
+			<p id="0b9416c3-780c-4266-8a37-81ff6e26ba8b" class="">Peter Thiel, Zero to One: Wie Innovation unsere
+				Gesellschaft rettet</p>
+			<p id="d831b155-e6e5-4ceb-9d52-928503dc8723" class=""><a
+					href="https://medium.com/the-mission/elon-musks-3-step-first-principles-thinking-how-to-think-and-solve-difficult-problems-like-a-ba1e73a9f6c0">Elon
+					Musks’ “3-Step” First Principles Thinking: How to Think and Solve Difficult Problems Like a
+					Genius</a></p>
+			<p id="53380efb-f11d-48c2-93f3-cc669a35e872" class="">Eric Ries, Lean Startup: Schnell, risikolos und
+				erfolgreich Unternehmen gründen</p>
+		</div>
+	</article>
+</body>
+
+</html>

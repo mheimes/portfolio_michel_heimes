@@ -1,0 +1,1009 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Pizza machen am 28.05.2023</title>
+	<style>
+		/* cspell:disable-file */
+		/* webkit printing magic: print all background colors */
+		html {
+			-webkit-print-color-adjust: exact;
+		}
+
+		* {
+			box-sizing: border-box;
+			-webkit-print-color-adjust: exact;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		@media only screen {
+			body {
+				margin: 2em auto;
+				max-width: 900px;
+				color: rgb(55, 53, 47);
+			}
+		}
+
+		body {
+			line-height: 1.5;
+			white-space: pre-wrap;
+		}
+
+		a,
+		a.visited {
+			color: inherit;
+			text-decoration: underline;
+		}
+
+		.pdf-relative-link-path {
+			font-size: 80%;
+			color: #444;
+		}
+
+		h1,
+		h2,
+		h3 {
+			letter-spacing: -0.01em;
+			line-height: 1.2;
+			font-weight: 600;
+			margin-bottom: 0;
+		}
+
+		.page-title {
+			font-size: 2.5rem;
+			font-weight: 700;
+			margin-top: 0;
+			margin-bottom: 0.75em;
+		}
+
+		h1 {
+			font-size: 1.875rem;
+			margin-top: 1.875rem;
+		}
+
+		h2 {
+			font-size: 1.5rem;
+			margin-top: 1.5rem;
+		}
+
+		h3 {
+			font-size: 1.25rem;
+			margin-top: 1.25rem;
+		}
+
+		.source {
+			border: 1px solid #ddd;
+			border-radius: 3px;
+			padding: 1.5em;
+			word-break: break-all;
+		}
+
+		.callout {
+			border-radius: 3px;
+			padding: 1rem;
+		}
+
+		figure {
+			margin: 1.25em 0;
+			page-break-inside: avoid;
+		}
+
+		figcaption {
+			opacity: 0.5;
+			font-size: 85%;
+			margin-top: 0.5em;
+		}
+
+		mark {
+			background-color: transparent;
+		}
+
+		.indented {
+			padding-left: 1.5em;
+		}
+
+		hr {
+			background: transparent;
+			display: block;
+			width: 100%;
+			height: 1px;
+			visibility: visible;
+			border: none;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+		}
+
+		img {
+			max-width: 100%;
+		}
+
+		@media only print {
+			img {
+				max-height: 100vh;
+				object-fit: contain;
+			}
+		}
+
+		@page {
+			margin: 1in;
+		}
+
+		.collection-content {
+			font-size: 0.875rem;
+		}
+
+		.column-list {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.column {
+			padding: 0 1em;
+		}
+
+		.column:first-child {
+			padding-left: 0;
+		}
+
+		.column:last-child {
+			padding-right: 0;
+		}
+
+		.table_of_contents-item {
+			display: block;
+			font-size: 0.875rem;
+			line-height: 1.3;
+			padding: 0.125rem;
+		}
+
+		.table_of_contents-indent-1 {
+			margin-left: 1.5rem;
+		}
+
+		.table_of_contents-indent-2 {
+			margin-left: 3rem;
+		}
+
+		.table_of_contents-indent-3 {
+			margin-left: 4.5rem;
+		}
+
+		.table_of_contents-link {
+			text-decoration: none;
+			opacity: 0.7;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid rgba(55, 53, 47, 0.09);
+			border-collapse: collapse;
+		}
+
+		table {
+			border-left: none;
+			border-right: none;
+		}
+
+		th,
+		td {
+			font-weight: normal;
+			padding: 0.25em 0.5em;
+			line-height: 1.5;
+			min-height: 1.5em;
+			text-align: left;
+		}
+
+		th {
+			color: rgba(55, 53, 47, 0.6);
+		}
+
+		ol,
+		ul {
+			margin: 0;
+			margin-block-start: 0.6em;
+			margin-block-end: 0.6em;
+		}
+
+		li>ol:first-child,
+		li>ul:first-child {
+			margin-block-start: 0.6em;
+		}
+
+		ul>li {
+			list-style: disc;
+		}
+
+		ul.to-do-list {
+			padding-inline-start: 0;
+		}
+
+		ul.to-do-list>li {
+			list-style: none;
+		}
+
+		.to-do-children-checked {
+			text-decoration: line-through;
+			opacity: 0.375;
+		}
+
+		ul.toggle>li {
+			list-style: none;
+		}
+
+		ul {
+			padding-inline-start: 1.7em;
+		}
+
+		ul>li {
+			padding-left: 0.1em;
+		}
+
+		ol {
+			padding-inline-start: 1.6em;
+		}
+
+		ol>li {
+			padding-left: 0.2em;
+		}
+
+		.mono ol {
+			padding-inline-start: 2em;
+		}
+
+		.mono ol>li {
+			text-indent: -0.4em;
+		}
+
+		.toggle {
+			padding-inline-start: 0em;
+			list-style-type: none;
+		}
+
+		/* Indent toggle children */
+		.toggle>li>details {
+			padding-left: 1.7em;
+		}
+
+		.toggle>li>details>summary {
+			margin-left: -1.1em;
+		}
+
+		.selected-value {
+			display: inline-block;
+			padding: 0 0.5em;
+			background: rgba(206, 205, 202, 0.5);
+			border-radius: 3px;
+			margin-right: 0.5em;
+			margin-top: 0.3em;
+			margin-bottom: 0.3em;
+			white-space: nowrap;
+		}
+
+		.collection-title {
+			display: inline-block;
+			margin-right: 1em;
+		}
+
+		.page-description {
+			margin-bottom: 2em;
+		}
+
+		.simple-table {
+			margin-top: 1em;
+			font-size: 0.875rem;
+			empty-cells: show;
+		}
+
+		.simple-table td {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table th {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table-header-color {
+			background: rgb(247, 246, 243);
+			color: black;
+		}
+
+		.simple-table-header {
+			font-weight: 500;
+		}
+
+		time {
+			opacity: 0.5;
+		}
+
+		.icon {
+			display: inline-block;
+			max-width: 1.2em;
+			max-height: 1.2em;
+			text-decoration: none;
+			vertical-align: text-bottom;
+			margin-right: 0.5em;
+		}
+
+		img.icon {
+			border-radius: 3px;
+		}
+
+		.user-icon {
+			width: 1.5em;
+			height: 1.5em;
+			border-radius: 100%;
+			margin-right: 0.5rem;
+		}
+
+		.user-icon-inner {
+			font-size: 0.8em;
+		}
+
+		.text-icon {
+			border: 1px solid #000;
+			text-align: center;
+		}
+
+		.page-cover-image {
+			display: block;
+			object-fit: cover;
+			width: 100%;
+			max-height: 30vh;
+		}
+
+		.page-header-icon {
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+
+		.page-header-icon-with-cover {
+			margin-top: -0.72em;
+			margin-left: 0.07em;
+		}
+
+		.page-header-icon img {
+			border-radius: 3px;
+		}
+
+		.link-to-page {
+			margin: 1em 0;
+			padding: 0;
+			border: none;
+			font-weight: 500;
+		}
+
+		p>.user {
+			opacity: 0.5;
+		}
+
+		td>.user,
+		td>time {
+			white-space: nowrap;
+		}
+
+		input[type="checkbox"] {
+			transform: scale(1.5);
+			margin-right: 0.6em;
+			vertical-align: middle;
+		}
+
+		p {
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.image {
+			border: none;
+			margin: 1.5em 0;
+			padding: 0;
+			border-radius: 0;
+			text-align: center;
+		}
+
+		.code,
+		code {
+			background: rgba(135, 131, 120, 0.15);
+			border-radius: 3px;
+			padding: 0.2em 0.4em;
+			border-radius: 3px;
+			font-size: 85%;
+			tab-size: 2;
+		}
+
+		code {
+			color: #eb5757;
+		}
+
+		.code {
+			padding: 1.5em 1em;
+		}
+
+		.code-wrap {
+			white-space: pre-wrap;
+			word-break: break-all;
+		}
+
+		.code>code {
+			background: none;
+			padding: 0;
+			font-size: 100%;
+			color: inherit;
+		}
+
+		blockquote {
+			font-size: 1.25em;
+			margin: 1em 0;
+			padding-left: 1em;
+			border-left: 3px solid rgb(55, 53, 47);
+		}
+
+		.bookmark {
+			text-decoration: none;
+			max-height: 8em;
+			padding: 0;
+			display: flex;
+			width: 100%;
+			align-items: stretch;
+		}
+
+		.bookmark-title {
+			font-size: 0.85em;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			height: 1.75em;
+			white-space: nowrap;
+		}
+
+		.bookmark-text {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.bookmark-info {
+			flex: 4 1 180px;
+			padding: 12px 14px 14px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.bookmark-image {
+			width: 33%;
+			flex: 1 1 180px;
+			display: block;
+			position: relative;
+			object-fit: cover;
+			border-radius: 1px;
+		}
+
+		.bookmark-description {
+			color: rgba(55, 53, 47, 0.6);
+			font-size: 0.75em;
+			overflow: hidden;
+			max-height: 4.5em;
+			word-break: break-word;
+		}
+
+		.bookmark-href {
+			font-size: 0.75em;
+			margin-top: 0.25em;
+		}
+
+		.sans {
+			font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+		}
+
+		.code {
+			font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+		}
+
+		.serif {
+			font-family: Lyon-Text, Georgia, ui-serif, serif;
+		}
+
+		.mono {
+			font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+		}
+
+		.pdf .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR';
+		}
+
+		.pdf .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.pdf .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR';
+		}
+
+		.pdf .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.highlight-default {
+			color: rgba(55, 53, 47, 1);
+		}
+
+		.highlight-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.highlight-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.highlight-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.highlight-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.highlight-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.highlight-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.highlight-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.highlight-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.highlight-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.highlight-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.highlight-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.highlight-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.highlight-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.highlight-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.highlight-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.highlight-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.highlight-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.highlight-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.block-color-default {
+			color: inherit;
+			fill: inherit;
+		}
+
+		.block-color-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.block-color-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.block-color-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.block-color-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.block-color-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.block-color-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.block-color-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.block-color-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.block-color-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.block-color-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.block-color-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.block-color-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.block-color-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.block-color-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.block-color-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.block-color-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.block-color-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.block-color-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.select-value-color-interactiveBlue {
+			background-color: rgba(35, 131, 226, .07);
+		}
+
+		.select-value-color-pink {
+			background-color: rgba(245, 224, 233, 1);
+		}
+
+		.select-value-color-purple {
+			background-color: rgba(232, 222, 238, 1);
+		}
+
+		.select-value-color-green {
+			background-color: rgba(219, 237, 219, 1);
+		}
+
+		.select-value-color-gray {
+			background-color: rgba(227, 226, 224, 1);
+		}
+
+		.select-value-color-translucentGray {
+			background-color: rgba(255, 255, 255, 0.0375);
+		}
+
+		.select-value-color-orange {
+			background-color: rgba(250, 222, 201, 1);
+		}
+
+		.select-value-color-brown {
+			background-color: rgba(238, 224, 218, 1);
+		}
+
+		.select-value-color-red {
+			background-color: rgba(255, 226, 221, 1);
+		}
+
+		.select-value-color-yellow {
+			background-color: rgba(253, 236, 200, 1);
+		}
+
+		.select-value-color-blue {
+			background-color: rgba(211, 229, 239, 1);
+		}
+
+		.select-value-color-pageGlass {
+			background-color: undefined;
+		}
+
+		.select-value-color-washGlass {
+			background-color: undefined;
+		}
+
+		.checkbox {
+			display: inline-flex;
+			vertical-align: text-bottom;
+			width: 16;
+			height: 16;
+			background-size: 16px;
+			margin-left: 2px;
+			margin-right: 5px;
+		}
+
+		.checkbox-on {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+
+		.checkbox-off {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+	</style>
+</head>
+
+<body>
+	<article id="f07d8dd0-f2bd-48d2-9b94-b05d1e46397f" class="page sans">
+		<header>
+			<h1 class="page-title">Pizza machen am 28.05.2023</h1>
+			<p class="page-description"></p>
+			<table class="properties">
+				<tbody>
+					<tr class="property-row property-row-created_time">
+						<th><span class="icon property-icon"><svg viewBox="0 0 16 16"
+									style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden"
+									class="typesCreatedAt">
+									<path
+										d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM4.54102 8.91211H7.99316C8.30078 8.91211 8.54004 8.67285 8.54004 8.37207V3.8877C8.54004 3.58691 8.30078 3.34766 7.99316 3.34766C7.69238 3.34766 7.45312 3.58691 7.45312 3.8877V7.83203H4.54102C4.2334 7.83203 4.00098 8.06445 4.00098 8.37207C4.00098 8.67285 4.2334 8.91211 4.54102 8.91211Z">
+									</path>
+								</svg></span>Created</th>
+						<td><time>@May 29, 2023 7:24 PM</time></td>
+					</tr>
+					<tr class="property-row property-row-multi_select">
+						<th><span class="icon property-icon"><svg viewBox="0 0 16 16"
+									style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden"
+									class="typesMultipleSelect">
+									<path
+										d="M1.91602 4.83789C2.44238 4.83789 2.87305 4.40723 2.87305 3.87402C2.87305 3.34766 2.44238 2.91699 1.91602 2.91699C1.38281 2.91699 0.952148 3.34766 0.952148 3.87402C0.952148 4.40723 1.38281 4.83789 1.91602 4.83789ZM5.1084 4.52344H14.3984C14.7607 4.52344 15.0479 4.23633 15.0479 3.87402C15.0479 3.51172 14.7607 3.22461 14.3984 3.22461H5.1084C4.74609 3.22461 4.45898 3.51172 4.45898 3.87402C4.45898 4.23633 4.74609 4.52344 5.1084 4.52344ZM1.91602 9.03516C2.44238 9.03516 2.87305 8.60449 2.87305 8.07129C2.87305 7.54492 2.44238 7.11426 1.91602 7.11426C1.38281 7.11426 0.952148 7.54492 0.952148 8.07129C0.952148 8.60449 1.38281 9.03516 1.91602 9.03516ZM5.1084 8.7207H14.3984C14.7607 8.7207 15.0479 8.43359 15.0479 8.07129C15.0479 7.70898 14.7607 7.42188 14.3984 7.42188H5.1084C4.74609 7.42188 4.45898 7.70898 4.45898 8.07129C4.45898 8.43359 4.74609 8.7207 5.1084 8.7207ZM1.91602 13.2324C2.44238 13.2324 2.87305 12.8018 2.87305 12.2686C2.87305 11.7422 2.44238 11.3115 1.91602 11.3115C1.38281 11.3115 0.952148 11.7422 0.952148 12.2686C0.952148 12.8018 1.38281 13.2324 1.91602 13.2324ZM5.1084 12.918H14.3984C14.7607 12.918 15.0479 12.6309 15.0479 12.2686C15.0479 11.9062 14.7607 11.6191 14.3984 11.6191H5.1084C4.74609 11.6191 4.45898 11.9062 4.45898 12.2686C4.45898 12.6309 4.74609 12.918 5.1084 12.918Z">
+									</path>
+								</svg></span>Tags</th>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</header>
+		<div class="page-body">
+			<h3 id="ff59fdf9-5c7c-4683-ad11-cd42be136709" class="">Event</h3>
+			<p id="7f6866d6-46e2-4c39-9cb3-6fbf4845da11" class="">Pizza gemacht bei Pauls (Nipkow) Geburtstag.</p>
+			<ul id="84bf0f30-d8f5-40ee-844b-0832f30a8431" class="bulleted-list">
+				<li style="list-style-type:disc">33 Pizzen vorbereitet, 24 gegessen, 24/ 25 Gäste</li>
+			</ul>
+			<ul id="b9066530-93fe-4807-8de4-678c59d652af" class="bulleted-list">
+				<li style="list-style-type:disc">Pizzaback-Zeitraum: ca. 19:00-02:00 Uhr → Die Gäste hatten durchgehend
+					immer wieder Hunger. Man hätte auch einen festen Zeitraum festlegen können wonach sich alle mit
+					ihrem Hunger richten müssen (z. B. 19:00-22:00 Uhr). Dann wären aber vermutlich weniger gemacht
+					wurden.</li>
+			</ul>
+			<ul id="7d9bfafc-15d1-4484-8ccb-f9c280bb3ccb" class="bulleted-list">
+				<li style="list-style-type:disc">Kam unheimlich gut an! Die Leute waren sehr dankbar über das Angebot
+					und erstaunt darüber, so eine Station an dem Ort (Niehler Hafen) zu sehen.</li>
+			</ul>
+			<figure id="bed84639-62a3-49a7-8c1c-df114d68bc49" class="image"><a
+					href="Pizza%20machen%20am%2028%2005%202023%20f07d8dd0f2bd48d29b94b05d1e46397f/IMG_4240.heic"><img
+						src="Pizza%20machen%20am%2028%2005%202023%20f07d8dd0f2bd48d29b94b05d1e46397f/IMG_4240.heic" /></a>
+			</figure>
+			<h3 id="9c3cedd3-4daf-4f90-b1a1-684e47b50624" class="">Zu-/ Vorbereitung</h3>
+			<ul id="ee830af7-a9ec-4239-a56b-f4a402380bd6" class="bulleted-list">
+				<li style="list-style-type:disc">Biga vorbereitet (siehe <a
+						href="Pizza%20machen%20am%2024%2005%202023%2000abd9970b4b483a93077f1d27a2cbf2.html">Pizza machen
+						am 24.05.2023</a>), bei Zimmertemperatur <strong>für ca. 36h ruhen lassen</strong>. Hätte nicht
+					so lange ruhen müssen (24h reichen locker), war lediglich der Fall, da ich den Teig erst spät
+					weitergemacht habe.</li>
+			</ul>
+			<ul id="584a5e78-f350-4d4e-84b9-54846611dcd1" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>Biga heute mit Ankarsrum Knetmaschine mit Wasser und Salz
+						geknetet</strong>. Braucht am Anfang gut Flüssigkeit und manuelle Mithilfe, damit der Teig
+					richtig geknetet wird. <ul id="a99c9c75-760a-476c-a459-a1fcb1f90a0a" class="bulleted-list">
+						<li style="list-style-type:circle">Teig immer wieder mit Löffel oder ähnlichem auf den
+							Schalen-Boden herunterdrücken, sodass der Teig in Bewegung gerät und nicht nur an einer
+							Stelle verbleibt - vor Allem am Anfang nötig, später weniger (wenn Teig schon besser mit
+							Wasser/ Salz vermengt ist).</li>
+					</ul>
+					<ul id="1c290904-ba8f-46b1-a518-6f671c303693" class="bulleted-list">
+						<li style="list-style-type:circle">Auf Biga Menge kommt etwa 8,1% weiteres Wasser hinzu (ca. 63%
+							Hydration) und 1,35% Salz. <ul id="1f495271-2583-4378-99f3-53075c26967b"
+								class="bulleted-list">
+								<li style="list-style-type:square">Rechnung:
+									(Standardmenge Add-On Menge Wasser bzw. Salz auf Biga mit 980-1.000g Mehl) / (Biga
+									Menge Mehl + Biga Menge Wasser + Biga Menge Hefe)<ul
+										id="3dacb0c0-6a74-40de-8f2b-b39b48a2d488" class="bulleted-list">
+										<li style="list-style-type:disc">Beispielsrechnung: 120(ml) / 980(g) + 500(ml) +
+											3(g) frische Hefe ≈ 0,081(%)</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul id="821c94b4-d884-4e66-b9c1-48a97efe5320" class="bulleted-list">
+						<li style="list-style-type:circle"><strong>Endergebnis:
+							</strong>Solider Teig, jedoch trotz nicht zu hoher Hydration noch immer relativ sticky!
+							Teigbällchen brauchten nach dem erneuten einstündigen Ruhen lassen ein wenig Semola, um sie
+							gut händisch formen zu können. </li>
+					</ul>
+				</li>
+			</ul>
+			<ul id="a870165c-3aba-4112-85c2-81c7e2abe17c" class="bulleted-list">
+				<li style="list-style-type:disc">Fertige Teigbälle ca. 7-10h gehen lassen, bis sie zum Einsatz kamen.
+					Hier besser etwas kürzer als länger. 6h hätten höchstwahrscheinlich locker gereicht! (Der Teig ist
+					dann weniger zerlaufen und hängt mehr aneinander.)<figure id="8c6481cd-4df5-41de-9847-95d2fc31a5f8"
+						class="image"><a
+							href="Pizza%20machen%20am%2028%2005%202023%20f07d8dd0f2bd48d29b94b05d1e46397f/IMG_4237.heic"><img
+								src="Pizza%20machen%20am%2028%2005%202023%20f07d8dd0f2bd48d29b94b05d1e46397f/IMG_4237.heic" /></a>
+					</figure>
+					<p id="cd6e7dd1-4587-4d68-b6cb-6bc692594a12" class="">
+					</p>
+					<p id="8bd173f6-dc57-4f67-8939-aef88b04ba5d" class="">Teig nach (gezwungenermaßen) 24h Ruhezeit in
+						Stückgare (da: Rest vom Vorabend). </p>
+					<figure id="fecb35f3-fe38-4387-87be-62d1f3118a5b" class="image"><a
+							href="Pizza%20machen%20am%2028%2005%202023%20f07d8dd0f2bd48d29b94b05d1e46397f/IMG_4257.heic"><img
+								src="Pizza%20machen%20am%2028%2005%202023%20f07d8dd0f2bd48d29b94b05d1e46397f/IMG_4257.heic" /></a>
+					</figure>
+				</li>
+			</ul>
+			<p id="5fe580ba-5c48-4ec5-b1d9-4dc9e81c074d" class="">
+			</p>
+			<h3 id="3bad8be0-0cd7-4442-90ee-c94ed62b6d66" class="">Learnings und Stats</h3>
+			<ul id="0c3ca9a4-faf4-4744-bbe4-eb556cb3436d" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>Fior di Latte</strong> macht großen Sinn, da er beim Backen
+					deutlich weniger Flüssigkeit abgibt als handelsüblicher Kuhmilch Mozzarella. Geschmacklich auch top!
+					(<strong><strong>Fior di Latte geschnitten / Latteria Sorrentina</strong></strong> - <a
+						href="https://www.waldispizza.de/pizzazutaten/kaese/fiordilattesorrentina1500">Hier</a>
+					bestellt!)</li>
+			</ul>
+			<ul id="ede3122e-2db3-40bd-a0a7-f7ea09e2f279" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>Herstellungsmenge &amp; -preis pro Margherita: </strong>
+					<ul id="c81acee3-f0ee-4514-a633-a3a54004ed33" class="bulleted-list">
+						<li style="list-style-type:circle">Teig: 270g, <strong>0,40-0,50€</strong> (Mehlpreis:
+							2,30-2,80€/kg)</li>
+					</ul>
+					<ul id="72fb932f-d52a-4ad1-b1cd-c460a3809581" class="bulleted-list">
+						<li style="list-style-type:circle">San Marzano Tomatensauce: 100g (Endprodukt) vs. 160g
+							(Einkaufsmenge vor dem “Filtern”), <strong>0,62-1,08€</strong> (je nach Einkaufspreis:
+							3,88€/ kg → <a
+								href="https://www.waldispizza.de/pizzazutaten/tomaten/sanmarzanosolania6x3000">günstig</a>
+							vs. 6,73€/ kg → <a
+								href="https://www.waldispizza.de/La-Fiammante-San-Marzano-Tomate-DOP-400g">teurer</a>)
+						</li>
+					</ul>
+					<ul id="4f743185-50df-49b6-8279-e0c243e18a69" class="bulleted-list">
+						<li style="list-style-type:circle">Mozzarella: 100g, <strong>1,26€</strong> (12,60€/ kg)</li>
+					</ul>
+					<ul id="383d1fa7-d86a-4223-9466-4f39fa712ad6" class="bulleted-list">
+						<li style="list-style-type:circle">Parmesan: 5g, <strong>0,13€</strong> (4,00€/ 150g | 26,66€/
+							kg)</li>
+					</ul>
+					<ul id="dbab7a59-7261-4395-9e13-58d5c296376b" class="bulleted-list">
+						<li style="list-style-type:circle">Basilikum: 1/ 16 Pflanze, <strong>0,11€</strong> (1,80€/
+							Pflanze)</li>
+					</ul>
+					<ul id="d058b88f-c50a-4ecb-8de1-66718e1bfb52" class="bulleted-list">
+						<li style="list-style-type:circle">Olivenöl: 12,5ml, <strong>0,09€</strong> (7,00€/ l)</li>
+					</ul>
+					<p id="130a5662-d741-4ab1-8d83-edf4a03571ee" class=""><strong>Gesamt: 2,61€-3,17€</strong></p>
+					<p id="cd47b863-67b2-4e57-832a-2d4c3fbdb425" class="">→ exkl. potentieller Versandkosten!</p>
+				</li>
+			</ul>
+			<ul id="da6bf2ba-1503-47dc-b217-ca1919e4ba72" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>Biga: 24h Gehzeit, einzelne Teigballen: 5-6h Gehzeit ist
+						vermutlich optimal</strong>. (bei 3g frischer Hefe/ kg Mehl)</li>
+			</ul>
+			<ul id="5e1ffa9a-9997-4fed-b9d6-7492a6ebcdb8" class="bulleted-list">
+				<li style="list-style-type:disc">Die <strong>Pizzazubereitung alleine zieht sich immer sehr</strong>,
+					vor allem wenn man immer wieder auch im Gespräch ist und Zusammenhänge erklärt.
+					Heute: 24 Pizzen über 6-7h verteilt gemacht. Dennoch gefühlt fast ununterbrochen Pizza gemacht.</li>
+			</ul>
+			<ul id="ae8a4b03-10d6-4455-b029-929c31c4f4f2" class="bulleted-list">
+				<li style="list-style-type:disc">Wenn Pizza aus Teigballenbox geholt und in Semola gewendet ist, mit der
+					“härteren” Seite (vermutlich die obere in Teigballenbox) auf die Arbeitsfläche und der “weicheren”
+					nach oben.
+					→ Dadurch weniger angebrannter aber dennoch leicht crunchy Boden!
+					→ Nochmal testen und validieren!</li>
+			</ul>
+			<ul id="95074867-774d-4d52-8553-b481c8274250" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>Ofen regelmäßig von Essensresten befreien</strong> (Besen
+					besorgen?!) und darauf achten, dass <strong>nicht wirklich viel Semola unter dem Teig</strong> ist
+					<strong>bzw. auf dem Pizzaheber</strong> (dort auch unter Pizza).
+					→ Ansonsten verbrannte Stellen unterm Boden.</li>
+			</ul>
+			<ul id="048aa5f1-dfe8-433e-8d41-f7300465832d" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>Ofentemperatur</strong> im Idealfall nicht ganz oben (an die
+					500°C) aber auch nicht zu niedrig (390°C).
+					→ Ca. <strong>450°C</strong> im hinteren Bereich sollten optimal sein!</li>
+			</ul>
+			<figure id="d9034c56-0dbe-4b2a-b2d3-efcdeb624d15" class="image"><a
+					href="Pizza%20machen%20am%2028%2005%202023%20f07d8dd0f2bd48d29b94b05d1e46397f/IMG_4246.heic"><img
+						src="Pizza%20machen%20am%2028%2005%202023%20f07d8dd0f2bd48d29b94b05d1e46397f/IMG_4246.heic" /></a>
+			</figure>
+		</div>
+	</article>
+</body>
+
+</html>

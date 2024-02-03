@@ -1,0 +1,1092 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Übung 5: Thematische Aufarbeitung - Global Citizenship</title>
+	<style>
+		/* cspell:disable-file */
+		/* webkit printing magic: print all background colors */
+		html {
+			-webkit-print-color-adjust: exact;
+		}
+
+		* {
+			box-sizing: border-box;
+			-webkit-print-color-adjust: exact;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		@media only screen {
+			body {
+				margin: 2em auto;
+				max-width: 900px;
+				color: rgb(55, 53, 47);
+			}
+		}
+
+		body {
+			line-height: 1.5;
+			white-space: pre-wrap;
+		}
+
+		a,
+		a.visited {
+			color: inherit;
+			text-decoration: underline;
+		}
+
+		.pdf-relative-link-path {
+			font-size: 80%;
+			color: #444;
+		}
+
+		h1,
+		h2,
+		h3 {
+			letter-spacing: -0.01em;
+			line-height: 1.2;
+			font-weight: 600;
+			margin-bottom: 0;
+		}
+
+		.page-title {
+			font-size: 2.5rem;
+			font-weight: 700;
+			margin-top: 0;
+			margin-bottom: 0.75em;
+		}
+
+		h1 {
+			font-size: 1.875rem;
+			margin-top: 1.875rem;
+		}
+
+		h2 {
+			font-size: 1.5rem;
+			margin-top: 1.5rem;
+		}
+
+		h3 {
+			font-size: 1.25rem;
+			margin-top: 1.25rem;
+		}
+
+		.source {
+			border: 1px solid #ddd;
+			border-radius: 3px;
+			padding: 1.5em;
+			word-break: break-all;
+		}
+
+		.callout {
+			border-radius: 3px;
+			padding: 1rem;
+		}
+
+		figure {
+			margin: 1.25em 0;
+			page-break-inside: avoid;
+		}
+
+		figcaption {
+			opacity: 0.5;
+			font-size: 85%;
+			margin-top: 0.5em;
+		}
+
+		mark {
+			background-color: transparent;
+		}
+
+		.indented {
+			padding-left: 1.5em;
+		}
+
+		hr {
+			background: transparent;
+			display: block;
+			width: 100%;
+			height: 1px;
+			visibility: visible;
+			border: none;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+		}
+
+		img {
+			max-width: 100%;
+		}
+
+		@media only print {
+			img {
+				max-height: 100vh;
+				object-fit: contain;
+			}
+		}
+
+		@page {
+			margin: 1in;
+		}
+
+		.collection-content {
+			font-size: 0.875rem;
+		}
+
+		.column-list {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.column {
+			padding: 0 1em;
+		}
+
+		.column:first-child {
+			padding-left: 0;
+		}
+
+		.column:last-child {
+			padding-right: 0;
+		}
+
+		.table_of_contents-item {
+			display: block;
+			font-size: 0.875rem;
+			line-height: 1.3;
+			padding: 0.125rem;
+		}
+
+		.table_of_contents-indent-1 {
+			margin-left: 1.5rem;
+		}
+
+		.table_of_contents-indent-2 {
+			margin-left: 3rem;
+		}
+
+		.table_of_contents-indent-3 {
+			margin-left: 4.5rem;
+		}
+
+		.table_of_contents-link {
+			text-decoration: none;
+			opacity: 0.7;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid rgba(55, 53, 47, 0.09);
+			border-collapse: collapse;
+		}
+
+		table {
+			border-left: none;
+			border-right: none;
+		}
+
+		th,
+		td {
+			font-weight: normal;
+			padding: 0.25em 0.5em;
+			line-height: 1.5;
+			min-height: 1.5em;
+			text-align: left;
+		}
+
+		th {
+			color: rgba(55, 53, 47, 0.6);
+		}
+
+		ol,
+		ul {
+			margin: 0;
+			margin-block-start: 0.6em;
+			margin-block-end: 0.6em;
+		}
+
+		li>ol:first-child,
+		li>ul:first-child {
+			margin-block-start: 0.6em;
+		}
+
+		ul>li {
+			list-style: disc;
+		}
+
+		ul.to-do-list {
+			padding-inline-start: 0;
+		}
+
+		ul.to-do-list>li {
+			list-style: none;
+		}
+
+		.to-do-children-checked {
+			text-decoration: line-through;
+			opacity: 0.375;
+		}
+
+		ul.toggle>li {
+			list-style: none;
+		}
+
+		ul {
+			padding-inline-start: 1.7em;
+		}
+
+		ul>li {
+			padding-left: 0.1em;
+		}
+
+		ol {
+			padding-inline-start: 1.6em;
+		}
+
+		ol>li {
+			padding-left: 0.2em;
+		}
+
+		.mono ol {
+			padding-inline-start: 2em;
+		}
+
+		.mono ol>li {
+			text-indent: -0.4em;
+		}
+
+		.toggle {
+			padding-inline-start: 0em;
+			list-style-type: none;
+		}
+
+		/* Indent toggle children */
+		.toggle>li>details {
+			padding-left: 1.7em;
+		}
+
+		.toggle>li>details>summary {
+			margin-left: -1.1em;
+		}
+
+		.selected-value {
+			display: inline-block;
+			padding: 0 0.5em;
+			background: rgba(206, 205, 202, 0.5);
+			border-radius: 3px;
+			margin-right: 0.5em;
+			margin-top: 0.3em;
+			margin-bottom: 0.3em;
+			white-space: nowrap;
+		}
+
+		.collection-title {
+			display: inline-block;
+			margin-right: 1em;
+		}
+
+		.page-description {
+			margin-bottom: 2em;
+		}
+
+		.simple-table {
+			margin-top: 1em;
+			font-size: 0.875rem;
+			empty-cells: show;
+		}
+
+		.simple-table td {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table th {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table-header-color {
+			background: rgb(247, 246, 243);
+			color: black;
+		}
+
+		.simple-table-header {
+			font-weight: 500;
+		}
+
+		time {
+			opacity: 0.5;
+		}
+
+		.icon {
+			display: inline-block;
+			max-width: 1.2em;
+			max-height: 1.2em;
+			text-decoration: none;
+			vertical-align: text-bottom;
+			margin-right: 0.5em;
+		}
+
+		img.icon {
+			border-radius: 3px;
+		}
+
+		.user-icon {
+			width: 1.5em;
+			height: 1.5em;
+			border-radius: 100%;
+			margin-right: 0.5rem;
+		}
+
+		.user-icon-inner {
+			font-size: 0.8em;
+		}
+
+		.text-icon {
+			border: 1px solid #000;
+			text-align: center;
+		}
+
+		.page-cover-image {
+			display: block;
+			object-fit: cover;
+			width: 100%;
+			max-height: 30vh;
+		}
+
+		.page-header-icon {
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+
+		.page-header-icon-with-cover {
+			margin-top: -0.72em;
+			margin-left: 0.07em;
+		}
+
+		.page-header-icon img {
+			border-radius: 3px;
+		}
+
+		.link-to-page {
+			margin: 1em 0;
+			padding: 0;
+			border: none;
+			font-weight: 500;
+		}
+
+		p>.user {
+			opacity: 0.5;
+		}
+
+		td>.user,
+		td>time {
+			white-space: nowrap;
+		}
+
+		input[type="checkbox"] {
+			transform: scale(1.5);
+			margin-right: 0.6em;
+			vertical-align: middle;
+		}
+
+		p {
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.image {
+			border: none;
+			margin: 1.5em 0;
+			padding: 0;
+			border-radius: 0;
+			text-align: center;
+		}
+
+		.code,
+		code {
+			background: rgba(135, 131, 120, 0.15);
+			border-radius: 3px;
+			padding: 0.2em 0.4em;
+			border-radius: 3px;
+			font-size: 85%;
+			tab-size: 2;
+		}
+
+		code {
+			color: #eb5757;
+		}
+
+		.code {
+			padding: 1.5em 1em;
+		}
+
+		.code-wrap {
+			white-space: pre-wrap;
+			word-break: break-all;
+		}
+
+		.code>code {
+			background: none;
+			padding: 0;
+			font-size: 100%;
+			color: inherit;
+		}
+
+		blockquote {
+			font-size: 1.25em;
+			margin: 1em 0;
+			padding-left: 1em;
+			border-left: 3px solid rgb(55, 53, 47);
+		}
+
+		.bookmark {
+			text-decoration: none;
+			max-height: 8em;
+			padding: 0;
+			display: flex;
+			width: 100%;
+			align-items: stretch;
+		}
+
+		.bookmark-title {
+			font-size: 0.85em;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			height: 1.75em;
+			white-space: nowrap;
+		}
+
+		.bookmark-text {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.bookmark-info {
+			flex: 4 1 180px;
+			padding: 12px 14px 14px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.bookmark-image {
+			width: 33%;
+			flex: 1 1 180px;
+			display: block;
+			position: relative;
+			object-fit: cover;
+			border-radius: 1px;
+		}
+
+		.bookmark-description {
+			color: rgba(55, 53, 47, 0.6);
+			font-size: 0.75em;
+			overflow: hidden;
+			max-height: 4.5em;
+			word-break: break-word;
+		}
+
+		.bookmark-href {
+			font-size: 0.75em;
+			margin-top: 0.25em;
+		}
+
+		.sans {
+			font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+		}
+
+		.code {
+			font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+		}
+
+		.serif {
+			font-family: Lyon-Text, Georgia, ui-serif, serif;
+		}
+
+		.mono {
+			font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+		}
+
+		.pdf .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR';
+		}
+
+		.pdf .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.pdf .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR';
+		}
+
+		.pdf .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.highlight-default {
+			color: rgba(55, 53, 47, 1);
+		}
+
+		.highlight-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.highlight-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.highlight-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.highlight-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.highlight-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.highlight-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.highlight-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.highlight-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.highlight-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.highlight-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.highlight-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.highlight-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.highlight-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.highlight-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.highlight-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.highlight-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.highlight-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.highlight-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.block-color-default {
+			color: inherit;
+			fill: inherit;
+		}
+
+		.block-color-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.block-color-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.block-color-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.block-color-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.block-color-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.block-color-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.block-color-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.block-color-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.block-color-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.block-color-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.block-color-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.block-color-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.block-color-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.block-color-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.block-color-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.block-color-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.block-color-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.block-color-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.select-value-color-interactiveBlue {
+			background-color: rgba(35, 131, 226, .07);
+		}
+
+		.select-value-color-pink {
+			background-color: rgba(245, 224, 233, 1);
+		}
+
+		.select-value-color-purple {
+			background-color: rgba(232, 222, 238, 1);
+		}
+
+		.select-value-color-green {
+			background-color: rgba(219, 237, 219, 1);
+		}
+
+		.select-value-color-gray {
+			background-color: rgba(227, 226, 224, 1);
+		}
+
+		.select-value-color-translucentGray {
+			background-color: rgba(255, 255, 255, 0.0375);
+		}
+
+		.select-value-color-orange {
+			background-color: rgba(250, 222, 201, 1);
+		}
+
+		.select-value-color-brown {
+			background-color: rgba(238, 224, 218, 1);
+		}
+
+		.select-value-color-red {
+			background-color: rgba(255, 226, 221, 1);
+		}
+
+		.select-value-color-yellow {
+			background-color: rgba(253, 236, 200, 1);
+		}
+
+		.select-value-color-blue {
+			background-color: rgba(211, 229, 239, 1);
+		}
+
+		.select-value-color-pageGlass {
+			background-color: undefined;
+		}
+
+		.select-value-color-washGlass {
+			background-color: undefined;
+		}
+
+		.checkbox {
+			display: inline-flex;
+			vertical-align: text-bottom;
+			width: 16;
+			height: 16;
+			background-size: 16px;
+			margin-left: 2px;
+			margin-right: 5px;
+		}
+
+		.checkbox-on {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+
+		.checkbox-off {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+	</style>
+</head>
+
+<body>
+	<article id="310c9fd2-bc49-44a6-bd72-187e85845f3d" class="page sans">
+		<header>
+			<h1 class="page-title">Übung 5: Thematische Aufarbeitung - Global Citizenship</h1>
+			<p class="page-description"></p>
+		</header>
+		<div class="page-body">
+			<h3 id="a35fe6a0-f2bc-481c-bf9a-e8851573099c" class="">Übung 5:</h3>
+			<figure id="1e20df02-0791-47eb-8c03-584988d63a6a" class="image"><a
+					href="U%CC%88bung%205%20Thematische%20Aufarbeitung%20-%20Global%20Citizen%20310c9fd2bc4944a6bd72187e85845f3d/Bild_eingefugt_am_2022-12-19_14-34.png"><img
+						style="width:1590px"
+						src="U%CC%88bung%205%20Thematische%20Aufarbeitung%20-%20Global%20Citizen%20310c9fd2bc4944a6bd72187e85845f3d/Bild_eingefugt_am_2022-12-19_14-34.png" /></a>
+			</figure>
+			<figure id="2e77803e-98b9-4fca-8975-3be71d4bcac7">
+				<div class="source"><a
+						href="U%CC%88bung%205%20Thematische%20Aufarbeitung%20-%20Global%20Citizen%20310c9fd2bc4944a6bd72187e85845f3d/2017_TAB-Fokus-016_Social_Bots.pdf">2017_TAB-Fokus-016_Social
+						Bots.pdf</a></div>
+			</figure>
+			<h2 id="dab2280b-ce72-4306-acc0-461d949f22e5" class="">Kurzzusammenfassung</h2>
+			<ul id="7754f569-4234-406c-86bf-b95cad4862fe" class="bulleted-list">
+				<li style="list-style-type:disc">Social Bots werden im Wesentlichen (in sozialen Medien) dafür
+					eingesetzt, Diskussionen inhaltlich zu verzerren sowie die Bedeutung von Themen oder die
+					Popularität von Personen.</li>
+			</ul>
+			<ul id="6f165b05-e40f-49c2-8a07-d569361a4b9e" class="bulleted-list">
+				<li style="list-style-type:disc">Agieren Meinungsbildend in unterschiedlichen Kontexten</li>
+			</ul>
+			<ul id="baddc581-73b7-4b9d-a6aa-d6b967351d00" class="bulleted-list">
+				<li style="list-style-type:disc">Das Ausmaß der tatsächlichen Einflussnahme ist daher kaum belegt.</li>
+			</ul>
+			<ul id="279f0d30-f2ed-4aae-9d71-a747e066e8b7" class="bulleted-list">
+				<li style="list-style-type:disc">Menschen sind Angriffspunkt der Social-Bots. Social Bots können Hard-
+					oder Software von IT-Systemen nicht direkt angreifen.</li>
+			</ul>
+			<ul id="00f4ce73-59b4-4f4a-9b22-9e92ccd4edbe" class="bulleted-list">
+				<li style="list-style-type:disc">Social-Bots bedrohen die Glaubwürdigkeit sozialer Medien.</li>
+			</ul>
+			<ul id="f1f16127-25d8-4a59-8f54-af173e4bcd59" class="bulleted-list">
+				<li style="list-style-type:disc">Auch positive Einsatzmöglichkeiten vorhanden: <ul
+						id="bc1a4214-21d1-49fd-9646-cf075851f01f" class="bulleted-list">
+						<li style="list-style-type:circle">Nudging (positive Beeinflussung menschlichen Verhaltens)</li>
+					</ul>
+					<ul id="b1c55a9f-aaf6-4143-919d-91d484bbd9d3" class="bulleted-list">
+						<li style="list-style-type:circle">Als Lockvogel zur Bekämpfung von Falschnachrichten</li>
+					</ul>
+				</li>
+			</ul>
+			<ul id="fccc4060-b238-4462-aee1-88dac655bb59" class="bulleted-list">
+				<li style="list-style-type:disc">Der bestehende Rechtsrahmen bietet keine Handhabe, um Social Bots und
+					deren manipulativen Einsatz zu unterbinden.</li>
+			</ul>
+			<p id="00b9fcd6-5255-4d6c-9867-3517624f736a" class="">
+			</p>
+			<blockquote id="d28ea436-2b6f-42ba-86cf-7c1c75f19f26" class="">Social Bots werden hauptsächlich dafür
+				verwendet, Diskussionen zu verzerren und die Bedeutung von Themen oder die Popularität von Personen und
+				Produkten zu beeinflussen, was das Potential hat, die politische Debattenkultur im Internet durch die
+				Verbreitung von (Falsch-)Nachrichten zu verändern und das Vertrauen in die Demokratie zu untergraben.
+
+				Obwohl sie hauptsächlich auf Twitter nachgewiesen wurden, ist ihre tatsächliche Wirkung auf die
+				politische Willensbildung bisher kaum belegt und die technischen Möglichkeiten zur Enttarnung von Social
+				Bots hinken der schnellen Weiterentwicklung dieser Tools hinterher.</blockquote>
+			<p id="b5b4df52-4bf7-435f-864d-94a42aba87cc" class="">
+			</p>
+			<h2 id="21ae4355-e579-4484-bd9f-0fe9286e65c3" class="">Akteure &amp; Werte</h2>
+			<ul id="09d47d64-a3e5-4e61-8cf4-93fb469e3212" class="bulleted-list">
+				<li style="list-style-type:disc">Staaten (Politik)<ul id="0597104e-7084-4ff6-b1fe-973aa01a9e69"
+						class="bulleted-list">
+						<li style="list-style-type:circle">Interessen: politische Ströme, Debatten und Diskurse
+							beeinflussen</li>
+					</ul>
+					<ul id="1d4b3df4-cd8e-4a3f-9db7-5bcbedce8704" class="bulleted-list">
+						<li style="list-style-type:circle">Ziele der Interessen: Wahlkampfbeeinflussung und Manipulation
+							von Trends</li>
+					</ul>
+					<ul id="13d224ac-324f-4a89-be12-44e566bf12c1" class="bulleted-list">
+						<li style="list-style-type:circle">Mittel zur Erreichung der Ziele: <ul
+								id="2c7380aa-7421-494a-9b71-f1f6f038a41f" class="bulleted-list">
+								<li style="list-style-type:square">Ersticken oppositioneller Gegenmeinungen durch
+									das Fluten von Hashtags mit ablenkenden, polarisieren-
+									den oder banalen Nachrichten; </li>
+							</ul>
+							<ul id="2187ec4e-238a-4023-a15c-22aff8da61ab" class="bulleted-list">
+								<li style="list-style-type:square">Verbreitung von Propaganda und Meinungsmache</li>
+							</ul>
+							<ul id="e77f6068-6ad3-4155-a10a-5e2e9ea47681" class="bulleted-list">
+								<li style="list-style-type:square">Verbreitung von Nachrichten im Internet</li>
+							</ul>
+							<ul id="1ca5082c-a516-4cf1-ac83-37e1fce9f458" class="bulleted-list">
+								<li style="list-style-type:square">Massenhaft Falsch- nachrichten in Krisensituationen
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul id="8dc27288-e01f-42a2-897b-60f33b2a0f27" class="bulleted-list">
+						<li style="list-style-type:circle">Werte:<ul id="15b963fe-eed3-479a-8cd9-d55e50688ded"
+								class="bulleted-list">
+								<li style="list-style-type:square">Macht, Schutz, Beständigkeit</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<ul id="38791bb5-cde5-424a-9433-eb490f541769" class="bulleted-list">
+				<li style="list-style-type:disc">Unternehmen (Wirtschaft)<ul id="cf84ed8e-479e-473a-b768-b065475967ad"
+						class="bulleted-list">
+						<li style="list-style-type:circle">Interessen: Marktbeeinflussung bzw. Beeinflussung des Kunden-
+							und Kaufverhalten Einzelner</li>
+					</ul>
+					<ul id="361ca4c7-5b9e-4e2b-a8af-e22f3df12ec5" class="bulleted-list">
+						<li style="list-style-type:circle">Ziele der Interessen: <ul
+								id="181c7a7b-5aaf-4b66-bf53-61f1173ff58f" class="bulleted-list">
+								<li style="list-style-type:square">Verführung von Personen zum Kauf von
+									entgeltpflichtigen Diensten im Internet</li>
+							</ul>
+							<ul id="55c4dc69-3449-43e3-85e6-b8bcb990b0c3" class="bulleted-list">
+								<li style="list-style-type:square">Marktmanipulation (z. B. an der Börse)</li>
+							</ul>
+						</li>
+					</ul>
+					<ul id="da4d7df2-c149-4522-bec8-9b3e625e0b91" class="bulleted-list">
+						<li style="list-style-type:circle">Mittel zur Erreichung der Ziele: <ul
+								id="8dec336d-116d-424e-8174-02fd6b67e004" class="bulleted-list">
+								<li style="list-style-type:square">gezielte Fehlinformation die zu
+									Kauf-/Verkaufsentscheidungen führt</li>
+							</ul>
+						</li>
+					</ul>
+					<ul id="3905cd45-5e50-47ec-879b-860394c4c7e5" class="bulleted-list">
+						<li style="list-style-type:circle">Werte:<ul id="90f26804-f680-42fb-804e-22ecd98bf79a"
+								class="bulleted-list">
+								<li style="list-style-type:square">Innovation, Beständigkeit, Reichtum</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<ul id="620b2be6-b602-42f9-8322-73bff3dab1a4" class="bulleted-list">
+				<li style="list-style-type:disc">Akteur: Soziale Netzwerke<ul id="ed617f3a-0c6b-4066-9022-555225080b7f"
+						class="bulleted-list">
+						<li style="list-style-type:circle">Interessen: <ul id="6fcc0564-e1d4-4614-b026-ad19ae280604"
+								class="bulleted-list">
+								<li style="list-style-type:square">Profit-Maximierung</li>
+							</ul>
+						</li>
+					</ul>
+					<ul id="c8d76565-e33d-4e68-98d0-d3eaf8a9d756" class="bulleted-list">
+						<li style="list-style-type:circle">Mittel zur Erreichung der Ziele: <ul
+								id="8ac16e50-0221-49c7-b9a4-63ad2eab73cd" class="bulleted-list">
+								<li style="list-style-type:square">Werbung und Nutzer Daten verkaufen</li>
+							</ul>
+						</li>
+					</ul>
+					<ul id="4c0196e7-3e4b-4f1f-9f25-f4e26d8ea589" class="bulleted-list">
+						<li style="list-style-type:circle">Werte: <ul id="ca545a3e-2cf3-4f62-8cb8-4a6bf7edb2b3"
+								class="bulleted-list">
+								<li style="list-style-type:square">Vernetzung, Beständigkeit, Reichtum</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<ul id="840cf470-a33e-459a-9e3b-3cd9e89b6307" class="bulleted-list">
+				<li style="list-style-type:disc">Akteur: Medien Nutzer<ul id="2c209bc3-691d-49ae-9bf8-2d4481e9c461"
+						class="bulleted-list">
+						<li style="list-style-type:circle">Interessen: <ul id="2e6ca82b-5fe4-4eb7-bf70-73af794d03fb"
+								class="bulleted-list">
+								<li style="list-style-type:square">Medienkonsum und Aktualität</li>
+							</ul>
+						</li>
+					</ul>
+					<ul id="371b24af-0a54-43fd-83ff-2a9a902edc16" class="bulleted-list">
+						<li style="list-style-type:circle">Mittel zur Erreichung der Ziele: <ul
+								id="73b0ffb7-fced-4de7-a605-e1ea0cdf6f3f" class="bulleted-list">
+								<li style="list-style-type:square">Medienkompetenzen schulen</li>
+							</ul>
+						</li>
+					</ul>
+					<ul id="d6dad7bc-56cf-42ec-84ca-984d2db079b6" class="bulleted-list">
+						<li style="list-style-type:circle">Werte: <ul id="5824ffdf-b205-4530-9c0d-44d6130fe68b"
+								class="bulleted-list">
+								<li style="list-style-type:square">Ehrlichkeit, Vernetzung</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<ul id="ca886624-a028-4181-8b7f-95926f2bb0dc" class="bulleted-list">
+				<li style="list-style-type:disc">Akteur: Journalisten / klassische Medien<ul
+						id="add037d5-effc-4441-a1f3-e44cdfde3a8c" class="bulleted-list">
+						<li style="list-style-type:circle">Interessen: Sorgfältige Medienvermittlung</li>
+					</ul>
+					<ul id="bf06920a-84c2-424b-97ed-ccab366dc8a7" class="bulleted-list">
+						<li style="list-style-type:circle">Mittel zur Erreichung der Ziele: <ul
+								id="1d6437d4-31b1-4fca-a420-f1bfb6673d81" class="bulleted-list">
+								<li style="list-style-type:square">Medienkompetenzen schulen</li>
+							</ul>
+						</li>
+					</ul>
+					<ul id="b642b61f-70e3-4f52-9890-2310429bfe6c" class="bulleted-list">
+						<li style="list-style-type:circle">Werte: <ul id="7ef86e19-79ae-4058-94d1-5048c2e6838c"
+								class="bulleted-list">
+								<li style="list-style-type:square">Ehrlichkeit, Kommunikation, Verantwortung,
+									Beständigkeit, Objektivität</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<hr id="80973434-82b6-44b3-8bdd-8d0ea6a126c2" />
+			<details open="">
+				<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Werte</summary>
+				<div class="indented">
+					<figure id="7ac437a3-acd8-4aec-96c6-90f1aecd4b5f">
+						<div class="source"><a
+								href="https://www.nlp-spectrum.de/fileadmin/media/info_und_download/d_ressourcen/Werte_qualitaeten/Werte_Liste_Beispiele.pdf">https://www.nlp-spectrum.de/fileadmin/media/info_und_download/d_ressourcen/Werte_qualitaeten/Werte_Liste_Beispiele.pdf</a>
+						</div>
+					</figure>
+				</div>
+			</details>
+			<h2 id="688a26e7-21c2-4f52-9832-abba4ca5d1ae" class="">Wertekonflikte</h2>
+			<ul id="c1a36ec6-02f6-4501-9644-c3decf2f8cf5" class="bulleted-list">
+				<li style="list-style-type:disc">Konflikt der freien Meinungsäußerung: <ul
+						id="5be477b4-bcca-45b9-ab68-58199b5ee25b" class="bulleted-list">
+						<li style="list-style-type:circle">Ist es ethisch falsch, wenn ein Chat-Bot, hinter dem KEINE
+							natürliche Person steht, etwas schreibt um einen Diskurs o.ä. in eine bestimmte Richtung zu
+							drängen, wenn eine natürliche Person das exakt selbe schreibt aber in Ordnung?</li>
+					</ul>
+				</li>
+			</ul>
+			<ul id="97f0904d-d779-4b86-a981-861034214532" class="bulleted-list">
+				<li style="list-style-type:disc">Profitinteresse der Unternehmen vs. Integrität von Online-Debatten</li>
+			</ul>
+			<h2 id="a050dbcf-6469-4234-a7f3-2fdc50d77475" class="">Handlungsempfehlungen</h2>
+			<ul id="17a1d836-642f-4b7d-afe3-6a9ed27a4d26" class="bulleted-list">
+				<li style="list-style-type:disc">Weitere Entwicklung von Enttarnungssystemen</li>
+			</ul>
+			<ul id="3f9bdd4d-30d8-47c2-888c-b4195947941f" class="bulleted-list">
+				<li style="list-style-type:disc">Weitere Forschung und investigative Ermittlungen nötig um eine
+					umfassende Klärung und Einschätzung des Gefährdungspotenzials, der technischen und rechtlichen
+					Herausforderungen zu ermöglichen.</li>
+			</ul>
+			<ul id="72169090-4914-4a40-a9db-57960be3fb97" class="bulleted-list">
+				<li style="list-style-type:disc">Abwehrmechanismen in ansteuerbaren Schnittstellen (APIs) entwicklen<ul
+						id="3854761b-ed37-4dd2-9f61-8868701d0606" class="bulleted-list">
+						<li style="list-style-type:circle"> z. B. Identifikation des zugreifenden Algorithmus</li>
+					</ul>
+					<ul id="490d4498-b52d-4d68-a72c-eb83c8b666aa" class="bulleted-list">
+						<li style="list-style-type:circle">Die Wirksamkeit dieser Maßnahme wird in Expertenkreisen
+							jedoch angezweifelt</li>
+					</ul>
+				</li>
+			</ul>
+			<h2 id="fb24ca12-7c88-445e-9cc3-7cec23ba9a25" class="">Soll man…</h2>
+			<p id="d9080638-ae24-4525-8b06-712c6a894fb4" class=""><em>Soll man Social Bots zulassen, die Diskussionen
+					verzerren und die Bedeutung von Themen oder die Popularität von Personen und Produkten beeinflussen,
+					wenn sie das Potential haben, die politische Debattenkultur im Internet zu verändern und das
+					Vertrauen in die Demokratie zu untergraben?</em></p>
+			<p id="f7b1c454-47eb-4d77-8082-2593756f4214" class="">Meine Haltung dazu ist, dass der Einsatz von Social
+				Bots in dieser Form nicht akzeptabel ist, da sie dazu beitragen können, das Vertrauen der Menschen in
+				die Demokratie und in die Integrität von Online-Debatten zu untergraben. Es ist wichtig, dass
+				Online-Diskussionen auf einer soliden Basis von Fakten und Informationen beruhen und nicht durch
+				manipulierte Bots verzerrt werden. Es ist auch wichtig, dass Menschen in der Lage sind, die Integrität
+				von Online-Informationen zu beurteilen und sich nicht von manipulativen Bots täuschen lassen. Daher
+				sollte der Einsatz von Social Bots, die Diskussionen verzerren und die Bedeutung von Themen oder die
+				Popularität von Personen und Produkten beeinflussen, unterbunden werden.</p>
+		</div>
+	</article>
+</body>
+
+</html>

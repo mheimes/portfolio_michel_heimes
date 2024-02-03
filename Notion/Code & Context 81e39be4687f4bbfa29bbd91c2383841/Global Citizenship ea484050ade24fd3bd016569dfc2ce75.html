@@ -1,0 +1,1323 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Global Citizenship</title>
+	<style>
+		/* cspell:disable-file */
+		/* webkit printing magic: print all background colors */
+		html {
+			-webkit-print-color-adjust: exact;
+		}
+
+		* {
+			box-sizing: border-box;
+			-webkit-print-color-adjust: exact;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		@media only screen {
+			body {
+				margin: 2em auto;
+				max-width: 900px;
+				color: rgb(55, 53, 47);
+			}
+		}
+
+		body {
+			line-height: 1.5;
+			white-space: pre-wrap;
+		}
+
+		a,
+		a.visited {
+			color: inherit;
+			text-decoration: underline;
+		}
+
+		.pdf-relative-link-path {
+			font-size: 80%;
+			color: #444;
+		}
+
+		h1,
+		h2,
+		h3 {
+			letter-spacing: -0.01em;
+			line-height: 1.2;
+			font-weight: 600;
+			margin-bottom: 0;
+		}
+
+		.page-title {
+			font-size: 2.5rem;
+			font-weight: 700;
+			margin-top: 0;
+			margin-bottom: 0.75em;
+		}
+
+		h1 {
+			font-size: 1.875rem;
+			margin-top: 1.875rem;
+		}
+
+		h2 {
+			font-size: 1.5rem;
+			margin-top: 1.5rem;
+		}
+
+		h3 {
+			font-size: 1.25rem;
+			margin-top: 1.25rem;
+		}
+
+		.source {
+			border: 1px solid #ddd;
+			border-radius: 3px;
+			padding: 1.5em;
+			word-break: break-all;
+		}
+
+		.callout {
+			border-radius: 3px;
+			padding: 1rem;
+		}
+
+		figure {
+			margin: 1.25em 0;
+			page-break-inside: avoid;
+		}
+
+		figcaption {
+			opacity: 0.5;
+			font-size: 85%;
+			margin-top: 0.5em;
+		}
+
+		mark {
+			background-color: transparent;
+		}
+
+		.indented {
+			padding-left: 1.5em;
+		}
+
+		hr {
+			background: transparent;
+			display: block;
+			width: 100%;
+			height: 1px;
+			visibility: visible;
+			border: none;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+		}
+
+		img {
+			max-width: 100%;
+		}
+
+		@media only print {
+			img {
+				max-height: 100vh;
+				object-fit: contain;
+			}
+		}
+
+		@page {
+			margin: 1in;
+		}
+
+		.collection-content {
+			font-size: 0.875rem;
+		}
+
+		.column-list {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.column {
+			padding: 0 1em;
+		}
+
+		.column:first-child {
+			padding-left: 0;
+		}
+
+		.column:last-child {
+			padding-right: 0;
+		}
+
+		.table_of_contents-item {
+			display: block;
+			font-size: 0.875rem;
+			line-height: 1.3;
+			padding: 0.125rem;
+		}
+
+		.table_of_contents-indent-1 {
+			margin-left: 1.5rem;
+		}
+
+		.table_of_contents-indent-2 {
+			margin-left: 3rem;
+		}
+
+		.table_of_contents-indent-3 {
+			margin-left: 4.5rem;
+		}
+
+		.table_of_contents-link {
+			text-decoration: none;
+			opacity: 0.7;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid rgba(55, 53, 47, 0.09);
+			border-collapse: collapse;
+		}
+
+		table {
+			border-left: none;
+			border-right: none;
+		}
+
+		th,
+		td {
+			font-weight: normal;
+			padding: 0.25em 0.5em;
+			line-height: 1.5;
+			min-height: 1.5em;
+			text-align: left;
+		}
+
+		th {
+			color: rgba(55, 53, 47, 0.6);
+		}
+
+		ol,
+		ul {
+			margin: 0;
+			margin-block-start: 0.6em;
+			margin-block-end: 0.6em;
+		}
+
+		li>ol:first-child,
+		li>ul:first-child {
+			margin-block-start: 0.6em;
+		}
+
+		ul>li {
+			list-style: disc;
+		}
+
+		ul.to-do-list {
+			padding-inline-start: 0;
+		}
+
+		ul.to-do-list>li {
+			list-style: none;
+		}
+
+		.to-do-children-checked {
+			text-decoration: line-through;
+			opacity: 0.375;
+		}
+
+		ul.toggle>li {
+			list-style: none;
+		}
+
+		ul {
+			padding-inline-start: 1.7em;
+		}
+
+		ul>li {
+			padding-left: 0.1em;
+		}
+
+		ol {
+			padding-inline-start: 1.6em;
+		}
+
+		ol>li {
+			padding-left: 0.2em;
+		}
+
+		.mono ol {
+			padding-inline-start: 2em;
+		}
+
+		.mono ol>li {
+			text-indent: -0.4em;
+		}
+
+		.toggle {
+			padding-inline-start: 0em;
+			list-style-type: none;
+		}
+
+		/* Indent toggle children */
+		.toggle>li>details {
+			padding-left: 1.7em;
+		}
+
+		.toggle>li>details>summary {
+			margin-left: -1.1em;
+		}
+
+		.selected-value {
+			display: inline-block;
+			padding: 0 0.5em;
+			background: rgba(206, 205, 202, 0.5);
+			border-radius: 3px;
+			margin-right: 0.5em;
+			margin-top: 0.3em;
+			margin-bottom: 0.3em;
+			white-space: nowrap;
+		}
+
+		.collection-title {
+			display: inline-block;
+			margin-right: 1em;
+		}
+
+		.page-description {
+			margin-bottom: 2em;
+		}
+
+		.simple-table {
+			margin-top: 1em;
+			font-size: 0.875rem;
+			empty-cells: show;
+		}
+
+		.simple-table td {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table th {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table-header-color {
+			background: rgb(247, 246, 243);
+			color: black;
+		}
+
+		.simple-table-header {
+			font-weight: 500;
+		}
+
+		time {
+			opacity: 0.5;
+		}
+
+		.icon {
+			display: inline-block;
+			max-width: 1.2em;
+			max-height: 1.2em;
+			text-decoration: none;
+			vertical-align: text-bottom;
+			margin-right: 0.5em;
+		}
+
+		img.icon {
+			border-radius: 3px;
+		}
+
+		.user-icon {
+			width: 1.5em;
+			height: 1.5em;
+			border-radius: 100%;
+			margin-right: 0.5rem;
+		}
+
+		.user-icon-inner {
+			font-size: 0.8em;
+		}
+
+		.text-icon {
+			border: 1px solid #000;
+			text-align: center;
+		}
+
+		.page-cover-image {
+			display: block;
+			object-fit: cover;
+			width: 100%;
+			max-height: 30vh;
+		}
+
+		.page-header-icon {
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+
+		.page-header-icon-with-cover {
+			margin-top: -0.72em;
+			margin-left: 0.07em;
+		}
+
+		.page-header-icon img {
+			border-radius: 3px;
+		}
+
+		.link-to-page {
+			margin: 1em 0;
+			padding: 0;
+			border: none;
+			font-weight: 500;
+		}
+
+		p>.user {
+			opacity: 0.5;
+		}
+
+		td>.user,
+		td>time {
+			white-space: nowrap;
+		}
+
+		input[type="checkbox"] {
+			transform: scale(1.5);
+			margin-right: 0.6em;
+			vertical-align: middle;
+		}
+
+		p {
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.image {
+			border: none;
+			margin: 1.5em 0;
+			padding: 0;
+			border-radius: 0;
+			text-align: center;
+		}
+
+		.code,
+		code {
+			background: rgba(135, 131, 120, 0.15);
+			border-radius: 3px;
+			padding: 0.2em 0.4em;
+			border-radius: 3px;
+			font-size: 85%;
+			tab-size: 2;
+		}
+
+		code {
+			color: #eb5757;
+		}
+
+		.code {
+			padding: 1.5em 1em;
+		}
+
+		.code-wrap {
+			white-space: pre-wrap;
+			word-break: break-all;
+		}
+
+		.code>code {
+			background: none;
+			padding: 0;
+			font-size: 100%;
+			color: inherit;
+		}
+
+		blockquote {
+			font-size: 1.25em;
+			margin: 1em 0;
+			padding-left: 1em;
+			border-left: 3px solid rgb(55, 53, 47);
+		}
+
+		.bookmark {
+			text-decoration: none;
+			max-height: 8em;
+			padding: 0;
+			display: flex;
+			width: 100%;
+			align-items: stretch;
+		}
+
+		.bookmark-title {
+			font-size: 0.85em;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			height: 1.75em;
+			white-space: nowrap;
+		}
+
+		.bookmark-text {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.bookmark-info {
+			flex: 4 1 180px;
+			padding: 12px 14px 14px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.bookmark-image {
+			width: 33%;
+			flex: 1 1 180px;
+			display: block;
+			position: relative;
+			object-fit: cover;
+			border-radius: 1px;
+		}
+
+		.bookmark-description {
+			color: rgba(55, 53, 47, 0.6);
+			font-size: 0.75em;
+			overflow: hidden;
+			max-height: 4.5em;
+			word-break: break-word;
+		}
+
+		.bookmark-href {
+			font-size: 0.75em;
+			margin-top: 0.25em;
+		}
+
+		.sans {
+			font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+		}
+
+		.code {
+			font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+		}
+
+		.serif {
+			font-family: Lyon-Text, Georgia, ui-serif, serif;
+		}
+
+		.mono {
+			font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+		}
+
+		.pdf .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR';
+		}
+
+		.pdf .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.pdf .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR';
+		}
+
+		.pdf .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.highlight-default {
+			color: rgba(55, 53, 47, 1);
+		}
+
+		.highlight-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.highlight-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.highlight-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.highlight-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.highlight-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.highlight-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.highlight-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.highlight-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.highlight-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.highlight-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.highlight-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.highlight-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.highlight-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.highlight-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.highlight-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.highlight-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.highlight-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.highlight-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.block-color-default {
+			color: inherit;
+			fill: inherit;
+		}
+
+		.block-color-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.block-color-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.block-color-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.block-color-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.block-color-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.block-color-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.block-color-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.block-color-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.block-color-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.block-color-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.block-color-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.block-color-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.block-color-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.block-color-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.block-color-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.block-color-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.block-color-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.block-color-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.select-value-color-interactiveBlue {
+			background-color: rgba(35, 131, 226, .07);
+		}
+
+		.select-value-color-pink {
+			background-color: rgba(245, 224, 233, 1);
+		}
+
+		.select-value-color-purple {
+			background-color: rgba(232, 222, 238, 1);
+		}
+
+		.select-value-color-green {
+			background-color: rgba(219, 237, 219, 1);
+		}
+
+		.select-value-color-gray {
+			background-color: rgba(227, 226, 224, 1);
+		}
+
+		.select-value-color-translucentGray {
+			background-color: rgba(255, 255, 255, 0.0375);
+		}
+
+		.select-value-color-orange {
+			background-color: rgba(250, 222, 201, 1);
+		}
+
+		.select-value-color-brown {
+			background-color: rgba(238, 224, 218, 1);
+		}
+
+		.select-value-color-red {
+			background-color: rgba(255, 226, 221, 1);
+		}
+
+		.select-value-color-yellow {
+			background-color: rgba(253, 236, 200, 1);
+		}
+
+		.select-value-color-blue {
+			background-color: rgba(211, 229, 239, 1);
+		}
+
+		.select-value-color-pageGlass {
+			background-color: undefined;
+		}
+
+		.select-value-color-washGlass {
+			background-color: undefined;
+		}
+
+		.checkbox {
+			display: inline-flex;
+			vertical-align: text-bottom;
+			width: 16;
+			height: 16;
+			background-size: 16px;
+			margin-left: 2px;
+			margin-right: 5px;
+		}
+
+		.checkbox-on {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+
+		.checkbox-off {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+	</style>
+</head>
+
+<body>
+	<article id="ea484050-ade2-4fd3-bd01-6569dfc2ce75" class="page sans">
+		<header>
+			<div class="page-header-icon undefined"><span class="icon">🌐</span></div>
+			<h1 class="page-title">Global Citizenship</h1>
+			<p class="page-description"></p>
+		</header>
+		<div class="page-body">
+			<details open="">
+				<summary style="font-weight:600;font-size:1.875em;line-height:1.3">Technikethik:</summary>
+				<div class="indented">
+					<p id="e552ab92-0dec-4894-9204-f38bef459f48" class="">Wie komme ich bei der technikethischen
+						Einschätzung (m)einer innovativen Technologie von einer Meinung zu einer wohlüberlegten
+						ethischen Einschätzung?</p>
+					<p id="9cefc8e4-b6d5-4b0d-9be2-d4d0d527829e" class="">
+					</p>
+					<h3 id="aa3742f9-b773-45c5-a33f-18133a1c5c2d" class="">Übung 2:</h3>
+					<p id="3099a7d6-5339-4469-8dd8-966156f211a8" class=""><strong>Ethische Fragestellung:
+						</strong>Ist es in Ordnung Systeme künstlicher Intelligenz zu entwickeln, die in bestimmten,
+						insbesondere interlektuellen und kreativen, Bereichen Menschen zu einem großen Teil ablösen
+						können?</p>
+					<p id="45b0f3c9-e0d0-47b7-9fc0-d73258d03fd7" class=""><strong>Spontanurteil:
+						</strong>Es ist eher in Ordnung, da auch technischer Fortschritt in gewisser Maßen eine kreative
+						Leistung ist, das Streben danach ein Teil unserer Menschlichkeit ist und es falsch wäre diese
+						zwangsmäßig zu unterbinden. Es muss jedoch auf eine Ausgewogenheit geachtet werden, dass keine
+						Nachteile für diese Aufgaben ausführenden Menschen entstehen.</p>
+					<p id="13894c9d-e5ce-47be-8f19-0153f34b3e03" class=""><strong>Meinungen von Tommy und mir:</strong>
+					</p>
+					<ul id="a06be401-0961-4c2e-bf7a-3c454ddd4e27" class="bulleted-list">
+						<li style="list-style-type:disc">AI ist Teil der gesellschaftlichen Entwicklung</li>
+					</ul>
+					<ul id="f9ca8f44-b264-4985-82bf-9d2982f34651" class="bulleted-list">
+						<li style="list-style-type:disc">Das Streben nach technologischer Weiterentwicklung ist Teil
+							unserer Menschlichkeit (ist das wirklich so)? </li>
+					</ul>
+					<ul id="8dd3d1a2-6953-4d1c-af86-babf8c21dc19" class="bulleted-list">
+						<li style="list-style-type:disc">Negativ: Noch deutlich stärkere Zentralisierung der Macht →
+							Wenige Menschen haben Einfluss auf (Entwicklung von) AI.</li>
+					</ul>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.875em;line-height:1.3">Folgenanalyse:</summary>
+				<div class="indented">
+					<ul id="e7578c66-6709-4cb9-993a-e8ae64e5d1e7" class="bulleted-list">
+						<li style="list-style-type:disc">Perspektive bedenken<ul
+								id="db0c5988-4274-42fd-9195-5cb5a1fdfe8b" class="bulleted-list">
+								<li style="list-style-type:circle">Welche Position nimmt man selber in der Diskussion
+									ein?</li>
+							</ul>
+							<ul id="f8881fa5-9e08-4d9f-a4cf-a83c88191d5e" class="bulleted-list">
+								<li style="list-style-type:circle">Perspektiven-gebundenheit<ul
+										id="02cb621c-598e-4026-b0a8-52bd35b38077" class="bulleted-list">
+										<li style="list-style-type:square">Intendierte vs. nicht intendierte Folgen</li>
+									</ul>
+									<ul id="f8112770-397c-4481-a15b-3e76f83c5a26" class="bulleted-list">
+										<li style="list-style-type:square">Erwünschte vs. nicht vorhersehbare Folgen
+										</li>
+									</ul>
+									<ul id="76860b74-1447-45c3-9354-e36d5346ce43" class="bulleted-list">
+										<li style="list-style-type:square">Vorhersehbare vs. nicht vorhersehbare Folgen
+										</li>
+									</ul>
+									<ul id="8f104e65-55b6-4f5e-9ec0-1649572a8ce6" class="bulleted-list">
+										<li style="list-style-type:square">Haupt- vs. Nebenfolgen</li>
+									</ul>
+									<ul id="1a9f4fb3-1682-4593-bebf-40840a0b912f" class="bulleted-list">
+										<li style="list-style-type:square">Beobachter vs. Teilnehmerperspektive bzgl.
+											Absichten</li>
+									</ul>
+								</li>
+							</ul>
+							<ul id="e5eb19d6-2758-45c7-a173-444e3f87cefa" class="bulleted-list">
+								<li style="list-style-type:circle">Ereigniszeitpunkt und -wahrscheinlichkeit<ul
+										id="bbcd1653-8bfd-4e95-95b7-98f227227d7e" class="bulleted-list">
+										<li style="list-style-type:square">Kurzfristig vs. langfristig</li>
+									</ul>
+									<ul id="130d831f-7416-49f9-b795-0f26b1f179c8" class="bulleted-list">
+										<li style="list-style-type:square">notwendig eintretend vs. kontingent
+											eintretend<ul id="373ae13e-4b1a-44cd-8927-e5ff52343406"
+												class="bulleted-list">
+												<li style="list-style-type:disc">mit Abschätzung über Häufigkeit,
+													Wahrscheinlichkeit und Verteilung</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<ul id="66876617-2695-4ff4-92d8-904bb715a5ce" class="bulleted-list">
+								<li style="list-style-type:circle">Inhaltliche Beschreibung der Folgen<ul
+										id="80c25231-0469-49e2-8fbb-2e6979ae379d" class="bulleted-list">
+										<li style="list-style-type:square">Folgen für Gesundheit für Tier, Mensch etc.
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.875em;line-height:1.3">Werteanalyse:</summary>
+				<div class="indented">
+					<ul id="ce2e3013-a1e3-4a3f-a45d-e987896dfa61" class="bulleted-list">
+						<li style="list-style-type:disc">Grundprinzipien:<ul id="660b462e-8bc3-42be-a02e-e86397401f71"
+								class="bulleted-list">
+								<li style="list-style-type:circle">Freiheit<ul id="6f526dba-d4c2-4fa8-9986-0116db4b46ff"
+										class="bulleted-list">
+										<li style="list-style-type:square">Meinungsfreiheit, Redefreiheit,
+											Vertragsfreiheit, Wettbewerbsfreiheit, Vereinigungsfreiheit,
+											Versammlungsfreiheit, Glaubensfreiheit</li>
+									</ul>
+									<ul id="61ca58d4-37f9-48cd-bd2a-1a60042915dd" class="bulleted-list">
+										<li style="list-style-type:square">Freiheit für Akteure<ul
+												id="0b1fc7e2-7135-4043-b423-58ff316d80b0" class="bulleted-list">
+												<li style="list-style-type:disc">Personen, Gruppe, Gesellschaft</li>
+											</ul>
+										</li>
+									</ul>
+									<ul id="b4c1b865-beed-4956-98db-03e8bbc64b18" class="bulleted-list">
+										<li style="list-style-type:square">Willensfreiheit<ul
+												id="6f132e13-2a19-4ebe-bb88-06e6d12e1f16" class="bulleted-list">
+												<li style="list-style-type:disc">Freiheit zu überlegen, was man will
+												</li>
+											</ul>
+										</li>
+									</ul>
+									<ul id="4e21161f-21e1-46e4-a190-b7d1040ac975" class="bulleted-list">
+										<li style="list-style-type:square">Handlungsfreiheit<ul
+												id="3de14d8a-0596-462f-9e5b-ff37a743c50a" class="bulleted-list">
+												<li style="list-style-type:disc">Handeln zu können wie man möchte</li>
+											</ul>
+											<ul id="6b3176c0-84e9-4d77-acf1-fd93d6da7cc0" class="bulleted-list">
+												<li style="list-style-type:disc">Wünsche und Interessen ungehindert in
+													die Tat umsetzen</li>
+											</ul>
+										</li>
+									</ul>
+									<ul id="b6a8a669-2290-4228-982c-446109172a86" class="bulleted-list">
+										<li style="list-style-type:square">Freiheit und Verantwortung bedingen sich<ul
+												id="dfb68d85-7b13-4176-b321-7ca851da72c4" class="bulleted-list">
+												<li style="list-style-type:disc">Wer in freiem Willen Handlungen und
+													Willen formulieren und ausüben kann, ist auch für die Folgen seiner
+													Taten verantwortlich</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<ul id="40ce8530-64f6-4322-aae6-8e9a5de3d887" class="bulleted-list">
+								<li style="list-style-type:circle">Gerechtigkeit<ul
+										id="a4929675-6c7d-43b8-8dda-205f0d219284" class="bulleted-list">
+										<li style="list-style-type:square">Gerechtigkeit als Fairness (John Rawls, A
+											Theory of Justice, 1971)</li>
+									</ul>
+									<ul id="178746f7-71ed-4b22-961b-2805bf2b19da" class="bulleted-list">
+										<li style="list-style-type:square">Fiktiver Urzustand einer fairen Gesellschaft,
+											in der alle gleich sind<ul id="fc1725e6-699f-4b3e-af26-528ca6af2423"
+												class="bulleted-list">
+												<li style="list-style-type:disc">Gibt es nicht, ist nicht erwünscht,
+													bildet nur erdachte Ausgangssituation</li>
+											</ul>
+											<ul id="8f3dd3d9-334c-4ef7-a530-938b9bb46bb0" class="bulleted-list">
+												<li style="list-style-type:disc">Schleier des Nichtwissens: Niemand
+													kennt seine soziale Stellung, Wohn-, Arbeitsverhältnisse<ul
+														id="647673e0-c804-47db-8832-99b318ded5eb" class="bulleted-list">
+														<li style="list-style-type:circle">Völlige Unkenntnis = soziale
+															Gleichheit aller</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+									</ul>
+									<ul id="d7fff015-9a87-44e7-87cd-b34bd6ef1fe0" class="bulleted-list">
+										<li style="list-style-type:square">Welche Regeln einer gerechten Versorgung/
+											Nutzung würde sich eine Gesellschaft geben?<ul
+												id="af880dc0-d4aa-4d60-b555-ba43de40e4d4" class="bulleted-list">
+												<li style="list-style-type:disc">Keine Partikulärinteressen</li>
+											</ul>
+											<ul id="429fe71c-370b-405f-bed1-0ce0844c49a1" class="bulleted-list">
+												<li style="list-style-type:disc">Man weiß nicht, ob man von einer
+													Entscheidung profitiert oder nicht</li>
+											</ul>
+										</li>
+									</ul>
+									<ul id="0ed7743b-4346-482f-af00-b80b0c5a2c81" class="bulleted-list">
+										<li style="list-style-type:square">Anwendung: Innovation von allen Akteuren
+											durch Blickwinkel als Akteure dieser Gesellschaft durchdenken lassen</li>
+									</ul>
+									<ul id="6e689836-92b4-438c-8326-155a7a9da615" class="bulleted-list">
+										<li style="list-style-type:square">Im Zweifel Maximum-Prinzip<ul
+												id="500a70a9-3371-42af-9b36-d48114078fc7" class="bulleted-list">
+												<li style="list-style-type:disc">Dafür entscheiden, was im schlimmsten
+													Fall die harmlosesten Auswirkungen hätte</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<ul id="4283ebea-7751-42d9-91fd-01bebb763148" class="bulleted-list">
+								<li style="list-style-type:circle">Glück<ul id="32d4ba88-6079-4d67-945f-860b15293f3a"
+										class="bulleted-list">
+										<li style="list-style-type:square">Utilitarismus, auch Ethik der Effizienz<ul
+												id="71159929-1670-4acb-8699-42739bd34183" class="bulleted-list">
+												<li style="list-style-type:disc">Glück ist das höchste und alleinige Gut
+													<ul id="0d3a9904-7fd7-4eaf-8ab8-bfa24e09488f" class="bulleted-list">
+														<li style="list-style-type:circle">Gerechtigkeit, Freiheit,
+															Gleichheit, etc. haben keinen Wert an sich, nur relativ zum
+															Glück</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+									</ul>
+									<ul id="bba3db7d-bd71-48c3-a7d0-153168d30803" class="bulleted-list">
+										<li style="list-style-type:square">Kernelemente:<ul
+												id="e76750da-7769-429f-8a26-d03fc4ae6b5c" class="bulleted-list">
+												<li style="list-style-type:disc">Konsequentialismus = Abschätzung der
+													absehbaren Folgen des Glücks</li>
+											</ul>
+											<ul id="bb95816b-3b0e-4bb4-bd65-e97cfa83d032" class="bulleted-list">
+												<li style="list-style-type:disc">Wertmonismus = Nutzen und Schaden ist
+													als Wert zählbar/ zu bemessen</li>
+											</ul>
+											<ul id="64bd2a13-f44d-47c8-8e80-0dd228392fdb" class="bulleted-list">
+												<li style="list-style-type:disc">Hedonismus = Kriterium für die
+													Wertbeurteilung ist das menschliche Glück<ul
+														id="d4209717-81ef-49ce-8c04-112a88c52381" class="bulleted-list">
+														<li style="list-style-type:circle">Alles Glück/ Lust/
+															Befriedigung abzgl. alles Leids/ Unlust/ Frust</li>
+													</ul>
+												</li>
+											</ul>
+											<ul id="10c3d72a-5169-4312-9888-44dec2ad3343" class="bulleted-list">
+												<li style="list-style-type:disc">Universalismus = Wertzählung des Glücks
+													ist für alle gleich (auch Tiere, etc.)</li>
+											</ul>
+										</li>
+									</ul>
+									<ul id="b364c36d-31b7-424c-8fe1-71bee32d4766" class="bulleted-list">
+										<li style="list-style-type:square">Alle Handlungen streben danach, die absolute
+											Menge an Glück zu maximieren<ul id="ade5cd71-29cd-41c2-993f-c13e1db98568"
+												class="bulleted-list">
+												<li style="list-style-type:disc">…</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<ul id="583ae510-f3de-4898-8c99-960c46136fb4" class="bulleted-list">
+								<li style="list-style-type:circle">Verantwortung<ul
+										id="469b6d5a-97a4-4d3c-8370-92efc31b1717" class="bulleted-list">
+										<li style="list-style-type:square">Wer ist wofür und wovor (in welcher Instanz)
+											verantwortlich?</li>
+									</ul>
+									<ul id="28078a80-03c5-4e38-99b0-11688dff60d6" class="bulleted-list">
+										<li style="list-style-type:square">Wofür<ul
+												id="be0ade1a-fda7-46ad-8d8d-2c36ba4973ae" class="bulleted-list">
+												<li style="list-style-type:disc">Für sich selbst und/ oder für andere
+												</li>
+											</ul>
+											<ul id="73be46fb-e661-4b00-979c-22c8c7cc6096" class="bulleted-list">
+												<li style="list-style-type:disc">Für zukünftige Generationen? Für die
+													Umwelt?</li>
+											</ul>
+										</li>
+									</ul>
+									<ul id="0e7998e7-72c0-49f4-9162-7d20a8fc1aed" class="bulleted-list">
+										<li style="list-style-type:square">Von wem? Instanz?<ul
+												id="da42c381-709a-4990-bd70-df6b118b57d0" class="bulleted-list">
+												<li style="list-style-type:disc">Gesetz</li>
+											</ul>
+											<ul id="d89a71b3-71b1-4989-9074-6f53260ad659" class="bulleted-list">
+												<li style="list-style-type:disc">Moral</li>
+											</ul>
+										</li>
+									</ul>
+									<ul id="fda28cd3-3c72-484f-bac2-cd7455b5a700" class="bulleted-list">
+										<li style="list-style-type:square">Sorge um Verantwortung<ul
+												id="9c700bea-828f-45cd-b3e7-3554b1baf2cd" class="bulleted-list">
+												<li style="list-style-type:disc">Nicht nur im Nachhinein</li>
+											</ul>
+											<ul id="044ea478-63ae-453f-bcd1-d8e436787d5a" class="bulleted-list">
+												<li style="list-style-type:disc"><strong>…</strong></li>
+											</ul>
+										</li>
+									</ul>
+									<ul id="9c315808-c77a-4e0c-9a25-5a3f547e7bff" class="bulleted-list">
+										<li style="list-style-type:square"><strong>Kausalverantwortung:</strong>
+											<ul id="7858087d-3f31-4700-81dd-6820b344ea9f" class="bulleted-list">
+												<li style="list-style-type:disc">Tat → Folge → Verantwortung<ul
+														id="c022ea44-7e83-453d-9055-125d5e59d5ff" class="bulleted-list">
+														<li style="list-style-type:circle">Jede*r einzelne ist
+															verantwortlich für die Folgen seines Handelns</li>
+													</ul>
+												</li>
+											</ul>
+											<ul id="23e83b70-4d6d-4685-a131-d7de6082fa5a" class="bulleted-list">
+												<li style="list-style-type:disc">Positiv, negativ, präventiv<ul
+														id="3af12e80-224a-4848-9394-5a80a606d742" class="bulleted-list">
+														<li style="list-style-type:circle">Positiv:<ul
+																id="4c6dcef9-9999-4c1f-b7af-847229851287"
+																class="bulleted-list">
+																<li style="list-style-type:square">Ingenieur plant
+																	Brücke, verantwortlich für das Ergebnis seiner
+																	Berechnung</li>
+															</ul>
+														</li>
+													</ul>
+													<ul id="8e005c3b-bfc7-43b9-aa2a-2437d0a9c787" class="bulleted-list">
+														<li style="list-style-type:circle">Negativ: Vermeidung von
+															Unterlassung<ul id="9b158988-ec7a-4919-89f0-b163323baa06"
+																class="bulleted-list">
+																<li style="list-style-type:square">Unterlassene
+																	Hilfeleistung, Pflicht zur Übernahme von
+																	Verantwortung in einer Situation wurde nicht
+																	wahrgenommen</li>
+															</ul>
+														</li>
+													</ul>
+													<ul id="ecbe25c4-3c5f-412b-845a-a6264f11bfed" class="bulleted-list">
+														<li style="list-style-type:circle">Präventionsverantwortung:<ul
+																id="aa19435b-3e15-4dd4-9434-973fe71e221c"
+																class="bulleted-list">
+																<li style="list-style-type:square">Aktiv nach
+																	Schwachstellen suchen um zukünftige Unfälle oder
+																	Störungen abzuwenden</li>
+															</ul>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+									</ul>
+									<ul id="1dfc1b86-48cc-4f60-bf8e-3105776e53e7" class="bulleted-list">
+										<li style="list-style-type:square"><strong>Fürsorgeverantwortung:</strong>
+											<ul id="eebbd608-9698-4030-b140-06926cf53fc4" class="bulleted-list">
+												<li style="list-style-type:disc">Hans Jonas: Das Prinzip Verantwortung -
+													Versuch einer Ethik für die technologische Zivilisation (1979)
+													<blockquote id="2a8c52e9-ad49-40bc-9e23-579c4bbd830f" class="">
+														“Handle so, dass die Wirkungen deiner Handlung verträglich sind
+														mit der Permanenz echten menschlichen Lebens auf der Erde.”
+													</blockquote>
+													<ul id="fa847f98-971f-4146-b488-a3a6fffa0bf7" class="bulleted-list">
+														<li style="list-style-type:circle">Verantwortung → Sache → Tat
+														</li>
+													</ul>
+													<blockquote id="421a3d6c-91d6-445e-bd63-cb712a3fcb0b" class="">“Der
+														technische Mensch ist im Maße seiner technologischen Macht für
+														die künftige Existenz der davon abhängigen Menschen und
+														Naturwesen verantwortlich.”</blockquote>
+													<ul id="cbc6ddce-12c3-42fd-865c-5ae46f7008e8" class="bulleted-list">
+														<li style="list-style-type:circle">Geht über Kausalverantwortung
+															hinaus</li>
+													</ul>
+													<ul id="5cf7aae0-cbbf-4577-b921-5732f28020f5" class="bulleted-list">
+														<li style="list-style-type:circle"><strong>…</strong></li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul id="b30fe0e0-76be-41f7-9d1d-7c318001deae" class="bulleted-list">
+						<li style="list-style-type:disc">Mögliche Fragen für die Lösung von Wertekonflikten<ul
+								id="33ea9d0a-1e8f-49aa-90c5-254750af2833" class="bulleted-list">
+								<li style="list-style-type:circle">Wie kann den beteiligten Akteuren maximale Freiheit
+									in Ihren Handeln gewährt werden?</li>
+							</ul>
+							<ul id="92ca6d3a-02f5-4ab9-853a-5db5bba7a6f1" class="bulleted-list">
+								<li style="list-style-type:circle">Welche möglichen positiven und negativen Folgen von
+									Handlungen entstehen aus dieser Freiheit und welcher Verantwortung
+									<strong>…</strong></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</details>
+			<p id="fde42946-3775-42e3-8a8e-841a1bef40cc" class="">Technikethische Fragestellung entwickeln: Mit max.
+				zwei möglichen Antworten (um es nicht zu komplex zu gestalten)</p>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.875em;line-height:1.3">Panel</summary>
+				<div class="indented">
+					<ul id="dfb4cc30-8869-4211-a41b-6350ef60b1b5" class="bulleted-list">
+						<li style="list-style-type:disc">Clear questions</li>
+					</ul>
+					<ul id="65829396-cb98-491a-9a9f-291754381175" class="bulleted-list">
+						<li style="list-style-type:disc">Panelists with naturally opposing viewpoints</li>
+					</ul>
+					<ul id="52742cf4-c954-44ba-a5b8-2ec13d9cad2c" class="bulleted-list">
+						<li style="list-style-type:disc">Strategies to involve the audience in the discussion<ul
+								id="e90e1ff1-f317-444d-8703-35c60f4b2871" class="bulleted-list">
+								<li style="list-style-type:circle">Questions and answers</li>
+							</ul>
+							<ul id="57a2ae16-acc6-4522-9c3b-22370b7bf248" class="bulleted-list">
+								<li style="list-style-type:circle">voting</li>
+							</ul>
+							<ul id="e2a79c67-a12d-4da2-a183-ff275b768d9e" class="bulleted-list">
+								<li style="list-style-type:circle">…</li>
+							</ul>
+						</li>
+					</ul>
+					<p id="d75de5c9-02d0-4d74-a6f4-a9b9eff71efc" class="">
+					</p>
+					<p id="e06f3063-d1a5-4a78-aeb4-9be75861f205" class=""><strong>Live Voting Tools:</strong></p>
+					<ul id="812824ea-8907-4cd9-b229-2428982274dd" class="bulleted-list">
+						<li style="list-style-type:disc"><a href="https://trypingo.com/">Trypingo</a> (Uni Paderborn)
+						</li>
+					</ul>
+					<ul id="58cf1954-284b-4bc9-a945-1fa3340b9a2d" class="bulleted-list">
+						<li style="list-style-type:disc"><a href="https://particify.de/">Particify</a></li>
+					</ul>
+					<ul id="edc19728-bffd-4dc9-bc26-b03687f58b9f" class="bulleted-list">
+						<li style="list-style-type:disc"><a href="https://voxr.com/">Voxr</a></li>
+					</ul>
+					<ul id="015e43c3-470c-4866-bc05-24046c777a7d" class="bulleted-list">
+						<li style="list-style-type:disc"><a href="https://www.slido.com/">Sli.do</a></li>
+					</ul>
+					<ul id="2c375c20-91db-44d5-84b1-fdf1c70e901e" class="bulleted-list">
+						<li style="list-style-type:disc"><a href="https://www.mentimeter.com/">Mentimeter.com</a></li>
+					</ul>
+					<ul id="c8b2e1d1-7021-41c4-a5da-92ca11712061" class="bulleted-list">
+						<li style="list-style-type:disc"><a href="https://onlineted.de/de">Onlineted.de</a></li>
+					</ul>
+					<p id="8462e712-53cf-4240-92ff-668af521e6ad" class="">
+					</p>
+					<p id="1b876929-bd24-40d0-a89e-b623c076775b" class=""><strong>Panel:</strong></p>
+					<ul id="7abb05a3-27c4-4ffc-810f-75fbc9994615" class="bulleted-list">
+						<li style="list-style-type:disc">30 bis max. 40 min inkl. Diskussion</li>
+					</ul>
+					<ul id="19ab0dd5-6cd2-4a26-9236-423af134a575" class="bulleted-list">
+						<li style="list-style-type:disc">Eine Person als ModeratorIn</li>
+					</ul>
+					<ul id="cd232f10-ea47-460f-ac6f-8006dcc949e2" class="bulleted-list">
+						<li style="list-style-type:disc">Der Rest springt in Rollen von beispielshaften Akteuren</li>
+					</ul>
+					<ul id="3bb7f701-75b4-4e01-a4f3-a71c476ac408" class="bulleted-list">
+						<li style="list-style-type:disc"><strong>Ablauf:</strong>
+							<ol type="1" id="2ea47055-5c3d-40d8-b8c3-b3f788ec9403" class="numbered-list" start="1">
+								<li>Einführung ins Thema und die Frage</li>
+							</ol>
+							<ol type="1" id="8d8c825e-c792-4599-b6d8-161e86a31a46" class="numbered-list" start="2">
+								<li>Abfrage des ethischen Spontanurteils im Publikum</li>
+							</ol>
+							<ol type="1" id="bd1b1742-164a-4a9f-9068-1b35706e20cb" class="numbered-list" start="3">
+								<li>Der Moderator führt durch die Diskussion<ol type="a"
+										id="bc68f35f-828d-4949-8766-a916968d8298" class="numbered-list" start="1">
+										<li>Den benachteiligten AkteurInnen, ihren Interessen und Mitteln</li>
+									</ol>
+									<ol type="a" id="c8365449-ebe5-4be8-bb35-11a73ac28e59" class="numbered-list"
+										start="2">
+										<li>Den möglichen Folgen als Chancen und Risiken</li>
+									</ol>
+									<ol type="a" id="2351d4cc-703b-462b-be82-67b8124d165a" class="numbered-list"
+										start="3">
+										<li>Den dabei vertretenen Werten und Grundprinzipien</li>
+									</ol>
+									<ol type="a" id="43a83075-5af2-4de7-a51e-7d51b4664f7a" class="numbered-list"
+										start="4">
+										<li>Moderation und Panel-Diskussion verursachen eine Zuspitzung des Konflikts
+										</li>
+									</ol>
+									<ol type="a" id="4e34bee3-6cca-48e4-89d8-24db43ded08c" class="numbered-list"
+										start="5">
+										<li>Fragen aus dem Publikum werden eingebunden</li>
+									</ol>
+								</li>
+							</ol>
+							<ol type="1" id="04fc26b0-89b9-4b5e-97b3-b892661e100e" class="numbered-list" start="4">
+								<li>Am Ende erfolgt eine erneute ethische Befragung des Publikums</li>
+							</ol>
+							<ol type="1" id="278bf3da-d78f-465b-921a-d60c17174979" class="numbered-list" start="5">
+								<li>Die Gruppe nimmt dazu (begründet) Stellung und vergleicht dazu (eine) eigene
+									Haltung(en)</li>
+							</ol>
+						</li>
+					</ul>
+				</div>
+			</details>
+			<p id="5449caf6-6b43-487e-acff-67f1e3c0e3ca" class="">
+			</p>
+			<p id="1dabb531-7f1f-43e8-9a7e-a9e2fb149216" class="">
+			</p>
+			<p id="328d52c5-f7ac-4a6e-8b2d-aa5e449c3808" class="">
+			</p>
+			<figure id="310c9fd2-bc49-44a6-bd72-187e85845f3d" class="link-to-page"><a
+					href="Global%20Citizenship%20ea484050ade24fd3bd016569dfc2ce75/U%CC%88bung%205%20Thematische%20Aufarbeitung%20-%20Global%20Citizen%20310c9fd2bc4944a6bd72187e85845f3d.html">Übung
+					5: Thematische Aufarbeitung - Global Citizenship</a></figure>
+			<figure id="5c8a5ad0-6b1c-4a7e-b42e-90c859f12d05" class="link-to-page"><a
+					href="Global%20Citizenship%20ea484050ade24fd3bd016569dfc2ce75/Paneldiskussion%20-%20Facedetection%20in%20Public%20Spaces%205c8a5ad06b1c4a7eb42e90c859f12d05.html"><span
+						class="icon">👁️</span>Paneldiskussion - Facedetection in Public Spaces</a></figure>
+			<p id="22c16796-903d-4ce5-9ace-2fca79088de1" class="">
+			</p>
+		</div>
+	</article>
+</body>
+
+</html>

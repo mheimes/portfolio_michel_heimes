@@ -1,0 +1,1275 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Pizza-Reisegewerbe</title>
+	<style>
+		/* cspell:disable-file */
+		/* webkit printing magic: print all background colors */
+		html {
+			-webkit-print-color-adjust: exact;
+		}
+
+		* {
+			box-sizing: border-box;
+			-webkit-print-color-adjust: exact;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		@media only screen {
+			body {
+				margin: 2em auto;
+				max-width: 900px;
+				color: rgb(55, 53, 47);
+			}
+		}
+
+		body {
+			line-height: 1.5;
+			white-space: pre-wrap;
+		}
+
+		a,
+		a.visited {
+			color: inherit;
+			text-decoration: underline;
+		}
+
+		.pdf-relative-link-path {
+			font-size: 80%;
+			color: #444;
+		}
+
+		h1,
+		h2,
+		h3 {
+			letter-spacing: -0.01em;
+			line-height: 1.2;
+			font-weight: 600;
+			margin-bottom: 0;
+		}
+
+		.page-title {
+			font-size: 2.5rem;
+			font-weight: 700;
+			margin-top: 0;
+			margin-bottom: 0.75em;
+		}
+
+		h1 {
+			font-size: 1.875rem;
+			margin-top: 1.875rem;
+		}
+
+		h2 {
+			font-size: 1.5rem;
+			margin-top: 1.5rem;
+		}
+
+		h3 {
+			font-size: 1.25rem;
+			margin-top: 1.25rem;
+		}
+
+		.source {
+			border: 1px solid #ddd;
+			border-radius: 3px;
+			padding: 1.5em;
+			word-break: break-all;
+		}
+
+		.callout {
+			border-radius: 3px;
+			padding: 1rem;
+		}
+
+		figure {
+			margin: 1.25em 0;
+			page-break-inside: avoid;
+		}
+
+		figcaption {
+			opacity: 0.5;
+			font-size: 85%;
+			margin-top: 0.5em;
+		}
+
+		mark {
+			background-color: transparent;
+		}
+
+		.indented {
+			padding-left: 1.5em;
+		}
+
+		hr {
+			background: transparent;
+			display: block;
+			width: 100%;
+			height: 1px;
+			visibility: visible;
+			border: none;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+		}
+
+		img {
+			max-width: 100%;
+		}
+
+		@media only print {
+			img {
+				max-height: 100vh;
+				object-fit: contain;
+			}
+		}
+
+		@page {
+			margin: 1in;
+		}
+
+		.collection-content {
+			font-size: 0.875rem;
+		}
+
+		.column-list {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.column {
+			padding: 0 1em;
+		}
+
+		.column:first-child {
+			padding-left: 0;
+		}
+
+		.column:last-child {
+			padding-right: 0;
+		}
+
+		.table_of_contents-item {
+			display: block;
+			font-size: 0.875rem;
+			line-height: 1.3;
+			padding: 0.125rem;
+		}
+
+		.table_of_contents-indent-1 {
+			margin-left: 1.5rem;
+		}
+
+		.table_of_contents-indent-2 {
+			margin-left: 3rem;
+		}
+
+		.table_of_contents-indent-3 {
+			margin-left: 4.5rem;
+		}
+
+		.table_of_contents-link {
+			text-decoration: none;
+			opacity: 0.7;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid rgba(55, 53, 47, 0.09);
+			border-collapse: collapse;
+		}
+
+		table {
+			border-left: none;
+			border-right: none;
+		}
+
+		th,
+		td {
+			font-weight: normal;
+			padding: 0.25em 0.5em;
+			line-height: 1.5;
+			min-height: 1.5em;
+			text-align: left;
+		}
+
+		th {
+			color: rgba(55, 53, 47, 0.6);
+		}
+
+		ol,
+		ul {
+			margin: 0;
+			margin-block-start: 0.6em;
+			margin-block-end: 0.6em;
+		}
+
+		li>ol:first-child,
+		li>ul:first-child {
+			margin-block-start: 0.6em;
+		}
+
+		ul>li {
+			list-style: disc;
+		}
+
+		ul.to-do-list {
+			padding-inline-start: 0;
+		}
+
+		ul.to-do-list>li {
+			list-style: none;
+		}
+
+		.to-do-children-checked {
+			text-decoration: line-through;
+			opacity: 0.375;
+		}
+
+		ul.toggle>li {
+			list-style: none;
+		}
+
+		ul {
+			padding-inline-start: 1.7em;
+		}
+
+		ul>li {
+			padding-left: 0.1em;
+		}
+
+		ol {
+			padding-inline-start: 1.6em;
+		}
+
+		ol>li {
+			padding-left: 0.2em;
+		}
+
+		.mono ol {
+			padding-inline-start: 2em;
+		}
+
+		.mono ol>li {
+			text-indent: -0.4em;
+		}
+
+		.toggle {
+			padding-inline-start: 0em;
+			list-style-type: none;
+		}
+
+		/* Indent toggle children */
+		.toggle>li>details {
+			padding-left: 1.7em;
+		}
+
+		.toggle>li>details>summary {
+			margin-left: -1.1em;
+		}
+
+		.selected-value {
+			display: inline-block;
+			padding: 0 0.5em;
+			background: rgba(206, 205, 202, 0.5);
+			border-radius: 3px;
+			margin-right: 0.5em;
+			margin-top: 0.3em;
+			margin-bottom: 0.3em;
+			white-space: nowrap;
+		}
+
+		.collection-title {
+			display: inline-block;
+			margin-right: 1em;
+		}
+
+		.page-description {
+			margin-bottom: 2em;
+		}
+
+		.simple-table {
+			margin-top: 1em;
+			font-size: 0.875rem;
+			empty-cells: show;
+		}
+
+		.simple-table td {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table th {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table-header-color {
+			background: rgb(247, 246, 243);
+			color: black;
+		}
+
+		.simple-table-header {
+			font-weight: 500;
+		}
+
+		time {
+			opacity: 0.5;
+		}
+
+		.icon {
+			display: inline-block;
+			max-width: 1.2em;
+			max-height: 1.2em;
+			text-decoration: none;
+			vertical-align: text-bottom;
+			margin-right: 0.5em;
+		}
+
+		img.icon {
+			border-radius: 3px;
+		}
+
+		.user-icon {
+			width: 1.5em;
+			height: 1.5em;
+			border-radius: 100%;
+			margin-right: 0.5rem;
+		}
+
+		.user-icon-inner {
+			font-size: 0.8em;
+		}
+
+		.text-icon {
+			border: 1px solid #000;
+			text-align: center;
+		}
+
+		.page-cover-image {
+			display: block;
+			object-fit: cover;
+			width: 100%;
+			max-height: 30vh;
+		}
+
+		.page-header-icon {
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+
+		.page-header-icon-with-cover {
+			margin-top: -0.72em;
+			margin-left: 0.07em;
+		}
+
+		.page-header-icon img {
+			border-radius: 3px;
+		}
+
+		.link-to-page {
+			margin: 1em 0;
+			padding: 0;
+			border: none;
+			font-weight: 500;
+		}
+
+		p>.user {
+			opacity: 0.5;
+		}
+
+		td>.user,
+		td>time {
+			white-space: nowrap;
+		}
+
+		input[type="checkbox"] {
+			transform: scale(1.5);
+			margin-right: 0.6em;
+			vertical-align: middle;
+		}
+
+		p {
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.image {
+			border: none;
+			margin: 1.5em 0;
+			padding: 0;
+			border-radius: 0;
+			text-align: center;
+		}
+
+		.code,
+		code {
+			background: rgba(135, 131, 120, 0.15);
+			border-radius: 3px;
+			padding: 0.2em 0.4em;
+			border-radius: 3px;
+			font-size: 85%;
+			tab-size: 2;
+		}
+
+		code {
+			color: #eb5757;
+		}
+
+		.code {
+			padding: 1.5em 1em;
+		}
+
+		.code-wrap {
+			white-space: pre-wrap;
+			word-break: break-all;
+		}
+
+		.code>code {
+			background: none;
+			padding: 0;
+			font-size: 100%;
+			color: inherit;
+		}
+
+		blockquote {
+			font-size: 1.25em;
+			margin: 1em 0;
+			padding-left: 1em;
+			border-left: 3px solid rgb(55, 53, 47);
+		}
+
+		.bookmark {
+			text-decoration: none;
+			max-height: 8em;
+			padding: 0;
+			display: flex;
+			width: 100%;
+			align-items: stretch;
+		}
+
+		.bookmark-title {
+			font-size: 0.85em;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			height: 1.75em;
+			white-space: nowrap;
+		}
+
+		.bookmark-text {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.bookmark-info {
+			flex: 4 1 180px;
+			padding: 12px 14px 14px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.bookmark-image {
+			width: 33%;
+			flex: 1 1 180px;
+			display: block;
+			position: relative;
+			object-fit: cover;
+			border-radius: 1px;
+		}
+
+		.bookmark-description {
+			color: rgba(55, 53, 47, 0.6);
+			font-size: 0.75em;
+			overflow: hidden;
+			max-height: 4.5em;
+			word-break: break-word;
+		}
+
+		.bookmark-href {
+			font-size: 0.75em;
+			margin-top: 0.25em;
+		}
+
+		.sans {
+			font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+		}
+
+		.code {
+			font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+		}
+
+		.serif {
+			font-family: Lyon-Text, Georgia, ui-serif, serif;
+		}
+
+		.mono {
+			font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+		}
+
+		.pdf .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR';
+		}
+
+		.pdf .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.pdf .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR';
+		}
+
+		.pdf .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.highlight-default {
+			color: rgba(55, 53, 47, 1);
+		}
+
+		.highlight-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.highlight-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.highlight-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.highlight-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.highlight-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.highlight-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.highlight-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.highlight-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.highlight-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.highlight-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.highlight-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.highlight-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.highlight-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.highlight-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.highlight-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.highlight-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.highlight-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.highlight-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.block-color-default {
+			color: inherit;
+			fill: inherit;
+		}
+
+		.block-color-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.block-color-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.block-color-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.block-color-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.block-color-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.block-color-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.block-color-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.block-color-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.block-color-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.block-color-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.block-color-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.block-color-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.block-color-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.block-color-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.block-color-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.block-color-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.block-color-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.block-color-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.select-value-color-interactiveBlue {
+			background-color: rgba(35, 131, 226, .07);
+		}
+
+		.select-value-color-pink {
+			background-color: rgba(245, 224, 233, 1);
+		}
+
+		.select-value-color-purple {
+			background-color: rgba(232, 222, 238, 1);
+		}
+
+		.select-value-color-green {
+			background-color: rgba(219, 237, 219, 1);
+		}
+
+		.select-value-color-gray {
+			background-color: rgba(227, 226, 224, 1);
+		}
+
+		.select-value-color-translucentGray {
+			background-color: rgba(255, 255, 255, 0.0375);
+		}
+
+		.select-value-color-orange {
+			background-color: rgba(250, 222, 201, 1);
+		}
+
+		.select-value-color-brown {
+			background-color: rgba(238, 224, 218, 1);
+		}
+
+		.select-value-color-red {
+			background-color: rgba(255, 226, 221, 1);
+		}
+
+		.select-value-color-yellow {
+			background-color: rgba(253, 236, 200, 1);
+		}
+
+		.select-value-color-blue {
+			background-color: rgba(211, 229, 239, 1);
+		}
+
+		.select-value-color-pageGlass {
+			background-color: undefined;
+		}
+
+		.select-value-color-washGlass {
+			background-color: undefined;
+		}
+
+		.checkbox {
+			display: inline-flex;
+			vertical-align: text-bottom;
+			width: 16;
+			height: 16;
+			background-size: 16px;
+			margin-left: 2px;
+			margin-right: 5px;
+		}
+
+		.checkbox-on {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+
+		.checkbox-off {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+	</style>
+</head>
+
+<body>
+	<article id="f781c3f3-8d87-4c39-8cee-5a641c145712" class="page sans">
+		<header>
+			<div class="page-header-icon undefined"><span class="icon">🍕</span></div>
+			<h1 class="page-title">Pizza-Reisegewerbe</h1>
+			<p class="page-description"></p>
+		</header>
+		<div class="page-body">
+			<ul id="96137800-3c61-45ab-8b15-e32093c39bc2" class="bulleted-list">
+				<li style="list-style-type:disc">App/ Webseite auf die man durch Google-Suche oder über QR-Code kommt.
+				</li>
+			</ul>
+			<ul id="d1eb2c6b-ea69-47d4-b220-64bf42b8c9cc" class="bulleted-list">
+				<li style="list-style-type:disc">Aktuelles Menü (verfügbare Pizzen) kann dort eingesehen und direkt
+					darüber bestellt werden.</li>
+			</ul>
+			<ul id="4b91c20a-1545-47af-b8c5-9d5a8cc8fe0e" class="bulleted-list">
+				<li style="list-style-type:disc">Dabei praktisch:<ol type="1" id="6bc47872-ed96-434d-bd0f-8715d2c28a3e"
+						class="numbered-list" start="1">
+						<li>Man kann die Schlange beim Pizzastand verlassen, da man über die App/ Webseite sehen kann,
+							wann die Pizza fertig und abholbereit ist - kein ewiges in der Schlange stehen mehr!</li>
+					</ol>
+					<ol type="1" id="dd73dbfd-cf35-4f46-bb2e-eb6ed09de9a4" class="numbered-list" start="2">
+						<li>Man spart sich die Person die an der Kasse steht, da es keine Person braucht, die
+							Bestellungen und das Geld entgegen nimmt - evtl. Lösung überlegen für Menschen, deren Akku
+							leer ist, die kein Paypal o. ä. haben oder warum auch immer nur bar zahlen können oder
+							wollen.</li>
+					</ol>
+				</li>
+			</ul>
+			<p id="56fd9c38-5144-4cf9-a1a6-44c55f96fcd1" class="">
+			</p>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Wo betreiben?</summary>
+				<div class="indented">
+					<p id="6410c94d-45b4-4545-b336-7861ba58510c" class="">Nachgefragt bei Amt zuständig für “ambulanter
+						Handel”:
+						→ 0221-22127732</p>
+					<ul id="5473f041-330c-4a25-afa1-bcc577a2eb5c" class="bulleted-list">
+						<li style="list-style-type:disc">Ambulanter Handel ist auf Grünflächen im Stadtgebiet
+							grundsätzlich nicht erlaubt (siehe <a
+								href="Pizza-Reisegewerbe%20f781c3f38d874c398cee5a641c145712.html">Merkblatt</a>)<figure
+								id="d4a31664-0bd5-4eb0-8b2e-82b7bf6c53e7">
+								<div class="source"><a
+										href="Pizza-Reisegewerbe%20f781c3f38d874c398cee5a641c145712/Merkblatt_ambul._Handel.pdf">Merkblatt
+										ambul. Handel.pdf</a></div>
+							</figure>
+							<ul id="9e79f851-aefc-4f5e-aac6-b752e077d532" class="bulleted-list">
+								<li style="list-style-type:circle">Gibt es Sondernutzungsgenehmigungen bzw. trifft diese
+									Restriktion auch zu, wenn sich ein privates/ bewirtetes Gelände z. B. innerhalb
+									einer öffentlichen Grünfläche befindet (Beispiel: Biergarten im Park o.ä.)?</li>
+							</ul>
+						</li>
+					</ul>
+					<ul id="fb75c7e4-3f9f-4a88-989d-8124470dab56" class="bulleted-list">
+						<li style="list-style-type:disc">Es handelt sich bei der Nutzung auf Straßenland um eine
+							Sondernutzung des öffentlichen Straßenlandes wobei alle 20 Minuten der Standort um mind.
+							200m verändert werden muss. </li>
+					</ul>
+					<ul id="9f0b8eac-9a79-413a-a27e-0ff3b9ebdb23" class="bulleted-list">
+						<li style="list-style-type:disc">Beantragung der Erlaubnis für den ambulanten Handel wird
+							erteilt von: Amt für öffentliche Ordnung (mehr dazu siehe <a
+								href="Pizza-Reisegewerbe%20f781c3f38d874c398cee5a641c145712.html">Merkblatt</a>)</li>
+					</ul>
+					<ul id="f9db8cd7-792e-4d09-9fc3-8bb751da8760" class="bulleted-list">
+						<li style="list-style-type:disc">Nachdenken über Alternativlösungen! - siehe unter “<a
+								href="Pizza-Reisegewerbe%20f781c3f38d874c398cee5a641c145712.html">(Noch) Fragen</a>”.
+						</li>
+					</ul>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Beantragung</summary>
+				<div class="indented">
+					<ul id="f4b864cc-97a3-479d-8f98-a3f5ee084699" class="bulleted-list">
+						<li style="list-style-type:disc"><strong><a
+									href="https://www.stadt-koeln.de/service/produkte/00283/index.html">Reisegewerbe -
+									Neuantrag</a></strong><strong>:</strong>
+							<ul id="c47cf134-589e-48f2-ab19-5d42b8a1232c" class="bulleted-list">
+								<li style="list-style-type:circle">HIER alle Dokumente einreichen unter Nennung des
+									(allgemeinen) Aktenzeichens “321/10-Paragraph55GewO”:
+									<a
+										href="mailto:speziellegewerbeangelegenheiten@stadt-koeln.de">speziellegewerbeangelegenheiten@stadt-koeln.de</a>
+									<ul id="a5d3d883-2b2c-40a0-8fe5-53d3e0fd6dd4" class="bulleted-list">
+										<li style="list-style-type:square">Bei Fragen noch einmal hier anrufen: +49 221
+											22130694 (Stadt Köln - Servicenummer Bereich Reisegewerbe)</li>
+									</ul>
+								</li>
+							</ul>
+							<ul id="e42eae40-e17c-451e-8776-3fb116de8b74" class="bulleted-list">
+								<li style="list-style-type:circle"><span style="border-bottom:0.05em solid">Benötigt
+										wird:</span>
+									<ul id="00fbbaca-9f1d-4b30-b2c7-2fb7e3e27dcf" class="to-do-list">
+										<li>
+											<div class="checkbox checkbox-on"></div> <span
+												class="to-do-children-checked">Personalausweis</span>
+											<div class="indented"></div>
+										</li>
+									</ul>
+									<p id="fb0d7ec2-dfd6-4185-8478-f287be82de02" class="">Nicht älter als 3 Monate:</p>
+									<ul id="afbedb88-52bd-4fa1-9ff9-c56743f863f3" class="to-do-list">
+										<li>
+											<div class="checkbox checkbox-on"></div> <span
+												class="to-do-children-checked"><strong>Führungszeugnis </strong></span>
+											<div class="indented">
+												<p id="9c0290f2-1da5-41e8-b3eb-cb27d76643bc" class=""><strong>→
+														Beantragt! → Antrag gestellt in Bürgerzentrum → Wird direkt zur
+														Stadt gesendet unter dem (allgemeinen) Aktenzeichen → 13€
+														gezahlt:
+													</strong>321/10-Paragraph55GewO</p>
+												<ul id="090cc709-12a1-40fa-babe-026dc3fec376" class="bulleted-list">
+													<li style="list-style-type:disc">nach Belegart O. Zu beantragen im
+														Kundenzentrum in Ihrem Bezirksrathaus oder in der
+														Gewerbeabteilung.</li>
+												</ul>
+											</div>
+										</li>
+									</ul>
+									<ul id="c972a182-56fb-46ca-95c3-5ab532eb1c0d" class="to-do-list">
+										<li>
+											<div class="checkbox checkbox-on"></div> <span
+												class="to-do-children-checked"><strong><strong>Auszug aus dem
+														Gewerbezentralregister</strong></strong></span>
+											<div class="indented">
+												<p id="83f562d5-dbc0-4f7e-988e-4002c5dd1440" class=""><strong>→
+														Beantragt! → Antrag gestellt in Bürgerzentrum → Wird direkt zur
+														Stadt gesendet unter dem (allgemeinen) Aktenzeichen → 13€
+														gezahlt!
+													</strong>321/10-Paragraph55GewO</p>
+												<ul id="40bff5c1-9c98-4dd6-bad8-a50327578ff3" class="bulleted-list">
+													<li style="list-style-type:disc">nach Belegart 9. Zu beantragen im
+														Kundenzentrum in Ihrem Bezirksrathaus oder in der
+														Gewerbeabteilung.</li>
+												</ul>
+											</div>
+										</li>
+									</ul>
+									<ul id="404fa867-a6f4-48b8-9ae8-3556836d946e" class="to-do-list">
+										<li>
+											<div class="checkbox checkbox-on"></div> <span
+												class="to-do-children-checked"><strong><strong>Auszug aus dem
+														Vollstreckungsportal</strong></strong></span>
+											<div class="indented">
+												<p id="ba8ab30a-7d29-4694-976a-2f8565fc52a7" class=""><strong>→ In
+														Vollstreckungsportal angemeldet, ich erhalte in den nächsten
+														Tagen einen Brief mit einer PIN. → </strong><span
+														style="border-bottom:0.05em solid"><strong>Kostenlose</strong></span><strong>
+														Selbstauskunft!
+													</strong>Sobald ich die PIN erhalten haben, auf nachfolgenden Link
+													klicken, um den Zugang freizuschalten
+													und ein Kennwort zu vergeben:
+													<a
+														href="https://www.vollstreckungsportal.de/auskunft/allg/freischalten.jsf">https://www.vollstreckungsportal.de/auskunft/allg/freischalten.jsf</a>
+												</p>
+												<p id="361a561d-d1bf-4b96-a72f-ade0ff19070a" class="">Nach erfolgreicher
+													Freischaltung wird die PIN nicht mehr benötigt. Verwenden Sie für
+													erneute
+													Anmeldungen zur Auskunft im Vollstreckungsportal daher bitte
+													ausschließlich den nachfolgenden Link:
+													<a
+														href="https://www.vollstreckungsportal.de/auskunft/allg/willkommen.jsf">https://www.vollstreckungsportal.de/auskunft/allg/willkommen.jsf</a>
+												</p>
+												<ul id="f3cafdb5-76fb-479f-aa06-80b0b78fdf20" class="bulleted-list">
+													<li style="list-style-type:disc">unter &quot;Registrierung
+														Auskunft&quot; anmelden. Den Link zum Vollstreckungsportal
+														finden Sie unter &quot;Downloads und Infos&quot;.</li>
+												</ul>
+												<ul id="99a8e9f6-9a10-4aa6-9e74-f32d579a8dd7" class="bulleted-list">
+													<li style="list-style-type:disc">Wichtig: Als Einsichtsgrund muss
+														folgendes ausgewählt werden: “um wirtschaftliche Nachteile
+														abzuwenden”</li>
+												</ul>
+												<ul id="04c19c00-ca85-4d31-af6a-e6b6149ea8d1" class="bulleted-list">
+													<li style="list-style-type:disc">Benötigtes Dokument:<figure
+															id="ebcf30db-3a35-4a90-bb63-bd251c79a12a">
+															<div class="source"><a
+																	href="Pizza-Reisegewerbe%20f781c3f38d874c398cee5a641c145712/offentliche_Einsichtnahme_20230221-1439.pdf">öffentliche_Einsichtnahme_20230221-1439.pdf</a>
+															</div>
+														</figure>
+													</li>
+												</ul>
+											</div>
+										</li>
+									</ul>
+									<ul id="a5925dc8-9c7c-4767-8c91-e4b07218e81b" class="to-do-list">
+										<li>
+											<div class="checkbox checkbox-on"></div> <span
+												class="to-do-children-checked"><strong><strong>Negativbescheinigung des
+														Insolvenzgerichts</strong></strong></span>
+											<div class="indented">
+												<p id="c312b982-343e-4c81-8a37-cb10ce43955c" class=""><strong>→
+														Beantragt! → Per Post abgeschickt, wird mir vermutlich
+														persönlich geschickt und muss dann mit Reisegewerbeantrag
+														eingereicht werden </strong></p>
+												<p id="0d11f6b0-c5ca-456a-9b19-502b38437266" class=""><strong>→ Brief
+														vom Amtsgericht samt Rechnung über 15€ kam postalisch; 15€
+														gezahlt! →Negativbescheinigung wird mit noch
+														zugesandt?!</strong></p>
+												<ul id="bd21bef2-53ce-49fa-b35a-0e3c66b1ece6" class="bulleted-list">
+													<li style="list-style-type:disc">für Wohnsitze und Betriebssitze
+														(falls vorhanden) der letzten drei Jahre. Für Wohnsitze und
+														Betriebssitze in Köln erhältlich beim Amtsgericht Köln, 50939
+														Köln, Luxemburger Straße 101 (Justizzentrum).</li>
+												</ul>
+												<ul id="bb8b34fd-cb78-4ffd-9ee1-476aa9424093" class="bulleted-list">
+													<li style="list-style-type:disc"><a
+															href="https://www.ag-koeln.nrw.de/infos/Formulare/index.php">Hier
+															noch einmal</a>, falls der Antrag warum auch immer verloren
+														gehen sollte:<figure id="1a4e3eb4-203f-4678-b68b-1adf97f6dd72">
+															<div class="source"><a
+																	href="Pizza-Reisegewerbe%20f781c3f38d874c398cee5a641c145712/AG-Inso-Nr-1b-Unternehmen--.pdf">AG-Inso-Nr-1b-Unternehmen--.pdf</a>
+															</div>
+														</figure>
+													</li>
+												</ul>
+												<ul id="3db3d758-34a9-403c-bdf8-c167a4db9ed9" class="bulleted-list">
+													<li style="list-style-type:disc">Benötigtes Dokument:<figure
+															id="70855d7a-bc61-4919-b0d5-e317890a51d6">
+															<div class="source"><a
+																	href="Pizza-Reisegewerbe%20f781c3f38d874c398cee5a641c145712/Negativattest-bescheinigung_Insolvenzgericht.pdf">Negativattest:-bescheinigung_Insolvenzgericht.pdf</a>
+															</div>
+														</figure>
+													</li>
+												</ul>
+											</div>
+										</li>
+									</ul>
+									<ul id="8a9e2fae-4e05-4e87-941e-ba82fed7cd72" class="to-do-list">
+										<li>
+											<div class="checkbox checkbox-on"></div> <span
+												class="to-do-children-checked"><strong><strong>Auskunft in Steuersachen
+														des Finanzamtes</strong></strong></span>
+											<div class="indented">
+												<ul id="602e1452-5e35-4be2-b331-b33c86d46e4c" class="bulleted-list">
+													<li style="list-style-type:disc">Kann beim Finanzamt telefonisch
+														unter Angabe der Steuernummer (für die Einkommen- &amp;
+														Umsatzsteuer) beantragt werden und wird dann postalisch
+														zugesandt. </li>
+												</ul>
+												<ul id="48f35753-04fb-4974-a7c2-ad43c9e02132" class="bulleted-list">
+													<li style="list-style-type:disc">für Wohnsitze und Betriebssitze
+														(falls vorhanden) der letzten drei Jahre.</li>
+												</ul>
+												<ul id="6007c673-d6e1-448d-894a-c2e45abad8f5" class="bulleted-list">
+													<li style="list-style-type:disc">Muss beim Finanzamt angefordert
+														werden. Vorher beim Finanzamt anrufen und nachfragen! Es könnte
+														nämlich sein, dass man vorher irgendein Formular o. Ä. ausfüllen
+														muss.</li>
+												</ul>
+												<ul id="75db41b2-a785-4a0c-83a0-975409a2168e" class="bulleted-list">
+													<li style="list-style-type:disc">Benötigtes Dokument:<figure
+															id="5af784b2-da14-49bd-9204-1896dba5da4d">
+															<div class="source"><a
+																	href="Pizza-Reisegewerbe%20f781c3f38d874c398cee5a641c145712/Auskunft_in_Steuersachen_Finanzamt.pdf">Auskunft_in_Steuersachen_Finanzamt.pdf</a>
+															</div>
+														</figure>
+													</li>
+												</ul>
+											</div>
+										</li>
+									</ul>
+									<ul id="3d24e4d2-74e5-4bd4-9ff3-c1aed17c73ac" class="to-do-list">
+										<li>
+											<div class="checkbox checkbox-on"></div> <span
+												class="to-do-children-checked"><strong><strong>Unbedenklichkeitsbescheinigung
+														des Steueramtes</strong></strong></span>
+											<div class="indented">
+												<p id="40ecb49e-6388-42ff-9ca5-bf8e1898d84f" class=""><strong>→
+													</strong><a
+														href="https://www.stadt-koeln.de/service/onlinedienste/unbedenklichkeitsbescheinigung"><strong>Online-Formular</strong></a><strong>
+														ausgefüllt und abgeschickt + Geld (15€) überwiesen! → Wird mir
+														persönlich zugesandt!</strong></p>
+												<ul id="08a67349-c5ac-4e15-b23f-b623b371220e" class="bulleted-list">
+													<li style="list-style-type:disc">für Wohnsitze und Betriebssitze
+														(falls vorhanden) der letzten drei Jahre. Gemeindesteueramt
+														Köln, Laurenzplatz 1-3, 50667 Köln. Link zur Online-Bestellung
+														finden Sie unter &quot;Ähnliche Dienstleistungen&quot;.</li>
+												</ul>
+												<ul id="7a4ee282-d4c9-4cd8-a622-1e90d7c020a3" class="bulleted-list">
+													<li style="list-style-type:disc">Benötigtes Dokument:<figure
+															id="aa2cb902-9a8a-47bf-845c-fef6119b0bcd">
+															<div class="source"><a
+																	href="Pizza-Reisegewerbe%20f781c3f38d874c398cee5a641c145712/Unbedenklichkeitsbescheinigung_Steueramt.pdf">Unbedenklichkeitsbescheinigung_Steueramt.pdf</a>
+															</div>
+														</figure>
+													</li>
+												</ul>
+											</div>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<ul id="080f16b2-48b3-4b77-8efe-662ccc9d37fc" class="bulleted-list">
+								<li style="list-style-type:circle"><span
+										style="border-bottom:0.05em solid">Kosten</span>:
+									Für die Beantragung der einzelnen Dokumente fallen jeweils ca. 15€ an für den
+									Reisegewerbe-Antrag noch einmal 400€.
+									Zu beachten:
+									Der Antrag ist auch bei einer Ablehnung gebührenpflichtig. Außerdem wird ein Teil
+									der Gebühren fällig, wenn Sie ihn zurücknehmen, aber bereits mit seiner Bearbeitung
+									begonnen wurde. Die Gebühr beträgt dann im Regelfall 75 Prozent der Gebühr, die für
+									eine Erlaubnis fällig gewesen wäre.
+									Dies gilt nicht, wenn er wegen Unzuständigkeit abgelehnt wurde (§ 15 Absatz 2
+									Gebührengesetz).</li>
+							</ul>
+							<ul id="4fb6e1fb-f1b9-4535-9be1-0dc7a1e1c4e9" class="bulleted-list">
+								<li style="list-style-type:circle"><span
+										style="border-bottom:0.05em solid">Reisegewerbekarte ausgefülltes
+										Formular:</span>
+									<figure id="18427d22-1245-4f28-94ac-7da33e5838a5">
+										<div class="source"><a
+												href="Pizza-Reisegewerbe%20f781c3f38d874c398cee5a641c145712/Untitled.pdf">Antrag_Reisegewerbekarte_ausgefuellt</a>
+										</div>
+									</figure>
+								</li>
+							</ul>
+							<ul id="9472840e-9039-478b-b24f-06d84054378b" class="bulleted-list">
+								<li style="list-style-type:circle">Online/ postalisch einreichen ist das Beste - vor Ort
+									(Amt für Gewerbeangelegenheiten, Willi-Brand-Platz 3, Köln Deutz) muss ein Termin
+									gemacht werden und das ist laut Aussagen einer Stadtmitarbeiterin fast unmöglich.
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul id="10db568f-9f95-41bc-827d-9ecb2ccd340d" class="bulleted-list">
+						<li style="list-style-type:disc"><strong>Erlaubnis Ambulanter Handel:</strong>
+							<ul id="5d9363c6-cbde-484c-ab7f-2798f706c119" class="bulleted-list">
+								<li style="list-style-type:circle">Wird erteilt von Amt für öffentliche Ordnung,
+									Ottmar-Pohl- Platz 1, 51103 Köln, E-Mail: <a
+										href="mailto:strassennutzungen@stadt-koeln.de">strassennutzungen@stadt-koeln.de</a>
+								</li>
+							</ul>
+							<ul id="7a9e6a21-647f-43d9-b2a7-944837aa02b9" class="bulleted-list">
+								<li style="list-style-type:circle">Kosten: 50€ Verwaltungsgebühr je Antrag + “<a
+										href="https://www.stadt-koeln.de/mediaasset/content/bekanntmachungen/2022/2022.06.27_0128-01_sondernutzungssatzung_14.06.2022.pdf">Verkauf
+										ohne festen Standort mit Verkaufswagen</a>”: 12,80€ je m2/Monat (Kosten im Falle
+									der Erlaubniserteilung zu zahlen)</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.25em;line-height:1.3">(Noch) Fragen</summary>
+				<div class="indented">
+					<ul id="3aaad6de-bc43-40f5-92ed-2fb9edc1eaa5" class="bulleted-list">
+						<li style="list-style-type:disc">Wo Antrag einreichen? (Per Post oder beim Amt selber) - Dauer
+							des Antrags?
+							→ Am besten per Post oder online, da es wohl sehr schwer ist einen Termin zu bekommen und
+							man wenn dann einen Termin für in ein paar Monaten bekommt.</li>
+					</ul>
+					<ul id="3ebd1fee-3b3a-4159-8f1f-d8fd6c3c9a62" class="bulleted-list">
+						<li style="list-style-type:disc">Wo bekomme ich die anderen Dokumente (Führungszeugnis, …) her?
+							→ Beantragen bei Bürgeramt (z. B. am Wiener Platz in Mülheim)</li>
+					</ul>
+					<ul id="13b686c9-a380-465a-8518-76a52da91fe7" class="bulleted-list">
+						<li style="list-style-type:disc">Über Alternativlösungen nachdenken zur Betreibung auf
+							öffentlichen Grünflächen oder dem Zwang, alle 20 Minuten mind. 200m weiter zu ziehen.
+							→ bei bestehenden Händlern nachfragen, die ein Reisegewerbe haben und ambulanten Handel
+							betreiben! <ol type="1" id="5563328a-ba0f-4a0b-a321-340f2789a57e" class="numbered-list"
+								start="1">
+								<li>Wie machen sie es bezüglich der 20min/ 200m Regel?
+									→ z. B. Waffelmann (wenn er nicht auf einer öffentlichen Veranstaltung wie einem
+									Flohmarkt steht), Maronen-Verkäufer (auf der Schildergasse) oder dem Kaffe-Stand im
+									Lindenthaler Tierpark.</li>
+							</ol>
+							<ol type="1" id="791f5482-cbbd-494b-b2cc-d3d89fe1555e" class="numbered-list" start="2">
+								<li>Kann man den Verkauf als ein Event anmelden (ähnlich einem Straßenfest) und dann
+									doch einen Stand auf Grünflächen etc. betreiben?</li>
+							</ol>
+							<ol type="1" id="46c693df-5385-42c4-907e-16e1bcc15c89" class="numbered-list" start="3">
+								<li>Alternative Nr. 1: Nur auf Privatflächen betreiben wie Parkplatz vor Bumann und
+									Sohn, etc.</li>
+							</ol>
+							<ol type="1" id="81e438ab-a6c5-4e32-a2c7-6c1466744713" class="numbered-list" start="4">
+								<li>Alternative Nr. 2: Auf Straßen betreiben (die nicht als Hauptstr. gelten - verboten
+									siehe <a
+										href="Pizza-Reisegewerbe%20f781c3f38d874c398cee5a641c145712.html">Merkblatt</a>),
+									die günstig an Park angrenzen.
+									→ z. B. auf Schotterplatz vor dem Eingang zum Tanzbrunnen/ RTL der an der
+									Rheinpromenade liegt. (Geht vermutlich eh nicht, da es an der Rheinpromenade und
+									innerhalb der Innenstadt liegt.)</li>
+							</ol>
+							<ol type="1" id="2caa11cd-67bb-4cd9-b71f-dc20f793ad09" class="numbered-list" start="5">
+								<li>Alternative Nr. 3: Verkaufsstand auf/ an öffentlichen Grünflächen <span
+										style="border-bottom:0.05em solid">ABER</span> auf dem Gelände bereits
+									existierender Vereine, Restaurants, Geschäfte, Cafés, …
+									→ Vielleicht gelten dort andere Nutzungsrechte, weil sie dort anderes vergeben
+									worden und ein Betreiben eines Verkaufsstands ist möglich.
+									→ Kaffee-Stand auf Schildergasse vor Sportcheck fragen oder Kaffee-Stand im Tierpark
+									Lindenthal.</li>
+							</ol>
+						</li>
+					</ul>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Ausstattung</summary>
+				<div class="indented">
+					<ul id="67ff6a62-ffe7-48ef-ab5e-e5582bab31bf" class="bulleted-list">
+						<li style="list-style-type:disc">Liste mit Inhaltsstoffen und Allergenen (muss nicht offen
+							liegen, muss nur vorhanden und vorzeigbar sein)</li>
+					</ul>
+					<ul id="e7bf8d85-0648-479d-92ff-c544e47bcccc" class="bulleted-list">
+						<li style="list-style-type:disc">Liste mit Allergenen (muss sichtbar auslegen)</li>
+					</ul>
+					<ul id="413be97d-3474-4849-af54-03397723e7e8" class="bulleted-list">
+						<li style="list-style-type:disc">Reise-Gewerbeschein/ -karte für den Gegenstand „Pizza“</li>
+					</ul>
+					<ul id="30835173-9797-4667-8c29-3257166f75fc" class="bulleted-list">
+						<li style="list-style-type:disc">Irgendwas für auf die Haare (Haarnetz oder Hut, Dutt geht, ist
+							aber nicht optimal)</li>
+					</ul>
+					<ul id="ce1fcd0f-33d7-4913-8424-c5bd92ea6adb" class="bulleted-list">
+						<li style="list-style-type:disc">Mülleimer</li>
+					</ul>
+					<ul id="d31dd72a-e35e-486a-82c9-dc2ba6263bc9" class="bulleted-list">
+						<li style="list-style-type:disc">Handschuhe zum Arbeiten</li>
+					</ul>
+					<ul id="04232d77-0328-4717-b619-59af12df0fd0" class="bulleted-list">
+						<li style="list-style-type:disc">Evtl. Händlernummer, wenn man an Wochenmärkten verkauft</li>
+					</ul>
+					<p id="fe7245b8-7ac5-42ec-a063-e0956c767eb6" class="">
+					</p>
+					<p id="0ff9aea5-2745-45c1-be75-669c81d1fbb3" class="">Gewerbeküche:</p>
+					<ul id="e53e5cf4-e7be-40b0-beeb-b617fe9c063f" class="bulleted-list">
+						<li style="list-style-type:disc">Abwaschbare Arbeitsfläche (z. B. Plane über Tisch)</li>
+					</ul>
+					<ul id="1a6f7bce-5ac1-49a3-a69d-9cc66fd98c85" class="bulleted-list">
+						<li style="list-style-type:disc">Waschbecken (im Optimalfall fließendes warmes Wasser)</li>
+					</ul>
+					<ul id="a7aac167-32e3-4195-9bd1-5d71659f5849" class="bulleted-list">
+						<li style="list-style-type:disc">Schutz, damit von oben nichts auf die Arbeitsfläche fällt
+							(Sonnenschutz reicht/ Pavillon!)</li>
+					</ul>
+					<ul id="7fbe298b-3600-45d1-a3e2-c64da23cbe67" class="bulleted-list">
+						<li style="list-style-type:disc">“Spuckschutz” - z. B. Plexiglasscheibe</li>
+					</ul>
+					<ul id="51017dec-7acd-4569-9228-887d98737a42" class="bulleted-list">
+						<li style="list-style-type:disc">Druckregler für Gasflasche</li>
+					</ul>
+					<ul id="3051d6da-50b3-4ce9-878c-3c71b4884278" class="bulleted-list">
+						<li style="list-style-type:disc">Greenbox green Teller etc.</li>
+					</ul>
+				</div>
+			</details>
+			<p id="611df31d-6e99-4cf1-8ce8-6dadddf462f9" class="">
+			</p>
+		</div>
+	</article>
+</body>
+
+</html>

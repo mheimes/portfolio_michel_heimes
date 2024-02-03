@@ -1,0 +1,2492 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Sneaker Biz</title>
+	<style>
+		/* cspell:disable-file */
+		/* webkit printing magic: print all background colors */
+		html {
+			-webkit-print-color-adjust: exact;
+		}
+
+		* {
+			box-sizing: border-box;
+			-webkit-print-color-adjust: exact;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		@media only screen {
+			body {
+				margin: 2em auto;
+				max-width: 900px;
+				color: rgb(55, 53, 47);
+			}
+		}
+
+		body {
+			line-height: 1.5;
+			white-space: pre-wrap;
+		}
+
+		a,
+		a.visited {
+			color: inherit;
+			text-decoration: underline;
+		}
+
+		.pdf-relative-link-path {
+			font-size: 80%;
+			color: #444;
+		}
+
+		h1,
+		h2,
+		h3 {
+			letter-spacing: -0.01em;
+			line-height: 1.2;
+			font-weight: 600;
+			margin-bottom: 0;
+		}
+
+		.page-title {
+			font-size: 2.5rem;
+			font-weight: 700;
+			margin-top: 0;
+			margin-bottom: 0.75em;
+		}
+
+		h1 {
+			font-size: 1.875rem;
+			margin-top: 1.875rem;
+		}
+
+		h2 {
+			font-size: 1.5rem;
+			margin-top: 1.5rem;
+		}
+
+		h3 {
+			font-size: 1.25rem;
+			margin-top: 1.25rem;
+		}
+
+		.source {
+			border: 1px solid #ddd;
+			border-radius: 3px;
+			padding: 1.5em;
+			word-break: break-all;
+		}
+
+		.callout {
+			border-radius: 3px;
+			padding: 1rem;
+		}
+
+		figure {
+			margin: 1.25em 0;
+			page-break-inside: avoid;
+		}
+
+		figcaption {
+			opacity: 0.5;
+			font-size: 85%;
+			margin-top: 0.5em;
+		}
+
+		mark {
+			background-color: transparent;
+		}
+
+		.indented {
+			padding-left: 1.5em;
+		}
+
+		hr {
+			background: transparent;
+			display: block;
+			width: 100%;
+			height: 1px;
+			visibility: visible;
+			border: none;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+		}
+
+		img {
+			max-width: 100%;
+		}
+
+		@media only print {
+			img {
+				max-height: 100vh;
+				object-fit: contain;
+			}
+		}
+
+		@page {
+			margin: 1in;
+		}
+
+		.collection-content {
+			font-size: 0.875rem;
+		}
+
+		.column-list {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.column {
+			padding: 0 1em;
+		}
+
+		.column:first-child {
+			padding-left: 0;
+		}
+
+		.column:last-child {
+			padding-right: 0;
+		}
+
+		.table_of_contents-item {
+			display: block;
+			font-size: 0.875rem;
+			line-height: 1.3;
+			padding: 0.125rem;
+		}
+
+		.table_of_contents-indent-1 {
+			margin-left: 1.5rem;
+		}
+
+		.table_of_contents-indent-2 {
+			margin-left: 3rem;
+		}
+
+		.table_of_contents-indent-3 {
+			margin-left: 4.5rem;
+		}
+
+		.table_of_contents-link {
+			text-decoration: none;
+			opacity: 0.7;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid rgba(55, 53, 47, 0.09);
+			border-collapse: collapse;
+		}
+
+		table {
+			border-left: none;
+			border-right: none;
+		}
+
+		th,
+		td {
+			font-weight: normal;
+			padding: 0.25em 0.5em;
+			line-height: 1.5;
+			min-height: 1.5em;
+			text-align: left;
+		}
+
+		th {
+			color: rgba(55, 53, 47, 0.6);
+		}
+
+		ol,
+		ul {
+			margin: 0;
+			margin-block-start: 0.6em;
+			margin-block-end: 0.6em;
+		}
+
+		li>ol:first-child,
+		li>ul:first-child {
+			margin-block-start: 0.6em;
+		}
+
+		ul>li {
+			list-style: disc;
+		}
+
+		ul.to-do-list {
+			padding-inline-start: 0;
+		}
+
+		ul.to-do-list>li {
+			list-style: none;
+		}
+
+		.to-do-children-checked {
+			text-decoration: line-through;
+			opacity: 0.375;
+		}
+
+		ul.toggle>li {
+			list-style: none;
+		}
+
+		ul {
+			padding-inline-start: 1.7em;
+		}
+
+		ul>li {
+			padding-left: 0.1em;
+		}
+
+		ol {
+			padding-inline-start: 1.6em;
+		}
+
+		ol>li {
+			padding-left: 0.2em;
+		}
+
+		.mono ol {
+			padding-inline-start: 2em;
+		}
+
+		.mono ol>li {
+			text-indent: -0.4em;
+		}
+
+		.toggle {
+			padding-inline-start: 0em;
+			list-style-type: none;
+		}
+
+		/* Indent toggle children */
+		.toggle>li>details {
+			padding-left: 1.7em;
+		}
+
+		.toggle>li>details>summary {
+			margin-left: -1.1em;
+		}
+
+		.selected-value {
+			display: inline-block;
+			padding: 0 0.5em;
+			background: rgba(206, 205, 202, 0.5);
+			border-radius: 3px;
+			margin-right: 0.5em;
+			margin-top: 0.3em;
+			margin-bottom: 0.3em;
+			white-space: nowrap;
+		}
+
+		.collection-title {
+			display: inline-block;
+			margin-right: 1em;
+		}
+
+		.page-description {
+			margin-bottom: 2em;
+		}
+
+		.simple-table {
+			margin-top: 1em;
+			font-size: 0.875rem;
+			empty-cells: show;
+		}
+
+		.simple-table td {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table th {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table-header-color {
+			background: rgb(247, 246, 243);
+			color: black;
+		}
+
+		.simple-table-header {
+			font-weight: 500;
+		}
+
+		time {
+			opacity: 0.5;
+		}
+
+		.icon {
+			display: inline-block;
+			max-width: 1.2em;
+			max-height: 1.2em;
+			text-decoration: none;
+			vertical-align: text-bottom;
+			margin-right: 0.5em;
+		}
+
+		img.icon {
+			border-radius: 3px;
+		}
+
+		.user-icon {
+			width: 1.5em;
+			height: 1.5em;
+			border-radius: 100%;
+			margin-right: 0.5rem;
+		}
+
+		.user-icon-inner {
+			font-size: 0.8em;
+		}
+
+		.text-icon {
+			border: 1px solid #000;
+			text-align: center;
+		}
+
+		.page-cover-image {
+			display: block;
+			object-fit: cover;
+			width: 100%;
+			max-height: 30vh;
+		}
+
+		.page-header-icon {
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+
+		.page-header-icon-with-cover {
+			margin-top: -0.72em;
+			margin-left: 0.07em;
+		}
+
+		.page-header-icon img {
+			border-radius: 3px;
+		}
+
+		.link-to-page {
+			margin: 1em 0;
+			padding: 0;
+			border: none;
+			font-weight: 500;
+		}
+
+		p>.user {
+			opacity: 0.5;
+		}
+
+		td>.user,
+		td>time {
+			white-space: nowrap;
+		}
+
+		input[type="checkbox"] {
+			transform: scale(1.5);
+			margin-right: 0.6em;
+			vertical-align: middle;
+		}
+
+		p {
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.image {
+			border: none;
+			margin: 1.5em 0;
+			padding: 0;
+			border-radius: 0;
+			text-align: center;
+		}
+
+		.code,
+		code {
+			background: rgba(135, 131, 120, 0.15);
+			border-radius: 3px;
+			padding: 0.2em 0.4em;
+			border-radius: 3px;
+			font-size: 85%;
+			tab-size: 2;
+		}
+
+		code {
+			color: #eb5757;
+		}
+
+		.code {
+			padding: 1.5em 1em;
+		}
+
+		.code-wrap {
+			white-space: pre-wrap;
+			word-break: break-all;
+		}
+
+		.code>code {
+			background: none;
+			padding: 0;
+			font-size: 100%;
+			color: inherit;
+		}
+
+		blockquote {
+			font-size: 1.25em;
+			margin: 1em 0;
+			padding-left: 1em;
+			border-left: 3px solid rgb(55, 53, 47);
+		}
+
+		.bookmark {
+			text-decoration: none;
+			max-height: 8em;
+			padding: 0;
+			display: flex;
+			width: 100%;
+			align-items: stretch;
+		}
+
+		.bookmark-title {
+			font-size: 0.85em;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			height: 1.75em;
+			white-space: nowrap;
+		}
+
+		.bookmark-text {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.bookmark-info {
+			flex: 4 1 180px;
+			padding: 12px 14px 14px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.bookmark-image {
+			width: 33%;
+			flex: 1 1 180px;
+			display: block;
+			position: relative;
+			object-fit: cover;
+			border-radius: 1px;
+		}
+
+		.bookmark-description {
+			color: rgba(55, 53, 47, 0.6);
+			font-size: 0.75em;
+			overflow: hidden;
+			max-height: 4.5em;
+			word-break: break-word;
+		}
+
+		.bookmark-href {
+			font-size: 0.75em;
+			margin-top: 0.25em;
+		}
+
+		.sans {
+			font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+		}
+
+		.code {
+			font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+		}
+
+		.serif {
+			font-family: Lyon-Text, Georgia, ui-serif, serif;
+		}
+
+		.mono {
+			font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+		}
+
+		.pdf .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR';
+		}
+
+		.pdf .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.pdf .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR';
+		}
+
+		.pdf .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.highlight-default {
+			color: rgba(55, 53, 47, 1);
+		}
+
+		.highlight-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.highlight-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.highlight-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.highlight-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.highlight-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.highlight-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.highlight-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.highlight-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.highlight-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.highlight-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.highlight-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.highlight-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.highlight-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.highlight-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.highlight-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.highlight-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.highlight-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.highlight-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.block-color-default {
+			color: inherit;
+			fill: inherit;
+		}
+
+		.block-color-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.block-color-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.block-color-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.block-color-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.block-color-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.block-color-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.block-color-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.block-color-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.block-color-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.block-color-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.block-color-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.block-color-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.block-color-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.block-color-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.block-color-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.block-color-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.block-color-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.block-color-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.select-value-color-interactiveBlue {
+			background-color: rgba(35, 131, 226, .07);
+		}
+
+		.select-value-color-pink {
+			background-color: rgba(245, 224, 233, 1);
+		}
+
+		.select-value-color-purple {
+			background-color: rgba(232, 222, 238, 1);
+		}
+
+		.select-value-color-green {
+			background-color: rgba(219, 237, 219, 1);
+		}
+
+		.select-value-color-gray {
+			background-color: rgba(227, 226, 224, 1);
+		}
+
+		.select-value-color-translucentGray {
+			background-color: rgba(255, 255, 255, 0.0375);
+		}
+
+		.select-value-color-orange {
+			background-color: rgba(250, 222, 201, 1);
+		}
+
+		.select-value-color-brown {
+			background-color: rgba(238, 224, 218, 1);
+		}
+
+		.select-value-color-red {
+			background-color: rgba(255, 226, 221, 1);
+		}
+
+		.select-value-color-yellow {
+			background-color: rgba(253, 236, 200, 1);
+		}
+
+		.select-value-color-blue {
+			background-color: rgba(211, 229, 239, 1);
+		}
+
+		.select-value-color-pageGlass {
+			background-color: undefined;
+		}
+
+		.select-value-color-washGlass {
+			background-color: undefined;
+		}
+
+		.checkbox {
+			display: inline-flex;
+			vertical-align: text-bottom;
+			width: 16;
+			height: 16;
+			background-size: 16px;
+			margin-left: 2px;
+			margin-right: 5px;
+		}
+
+		.checkbox-on {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+
+		.checkbox-off {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+	</style>
+</head>
+
+<body>
+	<article id="13a20fcc-96f8-4666-970f-9d1f39ea0521" class="page sans">
+		<header><img class="page-cover-image"
+				src="https://images.unsplash.com/photo-1592860986140-d77ede8b7116?ixlib=rb-1.2.1&amp;q=80&amp;cs=tinysrgb&amp;fm=jpg&amp;crop=entropy"
+				style="object-position:center 50%" />
+			<div class="page-header-icon page-header-icon-with-cover"><span class="icon">👟</span></div>
+			<h1 class="page-title">Sneaker Biz</h1>
+			<p class="page-description"></p>
+		</header>
+		<div class="page-body">
+			<figure id="d453bd41-47b6-4202-a221-ffab33def86e" class="link-to-page"><a
+					href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Steuern%20d453bd4147b64202a221ffab33def86e.html"><span
+						class="icon">🏢</span>Steuern</a></figure>
+			<figure id="ab5d2feb-bf48-4236-addc-576e86c25c0b" class="link-to-page"><a
+					href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Quittungen%20ab5d2febbf484236addc576e86c25c0b.html"><span
+						class="icon">🧾</span>Quittungen</a></figure>
+			<figure id="19baeda4-62d4-4272-bad5-fe5a38e79231" class="link-to-page"><a
+					href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Rechtliche%20Angaben%2019baeda462d44272bad5fe5a38e79231.html"><span
+						class="icon">©️</span>Rechtliche Angaben</a></figure>
+			<figure id="1118676a-38a4-4ef9-bcd5-cd7351ec6bc7" class="link-to-page"><a
+					href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Fragen%20an%20SteuerberaterIn%201118676a38a44ef9bcd5cd7351ec6bc7.html"><span
+						class="icon">💼</span>Fragen an SteuerberaterIn</a></figure>
+			<figure id="2b955030-cd10-4ceb-8a3c-9034a6cb99a1" class="link-to-page"><a
+					href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Workflow%202b955030cd104ceb8a3c9034a6cb99a1.html"><span
+						class="icon">🌀</span>Workflow</a></figure>
+			<figure id="8e97f8cc-61d4-48d0-9030-5ea8161927d6" class="link-to-page"><a
+					href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Setup%208e97f8cc61d448d090305ea8161927d6.html"><span
+						class="icon">⚙️</span>Setup</a></figure>
+			<p id="5e14fae5-b60c-492d-a4f4-55e6b1d7acb9" class="">
+			</p>
+			<div id="b73e52a3-3b0b-4283-a09e-b44ffee02f96" class="collection-content">
+				<h4 class="collection-title">Noch eintragen in Liste + Rechnungen in Ordnersystemen hinterlegen </h4>
+				<table class="collection-content">
+					<thead>
+						<tr>
+							<th><span class="icon property-icon"><svg viewBox="0 0 16 16"
+										style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden"
+										class="typesSelect">
+										<path
+											d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM7.62402 10.6348C7.79492 10.915 8.20508 10.9287 8.37598 10.6348L10.666 6.73145C10.8574 6.41016 10.7002 6.04102 10.3652 6.04102H5.62793C5.29297 6.04102 5.14941 6.43066 5.32031 6.73145L7.62402 10.6348Z">
+										</path>
+									</svg></span>Art</th>
+							<th><span class="icon property-icon"><svg viewBox="0 0 16 16"
+										style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden"
+										class="typesTitle">
+										<path
+											d="M0.637695 13.1914C1.0957 13.1914 1.32812 13 1.47852 12.5215L2.24414 10.3887H6.14746L6.90625 12.5215C7.05664 13 7.2959 13.1914 7.74707 13.1914C8.22559 13.1914 8.5332 12.9043 8.5332 12.4531C8.5332 12.2891 8.50586 12.1523 8.44434 11.9678L5.41602 3.79199C5.2041 3.21777 4.82129 2.9375 4.19922 2.9375C3.60449 2.9375 3.21484 3.21777 3.0166 3.78516L-0.0322266 12.002C-0.09375 12.1797 -0.121094 12.3232 -0.121094 12.4668C-0.121094 12.918 0.166016 13.1914 0.637695 13.1914ZM2.63379 9.12402L4.17871 4.68066H4.21973L5.76465 9.12402H2.63379ZM12.2793 13.2324C13.3115 13.2324 14.2891 12.6787 14.7129 11.8037H14.7402V12.5762C14.7471 12.9863 15.0273 13.2393 15.4238 13.2393C15.834 13.2393 16.1143 12.9795 16.1143 12.5215V8.00977C16.1143 6.49902 14.9658 5.52148 13.1543 5.52148C11.7666 5.52148 10.6592 6.08887 10.2695 6.99121C10.1943 7.15527 10.1533 7.3125 10.1533 7.46289C10.1533 7.81152 10.4062 8.04395 10.7686 8.04395C11.0215 8.04395 11.2129 7.94824 11.3496 7.73633C11.7529 6.99121 12.2861 6.65625 13.1064 6.65625C14.0977 6.65625 14.6992 7.20996 14.6992 8.1123V8.67285L12.5664 8.7959C10.7686 8.8916 9.77734 9.69824 9.77734 11.0107C9.77734 12.3369 10.8096 13.2324 12.2793 13.2324ZM12.6621 12.1387C11.8008 12.1387 11.2129 11.667 11.2129 10.9561C11.2129 10.2725 11.7598 9.82129 12.7578 9.75977L14.6992 9.62988V10.3203C14.6992 11.3457 13.7969 12.1387 12.6621 12.1387Z">
+										</path>
+									</svg></span>Gegenstand</th>
+							<th><span class="icon property-icon"><svg viewBox="0 0 16 16"
+										style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden"
+										class="typesText">
+										<path
+											d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z">
+										</path>
+									</svg></span>Store</th>
+							<th><span class="icon property-icon"><svg viewBox="0 0 16 16"
+										style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden"
+										class="typesText">
+										<path
+											d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z">
+										</path>
+									</svg></span>Ort der Rechnung &amp; Datum</th>
+							<th><span class="icon property-icon"><svg viewBox="0 0 16 16"
+										style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden"
+										class="typesSelect">
+										<path
+											d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM7.62402 10.6348C7.79492 10.915 8.20508 10.9287 8.37598 10.6348L10.666 6.73145C10.8574 6.41016 10.7002 6.04102 10.3652 6.04102H5.62793C5.29297 6.04102 5.14941 6.43066 5.32031 6.73145L7.62402 10.6348Z">
+										</path>
+									</svg></span>Eingetragen in Liste</th>
+							<th><span class="icon property-icon"><svg viewBox="0 0 16 16"
+										style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden"
+										class="typesStatus">
+										<path
+											d="M8.75488 1.02344C8.75488 0.613281 8.41309 0.264648 8.00293 0.264648C7.59277 0.264648 7.25098 0.613281 7.25098 1.02344V3.11523C7.25098 3.51855 7.59277 3.86719 8.00293 3.86719C8.41309 3.86719 8.75488 3.51855 8.75488 3.11523V1.02344ZM3.91504 5.0293C4.20215 5.31641 4.69434 5.32324 4.97461 5.03613C5.26855 4.74902 5.26855 4.25684 4.98145 3.96973L3.53906 2.52051C3.25195 2.2334 2.7666 2.21973 2.47949 2.50684C2.19238 2.79395 2.18555 3.28613 2.47266 3.57324L3.91504 5.0293ZM10.9629 4.01758C10.6826 4.30469 10.6826 4.79688 10.9697 5.08398C11.2568 5.37109 11.749 5.36426 12.0361 5.07715L13.4854 3.62793C13.7725 3.34082 13.7725 2.84863 13.4785 2.55469C13.1982 2.27441 12.7061 2.27441 12.4189 2.56152L10.9629 4.01758ZM15.0234 8.78906C15.4336 8.78906 15.7822 8.44727 15.7822 8.03711C15.7822 7.62695 15.4336 7.28516 15.0234 7.28516H12.9385C12.5283 7.28516 12.1797 7.62695 12.1797 8.03711C12.1797 8.44727 12.5283 8.78906 12.9385 8.78906H15.0234ZM0.975586 7.28516C0.56543 7.28516 0.223633 7.62695 0.223633 8.03711C0.223633 8.44727 0.56543 8.78906 0.975586 8.78906H3.07422C3.48438 8.78906 3.83301 8.44727 3.83301 8.03711C3.83301 7.62695 3.48438 7.28516 3.07422 7.28516H0.975586ZM12.0361 10.9902C11.749 10.71 11.2568 10.71 10.9629 10.9971C10.6826 11.2842 10.6826 11.7764 10.9697 12.0635L12.4258 13.5127C12.7129 13.7998 13.2051 13.793 13.4922 13.5059C13.7793 13.2256 13.7725 12.7266 13.4854 12.4395L12.0361 10.9902ZM2.52051 12.4395C2.22656 12.7266 2.22656 13.2188 2.50684 13.5059C2.79395 13.793 3.28613 13.7998 3.57324 13.5127L5.02246 12.0703C5.31641 11.7832 5.31641 11.291 5.03613 11.0039C4.74902 10.7168 4.25684 10.71 3.96973 10.9971L2.52051 12.4395ZM8.75488 12.9658C8.75488 12.5557 8.41309 12.207 8.00293 12.207C7.59277 12.207 7.25098 12.5557 7.25098 12.9658V15.0576C7.25098 15.4609 7.59277 15.8096 8.00293 15.8096C8.41309 15.8096 8.75488 15.4609 8.75488 15.0576V12.9658Z">
+										</path>
+									</svg></span>Status</th>
+							<th><span class="icon property-icon"><svg viewBox="0 0 16 16"
+										style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden"
+										class="typesCheckbox">
+										<path
+											d="M3.85742 14.4561H12.1357C13.6123 14.4561 14.3779 13.6904 14.3779 12.2344V3.91504C14.3779 2.45215 13.6123 1.69336 12.1357 1.69336H3.85742C2.38086 1.69336 1.61523 2.45215 1.61523 3.91504V12.2344C1.61523 13.6973 2.38086 14.4561 3.85742 14.4561ZM3.93945 13.1162C3.30371 13.1162 2.95508 12.7812 2.95508 12.1182V4.02441C2.95508 3.36133 3.30371 3.0332 3.93945 3.0332H12.0537C12.6826 3.0332 13.0381 3.36133 13.0381 4.02441V12.1182C13.0381 12.7812 12.6826 13.1162 12.0537 13.1162H3.93945ZM7.26855 11.3115C7.51465 11.3115 7.72656 11.1885 7.87012 10.9697L10.9258 6.19141C11.0146 6.04785 11.0967 5.88379 11.0967 5.72656C11.0967 5.3916 10.7959 5.16602 10.4746 5.16602C10.2695 5.16602 10.085 5.27539 9.94141 5.50781L7.24121 9.8418L5.96973 8.22168C5.80566 8.00977 5.6416 7.93457 5.43652 7.93457C5.10156 7.93457 4.8418 8.20117 4.8418 8.54297C4.8418 8.70703 4.90332 8.85742 5.01953 9.00098L6.63281 10.9697C6.81738 11.209 7.01562 11.3115 7.26855 11.3115Z">
+										</path>
+									</svg></span>Delivered @home</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr id="dc5a4682-6a96-41b0-8cbb-cf94bff74a87">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-orange">Beispiel</span>
+							</td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Untitled%20dc5a46826a9641b08cbbcf94bff74a87.html">Untitled</a>
+							</td>
+							<td class="cell-NF&lt;?"></td>
+							<td class="cell-fY?m"></td>
+							<td class="cell-zwbL"></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="2d019798-eea2-4b70-bc28-55f8f9483dd1">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-brown">Kauf</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Untitled%202d019798eea24b70bc2855f8f9483dd1.html">Untitled</a>
+							</td>
+							<td class="cell-NF&lt;?"></td>
+							<td class="cell-fY?m"></td>
+							<td class="cell-zwbL"></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="06bb07c8-19b7-47f8-8652-9fe822194360">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-brown">Kauf</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Dunk%20Low%20Panda%20GS%20-%206%205%2039%2006bb07c819b747f886529fe822194360.html">Dunk
+									Low Panda GS - 6.5 39</a></td>
+							<td class="cell-NF&lt;?">Nike App</td>
+							<td class="cell-fY?m">Email schrecongostace@gmail - Bestellung am 25.01. - auf Lars</td>
+							<td class="cell-zwbL"><span
+									class="selected-value select-value-color-blue">eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-on"></div>
+							</td>
+						</tr>
+						<tr id="a68754f2-b867-4d85-92a8-2109906bb2a7">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-blue">sonst.
+									Kosten</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Aufwandsentscha%CC%88digung%20Paketversand%20-%20Lars%20-%20Dunk%20%20a68754f2b8674d8592a82109906bb2a7.html">Aufwandsentschädigung
+									Paketversand - Lars - Dunk GS Panda US6.5 39</a></td>
+							<td class="cell-NF&lt;?">PP</td>
+							<td class="cell-fY?m">Lars - Geld gesendet! → am 31.01.23
+
+								ODER
+								Lars - Noch nicht gezahlt.</td>
+							<td class="cell-zwbL"><span
+									class="selected-value select-value-color-blue">eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="c85335a8-1dcd-45eb-bda5-aceb439a4114">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-pink">Verkauf</span>
+							</td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Untitled%20c85335a81dcd45ebbda5aceb439a4114.html">Untitled</a>
+							</td>
+							<td class="cell-NF&lt;?"></td>
+							<td class="cell-fY?m"></td>
+							<td class="cell-zwbL"></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="831a539a-455e-477c-9b0d-e0c1ca5abd2c">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-pink">Verkauf</span>
+							</td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Dunk%20Low%20Grey%20Fog%2039%20831a539a455e477c9b0de0c1ca5abd2c.html">Dunk
+									Low Grey Fog 39</a></td>
+							<td class="cell-NF&lt;?">PP</td>
+							<td class="cell-fY?m">Verkauf an DonDead am 09.02.2023</td>
+							<td class="cell-zwbL"><span
+									class="selected-value select-value-color-blue">eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="9ca17fdf-aa1f-4c0c-b5ad-6ad984fad043">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-blue">sonst.
+									Kosten</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Paypal%20Gebu%CC%88hr%20DonDead%20GmbH%20-%20Grey%20Fog%2039%209ca17fdfaa1f4c0cb5ad6ad984fad043.html">Paypal
+									Gebühr DonDead GmbH - Grey Fog 39</a></td>
+							<td class="cell-NF&lt;?">PP</td>
+							<td class="cell-fY?m">Zahlung am 09.02.2023 empfangen</td>
+							<td class="cell-zwbL"><span
+									class="selected-value select-value-color-blue">eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="0c6d9ac5-73ca-4e91-8150-80a5cd8eb46d">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-blue">sonst.
+									Kosten</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Kosten%20Paketversand%20-%20Label-Erstellung%20-%20Don%20Dead%20%200c6d9ac573ca4e91815080a5cd8eb46d.html">Kosten
+									Paketversand - Label-Erstellung - Don Dead Dunk Grey Fog 39</a></td>
+							<td class="cell-NF&lt;?">DHL - PP</td>
+							<td class="cell-fY?m">Label gekauft über Paypal am 10.02.2023 - Rechnung in DHL-Ordner am
+								Handy</td>
+							<td class="cell-zwbL"><span
+									class="selected-value select-value-color-blue">eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="27b5dfaf-13a5-4b3c-bd1f-8681ab6fc246">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-green">Rückgabe/
+									Storno</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Untitled%2027b5dfaf13a54b3cbd1f8681ab6fc246.html">Untitled</a>
+							</td>
+							<td class="cell-NF&lt;?"></td>
+							<td class="cell-fY?m"></td>
+							<td class="cell-zwbL"></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="651b42db-180f-4cb4-b997-070052d6d7a1">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-green">Rückgabe/
+									Storno</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/AJ2%20Chicago%20651b42db180f4cb4b997070052d6d7a1.html">AJ2
+									Chicago</a></td>
+							<td class="cell-NF&lt;?">SNKRS</td>
+							<td class="cell-fY?m">Return - Rückerstattung eingeleitet eMail am 06.02.23 (paigegulley3@)
+								→ email mit Stornorechnung am 07.02.2023!</td>
+							<td class="cell-zwbL"><span
+									class="selected-value select-value-color-blue">eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="dba90bd1-fa90-4444-9b4e-8afdcbd8d776">
+							<td class="cell-Eg}="></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Untitled%20dba90bd1fa9044449b4e8afdcbd8d776.html">Untitled</a>
+							</td>
+							<td class="cell-NF&lt;?"></td>
+							<td class="cell-fY?m"></td>
+							<td class="cell-zwbL"></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="a86589f5-505c-4c87-a7a6-686cd602454b">
+							<td class="cell-Eg}="></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Untitled%20a86589f5505c4c87a7a6686cd602454b.html">Untitled</a>
+							</td>
+							<td class="cell-NF&lt;?"></td>
+							<td class="cell-fY?m"></td>
+							<td class="cell-zwbL"></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="5d40caab-e4a9-4097-9c8b-f0607cd96685">
+							<td class="cell-Eg}="></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Untitled%205d40caabe4a940979c8bf0607cd96685.html">Untitled</a>
+							</td>
+							<td class="cell-NF&lt;?"></td>
+							<td class="cell-fY?m"></td>
+							<td class="cell-zwbL"></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="d00dae90-559a-465f-b4b4-07da5e0d36e7">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-blue">sonst.
+									Kosten</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Aufwandsentscha%CC%88digung%20Paketversand%20-%20Michael%20Schy%20d00dae90559a465fb4b407da5e0d36e7.html">Aufwandsentschädigung
+									Paketversand - Michael Schymonek - Jordan 2 Chicago</a></td>
+							<td class="cell-NF&lt;?">PP</td>
+							<td class="cell-fY?m">Mike - Geld gesendet! → am 31.01.23 in einer Transaktion mit Grey Fog
+								14</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="854a23ba-fc87-47d1-b876-9b43cf5a86c6">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-pink">Verkauf</span>
+							</td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Dunk%20Panda%201x%2038,%204x%2039%20854a23bafc8747d1b8769b43cf5a86c6.html">Dunk
+									Panda 1x 38, 4x 39</a></td>
+							<td class="cell-NF&lt;?">PP</td>
+							<td class="cell-fY?m">Verkauft an Niklas Schomann (PP) am 25.01.2023</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="a3f1c051-626e-4fef-b70b-fb553a74ef27">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-blue">sonst.
+									Kosten</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Paypal%20Gebu%CC%88hr%20Niklas%20Schomann%20-%20Pandas%201x%2038,%204x3%20a3f1c051626e4fefb70bfb553a74ef27.html">Paypal
+									Gebühr Niklas Schomann - Pandas 1x 38, 4x39</a></td>
+							<td class="cell-NF&lt;?">PP</td>
+							<td class="cell-fY?m">Zahlung am 25.01.2023 empfangen</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="b4e59606-e8ec-4b07-ba34-11de822a07fa">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-blue">sonst.
+									Kosten</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Aufwandsentscha%CC%88digung%20Paketversand%20-%20Britta%20-%20Dun%20b4e59606e8ec4b07ba3411de822a07fa.html">Aufwandsentschädigung
+									Paketversand - Britta - Dunk Grey</a></td>
+							<td class="cell-NF&lt;?">PP</td>
+							<td class="cell-fY?m">Britta - Geld gesendet! → am 01.02.2023 → Geld für insg. 3x Paare
+								(Panda, Grey Fog, White Gum)</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="8bad7e64-7e44-46a2-b45b-0a31653623e6">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-blue">sonst.
+									Kosten</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Aufwandsentscha%CC%88digung%20Paketversand%20-%20Mike%20-%20Dunk%20%208bad7e647e4446a2b45b0a31653623e6.html">Aufwandsentschädigung
+									Paketversand - Mike - Dunk Grey</a></td>
+							<td class="cell-NF&lt;?">PP</td>
+							<td class="cell-fY?m">Mike - Geld gesendet! → am 31.01.23 in einer Transaktion mit AJ2
+								Chicago 6</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="0916b511-db1e-44c5-a69a-179290570008">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-blue">sonst.
+									Kosten</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Aufwandsentscha%CC%88digung%20Paketversand%20-%20Anthony%20-%20Du%200916b511db1e44c5a69a179290570008.html">Aufwandsentschädigung
+									Paketversand - Anthony - Dunk Grey</a></td>
+							<td class="cell-NF&lt;?">PP</td>
+							<td class="cell-fY?m">Anthony - Geld gesendet! → am 29.01.2023</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="38da34c2-9f4e-4664-9043-49b45a531f15">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-blue">sonst.
+									Kosten</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Aufwandsentscha%CC%88digung%20Paketversand%20-%20Britta%20-%20Dun%2038da34c29f4e4664904349b45a531f15.html">Aufwandsentschädigung
+									Paketversand - Britta - Dunk SB White Gum US12</a></td>
+							<td class="cell-NF&lt;?">PP</td>
+							<td class="cell-fY?m">Britta - Geld gesendet! → am 01.02.2023 → Geld für insg. 3x Paare
+								(Panda, Grey Fog, White Gum)</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="0d7dd8e6-4f7e-45fa-ac33-5a184f32e1ba">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-blue">sonst.
+									Kosten</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Aufwandsentscha%CC%88digung%20Paketversand%20-%20Tommy%20-%20Dunk%200d7dd8e64f7e45faac335a184f32e1ba.html">Aufwandsentschädigung
+									Paketversand - Tommy - Dunk SB White Gum US12</a></td>
+							<td class="cell-NF&lt;?">PP</td>
+							<td class="cell-fY?m">Tommy - Geld gesendet! → am 02.02.2023</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="9b869e27-5d60-48c2-808b-dad00c82ff79">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-blue">sonst.
+									Kosten</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Aufwandsentscha%CC%88digung%20Paketversand%20-%20Emil%20-%20Dunk%20%209b869e275d6048c2808bdad00c82ff79.html">Aufwandsentschädigung
+									Paketversand - Emil - Dunk SB White Gum US7.5</a></td>
+							<td class="cell-NF&lt;?">PP</td>
+							<td class="cell-fY?m">Emil - Geld gesendet! → am 31.01.23</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="372b3658-b4fb-4a57-8a7e-3a0fc387ff72">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-blue">sonst.
+									Kosten</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Aufwandsentscha%CC%88digung%20Paketversand%20-%20David%20-%20Dunk%20372b3658b4fb4a578a7e3a0fc387ff72.html">Aufwandsentschädigung
+									Paketversand - David - Dunk SB Black Gum US12</a></td>
+							<td class="cell-NF&lt;?">PP</td>
+							<td class="cell-fY?m">David - Geld gesendet! → am 30.01.23 in einer Transaktion mit Panda
+								6.5 </td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="05bd5b56-e25c-4708-a554-85b536bf63b8">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-brown">Kauf</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Dunk%20Low%20Panda%20GS%20-%206%205%2039%2005bd5b56e25c4708a55485b536bf63b8.html">Dunk
+									Low Panda GS - 6.5 39</a></td>
+							<td class="cell-NF&lt;?">Nike App</td>
+							<td class="cell-fY?m">Email schrecongostace@gmail - Bestellung am 25.01. - auf Lars</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-on"></div>
+							</td>
+						</tr>
+						<tr id="aba336bb-6583-47e6-9590-994f72ef93c4">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-brown">Kauf</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Dunk%20Low%20Panda%20GS%20-%206%205%2039%20aba336bb658347e69590994f72ef93c4.html">Dunk
+									Low Panda GS - 6.5 39</a></td>
+							<td class="cell-NF&lt;?">Nike App</td>
+							<td class="cell-fY?m">Email brittakettenfeuer@gmail - Bestellung am 25.01. - auf Britta</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-on"></div>
+							</td>
+						</tr>
+						<tr id="9beba419-70b5-4122-b8a6-091a144c7e41">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-brown">Kauf</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Dunk%20Low%20Panda%20GS%20-%206%205%2039%209beba41970b54122b8a6091a144c7e41.html">Dunk
+									Low Panda GS - 6.5 39</a></td>
+							<td class="cell-NF&lt;?">Nike App</td>
+							<td class="cell-fY?m">Email leosaenger202@gmail - Bestellung am 25.01. - auf Leo → Leo ist
+								ab dem 02./03.01. wieder in Ehrenfeld</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-on"></div>
+							</td>
+						</tr>
+						<tr id="36b0e221-05aa-4e98-945a-14fe44b8622f">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-brown">Kauf</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Dunk%20Low%20Panda%20GS%20-%206%205%2039%2036b0e22105aa4e98945a14fe44b8622f.html">Dunk
+									Low Panda GS - 6.5 39</a></td>
+							<td class="cell-NF&lt;?">Nike App</td>
+							<td class="cell-fY?m">Email koikampdavid@gmail - Bestellung am 25.01. - auf David</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-on"></div>
+							</td>
+						</tr>
+						<tr id="689c028c-b4ad-49c1-a4ec-26ba828f9c70">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-brown">Kauf</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Dunk%20Low%20Panda%20-%2012%2046%20689c028cb4ad49c1a4ec26ba828f9c70.html">Dunk
+									Low Panda - 12 46</a></td>
+							<td class="cell-NF&lt;?">Nike App</td>
+							<td class="cell-fY?m">Email hilariebadgett3@gmail - Bestellung am 25.01. - auf Shewit</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-on"></div>
+							</td>
+						</tr>
+						<tr id="0c576e3d-f5a5-4958-939d-05b64279fdc6">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-blue">sonst.
+									Kosten</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Aufwandsentscha%CC%88digung%20Paketversand%20-%20Lars%20-%20Dunk%20%200c576e3df5a54958939d05b64279fdc6.html">Aufwandsentschädigung
+									Paketversand - Lars - Dunk GS Panda US6.5 39</a></td>
+							<td class="cell-NF&lt;?">PP</td>
+							<td class="cell-fY?m">Lars - Geld gesendet! → am 31.01.23</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="e22fc0e5-4c86-4080-9fc7-02aa837e73bb">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-blue">sonst.
+									Kosten</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Aufwandsentscha%CC%88digung%20Paketversand%20-%20Britta%20-%20Dun%20e22fc0e54c8640809fc702aa837e73bb.html">Aufwandsentschädigung
+									Paketversand - Britta - Dunk GS Panda US6.5 39</a></td>
+							<td class="cell-NF&lt;?">PP</td>
+							<td class="cell-fY?m">Britta - Geld gesendet! → am 01.02.2023 → Geld für insg. 3x Paare
+								(Panda, Grey Fog, White Gum)</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="9e3a161b-7c96-455c-97d1-520ab6c71b2c">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-blue">sonst.
+									Kosten</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Aufwandsentscha%CC%88digung%20Paketversand%20-%20Leo%20-%20Dunk%20G%209e3a161b7c96455c97d1520ab6c71b2c.html">Aufwandsentschädigung
+									Paketversand - Leo - Dunk GS Panda US6.5 39</a></td>
+							<td class="cell-NF&lt;?">PP</td>
+							<td class="cell-fY?m">Leo - Geld gesendet! → am 06.02.2023</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="3abf5686-70a5-45a0-a536-3ce68320c923">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-blue">sonst.
+									Kosten</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Aufwandsentscha%CC%88digung%20Paketversand%20-%20David%20-%20Dunk%203abf568670a545a0a5363ce68320c923.html">Aufwandsentschädigung
+									Paketversand - David - Dunk GS Panda US6.5 39</a></td>
+							<td class="cell-NF&lt;?">PP</td>
+							<td class="cell-fY?m">David - Geld gesendet! → am 30.01.23 → in einer Transaktion mit Dunk
+								Gum 12</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="4a1e825c-565f-457e-83a1-f58b5bc2fff5">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-blue">sonst.
+									Kosten</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Aufwandsentscha%CC%88digung%20Paketversand%20-%20Shewit%20-%20Dun%204a1e825c565f457e83a1f58b5bc2fff5.html">Aufwandsentschädigung
+									Paketversand - Shewit - Dunk Panda US12 46</a></td>
+							<td class="cell-NF&lt;?">PP</td>
+							<td class="cell-fY?m">Shewit - Geld gesendet! → Am 23.02.2023</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="4a9e841f-1273-486e-855f-5a7d2e6f04ba">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-brown">Kauf</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Dunk%20SB%20White%20Gum%20US10%205%204a9e841f1273486e855f5a7d2e6f04ba.html">Dunk
+									SB White Gum US10.5</a></td>
+							<td class="cell-NF&lt;?">SKD</td>
+							<td class="cell-fY?m">m007heimes - Bestellung am 31.01.2023</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-on"></div>
+							</td>
+						</tr>
+						<tr id="8c3b74f0-2e54-42c4-9b59-e13c9ad5daee">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-brown">Kauf</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Dunk%20SB%20White%20Gum%20US9%205%208c3b74f02e5442c49b59e13c9ad5daee.html">Dunk
+									SB White Gum US9.5</a></td>
+							<td class="cell-NF&lt;?">SKD</td>
+							<td class="cell-fY?m">spikevisser20 - auf Papa (Josef) - Bestellung am 31.01.2023</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-on"></div>
+							</td>
+						</tr>
+						<tr id="c50a9b01-fb02-449f-a377-ebb882c07484">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-blue">sonst.
+									Kosten</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Kosten%20Paketversand%20-%20Label-Erstellung%20-%20Niklas%20Sc%20c50a9b01fb02449fa377ebb882c07484.html">Kosten
+									Paketversand - Label-Erstellung - Niklas Schomann Panda Dunks: Erst einmal 1x 38 +
+									2x 39 versendet (da fehlende 2x 39 noch nicht bei mir!)</a></td>
+							<td class="cell-NF&lt;?">DHL - PP</td>
+							<td class="cell-fY?m">Label gekauft über Paypal am 01.02.2023 - Rechnung in Downloads-Ordner
+								als “DHL_Rechnung_Niklas_Schomann.pdf”</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="e7e16e97-dc24-4949-8850-84d842ee5893">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-blue">sonst.
+									Kosten</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Kosten%20Paketversand%20-%20Label-Erstellung%20-%20Niklas%20Sc%20e7e16e97dc244949885084d842ee5893.html">Kosten
+									Paketversand - Label-Erstellung - Niklas Schomann Panda Dunks Nr. 2: Noch fehlende
+									2x 39</a></td>
+							<td class="cell-NF&lt;?">DHL - PP</td>
+							<td class="cell-fY?m">Label gekauft über Paypal am 06.02.2023 - Rechnung in Downloads-Ordner
+								als “DHL_Rechnung_Niklas_Schomann_2”</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="ac8b3c1b-e457-4fe9-899d-d4df1fbb9445">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-green">Rückgabe/
+									Storno</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/AJ2%20Chicago%20ac8b3c1be4574fe9899dd4df1fbb9445.html">AJ2
+									Chicago</a></td>
+							<td class="cell-NF&lt;?">SNKRS</td>
+							<td class="cell-fY?m">Return - Rückerstattung eingeleitet eMail am 06.02.23 (paigegulley3@)
+								→ email mit Stornorechnung am 07.02.2023!</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="0afe5774-3084-45c8-864d-64696e751130">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-brown">Kauf</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Nike%20General%20Purpose%20Schuh%20Brown%2047%205%20US13%20US14%205W%200afe5774308445c8864d64696e751130.html">Nike
+									General Purpose Schuh Brown 47.5 US13/ US14.5W</a></td>
+							<td class="cell-NF&lt;?">SNKRS</td>
+							<td class="cell-fY?m">emilealbarez@ - auf Emil - Bestellung am 07.02.2023</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-on"></div>
+							</td>
+						</tr>
+						<tr id="3d2c0e70-4281-43a7-a952-01eb00364659">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-brown">Kauf</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Nike%20General%20Purpose%20Schuh%20Brown%2047%205%20US13%20US14%205W%203d2c0e70428143a7a95201eb00364659.html">Nike
+									General Purpose Schuh Brown 47.5 US13/ US14.5W</a></td>
+							<td class="cell-NF&lt;?">SNKRS</td>
+							<td class="cell-fY?m">leosaenger202@ - auf Leo - Bestellung am 07.02.2023</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-on"></div>
+							</td>
+						</tr>
+						<tr id="b687ce23-6bee-47cd-adc4-ecb15e4d057c">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-brown">Kauf</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Nike%20General%20Purpose%20Schuh%20Brown%2047%205%20US13%20US14%205W%20b687ce236bee47cdadc4ecb15e4d057c.html">Nike
+									General Purpose Schuh Brown 47.5 US13/ US14.5W</a></td>
+							<td class="cell-NF&lt;?">SNKRS</td>
+							<td class="cell-fY?m">marnieboughter@ - auf Nici - Bestellung am 07.02.2023</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-on"></div>
+							</td>
+						</tr>
+						<tr id="0959c8d3-a335-42af-9ec8-8de45ceba77a">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-brown">Kauf</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Nike%20General%20Purpose%20Schuh%20Brown%2047%205%20US13%20US14%205W%200959c8d3a33542af9ec88de45ceba77a.html">Nike
+									General Purpose Schuh Brown 47.5 US13/ US14.5W</a></td>
+							<td class="cell-NF&lt;?">SNKRS</td>
+							<td class="cell-fY?m">josefhermes22@ - auf Papa (Josef) - Bestellung am 07.02.2023</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-on"></div>
+							</td>
+						</tr>
+						<tr id="29d8641f-abbf-45fb-905d-eaa6d74d6cf4">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-blue">sonst.
+									Kosten</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Aufwandsentscha%CC%88digung%20Paketversand%20-%20Emil%20-%20Gener%2029d8641fabbf45fb905deaa6d74d6cf4.html">Aufwandsentschädigung
+									Paketversand - Emil - General Purpose Shoe Brown 47.5</a></td>
+							<td class="cell-NF&lt;?">PP</td>
+							<td class="cell-fY?m">Emil - Geld gesendet! → am 22.02.2023</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="156acb84-82b5-4332-b1cb-0e2cf3b24108">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-blue">sonst.
+									Kosten</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Aufwandsentscha%CC%88digung%20Paketversand%20-%20Leo%20-%20Genera%20156acb8482b54332b1cb0e2cf3b24108.html">Aufwandsentschädigung
+									Paketversand - Leo - General Purpose Shoe Brown 47.5</a></td>
+							<td class="cell-NF&lt;?">PP</td>
+							<td class="cell-fY?m">Leo - Geld gesendet!</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="0b3de467-75c7-4de0-8abb-31ef82e581cf">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-blue">sonst.
+									Kosten</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Aufwandsentscha%CC%88digung%20Paketversand%20-%20Nici%20-%20Gener%200b3de46775c74de08abb31ef82e581cf.html">Aufwandsentschädigung
+									Paketversand - Nici - General Purpose Shoe Brown 47.5</a></td>
+							<td class="cell-NF&lt;?">PP</td>
+							<td class="cell-fY?m">Nici - Geld gesendet!</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="d4435c21-e02d-489d-83ef-6201eeb56b2e">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-brown">Kauf</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Nike%20Dunk%20SB%20Black%20Gum%20US11%20d4435c21e02d489d83ef6201eeb56b2e.html">Nike
+									Dunk SB Black Gum US11</a></td>
+							<td class="cell-NF&lt;?">SKD</td>
+							<td class="cell-fY?m">Michel - m007heimes - Kauf am 08.02.2023</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-on"></div>
+							</td>
+						</tr>
+						<tr id="b7ca623c-4b57-4ce9-8adf-15e69a61f6a1">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-brown">Kauf</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Nike%20Dunk%20SB%20Black%20Gum%20US13%20b7ca623c4b574ce98adf15e69a61f6a1.html">Nike
+									Dunk SB Black Gum US13</a></td>
+							<td class="cell-NF&lt;?">SKD</td>
+							<td class="cell-fY?m">Josef - spikevisser - Kauf am 08.02.2023</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-on"></div>
+							</td>
+						</tr>
+						<tr id="8471d76c-f193-4dc5-a1b1-936746c4391a">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-brown">Kauf</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Nike%20AJ4%20Seafoam%20US11W%2043%208471d76cf1934dc5a1b1936746c4391a.html">Nike
+									AJ4 Seafoam US11W 43</a></td>
+							<td class="cell-NF&lt;?">SNKRS</td>
+							<td class="cell-fY?m">leosaenger202@ - auf Leo - Bestellung am 09.02.2023</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-on"></div>
+							</td>
+						</tr>
+						<tr id="29745bba-6749-4be6-bc03-b8ef72a3515f">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-blue">sonst.
+									Kosten</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Aufwandsentscha%CC%88digung%20Paketversand%20-%20Leo%20-%20AJ4%20Se%2029745bba67494be6bc03b8ef72a3515f.html">Aufwandsentschädigung
+									Paketversand - Leo - AJ4 Seafoam 43</a></td>
+							<td class="cell-NF&lt;?">PP</td>
+							<td class="cell-fY?m">Leo - Geld gesendet!</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="30f85bad-9b80-40fa-831b-5a26f297fecb">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-pink">Verkauf</span>
+							</td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Dunk%20Low%20Grey%20Fog%2039%2030f85bad9b8040fa831b5a26f297fecb.html">Dunk
+									Low Grey Fog 39</a></td>
+							<td class="cell-NF&lt;?">PP</td>
+							<td class="cell-fY?m">Verkauf an DonDead am 09.02.2023</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="dd9f5ff8-cecf-4874-bbb0-3bb1607690d2">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-blue">sonst.
+									Kosten</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Paypal%20Gebu%CC%88hr%20DonDead%20GmbH%20-%20Grey%20Fog%2039%20dd9f5ff8cecf4874bbb03bb1607690d2.html">Paypal
+									Gebühr DonDead GmbH - Grey Fog 39</a></td>
+							<td class="cell-NF&lt;?">PP</td>
+							<td class="cell-fY?m">Zahlung am 09.02.2023 empfangen</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="cf347a57-abd1-4455-9283-085c9268aebc">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-blue">sonst.
+									Kosten</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Kosten%20Paketversand%20-%20Label-Erstellung%20-%20DonDead%20G%20cf347a57abd144559283085c9268aebc.html">Kosten
+									Paketversand - Label-Erstellung - DonDead GmbH Dunk Grey Fog 39</a></td>
+							<td class="cell-NF&lt;?">DHL - PP</td>
+							<td class="cell-fY?m">Label gekauft über Paypal am 10.02.2023 - Rechnung in DHL-Ordner am
+								Handy</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="dd234f33-f193-4dbd-bf33-93c54f9bfe2f">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-brown">Kauf</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Nike%20AJ4%20Craft%2039%206%205%20dd234f33f1934dbdbf3393c54f9bfe2f.html">Nike
+									AJ4 Craft 39 6.5</a></td>
+							<td class="cell-NF&lt;?">SNKRS</td>
+							<td class="cell-fY?m">marnieboughter@ - auf Nici - Bestellung am 11.02.2023</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-on"></div>
+							</td>
+						</tr>
+						<tr id="ad01f824-1171-41d9-af10-2110d06ab0c5">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-blue">sonst.
+									Kosten</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Aufwandsentscha%CC%88digung%20Paketversand%20-%20Nici%20-%20AJ4%20C%20ad01f824117141d9af102110d06ab0c5.html">Aufwandsentschädigung
+									Paketversand - Nici - AJ4 Craft 39</a></td>
+							<td class="cell-NF&lt;?">PP</td>
+							<td class="cell-fY?m">Nici - Geld gesendet! → Am 23.02.2023</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="bb97e0f0-7749-4e1a-9f1e-af372574d98d">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-brown">Kauf</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Nike%20x%20Stu%CC%88ssy%20Wolljacke%20XL%20bb97e0f077494e1a9f1eaf372574d98d.html">Nike
+									x Stüssy Wolljacke XL</a></td>
+							<td class="cell-NF&lt;?">SNKRS</td>
+							<td class="cell-fY?m">jacobfuehrmann@ - auf Jacob - Bestellung am 14.02.2023</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-on"></div>
+							</td>
+						</tr>
+						<tr id="182d8e02-8cfb-45f5-8aad-d470a8f77dcc">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-brown">Kauf</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Nike%20x%20Stu%CC%88ssy%20Wolljacke%20L%20182d8e028cfb45f58aadd470a8f77dcc.html">Nike
+									x Stüssy Wolljacke L</a></td>
+							<td class="cell-NF&lt;?">SNKRS</td>
+							<td class="cell-fY?m">carolinaclabough40@ - auf Yannick - Bestellung am 14.02.2023</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-on"></div>
+							</td>
+						</tr>
+						<tr id="6c64861c-9403-43cc-855f-159760d5bed7">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-brown">Kauf</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Nike%20x%20Stu%CC%88ssy%20Wolljacke%20L%206c64861c940343cc855f159760d5bed7.html">Nike
+									x Stüssy Wolljacke L</a></td>
+							<td class="cell-NF&lt;?">SNKRS</td>
+							<td class="cell-fY?m">horatiasilvertooth4@ - auf Hannes - Bestellung am 14.02.2023</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-on"></div>
+							</td>
+						</tr>
+						<tr id="769a40eb-d588-438a-a3ac-7678b865fabb">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-brown">Kauf</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Nike%20x%20Stu%CC%88ssy%20Strick-Sweatshirt%20XL%20769a40ebd588438aa3ac7678b865fabb.html">Nike
+									x Stüssy Strick-Sweatshirt XL</a></td>
+							<td class="cell-NF&lt;?">SNKRS</td>
+							<td class="cell-fY?m">yveshermes06@ - auf Yves - Bestellung am 14.02.2023</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-on"></div>
+							</td>
+						</tr>
+						<tr id="c3e482d6-2484-48a1-a634-3258cb3822ca">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-blue">sonst.
+									Kosten</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Aufwandsentscha%CC%88digung%20Paketversand%20-%20Jacob%20-%20Nike%20c3e482d6248448a1a6343258cb3822ca.html">Aufwandsentschädigung
+									Paketversand - Jacob - Nike x Stüssy Jacke XL</a></td>
+							<td class="cell-NF&lt;?">PP</td>
+							<td class="cell-fY?m">Jacob - Geld gesendet! → am 22.02.2023</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="ddfd46ef-7558-466c-99ae-d527ea170fe9">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-blue">sonst.
+									Kosten</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Aufwandsentscha%CC%88digung%20Paketversand%20-%20Yannick%20-%20Ni%20ddfd46ef7558466c99aed527ea170fe9.html">Aufwandsentschädigung
+									Paketversand - Yannick - Nike x Stüssy Jacke L</a></td>
+							<td class="cell-NF&lt;?">PP</td>
+							<td class="cell-fY?m">Yannick - Geld gesendet! → Am 25.02.2023</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="0491126a-12e7-4368-8003-2b081af73457">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-blue">sonst.
+									Kosten</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Aufwandsentscha%CC%88digung%20Paketversand%20-%20Hannes%20-%20Nik%200491126a12e7436880032b081af73457.html">Aufwandsentschädigung
+									Paketversand - Hannes - Nike x Stüssy Jacke L</a></td>
+							<td class="cell-NF&lt;?">PP</td>
+							<td class="cell-fY?m">Hannes - Geld gesendet! → Am 21.02.2023</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="c39d874a-6007-4e34-9326-ee6f9ecbde36">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-pink">Verkauf</span>
+							</td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/3x%20Nike%20x%20Stu%CC%88ssy%20Wolljacke%20(2x%20L,%201x%20XL)%20c39d874a60074e349326ee6f9ecbde36.html">3x
+									Nike x Stüssy Wolljacke (2x L, 1x XL)</a></td>
+							<td class="cell-NF&lt;?">PP</td>
+							<td class="cell-fY?m">Verkauft an Marius Romanowski am 14.02.2023 - 750€</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="09c60622-965d-41d9-896e-3b13837f3bdf">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-blue">sonst.
+									Kosten</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Paypal%20Gebu%CC%88hr%20Marius%20Romanowski%20-%203x%20Nike%20x%20Stu%CC%88s%2009c60622965d41d9896e3b13837f3bdf.html">Paypal
+									Gebühr Marius Romanowski - 3x Nike x Stüssy Wolljacken</a></td>
+							<td class="cell-NF&lt;?">PP</td>
+							<td class="cell-fY?m">Zahlung am 14.02.2023 empfangen</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="9d36c943-069a-4e79-9ae4-830f753c6f73">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-blue">sonst.
+									Kosten</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Kosten%20Paketversand%20-%20Label-Erstellung%20-%20Marius%20Ro%209d36c943069a4e799ae4830f753c6f73.html">Kosten
+									Paketversand - Label-Erstellung - Marius Romanowski - 3x Nike x Stüssy
+									Wolljacken</a></td>
+							<td class="cell-NF&lt;?">DHL - PP</td>
+							<td class="cell-fY?m">Label gekauft am 24.02.2023 → 9,49€ → Rechnung im Ordner auf dem Handy
+							</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="21d63caf-0a88-4e37-b929-168dd7ab0177">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-pink">Verkauf</span>
+							</td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/10x%20Nike%20Dunk%20Low%20Grey%20Fog%201x%2040,%203x%2042%205,%202x%2043,%20%2021d63caf0a884e37b929168dd7ab0177.html">10x
+									Nike Dunk Low Grey Fog 1x 40, 3x 42.5, 2x 43, 3x 44, 1x 46 - verkauft an Tobias
+									Schwaiger</a></td>
+							<td class="cell-NF&lt;?">PP</td>
+							<td class="cell-fY?m">Verkauft an Tobias Schwaiger am 17.02.2023 - 1595€</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="4ef0b68b-b4f5-468b-b408-4d37c10d25fa">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-blue">sonst.
+									Kosten</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Paypal%20Gebu%CC%88hr%20Tobias%20Schwaiger%20-%2010x%20Nike%20Dunk%20Lo%204ef0b68bb4f5468bb4084d37c10d25fa.html">Paypal
+									Gebühr Tobias Schwaiger - 10x Nike Dunk Low Grey Fog</a></td>
+							<td class="cell-NF&lt;?">PP</td>
+							<td class="cell-fY?m">Zahlung am 17.02.2023 empfangen - 40,07€ Fees</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="d7c8d3a4-b5e8-4a71-87ed-cd57e6b86cbd">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-blue">sonst.
+									Kosten</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Kosten%20Paketversand%20-%20Label-Erstellung%20-%20Tobias%20Sc%20d7c8d3a4b5e84a7187edcd57e6b86cbd.html">Kosten
+									Paketversand - Label-Erstellung - Tobias Schwaiger - 10x Dunk Low Grey Fog - Label
+									Nr. 1</a></td>
+							<td class="cell-NF&lt;?">DHL - PP</td>
+							<td class="cell-fY?m">1. Rechnung: Rechnung liegt auf Handy in Ordner in Ordner
+								“Rechnungen_Sneaker_Biz” - Rechnung vom 17.02.2023</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="463cb043-b628-4b50-a83d-0bce7011bea1">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-blue">sonst.
+									Kosten</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Kosten%20Paketversand%20-%20Label-Erstellung%20-%20Tobias%20Sc%20463cb043b6284b50a83d0bce7011bea1.html">Kosten
+									Paketversand - Label-Erstellung - Tobias Schwaiger - 10x Dunk Low Grey Fog - Label
+									Nr. 2</a></td>
+							<td class="cell-NF&lt;?">DHL - PP</td>
+							<td class="cell-fY?m">2. Rechnung: Rechnung liegt auf Handy in Ordner in Ordner
+								“Rechnungen_Sneaker_Biz” - Rechnung vom 17.02.2023</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="cd72f13e-9276-47a2-ae04-d7ff6e6f8a50">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-pink">Verkauf</span>
+							</td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Dunk%20Panda%20US12%20cd72f13e927647a2ae04d7ff6e6f8a50.html">Dunk
+									Panda US12</a></td>
+							<td class="cell-NF&lt;?">Meetup Cash (EBK - Levin)</td>
+							<td class="cell-fY?m">Verkauft an Levin von EBK bei Meetup - Cash bezahlt (150€) → Am
+								22.02.2023</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="594d80c7-2900-4755-90c2-114ae1fe3f54">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-brown">Kauf</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Dunk%20SB%20Wolf%20Grey%20Gum%20US13%20594d80c72900475590c2114ae1fe3f54.html">Dunk
+									SB Wolf Grey Gum US13</a></td>
+							<td class="cell-NF&lt;?">SKD</td>
+							<td class="cell-fY?m">m007heimes - Bestellung am 23.02.2023</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-on"></div>
+							</td>
+						</tr>
+						<tr id="7eeae43e-ad3f-4873-b2f7-dec13e995cc6">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-brown">Kauf</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Dunk%20SB%20Wolf%20Grey%20Gum%20US12%207eeae43ead3f4873b2f7dec13e995cc6.html">Dunk
+									SB Wolf Grey Gum US12</a></td>
+							<td class="cell-NF&lt;?">SKD</td>
+							<td class="cell-fY?m">spikevisser20 - auf Papa (Josef) - Bestellung am 23.02.2023</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-on"></div>
+							</td>
+						</tr>
+						<tr id="dd0e6099-6f81-42bf-a94a-23be2cec2091">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-brown">Kauf</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Dunk%20SB%20Wolf%20Grey%20Gum%20US10%205%20dd0e60996f8142bfa94a23be2cec2091.html">Dunk
+									SB Wolf Grey Gum US10.5</a></td>
+							<td class="cell-NF&lt;?">SKD</td>
+							<td class="cell-fY?m">lorenamonro09 - auf Mama - Bestellung am 23.02.2023</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-on"></div>
+							</td>
+						</tr>
+						<tr id="25565134-1550-45e8-8562-486ba8bdb219">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-brown">Kauf</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Dunk%20SB%20Wolf%20Grey%20Gum%20US9%205%2025565134155045e88562486ba8bdb219.html">Dunk
+									SB Wolf Grey Gum US9.5</a></td>
+							<td class="cell-NF&lt;?">SKD</td>
+							<td class="cell-fY?m">birdwisch4 - auf Yves - Bestellung am 23.02.2023</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-on"></div>
+							</td>
+						</tr>
+						<tr id="4b463dc7-7c32-4885-991e-a4aaa287ac09">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-blue">sonst.
+									Kosten</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/DHL%20Label%20-%20Versand%20%E2%80%9CSneaker%20zu%20mir%E2%80%9D%20-%20eigentlich%20%204b463dc77c324885991ea4aaa287ac09.html">DHL
+									Label - Versand “Sneaker zu mir” - eigentlich Gasflasche aber aus Versehen mit
+									Business PP gezahlt</a></td>
+							<td class="cell-NF&lt;?">DHL</td>
+							<td class="cell-fY?m">Rechnung liegt auf Handy in Ordner in Ordner “Rechnungen_Sneaker_Biz”
+								- Rechnung vom 08.03.2023</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="478ed504-2536-4173-a405-38aacb3d82ac">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-pink">Verkauf</span>
+							</td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Dunk%20Low%20W%20Next%20Nature%20Mint%20US12W%20478ed50425364173a40538aacb3d82ac.html">Dunk
+									Low W Next Nature Mint US12W</a></td>
+							<td class="cell-NF&lt;?">EBK - Paptrick Popanda</td>
+							<td class="cell-fY?m">125€ Zahlung via PP</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="94cc7da0-8620-44d1-b779-3f72f6d6271f">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-blue">sonst.
+									Kosten</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/PP%20Fees%20Dunk%20W%20Mint%2094cc7da0862044d1b7793f72f6d6271f.html">PP
+									Fees Dunk W Mint</a></td>
+							<td class="cell-NF&lt;?">PP</td>
+							<td class="cell-fY?m">3,46€</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="ea9163cc-0e52-4e7a-bd6f-b2104285125d">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-blue">sonst.
+									Kosten</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Versandkosten%20Dunk%20W%20Mint%20ea9163cc0e524e7abd6fb2104285125d.html">Versandkosten
+									Dunk W Mint</a></td>
+							<td class="cell-NF&lt;?">PP</td>
+							<td class="cell-fY?m">5,49€ - Rechnung liegt auf Handy in Ordner in Ordner
+								“Rechnungen_Sneaker_Biz” - Rechnung vom 09.03.2023</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="e503804f-089b-4783-ba97-7f4eb8f69db8">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-brown">Kauf</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/AJ3%20Reimagined%20US8%205%20e503804f089b4783ba977f4eb8f69db8.html">AJ3
+									Reimagined US8.5</a></td>
+							<td class="cell-NF&lt;?">SNKRS</td>
+							<td class="cell-fY?m">horaciobatley@ - auf Maria - Bestellung am 11.03.2023</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-on"></div>
+							</td>
+						</tr>
+						<tr id="0e32263b-0dc0-4634-8932-639ea4687374">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-brown">Kauf</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/AJ3%20Reimagined%20US8%200e32263b0dc046348932639ea4687374.html">AJ3
+									Reimagined US8</a></td>
+							<td class="cell-NF&lt;?">SNKRS</td>
+							<td class="cell-fY?m">jilliekanakares@ - auf Ben - Bestellung am 11.03.2023</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="f88a0d8f-54df-4516-a15f-89cc296c06c0">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-blue">sonst.
+									Kosten</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Aufwandsentscha%CC%88digung%20Paketversand%20-%20Maria%20-%20AJ3%20%20f88a0d8f54df4516a15f89cc296c06c0.html">Aufwandsentschädigung
+									Paketversand - Maria - AJ3 Reimagined US8.5</a></td>
+							<td class="cell-NF&lt;?">PP</td>
+							<td class="cell-fY?m">Maria - Geld gesendet! Paket versendet zu mir!</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="1915859a-8fe0-4be3-b6d9-abce5ccc2ad9">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-blue">sonst.
+									Kosten</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Aufwandsentscha%CC%88digung%20Paketversand%20-%20Ben%20-%20AJ3%20Re%201915859a8fe04be3b6d9abce5ccc2ad9.html">Aufwandsentschädigung
+									Paketversand - Ben - AJ3 Reimagined US8.5</a></td>
+							<td class="cell-NF&lt;?">PP</td>
+							<td class="cell-fY?m">Ben - Geld gesendet! → Paket noch nicht bei mir!!</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="a018eedc-f1c2-4474-92ed-a5bfea8d065b">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-blue">sonst.
+									Kosten</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Versandkosten%20AJ3%20von%20Maria%20zu%20mir%20(Ko%CC%88ln)%20a018eedcf1c2447492eda5bfea8d065b.html">Versandkosten
+									AJ3 von Maria zu mir (Köln)</a></td>
+							<td class="cell-NF&lt;?">PP</td>
+							<td class="cell-fY?m">6,99€ - Rechnung liegt auf Handy in Ordner in Ordner
+								“Rechnungen_Sneaker_Biz” - Rechnung vom 18.03.2023</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="cfa902b2-f0da-49d0-9bb2-0f3f10a7c053">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-brown">Kauf</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/AJ4%20SB%20Pine%20Green%2050%205%20US16%20cfa902b2f0da49d09bb20f3f10a7c053.html">AJ4
+									SB Pine Green 50.5 US16</a></td>
+							<td class="cell-NF&lt;?">SNKRS</td>
+							<td class="cell-fY?m">franzmichels01@ - auf mich (HH Norderstr. 46) - Bestellung am
+								21.03.2023</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-on"></div>
+							</td>
+						</tr>
+						<tr id="5c6d028f-4596-462b-bb2b-a588860212fd">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-brown">Kauf</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/AJ4%20SB%20Pine%20Green%2050%205%20US16%205c6d028f4596462bbb2ba588860212fd.html">AJ4
+									SB Pine Green 50.5 US16</a></td>
+							<td class="cell-NF&lt;?">SNKRS</td>
+							<td class="cell-fY?m">cynthychill54@ - auf Mattes - Bestellung am 21.03.2023</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="840312f0-214a-48ec-bb48-07577b972f7d">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-brown">Kauf</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/AJ4%20SB%20Pine%20Green%2050%205%20US16%20840312f0214a48ecbb4807577b972f7d.html">AJ4
+									SB Pine Green 50.5 US16</a></td>
+							<td class="cell-NF&lt;?">SNKRS</td>
+							<td class="cell-fY?m">blarealcalde2@ - auf René - Bestellung am 21.03.2023</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-on"></div>
+							</td>
+						</tr>
+						<tr id="975f9aa0-b290-4bb6-bd1f-ae9a92868e70">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-brown">Kauf</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/AJ4%20SB%20Pine%20Green%2050%205%20US16%20975f9aa0b2904bb6bd1fae9a92868e70.html">AJ4
+									SB Pine Green 50.5 US16</a></td>
+							<td class="cell-NF&lt;?">SNKRS</td>
+							<td class="cell-fY?m">horatiasilvertooth4@ - auf Hannes (Mülheim) - Bestellung am 21.03.2023
+							</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-on"></div>
+							</td>
+						</tr>
+						<tr id="148875e0-a1de-4798-b2a3-34729af8fedc">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-brown">Kauf</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/AJ4%20SB%20Pine%20Green%2050%205%20US16%20148875e0a1de4798b2a334729af8fedc.html">AJ4
+									SB Pine Green 50.5 US16</a></td>
+							<td class="cell-NF&lt;?">SNKRS</td>
+							<td class="cell-fY?m">andreasmeinert13@ - auf Hanes (Holweide) - aktuell keine eMail -
+								Bestellung am 21.03.2023</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-on"></div>
+							</td>
+						</tr>
+						<tr id="a0b238ca-a794-4ecc-9c18-138815c71f76">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-brown">Kauf</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/AJ4%20SB%20Pine%20Green%2050%205%20US16%20a0b238caa7944ecc9c18138815c71f76.html">AJ4
+									SB Pine Green 50.5 US16</a></td>
+							<td class="cell-NF&lt;?">SNKRS</td>
+							<td class="cell-fY?m">m007heimes@ - auf mich (CGN) - Bestellung am 21.03.2023</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-on"></div>
+							</td>
+						</tr>
+						<tr id="9b8c1aa0-6199-4bb1-90cd-23187fae844a">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-blue">sonst.
+									Kosten</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Aufwandsentscha%CC%88digung%20Paketversand%20-%20Mattes%20-%20AJ4%209b8c1aa061994bb190cd23187fae844a.html">Aufwandsentschädigung
+									Paketversand - Mattes - AJ4 Pine Green US16 50.5</a></td>
+							<td class="cell-NF&lt;?">PP</td>
+							<td class="cell-fY?m">Mattes - Geld gesendet! → Paket noch nicht bei mir! (Versand)</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="3d3a8b77-aab6-4a40-8b5f-d951112c93c7">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-blue">sonst.
+									Kosten</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Aufwandsentscha%CC%88digung%20Paketversand%20-%20Rene%CC%81%20-%20AJ4%20%203d3a8b77aab64a408b5fd951112c93c7.html">Aufwandsentschädigung
+									Paketversand - René - AJ4 Pine Green US16 50.5</a></td>
+							<td class="cell-NF&lt;?">PP</td>
+							<td class="cell-fY?m">René - Noch nicht gezahlt</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="046cf337-4ef7-4481-8006-b6a625ea5245">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-blue">sonst.
+									Kosten</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Aufwandsentscha%CC%88digung%20Paketversand%20-%20Hannes%20(Mu%CC%88l%20046cf3374ef744818006b6a625ea5245.html">Aufwandsentschädigung
+									Paketversand - Hannes (Mülheim) - AJ4 Pine Green US16 50.5</a></td>
+							<td class="cell-NF&lt;?">PP</td>
+							<td class="cell-fY?m">Hannes Nr. 1 - Geld gesendet! → Paket noch nicht bei mir!</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="4a4cfc4a-eac3-4faa-8cdc-c7dca517eb46">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-blue">sonst.
+									Kosten</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Aufwandsentscha%CC%88digung%20Paketversand%20-%20Hannes%20(Holw%204a4cfc4aeac34faa8cdcc7dca517eb46.html">Aufwandsentschädigung
+									Paketversand - Hannes (Holweide) - AJ4 Pine Green US16 50.5</a></td>
+							<td class="cell-NF&lt;?">PP</td>
+							<td class="cell-fY?m">Hannes Nr. 2 - Geld gesendet! → Paket noch nicht bei mir!</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+						<tr id="22095e33-498d-4685-8b44-5f88ec3ef4ae">
+							<td class="cell-Eg}="><span class="selected-value select-value-color-blue">sonst.
+									Kosten</span></td>
+							<td class="cell-title"><a
+									href="Sneaker%20Biz%2013a20fcc96f84666970f9d1f39ea0521/Noch%20eintragen%20in%20Liste%20+%20Rechnungen%20in%20Ordnersyst%20b73e52a33b0b4283a09eb44ffee02f96/Versandkosten%20AJ4%20SB%20von%20Mattes%20zu%20mir%20(Ko%CC%88ln)%2022095e33498d46858b445f88ec3ef4ae.html">Versandkosten
+									AJ4 SB von Mattes zu mir (Köln)</a></td>
+							<td class="cell-NF&lt;?">PP</td>
+							<td class="cell-fY?m">6,99€ - Rechnung liegt auf Handy in Ordner in Ordner
+								“Rechnungen_Sneaker_Biz” - Rechnung vom 18.03.2023</td>
+							<td class="cell-zwbL"><span class="selected-value select-value-color-red">NICHT
+									eingetragen</span></td>
+							<td class="cell-B}ow"><span class="status-value">
+									<div class="status-dot"></div>Not started
+								</span></td>
+							<td class="cell-`DvD">
+								<div class="checkbox checkbox-off"></div>
+							</td>
+						</tr>
+					</tbody>
+				</table><br /><br />
+			</div>
+			<p id="8b8bb03a-bbf4-443b-90a1-5d1bccc1d98b" class="">
+			</p>
+		</div>
+	</article>
+</body>
+
+</html>

@@ -1,0 +1,700 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Beispiel Nr. 2: Podcast No. 1 - Daniel Moj (”Moi”)</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="4d920359-5399-43a8-9443-04d2ea59c622" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🚀</span></div><h1 class="page-title">Beispiel Nr. 2: Podcast No. 1 - Daniel Moj (”Moi”)</h1><p class="page-description"></p></header><div class="page-body"><div id="d5bb998e-7d86-440b-bdf2-e7c0bb4375c4" class="collection-content"><h4 class="collection-title">Podcast No. 2</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesTitle"><path d="M0.637695 13.1914C1.0957 13.1914 1.32812 13 1.47852 12.5215L2.24414 10.3887H6.14746L6.90625 12.5215C7.05664 13 7.2959 13.1914 7.74707 13.1914C8.22559 13.1914 8.5332 12.9043 8.5332 12.4531C8.5332 12.2891 8.50586 12.1523 8.44434 11.9678L5.41602 3.79199C5.2041 3.21777 4.82129 2.9375 4.19922 2.9375C3.60449 2.9375 3.21484 3.21777 3.0166 3.78516L-0.0322266 12.002C-0.09375 12.1797 -0.121094 12.3232 -0.121094 12.4668C-0.121094 12.918 0.166016 13.1914 0.637695 13.1914ZM2.63379 9.12402L4.17871 4.68066H4.21973L5.76465 9.12402H2.63379ZM12.2793 13.2324C13.3115 13.2324 14.2891 12.6787 14.7129 11.8037H14.7402V12.5762C14.7471 12.9863 15.0273 13.2393 15.4238 13.2393C15.834 13.2393 16.1143 12.9795 16.1143 12.5215V8.00977C16.1143 6.49902 14.9658 5.52148 13.1543 5.52148C11.7666 5.52148 10.6592 6.08887 10.2695 6.99121C10.1943 7.15527 10.1533 7.3125 10.1533 7.46289C10.1533 7.81152 10.4062 8.04395 10.7686 8.04395C11.0215 8.04395 11.2129 7.94824 11.3496 7.73633C11.7529 6.99121 12.2861 6.65625 13.1064 6.65625C14.0977 6.65625 14.6992 7.20996 14.6992 8.1123V8.67285L12.5664 8.7959C10.7686 8.8916 9.77734 9.69824 9.77734 11.0107C9.77734 12.3369 10.8096 13.2324 12.2793 13.2324ZM12.6621 12.1387C11.8008 12.1387 11.2129 11.667 11.2129 10.9561C11.2129 10.2725 11.7598 9.82129 12.7578 9.75977L14.6992 9.62988V10.3203C14.6992 11.3457 13.7969 12.1387 12.6621 12.1387Z"></path></svg></span>Aufgabe</th><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesStatus"><path d="M8.75488 1.02344C8.75488 0.613281 8.41309 0.264648 8.00293 0.264648C7.59277 0.264648 7.25098 0.613281 7.25098 1.02344V3.11523C7.25098 3.51855 7.59277 3.86719 8.00293 3.86719C8.41309 3.86719 8.75488 3.51855 8.75488 3.11523V1.02344ZM3.91504 5.0293C4.20215 5.31641 4.69434 5.32324 4.97461 5.03613C5.26855 4.74902 5.26855 4.25684 4.98145 3.96973L3.53906 2.52051C3.25195 2.2334 2.7666 2.21973 2.47949 2.50684C2.19238 2.79395 2.18555 3.28613 2.47266 3.57324L3.91504 5.0293ZM10.9629 4.01758C10.6826 4.30469 10.6826 4.79688 10.9697 5.08398C11.2568 5.37109 11.749 5.36426 12.0361 5.07715L13.4854 3.62793C13.7725 3.34082 13.7725 2.84863 13.4785 2.55469C13.1982 2.27441 12.7061 2.27441 12.4189 2.56152L10.9629 4.01758ZM15.0234 8.78906C15.4336 8.78906 15.7822 8.44727 15.7822 8.03711C15.7822 7.62695 15.4336 7.28516 15.0234 7.28516H12.9385C12.5283 7.28516 12.1797 7.62695 12.1797 8.03711C12.1797 8.44727 12.5283 8.78906 12.9385 8.78906H15.0234ZM0.975586 7.28516C0.56543 7.28516 0.223633 7.62695 0.223633 8.03711C0.223633 8.44727 0.56543 8.78906 0.975586 8.78906H3.07422C3.48438 8.78906 3.83301 8.44727 3.83301 8.03711C3.83301 7.62695 3.48438 7.28516 3.07422 7.28516H0.975586ZM12.0361 10.9902C11.749 10.71 11.2568 10.71 10.9629 10.9971C10.6826 11.2842 10.6826 11.7764 10.9697 12.0635L12.4258 13.5127C12.7129 13.7998 13.2051 13.793 13.4922 13.5059C13.7793 13.2256 13.7725 12.7266 13.4854 12.4395L12.0361 10.9902ZM2.52051 12.4395C2.22656 12.7266 2.22656 13.2188 2.50684 13.5059C2.79395 13.793 3.28613 13.7998 3.57324 13.5127L5.02246 12.0703C5.31641 11.7832 5.31641 11.291 5.03613 11.0039C4.74902 10.7168 4.25684 10.71 3.96973 10.9971L2.52051 12.4395ZM8.75488 12.9658C8.75488 12.5557 8.41309 12.207 8.00293 12.207C7.59277 12.207 7.25098 12.5557 7.25098 12.9658V15.0576C7.25098 15.4609 7.59277 15.8096 8.00293 15.8096C8.41309 15.8096 8.75488 15.4609 8.75488 15.0576V12.9658Z"></path></svg></span>Status</th><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesPerson"><path d="M10.9536 7.90088C12.217 7.90088 13.2559 6.79468 13.2559 5.38525C13.2559 4.01514 12.2114 2.92017 10.9536 2.92017C9.70142 2.92017 8.65137 4.02637 8.65698 5.39087C8.6626 6.79468 9.69019 7.90088 10.9536 7.90088ZM4.4231 8.03003C5.52368 8.03003 6.42212 7.05859 6.42212 5.83447C6.42212 4.63843 5.51245 3.68945 4.4231 3.68945C3.33374 3.68945 2.41846 4.64966 2.41846 5.84009C2.42407 7.05859 3.32251 8.03003 4.4231 8.03003ZM1.37964 13.168H5.49561C4.87231 12.292 5.43384 10.6074 6.78711 9.51807C6.18628 9.14746 5.37769 8.87231 4.4231 8.87231C1.95239 8.87231 0.262207 10.6917 0.262207 12.1628C0.262207 12.7974 0.548584 13.168 1.37964 13.168ZM7.50024 13.168H14.407C15.4009 13.168 15.7322 12.8423 15.7322 12.2864C15.7322 10.8489 13.8679 8.88354 10.9536 8.88354C8.04492 8.88354 6.17505 10.8489 6.17505 12.2864C6.17505 12.8423 6.50635 13.168 7.50024 13.168Z"></path></svg></span>Zuständige Person</th></tr></thead><tbody><tr id="9957f591-e6aa-4453-a0c3-3b38396395fe"><td class="cell-title"><a href="Beispiel%20Nr%202%20Podcast%20No%201%20-%20Daniel%20Moj%20(%E2%80%9DMoi%E2%80%9D)%204d920359539943a8944304d2ea59c622/Podcast%20No%202%20d5bb998e7d86440bbdf2e7c0bb4375c4/U%CC%88berlegen,%20welche%20Ga%CC%88ste%20kontaktiert%20werden%20ko%CC%88nn%209957f591e6aa4453a0c33b38396395fe.html">Überlegen, welche Gäste kontaktiert werden können</a></td><td class="cell-|cgc"><span class="status-value"><div class="status-dot"></div>Not started</span></td><td class="cell-Ej?G"></td></tr><tr id="a62167c9-b086-4de9-86c0-7288bd077939"><td class="cell-title"><a href="Beispiel%20Nr%202%20Podcast%20No%201%20-%20Daniel%20Moj%20(%E2%80%9DMoi%E2%80%9D)%204d920359539943a8944304d2ea59c622/Podcast%20No%202%20d5bb998e7d86440bbdf2e7c0bb4375c4/Script%20schreiben%20fu%CC%88r%20Interview%20a62167c9b0864de986c07288bd077939.html">Script schreiben für Interview</a></td><td class="cell-|cgc"><span class="status-value"><div class="status-dot"></div>Not started</span></td><td class="cell-Ej?G"></td></tr><tr id="7afdb2b1-469d-41e5-b8ea-b48a0d1e94c5"><td class="cell-title"><a href="Beispiel%20Nr%202%20Podcast%20No%201%20-%20Daniel%20Moj%20(%E2%80%9DMoi%E2%80%9D)%204d920359539943a8944304d2ea59c622/Podcast%20No%202%20d5bb998e7d86440bbdf2e7c0bb4375c4/Technische%20Vorbereitung%20+%20Vorbereitung%20der%20Kulisse%207afdb2b1469d41e5b8eab48a0d1e94c5.html">Technische Vorbereitung + Vorbereitung der Kulissen</a></td><td class="cell-|cgc"><span class="status-value"><div class="status-dot"></div>Not started</span></td><td class="cell-Ej?G"></td></tr><tr id="b098b7c4-8ff5-4d24-b058-a2f8df647437"><td class="cell-title"><a href="Beispiel%20Nr%202%20Podcast%20No%201%20-%20Daniel%20Moj%20(%E2%80%9DMoi%E2%80%9D)%204d920359539943a8944304d2ea59c622/Podcast%20No%202%20d5bb998e7d86440bbdf2e7c0bb4375c4/Durchfu%CC%88hrung%20des%20Podcasts%20-%20Hosting%20b098b7c48ff54d24b058a2f8df647437.html">Durchführung des Podcasts - Hosting</a></td><td class="cell-|cgc"><span class="status-value"><div class="status-dot"></div>Not started</span></td><td class="cell-Ej?G"></td></tr><tr id="6d9003e6-203a-44ea-a629-b6a19821d18d"><td class="cell-title"><a href="Beispiel%20Nr%202%20Podcast%20No%201%20-%20Daniel%20Moj%20(%E2%80%9DMoi%E2%80%9D)%204d920359539943a8944304d2ea59c622/Podcast%20No%202%20d5bb998e7d86440bbdf2e7c0bb4375c4/Nachbearbeitung%20des%20Podcasts%20-%20Post-Production%206d9003e6203a44eaa629b6a19821d18d.html">Nachbearbeitung des Podcasts - Post-Production</a></td><td class="cell-|cgc"><span class="status-value"><div class="status-dot"></div>Not started</span></td><td class="cell-Ej?G"></td></tr><tr id="a4b5c2ca-6a3b-4ddf-8155-5b6ed00bd70c"><td class="cell-title"><a href="Beispiel%20Nr%202%20Podcast%20No%201%20-%20Daniel%20Moj%20(%E2%80%9DMoi%E2%80%9D)%204d920359539943a8944304d2ea59c622/Podcast%20No%202%20d5bb998e7d86440bbdf2e7c0bb4375c4/Highlight-Clips%20erstellen%20die%20wir%20auf%20Social%20Media%20a4b5c2ca6a3b4ddf81555b6ed00bd70c.html">Highlight-Clips erstellen die wir auf Social Media publishen könnten</a></td><td class="cell-|cgc"><span class="status-value"><div class="status-dot"></div>Not started</span></td><td class="cell-Ej?G"></td></tr><tr id="b2358efa-f419-4ec3-a7de-aa8f6b683b9c"><td class="cell-title"><a href="Beispiel%20Nr%202%20Podcast%20No%201%20-%20Daniel%20Moj%20(%E2%80%9DMoi%E2%80%9D)%204d920359539943a8944304d2ea59c622/Podcast%20No%202%20d5bb998e7d86440bbdf2e7c0bb4375c4/Social%20Media%20stuff%20Formatieren%20und%20Hochladen%20von%20I%20b2358efaf4194ec3a7deaa8f6b683b9c.html">Social Media stuff: Formatieren und Hochladen von Inhalten</a></td><td class="cell-|cgc"><span class="status-value"><div class="status-dot"></div>Not started</span></td><td class="cell-Ej?G"></td></tr></tbody></table><br/><br/></div><hr id="8d417431-d283-49de-9966-2d5b92bb1ae8"/><nav id="64a01e86-0f87-4848-8068-6740d50592ff" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#7dcc4a97-975e-4929-9426-d3faebaae6eb">Intro</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#29034cc8-9b0f-47d5-8018-752450322a51">Weekly Scoop</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#eed6afc2-4299-4408-be19-c45021e9585e">Intro: Bytes &amp; Köfte</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#ebfbe88c-2c82-47a5-a33b-3cf60a726df3">Daniel Moj - The BIO</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#e76fb677-bd85-4501-b0b6-fd7059446d02"><strong>Was machst du nicht?</strong></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#d976e359-ece3-49ec-a9f2-4f38cb6eafb5">Storytelling - Geschichten erzählen:</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#216789eb-c542-4512-86ed-ab4e23fc6377">Main Part</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#8c7d84b3-ded8-4ab7-b4eb-ebf2fd67c605">Metaverse</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#92a70821-57b6-44ad-a39f-614e7a540cc5">Outro</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#288e8f86-065c-425e-a2e7-56a61492c224">Next Steps for Neyroo</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#2184db09-867b-4d91-8ab5-dd69c3fe7ef7">Rapid Fire</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#5692d7f9-320d-4e9e-8885-f06c8a775c87">Final Plug</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#b3e8651f-d72a-4898-aa16-9a35f1162605">Conclusion:</a></div></nav><hr id="a61f0f7f-da31-40d7-86f5-9d21db292dee"/><h1 id="7dcc4a97-975e-4929-9426-d3faebaae6eb" class="">Intro</h1><h2 id="29034cc8-9b0f-47d5-8018-752450322a51" class="">Weekly Scoop</h2><p id="a3166f93-f2ae-4f29-b3df-3c7d8a6b6934" class="">Start mit lockerer Runde</p><h2 id="eed6afc2-4299-4408-be19-c45021e9585e" class="">Intro: Bytes &amp; Köfte</h2><blockquote id="6fafc2e2-1083-422c-97a4-204b22b5498f" class="">Willkommen bei Bytes &amp; Köfte, dem Podcast rund um Gespräche mit interessanten Personen aus den Feldern: Coding, Design und Unternehmertum <span style="border-bottom:0.05em solid"><strong>und</strong></span> deren Werdegang.</blockquote><h2 id="ebfbe88c-2c82-47a5-a33b-3cf60a726df3" class="">Daniel Moj - The BIO</h2><blockquote id="1ad69e20-5f02-4c53-bbf1-249a1bda7e11" class="">USPs von Daniel</blockquote><p id="8d4383c8-6316-4b83-95e8-2fe8a8718216" class=""><strong>Unser heutiger Gast: Daniel Moj</strong></p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="ba3799b6-cc28-4767-9bee-8d0838dc9d10"><div style="font-size:1.5em"><span class="icon">🔎</span></div><div style="width:100%">“Ich bin Geschichtenerzähler und kreiere die Stories, die Inszenierungen und Treatments von und für Unternehmen und Organisationen. Als Grenzgänger zwischen Journalismus und Unternehmenskommunikation plane, steuere und realisiere ich Kommunikationskampagnen. Ich bin Berater und Executive Coach und setze dabei vor allem auf die Kraft des Storytellings und der visuellen Live-Kommunikation. Ein Handwerk, das ich als Regisseur und Autor in Filmen, Videos oder Animationen für Firmen und Fernsehsender entwickelt und gestaltet habe.”</div></figure><p id="96542ee0-edd2-452f-8403-f4e03fb92228" class="">Außerdem: </p><ul id="b7f83fbc-f637-421f-8330-e0108247d62c" class="bulleted-list"><li style="list-style-type:disc">Bist du Reporter, selbstdrehender Autor und Videojournalist für das öffentlich-rechtliche als auch das private Fernsehen vor allem über Themen rund um die Ökonomie, die Ökologie und gesellschaftliche Prozesse und hast du das Fachbuch: „Fernsehjournalismus“ veröffentlicht.</li></ul><ul id="899e9e59-ec55-4517-a093-bf9a63dea72f" class="bulleted-list"><li style="list-style-type:disc">Konferenzreihe FUTURE Fair ins Leben gerufen</li></ul><ul id="080bf162-4bd1-4e88-bcfe-21c1806b04d1" class="bulleted-list"><li style="list-style-type:disc">Eigener Podcast “Virtual Campfire”</li></ul><ul id="6fbfa79a-f183-42ea-b85f-0a64635e5502" class="bulleted-list"><li style="list-style-type:disc">Nicht zu vergessen Unternehmen NEYROO: Beschäftigt sich mit Virtualisierung von Unternehmen</li></ul><p id="c612b691-e3d8-4f81-be30-9efc085cb35b" class="">
+</p><h3 id="e76fb677-bd85-4501-b0b6-fd7059446d02" class=""><strong>Was machst du nicht?</strong></h3><ul id="867b628b-dabc-4d80-a6f6-9b95c2da559f" class="bulleted-list"><li style="list-style-type:disc"> Er kann eigene Punkte einbringen</li></ul><p id="8f699b9a-a2c2-4682-a519-b46cd3daa81f" class="">
+</p><h3 id="d976e359-ece3-49ec-a9f2-4f38cb6eafb5" class="">Storytelling - Geschichten erzählen:</h3><ul id="83c91451-6d59-4f6e-86c8-cb5b3d23b880" class="bulleted-list"><li style="list-style-type:disc">Was bedeutet das für dich?</li></ul><ul id="8c49ab8e-d85c-4c5f-961e-ed1623674544" class="bulleted-list"><li style="list-style-type:disc">Was macht eine Geschichte besonders</li></ul><ul id="b396b49e-1f3a-4b8f-90a9-8bae22b0dfba" class="bulleted-list"><li style="list-style-type:disc">Was ist die Kunst des Storytellings<ul id="c4ae4d4f-1ccd-4109-80f6-1986e3cb90fa" class="bulleted-list"><li style="list-style-type:circle">Kann es jede Person erlernen?  </li></ul></li></ul><ul id="80ca7f22-b899-43e8-ac3a-62b190b244ad" class="bulleted-list"><li style="list-style-type:disc">Storytelling &amp; Business: Welche Überschneidungen gibt es? (Marketing)</li></ul><p id="af1ea408-8968-47e9-804d-02ba1e0cff3a" class="">
+</p><p id="d4af307b-5662-4479-a525-04a5f0590733" class="">
+</p><p id="6479f433-6065-4240-9afb-64c3825ccf28" class=""><strong>Transition zu Metaverse/ Neyroo:
+</strong>Und schwingt sich dein Bored Ape auch schon auf einem gemein teuren Metaverse Grundstück herum?</p><hr id="0ed318e7-d665-4fe2-900c-1d8741443863"/><h1 id="216789eb-c542-4512-86ed-ab4e23fc6377" class="">Main Part</h1><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3">Metaverse</summary><div class="indented"><ul id="8b86de70-41bd-406d-bcc4-ee23d0fea71b" class="bulleted-list"><li style="list-style-type:disc">Für viele ist das Metaverse noch ein sehr abstraktes Konstrukt</li></ul><p id="0b356e1e-323a-492e-92a9-1e4a46d8f5a0" class="">
+</p><h3 id="bf925d4a-46ad-45c7-805c-f86d653fab53" class="">Was ist das Metaverse?</h3><p id="de1a3d43-fce5-401e-b6f7-4a7f4c0dac55" class=""><span style="border-bottom:0.05em solid"><strong><strong><strong><strong><strong><strong><strong><strong>Abstrakt</strong></strong></strong></strong></strong></strong></strong></strong></span></p><ul id="cb597451-d8e0-4697-a1e7-cb3e7267a6d0" class="bulleted-list"><li style="list-style-type:disc">VR/AR + Open world?</li></ul><ul id="b578823a-ee7f-4f2e-960f-89c9cb4c4e49" class="bulleted-list"><li style="list-style-type:disc">Web3?</li></ul><p id="3c5e75b5-578b-4a93-9429-f11084af9d67" class="">
+</p><p id="efc29984-0a28-4a2d-8df7-4cdf5c3af680" class=""><span style="border-bottom:0.05em solid"><strong>Use cases &amp; benefits</strong></span><div class="indented"><ul id="55ec5294-4736-4125-8cec-0b5d6304a4fb" class="toggle"><li><details open=""><summary>Entertainment</summary><ul id="9b861468-fe23-4a39-ac8b-a3550c93e8d1" class="bulleted-list"><li style="list-style-type:disc">Gaming</li></ul><ul id="ad548736-223c-437b-ba32-050066a9b37e" class="bulleted-list"><li style="list-style-type:disc">Events, Concerts, Festivals</li></ul></details></li></ul><ul id="3b8b0062-199a-43c1-b967-fe8ec7903681" class="toggle"><li><details open=""><summary>Art</summary><ul id="6cac9c39-c210-46fe-90e9-d39fecfe660e" class="bulleted-list"><li style="list-style-type:disc">Exhibitions</li></ul><ul id="ed4143ab-a331-4b25-bd7e-30d7463f0892" class="bulleted-list"><li style="list-style-type:disc">Fashion shows</li></ul></details></li></ul><ul id="f4eeea10-c41a-40b7-a3ad-78f2d4e26156" class="bulleted-list"><li style="list-style-type:disc">Education</li></ul><ul id="9908d3ed-b3ae-4836-8016-0d9bfa1861ad" class="bulleted-list"><li style="list-style-type:disc">Productivity &amp; Business</li></ul></div></p><p id="aa0f485c-5d44-4897-8e3e-38bb423a2105" class="">
+</p><p id="fe1eee83-dcae-47e3-8fd2-a15e695d976b" class="">
+</p><h3 id="c564c18a-edad-4519-99f0-f150c57f14fa" class="">Was ist das Neyrooverse (Corporate Metaverse Lösung)?</h3><ul id="3ee9adfc-4aae-489d-a8b8-c05c347d63c7" class="bulleted-list"><li style="list-style-type:disc">Elevator Pitch<ul id="34553db0-8ac5-4534-bf57-d9fb1c5a5be0" class="bulleted-list"><li style="list-style-type:circle">80-jährige Oma</li></ul><ul id="b4ec10ea-a1f6-41b7-9095-a5352a1fdc5d" class="bulleted-list"><li style="list-style-type:circle">Lufthansa CEO</li></ul></li></ul><ul id="f9d7faaf-32d4-4ac7-8dc1-cc85c7d04566" class="bulleted-list"><li style="list-style-type:disc">Welche Business Cases decken sie ab?</li></ul><p id="42996d5c-edbb-4bee-ba45-1b10d9ad1e36" class="">
+</p><h3 id="1beec38b-1e83-4140-bd56-61b2edd94e57" class="">Welches konkreten Problem(e) wollt ihr damit lösen?</h3><blockquote id="17fefbba-aaa4-4589-93e6-0f5f2f39cf4d" class="">Die Zukunft von Sales, Marketing und Kommunikation im virtuellen Raum?</blockquote><p id="ffab7a55-6f08-415c-9e06-77f236e6f3fe" class="">
+</p><h3 id="2959120d-8041-49d7-812a-3e4f8ea40908" class="">Wer sind eure Kunden &amp; Was verspreche sie sich durch euch?</h3><ul id="a4c31c46-47a3-443a-afd4-053adcbe277c" class="bulleted-list"><li style="list-style-type:disc">Bei wem brennt’s und wer braucht ein neues virtuellen Raum?</li></ul><p id="c830f2c3-ca9a-43b7-bbb6-d3a38e1a222a" class="">
+</p><h3 id="d701cc19-8f93-4df5-93d7-53e9e1e4f6bd" class="">Storytelling in the Metaverse</h3><p id="da365993-e43d-4906-92c5-62c89f3e3252" class="">Wie verbindest du deine Expertise aus dem Storytelling und der Werbeproduktion mit dem Metaverse?</p><p id="7bf34232-1d36-47f6-8d48-04d6ee1a7ee9" class="">
+</p><h3 id="eb4cceae-ebd4-4909-a9c3-282862976e88" class="">Zukunftsvision für Metaverse</h3><ul id="38db12f6-c145-44ec-9686-ce835cbe95c9" class="bulleted-list"><li style="list-style-type:disc">Metaverse Enabler?</li></ul></div></details><p id="0d5d9c53-f023-41ba-babe-f74de1ede754" class="">
+</p><p id="1f813ccd-fd4a-41d4-9085-43f175eda01a" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="b470a745-9dbc-42d5-884f-65a5c15b80f3"><div style="font-size:1.5em"><span class="icon">❓</span></div><div style="width:100%">Stell dir vor du kommst gerade aus der Schule, du hast dein heutiges Wissen und die Welt steht dir offen. Was würdest du tun?</div></figure><p id="5fc9020a-cc15-4711-89ef-4aa600591ea6" class="">
+</p><hr id="3ab9729f-53a1-4905-9282-0de67059e0b1"/><h1 id="92a70821-57b6-44ad-a39f-614e7a540cc5" class="">Outro</h1><h3 id="288e8f86-065c-425e-a2e7-56a61492c224" class="">Next Steps for Neyroo</h3><ul id="6c154ff8-64ce-4eed-8301-c28688e1b5b5" class="bulleted-list"><li style="list-style-type:disc">Neyroo’s Roadmap</li></ul><p id="71176854-f846-4ec1-b507-cc3bf27e38b7" class="">
+</p><h2 id="2184db09-867b-4d91-8ab5-dd69c3fe7ef7" class="">Rapid Fire</h2><ul id="02513d38-e949-42ec-adb2-af4a16cc6435" class="toggle"><li><details open=""><summary>Fragen</summary><ol type="1" id="14149c64-3dde-4d16-8760-79ac13f948d3" class="numbered-list" start="1"><li>AR oder VR</li></ol><ol type="1" id="52ee322a-bbcb-42e1-9e05-0b5df0822d70" class="numbered-list" start="2"><li>Smartlense oder SmartGlasses</li></ol><ol type="1" id="7861e510-df76-444f-a1f6-7987d716be06" class="numbered-list" start="3"><li>Facebook oder Google</li></ol><ol type="1" id="f66ce9e7-232c-4903-9fad-543486c47bef" class="numbered-list" start="4"><li>Husky oder Schäferhund</li></ol><ol type="1" id="4c5ec30b-43a5-43dd-b656-fc257df6b528" class="numbered-list" start="5"><li>Studium oder Ausbildung</li></ol><ol type="1" id="a029fdf8-e69b-4ee5-a84b-80594871e4b6" class="numbered-list" start="6"><li>Echte Kontakte oder Digitale Kontakte</li></ol><ol type="1" id="d84de3f3-5b82-41f1-b889-a4842a695081" class="numbered-list" start="7"><li>Nero oder Neyroo</li></ol><ol type="1" id="218d622e-da11-490e-ba27-90343c36f4b0" class="numbered-list" start="8"><li>München oder Heidelberg</li></ol><ol type="1" id="6645b160-d627-435b-96c2-3a6ccc0ab1e3" class="numbered-list" start="9"><li>Fahrrad oder Bahn</li></ol><ol type="1" id="ffd51386-0529-46a9-a9e6-4231d3b4751d" class="numbered-list" start="10"><li>Gym oder Surfen</li></ol><ol type="1" id="d8e4aa2e-c01a-409a-a51c-150c56973c59" class="numbered-list" start="11"><li>Hund oder Katze</li></ol><ol type="1" id="10efc95e-c2e5-4c2c-8623-bd09c738786d" class="numbered-list" start="12"><li>Bayern oder NRW</li></ol><ol type="1" id="33da562f-6965-4416-ae42-536742f1cfde" class="numbered-list" start="13"><li>Sakko oder T-Shirt</li></ol></details></li></ul><p id="82a773f9-ad32-41d5-8abc-0c635fd7b5ce" class="">
+</p><h2 id="5692d7f9-320d-4e9e-8885-f06c8a775c87" class="">Final Plug</h2><blockquote id="f784f67c-7156-4129-a679-e744f0b59f41" class="">Möchtest du noch etwas loswerden? Die Bühne gehört dir!</blockquote><p id="809e007d-cac8-43a6-85fd-e2ca19fc22bd" class="">
+</p><p id="170c2a79-73a0-4233-b743-8ac11e15beb8" class="">
+</p><h2 id="b3e8651f-d72a-4898-aa16-9a35f1162605" class="">Conclusion:</h2><p id="693b18ba-c619-4536-a3ba-96cb5f1c70f6" class="">Zusammenfassung des Podcasts:</p><p id="299a34d6-4b2a-42bc-9b87-e051de23aa67" class="">keine angstvor  stillstand</p><p id="0d571660-0837-46b4-88a0-c3abb38a7024" class="">hört auf die jugend</p><p id="332b4fe1-9d03-4d31-b981-906c38dfc4fb" class="">bei verschiedenen Bahnhöfe aussteigen</p><p id="7281dcb8-e73d-4fb2-81c5-36463416535f" class="">MV: Verknüpfung virtueller experiences</p><p id="2b765a33-a634-44be-8eb9-89f2312d5532" class="">Kinder ladet euch duolingo</p><hr id="b08c8b3f-f0f6-42c7-9fea-17c457feb5f5"/><p id="617eb343-ea6f-4c7b-89ed-828a6da24189" class=""><strong>Themen:</strong></p><ul id="0e551cbc-b813-4db9-ad11-ea0959e53a5d" class="bulleted-list"><li style="list-style-type:disc">Corporate Metaverse</li></ul><ul id="180036b9-5073-4eea-b8d0-37e04a053757" class="bulleted-list"><li style="list-style-type:disc">Storytelling Expert → Was braucht es um eine gute Geschichte zu erzählen?</li></ul><ul id="112ca3d6-be6e-4894-975a-085827b7367a" class="bulleted-list"><li style="list-style-type:disc">Berufs-Herkunft:<ul id="f6eafc94-c653-4a8d-9c16-444c0e311708" class="bulleted-list"><li style="list-style-type:circle">Journalist → Produziert Beiträge und Reportagen für das Fernsehen<ul id="89375b5a-0857-4fea-97db-6aef731e15d1" class="bulleted-list"><li style="list-style-type:square">Auszeichnung erhalten:<ul id="6ef5357b-dcf8-4e67-a374-a0a30be61cf8" class="bulleted-list"><li style="list-style-type:disc">Bronzemedaille des New York Festivals: “<em>24 Stunden Südafrika”</em>, 2011</li></ul><ul id="194cda90-6772-4433-adff-82c81b203e83" class="bulleted-list"><li style="list-style-type:disc">Goldener Igel: “<em>Einsatz im Wüstensand – Ein Soldat auf Friedensmission”</em>, 2020</li></ul></li></ul></li></ul><ul id="319e7aa3-1bd7-4459-80f1-9df2ead610e3" class="bulleted-list"><li style="list-style-type:circle">Autor</li></ul><ul id="0e2176e8-70a1-400c-97d0-da533585a253" class="bulleted-list"><li style="list-style-type:circle">Dozent an Uni </li></ul></li></ul><ul id="9c80aa15-e986-40f0-9dd3-d68c1f90c936" class="bulleted-list"><li style="list-style-type:disc">Studium:<ul id="b165f7e9-a505-4024-a949-6fbf60e62cd8" class="bulleted-list"><li style="list-style-type:circle">Staats- und Sozialwissenschaften (Universität der Bundeswehr München)</li></ul><ul id="ddf2360e-7f27-415e-974f-187e1d8d8d69" class="bulleted-list"><li style="list-style-type:circle">Public Relations (Heidelberg)</li></ul><p id="5021e543-0000-4385-8e73-dae1d1caabe2" class="">
+</p></li></ul><p id="c7e780f5-7f66-4e83-8350-9d080abbcda0" class="">
+</p><p id="d4314902-991a-413e-8d75-f3f3c0d40b20" class=""><strong>Er sagt über sich selber: </strong></p><p id="42b46d6d-a8ec-4d28-8202-e9186e22178c" class="">
+</p><p id="677d858f-8adb-40e9-b433-153ee563a651" class="">
+</p></div></article></body></html>

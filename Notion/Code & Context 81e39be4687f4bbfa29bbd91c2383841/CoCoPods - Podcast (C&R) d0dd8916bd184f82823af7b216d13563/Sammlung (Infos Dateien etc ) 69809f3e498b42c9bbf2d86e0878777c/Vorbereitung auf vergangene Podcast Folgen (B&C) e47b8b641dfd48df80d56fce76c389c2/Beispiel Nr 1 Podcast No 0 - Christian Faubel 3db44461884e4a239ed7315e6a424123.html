@@ -1,0 +1,693 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Beispiel Nr. 1: Podcast No. 0 - Christian Faubel</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="3db44461-884e-4a23-9ed7-315e6a424123" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🌯</span></div><h1 class="page-title">Beispiel Nr. 1: Podcast No. 0 - Christian Faubel</h1><p class="page-description"></p></header><div class="page-body"><figure id="4b531535-dce9-43fe-aa7d-696f844694a5" class="link-to-page"><a href="Beispiel%20Nr%201%20Podcast%20No%200%20-%20Christian%20Faubel%203db44461884e4a239ed7315e6a424123/Orga%204b531535dce943feaa7d696f844694a5.html">Orga</a></figure><hr id="bb0ffaae-adce-4e14-acc3-4d50d3b455c1"/><h1 id="0e9193ac-51e3-4a0e-a851-67f441e7118f" class="">Table of Contents</h1><nav id="6d6ca24c-400a-44aa-afe6-89b4b7959d88" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#0e9193ac-51e3-4a0e-a851-67f441e7118f">Table of Contents</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#284d1e73-5294-430d-877f-2624cf26bae2">Introduction</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#1775a508-8db2-4334-a10a-6a6bc88710b7"><span style="border-bottom:0.05em solid"><strong>Bytes &amp; Köfte</strong></span></a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#c41268d6-963f-40ad-85df-47008df7eee8">Guest: Christian Faubel</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#f93a543c-7aac-41ff-8219-526100175ddf">Ice Breaker</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#ac098312-a1ff-4e40-8e0b-d3f57f89a172">Analog vs. Digital?</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#e4a89880-c2ce-43e2-9c0c-bf6254e39f1b">Main Part</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#c973d0ef-f16b-492f-b862-a8237b68e331">CV - Faubel’s Journey as an Academic</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#59c8f375-0dca-4858-a6ab-8802465ffa3b"><span style="border-bottom:0.05em solid"><strong><em>Dynamic field theory</em></strong></span></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#06a20d76-29f0-41ca-86e7-2eb3d5056486"><span style="border-bottom:0.05em solid"><strong>Künstliche Intelligenz</strong></span></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#0fbff0b5-2eff-425f-b71d-e9633093f815"><span style="border-bottom:0.05em solid"><strong>Neuroscience: Neurowissenschaften?</strong></span></a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#d298fc03-c22a-4ac9-b1dd-4f2f46ddc03d"><span style="border-bottom:0.05em solid">Lehre als Teil seines Werdeganges</span></a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#f7952ac2-e6cc-4c00-baaa-7273f2290ca3">Outro</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#558ec4f6-bb18-4755-882f-c45d3278ba26">Rapidfire-Fragen</a></div></nav><hr id="60059e40-3fc3-4e70-81f3-069c42d7dc65"/><h1 id="284d1e73-5294-430d-877f-2624cf26bae2" class="">Introduction</h1><h2 id="1775a508-8db2-4334-a10a-6a6bc88710b7" class=""><span style="border-bottom:0.05em solid"><strong>Bytes &amp; Köfte</strong></span></h2><blockquote id="66583c35-5294-43ba-b38d-628151e67eb6" class=""><em>Insert Punchline</em></blockquote><p id="3fef2ac1-8d5a-4b74-aa45-42a614514846" class="">Gespräche mit interessanten Personen aus den Feldern: Coding, Design, Unternehmertum <span style="border-bottom:0.05em solid"><strong>und</strong></span> deren Werdegang</p><p id="555bfa82-58fe-4215-833f-89f57c17f206" class="">
+</p><p id="9f81a11a-a0be-45fb-8d47-145767a95576" class="">
+</p><h2 id="c41268d6-963f-40ad-85df-47008df7eee8" class="">Guest: Christian Faubel</h2><blockquote id="a3cfdb98-c673-4dc8-8f80-7db0ccc4e3ca" class="">Researcher, Tutor, Maker, Swiss-Army Knife</blockquote><h2 id="f93a543c-7aac-41ff-8219-526100175ddf" class="">Ice Breaker</h2><figure class="block-color-orange_background callout" style="white-space:pre-wrap;display:flex" id="b10dc116-3ebf-4231-88e6-242253b94b4b"><div style="font-size:1.5em"><span class="icon">📽️</span></div><div style="width:100%"><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>Overhead Projector</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></div></figure><figure id="f3cacf34-5404-44b6-b040-1564d8329db0" class="link-to-page"><a href="Beispiel%20Nr%201%20Podcast%20No%200%20-%20Christian%20Faubel%203db44461884e4a239ed7315e6a424123/Notes%20f3cacf34540444b6b0401564d8329db0.html">Notes</a></figure><h3 id="ac098312-a1ff-4e40-8e0b-d3f57f89a172" class="">Analog vs. Digital?</h3><ul id="8bede10c-bc9e-4620-b8df-9d76b9adc137" class="bulleted-list"><li style="list-style-type:disc">Du hast einen Hang zum analogen vs. digitalen Systemen/ Tools - was begeistert dich daran?<ul id="ba44234b-2c20-4ad7-82ec-7c0d8d35ff52" class="bulleted-list"><li style="list-style-type:circle">Wie wir hier bei Code &amp; Context wissen, begeistern dich <span style="border-bottom:0.05em solid"><strong>Overhead-Projektoren</strong></span> die für die meisten eher als veraltet angesehen werden, worin ist das begründet?</li></ul><ul id="5287f005-fc66-4e22-af06-75df11ad50d5" class="bulleted-list"><li style="list-style-type:circle">Musik: Analoge Synthesize: warum?</li></ul><ul id="cd5f4d0f-f24e-4744-accc-9639650897a1" class="bulleted-list"><li style="list-style-type:circle">Kunstinstallationen</li></ul></li></ul><ul id="b8d26407-a056-4918-a0af-fc9a373ded2d" class="bulleted-list"><li style="list-style-type:disc">DerStrudel: Warum brauchen wir einen “relaxed approach” zu electronics/robotics?</li></ul><hr id="92e8047c-46f4-43b7-8fa7-b8f951621dac"/><h1 id="e4a89880-c2ce-43e2-9c0c-bf6254e39f1b" class="">Main Part</h1><h2 id="c973d0ef-f16b-492f-b862-a8237b68e331" class="">CV - Faubel’s Journey as an Academic</h2><p id="fc196d9d-4f3e-4976-ad40-5f1b5f461436" class="">Wie kommt er von einem PhD in electrical engineering (Elektro Ingenieurwesen) → dahin wo er ist: Neurowissenschaftliche Forschung, autonome Systeme, Medienkunst und Design</p><p id="974e4a02-6193-4575-8998-c62018846cb4" class="">
+</p><p id="7e6cd4f6-04df-482d-92fc-d4c9b45ea4dd" class=""><strong>Sein Werdegang:</strong></p><ul id="a554f8c2-e36c-4be0-806a-11b99b08893b" class="bulleted-list"><li style="list-style-type:disc">Wissenschaftlicher Werdegang - woran er gearbeitet hat<ul id="78805331-59ee-4d51-b2e7-ebd38862600b" class="bulleted-list"><li style="list-style-type:circle">Welche deiner Publikationen findest du besonders interessant und auf welche bist du besonders stolz?</li></ul></li></ul><p id="3c99a5f1-24a3-4e28-a1d0-3dd26feeec34" class="">
+</p><h3 id="59c8f375-0dca-4858-a6ab-8802465ffa3b" class=""><span style="border-bottom:0.05em solid"><strong><em>Dynamic field theory</em></strong></span></h3><blockquote id="dd61983b-d288-4e7a-a782-7c22b9c5445f" class=""></blockquote><p id="498c5d51-fbb0-4738-bde8-b59387928d3b" class="">
+</p><p id="fdbba78d-f506-4653-82fa-8eba52903a7c" class="">
+</p><h3 id="06a20d76-29f0-41ca-86e7-2eb3d5056486" class=""><span style="border-bottom:0.05em solid"><strong>Künstliche Intelligenz</strong></span></h3><blockquote id="55a37b25-7f4c-4b4a-9b5e-08186ca64fa2" class=""></blockquote><ul id="f74c96d3-dae7-4674-b80a-f03d67db7ec3" class="bulleted-list"><li style="list-style-type:disc">Was versteht er darunter?</li></ul><ul id="e91cba53-7c50-4733-bf71-159a21ae4e3d" class="bulleted-list"><li style="list-style-type:disc">Intelligenz vs. Consciousness (Bewusstsein)</li></ul><p id="00032332-4e98-46be-823a-6812bdb775f4" class="">
+</p><ul id="9eb03490-1000-492e-a5b6-dc1843bb6379" class="toggle"><li><details open=""><summary>Use cases</summary><ul id="afa25b3b-26f9-4ffb-a598-d428c8f5a306" class="bulleted-list"><li style="list-style-type:disc"><strong>Self-driving cars</strong></li></ul><ul id="517617c1-df87-412b-a8af-6b51bc3e567c" class="bulleted-list"><li style="list-style-type:disc"><strong>Humanoid Robotics</strong>?</li></ul><ul id="bbfa8f7a-288b-40a1-9b66-7fa598a7e834" class="bulleted-list"><li style="list-style-type:disc"><strong>Chat - GPTs</strong></li></ul><ul id="a7db7d89-5bef-49fc-8be0-552c1ae6a746" class="bulleted-list"><li style="list-style-type:disc">Art - DALL-E / Midjourney</li></ul><ul id="7c6549ea-64ad-44bc-98f4-bf5da2f810e4" class="bulleted-list"><li style="list-style-type:disc">untypische Beispiele in AI</li></ul></details></li></ul><p id="69f8bc63-177b-44e1-b4d6-cb532fdd54de" class="">
+</p><ul id="d0e7a364-71cf-4b6c-a9c4-929a80e70cb4" class="bulleted-list"><li style="list-style-type:disc">Ethische Fragestellungen?</li></ul><ul id="7882b78f-a234-4468-8807-6c5cd7e108ad" class="bulleted-list"><li style="list-style-type:disc">Welche Entwicklung sieht er für die Zukunft?<ul id="df903066-f624-4b4e-93e3-0efd1d16f829" class="bulleted-list"><li style="list-style-type:circle">AGI?</li></ul></li></ul><p id="e6fc89ec-3f78-4ff6-933f-25af17447a98" class="">
+</p><h3 id="0fbff0b5-2eff-425f-b71d-e9633093f815" class=""><span style="border-bottom:0.05em solid"><strong>Neuroscience: Neurowissenschaften?</strong></span></h3><ul id="7f3d992d-625c-414a-8997-5d99d81501bd" class="bulleted-list"><li style="list-style-type:disc"></li></ul><p id="abb1ab88-d8d6-4e3f-b773-5505959a64f8" class="">
+</p><h3 id="d298fc03-c22a-4ac9-b1dd-4f2f46ddc03d" class=""><span style="border-bottom:0.05em solid">Lehre als Teil seines Werdeganges</span></h3><ul id="03083dd9-7140-4f95-b0cc-48a1e3a16742" class="bulleted-list"><li style="list-style-type:disc">Themen seiner Lehre - Prediger<ul id="ed1651b7-00ba-455a-bad1-4d2daa1aa62a" class="bulleted-list"><li style="list-style-type:circle">Motivation hinter der Lehre - warum lehrt er?</li></ul><ul id="71cfbd6c-78a4-4d2f-8b42-e6156c35491b" class="bulleted-list"><li style="list-style-type:circle">Könnte er sich vorstellen etwas anderes zu machen?</li></ul></li></ul><ul id="bf95ae93-7e3c-4d1e-8fd4-3d29395d6efe" class="bulleted-list"><li style="list-style-type:disc">Sein Stil der Lehre - eher unkonventionell: Beispiele nennen<ul id="68c041d2-90ec-435a-a6f2-2c961ab1ce07" class="bulleted-list"><li style="list-style-type:circle">Didaktik</li></ul><ul id="96fa1bc6-d378-4690-9d8c-17e0c7fa7a9a" class="bulleted-list"><li style="list-style-type:circle">Welche Grundprinzipien liegen dem Zugrunde bzw. - Wie würdest du deine Lehre und deine Vorgehensweisen beschreiben?</li></ul><ul id="74db21ed-422b-47d3-aca0-1f920ad643e6" class="bulleted-list"><li style="list-style-type:circle">Tradeoffs: Wo macht deine Art der Lehre Sinn und wann nicht?</li></ul><ul id="711209ef-9fda-40f5-9d65-80f9f9e9732a" class="bulleted-list"><li style="list-style-type:circle">Wie kommunizierst du komplexe Konzepte greifbar, dass auch Kinder sie verstehen?<ul id="d0c9243d-f910-4c45-b807-45ed446d95d9" class="bulleted-list"><li style="list-style-type:square">Wie kann man theoretische Konzepte praktisch verständlich machen?</li></ul><ul id="e5c52cf2-11bf-4720-ae0d-5db3dfe36035" class="bulleted-list"><li style="list-style-type:square">Visualisierung + Erleben (Sounds) + weitere Erfahrung durch Sinne</li></ul></li></ul></li></ul><ul id="cae9f913-b9a6-45e4-b41e-c74cf5761a63" class="bulleted-list"><li style="list-style-type:disc">Stell dir vor du kommst gerade aus der Schule, du hast dein heutiges Wissen und die Welt steht dir offen. Was würdest du tuen</li></ul><p id="aac02394-b20a-4809-b51f-e08c21c3c6b8" class="">
+</p><ul id="3877de9a-88b8-453b-a054-48316bab01e6" class="bulleted-list"><li style="list-style-type:disc">Generalist vs. Specialists</li></ul><ul id="f6ab3ca8-6efc-41f8-a22d-c31a90136efe" class="bulleted-list"><li style="list-style-type:disc">Life-long learning</li></ul><p id="e7f7765b-2906-40b1-b250-6f50a7640efc" class="">
+</p><p id="9a601b38-588a-487f-9f50-fd9b2adb538e" class=""><span style="border-bottom:0.05em solid"><strong><strong><strong><strong><strong><strong>Next Steps:</strong></strong></strong></strong></strong></strong></span></p><ul id="ca435db4-a42e-4b50-9f31-71c0ddd0ea5f" class="bulleted-list"><li style="list-style-type:disc">Zukunftsprojekte</li></ul><ul id="533f1eb7-d482-4ae6-ad8d-a963e2db125f" class="bulleted-list"><li style="list-style-type:disc">Ambitionen</li></ul><ul id="73a47200-56c9-4f0b-9862-4bde4893d075" class="bulleted-list"><li style="list-style-type:disc">Ziele</li></ul><p id="3d5f738a-a828-4d8c-a39f-d2b3a891c7bc" class="">
+</p><p id="b0568294-1506-4696-b96a-47092b66268a" class="">
+</p><hr id="4f368d4b-9ae9-4b0c-9d90-5a68a558e001"/><h1 id="f7952ac2-e6cc-4c00-baaa-7273f2290ca3" class="">Outro</h1><blockquote id="dd6aca73-b05c-405c-bae9-51c39278d44b" class="">Zusammenfassung der Episode</blockquote><p id="9641ae2f-b7ee-48bf-9852-6540f88539d4" class="">Von Elektroineneieur zu neuro</p><p id="ba027a63-cb28-4a86-b4c3-66505af9a80e" class="">Wie wir von Babies lernen können zu lernen </p><p id="48f32006-a26f-438f-98eb-80cfa7a14bc8" class="">Prediger</p><p id="ca425b68-53a0-423d-8334-1863c1313500" class="">Lebenslanges lernen man muss nicht immer so früh wissen was man will - es kommt irgendwann</p><p id="2e4eaa34-9f81-4d84-90d9-b74c011f9031" class="">
+</p><h2 id="558ec4f6-bb18-4755-882f-c45d3278ba26" class="">Rapidfire-Fragen</h2><blockquote id="b3d90028-ffe0-4aa3-b3d0-4e9bb683cddb" class="">1x Wort Max. 1 Satz</blockquote><p id="bcaa1495-2532-4322-8d91-5584bcb51c41" class="">
+</p><ul id="c5d4d9bd-ae84-43f8-a2d5-454cd07e1fd3" class="toggle"><li><details open=""><summary><span style="border-bottom:0.05em solid"><strong>Fragen:</strong></span> </summary><ul id="1c17c669-24f6-4eaa-b124-ac4d9f87c702" class="bulleted-list"><li style="list-style-type:disc">Arduino oder Raspberry?</li></ul><ul id="75e33f85-556b-462c-b5c7-216d9736057d" class="bulleted-list"><li style="list-style-type:disc">C++ oder Python?</li></ul><ul id="6a8864c4-5fa1-4dea-9d0f-73fa08b11679" class="bulleted-list"><li style="list-style-type:disc">Studium oder Ausbildung?</li></ul><ul id="e2da0c76-f3c2-43bb-8418-c005933f4421" class="bulleted-list"><li style="list-style-type:disc">PyTorch oder TensorFlow?</li></ul><ul id="5827a863-921f-4361-b933-9d10cbcfd7a7" class="bulleted-list"><li style="list-style-type:disc">Friseur oder selbst schneiden?</li></ul><ul id="3efdc781-31ab-4fb9-97ef-2f0b3a1cea53" class="bulleted-list"><li style="list-style-type:disc">Zocken oder chillen?</li></ul><ul id="34f2f559-1bb0-450a-8393-d83b45810aab" class="bulleted-list"><li style="list-style-type:disc">High-Level oder Low-Level Programmiersprachen?</li></ul><ul id="0e2a8fd6-0f78-439b-8559-8b3d99843010" class="bulleted-list"><li style="list-style-type:disc">Fahrrad oder Bahn?</li></ul><ul id="009fe3da-7c26-4046-8700-4d9f40ba30a4" class="bulleted-list"><li style="list-style-type:disc">Löten oder stecken?</li></ul><ul id="91a3f3a1-908c-465c-82ca-d0adb2943469" class="bulleted-list"><li style="list-style-type:disc">Teuer oder günstig?</li></ul><ul id="462dbd3c-d5dc-420f-bb0b-e6fbbad117c8" class="bulleted-list"><li style="list-style-type:disc">Code oder Context?</li></ul><p id="5f4eb368-58bc-4237-b110-c123e4cd4ceb" class="">
+</p></details></li></ul></div></article></body></html>

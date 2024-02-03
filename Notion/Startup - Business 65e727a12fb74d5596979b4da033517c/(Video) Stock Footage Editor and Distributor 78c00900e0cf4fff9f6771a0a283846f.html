@@ -1,0 +1,2325 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>(Video) Stock Footage Editor and Distributor</title>
+	<style>
+		/* cspell:disable-file */
+		/* webkit printing magic: print all background colors */
+		html {
+			-webkit-print-color-adjust: exact;
+		}
+
+		* {
+			box-sizing: border-box;
+			-webkit-print-color-adjust: exact;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		@media only screen {
+			body {
+				margin: 2em auto;
+				max-width: 900px;
+				color: rgb(55, 53, 47);
+			}
+		}
+
+		body {
+			line-height: 1.5;
+			white-space: pre-wrap;
+		}
+
+		a,
+		a.visited {
+			color: inherit;
+			text-decoration: underline;
+		}
+
+		.pdf-relative-link-path {
+			font-size: 80%;
+			color: #444;
+		}
+
+		h1,
+		h2,
+		h3 {
+			letter-spacing: -0.01em;
+			line-height: 1.2;
+			font-weight: 600;
+			margin-bottom: 0;
+		}
+
+		.page-title {
+			font-size: 2.5rem;
+			font-weight: 700;
+			margin-top: 0;
+			margin-bottom: 0.75em;
+		}
+
+		h1 {
+			font-size: 1.875rem;
+			margin-top: 1.875rem;
+		}
+
+		h2 {
+			font-size: 1.5rem;
+			margin-top: 1.5rem;
+		}
+
+		h3 {
+			font-size: 1.25rem;
+			margin-top: 1.25rem;
+		}
+
+		.source {
+			border: 1px solid #ddd;
+			border-radius: 3px;
+			padding: 1.5em;
+			word-break: break-all;
+		}
+
+		.callout {
+			border-radius: 3px;
+			padding: 1rem;
+		}
+
+		figure {
+			margin: 1.25em 0;
+			page-break-inside: avoid;
+		}
+
+		figcaption {
+			opacity: 0.5;
+			font-size: 85%;
+			margin-top: 0.5em;
+		}
+
+		mark {
+			background-color: transparent;
+		}
+
+		.indented {
+			padding-left: 1.5em;
+		}
+
+		hr {
+			background: transparent;
+			display: block;
+			width: 100%;
+			height: 1px;
+			visibility: visible;
+			border: none;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+		}
+
+		img {
+			max-width: 100%;
+		}
+
+		@media only print {
+			img {
+				max-height: 100vh;
+				object-fit: contain;
+			}
+		}
+
+		@page {
+			margin: 1in;
+		}
+
+		.collection-content {
+			font-size: 0.875rem;
+		}
+
+		.column-list {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.column {
+			padding: 0 1em;
+		}
+
+		.column:first-child {
+			padding-left: 0;
+		}
+
+		.column:last-child {
+			padding-right: 0;
+		}
+
+		.table_of_contents-item {
+			display: block;
+			font-size: 0.875rem;
+			line-height: 1.3;
+			padding: 0.125rem;
+		}
+
+		.table_of_contents-indent-1 {
+			margin-left: 1.5rem;
+		}
+
+		.table_of_contents-indent-2 {
+			margin-left: 3rem;
+		}
+
+		.table_of_contents-indent-3 {
+			margin-left: 4.5rem;
+		}
+
+		.table_of_contents-link {
+			text-decoration: none;
+			opacity: 0.7;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid rgba(55, 53, 47, 0.09);
+			border-collapse: collapse;
+		}
+
+		table {
+			border-left: none;
+			border-right: none;
+		}
+
+		th,
+		td {
+			font-weight: normal;
+			padding: 0.25em 0.5em;
+			line-height: 1.5;
+			min-height: 1.5em;
+			text-align: left;
+		}
+
+		th {
+			color: rgba(55, 53, 47, 0.6);
+		}
+
+		ol,
+		ul {
+			margin: 0;
+			margin-block-start: 0.6em;
+			margin-block-end: 0.6em;
+		}
+
+		li>ol:first-child,
+		li>ul:first-child {
+			margin-block-start: 0.6em;
+		}
+
+		ul>li {
+			list-style: disc;
+		}
+
+		ul.to-do-list {
+			padding-inline-start: 0;
+		}
+
+		ul.to-do-list>li {
+			list-style: none;
+		}
+
+		.to-do-children-checked {
+			text-decoration: line-through;
+			opacity: 0.375;
+		}
+
+		ul.toggle>li {
+			list-style: none;
+		}
+
+		ul {
+			padding-inline-start: 1.7em;
+		}
+
+		ul>li {
+			padding-left: 0.1em;
+		}
+
+		ol {
+			padding-inline-start: 1.6em;
+		}
+
+		ol>li {
+			padding-left: 0.2em;
+		}
+
+		.mono ol {
+			padding-inline-start: 2em;
+		}
+
+		.mono ol>li {
+			text-indent: -0.4em;
+		}
+
+		.toggle {
+			padding-inline-start: 0em;
+			list-style-type: none;
+		}
+
+		/* Indent toggle children */
+		.toggle>li>details {
+			padding-left: 1.7em;
+		}
+
+		.toggle>li>details>summary {
+			margin-left: -1.1em;
+		}
+
+		.selected-value {
+			display: inline-block;
+			padding: 0 0.5em;
+			background: rgba(206, 205, 202, 0.5);
+			border-radius: 3px;
+			margin-right: 0.5em;
+			margin-top: 0.3em;
+			margin-bottom: 0.3em;
+			white-space: nowrap;
+		}
+
+		.collection-title {
+			display: inline-block;
+			margin-right: 1em;
+		}
+
+		.page-description {
+			margin-bottom: 2em;
+		}
+
+		.simple-table {
+			margin-top: 1em;
+			font-size: 0.875rem;
+			empty-cells: show;
+		}
+
+		.simple-table td {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table th {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table-header-color {
+			background: rgb(247, 246, 243);
+			color: black;
+		}
+
+		.simple-table-header {
+			font-weight: 500;
+		}
+
+		time {
+			opacity: 0.5;
+		}
+
+		.icon {
+			display: inline-block;
+			max-width: 1.2em;
+			max-height: 1.2em;
+			text-decoration: none;
+			vertical-align: text-bottom;
+			margin-right: 0.5em;
+		}
+
+		img.icon {
+			border-radius: 3px;
+		}
+
+		.user-icon {
+			width: 1.5em;
+			height: 1.5em;
+			border-radius: 100%;
+			margin-right: 0.5rem;
+		}
+
+		.user-icon-inner {
+			font-size: 0.8em;
+		}
+
+		.text-icon {
+			border: 1px solid #000;
+			text-align: center;
+		}
+
+		.page-cover-image {
+			display: block;
+			object-fit: cover;
+			width: 100%;
+			max-height: 30vh;
+		}
+
+		.page-header-icon {
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+
+		.page-header-icon-with-cover {
+			margin-top: -0.72em;
+			margin-left: 0.07em;
+		}
+
+		.page-header-icon img {
+			border-radius: 3px;
+		}
+
+		.link-to-page {
+			margin: 1em 0;
+			padding: 0;
+			border: none;
+			font-weight: 500;
+		}
+
+		p>.user {
+			opacity: 0.5;
+		}
+
+		td>.user,
+		td>time {
+			white-space: nowrap;
+		}
+
+		input[type="checkbox"] {
+			transform: scale(1.5);
+			margin-right: 0.6em;
+			vertical-align: middle;
+		}
+
+		p {
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.image {
+			border: none;
+			margin: 1.5em 0;
+			padding: 0;
+			border-radius: 0;
+			text-align: center;
+		}
+
+		.code,
+		code {
+			background: rgba(135, 131, 120, 0.15);
+			border-radius: 3px;
+			padding: 0.2em 0.4em;
+			border-radius: 3px;
+			font-size: 85%;
+			tab-size: 2;
+		}
+
+		code {
+			color: #eb5757;
+		}
+
+		.code {
+			padding: 1.5em 1em;
+		}
+
+		.code-wrap {
+			white-space: pre-wrap;
+			word-break: break-all;
+		}
+
+		.code>code {
+			background: none;
+			padding: 0;
+			font-size: 100%;
+			color: inherit;
+		}
+
+		blockquote {
+			font-size: 1.25em;
+			margin: 1em 0;
+			padding-left: 1em;
+			border-left: 3px solid rgb(55, 53, 47);
+		}
+
+		.bookmark {
+			text-decoration: none;
+			max-height: 8em;
+			padding: 0;
+			display: flex;
+			width: 100%;
+			align-items: stretch;
+		}
+
+		.bookmark-title {
+			font-size: 0.85em;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			height: 1.75em;
+			white-space: nowrap;
+		}
+
+		.bookmark-text {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.bookmark-info {
+			flex: 4 1 180px;
+			padding: 12px 14px 14px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.bookmark-image {
+			width: 33%;
+			flex: 1 1 180px;
+			display: block;
+			position: relative;
+			object-fit: cover;
+			border-radius: 1px;
+		}
+
+		.bookmark-description {
+			color: rgba(55, 53, 47, 0.6);
+			font-size: 0.75em;
+			overflow: hidden;
+			max-height: 4.5em;
+			word-break: break-word;
+		}
+
+		.bookmark-href {
+			font-size: 0.75em;
+			margin-top: 0.25em;
+		}
+
+		.sans {
+			font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+		}
+
+		.code {
+			font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+		}
+
+		.serif {
+			font-family: Lyon-Text, Georgia, ui-serif, serif;
+		}
+
+		.mono {
+			font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+		}
+
+		.pdf .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR';
+		}
+
+		.pdf .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.pdf .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR';
+		}
+
+		.pdf .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.highlight-default {
+			color: rgba(55, 53, 47, 1);
+		}
+
+		.highlight-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.highlight-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.highlight-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.highlight-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.highlight-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.highlight-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.highlight-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.highlight-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.highlight-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.highlight-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.highlight-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.highlight-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.highlight-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.highlight-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.highlight-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.highlight-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.highlight-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.highlight-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.block-color-default {
+			color: inherit;
+			fill: inherit;
+		}
+
+		.block-color-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.block-color-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.block-color-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.block-color-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.block-color-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.block-color-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.block-color-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.block-color-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.block-color-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.block-color-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.block-color-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.block-color-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.block-color-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.block-color-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.block-color-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.block-color-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.block-color-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.block-color-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.select-value-color-interactiveBlue {
+			background-color: rgba(35, 131, 226, .07);
+		}
+
+		.select-value-color-pink {
+			background-color: rgba(245, 224, 233, 1);
+		}
+
+		.select-value-color-purple {
+			background-color: rgba(232, 222, 238, 1);
+		}
+
+		.select-value-color-green {
+			background-color: rgba(219, 237, 219, 1);
+		}
+
+		.select-value-color-gray {
+			background-color: rgba(227, 226, 224, 1);
+		}
+
+		.select-value-color-translucentGray {
+			background-color: rgba(255, 255, 255, 0.0375);
+		}
+
+		.select-value-color-orange {
+			background-color: rgba(250, 222, 201, 1);
+		}
+
+		.select-value-color-brown {
+			background-color: rgba(238, 224, 218, 1);
+		}
+
+		.select-value-color-red {
+			background-color: rgba(255, 226, 221, 1);
+		}
+
+		.select-value-color-yellow {
+			background-color: rgba(253, 236, 200, 1);
+		}
+
+		.select-value-color-blue {
+			background-color: rgba(211, 229, 239, 1);
+		}
+
+		.select-value-color-pageGlass {
+			background-color: undefined;
+		}
+
+		.select-value-color-washGlass {
+			background-color: undefined;
+		}
+
+		.checkbox {
+			display: inline-flex;
+			vertical-align: text-bottom;
+			width: 16;
+			height: 16;
+			background-size: 16px;
+			margin-left: 2px;
+			margin-right: 5px;
+		}
+
+		.checkbox-on {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+
+		.checkbox-off {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+	</style>
+</head>
+
+<body>
+	<article id="78c00900-e0cf-4fff-9f67-71a0a283846f" class="page sans">
+		<header>
+			<div class="page-header-icon undefined"><span class="icon">▶️</span></div>
+			<h1 class="page-title">(Video) Stock Footage Editor and Distributor</h1>
+			<p class="page-description"></p>
+		</header>
+		<div class="page-body">
+			<figure id="c76fb9b4-813f-4c0e-b705-cd0bc5bc17ef" class="link-to-page"><a
+					href="(Video)%20Stock%20Footage%20Editor%20and%20Distributor%2078c00900e0cf4fff9f6771a0a283846f/Stock%20Video%20Miners%20c76fb9b4813f4c0eb705cd0bc5bc17ef.html"><span
+						class="icon">📹</span>Stock Video Miners </a></figure>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Nachricht von Leeroy:</summary>
+				<div class="indented">
+					<p id="1775b47c-c592-4896-96a2-a73ed014fb58" class="">Grundsätzlich: Stock Footage Distributor
+						nehmen 50-60% der Einnahmen.</p>
+					<p id="a5e8eccc-4580-4a4e-bb53-a97253b56637" class="">Leeroys derzeitige Plattform: BlackBox.global
+						Aufgabe: Blackbox stellt Interface zur Verfügung und verteilt Footage an verschiedene
+						Distributor.
+						Man selbst muss Shots hochladen und beschriften / curaten.</p>
+					<p id="1b4f4ca0-d7ae-410f-86ed-7f6636f01b5b" class="">Weitere Zielplattform: <a
+							href="http://artgrid.io/">artgrid.io</a>
+						Vorteil: Abosystem + die sortieren und beschriften das Footage für dich – Frage: Was verdient
+						der Artist daran? Telefonat mit Thomas Gellert!</p>
+					<p id="ea18be35-db72-4327-8884-02f84b35b247" class="">Weitere BEKANNTE Distributor für Videofootage:
+						Storyblocks
+						Videohive
+						Pond5
+						Adobe Stock
+						Shutterstock
+						Vimeo Stock
+						Envato Elements
+						Filmsupply
+						iStock
+						DepositPhotos</p>
+					<p id="2acfa41e-599a-48f1-92af-35a0c3051ea3" class="">Ziel: Systementwicklung für mehrfach zu
+						vertreibendes Stock Footage – höchstmögliche Zielgruppe entwickeln – Editor engagieren – AI
+						trainieren zum curaten</p>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Unterschiedliche Rollen:</summary>
+				<div class="indented">
+					<ul id="40f0fec5-021d-4f34-92fc-d979207ea877" class="bulleted-list">
+						<li style="list-style-type:disc"><strong>Provider</strong>: Stellt Videocontent bereit</li>
+					</ul>
+					<ul id="84594f4c-3803-4850-b6bb-d6882a783357" class="bulleted-list">
+						<li style="list-style-type:disc"><strong>Editor</strong>: Ist in der Regel die selbe Person wie
+							der Provider und verarbeitet Rohmaterial zu einzelnen Clips die anschließend auf den
+							Stock-Video-Plattformen hochgeladen werden können.</li>
+					</ul>
+					<ul id="efbfb8e3-5be1-4c54-bb0b-4b4906993244" class="bulleted-list">
+						<li style="list-style-type:disc"><strong>Curator</strong>: “Kuratiert” den hochgeladenen
+							Videocontent einmalig (fügt passende Suchwörter hinzu) und bekommt dafür einen %-Teil des
+							Umsatzes auf Lebenszeit (in der Regel 10-15%).</li>
+					</ul>
+					<ul id="bddfce96-447c-473b-85b2-cb25d98d8891" class="bulleted-list">
+						<li style="list-style-type:disc"><strong>Distributor</strong>: Lädt den Content samt kuratiertem
+							Inhalt (Suchwörter) auf unterschiedlichen Plattformen hoch und bekommt dafür ebenfalls einen
+							Teil des Gewinns (ca. 15%).</li>
+					</ul>
+					<ul id="a14307bc-1ff5-4b23-b793-bc7f744c17ab" class="bulleted-list">
+						<li style="list-style-type:disc"><strong>Stock Video Plattform</strong>: Stellt Plattform bereit
+							für Stock Content auf dem Content Creator ihren Content anbieten, Kunden browsen und den
+							Content kaufen können. Nehmen entsprechend, ob man Content exklusiv bei ihnen hochlädt oder
+							nicht, aktuell 40-60% Gebühren auf die Verkäufe über ihre Plattform. </li>
+					</ul>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Mögliche Geschäftsfelder:</summary>
+				<div class="indented">
+					<ul id="e0985398-3497-41b1-9d5f-62e70cee2be5" class="bulleted-list">
+						<li style="list-style-type:disc">Selber <strong>Provider</strong> sein<ul
+								id="626bb4ac-97b4-4547-befe-a5ce7923fbd1" class="bulleted-list">
+								<li style="list-style-type:circle">Content produzieren und diesen entweder selber
+									schneiden, kuratieren und hochladen oder entsprechende Services nutzen (bei denen
+									man jedoch immer einen Teil seines Einkommens abgeben muss → Kann in der Summe für
+									alle Services schnell um die 30-50% sein).</li>
+							</ul>
+						</li>
+					</ul>
+					<ul id="76b8aae0-4c07-48c7-a498-30773c2724a9" class="bulleted-list">
+						<li style="list-style-type:disc"><strong>Editor Service</strong> anbieten<ul
+								id="c56d2857-b3ec-4b44-b64c-fd8e5f61a486" class="bulleted-list">
+								<li style="list-style-type:circle">Rohmaterial sichten, bearbeiten und zu einzelnen
+									Clips schneiden.</li>
+							</ul>
+							<ul id="588d800a-0acc-4c6c-aad6-5e791fd7d33a" class="bulleted-list">
+								<li style="list-style-type:circle">Kombination der oben beschriebenen Aufgaben mit
+									Distribution und Kuratierung möglich.</li>
+							</ul>
+							<ul id="ca7ed0c2-6678-47ea-b97f-07721fcd67cb" class="bulleted-list">
+								<li style="list-style-type:circle">Voraussetzung: Vielzahl von Kontakten zu content
+									creatorn/ content providern</li>
+							</ul>
+							<ul id="89e295aa-49f6-4743-a130-8cccceafb23d" class="bulleted-list">
+								<li style="list-style-type:circle">Mögliche Umsetzung/ <strong>Idee</strong>: <p
+										id="1051aa4b-d449-4cd1-970a-5941154fbc61" class="">a) Man verarbeitet das
+										Rohmaterial von Providern die selber viel Rohmaterial besitzen aber sich selber
+										nicht darum kümmern können oder möchten (z. B. zu wenig Zeit dafür).</p>
+									<p id="521f2ea0-9981-4815-a0e9-b14bafc065b8" class="">b) Man kuratiert die Videos
+										selber (- evtl. bereits im Prozess der Verarbeitung der Videos zu Clips
+										sinnvoll, da der content dann noch am präsentesten ist und die Energie dafür
+										nicht zweifach hineingesteckt werden muss (wie wenn man sich den content erneut
+										ansehen muss).
+										→ Ideallösung: KI analysiert die Videos und weist ihnen automatisch und
+										ressourcenschonend Keywords zu</p>
+									<p id="9635428f-eca5-4ad4-9c8c-dc48091ed0ec" class="">c) Man baut eigene Distributor
+										Plattform, welche den Content auf unterschiedlichen Plattformen hochlädt
+										→ Orientierung an den Plattformen möglich, an die <a
+											href="http://BlackBox.global">BlackBox.global</a> den Content verteilt, da
+										dies Plattformen mit <strong>keinen</strong> Exklusivitätsverträgen zu seien
+										scheinen, bei denen man seinen Content nur auf ihrer Plattform, aber auf keiner
+										anderen, hochladen darf.</p>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul id="23ec2301-9265-4199-9c28-278093584544" class="bulleted-list">
+						<li style="list-style-type:disc">Eigene <strong>Distributer Plattform</strong> bauen - nur
+							“besser”<ul id="4210c746-d7e9-4253-92cb-509da8cf6f81" class="bulleted-list">
+								<li style="list-style-type:circle"><strong>Idee</strong>: Plattform mit API Anbindung zu
+									unterschiedlichen Stock Footage Plattformen.</li>
+							</ul>
+							<ul id="1c0da3e0-44c3-424c-8ea0-369504967e99" class="bulleted-list">
+								<li style="list-style-type:circle">Ansprechende und intuitive UI (im Vergleich zu
+									aktuellen Anbietern wie BlackBox.global)</li>
+							</ul>
+							<ul id="b415053c-ab46-4ba7-8f95-694c306dfd8a" class="bulleted-list">
+								<li style="list-style-type:circle">Technisch sicherlich die simpelste Umsetzung.</li>
+							</ul>
+						</li>
+					</ul>
+					<ul id="d08e76f1-d66d-4e74-a91e-0ffea68a5579" class="bulleted-list">
+						<li style="list-style-type:disc">Eigenen <strong>Curator Service</strong> anbieten - nur
+							“besser”<ul id="05a112d7-42e0-4e8b-a04f-cda0a12779b7" class="bulleted-list">
+								<li style="list-style-type:circle"><strong>Idee</strong>: Eine KI analysiert die Videos
+									und “kuratiert” diese passend, fügt also Keywords aufgrund von gesammelten Daten zur
+									Performance unterschiedlicher Keywords hinzu.</li>
+							</ul>
+							<ul id="4b2140c7-eed3-4efd-8091-dfd62099d814" class="bulleted-list">
+								<li style="list-style-type:circle">Per Drag &amp; Drop können Kunden ihre Videodateien
+									auf die Plattform legen und dort mit einem Mausklick in Sekundenschnelle
+									analysieren/ kuratieren lassen.</li>
+							</ul>
+							<ul id="dcbffde6-7b56-4812-b655-f24707e88948" class="bulleted-list">
+								<li style="list-style-type:circle">Andere <strong>Idee</strong>: Falls eigene KI zu
+									komplex bzw. aktuell verfügbare Videoerkennungssoftware nicht ausgebaut genug könnte
+									ein autocomplete Tool sinnvoll sein, welches aufgrund weniger simpler Input Keywords
+									zu einem Video gut performende Keywords ergänzt und Vorschläge macht für weitere
+									möglicherweise passende Wörter. Ist gestützt auf einer Analyse und daraus
+									resultierender Datenbank gut performender Keywords. </li>
+							</ul>
+							<blockquote id="de8ea9ab-7b42-4ba8-847b-709175d8bed7" class="">”Better than humans and
+								cheaper than the competition. The only curator you’ll ever need.”</blockquote>
+						</li>
+					</ul>
+					<ul id="bf162cdc-1f3a-46a5-9f98-5552492fe279" class="bulleted-list">
+						<li style="list-style-type:disc">Eigene <strong>Video Stock Plattform</strong> bauen<ul
+								id="416074f8-2f52-4151-9d18-43d2e497a26d" class="bulleted-list">
+								<li style="list-style-type:circle">Bestimmte Niche abdecken und Vorteil anbieten
+									gegenüber der Konkurrenz: z. B. geringere Gebühren, Qualität des Contents, etc.</li>
+							</ul>
+							<ul id="c0b3f524-3e90-44dc-a599-b8628af2daa0" class="bulleted-list">
+								<li style="list-style-type:circle">Idee: Plattform ausschließlich für High Quality
+									Clips/ Drohenvideos/ etc.</li>
+							</ul>
+						</li>
+					</ul>
+					<p id="6276eb88-1a13-4a55-9a4c-1a821cbf925b" class="">
+					</p>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Unterschiedliche Video Stock
+					Plattformen (samt Details):</summary>
+				<div class="indented">
+					<p id="ee59ad8b-68bb-47dd-b146-f79d2f8417b2" class="">Blackbox Global</p>
+					<ul id="48ae461d-2177-4c9c-88af-434856e88384" class="bulleted-list">
+						<li style="list-style-type:disc">We currently deal with Shutterstock, Adobe Stock, Pond5,
+							iStock, VimeoStock, DepositPhotos, Videvo, Envato Elements and VideoHive</li>
+					</ul>
+					<h3 id="04c4ec28-995c-4122-a0fc-1b8e9eb69002" class="">Non-Exclusive Content Optionen:</h3>
+					<ul id="0433e021-5e67-46c6-9bb9-7141fe86de5f" class="toggle">
+						<li>
+							<details open="">
+								<summary><strong>Artgrid.io: </strong></summary>
+								<ul id="89fb8932-5da1-4549-a5a2-b9233d3941e8" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Art des Contents:
+										</strong>Lediglich High-Quality Content (z. B. (Kodak) Prores 422)<ul
+											id="60e8dc9c-3558-47b0-8471-0090eed7def2" class="bulleted-list">
+											<li style="list-style-type:circle">Alle Formate sind <a
+													href="https://artgrid.zendesk.com/hc/en-us/articles/8069599165085-All-About-Artgrid-Footage">hier</a>
+												zu finden:<ul id="595e0d20-66fd-450e-bade-28f6fe7518de"
+													class="bulleted-list">
+													<li style="list-style-type:square">Junior - HD (1080p minimum)</li>
+												</ul>
+												<ul id="7caeacd5-dd0f-4697-bc34-05e8c7eb7916" class="bulleted-list">
+													<li style="list-style-type:square">ProRes</li>
+												</ul>
+												<ul id="574d0e7f-5bc2-4bc5-9395-cad0a13d971d" class="bulleted-list">
+													<li style="list-style-type:square">Creator - 4K-8K</li>
+												</ul>
+												<ul id="60dfc415-55d3-43c6-a0e1-b2ce41ec4730" class="bulleted-list">
+													<li style="list-style-type:square">Pro - RAW/LOG</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+								<ul id="22e156a9-ccfa-4926-aa63-caaf844516ef" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Modell für Kunden:
+										</strong>Abomodell für Kunden (Bezahlung im jährlichen Zyklus: US$239,90-599/
+										Jahr)</li>
+								</ul>
+								<ul id="ec18707e-041f-4226-9af0-2b0d37d40926" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Verdienst für Creator:
+										</strong>Laut einem <a
+											href="https://www.youtube.com/watch?v=j2Ajmmgx-4s">Video</a> 30-80 Cent je
+										Download (“Filmmaker” erhalten Gebühren pro Download)<ul
+											id="e81a1392-0332-4600-a3f8-3108be6ec743" class="bulleted-list">
+											<li style="list-style-type:circle">Der dude aus dem Video hatte nur 46 Clips
+												hochgeladen, darauf ca. 4600 Downloads im Jahr 2020 und damit ca.
+												US$1500 verdient. </li>
+										</ul>
+										<ul id="7fcf26d9-9512-4031-92a6-d8ee8406077f" class="bulleted-list">
+											<li style="list-style-type:circle">Jemand aus einem anderen <a
+													href="https://www.youtube.com/watch?v=3z0i47HpGao">Video</a> hat im
+												Jahr 2021 ca. US$4500 verdient → ca. 30-50 Cent pro Download →
+												entsprechend hatte er ca. 9.000-15.000 Downloads</li>
+										</ul>
+									</li>
+								</ul>
+								<ul id="8d74dacb-8ad3-4045-9d49-9c678a5f5758" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Art der Kuratierung:</strong>
+										<ul id="850c0093-b73f-4adc-8821-d26e4e7426ff" class="bulleted-list">
+											<li style="list-style-type:circle">Tags müssen selber hinzugefügt/ Videos
+												kuratiert werden → vielleicht noch alte Info!</li>
+										</ul>
+										<ul id="56966206-7b9e-4521-8d17-401e82aeecc2" class="bulleted-list">
+											<li style="list-style-type:circle">JEDOCH: Es heißt <a
+													href="https://artgrid.zendesk.com/hc/en-us/articles/8069599165085-All-About-Artgrid-Footage">hier</a>
+												auf der offiziellen Seite das Gegenteilige: </li>
+										</ul>
+										<blockquote id="fe24e528-d2d7-469e-9f58-849865a1348b" class="">“Our team at
+											Artgrid combs through every shot and categorizes it and applies the correct
+											titles and tags.”</blockquote>
+									</li>
+								</ul>
+								<ul id="2445ec8a-7b1b-4cbd-bf08-185a76a22dd7" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Exklusivität(-sbedingungen):
+										</strong>Content muss <strong>NICHT</strong> exklusiv auf dieser Plattform
+										hochgeladen werden, es gibt <strong>KEINE Unterscheidung</strong> zwischen
+										Accounts mit exklusiven und non-exklusiven Uploads.<blockquote
+											id="f79ce055-739a-49da-9c62-60b6a66260df" class=""><strong>Keep your rights
+											</strong>It’s your footage. With no exclusivity, you can share it anywhere.
+										</blockquote>
+									</li>
+								</ul>
+								<ul id="894b630a-4713-48b3-8074-7eea9686f2aa" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Weitere Infos:
+										</strong>Länge der Clips i. d. R. zwischen 4 und 20 Sekunden</li>
+								</ul>
+							</details>
+						</li>
+					</ul>
+					<ul id="609039e0-cc47-414b-aa0c-69a57379799a" class="toggle">
+						<li>
+							<details open="">
+								<summary><strong>Videohive/ Envato Elements/ PlaceIt:</strong></summary>
+								<ul id="7401e403-489b-472c-b401-cedf0771d8d5" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Art des Contents:</strong>
+										<ul id="6c9eaa73-4173-406f-8b57-088c83ebf0d1" class="bulleted-list">
+											<li style="list-style-type:circle">Klassischer Stock Footage → (besonders
+												content mit Personen) wirkt sehr gespielt, teils steril, wenig
+												authentisch, stellt aber gewisse Dinge klar dar; <a
+													href="https://elements.envato.com/de/happy-young-woman-laughs-and-smiles-on-tropical-be-X569S9E">Beispiel
+													1</a>, <a
+													href="https://elements.envato.com/de/multiracial-women-enjoying-vacation-on-sandy-seash-K6NY4PM">Beispiel
+													2</a>, <a
+													href="https://elements.envato.com/de/a-wanderlust-vacation-SEY2NMD">Beispiel
+													3</a></li>
+										</ul>
+										<ul id="f78de2e1-b793-4ed6-bfdd-0faf40eafe35" class="bulleted-list">
+											<li style="list-style-type:circle">Klassische Drohnen-Aufnahmen wie man sie
+												von Stockfootage-Seiten kennt: teils ganz gut, teils in Ordnung, nur
+												wenig dabei was heraussticht</li>
+										</ul>
+										<ul id="3409027b-ecbf-45ff-9db1-4ff8bf360fae" class="bulleted-list">
+											<li style="list-style-type:circle">Auch Amateur-Aufnahmen dabei wie <a
+													href="https://elements.envato.com/de/skiing-W5GGMJG">hier</a></li>
+										</ul>
+									</li>
+								</ul>
+								<ul id="dabab835-41af-4622-afec-8294dbf63ce8" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Modell für Kunden:</strong>
+										<ul id="a19a48ea-0bc8-448e-b65d-c81bb829ad83" class="bulleted-list">
+											<li style="list-style-type:circle">Sehr günstiges Abonnement-Preismodell für
+												unbegrenzte Downloads:<ul id="f8e93d68-522b-4ffa-a4fc-61cd4906f14b"
+													class="bulleted-list">
+													<li style="list-style-type:square">14,50€/ Monat bei Jahresabo oder
+														39,00€/ Monat bei Monatsabo</li>
+												</ul>
+												<ul id="6f2251fb-8f71-4120-9d74-4aea7c3e9214" class="bulleted-list">
+													<li style="list-style-type:square">Studenten zahlen
+														<strong>nur</strong> 10€/ Monat bei Jahresabo</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+								<ul id="332982a4-1c09-41c2-822d-560768479242" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Verdienst für Creator:</strong>
+										<ul id="89df5bd3-874f-4be0-8e78-cdd5ed2eed84" class="bulleted-list">
+											<li style="list-style-type:circle"><strong>Non-Exclusive Author Fee
+												</strong>(was man abgibt)<strong>:</strong> 55%</li>
+										</ul>
+										<ul id="f08e7b43-95a5-40cc-b51a-34c939388813" class="bulleted-list">
+											<li style="list-style-type:circle"><strong>Exclusive Author Fee
+												</strong>(was man abgibt)<strong>:</strong> 12.5% - 37.5%<figure
+													id="8d922fdb-21a3-4972-9a5d-030e2d38be9e" class="image"><a
+														href="(Video)%20Stock%20Footage%20Editor%20and%20Distributor%2078c00900e0cf4fff9f6771a0a283846f/Bildschirmfoto_2022-12-23_um_14.22.38.png"><img
+															style="width:1020px"
+															src="(Video)%20Stock%20Footage%20Editor%20and%20Distributor%2078c00900e0cf4fff9f6771a0a283846f/Bildschirmfoto_2022-12-23_um_14.22.38.png" /></a>
+												</figure>
+											</li>
+										</ul>
+									</li>
+								</ul>
+								<ul id="692df6af-680e-43ec-86a9-ba5a28ba1754" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Art der Kuratierung:
+										</strong></li>
+								</ul>
+								<ul id="39f148ea-1c5a-4557-b106-4346c9328357" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Exklusivität(-sbedingungen):</strong>
+										<ul id="ff0a81c9-dae0-4b9d-8633-9e691dae2504" class="bulleted-list">
+											<li style="list-style-type:circle">Es existieren Modelle für exklusive und
+												non-exklusive Uploads.</li>
+										</ul>
+									</li>
+								</ul>
+								<ul id="8d6588bb-db7a-4a45-a68c-ba95a0348a80" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Weitere Infos:</strong>
+										<ul id="b215e899-dfe6-4ca0-b2a5-32585e3ac076" class="bulleted-list">
+											<li style="list-style-type:circle">Videohive, Envato Elements und <a
+													href="https://placeit.net/">Placeit</a><strong><strong>
+													</strong></strong>gehören zusammen.</li>
+										</ul>
+										<blockquote id="726559ec-e0a1-4c4b-89e6-af41ef7aa74e" class="">“37% of published
+											market authors earn in any given month.”</blockquote>
+										<blockquote id="7bc5dfac-a83d-4fe9-9805-e4e76cc09a2e" class="">“We have sold 10
+											licenses per minute.”</blockquote>
+										<ul id="4b0c8676-f186-4edc-aa30-605cdbd86dce" class="bulleted-list">
+											<li style="list-style-type:circle">Prahlen komischerweise sehr mit der
+												Anzahl ihres contents - das Geschäftsmodell scheint darauf aus zu sein
+												sich als Anbieter mit der größten Bandbreite auf dem Markt etablieren zu
+												wollen. → Daher vermutlich auch viel “trash” dabei.
+												Frontpage:<figure id="3c874e02-f9c8-4c7d-8a41-59be042f72e0"
+													class="image"><a
+														href="(Video)%20Stock%20Footage%20Editor%20and%20Distributor%2078c00900e0cf4fff9f6771a0a283846f/Bildschirmfoto_2023-01-06_um_01.36.54.png"><img
+															style="width:2184px"
+															src="(Video)%20Stock%20Footage%20Editor%20and%20Distributor%2078c00900e0cf4fff9f6771a0a283846f/Bildschirmfoto_2023-01-06_um_01.36.54.png" /></a>
+												</figure>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</details>
+						</li>
+					</ul>
+					<ul id="57b2e595-84fb-410f-aa9c-4de0bf872b60" class="toggle">
+						<li>
+							<details open="">
+								<summary><strong>Pond5:</strong></summary>
+								<ul id="154486f4-e110-4a7b-9a58-4b0eb7f9a9c8" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Art des Contents:
+										</strong></li>
+								</ul>
+								<ul id="1040fd90-ddbb-45e8-8dfa-5a90d9559a57" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Modell für Kunden:</strong>
+										<ul id="671d2ab5-5d4a-40b1-9d87-a1fef98ef789" class="bulleted-list">
+											<li style="list-style-type:circle">Zwei Optionen:<ul
+													id="7da49ac6-e2cc-45df-a650-e46b88d9b5d8" class="bulleted-list">
+													<li style="list-style-type:square">Individuelles Pricing pro Artikel
+														- z. B. 64€ für ein HD Video (104€, 4K)</li>
+												</ul>
+												<ul id="1a2a4532-92e6-4999-8333-2f8e60389a5c" class="bulleted-list">
+													<li style="list-style-type:square">Monatliches &amp; jährliches
+														Abonnement: z. B. 210€/ Monat für 10 monatl. Downloads (Videos
+														inbegriffen) + individuelle Lösungen im höheren Maßstab möglich
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+								<ul id="dca863ef-938a-4393-97c8-12526307cf26" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Verdienst für Creator:</strong>
+										<ul id="c2870d39-4d40-4799-800a-d017bd6035a9" class="bulleted-list">
+											<li style="list-style-type:circle"><strong>Non-Exclusive Author Fee
+												</strong>(was man abgibt)<strong>:</strong> 60% (+5% pro Referal für ein
+												Jahr!)</li>
+										</ul>
+										<ul id="b48d0ed7-bfbb-4abc-bb82-393af4dd19e0" class="bulleted-list">
+											<li style="list-style-type:circle"><strong>Exclusive Author Fee
+												</strong>(was man abgibt)<strong>:</strong> 40% (+5% pro Referal für ein
+												Jahr!)</li>
+										</ul>
+									</li>
+								</ul>
+								<ul id="a3052c4e-1f1f-4e9a-953f-2f853386f452" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Art der Kuratierung:
+										</strong></li>
+								</ul>
+								<ul id="0ee5da7d-b64c-4be4-a5b4-ba1aaacc1467" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Exklusivität(-sbedingungen):</strong>
+										<ul id="17f7cba8-c001-4485-8d6b-f58f9b4be25f" class="bulleted-list">
+											<li style="list-style-type:circle">Exclusive &amp; Non-Exclusive verfügbar!
+											</li>
+										</ul>
+									</li>
+								</ul>
+								<ul id="6ea12dcb-a27c-49f7-99a0-e834324e076d" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Weitere Infos:</strong>
+										<ul id="f05357ac-d378-47e8-8b43-f2c6380fb160" class="bulleted-list">
+											<li style="list-style-type:circle">Note that based on the<a
+													href="https://www.pond5.com/legal/contributor"><strong> Pond5
+														Contributor Agreement</strong></a>, Non-exclusive artists are
+												not permitted to price their content higher on Pond5 than on other
+												Marketplaces. (<a
+													href="https://contributor.pond5.com/getting-started/payout-overview/">Quelle</a>)
+											</li>
+										</ul>
+										<ul id="31d5d656-8656-4dae-8d31-925c32993c46" class="bulleted-list">
+											<li style="list-style-type:circle">When you refer a new artist to Pond5,
+												you’ll receive a 5% commission on their sales for a full year! (<a
+													href="https://contributor.pond5.com/getting-started/referral-program/">Quelle</a>)
+											</li>
+										</ul>
+										<ul id="4ab94c68-486f-43df-94c7-52cc43b4c591" class="bulleted-list">
+											<li style="list-style-type:circle">Weitere Referal Programme vorhanden bei
+												denen man keine neuen Artists empfiehlt, sondern neue Kunden auf die
+												Plattform verweist. (<a
+													href="https://contributor.pond5.com/getting-started/referral-program/">Quelle</a>)
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</details>
+						</li>
+					</ul>
+					<ul id="337d6704-a681-4f4d-a368-e3456db6f87f" class="toggle">
+						<li>
+							<details open="">
+								<summary><strong>Adobe Stock:</strong></summary>
+								<ul id="32369737-04e6-4896-8d73-812df5f30cd4" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Art des Contents:
+										</strong></li>
+								</ul>
+								<ul id="a92e7521-2ac2-4523-a22e-c758d76339bb" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Modell für Kunden:</strong>
+										<ul id="08f18740-fae6-40f3-9dab-6c8a0b189478" class="bulleted-list">
+											<li style="list-style-type:circle">Abonnement-Modelle<ul
+													id="b54353ef-a79c-41c8-934d-5637d8fc9944" class="bulleted-list">
+													<li style="list-style-type:square">z. B. 49€/ Monat → 3
+														HD-Video-Downloads enthalten; 159€/ Monat → 25
+														HD-Video-Downloads enthalten </li>
+												</ul>
+												<ul id="fdd168e1-0400-4684-b5af-36bc21eceaf1" class="bulleted-list">
+													<li style="list-style-type:square">Weniger verfügbare Downloads je
+														Abo-Plan bei 4K-Downloads</li>
+												</ul>
+											</li>
+										</ul>
+										<ul id="f9db0ab3-e48f-4661-bb93-f045fbbf6967" class="bulleted-list">
+											<li style="list-style-type:circle">Credit-Pakete<ul
+													id="f4bddcdd-75de-4a61-9d09-84b7fa4ebe81" class="bulleted-list">
+													<li style="list-style-type:square">5 Credits = 39,95€</li>
+												</ul>
+												<ul id="18a6e13e-bf21-4892-a0e0-045011fc290e" class="bulleted-list">
+													<li style="list-style-type:square">150 Credits = 899,99€</li>
+												</ul>
+												<ul id="b632cc32-fc4e-4809-b785-0fea60cfd5ed" class="bulleted-list">
+													<li style="list-style-type:square">Laut externer <a
+															href="https://pixelsucht.net/adobe-stock-alle-preisekosten-im-vergleich/">Quelle</a>
+														kostet ein HD-Video 8 Credits und ein 4K-Video 20 Credits</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+								<ul id="b25b4ca0-798f-46e9-ab7a-12fb396b2419" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Verdienst für Creator:</strong>
+										<ul id="6c3c8cc4-4eaf-41b4-aa92-a3def59f1b4c" class="bulleted-list">
+											<li style="list-style-type:circle"><strong>Non-Exclusive Author Fee
+												</strong>(was man abgibt)<strong>: </strong>65% (<a
+													href="https://helpx.adobe.com/de/stock/contributor/help/royalty-details.html">Quelle</a>)
+											</li>
+										</ul>
+										<ul id="93d25ee6-ce31-4c0e-8982-5d8e1296737d" class="bulleted-list">
+											<li style="list-style-type:circle"><strong>Exclusive Author Fee
+												</strong>(was man abgibt)<strong>:</strong> - bisher nichts dazu
+												gefunden</li>
+										</ul>
+									</li>
+								</ul>
+								<ul id="cdc9f018-7d36-4f58-b73f-6420e40d490a" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Art der Kuratierung:
+										</strong></li>
+								</ul>
+								<ul id="c2c12dcc-4f3a-443c-a484-699569b19ff9" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Exklusivität(-sbedingungen):</strong>
+										<ul id="a6849c09-172e-43cf-b35a-a762d9d53ba8" class="bulleted-list">
+											<li style="list-style-type:circle">Nichts zu einer exklusiven
+												Lizenz-Vereinbarung gefunden.</li>
+										</ul>
+									</li>
+								</ul>
+								<ul id="2f0b600d-7f37-4ad5-93cc-3eb7cf7e8476" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Weitere Infos:</strong>
+										<ul id="0dd05f2a-7c17-44bf-83cb-3a5db42f1977" class="bulleted-list">
+											<li style="list-style-type:circle">Es gibt noch ein Credit-System, bei dem
+												ich allerdings noch nicht 100% durchgeblickt habe, besonders ob es auch
+												für Verkäufer relevant ist. (<a
+													href="https://helpx.adobe.com/de/stock/contributor/help/royalty-details.html">Quelle</a>)
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</details>
+						</li>
+					</ul>
+					<ul id="cbd8b3b7-25fa-437d-a09d-0a876fad4abc" class="toggle">
+						<li>
+							<details open="">
+								<summary><strong>Shutterstock:</strong></summary>
+								<ul id="28832d38-3db0-4efe-9e33-36b1803c9e59" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Art des Contents:
+										</strong></li>
+								</ul>
+								<ul id="89666f58-f00e-4935-be0a-68f1cf2029c6" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Modell für Kunden:</strong>
+										<ul id="1c5fa667-5f0b-44cf-b60a-d997e3b68ea5" class="bulleted-list">
+											<li style="list-style-type:circle">Abo-Modell bei dem man entsprechend der
+												monatlich möglichen Downloads bezahlt (<a
+													href="https://www.shutterstock.com/de/pricing/video">Quelle</a>)<ul
+													id="85326c6a-75f9-4459-baee-3bfcecfb6e8c" class="bulleted-list">
+													<li style="list-style-type:square">29€/ Monat (ein Video-Download
+														pro Monat) bis 159€/ Monat (75 Downloads pro Monat)</li>
+												</ul>
+											</li>
+										</ul>
+										<ul id="a9a99d7a-7217-4f6f-8ca9-8fd93df10c29" class="bulleted-list">
+											<li style="list-style-type:circle">Paket-Kauf möglich<ul
+													id="00ca7907-6cee-4664-87a7-4501ddb38231" class="bulleted-list">
+													<li style="list-style-type:square">5-25 Video-Downloads innerhalb
+														eines Jahres für 269€-1.199€</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+								<ul id="ed2d0ca2-5de6-4c28-a9f5-ca87f652daf1" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Verdienst für Creator:</strong>
+										<ul id="9bb9072a-e7cb-47b8-a9ce-cc7561741472" class="bulleted-list">
+											<li style="list-style-type:circle"><strong>Non-Exclusive Author Fee
+												</strong>(was man abgibt)<strong>: </strong>60-85% (<a
+													href="https://submit.shutterstock.com/payouts">Quelle</a>)<figure
+													id="127aed4b-79af-4178-8953-4d7a9ef6573b" class="image"><a
+														href="(Video)%20Stock%20Footage%20Editor%20and%20Distributor%2078c00900e0cf4fff9f6771a0a283846f/Bildschirmfoto_2022-12-23_um_14.59.06.png"><img
+															style="width:1382px"
+															src="(Video)%20Stock%20Footage%20Editor%20and%20Distributor%2078c00900e0cf4fff9f6771a0a283846f/Bildschirmfoto_2022-12-23_um_14.59.06.png" /></a>
+												</figure>
+											</li>
+										</ul>
+									</li>
+								</ul>
+								<ul id="c4f0e6ad-c09f-47da-a480-3c4b9b4272b2" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Art der Kuratierung:
+										</strong></li>
+								</ul>
+								<ul id="402e7f5e-0277-4a2f-b5e9-a269018af556" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Exklusivität(-sbedingungen):</strong>
+										<blockquote id="fbf06962-a790-432a-ba4f-c97d55d16718" class=""><strong>Our
+												agreement with contributors is non-exclusive.
+											</strong>Shutterstock does not offer an exclusive program to its
+											contributors. While we appreciate loyalty, you are free to market any
+											materials owned by you, including the content in your portfolio, on any
+											other website (or by any other means), whether they compete with
+											Shutterstock or not. (<a
+												href="../Startup%20-%20Business%2065e727a12fb74d5596979b4da033517c.html">Quelle</a>)
+										</blockquote>
+									</li>
+								</ul>
+								<ul id="54f688cc-c65e-40be-afb9-1ef4563fdf64" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Weitere Infos:</strong>
+										<ul id="808a42e1-8063-4311-86f1-82a342febddb" class="bulleted-list">
+											<li style="list-style-type:circle">Entsprechend der Verdiensttabelle würde
+												es Sinn machen, die Inhalte aller Videographen über einen Account
+												hochzuladen, damit man über die 25.000 (verkauften?) Videolizenzen pro
+												Jahr kommt. (Außer dies schafft man auch mit den Inhalten mehrerer
+												einzelner Anbieter, was aber eher unwahrscheinlich ist.<ul
+													id="42262322-582e-41b7-8835-b1d64f310f39" class="bulleted-list">
+													<li style="list-style-type:square">Nachteil: Eine Unterscheidung der
+														Einnahmen unterschiedlicher Videographen wird umständlich, da
+														die earnings nicht getrennt nach diesen eintreffen.</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</details>
+						</li>
+					</ul>
+					<ul id="5180c4e7-0be8-45f4-98af-e1386afe6ce9" class="toggle">
+						<li>
+							<details open="">
+								<summary><strong>Vimeo (Stock):</strong></summary>
+								<ul id="90f62db2-cd13-4da9-9210-fc52f7227e2f" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Art des Contents:</strong>
+										<ul id="e4741b7a-9562-4d2f-9f09-fc028d8fbf0f" class="bulleted-list">
+											<li style="list-style-type:circle">Der content der dort angeboten wird
+												besteht eher aus Serien und eigens produzierten Videos - ähnlich wie der
+												Content von Youtuber*innen) (<a
+													href="https://vimeo.com/de/ondemand/startselling">Anschauungsvideo</a>)
+												und weniger aus Stock Footage.</li>
+										</ul>
+										<ul id="65a6aab3-12e5-452c-8aef-f9a91fb05f7d" class="bulleted-list">
+											<li style="list-style-type:circle">“On demand Videos” → Vimeo On Demand
+											</li>
+										</ul>
+									</li>
+								</ul>
+								<ul id="dab93410-467b-4d9a-aeed-8b1ca2536d01" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Modell für Kunden:</strong>
+										<ul id="259da315-a2a9-40dd-addb-49f398f23ed5" class="bulleted-list">
+											<li style="list-style-type:circle">Individuelle Subscriptions innerhalb der
+												Seite<ul id="5223568d-e4d6-468a-bef6-3d96edb17ad2"
+													class="bulleted-list">
+													<li style="list-style-type:square">Man zahlt dafür sich Videos
+														bestimmter Creator anzuschauen<ul
+															id="96720a76-3a77-44e4-b1bf-597b98cdd9e0"
+															class="bulleted-list">
+															<li style="list-style-type:disc">Vergleich zu Onlyfans oder
+																wenn man Geld dafür zahlen würde, damit man Videos von
+																Mr. Beast schauen kann.</li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+										</ul>
+										<ul id="0176c8b4-0e9e-41bb-abba-400d44af0bc1" class="bulleted-list">
+											<li style="list-style-type:circle">One time payments<ul
+													id="27df2ac4-5353-4730-83de-4bf585080ef9" class="bulleted-list">
+													<li style="list-style-type:square">Man zahlt pro individuellem Video
+														das man sich anschaut</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+								<ul id="adb51e25-47d3-454c-b0f1-21dbec7ae0e4" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Verdienst für Creator:</strong>
+										<ul id="c1e23fb1-64ac-4922-84f0-eb991016621a" class="bulleted-list">
+											<li style="list-style-type:circle"><strong>Non-Exclusive Author Fee
+												</strong>(was man abgibt)<strong>: 10%</strong>
+												<ul id="22155050-839f-413f-9155-b953c2cf4281" class="bulleted-list">
+													<li style="list-style-type:square">“<strong>You&#x27;ll get 90% of
+															your sales after transaction fees in a PayPal payment once a
+															month.”</strong> (<a
+															href="https://help.vimeo.com/hc/en-us/articles/235764787-Start-selling-with-Vimeo-On-Demand">Quelle</a>)
+													</li>
+												</ul>
+											</li>
+										</ul>
+										<ul id="ad4f5b08-84dd-4258-828a-1b3dd708f662" class="bulleted-list">
+											<li style="list-style-type:circle"><strong>Exclusive Author Fee
+												</strong>(was man abgibt)<strong>:</strong> <strong>? </strong>
+												<ul id="c9f57a7a-c896-49d7-a54f-82e589b87a07" class="bulleted-list">
+													<li style="list-style-type:square">Vermutlich aber nicht existent,
+														da 10% Gebühren wenig Spielraum nach unten lässt.</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+								<ul id="1f04eb7c-445d-4c18-ba1f-02b8643c64df" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Art der Kuratierung:
+										</strong></li>
+								</ul>
+								<ul id="aa437d52-28c7-477c-af5a-9725aa0a9dce" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Exklusivität(-sbedingungen):</strong>
+										<ul id="5cb9fbd0-cabd-4313-96c2-0e1932edc7b5" class="bulleted-list">
+											<li style="list-style-type:circle">Vermutlich keine Exklusivität
+												vorgeschrieben</li>
+										</ul>
+									</li>
+								</ul>
+							</details>
+						</li>
+					</ul>
+					<ul id="b21a2fd6-8171-49e3-819c-73a4c8b1a413" class="toggle">
+						<li>
+							<details open="">
+								<summary><strong>DepositPhotos:</strong></summary>
+								<ul id="691d8a9a-4636-4975-a896-bc97488c1b35" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Art des Contents:</strong>
+										<ul id="ff6a1ed4-6c0e-4724-b6c3-cd8cca8d7501" class="bulleted-list">
+											<li style="list-style-type:circle">Shots aus verschiedenen Perspektiven sind
+												sinnvoll<blockquote id="26999631-2ac4-4ea2-9ae1-30aabcd0c749" class="">
+													[…] What’s most important, all of them are looking for stock footage
+													shot from different angles. (<a
+														href="https://blog.depositphotos.com/selling-stock-footage.html">Quelle</a>)
+												</blockquote>
+											</li>
+										</ul>
+										<ul id="6f59f5c8-3432-4494-8ff0-7f90de340aae" class="bulleted-list">
+											<li style="list-style-type:circle">Eher anspruchsvollerer Content siehe <a
+													href="(Video)%20Stock%20Footage%20Editor%20and%20Distributor%2078c00900e0cf4fff9f6771a0a283846f.html">hier</a>
+											</li>
+										</ul>
+										<ul id="bd857ca3-a6b9-41e3-bc45-678c86559da8" class="bulleted-list">
+											<li style="list-style-type:circle">Mindestdauer eines Videos ist 3 Sekunden.
+												Die maximale Dauer beträgt 60 Sekunden</li>
+										</ul>
+									</li>
+								</ul>
+								<ul id="835ba564-5e5b-4e65-8565-9bb190947047" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Modell für Kunden:</strong>
+										<ul id="bd63e07a-28c9-4777-90c5-b373680d4183" class="bulleted-list">
+											<li style="list-style-type:circle">Abo-Modell entsprechend der Anzahl an
+												Videos die man pro Monat herunterladen möchte</li>
+										</ul>
+										<ul id="cb367106-465f-4324-a845-59006aa603ba" class="bulleted-list">
+											<li style="list-style-type:circle">On-demand-Plan auch verfügbar <figure
+													id="1779256b-5fd7-481c-981e-ece4e3d267b3" class="image"><a
+														href="(Video)%20Stock%20Footage%20Editor%20and%20Distributor%2078c00900e0cf4fff9f6771a0a283846f/Bildschirmfoto_2022-12-30_um_19.06.47.png"><img
+															style="width:2388px"
+															src="(Video)%20Stock%20Footage%20Editor%20and%20Distributor%2078c00900e0cf4fff9f6771a0a283846f/Bildschirmfoto_2022-12-30_um_19.06.47.png" /></a>
+												</figure>
+											</li>
+										</ul>
+									</li>
+								</ul>
+								<ul id="b656a4c8-6b16-4d77-b97f-4ad48b0fa3d3" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Verdienst für Creator:</strong>
+										<ul id="fec15b4d-d52a-4250-890c-1af00e1e1703" class="bulleted-list">
+											<li style="list-style-type:circle"><strong>Non-Exclusive Author Fee
+												</strong>(was man abgibt)<strong>: 62-70%</strong>
+												<ul id="07c2d193-e76a-4d64-b397-0eb427cf2285" class="bulleted-list">
+													<li style="list-style-type:square">Account Levels (<a
+															href="https://de.depositphotos.com/seller-price.html">Quelle</a>)
+													</li>
+												</ul>
+												<figure id="d47f183f-1f78-43e8-aab1-314db522c433" class="image"><a
+														href="(Video)%20Stock%20Footage%20Editor%20and%20Distributor%2078c00900e0cf4fff9f6771a0a283846f/Bildschirmfoto_2022-12-30_um_18.48.06.png"><img
+															style="width:750px"
+															src="(Video)%20Stock%20Footage%20Editor%20and%20Distributor%2078c00900e0cf4fff9f6771a0a283846f/Bildschirmfoto_2022-12-30_um_18.48.06.png" /></a>
+												</figure>
+												<ul id="156dffb4-628b-4208-be00-5108cd938df7" class="bulleted-list">
+													<li style="list-style-type:square">Vergütung für Videos entsprechend
+														des Account Levels</li>
+												</ul>
+												<figure id="b928d82e-879c-4b64-bc3e-182eab6bef2d" class="image"><a
+														href="(Video)%20Stock%20Footage%20Editor%20and%20Distributor%2078c00900e0cf4fff9f6771a0a283846f/Bildschirmfoto_2022-12-30_um_18.48.47.png"><img
+															style="width:974px"
+															src="(Video)%20Stock%20Footage%20Editor%20and%20Distributor%2078c00900e0cf4fff9f6771a0a283846f/Bildschirmfoto_2022-12-30_um_18.48.47.png" /></a>
+												</figure>
+											</li>
+										</ul>
+										<ul id="c698bb15-9774-4b08-86c3-824951dd140e" class="bulleted-list">
+											<li style="list-style-type:circle"><strong>Exclusive Author: </strong>No
+												plan available</li>
+										</ul>
+									</li>
+								</ul>
+								<ul id="3d67ab67-c309-4a15-9766-2eb59ef8aeca" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Art der Kuratierung:
+										</strong></li>
+								</ul>
+								<ul id="9395d704-c6ea-4ed3-8513-1843e815f547" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Exklusivität(-sbedingungen):</strong>
+										<ul id="7edb0a92-caa8-4899-8393-d147544cd78d" class="bulleted-list">
+											<li style="list-style-type:circle">Jede hochgeladene Datei wurde bisher
+												<strong>noch nie</strong> vom Urheber verwendet und wird auch niemals
+												verwendet für die Erstellung von Firmenzeichen, Handelsmarken oder für
+												eingetragene Handelsmarken, weder zur persönlichen Nutzung noch zur
+												Fremdnutzung. (<a
+													href="https://de.depositphotos.com/supply-agreement.html">Quelle</a>)
+												<ul id="8002a4ac-7616-4dd7-ad36-1561e9179e75" class="bulleted-list">
+													<li style="list-style-type:square">Laut dem Kundensupport bezieht
+														sich diese Aussage allerdings nicht auf den exklusiven Status
+														des contents sondern darauf, dass der content einfach
+														<strong>nicht trademarked</strong> sein darf. </li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+								<ul id="52688196-7194-4a19-8e52-ab1f052cd134" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Weitere Infos:</strong>
+										<ul id="48ef55cf-2a43-4a6d-9904-09cd771b1f0b" class="bulleted-list">
+											<li style="list-style-type:circle">Man muss mind. 5 shots hochladen und wird
+												dann nach ca. 7 Tagen angenommen → Der content soll entsprechend
+												gewissen Ansprüchen entsprechen</li>
+										</ul>
+										<ul id="45ecdf90-76de-4681-b4c1-4739dd843192" class="bulleted-list">
+											<li style="list-style-type:circle"><a
+													href="https://de.depositphotos.com/seller-price.html">Sign-Up</a>
+											</li>
+										</ul>
+										<ul id="1ffe0dc2-e379-4149-af22-b386ad9d2e97" class="bulleted-list">
+											<li style="list-style-type:circle">Die Berechnung der Lizenzgebühren basiert
+												nicht auf einem &quot;Standard&quot;-Wert einer Datei, sondern auf dem
+												eigentlichen Betrag, den der Käufer gezahlt hat.<ul
+													id="0ef3c52d-1fc9-4352-a8bd-4cbd90ab9a8b" class="bulleted-list">
+													<li style="list-style-type:square">Kauft man ein Video z. B. im
+														Rahmen eines Abonnements, welches man mit einem Rabatt gekauft
+														hat, ist der Verdienst entsprechend geringer. </li>
+												</ul>
+												<ul id="eadc8cab-3cc3-4324-9b54-3ab4f8a3fad1" class="bulleted-list">
+													<li style="list-style-type:square">Depositphotos kann Dateien auch
+														über Partner-Websites, Online-Plattformen und -Dienste
+														verkaufen. In solchen Fällen kann der Royalty-Satz des
+														Mitwirkenden je nach Marktumfeld vom Standard abweichen.</li>
+												</ul>
+											</li>
+										</ul>
+										<ul id="621b572a-f813-4106-a2c4-cbec19086d12" class="bulleted-list">
+											<li style="list-style-type:circle">Der Mitwirkende/Anbieter (Wir)
+												autorisiert Depositphotos, die Dateien des Mitwirkenden (unsere)
+												entweder auf exklusiver oder nicht-exklusiver Basis zu vertreiben und zu
+												lizenzieren. (<a
+													href="https://de.depositphotos.com/supply-agreement.html">Quelle</a>)
+												<ul id="2384a1a8-e052-45a0-af14-bf3776160040" class="bulleted-list">
+													<li style="list-style-type:square">Sprich: Depositphotos kann unsere
+														Dateien auch über andere (Partner-) Plattformen teilen und
+														verkaufen</li>
+												</ul>
+											</li>
+										</ul>
+										<ul id="3f9ea931-cef8-4905-a8b8-6073090985e3" class="bulleted-list">
+											<li style="list-style-type:circle">Es macht hier Sinn seinen gesamten
+												content über <strong>einen</strong> <strong>Account</strong>
+												hochzuladen, jedoch sollte dann in irgendeiner Art nach ursprünglichen
+												Contributorn getrennt werden, damit Auszahlungen richtig verteilt werden
+												können. <ul id="6ca88e3c-bf78-4aea-a661-b07fe21c8939"
+													class="bulleted-list">
+													<li style="list-style-type:square">Falls sich dies zu kompliziert
+														gestaltet, sollte jedoch davon abgesehen werden.</li>
+												</ul>
+											</li>
+										</ul>
+										<ul id="c6ed6bc0-8802-4ce8-9fdb-95c2ca6ed4d6" class="bulleted-list">
+											<li style="list-style-type:circle">Infos zu Video-Formaten und -Codecs <a
+													href="https://de.depositphotos.com/seller-price.html">hier</a> unter
+												“Anforderungen an Videos”</li>
+										</ul>
+									</li>
+								</ul>
+							</details>
+						</li>
+					</ul>
+					<ul id="c47cc531-43b7-47c4-bb5c-7e3ad3be92f8" class="toggle">
+						<li>
+							<details open="">
+								<summary><strong>iStock:</strong></summary>
+								<ul id="6dc50997-789a-4c58-997a-1824bb387bb3" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Art des Contents:</strong>
+										<ul id="c48e3903-3c28-4a5e-b2e0-3b8801a1e5e5" class="bulleted-list">
+											<li style="list-style-type:circle">Aller Art wie es scheint</li>
+										</ul>
+									</li>
+								</ul>
+								<ul id="997de52d-e4c6-4faf-ae50-0f59ce00c7e6" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Modell für Kunden:</strong>
+										<ul id="a61ac2ff-a044-490f-ac7d-902d007cc57e" class="bulleted-list">
+											<li style="list-style-type:circle">Abo-Modell für (Fotos +) Videos: z. B.
+												84€/ Monat (10 Datei-Downloads) oder 224€/ Monat (50 Datei-Downloads)
+												(<a
+													href="https://www.istockphoto.com/de/optionen-und-preise">Quelle</a>)
+												<ul id="0e91ee44-baa0-496f-bc78-be5e4447ac6a" class="bulleted-list">
+													<li style="list-style-type:square">Ergibt beim im
+														Preis-Leistungsmäßig im (normalen Preisverzeichnis verfügbaren)
+														besten Vertrag: 4,48€/ Datei</li>
+												</ul>
+											</li>
+										</ul>
+										<ul id="52005ad2-5ee1-4fb5-b8a4-4514fc4ab476" class="bulleted-list">
+											<li style="list-style-type:circle">Credit-Modell verfügbar (<a
+													href="https://www.istockphoto.com/de/optionen-und-preise">Quelle</a>)
+												<ul id="1de458c4-7240-4320-a11a-34e160450ab7" class="bulleted-list">
+													<li style="list-style-type:square">Ergibt beim im
+														Preis-Leistungsmäßig im (normalen Preisverzeichnis verfügbaren)
+														besten Credit-Plan: 5,83€/ Datei</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+								<ul id="3961fa9e-a77c-4f49-9532-988a756ebb28" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Verdienst für Creator:</strong>
+										<ul id="e338f1e0-aa61-4b71-a36f-a527cda6c918" class="bulleted-list">
+											<li style="list-style-type:circle"><strong>Non-Exclusive Author Fee
+												</strong>(was man abgibt)<strong>: 80%</strong></li>
+										</ul>
+										<ul id="507b1698-eab8-4283-9fd4-2949893018dc" class="bulleted-list">
+											<li style="list-style-type:circle"><strong>Exclusive Author Fee
+												</strong>(was man abgibt)<strong>:</strong> <strong>55-75%</strong>
+												abhängig von der Menge an Downloads aus dem eigenen Portfolio<p
+													id="a1d4ff2c-6ac4-40eb-a6c1-f477e8585d88" class=""><a
+														href="https://contributors.gettyimages.com/article_public.aspx?article_id=5210">Quelle</a>
+												</p>
+												<figure id="58efa9c1-8087-4b2b-842b-0dac71e5e82f" class="image"><a
+														href="(Video)%20Stock%20Footage%20Editor%20and%20Distributor%2078c00900e0cf4fff9f6771a0a283846f/Bildschirmfoto_2022-12-30_um_19.36.13.png"><img
+															style="width:1322px"
+															src="(Video)%20Stock%20Footage%20Editor%20and%20Distributor%2078c00900e0cf4fff9f6771a0a283846f/Bildschirmfoto_2022-12-30_um_19.36.13.png" /></a>
+												</figure>
+											</li>
+										</ul>
+									</li>
+								</ul>
+								<ul id="6c3785a6-858b-4507-bc89-36b0c0a3d5cb" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Art der Kuratierung:
+										</strong></li>
+								</ul>
+								<ul id="8fa80402-dec4-4fbd-aedc-1f924e1258bc" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Exklusivität(-sbedingungen):</strong>
+										<ul id="9e1646ee-5399-43ff-8e8b-d1a9c30e9cce" class="bulleted-list">
+											<li style="list-style-type:circle">Exclusive + Non-exclusive-Plan verfügbar.
+											</li>
+										</ul>
+									</li>
+								</ul>
+								<ul id="261551ea-a674-46fe-809a-581404f2d9c8" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Weitere Infos:</strong>
+										<ul id="e5e521ed-529d-4c0a-a725-7e857baeba65" class="bulleted-list">
+											<li style="list-style-type:circle">“Bewerbung” mit Content-Beispielen
+												erforderlich, sollte jedoch keine große Hürde darstellen.</li>
+										</ul>
+										<ul id="e5673c8f-d844-4ad1-974e-6092050c3f3e" class="bulleted-list">
+											<li style="list-style-type:circle">Es macht hier Sinn seinen gesamten
+												content über <strong>einen</strong> <strong>Account</strong>
+												hochzuladen, jedoch sollte dann in irgendeiner Art nach ursprünglichen
+												Contributorn getrennt werden, damit Auszahlungen richtig verteilt werden
+												können. <ul id="19d1c4da-a1a9-4a78-aeb9-117fdb86082c"
+													class="bulleted-list">
+													<li style="list-style-type:square">Falls sich dies zu kompliziert
+														gestaltet, sollte jedoch davon abgesehen werden</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</details>
+						</li>
+					</ul>
+					<ul id="4306ecd0-d3cc-446b-839c-4372262de9a9" class="toggle">
+						<li>
+							<details open="">
+								<summary><strong>Storyblocks:</strong></summary>
+								<ul id="64b2ace4-b1e6-4746-bebe-d270a40f9c46" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Art des Contents:</strong>
+										<ul id="97528133-1603-48ee-8ec7-dfea8b4f3016" class="bulleted-list">
+											<li style="list-style-type:circle">Laut <a
+													href="https://www.youtube.com/watch?v=HzkbzE4Zim8">Youtube Video</a>
+												und dem Fakt, dass man sich mit einem Teil seines Portfolios erst einmal
+												bewerben muss, eher qualitativ hochwertig. <ul
+													id="0d648772-27c5-46b3-a1e2-90fbfde970ae" class="bulleted-list">
+													<li style="list-style-type:square">Es existiert ein “Partner
+														Programm” → <a
+															href="mailto:partner@storyblocks.com">partner@storyblocks.com</a>
+														kontaktieren</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+								<ul id="6259631d-4048-43d4-91cf-63d3292e3b10" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Modell für Kunden:</strong>
+										<ul id="eca61119-6ed3-4d22-8fb8-f15e6423ab50" class="bulleted-list">
+											<li style="list-style-type:circle">Abo-Modell<ul
+													id="19e16ca2-6746-4667-95f5-a2db17fb633b" class="bulleted-list">
+													<li style="list-style-type:square">15€/ 30€/ 35€ pro Monat Pläne →
+														für Individuen</li>
+												</ul>
+												<ul id="0ea8d02c-9876-4d68-8a10-6c44ed2172d7" class="bulleted-list">
+													<li style="list-style-type:square">mehr für Businesses →
+														individuelle Angebote</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+								<ul id="d05fc0c0-15e6-4512-b827-a526d58c1172" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Verdienst für Creator:</strong>
+										<ul id="975e6ed9-8f80-4f4f-898d-e0bd7145cfef" class="bulleted-list">
+											<li style="list-style-type:circle">Man verdient keine festen Beträge sondern
+												entsprechend des Plans des Kunden, des Verwendungszwecks und der Menge
+												an Downloads</li>
+										</ul>
+									</li>
+								</ul>
+								<ul id="5dd5f3d7-2cca-4922-8b6e-862a833b9341" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Art der Kuratierung:
+										</strong></li>
+								</ul>
+								<ul id="93e4857b-8a7b-4d07-a8f4-709c6252e389" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Exklusivität(-sbedingungen):</strong>
+										<ul id="5e78daa9-bb15-40aa-96c9-c974552e687d" class="bulleted-list">
+											<li style="list-style-type:circle">Content is non-exclusive und kann auf
+												jeglichen anderen Plattformen hochgeladen werden.</li>
+										</ul>
+									</li>
+								</ul>
+								<ul id="b22505a4-ec7f-47d4-a074-12d24d588708" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Weitere Infos:</strong>
+										<ul id="89cf0a1f-13ae-4254-bd56-dc947b8ad5df" class="bulleted-list">
+											<li style="list-style-type:circle">Over 180,000 active members (<a
+													href="https://contribute.storyblocks.com/?_ga=2.249940806.1122360824.1672500732-1280967845.1672500732">Quelle</a>)
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</details>
+						</li>
+					</ul>
+					<h3 id="99a4014b-f22a-48a9-9e3f-731487258b77" class="">Exclusive Content only:</h3>
+					<ul id="dcd2d5a4-3bbb-466f-8450-0c7ba4647b88" class="toggle">
+						<li>
+							<details open="">
+								<summary><strong>Filmsupply: (Kunden-Modell done)</strong></summary>
+								<ul id="0b3707a4-c14d-4242-a477-bcab99d0671c" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Art des Contents:</strong>
+										<ul id="be71a8bf-8c79-427d-988b-1f05d63e3cdb" class="bulleted-list">
+											<li style="list-style-type:circle">High Quality (teils artsy) Content - sehr
+												cinematische Aufnahmen<ul id="b180b742-61aa-4f08-bc25-e14afa853579"
+													class="bulleted-list">
+													<li style="list-style-type:square">Kunden sind z. B. Facebook,
+														Vodafon, IBM, Spotify, VW, etc.</li>
+												</ul>
+											</li>
+										</ul>
+										<ul id="d53dd1d7-6647-4809-8a45-a2d0ac8d931f" class="bulleted-list">
+											<li style="list-style-type:circle">Keine einzelnen Clips sondern immer Sets
+												an Aufnahmen von bestimmter Location/ Szenerie, sodass man aus diesem
+												Material bereits z. B. einen kleinen Trailer/ Teaser schneiden kann</li>
+										</ul>
+										<ul id="6d009d96-7d1b-495e-a831-aa76a9132352" class="bulleted-list">
+											<li style="list-style-type:circle">Es macht hier Sinn besonders content
+												hochzuladen von sehr professionellen Creators, auch wenn der content
+												hier vermutlich exklusiv auf Filmsupply hochgeladen werden muss.</li>
+										</ul>
+									</li>
+								</ul>
+								<ul id="8e34c285-16ca-4f0b-89a3-7a9176eb85e4" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Modell für Kunden:</strong>
+										<ul id="6ecd433c-6214-42f3-bf0a-0cefc1caae42" class="bulleted-list">
+											<li style="list-style-type:circle">Range von US$109-5k pro Clip (abhängig
+												von der Nutzungsart des Kunden)<figure
+													id="4b065c57-bcb2-4023-aad9-cb4826856ef7" class="image"><a
+														href="(Video)%20Stock%20Footage%20Editor%20and%20Distributor%2078c00900e0cf4fff9f6771a0a283846f/Bildschirmfoto_2022-12-31_um_13.49.11.png"><img
+															style="width:1750px"
+															src="(Video)%20Stock%20Footage%20Editor%20and%20Distributor%2078c00900e0cf4fff9f6771a0a283846f/Bildschirmfoto_2022-12-31_um_13.49.11.png" /></a>
+												</figure>
+											</li>
+										</ul>
+									</li>
+								</ul>
+								<ul id="3171de7b-3f9e-46d4-8cce-29fce5ae80f2" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Verdienst für Creator:</strong>
+										<ul id="4d2706b5-a299-4d21-8ca7-041a30bea415" class="bulleted-list">
+											<li style="list-style-type:circle">Laut <a
+													href="https://www.youtube.com/watch?v=TRXeT_w-uGw">Youtube Video</a>
+												<strong>50%</strong> Creator Fee → persönlich bestätigt von Filmsupply
+												Support
+												→ Kann errechnet werden mit Tabelle bei Minute 5:42</li>
+										</ul>
+										<ul id="fbcd7dfe-8377-4add-948c-b7bbbd9226d4" class="bulleted-list">
+											<li style="list-style-type:circle">Grundsätzlich kann man sagen, dass das
+												Einkommen pro Monat sehr unterschiedlich sein kann, da abhängig vom
+												Verwendungszweck des Clips unterschiedlich viel gezahlt wird (siehe <a
+													href="(Video)%20Stock%20Footage%20Editor%20and%20Distributor%2078c00900e0cf4fff9f6771a0a283846f.html">Modell
+													für Kunden</a>)<ul id="5abe1086-ef0f-4412-b268-3302633be6db"
+													class="bulleted-list">
+													<li style="list-style-type:square">z. B. April: US$125; Juni:
+														US$4.000; …</li>
+												</ul>
+											</li>
+										</ul>
+										<ul id="ef297138-08fa-4737-adea-d9f557ffc36c" class="bulleted-list">
+											<li style="list-style-type:circle">Eine große Sammlung an guten Aufnahmen
+												von einzelnen Shoots/ Locations/ Szenerien ist sinnvoll, da diese oft im
+												Set gekauft werden und ein (größerer) Kunde dann z. B. direkt 10 Clips
+												aus einem Shoot für jeweils US$299 kauft (gross total US$2.990), anstatt
+												einzelne Clips unterschiedlicher Contributor.</li>
+										</ul>
+										<ul id="04e2ac27-2e78-494a-8b64-57c490c1025c" class="bulleted-list">
+											<li style="list-style-type:circle"><strong>Verdienstbeispiele:</strong>
+												<ul id="1e04be44-1abc-4540-993b-f9b56964d401" class="bulleted-list">
+													<li style="list-style-type:square"><a
+															href="https://www.filmsupply.com/filmmakers/of-two-lands/180">Of
+															Two Lands</a>:<ul id="daf7b62b-41a1-40aa-b86d-a4ac6dc1fab9"
+															class="bulleted-list">
+															<li style="list-style-type:disc">1533 Clips aus 40 Shoots/
+																Locations</li>
+														</ul>
+														<ul id="066ef04e-8846-47f3-b59e-47c6659909f6"
+															class="bulleted-list">
+															<li style="list-style-type:disc">Verdienst ca.
+																<strong>US$10.000/ Jahr</strong> (laut <a
+																	href="https://www.youtube.com/watch?v=5TazCskq9wU">Youtube
+																	Video</a>)</li>
+														</ul>
+														<ul id="8933347d-9be8-4a1f-bb1a-801729a073be"
+															class="bulleted-list">
+															<li style="list-style-type:disc">Natur/ Stadt/ Action Shots
+																+ ein paar Drohnen Shots → oftmals Menschen zu sehen
+															</li>
+														</ul>
+														<ul id="d6cfb863-730d-4f12-8ddb-3fb3b1b35816"
+															class="bulleted-list">
+															<li style="list-style-type:disc">Meist 5-15 Sekunden je nach
+																Clip (Ausschläge eher nach oben als nach unten möglich)
+															</li>
+														</ul>
+													</li>
+												</ul>
+												<ul id="cd0c678d-6ec8-44fb-8058-f88cb3318449" class="bulleted-list">
+													<li style="list-style-type:square"><a
+															href="https://www.filmsupply.com/filmmakers/matteo-bertoli/242">Matteo
+															Bertoli</a>:<ul id="cbee0d56-f85a-4963-a1c6-ed5cc71a378c"
+															class="bulleted-list">
+															<li style="list-style-type:disc">873 Clips aus 30 Shoots/
+																Locations</li>
+														</ul>
+														<ul id="3e0e66b4-b439-4983-a1eb-42302aed6ae1"
+															class="bulleted-list">
+															<li style="list-style-type:disc">Verdienst ca. US$10.000/
+																Jahr (laut <a
+																	href="https://www.youtube.com/watch?v=TRXeT_w-uGw">Youtube
+																	Video</a>)</li>
+														</ul>
+														<ul id="e8486026-cf17-45db-88e2-40ca7c0bc75c"
+															class="bulleted-list">
+															<li style="list-style-type:disc">Natur/ Stadt/ Personen
+																Shots + Drohnen Shots → Menschen im Detail nur sichtbar,
+																wenn es die Szenerie erfordert (z. B. Shoots: “Woman
+																Makes Her Way Down To Beach In Croatia”, “Woman On Beach
+																Recalling Past Relationship” oder “Girl walking through
+																town”)</li>
+														</ul>
+														<ul id="3eaa5f55-bcae-411d-99b2-7ab0ef19135b"
+															class="bulleted-list">
+															<li style="list-style-type:disc">Meist 5-15 Sekunden je nach
+																Clip (Ausschläge eher nach oben als nach unten möglich)
+															</li>
+														</ul>
+													</li>
+												</ul>
+												<ul id="611e98db-e5ee-4448-b7a2-321661ec60bf" class="bulleted-list">
+													<li style="list-style-type:square"><a
+															href="https://www.filmsupply.com/filmmakers/matti-haapoja/96">Matti
+															Haapoja</a>:<ul id="d75d26c3-3619-4689-99ad-b9e459debec0"
+															class="bulleted-list">
+															<li style="list-style-type:disc">1640 Clips aus 25 Shoots/
+																Locations</li>
+														</ul>
+														<ul id="41a0a4a7-ca9f-4ef5-9195-88959b21bae5"
+															class="bulleted-list">
+															<li style="list-style-type:disc">Verdienst ca. US$10.000/
+																Jahr (2021) (laut <a
+																	href="https://www.youtube.com/watch?v=6Gvgp6JvMTE">Youtube
+																	Video</a>)</li>
+														</ul>
+														<ul id="69610826-7303-4286-8c61-92933999aeed"
+															class="bulleted-list">
+															<li style="list-style-type:disc">Hauptsächlich Natur Shots +
+																ein paar Stadt Shots + Drohnen Shots → Menschen im
+																Detail nur sichtbar, wenn es die Szenerie erfordert (z.
+																B. Shoots: “Mans Life”, “Man Fishing” oder “Couple
+																explores Norway”)</li>
+														</ul>
+														<ul id="4dbaddb2-923f-4bcb-bd64-d17ad29ff703"
+															class="bulleted-list">
+															<li style="list-style-type:disc">Meist 3-16 Sekunden je nach
+																Clip (Ausschläge eher nach oben als nach unten möglich)
+															</li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+								<ul id="02e37433-3d8b-4ab5-823c-a39d46eacaa8" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Art der Kuratierung:
+										</strong></li>
+								</ul>
+								<ul id="94048122-3fbf-4052-a668-8bfff13349eb" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Exklusivität(-sbedingungen):</strong>
+										<ul id="5532923f-58a5-48bf-9348-3d4b824223ff" class="bulleted-list">
+											<li style="list-style-type:circle">Content muss <strong>exklusiv</strong>
+												auf Filmsupply hochgeladen werden, man behält jedoch die Besitzrechte
+											</li>
+										</ul>
+									</li>
+								</ul>
+								<ul id="1075bc3e-cdd8-45d7-b4b0-dfbab91b724f" class="bulleted-list">
+									<li style="list-style-type:disc"><strong>Weitere Infos:</strong>
+										<ul id="2619c660-cc39-49ba-927b-96495fba2248" class="bulleted-list">
+											<li style="list-style-type:circle">Laut einem <a
+													href="https://www.youtube.com/watch?v=TRXeT_w-uGw">Youtube Video</a>
+												(Juni, 2022) nehmen sie aktuell keine weiteren Contributor mehr auf.<ul
+													id="af8f4cc8-8202-4c41-af6d-b6024ce1a11c" class="bulleted-list">
+													<li style="list-style-type:square">Dies scheint aktuell (Januar,
+														2023) nicht mehr der Fall zu sein (!), da ich vom Filmsupply
+														Support direkt auf die <a
+															href="https://apply.filmsupply.com/">Bewerbung</a> verwiesen
+														wurde.</li>
+												</ul>
+											</li>
+										</ul>
+										<ul id="9eebc3c7-5da8-415e-ac9b-9452160d828f" class="bulleted-list">
+											<li style="list-style-type:circle">Sehr persönlicher Contributor Support →
+												sendet wohl zu jedem Quartal Benachrichtigungen raus, welcher Content
+												gerade besonders angesagt ist.</li>
+										</ul>
+										<ul id="e5bdcec0-6996-4c83-8274-6a389a2771d3" class="bulleted-list">
+											<li style="list-style-type:circle">Geschätzter Jahresumsatz inkl.
+												Contributor Fees etc. (max.) ca. US$14.000.000, exkl. Steuern<ul
+													id="1655d61a-ef80-4369-b084-cac8e2f90ff5" class="bulleted-list">
+													<li style="list-style-type:square">Errechnet anhand der Anzahl der
+														Contributor von 700 → siehe <a
+															href="https://www.filmsupply.com/filmmakers">hier</a>
+														und dem Jahresverdienst einzelner Contributor von ca. US$10.000
+														aus den <a
+															href="(Video)%20Stock%20Footage%20Editor%20and%20Distributor%2078c00900e0cf4fff9f6771a0a283846f.html">Beispielen</a>
+														(was im Schnitt pro Contributor wohl eher niedriger ausfällt, da
+														die Leute aus den Beispielen sehr viel content hochgeladen
+														hatten) in Kombination mit einer Plattform Fee von 50%<ul
+															id="effe759e-b031-4b74-bb54-0bb8e38dce0b"
+															class="bulleted-list">
+															<li style="list-style-type:disc">700 * US$10.000 * 2 (also
+																200%) = US$14.000.000</li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+										</ul>
+										<ul id="39e87499-abd0-4ba7-83fc-75504ab8781f" class="bulleted-list">
+											<li style="list-style-type:circle">Monatliche Payouts</li>
+										</ul>
+									</li>
+								</ul>
+							</details>
+						</li>
+					</ul>
+					<details open="">
+						<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Weitere
+							Stock-Video-Plattformen (die bisher nicht weiter angeschaut wurden):</summary>
+						<div class="indented">
+							<ul id="2d217ae4-e00a-4b54-8cf9-b29ba9df10ab" class="bulleted-list">
+								<li style="list-style-type:disc"><a
+										href="https://provideofactory.com/">ProVideoFactory</a></li>
+							</ul>
+							<ul id="814a654b-e04d-4ee0-a763-f8527e330d82" class="bulleted-list">
+								<li style="list-style-type:disc"><a href="https://www.stocksy.com/">Stocksy</a></li>
+							</ul>
+							<ul id="78cf1d79-0abf-476a-a1d0-4b1cc221a913" class="bulleted-list">
+								<li style="list-style-type:disc"><a
+										href="https://www.motionelements.com/">Motionelements</a></li>
+							</ul>
+							<ul id="c1e3c759-0df8-4297-9f1b-797a6991c2bf" class="toggle">
+								<li>
+									<details open="">
+										<summary><a href="https://www.bigstockphoto.com/de/">Bigstockphoto</a></summary>
+										<ul id="3da07113-f664-4ee0-a25b-6b7a42e9675e" class="bulleted-list">
+											<li style="list-style-type:disc">Nehmen aktuell keine neuen Contributor auf!
+												→ Info per privater email mit dem Support</li>
+										</ul>
+										<ul id="e0ccf033-9d36-4526-85a8-186d613fd4a4" class="bulleted-list">
+											<li style="list-style-type:disc">Gehören zur Parent Company Shutterstock
+											</li>
+										</ul>
+									</details>
+								</li>
+							</ul>
+							<ul id="0693a382-e73f-4c46-b83d-5b7471b32c03" class="bulleted-list">
+								<li style="list-style-type:disc"><a href="https://www.123rf.com/">123RF</a></li>
+							</ul>
+							<ul id="964c3802-7f9e-4f60-b223-2e7b9c2f7ae2" class="bulleted-list">
+								<li style="list-style-type:disc"><a href="https://dissolve.com/">Dissolve</a></li>
+							</ul>
+						</div>
+					</details>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Plattformen nach Beliebtheit (noch
+					nicht wirklich bearbeitet)</summary>
+				<div class="indented">
+					<p id="be95a6e7-c8dd-4908-bf19-4f6bc1b6be76" class="">Oft genannt: </p>
+					<ul id="750709fa-d258-422f-aed2-a70265fd39d3" class="bulleted-list">
+						<li style="list-style-type:disc">Pond5 - <a
+								href="https://www.wrapbook.com/blog/best-stock-video-sites">1x</a>, <a
+								href="https://www.expertmarketresearch.com/reports/stock-video-market">1x</a>, </li>
+					</ul>
+					<ul id="395545ff-223c-4702-8d46-a60c1180eb60" class="bulleted-list">
+						<li style="list-style-type:disc">Envato Elements - <a
+								href="https://www.wrapbook.com/blog/best-stock-video-sites">1x</a>, </li>
+					</ul>
+					<ul id="b539dbbc-9496-45f3-be6d-8e7139cf8cfe" class="bulleted-list">
+						<li style="list-style-type:disc">Artgrid - <a
+								href="https://www.wrapbook.com/blog/best-stock-video-sites">1x</a>, </li>
+					</ul>
+					<ul id="7df3173e-bdfd-4aa3-976f-8e491b612b14" class="bulleted-list">
+						<li style="list-style-type:disc">Storyblocks - <a
+								href="https://www.wrapbook.com/blog/best-stock-video-sites">1x</a>, </li>
+					</ul>
+					<ul id="df847fe3-243b-42ac-bc39-53d56a04775a" class="bulleted-list">
+						<li style="list-style-type:disc">Adobe Stock - <a
+								href="https://www.expertmarketresearch.com/reports/stock-video-market">1x</a>, </li>
+					</ul>
+					<ul id="8c64e2fc-7248-43d1-addd-6aa693f634ea" class="bulleted-list">
+						<li style="list-style-type:disc">Shutterstock - <a
+								href="https://www.expertmarketresearch.com/reports/stock-video-market">1x</a>, </li>
+					</ul>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Content automatisiert hochladen
+					(Nutzung der API - Tool selber programmieren lassen) - Recherche:</summary>
+				<div class="indented">
+					<p id="90f9bfc0-1ad7-4966-a7c9-a28c46c2a1ff" class=""><strong>Nachricht:</strong></p>
+					<blockquote id="66086021-b12a-4e15-9e57-c44782580359" class="">Hello,
+
+						I am interested in building an application that allows me to automatically and successfully
+						upload video content to your website including the necessary metadata such as keywords that are
+						important to curate the uploads.
+
+						Do you offer the required API to realize this project?
+
+						I am looking forward hearing from you!
+
+						Regards
+						Michel Heimes</blockquote>
+					<ul id="e73931a6-e9c2-44f4-811b-dda3f6265155" class="bulleted-list">
+						<li style="list-style-type:disc"><strong>Artgrid</strong>: Support kontaktiert!</li>
+					</ul>
+					<ul id="2ff88301-92fb-4705-a476-164422a34072" class="bulleted-list">
+						<li style="list-style-type:disc"><strong>Videohive/ Envato Elements/ PlaceIt</strong>: Support
+							kontaktiert!</li>
+					</ul>
+					<ul id="e3df515c-c4e1-4005-9867-af5aafb6c651" class="bulleted-list">
+						<li style="list-style-type:disc"><strong>Pond5</strong>: Support kontaktiert!</li>
+					</ul>
+					<ul id="d70988e7-edcc-4951-852a-701e38345770" class="bulleted-list">
+						<li style="list-style-type:disc"><strong>Adobe Stock</strong>: Nur über Instagram kontaktiert,
+							da keine email gefunden!</li>
+					</ul>
+					<ul id="8ae003e1-edce-4293-937a-ee27645571b1" class="bulleted-list">
+						<li style="list-style-type:disc"><strong>Shutterstock</strong>: Support kontaktiert! - evtl. nur
+							über seiteninternes Kontaktformular</li>
+					</ul>
+					<ul id="7d5915ec-24eb-428b-8cba-ab7febc3201c" class="bulleted-list">
+						<li style="list-style-type:disc"><strong>Vimeo (Stock)</strong>: Support kontaktiert!</li>
+					</ul>
+					<ul id="c53706b1-00e3-4616-b0d6-473b7407ddd1" class="bulleted-list">
+						<li style="list-style-type:disc"><strong>DepositPhotos</strong>: Support kontaktiert (Deutsch
+							als Sprache angegeben, falls Antwort ausbleiben sollte noch einmal das Formular ausfüllen
+							und “English” auswählen!)</li>
+					</ul>
+					<ul id="db21d0d6-d742-47e1-ab64-2e7d945495cb" class="bulleted-list">
+						<li style="list-style-type:disc"><strong>iStock</strong>: Support kontaktiert!</li>
+					</ul>
+					<ul id="a92af189-4988-4514-803c-cd8dc8f3ade8" class="bulleted-list">
+						<li style="list-style-type:disc"><strong>StoryBlocks</strong>: Support kontaktiert! - evtl. nur
+							über seiteninternes Kontaktformular</li>
+					</ul>
+					<ul id="40fd5231-a6b3-4acc-870b-baf570eb9341" class="bulleted-list">
+						<li style="list-style-type:disc"><strong>Filmsupply</strong>: Support kontaktiert!</li>
+					</ul>
+					<p id="bef4eba5-0b3d-4d05-9333-3bc476280eee" class="">
+					</p>
+					<p id="cc0693b7-e28f-4398-a2ab-3748d6d8e965" class=""><strong>Weitere Plattformen ohne weitere
+							bisherige Research zum Unternehmen:</strong></p>
+					<ul id="e0e23565-1504-440f-b26d-85e03783210e" class="bulleted-list">
+						<li style="list-style-type:disc"><strong><a
+									href="https://provideofactory.com/">ProVideoFactory</a></strong>: Support
+							kontaktiert!</li>
+					</ul>
+					<ul id="6d717319-c92f-43b3-98df-287d99ba2fbb" class="bulleted-list">
+						<li style="list-style-type:disc"><strong><a
+									href="https://www.stocksy.com/">Stocksy</a></strong>: Support kontaktiert!</li>
+					</ul>
+					<ul id="cb491709-ce05-4896-bc49-b818292aae3f" class="bulleted-list">
+						<li style="list-style-type:disc"><strong><a
+									href="https://www.motionelements.com/">Motionelements</a></strong>: Support
+							kontaktiert!</li>
+					</ul>
+					<ul id="e845aeb5-5e84-4d31-90c3-6dd713dc5a97" class="bulleted-list">
+						<li style="list-style-type:disc"><strong><a
+									href="https://www.bigstockphoto.com/de/">Bigstockphoto</a></strong>: Support
+							kontaktiert!</li>
+					</ul>
+					<ul id="75ce1019-8ccb-4d27-bf22-4bec3130c43e" class="bulleted-list">
+						<li style="list-style-type:disc"><strong><a href="https://www.123rf.com/">123RF</a></strong>:
+							Support kontaktiert!</li>
+					</ul>
+					<ul id="f3b572a1-0a04-46d8-b84c-f6c223f4a828" class="bulleted-list">
+						<li style="list-style-type:disc"><strong><a href="https://dissolve.com/">Dissolve</a></strong>:
+							Support kontaktiert!</li>
+					</ul>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Interessante Quellen - zum Markt/ zur
+					Marktentwicklung/ zu Trends</summary>
+				<div class="indented">
+					<ul id="10dbe74d-9801-4e09-b9f5-565819e002fc" class="bulleted-list">
+						<li style="list-style-type:disc"><a
+								href="https://www.expertmarketresearch.com/reports/stock-video-market">Expertmarketresearch</a>
+						</li>
+					</ul>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Cutter/ Curator</summary>
+				<div class="indented">
+					<p id="d358ae4c-3cf6-43ee-9c56-a5f99cb152f3" class=""><strong>Leeroys Leute</strong>:</p>
+					<p id="a05501be-468e-4bbf-95a2-08c815a6b5d0" class=""><strong>Sinans Leute</strong>:</p>
+					<p id="da9fe85e-3033-4e4e-907a-d39092bf9053" class=""><strong>Michels Leute</strong>:<strong>
+						</strong>
+						Kollege aus der Uni (mit Erfahrung) hat Interesse + kennt weitere die evtl. in Frage kommen</p>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Next Steps</summary>
+				<div class="indented">
+					<ul id="1b14db09-96a2-4727-860b-dd91d4769ec0" class="to-do-list">
+						<li>
+							<div class="checkbox checkbox-on"></div> <span class="to-do-children-checked">Einnahmen (%)
+								pro Plattform weiter machen <span class="user">@Michel Heimes</span> </span>
+							<div class="indented"></div>
+						</li>
+					</ul>
+					<ul id="da01cdea-7b93-4b39-a59b-e10d723d1231" class="to-do-list">
+						<li>
+							<div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Plattformen
+								nach Beliebtheit sortieren (evtl. Marktanteil) <span class="user">@Michel Heimes</span>
+							</span>
+							<div class="indented"></div>
+						</li>
+					</ul>
+					<ul id="82f8bd62-2d18-4c7e-935c-ef6e70da41db" class="to-do-list">
+						<li>
+							<div class="checkbox checkbox-off"></div> <span
+								class="to-do-children-unchecked">Case-Studies zu Einnahmen (Leute auf Facebook
+								anschreiben) <span class="user">@Michel Heimes</span> </span>
+							<div class="indented"></div>
+						</li>
+					</ul>
+					<ul id="82ce50f8-6e65-410c-bd08-55b9bc5e5d79" class="to-do-list">
+						<li>
+							<div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Research
+								APIs einzelner Plattformen + Leute anfragen zur Programmierung <span
+									class="user">@Michel Heimes</span> </span>
+							<div class="indented"></div>
+						</li>
+					</ul>
+					<ul id="4a9c4941-1a94-4ab2-966c-b6802cec471a" class="to-do-list">
+						<li>
+							<div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Stichprobe
+								vorbereiten mit Footage-Auswahl <span class="user">@Leeroy Klauhs</span> </span>
+							<div class="indented"></div>
+						</li>
+					</ul>
+					<ul id="8a3af31b-aaeb-4e97-a767-7535f66cde4b" class="to-do-list">
+						<li>
+							<div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Mögliche
+								Creator zusammentragen <span class="user">@info@sinan-senyurt.de</span> </span>
+							<div class="indented"></div>
+						</li>
+					</ul>
+					<ul id="eaa7c790-f9d2-452b-9787-2adba6e03935" class="to-do-list">
+						<li>
+							<div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Mehr Cutter
+								anfragen? <span class="user">@Leeroy Klauhs</span> <span
+									class="user">@info@sinan-senyurt.de</span> </span>
+							<div class="indented"></div>
+						</li>
+					</ul>
+				</div>
+			</details>
+			<p id="9b085e4e-3c09-4602-af9b-1c10f84de2a0" class="">
+			</p>
+		</div>
+	</article>
+</body>
+
+</html>

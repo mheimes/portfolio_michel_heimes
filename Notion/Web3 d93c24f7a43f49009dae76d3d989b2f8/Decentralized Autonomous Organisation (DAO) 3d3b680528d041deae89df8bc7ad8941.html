@@ -1,0 +1,1235 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Decentralized Autonomous Organisation (DAO)</title>
+	<style>
+		/* cspell:disable-file */
+		/* webkit printing magic: print all background colors */
+		html {
+			-webkit-print-color-adjust: exact;
+		}
+
+		* {
+			box-sizing: border-box;
+			-webkit-print-color-adjust: exact;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		@media only screen {
+			body {
+				margin: 2em auto;
+				max-width: 900px;
+				color: rgb(55, 53, 47);
+			}
+		}
+
+		body {
+			line-height: 1.5;
+			white-space: pre-wrap;
+		}
+
+		a,
+		a.visited {
+			color: inherit;
+			text-decoration: underline;
+		}
+
+		.pdf-relative-link-path {
+			font-size: 80%;
+			color: #444;
+		}
+
+		h1,
+		h2,
+		h3 {
+			letter-spacing: -0.01em;
+			line-height: 1.2;
+			font-weight: 600;
+			margin-bottom: 0;
+		}
+
+		.page-title {
+			font-size: 2.5rem;
+			font-weight: 700;
+			margin-top: 0;
+			margin-bottom: 0.75em;
+		}
+
+		h1 {
+			font-size: 1.875rem;
+			margin-top: 1.875rem;
+		}
+
+		h2 {
+			font-size: 1.5rem;
+			margin-top: 1.5rem;
+		}
+
+		h3 {
+			font-size: 1.25rem;
+			margin-top: 1.25rem;
+		}
+
+		.source {
+			border: 1px solid #ddd;
+			border-radius: 3px;
+			padding: 1.5em;
+			word-break: break-all;
+		}
+
+		.callout {
+			border-radius: 3px;
+			padding: 1rem;
+		}
+
+		figure {
+			margin: 1.25em 0;
+			page-break-inside: avoid;
+		}
+
+		figcaption {
+			opacity: 0.5;
+			font-size: 85%;
+			margin-top: 0.5em;
+		}
+
+		mark {
+			background-color: transparent;
+		}
+
+		.indented {
+			padding-left: 1.5em;
+		}
+
+		hr {
+			background: transparent;
+			display: block;
+			width: 100%;
+			height: 1px;
+			visibility: visible;
+			border: none;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+		}
+
+		img {
+			max-width: 100%;
+		}
+
+		@media only print {
+			img {
+				max-height: 100vh;
+				object-fit: contain;
+			}
+		}
+
+		@page {
+			margin: 1in;
+		}
+
+		.collection-content {
+			font-size: 0.875rem;
+		}
+
+		.column-list {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.column {
+			padding: 0 1em;
+		}
+
+		.column:first-child {
+			padding-left: 0;
+		}
+
+		.column:last-child {
+			padding-right: 0;
+		}
+
+		.table_of_contents-item {
+			display: block;
+			font-size: 0.875rem;
+			line-height: 1.3;
+			padding: 0.125rem;
+		}
+
+		.table_of_contents-indent-1 {
+			margin-left: 1.5rem;
+		}
+
+		.table_of_contents-indent-2 {
+			margin-left: 3rem;
+		}
+
+		.table_of_contents-indent-3 {
+			margin-left: 4.5rem;
+		}
+
+		.table_of_contents-link {
+			text-decoration: none;
+			opacity: 0.7;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid rgba(55, 53, 47, 0.09);
+			border-collapse: collapse;
+		}
+
+		table {
+			border-left: none;
+			border-right: none;
+		}
+
+		th,
+		td {
+			font-weight: normal;
+			padding: 0.25em 0.5em;
+			line-height: 1.5;
+			min-height: 1.5em;
+			text-align: left;
+		}
+
+		th {
+			color: rgba(55, 53, 47, 0.6);
+		}
+
+		ol,
+		ul {
+			margin: 0;
+			margin-block-start: 0.6em;
+			margin-block-end: 0.6em;
+		}
+
+		li>ol:first-child,
+		li>ul:first-child {
+			margin-block-start: 0.6em;
+		}
+
+		ul>li {
+			list-style: disc;
+		}
+
+		ul.to-do-list {
+			padding-inline-start: 0;
+		}
+
+		ul.to-do-list>li {
+			list-style: none;
+		}
+
+		.to-do-children-checked {
+			text-decoration: line-through;
+			opacity: 0.375;
+		}
+
+		ul.toggle>li {
+			list-style: none;
+		}
+
+		ul {
+			padding-inline-start: 1.7em;
+		}
+
+		ul>li {
+			padding-left: 0.1em;
+		}
+
+		ol {
+			padding-inline-start: 1.6em;
+		}
+
+		ol>li {
+			padding-left: 0.2em;
+		}
+
+		.mono ol {
+			padding-inline-start: 2em;
+		}
+
+		.mono ol>li {
+			text-indent: -0.4em;
+		}
+
+		.toggle {
+			padding-inline-start: 0em;
+			list-style-type: none;
+		}
+
+		/* Indent toggle children */
+		.toggle>li>details {
+			padding-left: 1.7em;
+		}
+
+		.toggle>li>details>summary {
+			margin-left: -1.1em;
+		}
+
+		.selected-value {
+			display: inline-block;
+			padding: 0 0.5em;
+			background: rgba(206, 205, 202, 0.5);
+			border-radius: 3px;
+			margin-right: 0.5em;
+			margin-top: 0.3em;
+			margin-bottom: 0.3em;
+			white-space: nowrap;
+		}
+
+		.collection-title {
+			display: inline-block;
+			margin-right: 1em;
+		}
+
+		.page-description {
+			margin-bottom: 2em;
+		}
+
+		.simple-table {
+			margin-top: 1em;
+			font-size: 0.875rem;
+			empty-cells: show;
+		}
+
+		.simple-table td {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table th {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table-header-color {
+			background: rgb(247, 246, 243);
+			color: black;
+		}
+
+		.simple-table-header {
+			font-weight: 500;
+		}
+
+		time {
+			opacity: 0.5;
+		}
+
+		.icon {
+			display: inline-block;
+			max-width: 1.2em;
+			max-height: 1.2em;
+			text-decoration: none;
+			vertical-align: text-bottom;
+			margin-right: 0.5em;
+		}
+
+		img.icon {
+			border-radius: 3px;
+		}
+
+		.user-icon {
+			width: 1.5em;
+			height: 1.5em;
+			border-radius: 100%;
+			margin-right: 0.5rem;
+		}
+
+		.user-icon-inner {
+			font-size: 0.8em;
+		}
+
+		.text-icon {
+			border: 1px solid #000;
+			text-align: center;
+		}
+
+		.page-cover-image {
+			display: block;
+			object-fit: cover;
+			width: 100%;
+			max-height: 30vh;
+		}
+
+		.page-header-icon {
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+
+		.page-header-icon-with-cover {
+			margin-top: -0.72em;
+			margin-left: 0.07em;
+		}
+
+		.page-header-icon img {
+			border-radius: 3px;
+		}
+
+		.link-to-page {
+			margin: 1em 0;
+			padding: 0;
+			border: none;
+			font-weight: 500;
+		}
+
+		p>.user {
+			opacity: 0.5;
+		}
+
+		td>.user,
+		td>time {
+			white-space: nowrap;
+		}
+
+		input[type="checkbox"] {
+			transform: scale(1.5);
+			margin-right: 0.6em;
+			vertical-align: middle;
+		}
+
+		p {
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.image {
+			border: none;
+			margin: 1.5em 0;
+			padding: 0;
+			border-radius: 0;
+			text-align: center;
+		}
+
+		.code,
+		code {
+			background: rgba(135, 131, 120, 0.15);
+			border-radius: 3px;
+			padding: 0.2em 0.4em;
+			border-radius: 3px;
+			font-size: 85%;
+			tab-size: 2;
+		}
+
+		code {
+			color: #eb5757;
+		}
+
+		.code {
+			padding: 1.5em 1em;
+		}
+
+		.code-wrap {
+			white-space: pre-wrap;
+			word-break: break-all;
+		}
+
+		.code>code {
+			background: none;
+			padding: 0;
+			font-size: 100%;
+			color: inherit;
+		}
+
+		blockquote {
+			font-size: 1.25em;
+			margin: 1em 0;
+			padding-left: 1em;
+			border-left: 3px solid rgb(55, 53, 47);
+		}
+
+		.bookmark {
+			text-decoration: none;
+			max-height: 8em;
+			padding: 0;
+			display: flex;
+			width: 100%;
+			align-items: stretch;
+		}
+
+		.bookmark-title {
+			font-size: 0.85em;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			height: 1.75em;
+			white-space: nowrap;
+		}
+
+		.bookmark-text {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.bookmark-info {
+			flex: 4 1 180px;
+			padding: 12px 14px 14px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.bookmark-image {
+			width: 33%;
+			flex: 1 1 180px;
+			display: block;
+			position: relative;
+			object-fit: cover;
+			border-radius: 1px;
+		}
+
+		.bookmark-description {
+			color: rgba(55, 53, 47, 0.6);
+			font-size: 0.75em;
+			overflow: hidden;
+			max-height: 4.5em;
+			word-break: break-word;
+		}
+
+		.bookmark-href {
+			font-size: 0.75em;
+			margin-top: 0.25em;
+		}
+
+		.sans {
+			font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+		}
+
+		.code {
+			font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+		}
+
+		.serif {
+			font-family: Lyon-Text, Georgia, ui-serif, serif;
+		}
+
+		.mono {
+			font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+		}
+
+		.pdf .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR';
+		}
+
+		.pdf .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.pdf .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR';
+		}
+
+		.pdf .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.highlight-default {
+			color: rgba(55, 53, 47, 1);
+		}
+
+		.highlight-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.highlight-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.highlight-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.highlight-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.highlight-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.highlight-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.highlight-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.highlight-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.highlight-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.highlight-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.highlight-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.highlight-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.highlight-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.highlight-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.highlight-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.highlight-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.highlight-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.highlight-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.block-color-default {
+			color: inherit;
+			fill: inherit;
+		}
+
+		.block-color-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.block-color-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.block-color-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.block-color-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.block-color-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.block-color-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.block-color-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.block-color-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.block-color-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.block-color-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.block-color-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.block-color-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.block-color-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.block-color-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.block-color-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.block-color-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.block-color-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.block-color-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.select-value-color-interactiveBlue {
+			background-color: rgba(35, 131, 226, .07);
+		}
+
+		.select-value-color-pink {
+			background-color: rgba(245, 224, 233, 1);
+		}
+
+		.select-value-color-purple {
+			background-color: rgba(232, 222, 238, 1);
+		}
+
+		.select-value-color-green {
+			background-color: rgba(219, 237, 219, 1);
+		}
+
+		.select-value-color-gray {
+			background-color: rgba(227, 226, 224, 1);
+		}
+
+		.select-value-color-translucentGray {
+			background-color: rgba(255, 255, 255, 0.0375);
+		}
+
+		.select-value-color-orange {
+			background-color: rgba(250, 222, 201, 1);
+		}
+
+		.select-value-color-brown {
+			background-color: rgba(238, 224, 218, 1);
+		}
+
+		.select-value-color-red {
+			background-color: rgba(255, 226, 221, 1);
+		}
+
+		.select-value-color-yellow {
+			background-color: rgba(253, 236, 200, 1);
+		}
+
+		.select-value-color-blue {
+			background-color: rgba(211, 229, 239, 1);
+		}
+
+		.select-value-color-pageGlass {
+			background-color: undefined;
+		}
+
+		.select-value-color-washGlass {
+			background-color: undefined;
+		}
+
+		.checkbox {
+			display: inline-flex;
+			vertical-align: text-bottom;
+			width: 16;
+			height: 16;
+			background-size: 16px;
+			margin-left: 2px;
+			margin-right: 5px;
+		}
+
+		.checkbox-on {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+
+		.checkbox-off {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+	</style>
+</head>
+
+<body>
+	<article id="3d3b6805-28d0-41de-ae89-df8bc7ad8941" class="page sans">
+		<header>
+			<div class="page-header-icon undefined"><span class="icon">🗳️</span></div>
+			<h1 class="page-title">Decentralized Autonomous Organisation (DAO)</h1>
+			<p class="page-description"></p>
+		</header>
+		<div class="page-body">
+			<p id="e101298e-583f-4bd8-a8a7-4e6a600cbe3f" class="">
+			</p>
+			<h3 id="70a5d127-76b4-4e69-9719-7cbeff7eb1cf" class=""><em><strong>Notwendigkeit einer Verwaltungsbehörde
+						wird durch DAO Struktur überflüssig.</strong></em></h3>
+			<h3 id="71c618f8-ac92-4545-b6da-63556d197b39" class=""><em>Alle Mitglieder einer DAO haben die Möglichkeit
+					gleichermaßen an Entscheidungsprozessen teilzuhaben.</em></h3>
+			<h3 id="6c9c7193-cc42-464f-b512-3d7feee027c3" class=""><em>Das Ziel von DAOs ist eine faire und sichere
+					Koordinierung von Ressourcen in Richtung der Kernwerte und -ziele einer Community.</em></h3>
+			<p id="a3471677-f7b2-4f26-be9b-f95ec6473ca2" class="">
+			</p>
+			<h3 id="33aa52da-a1c9-4189-9b79-7a8f913dfc70" class=""><strong>Vorteile von DAOs:</strong></h3>
+			<p id="456b8caf-6922-472b-b231-d92f6afac734" class="">a) Einflussmöglichkeiten durch jedes einzelnes
+				Mitglieder der Organisation
+				b) geringere Kosten für Koordinierung durch Wegfallen des Verwaltungs- und Organisationsaufwands
+				c) Keine/ Flache Hierarchien und fließende Arbeitsströme
+				d) Organisation wird somit quasi von der Community/ den Community Members besessen und nicht von einer
+				übergeordneten Organisation selber</p>
+			<p id="8789e6e6-3e63-4fea-92f5-db9342cb1b3b" class="">
+			</p>
+			<h2 id="9d8dbaad-472e-46e8-99c9-b81a895c65cf" class=""><span
+					style="border-bottom:0.05em solid">Unterschiedliche DAO-Typen:</span></h2>
+			<ul id="8b6b1b2a-8c8a-4f78-a865-ddeff603cdb6" class="bulleted-list">
+				<li style="list-style-type:disc">DAO Operating Systems</li>
+			</ul>
+			<ul id="c97ffcb1-22b6-40c1-890b-49b62a8947e9" class="bulleted-list">
+				<li style="list-style-type:disc">Grants DAOs</li>
+			</ul>
+			<ul id="b43fe4ee-74e7-418c-b237-d61e15eab05a" class="bulleted-list">
+				<li style="list-style-type:disc">Protocol DAOs</li>
+			</ul>
+			<ul id="00ad7c4b-1486-4e58-aeb0-6078bc358ddf" class="bulleted-list">
+				<li style="list-style-type:disc">Investment DAOs</li>
+			</ul>
+			<ul id="4cc8f152-02c8-4700-bb07-6d66c25cf538" class="bulleted-list">
+				<li style="list-style-type:disc">Service DAOs</li>
+			</ul>
+			<ul id="5945892c-376d-4755-be6e-23188ea50502" class="bulleted-list">
+				<li style="list-style-type:disc">Social DAOs</li>
+			</ul>
+			<ul id="514e608d-1059-4e3f-bf5b-1f5db16bc701" class="bulleted-list">
+				<li style="list-style-type:disc">Collector DAOs</li>
+			</ul>
+			<ul id="01be7a18-7739-4658-962c-c483557ef5e8" class="bulleted-list">
+				<li style="list-style-type:disc">Media DAOs</li>
+			</ul>
+			<p id="85aeb327-4749-4c12-9e4e-353bee989ec3" class="">
+			</p>
+			<h3 id="c9fcb50f-84ca-4228-82f9-285670560aa3" class="">DAO Operating Systems</h3>
+			<ul id="0fa88a1d-a10e-4f50-8b32-908cea128827" class="bulleted-list">
+				<li style="list-style-type:disc">Diese Projekte bieten unterschiedliche Frameworks, Templates und
+					Werkzeuge die es Communities ohne technisches Know-How ermöglichen, eine DAO zu ihrem eigene Thema
+					zu kreieren.</li>
+			</ul>
+			<ul id="76686357-ed33-4e4d-87f9-74ce354f7d53" class="bulleted-list">
+				<li style="list-style-type:disc">Besitzen in der Regel on-chain Tools mit zugehörigen Smart Contracts
+					mit denen:
+					→ Ressourcen gesammelt, verwahrt und koordiniert/ verteilt werden können.
+					→ Abstimmungen effizient und fair durchgeführt werden können.
+					→ Kommunikation stattfinden kann
+					→ … (und mehr)</li>
+			</ul>
+			<ul id="d755cb06-9988-40af-8793-373ca9112ee1" class="bulleted-list">
+				<li style="list-style-type:disc">Beispiele:
+					→ Aragon
+					→ DaoStack
+					→ DaoHaus
+					→ Colony
+					→ Syndicate</li>
+			</ul>
+			<p id="7c114bf4-2e07-4669-8e20-41541d314461" class="">
+			</p>
+			<h3 id="edc8b391-e794-4c5a-9e4c-86533a686bfa" class="">Grants/ <strong>Philanthropy</strong> DAO</h3>
+			<ul id="9fec8b69-b2b0-4d59-a185-5d2e48d4b31a" class="bulleted-list">
+				<li style="list-style-type:disc">Communities sammeln Gelder von den Mitgliedern der eigenen Community
+					ein. Das innerhalb der DAO-Community wird dann entschieden, wie und auf welches Projekt das
+					gesammelte Kapital verwendet wird.</li>
+			</ul>
+			<ul id="b5e699a3-fd67-4fec-a30f-78c8fc6d1013" class="bulleted-list">
+				<li style="list-style-type:disc">Grants DAOs entstehen meist spezifisch für eine Domäne.
+					→ z. B. Grants für Open-source Softwareprodukte</li>
+			</ul>
+			<ul id="67659285-0460-495d-ba64-82aa18d1ed62" class="bulleted-list">
+				<li style="list-style-type:disc">Die Mitglieder/ Contributer sind nicht profitorientiert sondern
+					sozial-orientiert.
+					→ Sie erhalten im Gegensatz zu Investment DAOs keine Rendite.</li>
+			</ul>
+			<ul id="e47626df-d9c5-4959-a36d-baf235246449" class="bulleted-list">
+				<li style="list-style-type:disc">Beispiel:
+					→ Aave Grants
+					→ Gitcoin
+					→ Dream DAO
+					→ Uniswap Grants Program
+					→ Compound Grants
+					→ MetaCartel Ventures
+					→ MolochDAO
+					→ Audius Grants</li>
+			</ul>
+			<p id="400b4055-cd5f-4552-9d79-a707044c7143" class="">
+			</p>
+			<h3 id="cfec8a61-325b-46bc-b644-213ee921f42e" class="">Protocol DAOs</h3>
+			<ul id="6f9e67b7-08ff-4cb6-adc2-78f4d88fedee" class="bulleted-list">
+				<li style="list-style-type:disc">Protokolle bei denen über Veränderungen ausschließlich von der
+					Community gefällt werden.
+					→ Community Member können Ideen bezüglich grundlegender Netzwerkstrukturen äußern, kollektiv darüber
+					abstimmen und Änderungen implementieren bzw. dafür sorgen, dass sie implementiert werden.
+					→ u.a. sind viele DeFi Plattformen wie MakerDAO, Compound, Uniswap und AAVE so organisiert.</li>
+			</ul>
+			<ul id="c7cce135-d09b-4489-a220-063bc9eadf9f" class="bulleted-list">
+				<li style="list-style-type:disc">Protocol DAO war die erste DAO-Form, die transferfähige ERC20 Token
+					erstellt haben, die einen Gegenwert auf dem Zweitmarkt hatten und in Folge dessen auch oft als
+					Bezahl-Währung verwendet wurden.
+					→ Protocol DAO-Token helfen um die Entscheidungsebene der Protocol DAOs zu beschränken.
+					→ Nur Holder des protokolleigenen Tokens können an Entscheidungsfindungen partizipieren (wie oben
+					beschrieben).</li>
+			</ul>
+			<ul id="947aa58b-4fbd-446a-99c6-293ffe3e0990" class="bulleted-list">
+				<li style="list-style-type:disc">Beispiele:
+					→ MakerDAO
+					→ Compound
+					→ radicle
+					→ Uniswap
+					→ AAVE
+					→ Tornado Cash
+					→ Gitcoin
+					→ Lido
+					→ Olympus
+					→ Curve
+					→ RaribleDAO</li>
+			</ul>
+			<p id="408277d9-285a-48e2-b0bb-f47f6e94a586" class="">
+			</p>
+			<h3 id="ea51503a-f385-40a3-a881-411241325328" class="">Investment/ <strong>Collector</strong> DAOs</h3>
+			<ul id="8471175b-681c-4f63-af10-d4b6640db899" class="bulleted-list">
+				<li style="list-style-type:disc">Innerhalb der DAO werden finanzielle Mittel von den Mitgliedern
+					gesammelt und anschließend kollektiv darüber abgestimmt, worein sie investiert werden sollen.
+					→ DeFi Protokolle, NFTs, (Web3) Start Ups</li>
+			</ul>
+			<ul id="6c232032-95fc-4ea6-b7a7-32a8252a3ea2" class="bulleted-list">
+				<li style="list-style-type:disc">Profitorientierter Fokus
+					→ Mitglieder der DAO bekommen Rendite bei anschließendem Verkauf</li>
+			</ul>
+			<ul id="3b7bfd81-adb4-4421-b87e-85dd487398f4" class="bulleted-list">
+				<li style="list-style-type:disc">Beispiele:
+					→ BitDAO
+					→ flamingo
+					→ PleasrDAO
+					→ MetaCartel
+					→ Komorebi
+					→ theLAO
+					→ UdacityFund</li>
+			</ul>
+			<p id="5bcd0083-180f-469d-a6a1-f63542bab8b1" class="">
+			</p>
+			<h3 id="87f98015-5226-48ee-96ef-0b7e7d1cfc2e" class="">Service DAOs</h3>
+			<ul id="e8940a57-e897-441b-8320-109bc24a2971" class="bulleted-list">
+				<li style="list-style-type:disc">Fungieren als Talentvermittler
+					→ Formen dezentralisierte Arbeitsgemeinschaften die Aufträge nicht von Firmen oder Privatpersonen
+					erhalten, sondern von DAOs und diesen helfen sollen, die in diesem Rahmen getroffenen Entscheidungen
+					umzusetzen (z. B. die Programmierung eines Softwareproduktes).
+					→ Die Bezahlung erfolgt oftmals in Form von ERC20 Token.
+					→ Zeigt eine der ersten Iterationen der (möglichen) zukünftigen Crypto-basierten Beschäftigung.</li>
+			</ul>
+			<ul id="20cea366-6338-4b08-873e-19c74d3180af" class="bulleted-list">
+				<li style="list-style-type:disc">Beispiele:
+					→ VitaDAO
+					→ Raid Guild
+					→ DXdao
+					→ MetaFactory
+					→ Fire Eyes
+					→ Dao Haus
+					→ Yam DAO
+					→ Riverie</li>
+			</ul>
+			<p id="666d77bb-fa7a-42b2-b77b-77ac99ad3bcb" class="">
+			</p>
+			<h3 id="b923edf6-817a-45ca-bc60-c4eac29b6f44" class="">Social DAOs</h3>
+			<ul id="c92ac08c-6d04-4584-a56e-9b465041046b" class="bulleted-list">
+				<li style="list-style-type:disc">Formung von i. d. R. online-Gruppen mit gleichen oder ähnlichen
+					Interessen koordiniert um einen Token herum (kann auch NFT/ ERC721-Token sein).
+					→ z. B. muss man bestimmtes NFT oder eine vorgegebene Menge eines ERC20 Tokens kaufen, um Teil der
+					Community zu werden.
+					→ Durch die Organisation um einen Token, haben sie den Anreiz, eine wertvolle Gemeinschaft zu
+					schaffen.
+					→ Mitglieder der Community profitieren von dem Austausch innerhalb der Gruppe sowie exklusiven
+					(teils lokalen) Meetups und
+					Partys.</li>
+			</ul>
+			<ul id="fa35ccbf-75d9-442d-97c3-4bcda1924811" class="bulleted-list">
+				<li style="list-style-type:disc">Konzentrieren sich auf Sozialkapital anstatt auf Finanzkapital
+					→ Ziel der DAO ist es eine Gemeinschaft zwischen “like-minded people” zu schaffen und nicht etwa,
+					finanzielle oder philanthropische Ziele zu verfolgen (zumindest nicht primär).</li>
+			</ul>
+			<blockquote id="c9508eab-2574-4e47-9daa-39b9ea9136ba" class="">“Während Soziale Medien jede einzelne Person
+				in ein Medienunternehmen verwandeln, machen Social DAOs jeden Gruppen-Chat zu einem digitalen
+				Unternehmen.”</blockquote>
+			<ul id="0a92307e-ca71-4ab9-8c1d-552b790a56d4" class="bulleted-list">
+				<li style="list-style-type:disc">Nächster Evolutionsschritt von Gruppen-Chats und anderen Online Gruppen
+					mit geteilten Interessen
+					→ Es wird in Frage gestellt, was es heißt, Teil einer Gemeinschaft zu sein.
+					→ Bieten Möglichkeiten, sich in eine Gemeinschaft einzubringen und auch exklusiv davon zu
+					profitieren (nicht umbedingt monetär). </li>
+			</ul>
+			<ul id="c62bde30-396f-4a78-af99-b9972dfc5797" class="bulleted-list">
+				<li style="list-style-type:disc">Beispiele:
+					→ FWB (Friends With Benefits)
+					→ BAYC (Borded Ape Yacht Club)
+					→ Bright Moments</li>
+			</ul>
+			<p id="47fa32ac-aecd-491d-a96d-eddacef10748" class="">
+			</p>
+			<h3 id="303ea39f-39b9-4e55-87e8-7d0a13909dbc" class="">Media DAOs</h3>
+			<ul id="9bf9fb91-cb8b-4d68-bc6d-894e417b7d02" class="bulleted-list">
+				<li style="list-style-type:disc">Haben das Ziel, die Art und Weise neu zu erfinden, wie Konsumenten und
+					Produzenten unterschiedlicher Medien mit diesen interagieren.</li>
+			</ul>
+			<ul id="96ec93c2-612b-4c9a-a01d-e258512a5371" class="bulleted-list">
+				<li style="list-style-type:disc">Weg von werbebasiertem Einnahmemodell hin zu einem Token-System, bei
+					dem Produzenten und Konsumenten für ihre Zeit und Aufwand mit Eigentumsanteilen an einem bestimmten
+					Medium (in Form des eigenen Tokens) belohnt werden.</li>
+			</ul>
+			<ul id="01359c08-aa83-4f50-84bb-478b9a40462e" class="bulleted-list">
+				<li style="list-style-type:disc">Konsumenten sollen aktiv mitentscheiden, welche Inhalte produziert
+					werden und außerdem sollen sie selber eine aktive Rolle übernehmen, indem sie:
+					a) Inhalte produzieren
+					b) Recherche betreiben
+					c) graphische Designs erstellen
+					d) Texte übersetzen
+					e) Texte Korrektur lesen
+					f) Marketingdienstleitungen erbringen
+					g) (und) über wichtige Entscheidungen bezüglich der Leitung der Medien DAO abstimmen.
+					→ Anreiz dafür schafft ein eigener Token, den sie, wie oben genannt, entsprechend ihres Aufwands
+					erhalten.</li>
+			</ul>
+			<ul id="87f786a3-e1d9-4252-9511-7018ede7e009" class="bulleted-list">
+				<li style="list-style-type:disc">Beispiele:
+					→ BanklessDAO
+					→ MirrorDAO
+					→ PubDAO
+					→TruthDAO
+					→ Forefront</li>
+			</ul>
+			<p id="52a8b062-0241-46bb-83d4-59acf1ce445b" class="">
+			</p>
+			<div id="38b1319a-625c-44c5-961f-287d9c9c0ebd" class="column-list">
+				<div id="4e03d283-7dd1-4111-90fd-518623db268f" style="width:100%" class="column">
+					<h1 id="f139df9d-0c00-4fb3-b8f5-5040a999abb5" class="">Decentralized</h1>
+				</div>
+				<div id="170e9f44-505b-4fb9-82b5-2cf5358e95a3" style="width:100%" class="column">
+					<h1 id="db68847c-2e8b-4a7f-bd38-21d041650b52" class="">Autonomous</h1>
+				</div>
+				<div id="1b1ab7e7-ffab-42be-8ced-1d035b6ea7fc" style="width:100%" class="column">
+					<h1 id="68a6a0bf-bb82-40a1-9cbd-e1fe6a68a2df" class="">Organisation</h1>
+				</div>
+			</div>
+			<h3 id="3629b160-aa58-4183-91d0-84d7fe012e7c" class="">Decentralized:</h3>
+			<p id="6d033b34-9901-497d-b42b-1379000a6ef3" class="">… (siehe <a
+					href="https://www.notion.so/Zentralisierung-vs-Dezentralisierung-01589a80b1024d4690c6b7e07128c101?pvs=21">diese</a>
+				Notion-Seite)</p>
+			<p id="bd17388f-6098-4503-a2fb-d3908eb77280" class="">
+			</p>
+			<h3 id="bdff63f8-4e7f-4395-bdf4-0db62c301a0c" class="">Autonomous:</h3>
+			<ul id="58323a79-bafb-4303-b61d-aee68b84d949" class="bulleted-list">
+				<li style="list-style-type:disc">Zustand der Selbstbestimmung/ Unabhängigkeit/ Entscheidungs- und
+					Handlungsfreiheit</li>
+			</ul>
+			<ul id="1bfebd90-1f18-4064-90e4-52a5fad7f106" class="bulleted-list">
+				<li style="list-style-type:disc">Gegenteil: Heteronomie</li>
+			</ul>
+			<ul id="14277647-bd69-42e0-8962-3e78e7de15b8" class="bulleted-list">
+				<li style="list-style-type:disc">Aus der Psychologie:
+					Für eine sozial eingebundene Person steht eine partielle Fremdbestimmung nicht grundsätzlich im
+					Widerspruch zur Autonomie.</li>
+			</ul>
+			<ul id="72dde4f8-ab4e-4003-9018-635fb435d274" class="bulleted-list">
+				<li style="list-style-type:disc">Autonomie ist der Antrieb für eigenständiges Denken und Handeln.</li>
+			</ul>
+			<ul id="2588a6cc-2501-4530-898e-06d3528dadc3" class="bulleted-list">
+				<li style="list-style-type:disc">Aus der Pädagogik:
+					→ Unabhängigkeit (des Kindes) von gesellschaftlichen Einflüssen.
+					→ Gesellschaftliche Zwänge und Einengungen (z. B. ökonomische Situation/ Notsituation) können
+					Autonomie be- oder verhindern</li>
+			</ul>
+			<p id="dd634c93-6e5c-46a0-bd67-d4e24bec2065" class="">
+			</p>
+			<h3 id="b90158a9-edb0-4a86-b61d-d296579dd618" class="">Organisation:</h3>
+			<ul id="79c315a1-23cf-4997-88d5-7240d33d8ac5" class="bulleted-list">
+				<li style="list-style-type:disc">Wortherkunft: griechisch → <em>órganon = Werkzeug</em></li>
+			</ul>
+			<ul id="8ebdd1c9-2cf0-49fe-a6ed-34c8085b3e13" class="bulleted-list">
+				<li style="list-style-type:disc">Eine Organisation kann entweder ein Wirtschaftsobjekt, eine Tätigkeit
+					oder eine Funktion in Personenvereinigungen beschreiben.</li>
+			</ul>
+			<ul id="a50fa27e-ac56-419b-bdcc-7d6c44b0ca58" class="bulleted-list">
+				<li style="list-style-type:disc">Organisieren ist als Tätigkeit das planvolle Gestalten mit Hilfe von
+					Personal und Organisationsmitteln.</li>
+			</ul>
+			<ul id="cc35e7c8-2842-4d4e-91c7-46b384188f9c" class="bulleted-list">
+				<li style="list-style-type:disc">Die Gesamtheit aller Regelungen, die sich auf die Verteilung von
+					Aufgaben und Kompetenzen sowie die Abwicklung von Arbeitsprozessen beziehen</li>
+			</ul>
+			<ul id="34dd4874-7f77-4809-a739-7507b10537d7" class="bulleted-list">
+				<li style="list-style-type:disc">Jede Organisation ist auch ein System, aber umgekehrt ist nicht jedes
+					System eine Organisation.</li>
+			</ul>
+			<p id="bbe6e7b4-2447-4105-8937-a39641eba492" class="">
+			</p>
+			<p id="cda38463-9e6c-4e11-87fd-229e1774daa5" class="">
+			</p>
+			<h3 id="ada0fd8d-b906-47ae-8b4f-a7bcade1ee7b" class="">Geschichte von DAOs:</h3>
+			<ul id="3c004593-7012-488c-a089-2c6eb9c2c807" class="bulleted-list">
+				<li style="list-style-type:disc">Der Begriff wurde bereits 2013 von Vitalik Buterin erwähnt und 2016 mit
+					“The DAO” zum ersten mal öffentlich umgesetzt.</li>
+			</ul>
+			<p id="5adb855c-2c7e-477b-ab39-8f0f2c73af77" class=""><strong>The DAO</strong></p>
+			<ul id="62276a4e-59dc-471c-81f4-c044243f77ad" class="bulleted-list">
+				<li style="list-style-type:disc">“The DAO” war ein Venture Capital Fund, der in Unternehmen aus dem
+					Blockchain Bereich investierte → <strong>Gründung 2016</strong>.
+					→ Die Entscheidung, welche Unternehmen Gelder aus dem Fund erhalten, fand durch Abstimmungen
+					zwischen den Mitgliedern statt.
+					→ Anschließend wurden die Gelder mithilfe eines Smart Contracts automatisch an die Unternehmen
+					transferiert.
+					→ Erwirtschaftete Gewinne wurden an die Mitglieder der DAO zurückgeführt.</li>
+			</ul>
+			<ul id="52b15c06-229b-419a-9a55-d61e163c5d55" class="bulleted-list">
+				<li style="list-style-type:disc">Großer anfänglicher Erfolg → 12.7mil. ETH wurden aus der Community
+					gesammelt (ca. USD 150mio. zu der Zeit)</li>
+			</ul>
+			<ul id="1e64a178-d782-4f3b-982c-d2865018b4ba" class="bulleted-list">
+				<li style="list-style-type:disc">Großer exploit folgte zwei Monate nach der Einführung durch einen
+					Fehler im Code der DAO (nicht von Ethereum selber!)
+					→ Angreifer konnten den Smart Contract mehrfach ansprechen und ihr in die DAO investiertes Geld
+					zurückfordern, bevor der smart contract seine balance aktualisierte.
+					→ Diebstahl von 3.6mil. ETH (USD 70mil zu der Zeit)</li>
+			</ul>
+			<ul id="b1aaac99-afdd-4cfd-ac5d-0e31141a772c" class="bulleted-list">
+				<li style="list-style-type:disc">Ethereum Team entschied sich dafür, einen Hard Fork durchzuführen und
+					die Blockchain aufzusplitten in ETH (Ethereum) und ETC (Ethereum Classic).
+					→ Das Ethereum Team sah für die junge Blockchain ein hohes Risiko darin, dass sich eine so große
+					Menge an ETH in den Händen böswilliger Akteure befindet.
+					→ Ethereum begann basierte auf dem Stand der Blockchain von vor “The DAO” und somit vor dem exploit
+					→ Die gestohlenen ETH konnten in diesem einmaligen Ereignis an die ursprünglichen Besitzer
+					zurückgeführt werden. (Technische
+					Umsetzung deutlich komplexer als hier beschrieben)
+					→ Vitalik Buterin gab an, dass er den Hard Fork in der Retrospektive bereut.</li>
+			</ul>
+			<ul id="fa0a34a5-a88b-476e-8098-3c668ae0c9e0" class="bulleted-list">
+				<li style="list-style-type:disc">Der “The DAO” Hack wurde von vielen Menschen (vor allem außerhalb des
+					Spaces) als Fail des Proof-of-Concepts wahrgenommen und warf große Bedenken auf.
+					→ Menschen innerhalb des Spaces sahen eher die Innovationsmöglichkeiten darin
+					→ Der Hack warf begründete Fragen auf, folgende Themen betreffend:
+					a) Rechenschaftspflicht
+					b) Wie werden Fehler in DAO Protokollen korrigiert?
+					c) Wer trägt die Haftung bei exploits dieser Form?</li>
+			</ul>
+			<p id="786158bb-0372-4b97-8704-726c9b3bfa18" class="">
+			</p>
+			<p id="98daff52-3122-44c8-aeb5-25102bd1294a" class=""><strong>Andere DAO Plattformen oder andere
+					DAO-verwandte Projekte, die in Folge des Exploits entstanden sind (oder bereits davor
+					existierten):</strong></p>
+			<ul id="6f4ee099-6868-4406-82ae-a0a7d7c5a295" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>MakerDAO</strong>
+					→ MakerDAO entwickelt Lösungen zur Durchführung von Crypto Lending, Borrowing und besitzt ihren
+					eigenen stablecoin (DAI) auf der ETH-Blockchain.
+					→ MakerDAO kann als DeFi-Plattform betrachtet werden.
+					→ Mehr als 2% des gesamten ETH supplies sind auf dem MakerDAO Protokoll gelocked.</li>
+			</ul>
+			<ul id="2ebab24b-baf0-45da-829b-3be9020ade47" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>Aragon Network DAO
+					</strong>→ Aragon Client:
+					Framework mit dem jede Person einfach eine eigene DAO customizable erstellen und managen kann.
+					→ DAO Experts:
+					Plattform über die DAO Experten ihre Expertise anbieten, sowie gesucht und engagiert werden können
+					(zum Building der eigenen customized DAO)
+					→ Aragon App (future feature):
+					DAO Umgebung für unterschiedliche Organisationen wo sie ihren eigenen customized DAO space haben.
+				</li>
+			</ul>
+			<p id="b03aec40-e60c-448a-9b63-102c196e96fb" class="">
+			</p>
+			<p id="d78430be-07f9-4613-b040-437e36e97755" class="">
+			</p>
+			<p id="174df50a-2ced-49d5-8b8b-45f71c92f84b" class="">
+			</p>
+			<p id="cb98ac19-70ae-4fbd-ae55-0533130308aa" class="">Quellen:</p>
+			<p id="36e39c00-cb02-487b-9367-5e173ea84962" class="">The DAO: <a
+					href="https://superrare.com/magazine/2021/11/17/the-history-of-the-dao/#:~:text=The%20DAO%20was%20a%20venture,amount%20of%20equity%20in%20return">https://superrare.com/magazine/2021/11/17/the-history-of-the-dao/#:~:text=The
+					DAO was a venture,amount of equity in return</a>.</p>
+			<p id="05838cd4-803a-407d-a7f4-dc7709cf8e5f" class="">The DAO: <a
+					href="https://medium.com/swlh/the-story-of-the-dao-its-history-and-consequences-71e6a8a551ee">https://medium.com/swlh/the-story-of-the-dao-its-history-and-consequences-71e6a8a551ee</a>
+			</p>
+			<p id="55d679a2-8675-41d6-9b0d-dd4c95297813" class="">DAO Landscape: <a
+					href="https://coopahtroopa.mirror.xyz/_EDyn4cs9tDoOxNGZLfKL7JjLo5rGkkEfRa_a-6VEWw">https://coopahtroopa.mirror.xyz/_EDyn4cs9tDoOxNGZLfKL7JjLo5rGkkEfRa_a-6VEWw</a>
+			</p>
+			<p id="7a57c928-1031-4cac-acd8-3450d8c1d529" class="">DAOs: Social networks that can rewire the world: <a
+					href="https://www.coinbase.com/blog/daos-social-networks-that-can-rewire-the-world">https://www.coinbase.com/blog/daos-social-networks-that-can-rewire-the-world</a>
+			</p>
+			<p id="be1b8f9d-c008-494a-b835-86b6c8251160" class="">Autonomie: <a
+					href="https://de.wikipedia.org/wiki/Autonomie">https://de.wikipedia.org/wiki/Autonomie</a></p>
+			<p id="cedc0238-7ae2-402f-affd-6204b163ed51" class="">Organisation: <a
+					href="https://de.wikipedia.org/wiki/Organisation">https://de.wikipedia.org/wiki/Organisation</a></p>
+		</div>
+	</article>
+</body>
+
+</html>

@@ -1,0 +1,1149 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Web1.0 vs. Web2.0 vs. Web3.0 vs. Web3</title>
+	<style>
+		/* cspell:disable-file */
+		/* webkit printing magic: print all background colors */
+		html {
+			-webkit-print-color-adjust: exact;
+		}
+
+		* {
+			box-sizing: border-box;
+			-webkit-print-color-adjust: exact;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		@media only screen {
+			body {
+				margin: 2em auto;
+				max-width: 900px;
+				color: rgb(55, 53, 47);
+			}
+		}
+
+		body {
+			line-height: 1.5;
+			white-space: pre-wrap;
+		}
+
+		a,
+		a.visited {
+			color: inherit;
+			text-decoration: underline;
+		}
+
+		.pdf-relative-link-path {
+			font-size: 80%;
+			color: #444;
+		}
+
+		h1,
+		h2,
+		h3 {
+			letter-spacing: -0.01em;
+			line-height: 1.2;
+			font-weight: 600;
+			margin-bottom: 0;
+		}
+
+		.page-title {
+			font-size: 2.5rem;
+			font-weight: 700;
+			margin-top: 0;
+			margin-bottom: 0.75em;
+		}
+
+		h1 {
+			font-size: 1.875rem;
+			margin-top: 1.875rem;
+		}
+
+		h2 {
+			font-size: 1.5rem;
+			margin-top: 1.5rem;
+		}
+
+		h3 {
+			font-size: 1.25rem;
+			margin-top: 1.25rem;
+		}
+
+		.source {
+			border: 1px solid #ddd;
+			border-radius: 3px;
+			padding: 1.5em;
+			word-break: break-all;
+		}
+
+		.callout {
+			border-radius: 3px;
+			padding: 1rem;
+		}
+
+		figure {
+			margin: 1.25em 0;
+			page-break-inside: avoid;
+		}
+
+		figcaption {
+			opacity: 0.5;
+			font-size: 85%;
+			margin-top: 0.5em;
+		}
+
+		mark {
+			background-color: transparent;
+		}
+
+		.indented {
+			padding-left: 1.5em;
+		}
+
+		hr {
+			background: transparent;
+			display: block;
+			width: 100%;
+			height: 1px;
+			visibility: visible;
+			border: none;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+		}
+
+		img {
+			max-width: 100%;
+		}
+
+		@media only print {
+			img {
+				max-height: 100vh;
+				object-fit: contain;
+			}
+		}
+
+		@page {
+			margin: 1in;
+		}
+
+		.collection-content {
+			font-size: 0.875rem;
+		}
+
+		.column-list {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.column {
+			padding: 0 1em;
+		}
+
+		.column:first-child {
+			padding-left: 0;
+		}
+
+		.column:last-child {
+			padding-right: 0;
+		}
+
+		.table_of_contents-item {
+			display: block;
+			font-size: 0.875rem;
+			line-height: 1.3;
+			padding: 0.125rem;
+		}
+
+		.table_of_contents-indent-1 {
+			margin-left: 1.5rem;
+		}
+
+		.table_of_contents-indent-2 {
+			margin-left: 3rem;
+		}
+
+		.table_of_contents-indent-3 {
+			margin-left: 4.5rem;
+		}
+
+		.table_of_contents-link {
+			text-decoration: none;
+			opacity: 0.7;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid rgba(55, 53, 47, 0.09);
+			border-collapse: collapse;
+		}
+
+		table {
+			border-left: none;
+			border-right: none;
+		}
+
+		th,
+		td {
+			font-weight: normal;
+			padding: 0.25em 0.5em;
+			line-height: 1.5;
+			min-height: 1.5em;
+			text-align: left;
+		}
+
+		th {
+			color: rgba(55, 53, 47, 0.6);
+		}
+
+		ol,
+		ul {
+			margin: 0;
+			margin-block-start: 0.6em;
+			margin-block-end: 0.6em;
+		}
+
+		li>ol:first-child,
+		li>ul:first-child {
+			margin-block-start: 0.6em;
+		}
+
+		ul>li {
+			list-style: disc;
+		}
+
+		ul.to-do-list {
+			padding-inline-start: 0;
+		}
+
+		ul.to-do-list>li {
+			list-style: none;
+		}
+
+		.to-do-children-checked {
+			text-decoration: line-through;
+			opacity: 0.375;
+		}
+
+		ul.toggle>li {
+			list-style: none;
+		}
+
+		ul {
+			padding-inline-start: 1.7em;
+		}
+
+		ul>li {
+			padding-left: 0.1em;
+		}
+
+		ol {
+			padding-inline-start: 1.6em;
+		}
+
+		ol>li {
+			padding-left: 0.2em;
+		}
+
+		.mono ol {
+			padding-inline-start: 2em;
+		}
+
+		.mono ol>li {
+			text-indent: -0.4em;
+		}
+
+		.toggle {
+			padding-inline-start: 0em;
+			list-style-type: none;
+		}
+
+		/* Indent toggle children */
+		.toggle>li>details {
+			padding-left: 1.7em;
+		}
+
+		.toggle>li>details>summary {
+			margin-left: -1.1em;
+		}
+
+		.selected-value {
+			display: inline-block;
+			padding: 0 0.5em;
+			background: rgba(206, 205, 202, 0.5);
+			border-radius: 3px;
+			margin-right: 0.5em;
+			margin-top: 0.3em;
+			margin-bottom: 0.3em;
+			white-space: nowrap;
+		}
+
+		.collection-title {
+			display: inline-block;
+			margin-right: 1em;
+		}
+
+		.page-description {
+			margin-bottom: 2em;
+		}
+
+		.simple-table {
+			margin-top: 1em;
+			font-size: 0.875rem;
+			empty-cells: show;
+		}
+
+		.simple-table td {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table th {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table-header-color {
+			background: rgb(247, 246, 243);
+			color: black;
+		}
+
+		.simple-table-header {
+			font-weight: 500;
+		}
+
+		time {
+			opacity: 0.5;
+		}
+
+		.icon {
+			display: inline-block;
+			max-width: 1.2em;
+			max-height: 1.2em;
+			text-decoration: none;
+			vertical-align: text-bottom;
+			margin-right: 0.5em;
+		}
+
+		img.icon {
+			border-radius: 3px;
+		}
+
+		.user-icon {
+			width: 1.5em;
+			height: 1.5em;
+			border-radius: 100%;
+			margin-right: 0.5rem;
+		}
+
+		.user-icon-inner {
+			font-size: 0.8em;
+		}
+
+		.text-icon {
+			border: 1px solid #000;
+			text-align: center;
+		}
+
+		.page-cover-image {
+			display: block;
+			object-fit: cover;
+			width: 100%;
+			max-height: 30vh;
+		}
+
+		.page-header-icon {
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+
+		.page-header-icon-with-cover {
+			margin-top: -0.72em;
+			margin-left: 0.07em;
+		}
+
+		.page-header-icon img {
+			border-radius: 3px;
+		}
+
+		.link-to-page {
+			margin: 1em 0;
+			padding: 0;
+			border: none;
+			font-weight: 500;
+		}
+
+		p>.user {
+			opacity: 0.5;
+		}
+
+		td>.user,
+		td>time {
+			white-space: nowrap;
+		}
+
+		input[type="checkbox"] {
+			transform: scale(1.5);
+			margin-right: 0.6em;
+			vertical-align: middle;
+		}
+
+		p {
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.image {
+			border: none;
+			margin: 1.5em 0;
+			padding: 0;
+			border-radius: 0;
+			text-align: center;
+		}
+
+		.code,
+		code {
+			background: rgba(135, 131, 120, 0.15);
+			border-radius: 3px;
+			padding: 0.2em 0.4em;
+			border-radius: 3px;
+			font-size: 85%;
+			tab-size: 2;
+		}
+
+		code {
+			color: #eb5757;
+		}
+
+		.code {
+			padding: 1.5em 1em;
+		}
+
+		.code-wrap {
+			white-space: pre-wrap;
+			word-break: break-all;
+		}
+
+		.code>code {
+			background: none;
+			padding: 0;
+			font-size: 100%;
+			color: inherit;
+		}
+
+		blockquote {
+			font-size: 1.25em;
+			margin: 1em 0;
+			padding-left: 1em;
+			border-left: 3px solid rgb(55, 53, 47);
+		}
+
+		.bookmark {
+			text-decoration: none;
+			max-height: 8em;
+			padding: 0;
+			display: flex;
+			width: 100%;
+			align-items: stretch;
+		}
+
+		.bookmark-title {
+			font-size: 0.85em;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			height: 1.75em;
+			white-space: nowrap;
+		}
+
+		.bookmark-text {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.bookmark-info {
+			flex: 4 1 180px;
+			padding: 12px 14px 14px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.bookmark-image {
+			width: 33%;
+			flex: 1 1 180px;
+			display: block;
+			position: relative;
+			object-fit: cover;
+			border-radius: 1px;
+		}
+
+		.bookmark-description {
+			color: rgba(55, 53, 47, 0.6);
+			font-size: 0.75em;
+			overflow: hidden;
+			max-height: 4.5em;
+			word-break: break-word;
+		}
+
+		.bookmark-href {
+			font-size: 0.75em;
+			margin-top: 0.25em;
+		}
+
+		.sans {
+			font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+		}
+
+		.code {
+			font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+		}
+
+		.serif {
+			font-family: Lyon-Text, Georgia, ui-serif, serif;
+		}
+
+		.mono {
+			font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+		}
+
+		.pdf .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR';
+		}
+
+		.pdf .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.pdf .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR';
+		}
+
+		.pdf .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.highlight-default {
+			color: rgba(55, 53, 47, 1);
+		}
+
+		.highlight-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.highlight-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.highlight-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.highlight-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.highlight-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.highlight-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.highlight-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.highlight-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.highlight-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.highlight-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.highlight-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.highlight-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.highlight-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.highlight-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.highlight-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.highlight-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.highlight-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.highlight-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.block-color-default {
+			color: inherit;
+			fill: inherit;
+		}
+
+		.block-color-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.block-color-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.block-color-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.block-color-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.block-color-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.block-color-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.block-color-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.block-color-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.block-color-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.block-color-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.block-color-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.block-color-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.block-color-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.block-color-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.block-color-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.block-color-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.block-color-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.block-color-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.select-value-color-interactiveBlue {
+			background-color: rgba(35, 131, 226, .07);
+		}
+
+		.select-value-color-pink {
+			background-color: rgba(245, 224, 233, 1);
+		}
+
+		.select-value-color-purple {
+			background-color: rgba(232, 222, 238, 1);
+		}
+
+		.select-value-color-green {
+			background-color: rgba(219, 237, 219, 1);
+		}
+
+		.select-value-color-gray {
+			background-color: rgba(227, 226, 224, 1);
+		}
+
+		.select-value-color-translucentGray {
+			background-color: rgba(255, 255, 255, 0.0375);
+		}
+
+		.select-value-color-orange {
+			background-color: rgba(250, 222, 201, 1);
+		}
+
+		.select-value-color-brown {
+			background-color: rgba(238, 224, 218, 1);
+		}
+
+		.select-value-color-red {
+			background-color: rgba(255, 226, 221, 1);
+		}
+
+		.select-value-color-yellow {
+			background-color: rgba(253, 236, 200, 1);
+		}
+
+		.select-value-color-blue {
+			background-color: rgba(211, 229, 239, 1);
+		}
+
+		.select-value-color-pageGlass {
+			background-color: undefined;
+		}
+
+		.select-value-color-washGlass {
+			background-color: undefined;
+		}
+
+		.checkbox {
+			display: inline-flex;
+			vertical-align: text-bottom;
+			width: 16;
+			height: 16;
+			background-size: 16px;
+			margin-left: 2px;
+			margin-right: 5px;
+		}
+
+		.checkbox-on {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+
+		.checkbox-off {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+	</style>
+</head>
+
+<body>
+	<article id="032ec5fa-09f8-488a-9378-162538c3dbd0" class="page sans">
+		<header>
+			<div class="page-header-icon undefined"><span class="icon">📶</span></div>
+			<h1 class="page-title">Web1.0 vs. Web2.0 vs. Web3.0 vs. Web3</h1>
+			<p class="page-description"></p>
+		</header>
+		<div class="page-body">
+			<p id="d7e00d6a-84e2-4d8c-a1e4-a62e28a1504b" class="">
+			</p>
+			<h3 id="5b2a9c69-322d-45e2-82b1-aefbac42897e" class="">Main-Takeaways - Web3 in kurz:</h3>
+			<ul id="8a2899d8-0aa7-41f3-a623-6c15d4e3e612" class="bulleted-list">
+				<li style="list-style-type:disc">Das Web3 stellt eine Veränderung hinsichtlich der Sicht auf die Akteure
+					im Internet dar.
+					<strong>USER:
+					</strong>→ User besitzen nicht nur die volle Kontrolle darüber, wie sie im Internet interagieren,
+					sondern können tatsächlich das besitzen, was sie Kreieren (Beispiel: Instagram Posts und die Rechte
+					an der Monetarisierung gehören wirklich dir und nicht der Plattform).
+					→ Dies wird durch dezentrale Blockchainsysteme ermöglicht, die nicht mehr von zentralen Behörden
+					kontrolliert werden.
+					<strong>WEBSITE-OWNER:
+					</strong>→ Sind lediglich noch für die Konsolidierung (Zusammenführen) individueller Inhalte
+					unterschiedlicher Akteure zuständig.
+					→ Sie bieten UI/ UX und die Logik (Smart Contracts) der (dezentralen) Plattformen.
+				</li>
+			</ul>
+			<p id="00ace797-90a0-4772-b7cb-868055eaae78" class="">
+			</p>
+			<h3 id="32b598ca-b083-4f80-a93c-954ac9b71276" class="">Web1.0</h3>
+			<p id="751b2c57-899d-4e0f-a751-540a4099674d" class="">Zeitliche Einordnung: ca. 1991-2004</p>
+			<p id="679cd638-4c3f-4acc-b5e4-baac67e5f2d3" class=""><strong>“The mostly Read-only Web”</strong></p>
+			<ul id="d700950a-fb68-4a0f-924e-8d7fc8e3156c" class="bulleted-list">
+				<li style="list-style-type:disc">Die meisten Internetseiten bestanden aus statischen Webseiten und die
+					meisten Nutzer waren lediglich Konsumenten und keine Produzenten von Inhalten</li>
+			</ul>
+			<ul id="f0834ad6-4ab7-4e6c-a297-6754e1406386" class="bulleted-list">
+				<li style="list-style-type:disc"> Das Anzeigen von <strong>Werbung auf Webseiten</strong> während des
+					Surfens <strong>war untersagt</strong>!</li>
+			</ul>
+			<p id="75deb472-b79c-4fb1-8604-dd4a6155306e" class="">
+			</p>
+			<h3 id="ce39441a-1044-4404-9638-5ba571b8d800" class="">Web2.0</h3>
+			<p id="76378bfc-d138-467f-b447-a27240ee1198" class="">Zeitliche Einordnung: ca. 2004-heute</p>
+			<p id="9b3ebbf1-1ee8-4d97-84d1-8d2f77b1c323" class=""><strong>“The read and publish Web”</strong></p>
+			<ul id="0c8990fa-cf3a-445a-95c5-cb2b27032521" class="bulleted-list">
+				<li style="list-style-type:disc">Grundidee:
+					“The web as a platform”</li>
+			</ul>
+			<ul id="0f3557cf-f70d-4760-939d-a894b84295ce" class="bulleted-list">
+				<li style="list-style-type:disc">“Read and publish” → Web2.0 hat den Fokus auf der Teilhabe der
+					Gemeinschaft → UGC (User-Generated Content)</li>
+			</ul>
+			<ul id="0e47dc53-bf73-4587-9bd6-7643e0b7722b" class="bulleted-list">
+				<li style="list-style-type:disc">“The participative social Web”</li>
+			</ul>
+			<ul id="8170a766-bae7-4bb4-84d4-d8ba99456677" class="bulleted-list">
+				<li style="list-style-type:disc">Hat online-Communitys, Kollaboration, Dialog und Social Media
+					ermöglicht</li>
+			</ul>
+			<ul id="436dc93f-3068-48e0-8b46-66e51a3a12d1" class="bulleted-list">
+				<li style="list-style-type:disc">Dynamische Webseiten lade die User dazu ein, mit ihr zu interagieren
+					(statische Webseiten immer noch vorhanden!)</li>
+			</ul>
+			<p id="982d6819-7508-4313-844a-d92e8d0eb428" class="">
+			</p>
+			<h3 id="47eddb62-bf84-4c28-9b7d-54e15ef823da" class="">Web3.0</h3>
+			<p id="e4db1895-fed0-4ba3-98a1-e43737d77687" class="">Zeitliche Einordnung: In der Implementierung (manche
+				Stimmen sagen seit ca. 2006/ 2010)
+				→ Viele Elemente dessen sind bereits heute implementiert, kommen aufgrund noch fehlender technischer
+				Entwicklung aber nicht an den eigentlichen Gedanken von Web3.0 heran!</p>
+			<ul id="83b32505-56b6-4eb2-9ad5-86e3cba1a268" class="bulleted-list">
+				<li style="list-style-type:disc">Grundidee:
+					“The Semantic Web, an intelligent, autonomous and open internet that uses AI and Machine Learning to
+					act as a global brain and process context conceptually and contextually.”
+					→ Basiert auf (besserem) Verständnis der gesprochenen und geschriebenen Sprache anstatt auf Zahlen
+					und Keywords.
+					→ Schlaueres und reaktionsfähigeres Internet → Durch KI/ AI und Machine Learning</li>
+			</ul>
+			<ul id="97ad67ef-eb9d-4135-807b-edb166ef4f65" class="bulleted-list">
+				<li style="list-style-type:disc">IoT spielt große Rolle:
+					Die semantisch interpretierbare und machine-readable Metadata/ Information aller IoT-Geräte wird
+					kontextuell verarbeitet und trägt zu einem Wissens-Hebel des Internets bei, wodurch Suchen
+					sinnvoller verarbeitet werden können.</li>
+			</ul>
+			<ul id="cc663a02-530a-43e0-b964-cdd3a79a42d0" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>Abgrenzung zum Web3, was ein Teil des Web3.0 sein kann, mit
+						diesem aber nicht gleichzusetzen ist!</strong></li>
+			</ul>
+			<p id="856651dd-5a12-4828-b5c3-cae2a24fa570" class="">
+			</p>
+			<p id="3985912e-b00e-4be8-8290-6985d019d21e" class=""><strong>Buzzwords:</strong></p>
+			<ul id="72c1628c-4222-466f-ba86-25e479252802" class="bulleted-list">
+				<li style="list-style-type:disc">Semantic Web</li>
+			</ul>
+			<ul id="50cf34c9-ddb2-4fe6-9454-5541a796dd25" class="bulleted-list">
+				<li style="list-style-type:disc">AI/ Machine Learning</li>
+			</ul>
+			<p id="8e7f5978-ec83-4bc2-9804-502682f51a3e" class="">
+			</p>
+			<p id="6bc55fc6-1f10-40e6-a020-a39cfa088f82" class="">
+			</p>
+			<h3 id="bbc18c93-363e-4e20-8173-0d9309121715" class="">Web3</h3>
+			<p id="5c02ea2a-b5b5-4e5a-a148-fe44f7ba4338" class="">World Wide Web basierend auf öffentlichen Blockchains
+				→ <em>“decentralized online ecosystem based on blockchain”</em></p>
+			<p id="78c58dcd-7cbd-4512-a4ec-eef4f68130c4" class=""><strong>“The read, publish and execute Web”
+				</strong>also<strong> “The Web of reading, publishing and owning (your content and actions)”</strong> or
+				<strong>“The Read, Write and Control Web”</strong></p>
+			<ul id="54a3c5fc-09e8-4d27-9141-825fdeb42c77" class="bulleted-list">
+				<li style="list-style-type:disc">Grundidee:
+					“Decentralization, openness and more excellent user utility.”</li>
+			</ul>
+			<ul id="4994c0d1-e5fb-4049-b231-037351718742" class="bulleted-list">
+				<li style="list-style-type:disc">Weg von zentralisierten Plattformen (z. B. Facebook, die all ihre
+					User-Daten kennen und zu eigenen Zwecken nutzen und die Kontrolle über alle User-Accounts haben) hin
+					zu dezentralisierten Plattformen ohne “Leitungsorgan”, bei denen <strong>Partizipation ohne
+						Genehmigung durch</strong> eben dieses <strong>Leitungsorgan</strong> erfolgen kann.
+					→ Durch die dezentrale Strukturen und <strong>KEINEN alles zentral kontrollierenden Knotepunkt
+						(Node)</strong> gibt es <strong>KEINEN “Single Point of Failure”</strong>, wodurch es
+					<strong>KEINEN “Kill Switch”</strong> gibt und erfolgreiche Angriffe auf diese Strukturen fast
+					unmöglich sind!</li>
+			</ul>
+			<ul id="4ffbe6e5-5e13-49c3-a462-3a13e2ccb911" class="toggle">
+				<li>
+					<details open="">
+						<summary>Dennoch: interne Organisation möglich!</summary>
+						<ul id="6e084b2d-c146-4d58-858a-a380d7bd2d24" class="toggle">
+							<li>
+								<details open="">
+									<summary>Es besteht die Möglichkeit der Löschung von Inhalten, wenn z. B. ein vorher
+										festgelegter Schwellenwert an Gegenstimmen der Community dafür stimmen o.ä.
+										→ Dies ist nur ein denkbares Szenario, wie diese Plattformen trotzdem
+										organisiert werden können.</summary>
+								</details>
+							</li>
+						</ul>
+					</details>
+				</li>
+			</ul>
+			<ul id="75504152-515e-43be-a940-e6376268fd32" class="bulleted-list">
+				<li style="list-style-type:disc">Dadurch, dass alle User <strong>ohne zentrale Autorität oder
+						Koordinatoren</strong> interagieren können, werden sie zu <strong>Content Ownern anstatt von
+						Content Usern.</strong></li>
+			</ul>
+			<ul id="601bb0a9-984f-4f91-b299-17766fec15c7" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>UX ist noch ausbaufähig und umständlich</strong>, da die
+					heutige Interaktion mit Web3 Anwendungen in der Regel einige Schritte und ein gewisses Maß an
+					Wissen/ Verständnis voraussetzt.</li>
+			</ul>
+			<ul id="d2b19fd1-c299-46ae-b5d3-b8d8f38d7a0f" class="bulleted-list">
+				<li style="list-style-type:disc">Nähere <strong>User-Brand-Beziehung</strong> rückt in den Fokus.
+					→ User werden mehr in die Marke integriert, können Teil dessen werden und mit ihr interagieren.
+					a) Durch Mitentscheidungsrechte durch DAOs
+					b) Den Besitz eines (eigentlich unerreichbaren) Unternehmensassets (z. B. Lamborghini NFT,
+					auch bei Brands wie Lamborghini möglich, wo sich die meisten Menschen, vor allem jüngere, das
+					eigentliche Produkt nicht leisten können) wodurch sie sich ihm näher fühlen und spezielle Vorteile
+					genießen können.
+					c) Das </li>
+			</ul>
+			<p id="84c63a23-cd7b-45b1-9391-f9f515cfa8ce" class="">
+			</p>
+			<p id="60e4041b-c3bb-4865-919f-519e09e8190d" class=""><strong>Contra-Meinungen:</strong></p>
+			<ul id="afa18728-768e-47a5-b98a-5c686089fb7b" class="bulleted-list">
+				<li style="list-style-type:disc">Jack Dorsey, co-founder and former CEO of Twitter, opined that:
+					“<strong>Web3 will not democratize the internet</strong>, but it will <strong>shift power</strong>
+					from players like Facebook <strong>to venture capital funds</strong> like Andreessen Horowitz”.</li>
+			</ul>
+			<ul id="c9aef809-8195-4a79-b665-6e983a487e20" class="bulleted-list">
+				<li style="list-style-type:disc">Moxie Marlinspike, creator of Signal, articulated how <strong>Web3 is
+						not as decentralized as it appears to be</strong>, mainly due to <strong>consolidation in the
+						cryptocurrency field</strong>, including in blockchain application programming interfaces which
+					is currently mainly controlled by the companies Alchemy and Infura, cryptocurrency exchanges which
+					is mainly dominated by Binance, Coinbase, MetaMask, and OpenSea, and the stablecoin market which is
+					currently dominated by Tether.</li>
+			</ul>
+			<p id="96a75f0f-7bbd-42be-9e13-ce5b84f90e67" class="">
+			</p>
+			<p id="71e2135e-9bc4-460c-ac0e-0288484a59e7" class=""><strong>Buzzwords:</strong></p>
+			<ul id="8c36eb62-6023-4076-ad91-bebb16034eb4" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>Dezentralisation</strong> - Verteiltes System über viele
+					Knotenpunkte (Nodes) → Dadurch KEIN Single Point of Failure!</li>
+			</ul>
+			<ul id="58c43411-6d33-4bec-852a-3953886a7413" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>Trustless</strong> - Keine Steuerung durch zentralen
+					Autoritäten, sondern self-executing smart contracts (Code).</li>
+			</ul>
+			<ul id="64d86375-6c41-4e00-af07-3fc3ce8921d8" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>Openness/ Transparency</strong> - Nachvollziehbare Vorgänge und
+					Funktionsweisen, da alles (wie z. B. Smart Contracts) auf der Blockchain einsehbar ist.</li>
+			</ul>
+			<ul id="27ccf555-c355-4891-9c84-cde3c703956f" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>Immutability</strong> - Unveränderbarkeit von Außen von
+					Inhalten die auf der Blockchain liegen.</li>
+			</ul>
+			<ul id="3ae47a71-b99b-404e-b7b3-74c307b35d47" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>Privacy</strong> - Nur die umbedingt zur Erfüllung des Smart
+					Contracts erforderlichen Daten werden benötigt und in dem Sinne auch veröffentlicht - dies besteht
+					oftmals ausschließlich aus einer i. d. R. nicht identifizierbaren kryptographischen Adresse und
+					erfordert keine persönlichen Informationen</li>
+			</ul>
+			<p id="6e370d8c-e92b-4e61-a521-53f83c4c0154" class="">
+			</p>
+			<p id="ebf4f695-035d-45e8-9efa-e19eb8adcc18" class="">
+			</p>
+			<h3 id="7b621d6f-e18e-45ea-aa17-40d1ff82da38" class="">Finaler Vergleich:</h3>
+			<p id="2c10d20a-90d1-4966-8281-a9d0aec411f7" class="">
+			</p>
+			<div id="d07b6fd1-0ff4-4a97-b4e3-aa3a62ace360" class="column-list">
+				<div id="83cb92be-2306-4c89-a45c-cfe3ebb7e483" style="width:100%" class="column">
+					<h3 id="835188e7-4cf8-4f27-ac9a-7bc77d93d273" class="">Web1.0</h3>
+				</div>
+				<div id="4fa00af3-c89b-4c1e-8b0a-3b3406cdfa15" style="width:100%" class="column">
+					<h3 id="87e544c2-1529-461c-b3cb-8e1360793ccd" class="">Web2.0</h3>
+				</div>
+				<div id="0be9e638-0652-46c5-99be-fd9d21cb96d5" style="width:100%" class="column">
+					<h3 id="bdb3ea9d-767e-4e61-9e8e-bdb4d497f132" class="">Web3.0</h3>
+				</div>
+				<div id="ad773112-4854-42f2-944d-130d0286ab90" style="width:100%" class="column">
+					<h3 id="82040115-6e92-42f5-9808-22dac331b5b6" class="">Web3</h3>
+				</div>
+			</div>
+			<hr id="6666fa6d-29ee-43f8-828e-f58d6b6b5987" />
+			<p id="2bea2577-d4cf-4b5f-9b23-0d6daf0cd8ae" class=""><strong>Enabler</strong></p>
+			<div id="c1115296-c4cf-4585-bd20-198e11d08f71" class="column-list">
+				<div id="4edcefc9-05ba-4407-b2cd-3aa97e22d795" style="width:100%" class="column">
+					<p id="8925156a-2c2b-4543-9edc-3e49f080993e" class="">It helped people to find things online better.
+					</p>
+				</div>
+				<div id="ed6b2a61-b7fd-4801-b4eb-97c275ec9c89" style="width:100%" class="column">
+					<p id="0793f189-b115-40e0-a0be-a3000fe9d4ca" class="">It enabled people to experience things online
+						better.</p>
+				</div>
+				<div id="baa6d90e-4380-4b19-85a0-9c0b2fc915c5" style="width:100%" class="column">
+					<p id="e1b486e3-68dc-4a91-9908-87ef71a10ace" class="">It helped people find more contextual
+						information online faster.</p>
+				</div>
+				<div id="709708b1-f90e-46e6-a999-de9f520051ca" style="width:100%" class="column">
+					<p id="26d8b13e-5940-4c06-8f84-23a1dac172f7" class="">It helped people create things online better.
+						→ (Creator Economy ist Schlussfolgerung?!)</p>
+				</div>
+			</div>
+			<hr id="0d327556-c94a-4939-91c2-bba1c11d469b" />
+			<p id="a85738c8-b649-4e6f-9e69-585fdfcbf08d" class=""><strong>Interaction Types</strong></p>
+			<div id="a3772c39-dd3c-48e2-b067-9e4d2d2d4405" class="column-list">
+				<div id="1575ad72-6d6e-4b64-950d-273ca6c0f2ff" style="width:100%" class="column">
+					<p id="88317b88-aa4f-4f7d-91bf-690e05c54d2d" class="">Mostly Read-only</p>
+				</div>
+				<div id="b1242be8-0d75-4f3b-83d8-9c6ae11a2b3b" style="width:100%" class="column">
+					<p id="c5b4ab54-7283-4244-b3e2-4c7ea81cba4b" class="">Widely Read-Write</p>
+				</div>
+				<div id="67d10717-124e-46c5-b050-c977886b207c" style="width:100%" class="column">
+					<p id="928d3595-f2fe-4d37-96f1-a0014caee822" class="">Read-Write but Personal</p>
+				</div>
+				<div id="f7199008-ca40-4f66-ab47-c394459d2e8a" style="width:100%" class="column">
+					<p id="55eb60ee-7ffa-4d0e-ac64-3b40e6e61239" class="">Read, Write, Execute, Own, Control</p>
+				</div>
+			</div>
+			<hr id="7b5e474c-f495-472a-8c94-ae6531765bfd" />
+			<p id="a008995f-720e-4fbd-836e-a81db10a89e4" class=""><strong>Focus from webpage owners</strong></p>
+			<div id="ba5096cf-ff5e-43a8-9041-bb737fbb3055" class="column-list">
+				<div id="51c8f7c2-2555-422d-8f0d-83944739bcf5" style="width:100%" class="column">
+					<p id="c5587980-4ddf-4a55-bbde-006b05f43585" class="">Owning Content</p>
+				</div>
+				<div id="eaeabc14-0957-4c13-bcd3-d8101ec4e918" style="width:100%" class="column">
+					<p id="d8598dba-b155-49f3-ae41-1c747fc08c71" class="">Sharing Content</p>
+				</div>
+				<div id="6087bd67-1bc0-4e5b-952e-9b1613dace36" style="width:100%" class="column">
+					<p id="19e9c0c8-40a0-449d-84fc-697995a11758" class="">Consolidating Content
+						→ Zusammenfügen voneinander “unabhängiger Inhalte” zu einem Ganzen</p>
+				</div>
+				<div id="282fa814-cba8-4eb5-b1e0-2cb7db48331e" style="width:100%" class="column">
+					<p id="b90e8aaa-9307-4f89-9c75-8a301a954692" class="">Consolidating Content
+						→ Zusammenfügen voneinander “unabhängiger Inhalte” zu einem Ganzen</p>
+				</div>
+			</div>
+			<hr id="2d32c36b-9488-450b-a8b8-4bb1029553d4" />
+			<p id="8bf569b8-5ba1-4e8c-b73b-5795afed4d18" class=""><strong>Focus on customer</strong></p>
+			<div id="5e7f57e5-ea33-4635-965e-f8110334c66f" class="column-list">
+				<div id="00c53f09-0c7b-4a81-b2d2-66b53cb34bec" style="width:100%" class="column">
+					<p id="e184b222-4db0-4c71-8d25-a014b2d794a3" class="">Company Focus</p>
+				</div>
+				<div id="bedc09b4-9a9a-484c-bf4a-9a6e3f10e1c2" style="width:100%" class="column">
+					<p id="804681d7-ff9f-46bf-b841-18b6908a66d8" class="">Community Focus</p>
+				</div>
+				<div id="1d27f13f-2a8c-4180-9d61-5fa48f82653a" style="width:100%" class="column">
+					<p id="ef033f3f-066b-4e06-bcd1-6e4e4e6efa1d" class="">Individual Focus
+						→ On contextually better search results</p>
+				</div>
+				<div id="f0d1afeb-6305-4bed-9f59-6607ec9458a7" style="width:100%" class="column">
+					<p id="67b7814c-cf33-49a6-8d6f-373380ef6a22" class="">Individual Focus on people owning their
+						content</p>
+				</div>
+			</div>
+			<hr id="3d9d730d-d145-4758-ae42-4b220f620102" />
+			<p id="ce8ea6bd-d46a-4af8-8faf-275f8a2433e4" class=""><strong>Cost Structure</strong></p>
+			<div id="9c84b941-fed5-4832-afea-de49cac57dd7" class="column-list">
+				<div id="47756fd0-8fd0-4a4c-8c63-c86009402cba" style="width:100%" class="column">
+					<p id="7e920783-a72f-4b72-a67c-77a698ec82be" class="">Cost per page view</p>
+				</div>
+				<div id="833e6f47-05ba-4cba-b678-6f51798bf52e" style="width:100%" class="column">
+					<p id="9fb4d061-8d6a-46d6-ad18-8080f7a5a131" class="">Cost per Click</p>
+				</div>
+				<div id="2b9f570c-8f3a-4ee9-bb14-0e24aeef841e" style="width:100%" class="column">
+					<p id="f3874af6-f625-4965-997c-9702791f62f3" class="">Cost per user engagement</p>
+				</div>
+				<div id="57e2e5ec-5794-4590-b89e-764852532bb5" style="width:100%" class="column">
+					<p id="59fc3783-739a-447d-b84c-01913ed1cb84" class="">Cost per user engagement</p>
+				</div>
+			</div>
+			<hr id="95ae91c4-b9ec-4012-bd57-419d5d5bd1be" />
+			<p id="48b61f4b-e98b-4a93-953d-15872cabbc39" class="">
+			</p>
+			<p id="f4228cdb-5380-4a96-988b-39c6dc660764" class="">
+				Quellen:</p>
+			<p id="7b9bbf0e-c39b-4bed-84f4-6319ceb41766" class=""><a
+					href="https://en.wikipedia.org/wiki/Web3#:~:text=Web3%20(also%20known%20as%20Web,%2C%20and%20token%2Dbased%20economics.">https://en.wikipedia.org/wiki/Web3#:~:text=Web3(also%20known%20as%20Web,%2C%20and%20token%2Dbased%20economics.</a>
+			</p>
+			<p id="cb0aa4cb-8a5b-4680-8523-9eddf53b0927" class=""><a
+					href="https://en.wikipedia.org/wiki/Semantic_Web">https://en.wikipedia.org/wiki/Semantic_Web</a></p>
+			<p id="bba888a6-076a-4e17-866b-983097b0c8da" class=""><a
+					href="https://ethereum.org/en/developers/docs/web2-vs-web3/">https://ethereum.org/en/developers/docs/web2-vs-web3/</a>
+
+			</p>
+		</div>
+	</article>
+</body>
+
+</html>

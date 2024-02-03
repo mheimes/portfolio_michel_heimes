@@ -1,0 +1,1216 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Principles of well being - Tut-Mir-Gut-Liste (Mobile Edition)</title>
+	<style>
+		/* cspell:disable-file */
+		/* webkit printing magic: print all background colors */
+		html {
+			-webkit-print-color-adjust: exact;
+		}
+
+		* {
+			box-sizing: border-box;
+			-webkit-print-color-adjust: exact;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		@media only screen {
+			body {
+				margin: 2em auto;
+				max-width: 900px;
+				color: rgb(55, 53, 47);
+			}
+		}
+
+		body {
+			line-height: 1.5;
+			white-space: pre-wrap;
+		}
+
+		a,
+		a.visited {
+			color: inherit;
+			text-decoration: underline;
+		}
+
+		.pdf-relative-link-path {
+			font-size: 80%;
+			color: #444;
+		}
+
+		h1,
+		h2,
+		h3 {
+			letter-spacing: -0.01em;
+			line-height: 1.2;
+			font-weight: 600;
+			margin-bottom: 0;
+		}
+
+		.page-title {
+			font-size: 2.5rem;
+			font-weight: 700;
+			margin-top: 0;
+			margin-bottom: 0.75em;
+		}
+
+		h1 {
+			font-size: 1.875rem;
+			margin-top: 1.875rem;
+		}
+
+		h2 {
+			font-size: 1.5rem;
+			margin-top: 1.5rem;
+		}
+
+		h3 {
+			font-size: 1.25rem;
+			margin-top: 1.25rem;
+		}
+
+		.source {
+			border: 1px solid #ddd;
+			border-radius: 3px;
+			padding: 1.5em;
+			word-break: break-all;
+		}
+
+		.callout {
+			border-radius: 3px;
+			padding: 1rem;
+		}
+
+		figure {
+			margin: 1.25em 0;
+			page-break-inside: avoid;
+		}
+
+		figcaption {
+			opacity: 0.5;
+			font-size: 85%;
+			margin-top: 0.5em;
+		}
+
+		mark {
+			background-color: transparent;
+		}
+
+		.indented {
+			padding-left: 1.5em;
+		}
+
+		hr {
+			background: transparent;
+			display: block;
+			width: 100%;
+			height: 1px;
+			visibility: visible;
+			border: none;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+		}
+
+		img {
+			max-width: 100%;
+		}
+
+		@media only print {
+			img {
+				max-height: 100vh;
+				object-fit: contain;
+			}
+		}
+
+		@page {
+			margin: 1in;
+		}
+
+		.collection-content {
+			font-size: 0.875rem;
+		}
+
+		.column-list {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.column {
+			padding: 0 1em;
+		}
+
+		.column:first-child {
+			padding-left: 0;
+		}
+
+		.column:last-child {
+			padding-right: 0;
+		}
+
+		.table_of_contents-item {
+			display: block;
+			font-size: 0.875rem;
+			line-height: 1.3;
+			padding: 0.125rem;
+		}
+
+		.table_of_contents-indent-1 {
+			margin-left: 1.5rem;
+		}
+
+		.table_of_contents-indent-2 {
+			margin-left: 3rem;
+		}
+
+		.table_of_contents-indent-3 {
+			margin-left: 4.5rem;
+		}
+
+		.table_of_contents-link {
+			text-decoration: none;
+			opacity: 0.7;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid rgba(55, 53, 47, 0.09);
+			border-collapse: collapse;
+		}
+
+		table {
+			border-left: none;
+			border-right: none;
+		}
+
+		th,
+		td {
+			font-weight: normal;
+			padding: 0.25em 0.5em;
+			line-height: 1.5;
+			min-height: 1.5em;
+			text-align: left;
+		}
+
+		th {
+			color: rgba(55, 53, 47, 0.6);
+		}
+
+		ol,
+		ul {
+			margin: 0;
+			margin-block-start: 0.6em;
+			margin-block-end: 0.6em;
+		}
+
+		li>ol:first-child,
+		li>ul:first-child {
+			margin-block-start: 0.6em;
+		}
+
+		ul>li {
+			list-style: disc;
+		}
+
+		ul.to-do-list {
+			padding-inline-start: 0;
+		}
+
+		ul.to-do-list>li {
+			list-style: none;
+		}
+
+		.to-do-children-checked {
+			text-decoration: line-through;
+			opacity: 0.375;
+		}
+
+		ul.toggle>li {
+			list-style: none;
+		}
+
+		ul {
+			padding-inline-start: 1.7em;
+		}
+
+		ul>li {
+			padding-left: 0.1em;
+		}
+
+		ol {
+			padding-inline-start: 1.6em;
+		}
+
+		ol>li {
+			padding-left: 0.2em;
+		}
+
+		.mono ol {
+			padding-inline-start: 2em;
+		}
+
+		.mono ol>li {
+			text-indent: -0.4em;
+		}
+
+		.toggle {
+			padding-inline-start: 0em;
+			list-style-type: none;
+		}
+
+		/* Indent toggle children */
+		.toggle>li>details {
+			padding-left: 1.7em;
+		}
+
+		.toggle>li>details>summary {
+			margin-left: -1.1em;
+		}
+
+		.selected-value {
+			display: inline-block;
+			padding: 0 0.5em;
+			background: rgba(206, 205, 202, 0.5);
+			border-radius: 3px;
+			margin-right: 0.5em;
+			margin-top: 0.3em;
+			margin-bottom: 0.3em;
+			white-space: nowrap;
+		}
+
+		.collection-title {
+			display: inline-block;
+			margin-right: 1em;
+		}
+
+		.page-description {
+			margin-bottom: 2em;
+		}
+
+		.simple-table {
+			margin-top: 1em;
+			font-size: 0.875rem;
+			empty-cells: show;
+		}
+
+		.simple-table td {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table th {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table-header-color {
+			background: rgb(247, 246, 243);
+			color: black;
+		}
+
+		.simple-table-header {
+			font-weight: 500;
+		}
+
+		time {
+			opacity: 0.5;
+		}
+
+		.icon {
+			display: inline-block;
+			max-width: 1.2em;
+			max-height: 1.2em;
+			text-decoration: none;
+			vertical-align: text-bottom;
+			margin-right: 0.5em;
+		}
+
+		img.icon {
+			border-radius: 3px;
+		}
+
+		.user-icon {
+			width: 1.5em;
+			height: 1.5em;
+			border-radius: 100%;
+			margin-right: 0.5rem;
+		}
+
+		.user-icon-inner {
+			font-size: 0.8em;
+		}
+
+		.text-icon {
+			border: 1px solid #000;
+			text-align: center;
+		}
+
+		.page-cover-image {
+			display: block;
+			object-fit: cover;
+			width: 100%;
+			max-height: 30vh;
+		}
+
+		.page-header-icon {
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+
+		.page-header-icon-with-cover {
+			margin-top: -0.72em;
+			margin-left: 0.07em;
+		}
+
+		.page-header-icon img {
+			border-radius: 3px;
+		}
+
+		.link-to-page {
+			margin: 1em 0;
+			padding: 0;
+			border: none;
+			font-weight: 500;
+		}
+
+		p>.user {
+			opacity: 0.5;
+		}
+
+		td>.user,
+		td>time {
+			white-space: nowrap;
+		}
+
+		input[type="checkbox"] {
+			transform: scale(1.5);
+			margin-right: 0.6em;
+			vertical-align: middle;
+		}
+
+		p {
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.image {
+			border: none;
+			margin: 1.5em 0;
+			padding: 0;
+			border-radius: 0;
+			text-align: center;
+		}
+
+		.code,
+		code {
+			background: rgba(135, 131, 120, 0.15);
+			border-radius: 3px;
+			padding: 0.2em 0.4em;
+			border-radius: 3px;
+			font-size: 85%;
+			tab-size: 2;
+		}
+
+		code {
+			color: #eb5757;
+		}
+
+		.code {
+			padding: 1.5em 1em;
+		}
+
+		.code-wrap {
+			white-space: pre-wrap;
+			word-break: break-all;
+		}
+
+		.code>code {
+			background: none;
+			padding: 0;
+			font-size: 100%;
+			color: inherit;
+		}
+
+		blockquote {
+			font-size: 1.25em;
+			margin: 1em 0;
+			padding-left: 1em;
+			border-left: 3px solid rgb(55, 53, 47);
+		}
+
+		.bookmark {
+			text-decoration: none;
+			max-height: 8em;
+			padding: 0;
+			display: flex;
+			width: 100%;
+			align-items: stretch;
+		}
+
+		.bookmark-title {
+			font-size: 0.85em;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			height: 1.75em;
+			white-space: nowrap;
+		}
+
+		.bookmark-text {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.bookmark-info {
+			flex: 4 1 180px;
+			padding: 12px 14px 14px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.bookmark-image {
+			width: 33%;
+			flex: 1 1 180px;
+			display: block;
+			position: relative;
+			object-fit: cover;
+			border-radius: 1px;
+		}
+
+		.bookmark-description {
+			color: rgba(55, 53, 47, 0.6);
+			font-size: 0.75em;
+			overflow: hidden;
+			max-height: 4.5em;
+			word-break: break-word;
+		}
+
+		.bookmark-href {
+			font-size: 0.75em;
+			margin-top: 0.25em;
+		}
+
+		.sans {
+			font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+		}
+
+		.code {
+			font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+		}
+
+		.serif {
+			font-family: Lyon-Text, Georgia, ui-serif, serif;
+		}
+
+		.mono {
+			font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+		}
+
+		.pdf .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR';
+		}
+
+		.pdf .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.pdf .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR';
+		}
+
+		.pdf .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.highlight-default {
+			color: rgba(55, 53, 47, 1);
+		}
+
+		.highlight-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.highlight-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.highlight-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.highlight-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.highlight-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.highlight-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.highlight-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.highlight-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.highlight-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.highlight-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.highlight-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.highlight-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.highlight-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.highlight-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.highlight-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.highlight-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.highlight-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.highlight-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.block-color-default {
+			color: inherit;
+			fill: inherit;
+		}
+
+		.block-color-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.block-color-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.block-color-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.block-color-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.block-color-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.block-color-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.block-color-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.block-color-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.block-color-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.block-color-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.block-color-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.block-color-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.block-color-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.block-color-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.block-color-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.block-color-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.block-color-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.block-color-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.select-value-color-interactiveBlue {
+			background-color: rgba(35, 131, 226, .07);
+		}
+
+		.select-value-color-pink {
+			background-color: rgba(245, 224, 233, 1);
+		}
+
+		.select-value-color-purple {
+			background-color: rgba(232, 222, 238, 1);
+		}
+
+		.select-value-color-green {
+			background-color: rgba(219, 237, 219, 1);
+		}
+
+		.select-value-color-gray {
+			background-color: rgba(227, 226, 224, 1);
+		}
+
+		.select-value-color-translucentGray {
+			background-color: rgba(255, 255, 255, 0.0375);
+		}
+
+		.select-value-color-orange {
+			background-color: rgba(250, 222, 201, 1);
+		}
+
+		.select-value-color-brown {
+			background-color: rgba(238, 224, 218, 1);
+		}
+
+		.select-value-color-red {
+			background-color: rgba(255, 226, 221, 1);
+		}
+
+		.select-value-color-yellow {
+			background-color: rgba(253, 236, 200, 1);
+		}
+
+		.select-value-color-blue {
+			background-color: rgba(211, 229, 239, 1);
+		}
+
+		.select-value-color-pageGlass {
+			background-color: undefined;
+		}
+
+		.select-value-color-washGlass {
+			background-color: undefined;
+		}
+
+		.checkbox {
+			display: inline-flex;
+			vertical-align: text-bottom;
+			width: 16;
+			height: 16;
+			background-size: 16px;
+			margin-left: 2px;
+			margin-right: 5px;
+		}
+
+		.checkbox-on {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+
+		.checkbox-off {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+	</style>
+</head>
+
+<body>
+	<article id="9b1e641f-e7db-4d7a-a1d4-b36506fc889f" class="page sans">
+		<header><img class="page-cover-image"
+				src="https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-1.2.1&amp;q=80&amp;cs=tinysrgb&amp;fm=jpg&amp;crop=entropy"
+				style="object-position:center 50%" />
+			<div class="page-header-icon page-header-icon-with-cover"><span class="icon">♨️</span></div>
+			<h1 class="page-title">Principles of well being - Tut-Mir-Gut-Liste (Mobile Edition)</h1>
+			<p class="page-description"></p>
+		</header>
+		<div class="page-body">
+			<p id="1c4f9d3e-e8cb-4af8-993c-86ac6d9f3f48" class="">Eine interaktive Liste von Dingen die mir auffallend
+				gut tun.</p>
+			<p id="ca1a1c7c-ea90-47de-a029-f90884252a68" class="">Dinge die mir Kraft, Motivation, Ruhe, Spaß,
+				Begeisterung und noch vieles, vieles mehr geben und mir helfen, meine Linie zu finden, eine Balance zu
+				halten zwischen Arbeit und Freizeit/ anders genutzter Zeit und mit einem vollkommenen und
+				Glück-erfüllten Gefühl durch den Tag zu gehen. </p>
+			<p id="658109ce-f382-4092-9c42-2c029927085d" class="">Wichtig ist mir auch mit der Liste festzuhalten, wie
+				ich mit Rückschlägen, Unmotiviertheit und Verletzungen umgehen kann - denn nicht immer ist alles blumig.
+				Die Liste soll mir helfen, wie ich bewusst den Weg zurück finde.</p>
+			<p id="4d9c5509-2040-4ab1-b502-228ad6805cb1" class="">
+			</p>
+			<h2 id="cceb6977-0abc-4e78-904b-239f732b44ba" class="block-color-teal_background">Nr. 1 </h2>
+			<h3 id="8cc008fa-5599-412a-bdee-f5b32e06e590" class="">Dinge die mich begeistern zu lesen, schauen, hören,
+				schmecken/ etc. und sie vor allem aufzuschreiben und dadurch nachhaltiger zu verstehen.</h3>
+			<p id="46d81eff-24e4-4cbd-927c-641620830de7" class="">
+			</p>
+			<h2 id="aef03658-c367-4781-9b79-8810cf639382" class="block-color-teal_background">Nr. 2 </h2>
+			<h3 id="d9a90940-5171-4376-81dd-5f8933b63e4c" class="">Geregelter Schlafrhythmus - 7 Stunden Schlaf ist
+				aktuell optimal</h3>
+			<p id="8185e1db-bd73-4f22-b898-4c3f5d951a88" class="">Stand: 09.03.2022.
+				Dies war zu einer Zeit, in der ich sehr aktiv an meinen Projekten gearbeitet habe, wie insbesondere
+				Antrance (NFT-Analytics Tool), in der ich meist früh morgens aufgestanden bin.</p>
+			<p id="d25f81b0-3092-431c-99df-79ec77e20478" class="">“Der frühe Vogel fängt den Wurm!” → Ich bin daher
+				immer um ca. 23 Uhr ins Bett gegangen und um 06:00 Uhr aufgestanden. </p>
+			<p id="1075c99c-5ee1-420a-8a24-37b69cdb428c" class="">
+			</p>
+			<h2 id="bca23f9d-78f5-4786-a7f8-f47399b310d6" class="block-color-teal_background">Nr. 3</h2>
+			<h3 id="8d29a83d-4541-4087-96c9-59570efee77d" class="">Eher früher ins Bett gehen und früher aufstehen, als
+				umgekehrt. Dies gibt mir ein positives Gefühl, dem Tag voraus zu sein. </h3>
+			<p id="412fa573-8c67-48b0-b32f-cf4e3ce2fd02" class="">
+			</p>
+			<h2 id="6ec32205-a6cb-4095-8418-9bd1a62b16d4" class="block-color-teal_background">Nr. 4</h2>
+			<h3 id="11ac08fe-0bb4-4854-8f57-06856d946aef" class="">Überlegen was mir gut tut und es aufzuschreiben.</h3>
+			<p id="ba4cd2c7-c7ac-4b6d-a0fa-fde88beb4bf1" class="">
+			</p>
+			<h2 id="2e8d93f4-869b-4def-8bf2-3edbd5be10d7" class="block-color-teal_background">Nr. 5</h2>
+			<h3 id="22b4cf21-2cfa-4923-813d-0378261ac769" class="">Gezielte Auszeiten vom Arbeiten nehmen → Spazieren
+				gehen, Zeichnen, Sport, Kochen, Freunde besuchen, Musik hören, Musik machen (z. B. wieder Schlagzeug
+				spielen), …</h3>
+			<p id="6e74f558-50d5-4102-b20d-73cb8a55158a" class="">Die Liste kann erweitert werden!</p>
+			<h3 id="4e2c13ca-4b7c-40ac-8684-197c1aa6c633" class="">Mir fällt allerdings auch immer wieder auf, dass das
+				Nehmen von Auszeiten vor allem dann von Relevanz ist, wenn ich an Projekten arbeite denen ich mich voll
+				verschreibe. Arbeite ich im Gegensatz an Projekten die mich nicht so sehr begeistern, muss ich eher
+				schauen, dass ich mich nicht in Ablenkung verliere wie dem Social Media Konsum.</h3>
+			<p id="4e657a39-6d1d-42f8-afe9-d3e95e6e3b2c" class="">
+			</p>
+			<h2 id="81c9db22-9671-48cc-b4d5-0fc82c3ee4c6" class="block-color-teal_background">Nr. 6</h2>
+			<h3 id="e5d1575d-2387-45a3-bc8d-65adea958a30" class="">Rücksichts- und verständnisvoll mit anderen Menschen
+				umgehen.
+				Meine Erfahrung: Man bekommt was man gibt.</h3>
+			<p id="7f5e2036-3d25-47fe-b77d-931803de972b" class="">Dennoch: Mich und mein persönliches Wohlempfinden an
+				erster Stelle - denn nur wenn ich funktioniere, habe ich die Kraft auch anderen neben mir zu helfen.</p>
+			<p id="becb124d-9868-488c-8883-b8366461ede8" class="">
+			</p>
+			<h2 id="1ce6afd5-f5b7-4cfc-a907-4833d79221a1" class="block-color-teal_background">Nr. 7</h2>
+			<h3 id="7806a916-e7fc-4e95-a13e-9ceac0f018b3" class="">Morgenroutine - zunächst nicht ans Handy gehen, bevor
+				(nicht): </h3>
+			<p id="50bbd1da-a4ed-4bfe-a542-73888335797c" class="">a) Bett gemacht
+				b) Gewaschen und angezogen
+				c) Gefrühstückt</p>
+			<p id="8c5fc4ba-abdb-43fe-950b-04e0570a8a52" class="">
+			</p>
+			<h2 id="9cebc56c-8528-46bc-b0e5-c847c1889bb2" class="block-color-teal_background">Nr. 8</h2>
+			<h3 id="198c1606-d6b7-4496-b5ed-2695f052e7dc" class="">Ohne medialen Einfluss einschlafen - vor allem Handy!
+				(Reizüberflutung)</h3>
+			<ul id="b380aa3a-99c0-44ec-a99d-04a6cbe39b33" class="bulleted-list">
+				<li style="list-style-type:disc">Film/ Serie/ Podcast gelegentlich (Besonderes Happening daraus machen)
+				</li>
+			</ul>
+			<ul id="7e7f2565-4359-4bef-a21b-c5a87b4530b3" class="bulleted-list">
+				<li style="list-style-type:disc">Buch ist gut!</li>
+			</ul>
+			<p id="e3b6e124-f7ef-48bb-aece-3e830103467c" class="">
+			</p>
+			<h2 id="a1d3033a-c384-4c92-ac8a-5228155dce56" class="block-color-teal_background">Nr. 9</h2>
+			<h3 id="d2788efd-ca05-483f-875c-ed4abede6a6a" class="">Mich mit Freunden über ihre und meine letzten (sehr
+				allgemeinen) Errungenschaften austauschen.</h3>
+			<p id="99357579-415d-4875-9d1e-fa1c84bea1bb" class="">
+			</p>
+			<h2 id="e8b25a9a-519e-420c-bfde-77483855d827" class="block-color-teal_background">Nr. 10</h2>
+			<h3 id="26891dbd-acbe-4f3c-81fa-f6a6abe68361" class="">Selbstlose Dinge tun</h3>
+			<ul id="effd58a9-bb07-4e8c-b444-faaba1942075" class="bulleted-list">
+				<li style="list-style-type:disc">Geld spenden, Müll sammeln, Menschen nicht ignorieren (die von den
+					meisten anderen ignoriert werden), …</li>
+			</ul>
+			<p id="0ee53fbb-4cc6-44dd-bee0-3c8a58c2adb7" class="">
+			</p>
+			<h2 id="61156706-a27a-45e5-9676-701af4a493e9" class="block-color-teal_background">Nr. 11</h2>
+			<h3 id="c493ebc3-a9e6-4668-98f8-80404641711e" class="">Etwas organisieren von dem viele Menschen etwas haben
+				- Spaß/ Freude, Austausch, Bewegung, finanziell</h3>
+			<p id="31364e65-b8ce-481a-ac1c-96a412abb650" class="">
+			</p>
+			<h2 id="a812a1ed-df6c-41e0-bb3e-f80bfa0a0edb" class="block-color-teal_background">Nr. 12</h2>
+			<h3 id="a1e0014f-8b76-4cd9-b010-a90066afa53b" class="">Meine Umwelt bewusst wahrnehmen:</h3>
+			<ul id="fb88c608-f647-4348-b499-98434571954b" class="bulleted-list">
+				<li style="list-style-type:disc">z. B. bei Bahnfahrten durch die Stadt das Geschehen beobachten (nicht
+					nur am Handy sein).</li>
+			</ul>
+			<ul id="20466dd7-526a-4c4e-ba39-9044c677f413" class="bulleted-list">
+				<li style="list-style-type:disc">Den Geräuschen um mich herum lauschen und sie auf mich einwirken
+					lassen.</li>
+			</ul>
+			<ul id="3610a27b-01bf-4039-a49e-65de3d8fe36a" class="bulleted-list">
+				<li style="list-style-type:disc">Gutes design schätzen und mich dafür begeistern.</li>
+			</ul>
+			<ul id="eaf644e7-2bf1-475d-91d9-0e09b6ab8538" class="bulleted-list">
+				<li style="list-style-type:disc">Menschen anlächeln</li>
+			</ul>
+			<ul id="fad8ac3e-91c9-42ca-9c80-939584989285" class="bulleted-list">
+				<li style="list-style-type:disc">Menschen zuhören</li>
+			</ul>
+			<p id="f18aa178-2ef8-46e7-8940-03dd5d7935b5" class="">
+			</p>
+			<h2 id="ac9f818f-6174-45d6-8492-d736d99eb3ae" class="block-color-teal_background">Nr. 13</h2>
+			<h3 id="5142b727-7b7a-4e1c-8015-36c98d5a02f5" class="">Auch mal Dinge tun, die mit auf Dauer nicht so gut
+				tun - gelegentliche Ablenkung ist vollkommen in Ordnung!</h3>
+			<p id="3096566c-24fb-4488-9c18-33e6eae21eb6" class="">
+			</p>
+			<h2 id="5721533a-afd0-41cb-a567-5fd7a3f18f21" class="block-color-teal_background">Nr. 14</h2>
+			<h3 id="c188f5ff-a2a1-4b94-8a7c-71f4569099ed" class="">Neue Dinge ausprobieren für die ich mich eigentlich
+				schon lange Zeit begeistere. </h3>
+			<p id="b60f8bd3-97a1-43ea-9644-fd3e2e3943ca" class="">z. B.:</p>
+			<ul id="82fc5dfc-e33d-4666-ae02-80faa48bb943" class="bulleted-list">
+				<li style="list-style-type:disc">Schlagzeug spielen, Musik machen/ produzieren, Produktdesign (mit
+					Affinity360 o. ä.)</li>
+			</ul>
+			<p id="793c61e3-9d12-4834-aafc-23e3a69d8d60" class="">
+			</p>
+			<h2 id="fc98ea5f-e5d0-458d-8bb8-10afef5e46ef" class="block-color-teal_background">Nr. 15</h2>
+			<h3 id="e1dc0597-1c7c-45f4-85f0-a9c7162122a0" class="">“Dinge” priorisieren - nach Priorität abarbeiten.
+			</h3>
+			<p id="f070e505-56e9-4613-8706-472885c24f3d" class="">Wenn der unwichtigste Punkt nicht klappt, ist das halb
+				so schlimm.</p>
+			<p id="5a0d33d1-9e61-487e-8964-44b9d8ebb416" class="">
+			</p>
+			<h2 id="c45d96ac-9be6-49ef-bdb4-90b13240e573" class="block-color-teal_background">Nr. 16</h2>
+			<h3 id="0ef459dc-9018-4ef5-a09a-b569f7314f94" class="">Detaillierte Konzepte, Designs, Zeichnungen,
+				Schriften, Gedichte, … ausarbeiten.</h3>
+			<p id="a40eb0fb-f32a-4fd0-bb67-2d5b3cc1d6df" class="">
+			</p>
+			<h2 id="530981a1-11df-4005-a3b6-0a2748009d74" class="block-color-teal_background">Nr. 17</h2>
+			<h3 id="c6b1d0fb-4d75-4084-a895-c8b938a6bac4" class="">Meinen Gedanken und Gefühlen durch Dinge die ich
+				aufschreibe/ aufzeichne/ aufmale/ … Ausdruck verleihen.</h3>
+			<p id="5dd161c9-da50-4314-b612-b748a7cf1e88" class="">z. B.:</p>
+			<ul id="8b6b4c43-13d5-41b4-bd24-d874ab61d408" class="bulleted-list">
+				<li style="list-style-type:disc">Kunst, Gedichte, Zeichnungen</li>
+			</ul>
+			<p id="0c5bbdee-7664-4d9a-b250-b981ac027195" class="">
+			</p>
+			<h2 id="baca078d-000a-437d-b60e-71da9a2a60bb" class="block-color-teal_background">Nr. 18</h2>
+			<h3 id="0fc59709-3c7a-44d1-9096-d8ba7ddedd98" class="">Wenn ich überfordert bin und nicht weiß wo hin mit
+				mir oder wo ich anfangen soll etc. (oder es einfach an Motivation mangelt):</h3>
+			<h3 id="e510c83c-be28-4794-826b-27a8fba0f9ce" class="">Kleine Aufgaben erledigen (damit anfangen) und
+				Ordnung schaffen. </h3>
+			<p id="a4c94e5b-4fbe-4afc-af3a-7d87c6b3d7f6" class="">→ z. B. Zimmer aufräumen, Staubwischen, Klamotten
+				aufräumen/ sortieren, ausmisten, …</p>
+			<p id="7f6152d5-c7b4-4215-8796-78fc592b386e" class="">Dies reduziert alle Sachen die eh im Kopf herumfliegen
+				und früher oder später erledigt werden müssen! Macht den Kopf frei und Platz/ Motivation für die
+				wirklich relevanten Dinge.</p>
+			<p id="ebfe9e8e-e486-4911-8984-ac6d967c85db" class="">Dadurch, dass man mit eher banalen und fast schon
+				automatisiert ablaufenden Aufgaben beginnt, kommt man mit einer unheimlich geringen Hürde ins Machen und
+				kann sich währenddessen sogar schon in Ruhe über die folgenden aufwendigeren Vorhaben Gedanken machen.
+				Die Anfangshürde ist deutlich höher und schwieriger ohne Anfangsmotivation zu überwinden, wenn es sich
+				um völlig neue Aufgaben handelt, bei denen jeder Schritt neu gedacht werden muss.</p>
+			<h3 id="d003997a-b828-476c-b555-a0da11b36f31" class="">Kickstart!</h3>
+			<p id="2d1a8df8-0e62-45bb-bab8-dcfc5566e682" class="">
+			</p>
+			<h2 id="f12f01fe-07d7-4baa-b9bf-18a2b66c0c43" class="block-color-teal_background">Nr. 19</h2>
+			<h3 id="21148687-b3dc-45c6-80fa-694f5fc50462" class="">Thema eigener Horizont:</h3>
+			<h3 id="ad7bef15-3444-45ad-a31a-8df587a1ea45" class="">Den eigenen Horizont immer wieder erweitern bzw. es
+				nicht dazu kommen lassen, dass man zum Stillstand kommt (und ein festes Bild entsteht).</h3>
+			<ul id="8a3e6124-3b2c-4c72-b0b4-0cf939154d7d" class="bulleted-list">
+				<li style="list-style-type:disc">Die eigenen Ziele richten sich nach dem, wovon man sieht, was möglich
+					ist.</li>
+			</ul>
+			<ul id="544cd0f5-9721-4f51-a435-7d3f117b677c" class="bulleted-list">
+				<li style="list-style-type:disc">Durch: Podcasts, Gespräche mit interessanten GesprächspartnerInnen,
+					Bücher, Gespräche mit Personen mit denen man normalerweise keinen Austausch hätte.
+					Normalerweise = nicht getraut/ überwunden, nicht für “wichtig”/ interessant gehalten, nicht ergeben
+					(z. B. bei bekannten Persönlichkeiten)</li>
+			</ul>
+			<p id="2e51c76b-ad33-432b-a28f-a37688f6303f" class="">
+			</p>
+			<h2 id="00c8c622-a72f-49a4-933c-fe30bfdb5b29" class="block-color-teal_background">Nr. 20</h2>
+			<h3 id="1b581bae-17cd-41be-8752-9987fa9a42ab" class="">Wenn ich etwas machen/ lernen möchte, womit ich mich
+				allerdings noch nicht auskenne und wobei die Einstiegshürde relativ hoch scheint + Überforderung:</h3>
+			<ul id="448c4a59-34b8-4157-bfb1-80dfb18f661f" class="bulleted-list">
+				<li style="list-style-type:disc">Mich mit Menschen unterhalten die Expert*innen auf dem Gebiet sind was
+					ich lernen möchte. <ul id="02933731-91fb-4fe1-8cad-6401b8666f26" class="bulleted-list">
+						<li style="list-style-type:circle">Expert*innen = Person mit Erfahrung/ Touchpoints in dem Feld
+							→ muss kein*e vollkommene*r Expert*in sein!</li>
+					</ul>
+				</li>
+			</ul>
+			<ul id="4b355f65-451e-4129-86d7-179e605f3dc2" class="bulleted-list">
+				<li style="list-style-type:disc">Unwissenheit bezüglich neuer Themen verursachen oft Unsicherheit und
+					Überforderung. Mit Menschen zu reden, die mehr wissen als ich, bringt Motivation, Sicherheit und
+					Angriffspunkte anhand denen einem das Starten leichter fällt.</li>
+			</ul>
+			<p id="7623ebc0-103e-4e04-9793-802360f70ce0" class="">
+			</p>
+			<h2 id="a39a2f31-afc6-4c37-bc10-4e1de7b8a79d" class="block-color-teal_background">Nr. 21</h2>
+			<h3 id="ed3e82b4-21bb-45fe-8557-3d27d998e421" class="">Alleine Dinge unternehmen bei denen ich wirklich für
+				mich bin.
+				Besonders aktive Aktivitäten sind sehr förderlich und angenehm. </h3>
+			<p id="8f9b239a-4e34-45ed-8bab-663abdc68d81" class="">z. B. (mit Musik) alleine: im Auto fahren, Fahrrad
+				fahren, Joggen gehen, Reisen, Trainieren gehen, …</p>
+			<ul id="242f459c-e85e-4b6d-8cef-1416b21d9e43" class="bulleted-list">
+				<li style="list-style-type:disc">Dabei habe ich ganz oft ein unheimlich schönes und motivierendes Gefühl
+					und merke, wie groß und voller wunderbarer Dinge, Menschen und Möglichkeiten die Welt ist!</li>
+			</ul>
+			<ul id="641285d0-294a-40cf-bb7e-12c193fc8052" class="bulleted-list">
+				<li style="list-style-type:disc">Zusätzlich komme auf dabei auf gute Ideen, weil ich oftmals erst dann
+					richtig die Eindrücke aus meinem Leben verarbeiten kann.</li>
+			</ul>
+			<p id="4c330461-94c5-4e8d-9488-eb8c606a55bb" class="">
+			</p>
+			<h2 id="7c5f5259-7481-444a-809b-149c588f5bf4" class="block-color-teal_background">Nr. 22</h2>
+			<h3 id="51ede254-5424-4afa-80f6-73ba634b0d57" class="">Grundsätzlich: regelmäßig Sport treiben.</h3>
+			<ul id="2e18561c-01b0-43fe-8564-90cd5ec7f675" class="bulleted-list">
+				<li style="list-style-type:disc">Hält meinen Grundanspruch an mich selbst und meine Motivation oben, da
+					ich mich körperlich gut und fit fühle. Wenn das nicht der Fall ist, fällt es mir auch schwer, mich
+					mit anderen Dingen die ich mache, vollkommen wohl zu fühlen. </li>
+			</ul>
+			<p id="ed01c10a-60d4-4dc9-94c3-83b9c2deac0e" class="">
+			</p>
+			<h2 id="1ebf6575-74b5-44f0-99c9-9a9d7b98868f" class="block-color-teal_background">Nr. 23</h2>
+			<h3 id="304e0e6b-ba75-4ea9-89b2-1b317006c6cf" class="">Wenn mir etwas schwer fällt es oft zu machen, ich es
+				aber regelmäßig machen möchte (z. B. Sport, Lesen, Zeichnen, Arbeiten, Videos drehen, etc.), baue es ein
+				in (d)eine Routine.</h3>
+			<p id="00572f1d-da0d-4b65-8f27-cdcfc2d6e63f" class="">z. B. 07:00 Uhr aufstehen und irgendeine Art von Sport
+				machen bis max. 08:00/ 08:30 Uhr - jeden Tag.
+				→ Dies klappt nach aktuellem Stand sehr gut (Stand: 06.12.2022). Ich mache quasi jeden Morgen mein
+				klassisches <a href="https://www.youtube.com/watch?v=sWjTnBmCHTY">8mins abs Workout</a> in Kombination
+				damit, dass ich 1-3x die Woche joggen gehe (10km in der Regel). Mental tut mir dies sehr gut und auch
+				körperlich merke ich die Ergebnisse davon deutlich </p>
+			<p id="63cf013d-0a78-4638-9754-95724420bdf1" class="">
+			</p>
+			<h2 id="3b7c5d62-b6eb-4339-bec8-1f9b2c555c0d" class="block-color-teal_background">Nr. 24</h2>
+			<h3 id="e9d108f3-5467-446d-861b-d3cb2ded52d6" class="">Effizientes “Arbeiten” in der Form zwei oder sogar
+				mehr Dinge gleichzeitig zu tun, die vom Typ her zueinander passen (Beispiele folgen), fühlt sich in der
+				Regel gut an und dies besonders daher, weil man das Gefühl hat vieles zu schaffen und voran zu kommen.
+				(z. B. Podcast hören während Workout/ Joggen)</h3>
+			<h3 id="acf7d3c9-8a30-4e60-89d8-b0cd4896f1bd" class=""><span
+					style="border-bottom:0.05em solid">Dennoch</span> sollte man darauf achten und <mark
+					class="highlight-orange">sich manchmal dazu “zwingen”, auch mal einfach im Moment zu sein</mark>
+				<mark class="highlight-orange">und diesen zu genießen ohne viele Zusätze </mark>(z. B. essen ohne
+				nebenbei noch zu lesen, einen Podcast zu hören, ein Video zu schauen, Social Media zu nutzen, andere
+				Aufgaben zu erledigen).
+				Diese Momente sind klein aber unheimlich wertvoll, um herunterzukommen und sich nicht von der
+				Reizüberflutung einzuvernehmen lassen.
+				Es hilft außerdem vergangene Ereignisse, den Tag und herumschwirrende Ideen zu reflektieren und seine
+				Gedanken zu ordnen.
+				<mark class="highlight-orange">Dazu kommt man nicht oft und es ist eine Aufgabe um die man sich aktiv
+					kümmern muss!</mark>
+			</h3>
+			<p id="096eb0f6-0b1d-40d9-870f-72407d65d873" class="">
+			</p>
+			<h2 id="d49d2d8d-6e27-453e-9627-fdc0506953bf" class="block-color-teal_background">Nr. 25</h2>
+			<h3 id="4139d347-b171-4cb4-b8fc-7967f14a462e" class="">Bücher lesen von/ über Personen die mich inspirieren.
+				Dies bringt mich diesen Personen ein Stück näher und lässt mich hineinfühlen in ihre grundlegenden
+				Motivationen, Inspirationen und Überzeugungen, und diese verstehen.</h3>
+			<p id="4130157d-12eb-43b6-a7aa-0baa87af594e" class="">
+			</p>
+			<h2 id="c8be5fe2-fcf6-45e4-878b-8a83e334dcad" class="block-color-teal_background">Nr. 26</h2>
+			<h3 id="23d550f4-363b-400f-8677-9e110c2dc0a6" class="">Sich die Zeit für Dinge nehmen, die. an unter
+				Umständen aufschiebt weil man denkt, andere Sachen seien wichtiger. </h3>
+			<h3 id="de744b4e-e9b1-43fd-ae56-2ff3c2ecf57c" class="">z. B. der Tradeoff: Kreatives vs. Arbeiten</h3>
+			<h3 id="c8aa25b9-38ff-4a8c-a4f6-30bcc64c942c" class="">Dadurch kommt man lange nicht dazu sie zu machen.
+				Dies ist schade und führt zu Stress, da sich immer mehr solcher vermeintlich kleinen Dinge anstauen.
+			</h3>
+			<p id="3c391e87-50bd-4161-a06c-6221205237cd" class="">Mögliche Lösung: Einen Tag herausnehmen und vieles
+				davon erledigen. → Zeit bewusst nehmen, z. B. durch früheres Aufstehen.</p>
+			<p id="ed0ca5be-3944-4b58-85cb-1b104912be5d" class="">
+			</p>
+			<h2 id="44f1e1ba-d91b-4d6d-b8e4-08c7d7284d0e" class="block-color-teal_background">Nr. 27</h2>
+			<h3 id="fbc0e075-01d7-4ce2-945e-5603b3bf65ec" class="">Begeisterung für ein Thema fördert den Arbeits- und
+				Ideenfluss ungemein!</h3>
+			<p id="d1851be5-03a3-4ca0-b68a-9ec8e1e5670f" class="">Fällt dir das Arbeiten zu einem Thema schwer, schaue
+				dir unterschiedliche Ressourcen (Videos, Artikel, Podcasts, etc.) dazu an und lasse dich (zumindest ein
+				wenig mehr) begeistern!</p>
+			<p id="e8f37fdf-ff63-4a9a-9e9f-408b8c67c32d" class="">
+			</p>
+			<h2 id="51356b6b-102e-4fe3-b555-3660b576c75c" class="block-color-teal_background">Nr. 28</h2>
+			<h3 id="5371a718-1db9-44cd-a276-91143dff84af" class=""><mark class="highlight-orange">Mit Menschen zu reden
+					die etwas machen, was mich inspiriert und begeistert</mark> - was ich unter Umständen auch selber in
+				einer ähnlichen Form machen möchte hilft mir sehr, mich zu motivieren.</h3>
+			<h3 id="d5646284-532d-476e-9adb-00c78bb8f081" class=""><mark class="highlight-orange">Es ist das Umfeld in
+					dem ich mich bewege und die Menschen mit denen ich interagiere, die mich motivieren</mark> und die
+				intrinsische Motivation in mir ins Unermessliche schießen lassen, ebenso für meinen Weg zu arbeiten und
+				dafür zu kämpfen.</h3>
+			<p id="ffd100f4-31ec-4847-a30e-513a387af295" class="">→ ZZ (Zitat zwischendrin):</p>
+			<blockquote id="7e0c0b9b-353d-41c8-8d0c-1491f06ff061" class="">Relevanz erzeugt man durch Taten, nicht durch
+				Worte.
+				~Mike Meiré (ich glaube)</blockquote>
+			<h3 id="a0866716-d8f9-4913-9631-ac02c33b5c5e" class="">Durch Gespräche mit anderen Menschen die schon dort
+				sind, wo ich hinmöchte, hinsichtlich ihrer persönlichen Entwicklung samt Erfahrungen, Soft- und
+				Hard-Skills im Unternehmer*innen Kontext(!), oder weiter/ gleich weit sind wie ich, wird mir bewusst was
+				möglich ist.
+				<mark class="highlight-orange">Es entstehen neue Ideen und Verknüpfungen und Möglichkeiten offenbaren
+					sich.</mark>
+			</h3>
+			<p id="547d0a11-7003-496e-b58b-02b58e04691c" class="">
+			</p>
+			<h2 id="4a063a71-a1f0-4f9b-b353-a0670f593bc7" class="block-color-teal_background">Nr. 29</h2>
+			<h3 id="22c92718-4b14-4899-a2bc-13529d7a5507" class="">Schaffe (immer wieder wenn möglich) Berührungspunkte
+				zu Themen die dich inspirieren und begeistern, auch wenn sie noch so klein sind. </h3>
+			<ul id="3a35ecbd-23e0-4c4e-8589-662709864361" class="bulleted-list">
+				<li style="list-style-type:disc">Erfahrung/ Ideen zu neuen Themen mit denen ich mich befasse, kommen
+					nicht von jetzt auf gleich aber durch den ständigen Kontakt zum Kontext.</li>
+			</ul>
+			<ul id="15c300f8-a263-49da-9ba8-323f4b4ac590" class="bulleted-list">
+				<li style="list-style-type:disc">So kann man bereits durch minimale Inputs handlungsfähig werden!</li>
+			</ul>
+			<p id="b876fb43-e9de-4b02-931b-4bf862194b37" class="">
+			</p>
+			<h2 id="8cf4af83-58d6-48aa-b66d-a8db51041774" class="block-color-teal_background">Nr. 30</h2>
+			<h3 id="6e5c77c2-a378-4a9f-9af1-50ae3c1f16f7" class="">Mache dir keinen Stress wenn du (z. B. nach längerer
+				Inaktivität) gerade nicht genau weißt, was du machen sollst und was die nächsten Schritte sind/ deine
+				Mission ist, woraus sich Ziele ergeben für Milestones.</h3>
+			<ul id="27925394-9062-43c9-b3f9-e0c46564c7b1" class="bulleted-list">
+				<li style="list-style-type:disc">Halte dich an diese Liste, lasse dir von ihr Sicherheit geben und du
+					wirst wieder zum alten Stand kommen bzw. wirst du wissen, wie du weiter machen kannst/ sollst.</li>
+			</ul>
+			<ul id="fbec32f8-79ad-45af-a6eb-2f78a508725f" class="bulleted-list">
+				<li style="list-style-type:disc">Manchmal braucht es etwas Zeit, sich selbst wieder darauf
+					vorzubereiten, ins Arbeiten hinein zu kommen. </li>
+			</ul>
+			<p id="19b48f40-5f95-497c-8d9d-0d866f3aad4f" class="">
+			</p>
+			<h2 id="ada84a71-77e2-40bf-a98f-b4f2f509318c" class="block-color-teal_background">Nr. 31</h2>
+			<h3 id="5fd69423-3846-4760-8d8d-0b7020ad5bba" class="">Wenn mir vieles über den Kopf wächst, ich gerade
+				nicht das Gefühl habe meinen Linie zu haben, ich etwas Ruhe brauche, aber in der Form, dass ich für mich
+				sein möchte und mich auspowern möchte, oder einfach mal raus muss aus den gewohnten Mustern, dann treibe
+				Sport und gehe insbesondere joggen. </h3>
+			<ul id="320a7616-f48f-4692-9da0-3b13c0948c71" class="bulleted-list">
+				<li style="list-style-type:disc">Diese i. d. R. 50min Laufen + 10-15min Dehnen + 30min Duschen geben mir
+					sehr viel neue Energie!
+					Ich fühle mich danach nicht selten wie “neugeboren”.</li>
+			</ul>
+			<p id="20e82715-b69e-4c1d-9d6c-14f61a5683e5" class="">
+			</p>
+			<h2 id="01f75571-afbf-43c5-b7ad-12dc92688526" class="block-color-teal_background">Nr. 32</h2>
+			<h3 id="cdb3d614-961f-40cc-9302-a439208bd6d3" class="">Sammle Erfahrung wo es nur geht. </h3>
+			<h3 id="7a0ee7d1-5fad-4bae-9204-00a14c6b96e2" class="">Mache Praktikas, rede mit erfolgreichen aber auch mit
+				gescheiterten Menschen und Arbeite auf unterschiedlichen Gebieten.</h3>
+			<h3 id="0cde2ca3-6873-4ffc-8161-4d67fc1e7a36" class="">Immer jedoch mit der Absicht, etwas zu lernen und
+				neue Verknüpfungen zu erstellen.
+				Was ich damit meine ist, dass ich nicht etwa bei Werbeagentur “abc” und bei Restaurant “xyz” arbeiten
+				möchte, sondern bei Startup “a” und etabliertem Unternehmen von Gründer*in “ab” Erfahrungen sammeln und
+				von Unternehmer*in “asd” als Art Mentor*in lernen möchte.</h3>
+			<p id="38d64043-4e3d-435f-a95c-170eb7931547" class="">
+			</p>
+			<h2 id="553af29e-6036-4b15-8842-67c4f57ddf9b" class="block-color-teal_background">Nr. 33</h2>
+			<p id="982fd8a1-5786-4d9f-af68-142462c3956d" class="">Es bringt mir unheimlich viel </p>
+			<h3 id="e3665739-0fe7-4c14-9596-83cd445b4f0b" class="">Energie, Enthusiasmus und Freude, mich mit Themen zu
+				beschäftigen, bei denen ich das Gefühl habe, dass ich davon, insbesondere bezogen auf das große Thema
+				„Unternehmertum“, lernen kann!</h3>
+			<p id="ac5e05c7-502b-4f9b-a1b2-f822a892ed4e" class="">z. B. Videos schauen wie von <a
+					href="https://www.youtube.com/@eo9106">EO</a>, mit Menschen aus diesem Umfeld sprechen (möglich auch
+				auf Events → Startup Events?! (haben oft einen etwas unangenehmen Character aber gehen klar als
+				Einstieg)) und verwandte Artikel lesen.</p>
+			<p id="7251d0dd-de5f-45fe-8c87-1b324a883d95" class="">
+			</p>
+			<p id="340bb1e3-64dd-4bf7-a59a-17a8a7f882ff" class="">Sehr konkret:</p>
+			<h3 id="4c4b06c4-4064-42d5-ae27-97def20ecaff" class="">Um aus einem Tief/ Loch herauszukommen, hilft es mir
+				oft, mich intensiv mit einem content zu beschäftigen </h3>
+			<p id="d287d8dd-2fd0-4e8e-8f5c-474c391073c1" class="">wie einem Video eines/ einer erfolgreichen
+				Unternehmers/ Unternehmerin das mich begeistert und mir die wichtigsten learnings daraus aufzuschreiben.
+				Das bringt mir Ruhe und Motivation, auch wenn ich vorher nicht das Gefühl hatte weiter zu kommen.</p>
+			<p id="052d0240-3a90-4d01-b6af-e5fe83018175" class="">
+			</p>
+			<h2 id="cf15761a-a0f5-4da0-834d-294dcb5ba3fc" class="block-color-teal_background">Nr. 34</h2>
+			<p id="8dcb823e-d053-4070-b2e3-6a655a10aa0c" class="">Um strukturierter in den Tag zu starten fühlt es sich
+				gut an, </p>
+			<h3 id="1c002626-2ac6-44c8-beee-af0019b333b5" class=""><strong>am Tag/ Abend zuvor einen Plan mit den
+					Aufgaben zu erstellen</strong> (ob klein oder groß), die ich am nächsten Tag bearbeiten möchte.</h3>
+			<p id="c6c5257c-6996-4d6a-a6e8-7fa630ab970c" class="">
+			</p>
+		</div>
+	</article>
+</body>
+
+</html>

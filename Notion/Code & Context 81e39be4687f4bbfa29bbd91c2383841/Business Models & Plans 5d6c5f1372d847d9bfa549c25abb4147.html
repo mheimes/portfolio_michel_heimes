@@ -1,0 +1,3845 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Business Models &amp; Plans</title>
+	<style>
+		/* cspell:disable-file */
+		/* webkit printing magic: print all background colors */
+		html {
+			-webkit-print-color-adjust: exact;
+		}
+
+		* {
+			box-sizing: border-box;
+			-webkit-print-color-adjust: exact;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		@media only screen {
+			body {
+				margin: 2em auto;
+				max-width: 900px;
+				color: rgb(55, 53, 47);
+			}
+		}
+
+		body {
+			line-height: 1.5;
+			white-space: pre-wrap;
+		}
+
+		a,
+		a.visited {
+			color: inherit;
+			text-decoration: underline;
+		}
+
+		.pdf-relative-link-path {
+			font-size: 80%;
+			color: #444;
+		}
+
+		h1,
+		h2,
+		h3 {
+			letter-spacing: -0.01em;
+			line-height: 1.2;
+			font-weight: 600;
+			margin-bottom: 0;
+		}
+
+		.page-title {
+			font-size: 2.5rem;
+			font-weight: 700;
+			margin-top: 0;
+			margin-bottom: 0.75em;
+		}
+
+		h1 {
+			font-size: 1.875rem;
+			margin-top: 1.875rem;
+		}
+
+		h2 {
+			font-size: 1.5rem;
+			margin-top: 1.5rem;
+		}
+
+		h3 {
+			font-size: 1.25rem;
+			margin-top: 1.25rem;
+		}
+
+		.source {
+			border: 1px solid #ddd;
+			border-radius: 3px;
+			padding: 1.5em;
+			word-break: break-all;
+		}
+
+		.callout {
+			border-radius: 3px;
+			padding: 1rem;
+		}
+
+		figure {
+			margin: 1.25em 0;
+			page-break-inside: avoid;
+		}
+
+		figcaption {
+			opacity: 0.5;
+			font-size: 85%;
+			margin-top: 0.5em;
+		}
+
+		mark {
+			background-color: transparent;
+		}
+
+		.indented {
+			padding-left: 1.5em;
+		}
+
+		hr {
+			background: transparent;
+			display: block;
+			width: 100%;
+			height: 1px;
+			visibility: visible;
+			border: none;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+		}
+
+		img {
+			max-width: 100%;
+		}
+
+		@media only print {
+			img {
+				max-height: 100vh;
+				object-fit: contain;
+			}
+		}
+
+		@page {
+			margin: 1in;
+		}
+
+		.collection-content {
+			font-size: 0.875rem;
+		}
+
+		.column-list {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.column {
+			padding: 0 1em;
+		}
+
+		.column:first-child {
+			padding-left: 0;
+		}
+
+		.column:last-child {
+			padding-right: 0;
+		}
+
+		.table_of_contents-item {
+			display: block;
+			font-size: 0.875rem;
+			line-height: 1.3;
+			padding: 0.125rem;
+		}
+
+		.table_of_contents-indent-1 {
+			margin-left: 1.5rem;
+		}
+
+		.table_of_contents-indent-2 {
+			margin-left: 3rem;
+		}
+
+		.table_of_contents-indent-3 {
+			margin-left: 4.5rem;
+		}
+
+		.table_of_contents-link {
+			text-decoration: none;
+			opacity: 0.7;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid rgba(55, 53, 47, 0.09);
+			border-collapse: collapse;
+		}
+
+		table {
+			border-left: none;
+			border-right: none;
+		}
+
+		th,
+		td {
+			font-weight: normal;
+			padding: 0.25em 0.5em;
+			line-height: 1.5;
+			min-height: 1.5em;
+			text-align: left;
+		}
+
+		th {
+			color: rgba(55, 53, 47, 0.6);
+		}
+
+		ol,
+		ul {
+			margin: 0;
+			margin-block-start: 0.6em;
+			margin-block-end: 0.6em;
+		}
+
+		li>ol:first-child,
+		li>ul:first-child {
+			margin-block-start: 0.6em;
+		}
+
+		ul>li {
+			list-style: disc;
+		}
+
+		ul.to-do-list {
+			padding-inline-start: 0;
+		}
+
+		ul.to-do-list>li {
+			list-style: none;
+		}
+
+		.to-do-children-checked {
+			text-decoration: line-through;
+			opacity: 0.375;
+		}
+
+		ul.toggle>li {
+			list-style: none;
+		}
+
+		ul {
+			padding-inline-start: 1.7em;
+		}
+
+		ul>li {
+			padding-left: 0.1em;
+		}
+
+		ol {
+			padding-inline-start: 1.6em;
+		}
+
+		ol>li {
+			padding-left: 0.2em;
+		}
+
+		.mono ol {
+			padding-inline-start: 2em;
+		}
+
+		.mono ol>li {
+			text-indent: -0.4em;
+		}
+
+		.toggle {
+			padding-inline-start: 0em;
+			list-style-type: none;
+		}
+
+		/* Indent toggle children */
+		.toggle>li>details {
+			padding-left: 1.7em;
+		}
+
+		.toggle>li>details>summary {
+			margin-left: -1.1em;
+		}
+
+		.selected-value {
+			display: inline-block;
+			padding: 0 0.5em;
+			background: rgba(206, 205, 202, 0.5);
+			border-radius: 3px;
+			margin-right: 0.5em;
+			margin-top: 0.3em;
+			margin-bottom: 0.3em;
+			white-space: nowrap;
+		}
+
+		.collection-title {
+			display: inline-block;
+			margin-right: 1em;
+		}
+
+		.page-description {
+			margin-bottom: 2em;
+		}
+
+		.simple-table {
+			margin-top: 1em;
+			font-size: 0.875rem;
+			empty-cells: show;
+		}
+
+		.simple-table td {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table th {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table-header-color {
+			background: rgb(247, 246, 243);
+			color: black;
+		}
+
+		.simple-table-header {
+			font-weight: 500;
+		}
+
+		time {
+			opacity: 0.5;
+		}
+
+		.icon {
+			display: inline-block;
+			max-width: 1.2em;
+			max-height: 1.2em;
+			text-decoration: none;
+			vertical-align: text-bottom;
+			margin-right: 0.5em;
+		}
+
+		img.icon {
+			border-radius: 3px;
+		}
+
+		.user-icon {
+			width: 1.5em;
+			height: 1.5em;
+			border-radius: 100%;
+			margin-right: 0.5rem;
+		}
+
+		.user-icon-inner {
+			font-size: 0.8em;
+		}
+
+		.text-icon {
+			border: 1px solid #000;
+			text-align: center;
+		}
+
+		.page-cover-image {
+			display: block;
+			object-fit: cover;
+			width: 100%;
+			max-height: 30vh;
+		}
+
+		.page-header-icon {
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+
+		.page-header-icon-with-cover {
+			margin-top: -0.72em;
+			margin-left: 0.07em;
+		}
+
+		.page-header-icon img {
+			border-radius: 3px;
+		}
+
+		.link-to-page {
+			margin: 1em 0;
+			padding: 0;
+			border: none;
+			font-weight: 500;
+		}
+
+		p>.user {
+			opacity: 0.5;
+		}
+
+		td>.user,
+		td>time {
+			white-space: nowrap;
+		}
+
+		input[type="checkbox"] {
+			transform: scale(1.5);
+			margin-right: 0.6em;
+			vertical-align: middle;
+		}
+
+		p {
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.image {
+			border: none;
+			margin: 1.5em 0;
+			padding: 0;
+			border-radius: 0;
+			text-align: center;
+		}
+
+		.code,
+		code {
+			background: rgba(135, 131, 120, 0.15);
+			border-radius: 3px;
+			padding: 0.2em 0.4em;
+			border-radius: 3px;
+			font-size: 85%;
+			tab-size: 2;
+		}
+
+		code {
+			color: #eb5757;
+		}
+
+		.code {
+			padding: 1.5em 1em;
+		}
+
+		.code-wrap {
+			white-space: pre-wrap;
+			word-break: break-all;
+		}
+
+		.code>code {
+			background: none;
+			padding: 0;
+			font-size: 100%;
+			color: inherit;
+		}
+
+		blockquote {
+			font-size: 1.25em;
+			margin: 1em 0;
+			padding-left: 1em;
+			border-left: 3px solid rgb(55, 53, 47);
+		}
+
+		.bookmark {
+			text-decoration: none;
+			max-height: 8em;
+			padding: 0;
+			display: flex;
+			width: 100%;
+			align-items: stretch;
+		}
+
+		.bookmark-title {
+			font-size: 0.85em;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			height: 1.75em;
+			white-space: nowrap;
+		}
+
+		.bookmark-text {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.bookmark-info {
+			flex: 4 1 180px;
+			padding: 12px 14px 14px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.bookmark-image {
+			width: 33%;
+			flex: 1 1 180px;
+			display: block;
+			position: relative;
+			object-fit: cover;
+			border-radius: 1px;
+		}
+
+		.bookmark-description {
+			color: rgba(55, 53, 47, 0.6);
+			font-size: 0.75em;
+			overflow: hidden;
+			max-height: 4.5em;
+			word-break: break-word;
+		}
+
+		.bookmark-href {
+			font-size: 0.75em;
+			margin-top: 0.25em;
+		}
+
+		.sans {
+			font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+		}
+
+		.code {
+			font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+		}
+
+		.serif {
+			font-family: Lyon-Text, Georgia, ui-serif, serif;
+		}
+
+		.mono {
+			font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+		}
+
+		.pdf .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR';
+		}
+
+		.pdf .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.pdf .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR';
+		}
+
+		.pdf .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.highlight-default {
+			color: rgba(55, 53, 47, 1);
+		}
+
+		.highlight-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.highlight-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.highlight-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.highlight-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.highlight-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.highlight-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.highlight-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.highlight-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.highlight-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.highlight-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.highlight-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.highlight-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.highlight-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.highlight-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.highlight-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.highlight-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.highlight-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.highlight-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.block-color-default {
+			color: inherit;
+			fill: inherit;
+		}
+
+		.block-color-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.block-color-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.block-color-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.block-color-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.block-color-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.block-color-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.block-color-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.block-color-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.block-color-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.block-color-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.block-color-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.block-color-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.block-color-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.block-color-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.block-color-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.block-color-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.block-color-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.block-color-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.select-value-color-interactiveBlue {
+			background-color: rgba(35, 131, 226, .07);
+		}
+
+		.select-value-color-pink {
+			background-color: rgba(245, 224, 233, 1);
+		}
+
+		.select-value-color-purple {
+			background-color: rgba(232, 222, 238, 1);
+		}
+
+		.select-value-color-green {
+			background-color: rgba(219, 237, 219, 1);
+		}
+
+		.select-value-color-gray {
+			background-color: rgba(227, 226, 224, 1);
+		}
+
+		.select-value-color-translucentGray {
+			background-color: rgba(255, 255, 255, 0.0375);
+		}
+
+		.select-value-color-orange {
+			background-color: rgba(250, 222, 201, 1);
+		}
+
+		.select-value-color-brown {
+			background-color: rgba(238, 224, 218, 1);
+		}
+
+		.select-value-color-red {
+			background-color: rgba(255, 226, 221, 1);
+		}
+
+		.select-value-color-yellow {
+			background-color: rgba(253, 236, 200, 1);
+		}
+
+		.select-value-color-blue {
+			background-color: rgba(211, 229, 239, 1);
+		}
+
+		.select-value-color-pageGlass {
+			background-color: undefined;
+		}
+
+		.select-value-color-washGlass {
+			background-color: undefined;
+		}
+
+		.checkbox {
+			display: inline-flex;
+			vertical-align: text-bottom;
+			width: 16;
+			height: 16;
+			background-size: 16px;
+			margin-left: 2px;
+			margin-right: 5px;
+		}
+
+		.checkbox-on {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+
+		.checkbox-off {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+	</style>
+</head>
+
+<body>
+	<article id="5d6c5f13-72d8-47d9-bfa5-49c25abb4147" class="page sans">
+		<header>
+			<div class="page-header-icon undefined"><span class="icon">📁</span></div>
+			<h1 class="page-title">Business Models &amp; Plans</h1>
+			<p class="page-description"></p>
+		</header>
+		<div class="page-body">
+			<details open="">
+				<summary style="font-weight:600;font-size:1.875em;line-height:1.3">Prüfungsleistung, -bewertung und
+					scope</summary>
+				<div class="indented">
+					<h3 id="f0eb801f-a483-4f08-a08e-ed5be2817304" class="">Prüfungsleistung:</h3>
+					<ul id="a009ac2b-bd87-4494-b94f-14ec9dc0c559" class="bulleted-list">
+						<li style="list-style-type:disc">Business Modell + Business Plan Ausarbeitung</li>
+					</ul>
+					<ul id="11ba0384-6793-44dd-8624-dffdd716c565" class="bulleted-list">
+						<li style="list-style-type:disc">max. 2 Personen</li>
+					</ul>
+					<ul id="d66e8b14-be37-4917-9c11-63f62a226d0e" class="bulleted-list">
+						<li style="list-style-type:disc">Die Leistungen der einzelnen Teammitglieder kennzeichnen
+							(individuelle Notenzuweisung)</li>
+					</ul>
+					<ul id="604236b8-551f-4489-8498-43270b82b80e" class="bulleted-list">
+						<li style="list-style-type:disc">Themenanmeldung bis 11.11. 12:00 Uhr - Abgabeschluss:
+							07.01.2023 (23:59 Uhr) → per Email</li>
+					</ul>
+					<ul id="0e19dc8a-a2b9-47b8-ba03-b0e66a42d96b" class="bulleted-list">
+						<li style="list-style-type:disc">Abschlusspräsentation: Video (Präsentation der Ergebnisse →
+							max. 15 min pro Teammitglied)
+							→ Youtube hochladen und Link teilen</li>
+					</ul>
+					<h3 id="3b017d37-46b9-44f1-ade3-a51fcc9feb71" class="">Bewertung:</h3>
+					<p id="da09bf10-d7d3-4bd9-ad46-f667b7a2cf24" class="">70% schriftliche Ausarbeitung</p>
+					<p id="fbe861b5-510f-41df-aa34-a483b8ac0b33" class="">30% Video-Präsentation</p>
+					<p id="f83c84c5-1672-4ec3-a804-51bc1ed1312d" class=""><strong>Bewertungskriterien:</strong></p>
+					<ul id="583d1b20-fcd3-4464-b179-e1a5ae012675" class="bulleted-list">
+						<li style="list-style-type:disc">Vollständigkeit gem. Scope</li>
+					</ul>
+					<ul id="b791bdc7-a9a7-4062-8008-486d188f8c00" class="bulleted-list">
+						<li style="list-style-type:disc">Form</li>
+					</ul>
+					<ul id="26c76a69-a26d-4660-a9e0-27301a6ebeda" class="bulleted-list">
+						<li style="list-style-type:disc">Konsistenz</li>
+					</ul>
+					<ul id="8da96a42-0861-498c-8bf9-0061384a5b02" class="bulleted-list">
+						<li style="list-style-type:disc">Plausibilität</li>
+					</ul>
+					<ul id="aeba137c-01b4-47ef-ae65-bbba3c8c2d67" class="bulleted-list">
+						<li style="list-style-type:disc">Offene Punkte/ offene Fragen (möglich, müssen aber benennt
+							werden → z. B. wenn etwas noch nicht klar ist und daher noch nicht entschieden werden kann)
+						</li>
+					</ul>
+					<ul id="6b3b15a9-9f38-4578-98f6-ec32ee4ed860" class="bulleted-list">
+						<li style="list-style-type:disc">Kreativität und Design</li>
+					</ul>
+					<ul id="4dee87eb-f405-48f1-8886-674baf2432c9" class="bulleted-list">
+						<li style="list-style-type:disc">Praxisnähe/ digitaler Bezug</li>
+					</ul>
+					<h3 id="d4a1c352-3f6b-48e7-9c46-cdd56eb88eb6" class="">Scope:</h3>
+					<p id="0b35f4fa-4f1b-461d-b996-5fe3433bb82d" class=""><strong>Businessmodell:</strong></p>
+					<ul id="99cac689-a222-47a2-b870-05edb5fbec29" class="bulleted-list">
+						<li style="list-style-type:disc">BMC (stichwortartig) (Template nutzen oder BMC-Creator)</li>
+					</ul>
+					<ul id="a78096a6-d333-4eee-96eb-afddf07ff1bd" class="bulleted-list">
+						<li style="list-style-type:disc">Ausformulierte Ausarbeitung des Business Modells unter
+							Berücksichtigung folgender Punkte<ul id="76c85c85-e7f2-437d-94b0-92b8e4cbadbd"
+								class="bulleted-list">
+								<li style="list-style-type:circle">Alle Punkte des Business Model Canvas</li>
+							</ul>
+							<ul id="061053d9-564a-4810-a72f-f068334e447b" class="bulleted-list">
+								<li style="list-style-type:circle">Beschreibung Geschäftsmodell</li>
+							</ul>
+							<ul id="a18e22c9-2160-4871-b6da-9bbb7730d6e5" class="bulleted-list">
+								<li style="list-style-type:circle">…</li>
+							</ul>
+						</li>
+					</ul>
+					<p id="8e9fc7fa-8dcf-41da-9c94-e7e54511595f" class="">
+					</p>
+					<p id="4bfb2236-ce8c-499d-90a9-1a6b7b9adf92" class=""><strong>Businessplan:</strong></p>
+					<ul id="f1c56e66-1d8e-45d0-8e65-1b1748724505" class="bulleted-list">
+						<li style="list-style-type:disc">Excel- (oder Derivat-) basierter Geschäftsplan<ul
+								id="61bd0a02-aef9-4e5e-ba84-9131110cceb1" class="bulleted-list">
+								<li style="list-style-type:circle">3 Versionen: Best, realistic, worst case</li>
+							</ul>
+						</li>
+					</ul>
+					<ul id="32aa7cc6-1073-434c-a9ca-f29436726447" class="bulleted-list">
+						<li style="list-style-type:disc">Kommentierung und Erläuterung des Geschäftsplans unter
+							Berücksichtigung folgender Punkte<ul id="3397cc7a-6dd3-49b0-80fa-4b65d8053f4a"
+								class="bulleted-list">
+								<li style="list-style-type:circle">Leistungsverwertungsplanung</li>
+							</ul>
+							<ul id="7be50318-0234-4bd1-b542-45772b0e5365" class="bulleted-list">
+								<li style="list-style-type:circle">Personalkostenplanung</li>
+							</ul>
+							<ul id="17348ce6-59c5-49bb-baa5-2cbe4db4b398" class="bulleted-list">
+								<li style="list-style-type:circle">Sonstige </li>
+							</ul>
+							<ul id="b693da9e-eae8-4c40-ac48-dc14cd15aad7" class="bulleted-list">
+								<li style="list-style-type:circle">…</li>
+							</ul>
+						</li>
+					</ul>
+					<ul id="fcbf8ca5-da06-4e07-a46f-a62876bb0cc4" class="bulleted-list">
+						<li style="list-style-type:disc">Executive Summary<ul id="03591ef5-183b-4727-91cb-265c8f4aa53d"
+								class="bulleted-list">
+								<li style="list-style-type:circle">Alle wichtigen Versionen auf einer Seite
+									zusammengefasst.</li>
+							</ul>
+						</li>
+					</ul>
+					<p id="7cab4929-9616-4d17-b635-0cf00cdb6b27" class="">
+					</p>
+					<h3 id="841e4c02-98a5-4106-98ea-3fe77c8759d9" class="">Mögliche Geschäftsmodell-Themen</h3>
+					<p id="952f3a15-2ba3-418b-8d41-1726dca2c86a" class="">Geschäftsmodell in Konkurrenz zu:</p>
+					<ul id="455040ba-130a-4fc1-aea8-d40ef46a6fc5" class="bulleted-list">
+						<li style="list-style-type:disc">Sparbote.de</li>
+					</ul>
+					<ul id="0191407d-38ed-4bfb-bf67-6d11ce6cb2cb" class="bulleted-list">
+						<li style="list-style-type:disc">Analog zu <a href="http://momox.de">momox.de</a> die
+							Produktkategorie Werkzeug</li>
+					</ul>
+					<ul id="f2fcfb4f-cd9b-4418-9ee3-bda68b2d7f45" class="bulleted-list">
+						<li style="list-style-type:disc">Statista.de</li>
+					</ul>
+					<ul id="a6d05f24-8eac-4618-bb82-9a407f1e585e" class="bulleted-list">
+						<li style="list-style-type:disc">Haveibeenpwned.com</li>
+					</ul>
+					<ul id="d83e2c06-c44e-4af5-a1f4-0efc9a65ef1d" class="bulleted-list">
+						<li style="list-style-type:disc">Peleton.com</li>
+					</ul>
+					<p id="4dec01b9-2f04-4c6f-9aab-72e83f3288f8" class="">
+					</p>
+					<p id="fbe919cb-1fcd-42ca-8302-e03b4ca3f245" class="">oder eine Geschäftsmodell mit folgendem Inhalt
+					</p>
+					<ul id="8f7fe97a-9467-4bd2-b124-e98e4330d2e9" class="bulleted-list">
+						<li style="list-style-type:disc">AR Lösung zum Vertrieb von Bilderrahmen</li>
+					</ul>
+					<ul id="0f5cdf83-0c6a-435b-a519-09e3caa1b459" class="bulleted-list">
+						<li style="list-style-type:disc">AR Lösungen zum Vertrieb von Brillen</li>
+					</ul>
+					<ul id="9ecd1dda-9f84-4b84-9eec-77bc38375c09" class="bulleted-list">
+						<li style="list-style-type:disc">Entwicklungsumgebung für die programmierfreie Erstellung von
+							Apps</li>
+					</ul>
+					<ul id="639b14d3-a944-4f7a-b45d-eb5f5bea8bee" class="bulleted-list">
+						<li style="list-style-type:disc">Wordpress Plugin zur Sammlung von Spenden für
+							Wohltätigkeitsorganisationen</li>
+					</ul>
+					<ul id="16e53903-4887-4e1d-ab1b-bbc97e012087" class="bulleted-list">
+						<li style="list-style-type:disc">Service zur Auswertung von Fitness-Tracker-Daten</li>
+					</ul>
+					<ul id="22a631b9-5805-46a6-a213-99b20492ec28" class="bulleted-list">
+						<li style="list-style-type:disc">Meta-Immobilien-Suchmaschine</li>
+					</ul>
+					<ul id="211acac9-90dd-4fc6-a595-19b95a64ecf5" class="bulleted-list">
+						<li style="list-style-type:disc">Kurzurlaubsplaner</li>
+					</ul>
+					<ul id="7b3478ff-2528-437a-bdd2-1daefc01f164" class="bulleted-list">
+						<li style="list-style-type:disc">Unique-Maker - selling unique virtual goods via NFTs to anyone
+						</li>
+					</ul>
+					<p id="57ed4b60-282b-4051-a309-cf9b7aac4f41" class="">
+					</p>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.875em;line-height:1.3">Modelle in der Informatik</summary>
+				<div class="indented">
+					<h3 id="743de28d-1394-4bab-928c-0a3c83ebf51c" class=""><strong>Gesamter Folien-Satz:</strong></h3>
+					<figure id="d948dff1-210b-479f-a84d-f328641f8560">
+						<div class="source"><a
+								href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Modelle_in_der_Informatik_WS2223.pdf">Modelle
+								in der Informatik WS2223.pdf</a></div>
+					</figure>
+					<p id="0bd9abf3-1149-4a36-a348-b8fa44e29b85" class="">
+					</p>
+					<details open="">
+						<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Modellverständnis</summary>
+						<div class="indented">
+							<h3 id="9e6bc0dc-713d-4f11-b044-7ae859b78ea7" class="">Arten und Aufgaben:</h3>
+							<ul id="f563b98d-c0cb-4a15-81f5-4fc0cd2c17dd" class="bulleted-list">
+								<li style="list-style-type:disc">Beschreibungs- und Erfassungsmodelle</li>
+							</ul>
+							<ul id="7c0a5869-dcc6-4df8-87c7-ffc0d8aa3adf" class="bulleted-list">
+								<li style="list-style-type:disc">Erklärungsmodelle</li>
+							</ul>
+							<ul id="b6a1aafe-7e17-4b4b-b7ad-b284a1f96114" class="bulleted-list">
+								<li style="list-style-type:disc">Gestaltungsmodelle</li>
+							</ul>
+							<ul id="846d1e24-d64b-4e01-8d52-3fa211fdadde" class="bulleted-list">
+								<li style="list-style-type:disc">Meta- und generische Modelle</li>
+							</ul>
+							<ul id="f31a1908-3629-4b9a-9f21-5e146d6de573" class="bulleted-list">
+								<li style="list-style-type:disc">sonstige Modelle</li>
+							</ul>
+							<h3 id="cbdf6c0e-74bc-4c2d-964d-7c8808deac6b" class="">Aufgaben von Modellen: (alle oder die
+								meisten davon sollten erfüllt werden)</h3>
+							<ul id="b48c517a-7c0b-41a5-80a9-711432e5397d" class="bulleted-list">
+								<li style="list-style-type:disc">Beschreibung</li>
+							</ul>
+							<ul id="633e1644-4296-4edc-811f-cde2df5154c4" class="bulleted-list">
+								<li style="list-style-type:disc">Vereinfachung</li>
+							</ul>
+							<ul id="8b08ac4b-31e1-470c-ba86-b0049a285093" class="bulleted-list">
+								<li style="list-style-type:disc">Abstraktion</li>
+							</ul>
+							<ul id="71e60b04-e17b-4d06-add7-7dfc4a7b7c6c" class="bulleted-list">
+								<li style="list-style-type:disc">Verdeutlichung</li>
+							</ul>
+							<ul id="36a1f62a-7416-48bd-a418-e6820b70981e" class="bulleted-list">
+								<li style="list-style-type:disc">Explizierung von Informationskonzepten</li>
+							</ul>
+							<p id="39ce8746-a76e-4beb-8865-a8d93c449eec" class="">
+							</p>
+							<h3 id="ed9a59b8-799e-4382-98df-36f58a73b6f5" class="">Modellverständnis:</h3>
+							<ul id="78e0826c-feba-4dba-861a-222c671a1c1c" class="bulleted-list">
+								<li style="list-style-type:disc">Ein konstruktivistisches Modellverständnis ist
+									notwendig.<ul id="f62cd58d-884a-447f-9de3-2df3f80acaa2" class="bulleted-list">
+										<li style="list-style-type:circle">Auslassung und Hinzufügen sind die Regel</li>
+									</ul>
+									<ul id="3038c84d-6cfe-4029-bbb1-f16d1a56da9a" class="bulleted-list">
+										<li style="list-style-type:circle">Realität hat keine objektiv wahrnehmbaren
+											Strukturen</li>
+									</ul>
+									<ul id="2a978596-0c26-4488-8ff1-a20f2cfc56d4" class="bulleted-list">
+										<li style="list-style-type:circle">Nicht Homomorphie, sondern Zweckdienlichkeit
+											wird zum Qualitätskriterium.</li>
+									</ul>
+								</li>
+							</ul>
+							<ul id="b5e61fa0-5893-4626-b843-2b7c6f83e892" class="bulleted-list">
+								<li style="list-style-type:disc">Modelle sollen helfen Probleme zu lösen.</li>
+							</ul>
+						</div>
+					</details>
+					<details open="">
+						<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Modelle als
+							Problembeschreibung</summary>
+						<div class="indented">
+							<h3 id="ce882a8b-6966-4f9a-88e2-727446e13777" class="">Erste Annäherung an den Modellbegriff
+							</h3>
+							<h3 id="6fc274e2-19ea-4f50-a99b-7415a39cab0c" class="">Modelleigenschaften (Stachowiak,
+								1973)</h3>
+							<ul id="4ac9604e-0a56-47b6-a393-4ad1e91ceb87" class="bulleted-list">
+								<li style="list-style-type:disc">Abbildung: Abbildung eines Originals oder anderen
+									Modells</li>
+							</ul>
+							<ul id="b2782f86-b53d-46aa-8026-779bfbddfc46" class="bulleted-list">
+								<li style="list-style-type:disc">Abstraktion: Modell abstrahiert vom Original</li>
+							</ul>
+							<ul id="3610edf1-6779-4398-aaca-e1f6cf067319" class="bulleted-list">
+								<li style="list-style-type:disc">Pragmatik: Modelle erfüllen einen bestimmten Zweck</li>
+							</ul>
+							<p id="1adef4cb-636b-432f-95f5-3ceefa02a851" class="">
+							</p>
+							<h3 id="9034b89f-4484-4c01-9a0f-d32fbf96464f" class="">Zweite Annäherung an den
+								Modellbegriff</h3>
+							<ul id="a30fbe02-882f-4356-be86-73bcab75ab85" class="bulleted-list">
+								<li style="list-style-type:disc">Objekte werden zur Zuweisungen von Eigenschaften zu
+									Modellen (Mahr, 2009)<ul id="cd98d6f4-23bb-4b71-8e4d-dec65093d735"
+										class="bulleted-list">
+										<li style="list-style-type:circle">Modell = Zweckgerichteter Auswahl- und
+											Konstruktionsprozess</li>
+									</ul>
+									<ul id="289cce14-055e-4037-b4df-6c79426bbfe4" class="bulleted-list">
+										<li style="list-style-type:circle">Unterscheidung zw. Modellobjekt und Modell
+										</li>
+									</ul>
+									<ul id="497ebeee-0f74-4f42-a063-d665151d7804" class="bulleted-list">
+										<li style="list-style-type:circle">Zwei Perspektiven:<ul
+												id="99a7831e-c84b-4432-bacd-0fc3e5879d97" class="bulleted-list">
+												<li style="list-style-type:square">Herstellungsperspektive: Modell von
+													etwas</li>
+											</ul>
+											<ul id="51aa5e80-f0c8-49aa-8f75-b49735df477b" class="bulleted-list">
+												<li style="list-style-type:square">Anwendungsperspektive: Modell für
+													etwas</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<p id="46fba87d-b03b-440a-a8df-8c36b5daa2af" class="">
+							</p>
+							<h3 id="6b5e7db5-c895-422a-aa71-47e201ae0c42" class="">Die Basis von Modellen sind Probleme
+							</h3>
+							<ul id="cce51812-4aaf-41f5-9b45-492ba4484432" class="bulleted-list">
+								<li style="list-style-type:disc">Subjektivität der Probleme überträgt sich auf Modelle
+									<ul id="d04b67c3-4e07-4785-b51f-093d0ed57dc5" class="bulleted-list">
+										<li style="list-style-type:circle">Ziele</li>
+									</ul>
+									<ul id="a19cab5e-dcd8-40bd-aa95-f8f148c9011b" class="bulleted-list">
+										<li style="list-style-type:circle">Wahrnehmnungsgewohnheiten</li>
+									</ul>
+									<ul id="81577404-78e6-4051-a589-87cd909e4145" class="bulleted-list">
+										<li style="list-style-type:circle">Deutungsmuster, Informationen und</li>
+									</ul>
+									<ul id="f95b6b01-b50d-4294-8afb-8634652cc4a8" class="bulleted-list">
+										<li style="list-style-type:circle">kognitive Fähigkeiten</li>
+									</ul>
+									<p id="d89e4cdb-cd70-440d-ba68-9b914e028c0c" class="">… bestimmen die Probleme und
+										die Modellkonstruktion.</p>
+								</li>
+							</ul>
+							<ul id="c93be6df-2a9d-4dd0-b45b-a637ee51bb5b" class="bulleted-list">
+								<li style="list-style-type:disc">Wohlstrukturierte Probleme sind keine echten Probleme
+									<ul id="f5d6194d-8ea3-4f89-a305-148ac5e72454" class="bulleted-list">
+										<li style="list-style-type:circle">Mangel an Struktur ist Problemeigenschaft
+										</li>
+									</ul>
+									<ul id="ba7c7e15-9c95-487e-9c22-804c00e249a6" class="bulleted-list">
+										<li style="list-style-type:circle">Nicht die Anwendung eines Problemalgorithmus
+											sondern die Aufstellung eines adäquaten Modells ist die Hauptbeitrag bei der
+											Problemlösung.</li>
+									</ul>
+								</li>
+							</ul>
+							<p id="282c3f79-5212-4bbb-b69d-0cd8f21d3120" class="">
+							</p>
+							<h3 id="b58e0e69-37e1-4ecd-ba85-594b7b776070" class="">Problembegriff</h3>
+							<ul id="ecde2890-3f2e-4cbf-afd2-46afdaf43d10" class="bulleted-list">
+								<li style="list-style-type:disc">definierte Konzepte</li>
+							</ul>
+							<ul id="b9f91e6b-b6d5-4927-b94f-a0c74d9bbec5" class="bulleted-list">
+								<li style="list-style-type:disc">Unerwünschtheit</li>
+							</ul>
+							<ul id="e97d8655-2432-4ddd-b337-6aedf08f7dd7" class="bulleted-list">
+								<li style="list-style-type:disc">Schwierigkeit</li>
+							</ul>
+							<ul id="99c90291-bf17-43d4-80d7-08e78265a1dc" class="bulleted-list">
+								<li style="list-style-type:disc">Lösbarkeit (Klimaerwähnung ist nach dieser Definition
+									nicht “mein” Problem → Ich kann lediglich schauen, welchen Beitrag ich dazu
+									beitragen kann.)</li>
+							</ul>
+							<p id="c94c0349-ddf5-4ae0-a7b7-7706e285916d" class="">
+							</p>
+							<blockquote id="98e68e7e-5a6c-4177-bb9b-cbf82b621781" class="">Probleme sind subjektiv
+								wahrgenommene Abweichungen zwischen Erreichtem und Erwünschtem.</blockquote>
+							<p id="498cd694-c8f5-4298-9aa8-ccf3eb1f1f2b" class="">
+							</p>
+							<h3 id="b8d87be1-795b-4915-be2b-ab477acc3d4e" class="">Modell</h3>
+							<ul id="668d543c-dc54-427a-8c5f-c5a8e81a2abe" class="bulleted-list">
+								<li style="list-style-type:disc">Modelle erheben die Problemeigenschaften. Konsequent:
+									<ul id="7179daa8-d1f7-4e4f-808c-3849d668f0e5" class="bulleted-list">
+										<li style="list-style-type:circle">Subjektivität</li>
+									</ul>
+									<ul id="839ca879-aacf-4320-80b0-eaae69d1e513" class="bulleted-list">
+										<li style="list-style-type:circle">Ziel-/ Zweckgerichtetheit</li>
+									</ul>
+									<ul id="9e3afcc2-b81f-491f-be8f-3d82095c8802" class="bulleted-list">
+										<li style="list-style-type:circle">Lösbarkeit</li>
+									</ul>
+								</li>
+							</ul>
+							<ul id="7ea70efc-0668-4e03-8c24-80ffc56b5cb2" class="bulleted-list">
+								<li style="list-style-type:disc">Modelle werden gebildet nach dem Frageschema<ul
+										id="3ce03f58-465e-41db-a2b7-947019dd5ccf" class="bulleted-list">
+										<li style="list-style-type:circle">Modelle wovon, </li>
+									</ul>
+									<ul id="56d9bcd1-5333-43b7-b3a0-26bf44e4bc7e" class="bulleted-list">
+										<li style="list-style-type:circle">für wen, </li>
+									</ul>
+									<ul id="00e8d89b-66fe-44ae-b32b-afb66dd4056f" class="bulleted-list">
+										<li style="list-style-type:circle">wann und</li>
+									</ul>
+									<ul id="1cd77c4b-ebed-4659-89ad-8564d45aa842" class="bulleted-list">
+										<li style="list-style-type:circle">wozu.</li>
+									</ul>
+								</li>
+							</ul>
+							<p id="0b3a6d01-32a5-48ea-96f9-a7a56e3ebbc3" class="">
+							</p>
+							<blockquote id="ddc674dd-c6bc-4c0a-a5fd-414f14aecd88" class="">Modelle sind symbolische,
+								immaterielle, subjektive, zweckdienliche, kritisierbare, gleichzeitig abstrahierende wie
+								explizierende, ganzheitliche Beziehungsgefüge zur Beschreibung von Problemen bzw.
+								Problemsituationen. (Dresbach, 1999)</blockquote>
+						</div>
+					</details>
+					<details open="">
+						<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Modelltheorie</summary>
+						<div class="indented">
+							<h3 id="0e0b876e-df70-465b-ac3d-18d56e768976" class="">Theorie</h3>
+							<ul id="b9d91ca0-2627-4f48-9696-c34176ec82dc" class="bulleted-list">
+								<li style="list-style-type:disc">Menge geordneter Sätze und ihrem Inhalt nach semantisch
+									interpretierte, komplexe Gebilde von Begriffen und Aussagen. Diese Gebilde bestehen
+									- neben empirischen Befunden, deren Verallgemeinerungen und universellen Prinzipien
+									- aus Definitionen und einem System von Gesetzesaussagen.</li>
+							</ul>
+							<ul id="c2e5878e-9a79-43eb-bf21-72de74ac6d61" class="bulleted-list">
+								<li style="list-style-type:disc">Theorien sind nomologische Hypothesen:
+									hypothetische Festsetzungen unterschiedlicher Abstraktheit und Allgemeinheit, als
+									Sätze bzw. Satzsysteme, die sich bewährt haben i. d. S. (in dem Sinne), dass sie
+									wohl begründet und empirisch bestätigt worden sind.</li>
+							</ul>
+							<p id="5593d50f-1836-4838-86a0-964578e2af18" class="">
+							</p>
+							<h3 id="f2044c51-cf73-4416-b022-ab8653173173" class="">Anforderungen an Theorien</h3>
+							<ul id="0a4c1cc0-6c6f-4721-9885-e7eb70764af2" class="bulleted-list">
+								<li style="list-style-type:disc">eher formal<ul
+										id="8bfdd5f1-dce4-4488-a36d-ea0514e4def5" class="bulleted-list">
+										<li style="list-style-type:circle">formale Einheit (syntaktische Gleichheit und
+											Gleichmäßigkeit)</li>
+									</ul>
+									<ul id="4b848dd0-8551-484f-9b42-b1749d330f13" class="bulleted-list">
+										<li style="list-style-type:circle">Widerspruchsfreiheit</li>
+									</ul>
+									<ul id="2b09e79d-a966-48a8-8e57-571975b7acdc" class="bulleted-list">
+										<li style="list-style-type:circle">Allgemeingültigkeit</li>
+									</ul>
+								</li>
+							</ul>
+							<ul id="dccad091-a08c-418f-9047-405cfc524035" class="bulleted-list">
+								<li style="list-style-type:disc">eher inhaltlich<ul
+										id="90c8e5e1-b71e-4044-8d18-05dafef4fd7c" class="bulleted-list">
+										<li style="list-style-type:circle">Realitätsbezug</li>
+									</ul>
+									<ul id="206481ee-0f2b-47ee-8d8b-42bb75ea9a55" class="bulleted-list">
+										<li style="list-style-type:circle">Definition des Anwendungsbereichs</li>
+									</ul>
+									<ul id="63aa3a20-2d60-435b-8023-f36a9261c210" class="bulleted-list">
+										<li style="list-style-type:circle">intendierter Geltungsbereich</li>
+									</ul>
+								</li>
+							</ul>
+							<p id="e43bc05f-64b4-4213-b826-ddcfec118f0d" class="">
+							</p>
+							<p id="11321163-e8a1-4407-990b-53da2d700ed0" class="">Beispiele für Theorie-Elemente</p>
+							<ul id="d18a294e-5d3f-428f-928a-10bf161e1369" class="bulleted-list">
+								<li style="list-style-type:disc">Gesetzesaussagen:<ul
+										id="ae766184-b79a-42b8-85b4-361904e37c10" class="bulleted-list">
+										<li style="list-style-type:circle">“Modelle bestehen aus Elementen.”</li>
+									</ul>
+									<ul id="c2d02d44-d208-4180-be3a-4604ad6a7b77" class="bulleted-list">
+										<li style="list-style-type:circle">“Probleme werden beschrieben durch Modelle.”
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<ul id="34b0d3f0-5982-4fd3-ae75-0617c1807065" class="bulleted-list">
+								<li style="list-style-type:disc">Prüfung der Widerspruchsfreiheit z. B. über die
+									Gültigkeit der Transitivitätsbedingung:</li>
+							</ul>
+							<figure id="7dd1a843-9562-47fc-be7c-9e3ee906d53d" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_13.11.01.png"><img
+										style="width:1210px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_13.11.01.png" /></a>
+							</figure>
+							<h3 id="8eaa099f-1dfa-4b8a-b7d1-fa0cf8dbb944" class="">Kritik und Konsequenz</h3>
+							<ul id="9f1d41f7-f640-42fc-828a-434ce11830ca" class="bulleted-list">
+								<li style="list-style-type:disc">Eine solche Modelltheorie gäbe keine Auskunft über die
+									Benutzung der Theorie!</li>
+							</ul>
+							<ul id="f1b6361f-8178-4be1-91bd-e311ed4f83c9" class="bulleted-list">
+								<li style="list-style-type:disc">Besser im Kontext der Informatik wäre es, die Theorie
+									als Methodenlehre aufzufassen, eine <em>Methodologie</em> zu entwerfen.<ul
+										id="002bc0fb-840b-4b96-ba8b-99a2683c3626" class="bulleted-list">
+										<li style="list-style-type:circle">Metatheoretischer Ansatz</li>
+									</ul>
+									<ul id="dc663bb6-9457-449a-b848-9ade481f3edc" class="bulleted-list">
+										<li style="list-style-type:circle">Normativer Character</li>
+									</ul>
+									<ul id="90f61e56-439b-4249-8af4-bc1851e1db76" class="bulleted-list">
+										<li style="list-style-type:circle">Methodenfragen als wichtiger Teil des
+											Erkenntnisobjektes</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</details>
+					<details open="">
+						<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Literatur</summary>
+						<div class="indented">
+							<p id="048b258c-7ff3-466c-8d9a-54bc7776a876" class="">Kein Inhalt hierzu vorhanden.</p>
+						</div>
+					</details>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.875em;line-height:1.3">Grundlagen strategischer
+					Unternehmensführung</summary>
+				<div class="indented">
+					<h3 id="f6d9198b-0dbd-465c-a274-e62886ac5e08" class="">Buchempfehlung:</h3>
+					<ul id="b9c8fe2f-9cd5-4e03-a2a8-16c7d01d092c" class="bulleted-list">
+						<li style="list-style-type:disc"><a
+								href="https://www.vahlen.de/woehe-einfuehrung-allgemeine-betriebswirtschaftslehre/product/31035211">Einführung
+								in die Allgemeine Betriebswirtschaftslehre</a> - Wöhe<ul
+								id="8b39a9c0-58fd-4dbc-a496-e62756f1d300" class="bulleted-list">
+								<li style="list-style-type:circle">“Bibel der Betriebswirtschaftslehre - alles enthalten
+									was man zur BWL wissen kann und muss.”</li>
+							</ul>
+						</li>
+					</ul>
+					<p id="fb96707d-e364-4c45-bc34-21e522fb53a9" class="">
+					</p>
+					<h3 id="9563e8e9-90f7-4a50-bf31-ed905308afb9" class="">Gesamter Folien-Satz:</h3>
+					<figure id="b11cab81-85a6-49ef-a2fa-acfe4a57307c">
+						<div class="source"><a
+								href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Grundlagen_Strategie_aka_Dillerup-Stoi.pdf">Grundlagen
+								Strategie aka Dillerup-Stoi.pdf</a></div>
+					</figure>
+					<p id="752d8c54-539e-41e6-b0f4-4db31ad8f01a" class="">
+					</p>
+					<details open="">
+						<summary style="font-weight:600;font-size:1.5em;line-height:1.3">Strategische
+							Unternehmensführung im integrierten Führungssystem</summary>
+						<div class="indented">
+							<ul id="a05f47fa-3098-4c9d-94ae-56400eed6cb1" class="bulleted-list">
+								<li style="list-style-type:disc">Die strategische Unternehmensführung ist auf die
+									Entwicklung bestehender und die Erschließung neuer Erfolgspotenziale ausgerichtet
+									und legt die dafür erforderlichen Strategien fest.<figure
+										id="0160c0b3-f42a-4819-8031-b2480da46542" class="image"><a
+											href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-10_um_14.52.57.png"><img
+												style="width:1024px"
+												src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-10_um_14.52.57.png" /></a>
+									</figure>
+								</li>
+							</ul>
+						</div>
+					</details>
+					<details open="">
+						<summary style="font-weight:600;font-size:1.5em;line-height:1.3">Entwicklung und Konzepte
+						</summary>
+						<div class="indented">
+							<ul id="445da7b0-bcd7-4b81-94e1-a6dbcf43d0c7" class="bulleted-list">
+								<li style="list-style-type:disc">Chandler (1962) brachte den Strategiebegriff in die
+									Unternehmensführung ein. Er konnte durch empirische Untersuchung US-amerikanischer
+									Großunternehmen zeigen, dass die Entwicklung der betrieblichen Strukturen sich an
+									der Unternehmensstrategie ausrichtet. (”Structure follows Strategy”)</li>
+							</ul>
+							<ul id="b31392da-b0e2-4d1f-b0be-d167bb92d123" class="bulleted-list">
+								<li style="list-style-type:disc">Andrews (1971)</li>
+							</ul>
+							<ul id="37a5a88b-c130-4793-8a7a-117e1f58df10" class="bulleted-list">
+								<li style="list-style-type:disc">Ansoff (1965)</li>
+							</ul>
+							<details open="">
+								<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Entwicklungsstufen
+									strategischer Unternehmensführung</summary>
+								<div class="indented">
+									<ul id="47628b2e-bc30-4611-852d-08dedb5f0f00" class="bulleted-list">
+										<li style="list-style-type:disc">Finanzplanung</li>
+									</ul>
+									<ul id="cd897bbe-0186-44e8-888f-c91387e69c66" class="bulleted-list">
+										<li style="list-style-type:disc">Langfristplanung</li>
+									</ul>
+									<ul id="481ca08a-ed8a-466d-b9c6-1f05efe95e29" class="bulleted-list">
+										<li style="list-style-type:disc">Strategische Planung</li>
+									</ul>
+									<ul id="c2487bb6-efa5-4046-9567-8d9c01b9a379" class="bulleted-list">
+										<li style="list-style-type:disc">Strategische Unternehmensführung</li>
+									</ul>
+									<p id="4a847555-664c-48ce-b2ec-f9bfe7d3bb78" class="">
+									<div class="indented">
+										<figure id="cbebd04a-4252-40d9-a2aa-dfb13333dd16" class="image"><a
+												href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-10_um_14.30.45.png"><img
+													style="width:1896px"
+													src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-10_um_14.30.45.png" /></a>
+										</figure>
+										<p id="8ea78c6b-6990-4edb-ac3f-b5442340d9d4" class="">
+										</p>
+										<ul id="5c044a01-5714-4ddb-9cae-20a3bc1c4be2" class="bulleted-list">
+											<li style="list-style-type:disc">Konzept der Harvard Business School<figure
+													id="ced965a8-1b19-4b3c-8352-94ce7b7c9d37" class="image"><a
+														href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-10_um_14.33.06.png"><img
+															style="width:1878px"
+															src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-10_um_14.33.06.png" /></a>
+												</figure>
+											</li>
+										</ul>
+										<p id="e285c40e-f56c-41e5-bddd-d8b85f333992" class="">
+										</p>
+										<ul id="540a5b44-3ae4-4686-81bd-b0bd951a9afa" class="bulleted-list">
+											<li style="list-style-type:disc">St. Gallener Managementkonzept<figure
+													id="cdab0511-c76e-4402-aa9a-9f0519a431dd" class="image"><a
+														href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-10_um_14.40.59.png"><img
+															style="width:1878px"
+															src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-10_um_14.40.59.png" /></a>
+												</figure>
+											</li>
+										</ul>
+									</div>
+									</p>
+								</div>
+							</details>
+							<details open="">
+								<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Zentrale Fragen
+									strategischer Unternehmensführung</summary>
+								<div class="indented">
+									<ul id="419583c7-df65-498c-a148-a58395705585" class="bulleted-list">
+										<li style="list-style-type:disc">Wie gestaltet sich der Strategieprozess?<ul
+												id="7b7d0231-7826-41d3-8b1a-171e321f2fb7" class="bulleted-list">
+												<li style="list-style-type:circle">Diese Frage beschäftigt sich vor
+													allem mit dem Ablauf der Strategieformulierung
+													und -umsetzung.</li>
+											</ul>
+										</li>
+									</ul>
+									<ul id="6c94832e-4156-4c23-9f97-79a6c9c0dfe0" class="bulleted-list">
+										<li style="list-style-type:disc">Welche Inhalte hat eine Strategie?<ul
+												id="71afef7e-2370-4643-890c-237d4164b7c5" class="bulleted-list">
+												<li style="list-style-type:circle">Dabei stehen die konkreten
+													strategischen Entscheidungen im Vordergrund. Der
+													Strategieinhalt wird relativ breit definiert und umfasst neben der
+													konkreten
+													Ausgestaltung von Strategien auch deren Einflussgrößen und
+													Wirkungen. Dabei
+													geht es im Wesentlichen um die Ansätze der markt- und der
+													ressourcenorientierten Unternehmensführung.</li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</details>
+						</div>
+					</details>
+					<details open="">
+						<summary style="font-weight:600;font-size:1.5em;line-height:1.3">Grundbegriffe und
+							Strategiearten</summary>
+						<div class="indented">
+							<details open="">
+								<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Der Strategiebegriff
+								</summary>
+								<div class="indented">
+									<h3 id="e4bc8aab-8ba8-4fcb-90f8-05b7d6d12b20" class="">Strategien als hierarchisches
+										Element</h3>
+									<figure id="162ecddb-7b61-4b03-80c3-639c746b8434" class="image"><a
+											href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-10_um_14.44.38.png"><img
+												style="width:1900px"
+												src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-10_um_14.44.38.png" /></a>
+									</figure>
+									<h3 id="d98e7903-aae5-4b7f-b980-4c5c904c2055" class="">Strategie als Maßnahmenbündel
+									</h3>
+									<ul id="fb383cb9-7ed4-4193-8ee1-01f0ed00d264" class="bulleted-list">
+										<li style="list-style-type:disc">Eine Strategie ist ein geplantes Bündel an
+											Maßnahmen zur Positionierung im Wettbewerb und zur Gestaltung der dazu
+											erforderlichen Ressourcenbasis. Auf diese Weise sollen Wettbewerbsvorteile
+											geschafft werden bzw. bestehende Erfolgspotenziale weiterentwickelt werden.
+										</li>
+									</ul>
+									<figure id="2750aacf-6a8e-4626-aec8-33313fc61cce" class="image"><a
+											href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-10_um_14.48.16.png"><img
+												style="width:1712px"
+												src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-10_um_14.48.16.png" /></a>
+									</figure>
+									<h3 id="d9f95484-a5eb-42bb-a2b4-6e27f2beeeb4" class="">Elemente einer Strategie</h3>
+									<figure id="55d7da80-e1d1-4315-8f47-4622f7cb3fd2" class="image"><a
+											href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-10_um_14.50.05.png"><img
+												style="width:1858px"
+												src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-10_um_14.50.05.png" /></a>
+									</figure>
+									<p id="4f62f704-d867-49c0-a8e4-6f4a693a1fe4" class="">
+									</p>
+									<h3 id="ab3a4daa-1041-4422-9900-e43f0338cd26" class="">Die 5 P’s der Strategie</h3>
+									<ul id="a64e15c9-e0d9-4322-bfd2-a7465832b9cf" class="bulleted-list">
+										<li style="list-style-type:disc">Strategien als Pläne (Plan)</li>
+									</ul>
+									<ul id="ee6c91c3-93ba-43d8-8fdd-0daddd5cdf43" class="bulleted-list">
+										<li style="list-style-type:disc">Strategien als List (Ploy)<ul
+												id="f66c5aa8-631b-4c5f-8753-abb943677762" class="bulleted-list">
+												<li style="list-style-type:circle">z. B. Beta Version anbieten, obwohl
+													Produkt schon längst fertig ist → falls irgendwas mal nicht ganz
+													läuft war’s ja erst die “Beta”</li>
+											</ul>
+											<ul id="6b6e9372-4e1a-44e1-ab0a-c6532c860fff" class="bulleted-list">
+												<li style="list-style-type:circle">z. B. erste Version offiziell als
+													Version 2.0 verkaufen als bereits “verbessert”, “stabilere” Version
+													→ Erzeugt Trust</li>
+											</ul>
+										</li>
+									</ul>
+									<ul id="0d1c352f-9548-4de7-8364-3ae99b33120f" class="bulleted-list">
+										<li style="list-style-type:disc">Strategien als Muster (Pattern)</li>
+									</ul>
+									<ul id="f2b8dc42-6d4f-464a-a76c-c44ad2ddbbc2" class="bulleted-list">
+										<li style="list-style-type:disc">Strategien als Positionierung (Position)</li>
+									</ul>
+									<ul id="dc10c0ff-057f-48e3-9e79-df76343850a4" class="bulleted-list">
+										<li style="list-style-type:disc">Strategien als Denkhaltung (Perspective)</li>
+									</ul>
+									<p id="187e07b0-4a36-4438-b2e9-746e292189e0" class="">
+									</p>
+									<h3 id="08abc4de-a04b-4f12-af42-e8cabb4d835f" class="">Grundmuster von Strategien
+									</h3>
+									<ul id="96e26c61-be43-49d9-b007-9f1a44a8aa72" class="bulleted-list">
+										<li style="list-style-type:disc">Essenz: Es kommt immer anders als man denkt.
+											→ Opportunities ergeben ungeplante Strategien und führen zu einer
+											veränderten realisierten Strategie.</li>
+									</ul>
+									<figure id="57f9ea73-ea71-4946-baad-50ed3f9275be" class="image"><a
+											href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-10_um_15.03.45.png"><img
+												style="width:1542px"
+												src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-10_um_15.03.45.png" /></a>
+									</figure>
+								</div>
+							</details>
+							<details open="">
+								<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Wettbewerbsvorteile
+								</summary>
+								<div class="indented">
+									<h3 id="77a506e9-35f3-425c-8ed8-2bcd7b650ceb" class="">Strategisches Dreieck der
+										Wettbewerbsvorteile</h3>
+									<ul id="1a35d136-5034-4afe-8429-a9e838b41696" class="bulleted-list">
+										<li style="list-style-type:disc">Ein Wettbewerbsvorteil ist ein aus Sicht des
+											Kunden wahrgenommenes Leistungsmerkmal, das von der Konkurrenz nicht geboten
+											wird und für das der Kunde bereit ist, etwas zu bezahlen.<figure
+												id="29df7d29-8fc4-48df-9841-59857a1f0ef9" class="image"><a
+													href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-10_um_15.11.40.png"><img
+														style="width:1780px"
+														src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-10_um_15.11.40.png" /></a>
+											</figure>
+										</li>
+									</ul>
+									<p id="55f1a485-7a0d-46c2-b82f-df2ddd032962" class="">
+									</p>
+									<h3 id="a625016d-0715-4d87-aa13-f931c5138400" class="">Quellen von
+										Wettbewerbsvorteilen</h3>
+									<ul id="cd774d9a-7ba4-49eb-a27e-eeebc54ce45a" class="bulleted-list">
+										<li style="list-style-type:disc">Objektive Leistungsvorteile wie z. B. eine
+											besondere Produktqualität bei Miele.</li>
+									</ul>
+									<ul id="d9e87327-cef8-4e3f-899f-8f2c2e3b3631" class="bulleted-list">
+										<li style="list-style-type:disc">Subjektiv wahrgenommene Vorteile wie z. B.
+											Produktimage bei Porsche.</li>
+									</ul>
+									<ul id="07936f8a-7ea4-429f-a0d3-c74e431f19b6" class="bulleted-list">
+										<li style="list-style-type:disc">Globale Präsenz wie z. B. bei General Electric.
+										</li>
+									</ul>
+									<ul id="4b12abce-6a4b-4da7-a5d5-b3d4070f2ebd" class="bulleted-list">
+										<li style="list-style-type:disc">Hohes Preis-Leistungsverhältnis ie z. B.
+											Lebensmitteldiscounter wie Aldi oder Lidl</li>
+									</ul>
+									<ul id="273c6cd2-7875-4eb1-b0bc-209ea314c25f" class="bulleted-list">
+										<li style="list-style-type:disc">Besondere Kompetenzen, Vermögenswerte, oder
+											Kontakte wie z. B. Ölförderlizenzen</li>
+									</ul>
+								</div>
+							</details>
+							<details open="">
+								<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Erfolgspotenziale
+								</summary>
+								<div class="indented">
+									<h3 id="cb763cdd-9618-4fd0-9a10-602679d82cee" class="">Unterteilung der
+										Erfolgspotenziale</h3>
+									<p id="ccd5ac16-4d98-4960-8808-8045eb6ebb14" class="">Erfolgspotenziale sind
+										sämtliche produkt- und marktspezifischen, technologischen und qualifikatorischen
+										Voraussetzungen für zukünftigen Erfolg.</p>
+									<ul id="b90383a6-217f-4694-ae25-6aaecc50862a" class="bulleted-list">
+										<li style="list-style-type:disc">Externe Erfolgspotenziale</li>
+									</ul>
+									<ul id="85f05e3b-290d-4d5c-8f4f-ab238ef06956" class="bulleted-list">
+										<li style="list-style-type:disc">Interne Erfolgspotenziale</li>
+									</ul>
+									<h3 id="3db61a64-db02-452e-9049-686c5888cbfd" class="">Die Vorsteuerfunktion hat
+										folgende Eigenschaften</h3>
+									<ul id="89366723-6a29-4668-8686-b13b5ec64c4b" class="bulleted-list">
+										<li style="list-style-type:disc">Erfolgspotenziale stellen Obergrenzen für den
+											realisierbaren Erfolg dar. Je höher diese sind, desto größer ist der
+											Spielraum für den realisierbaren Erfolg.</li>
+									</ul>
+									<ul id="40017013-be68-4bc7-bde8-2be0a778f2c4" class="bulleted-list">
+										<li style="list-style-type:disc">Erfolgspotenziale schaffen nur Voraussetzungen
+											für hohe Erfolgschancen. Die Ausnutzung dieser Voraussetzungen ist Aufgabe
+											der operativen Unternehmensführung. Durch Fehler in der operative
+											Unternehmensführung können somit Erfolgspotenziale auch ungenutzt bleiben.
+										</li>
+									</ul>
+									<ul id="ea1f6f18-73fe-470e-9d9c-943c20e2ae98" class="bulleted-list">
+										<li style="list-style-type:disc">Jedes Unternehmen verfügt über
+											Erfolgspotenziale, unabhängig davon, ob diese bekannt sind, oder nicht.
+											Häufig macht sich der Verlust von Erfolgspotenzialen erst durch ein
+											negatives Erlebnis oder Liquiditätsschwierigkeiten bemerkbar. Dann ist es
+											für gegensteuernde Maßnahmen meist schon zu spät.</li>
+									</ul>
+									<ul id="855a41b6-2487-42ec-8200-66f1ac4a6da2" class="bulleted-list">
+										<li style="list-style-type:disc">Erfolgspotenzial, Erfolg und Liquidität sind
+											miteinander verknüpft, beinhalten jedoch unterschiedliche
+											Steuerungsanforderungen an die Unternehmensführung. Der Aufbau von
+											Erfolgspotenzialen beeinflusst die finanz- und erfolgswirtschaftliche
+											Situation des Unternehmens. Kurzfristig reduziert der Aufbau von
+											Erfolgspotenzialen die Liquidität und den operativen Erfolg. Langfristig
+											bilden Erfolgspotenziale aber die Voraussetzung für Erfolg. Beispielsweise
+											verursacht die Entwicklung eines neuen Produktes zunächst hohen Aufwand und
+											reduziert damit das operative Ergebnis. Kommt das Produkt dann auf den
+											Markt, dann kann das Unternehmen daraus operative Gewinne und Liquidität für
+											neue Entwicklungsprojekte generieren.</li>
+									</ul>
+									<h3 id="4835566d-eac2-45cb-b58d-cf399983a52d" class="">Erfolgspotenzial als
+										Vorsteuergröße</h3>
+									<figure id="ab0004be-f04d-41bd-b58f-ecdce6664922" class="image"><a
+											href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-10_um_15.27.24.png"><img
+												style="width:1904px"
+												src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-10_um_15.27.24.png" /></a>
+									</figure>
+									<p id="85071592-e78a-4eea-964a-94a2b7a05d65" class="">
+									</p>
+									<h3 id="6f2fd1a6-0c95-45f6-983f-1c08b4647e37" class="">PIMS-Auswertung zu den
+										Erfolgsfaktoren Marktanteil und Qualität</h3>
+									<p id="bbe0c1bb-8789-4f4c-a218-969098fe0cd6" class="">Essenz: </p>
+									<ul id="61728fa6-6433-4746-b3be-84ae3b61744f" class="bulleted-list">
+										<li style="list-style-type:disc">Je größer der Marktanteil, desto eher kann man
+											bestimmte Dinge voraussetzen wie z. B. die Preise
+											→ Geht mit gesteigerter Kapitalrendite einher</li>
+									</ul>
+									<ul id="630d1703-074e-47eb-bc3f-404fd0a64777" class="bulleted-list">
+										<li style="list-style-type:disc">Überlegene Qualität geht im Bereich bei einem
+											mittleren oder höheren Marktanteil mit gesteigerter Kapitalrendite einher.
+										</li>
+									</ul>
+									<figure id="52b40f85-81ca-4e30-9d4d-ffbe860e66b7" class="image"><a
+											href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-10_um_15.28.08.png"><img
+												style="width:1616px"
+												src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-10_um_15.28.08.png" /></a>
+									</figure>
+									<p id="db562f2b-7fc8-485d-b799-67ff3522509a" class="">
+									</p>
+								</div>
+							</details>
+							<details open="">
+								<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Arten von Strategien
+								</summary>
+								<div class="indented">
+									<h3 id="a3bf5d99-992d-4920-9545-d95c4c0487df" class="">Klassifizierung von
+										Strategien</h3>
+									<figure id="4ad5b3e2-42a5-4912-a0b4-df6a7afd9f8f" class="image"><a
+											href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-10_um_15.34.30.png"><img
+												style="width:1932px"
+												src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-10_um_15.34.30.png" /></a>
+									</figure>
+								</div>
+							</details>
+						</div>
+					</details>
+					<details open="">
+						<summary style="font-weight:600;font-size:1.5em;line-height:1.3">Elemente und Zusammenhänge
+						</summary>
+						<div class="indented">
+							<figure id="8fec4105-39e2-4cb2-91b3-eff28b671d31" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-10_um_15.43.05.png"><img
+										style="width:2036px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-10_um_15.43.05.png" /></a>
+							</figure>
+						</div>
+					</details>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.875em;line-height:1.3">Marktorientierte Strategien (/
+					strategische Unternehmensführung)</summary>
+				<div class="indented">
+					<h3 id="b702db11-b3b3-4dfb-9e6a-8cbb0d54a4b4" class="">Gesamter Folien-Satz:</h3>
+					<figure id="19d1a3c4-8590-4aa7-88de-9794d686e28f">
+						<div class="source"><a
+								href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Marktorientierte_Strategien_aka_Dillerup-Stoi.pdf">Marktorientierte
+								Strategien aka Dillerup-Stoi.pdf</a></div>
+					</figure>
+					<p id="dbc00880-772b-4e15-b966-11f9fd5aeae1" class="">
+					</p>
+					<h3 id="3b283088-16a6-402b-be27-4c2fc57c44bf" class=""><strong>Leitfragen:</strong></h3>
+					<ol type="1" id="1666b841-57ad-4648-82f3-96260c50bfd5" class="numbered-list" start="1">
+						<li>Welche Chancen und Risiken aus der Umwelt bestehen für Unternehmen?</li>
+					</ol>
+					<ol type="1" id="09ac8b8f-2618-45e9-bde8-b45c1c545294" class="numbered-list" start="2">
+						<li>Wie lässt sich die Unternehmensumwelt analysieren und gestalten?</li>
+					</ol>
+					<ol type="1" id="097d2da5-3591-4caf-8833-208cfecff5b4" class="numbered-list" start="3">
+						<li>Welche Strategien leiten sich aus der Branchen-, Markt- und Konkurrenzsituation eines
+							Unternehmens ab?</li>
+					</ol>
+					<ol type="1" id="b41db0e5-eef4-4502-a1b0-e5b664c0fcc1" class="numbered-list" start="4">
+						<li>Wie lässt sich eine marktorientierte Strategie entwickeln?</li>
+					</ol>
+					<p id="92a951b4-b99c-4028-9bb5-9f257b6d12b0" class="">
+					</p>
+					<h2 id="c0dad75f-c290-46b8-ae78-452fff8e1581" class="">Agenda: Marktorientierte Unternehmensführung
+					</h2>
+					<details open="">
+						<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Grundlagen marktorientierter
+							Unternehmensführung</summary>
+						<div class="indented">
+							<h3 id="14dca079-0bc6-4272-b637-5b64bab72e76" class="">Produkt-Lebenszyklus</h3>
+							<p id="e3163ed5-69af-4c13-8a2a-f7b8898b0ada" class="">Ein Lebenszyklus-Modell stellt analog
+								zu den Lebensphasen eines biologischen Organismus typische Entwicklungsphasen
+								wirtschaftlicher Betrachtungsobjekte dar.</p>
+							<figure id="a6219ac6-d58c-4ec9-a2a7-8b80750eb8c6" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_10.21.45.png"><img
+										style="width:1124px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_10.21.45.png" /></a>
+							</figure>
+							<h3 id="00ce4501-c22b-4f4e-9502-c016e53ab666" class="">Merkmale der Produkt
+								Lebenszyklusphasen</h3>
+							<figure id="d73e79c0-221f-413b-a7cb-91fad429e451" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_10.23.31.png"><img
+										style="width:1346px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_10.23.31.png" /></a>
+							</figure>
+							<h3 id="62bd7cdc-ca4d-441b-99be-0955ebfc0c8f" class="">Zusammenhang der Lebenszykluskonzepte
+							</h3>
+							<figure id="11dc6e10-d684-41b2-9d50-e109022bc192" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_10.29.39.png"><img
+										style="width:1338px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_10.29.39.png" /></a>
+							</figure>
+							<h3 id="7afb4150-62ef-45fd-bfcf-bd210d444f04" class="">Technologie Lebenszyklus</h3>
+							<figure id="add05995-a1bb-43ba-9c7c-7a4744a6c0ee" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_10.33.53.png"><img
+										style="width:976px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_10.33.53.png" /></a>
+							</figure>
+							<h3 id="93f67bda-f41b-4472-b3ed-d902b03241f5" class="">Erfahrungskurve</h3>
+							<p id="04459243-f205-450f-a799-172716b113a4" class="">Nach der Erfahrungskurve sinken die
+								inflationsbereinigten Stückkosten eines Produkts mit jeder Verdopplung der kumulierten
+								Produktmenge potenziell um durchschnittlich 20 bis 30%.</p>
+							<figure id="496246e3-addb-4228-ac2e-5f9592390638" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_10.35.41.png"><img
+										style="width:896px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_10.35.41.png" /></a>
+							</figure>
+							<figure id="edaeadbc-c150-417c-aa6a-9e9b0a561e24" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_10.39.53.png"><img
+										style="width:1102px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_10.39.53.png" /></a>
+							</figure>
+							<h3 id="2d03d60d-67c4-4b94-b4dc-4dc7dcd4ad9a" class="">Grundaufbau eines Portfolios</h3>
+							<p id="6936cc87-81a1-4cd4-b452-e95d4d389887" class="">In einem Portfolio wird eine
+								strategische Situation in zwei Dimensionen dargestellt, bewertet und aus der
+								Positionierung der Betrachtungsobjekte standardisierte Normstrategien abgeleitet.</p>
+							<figure id="1f5f3167-b14e-4c05-8a99-8a51f3bde86d" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_10.48.28.png"><img
+										style="width:1046px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_10.48.28.png" /></a>
+							</figure>
+							<h3 id="7d76b6f7-beed-4a37-8eb2-d5604d7b1e5e" class="">Zusammenhänge marktorientierter
+								Unternehmensführung</h3>
+							<figure id="11f97471-c77d-4779-b57d-3e746d320c01" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_10.53.50.png"><img
+										style="width:1316px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_10.53.50.png" /></a>
+							</figure>
+						</div>
+					</details>
+					<details open="">
+						<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Globale Umweltanalyse
+						</summary>
+						<div class="indented">
+							<p id="7dd9211b-6ada-42d4-978e-558c859492ed" class=""><strong>Strategische
+									Fragestellungen</strong></p>
+							<ul id="a306fc2c-d826-4df0-ade7-40025533680f" class="bulleted-list">
+								<li style="list-style-type:disc">Was macht die globale Umwelt aus?</li>
+							</ul>
+							<ul id="d3d8e75a-0f76-4b42-bf32-3c5019b106a0" class="bulleted-list">
+								<li style="list-style-type:disc">Welche Faktoren der globalen Umwelt beeinflussen das
+									Unternehmen?</li>
+							</ul>
+							<ul id="f965c1f5-3c5b-4c76-9152-0d85e7b5b5cf" class="bulleted-list">
+								<li style="list-style-type:disc">Wie können diese Faktoren analysiert und beobachtet
+									werden?</li>
+							</ul>
+							<ul id="b3969c8c-f837-40e2-9498-511037c84d95" class="bulleted-list">
+								<li style="list-style-type:disc">Welche Bedeutung und Auswirkungen haben diese Faktoren
+									für das Unternehmen?</li>
+							</ul>
+							<h3 id="e691057a-a824-4ed4-a499-b194f88b64eb" class="">Globale Umwelt des Unternehmens</h3>
+							<p id="13db5db2-362f-4aa9-8787-9b2bffa491b8" class="">Die globale Umwelt (Makroumwelt)
+								umfasst übergeordnete Faktoren, die nicht nur für ein Unternehmen oder eine Branche,
+								sondern für alle Unternehmen von Bedeutung sind. Sie bilden die rechtliche, ökonomische,
+								ökologische, gesellschaftliche und technologische Umwelt der Unternehmen.</p>
+							<figure id="84f4ce93-cd2f-460d-a45f-b8172cd99e80" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_11.05.53.png"><img
+										style="width:994px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_11.05.53.png" /></a>
+							</figure>
+							<h3 id="7d27210f-8d43-4fa8-aca4-7ac17fba277f" class="">Checkliste zur globalen Umwelt</h3>
+							<figure id="d67d52c4-372d-4826-9670-9616ca82d178" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_11.06.48.png"><img
+										style="width:1274px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_11.06.48.png" /></a>
+							</figure>
+							<h3 id="120f1519-afec-4a46-b26b-b4b6d0121139" class="">Prozess der globalen Umweltanalyse
+							</h3>
+							<figure id="d80480a7-f013-4e5c-ab97-27ef951d8729" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_11.12.16.png"><img
+										style="width:1162px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_11.12.16.png" /></a>
+							</figure>
+							<h3 id="587bc716-6761-497f-9581-bad56205964f" class="">Beeinflussungsportfolio</h3>
+							<figure id="196dd5e2-59e1-454a-b602-9bfef8581f89" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_11.08.17.png"><img
+										style="width:1080px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_11.08.17.png" /></a>
+							</figure>
+						</div>
+					</details>
+					<details open="">
+						<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Branchenanalyse und
+							Wettbewerbsstrategie</summary>
+						<div class="indented">
+							<p id="f62b6a10-69db-4f63-b7e8-96030d0e6bb0" class=""><strong>Strategische
+									Fragestellungen:</strong></p>
+							<ul id="baffb757-b1cc-4647-8a44-e09edbcca0d3" class="bulleted-list">
+								<li style="list-style-type:disc">Welche Branchen sind attraktiv und rentabel?</li>
+							</ul>
+							<ul id="bdbfe682-7dc8-4718-9ec3-336fe7fc4679" class="bulleted-list">
+								<li style="list-style-type:disc">Welche strategischen Gruppen gibt es in einer Branche?
+								</li>
+							</ul>
+							<ul id="8bdb654b-0d3f-4413-81a5-c2189fab3338" class="bulleted-list">
+								<li style="list-style-type:disc">Welche Wettbewerbsstrukturen herrschen in einer Branche
+									vor?</li>
+							</ul>
+							<ul id="e5fea1e9-b5e8-4f4a-8eae-0d2f16423168" class="bulleted-list">
+								<li style="list-style-type:disc">Wie kann sich ein Unternehmen erfolgreicher als seine
+									Wettbewerber positionieren?</li>
+							</ul>
+							<ul id="45838ea3-d2a1-4779-9171-abb2c45d4bb1" class="bulleted-list">
+								<li style="list-style-type:disc">Wie können Veränderungen einer Branche gestaltet und
+									genutzt werden?</li>
+							</ul>
+							<p id="c5957a5a-d3fd-41a9-8451-ce861727fd5b" class="">
+							</p>
+							<h3 id="21ba13ca-fed4-44a6-b155-8875d494e246" class="">Segmentierung der Wettbewerbsumwelt
+							</h3>
+							<p id="0edcc690-787f-4bac-98c2-c2791d49324b" class="">Eine Branche ist eine Gruppe von
+								Unternehmen, deren Produkte oder Dienstleistungen sich gegenseitig weitgehend ersetzen
+								können.</p>
+							<figure id="a91502c8-1664-4715-afcc-92d49bbad6b3" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_11.17.20.png"><img
+										style="width:1190px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_11.17.20.png" /></a>
+							</figure>
+							<h3 id="ec64654d-99e9-480e-9d7b-9914ce39c0dd" class="">Wettbewerbskräfte einer Branche</h3>
+							<figure id="6db92cdd-3747-4220-9583-f8ac4ac611db" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_11.18.51.png"><img
+										style="width:1204px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_11.18.51.png" /></a>
+							</figure>
+							<h3 id="094a0497-b6fb-4110-85ed-19fe8d7f3fce" class="">Generische Wettbewerbsstrategien nach
+								Porter</h3>
+							<figure id="6e52455b-3765-4b4c-92eb-5e4f82fff2ec" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_11.22.02.png"><img
+										style="width:1140px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_11.22.02.png" /></a>
+							</figure>
+							<p id="e5668f8d-64c9-4e81-a8ca-a05a76f4a5ca" class=""><strong>Wettbewerbsvorteile:</strong>
+							</p>
+							<p id="0db5ec4a-6590-4d7d-8e51-947e330e4693" class="">einzigartige Leistung: USP</p>
+							<p id="d6436450-b76b-4f5b-a403-4b7dad99fab2" class="">niedrige Kosten: Economies of scale
+								(EOS)</p>
+							<p id="381baf14-923f-48cd-8b5a-24bc57690f4e" class="">
+							</p>
+							<p id="2094b414-ec50-4dc7-9482-fd55e0121fd3" class="">Kostenführerschaft Beispiel: Aldi</p>
+							<p id="ac425632-f7d4-4c3b-87e4-8bf8df4abe6f" class="">Differenzierungsstrategie: Tesla mit
+								Autopilot</p>
+							<h3 id="368bf089-421e-48ab-82aa-cc96d267ce20" class="">Charakteristische Verläufe von
+								Branchenlebenszyklen</h3>
+							<ul id="70667625-7e3f-4297-8d1b-696841d0c24c" class="bulleted-list">
+								<li style="list-style-type:disc">Junge Branchen</li>
+							</ul>
+							<ul id="daad6353-58c0-44d9-b7a0-e81dc9651a2c" class="bulleted-list">
+								<li style="list-style-type:disc">Reife Branchen</li>
+							</ul>
+							<ul id="3d80aa3c-cf25-4825-850d-e1dbd7b5424c" class="bulleted-list">
+								<li style="list-style-type:disc">Zersplitterte (fragmentierte) Branchen</li>
+							</ul>
+							<ul id="731d2b1a-0ba5-4575-a724-333ec8c7c540" class="bulleted-list">
+								<li style="list-style-type:disc">Schrumpfende Branchen</li>
+							</ul>
+							<ul id="1fc703d0-d560-4981-8c62-d4387c912f6a" class="bulleted-list">
+								<li style="list-style-type:disc">Globale Branchen</li>
+							</ul>
+							<h3 id="a38d6a1a-9075-4576-aa08-ba7951220bcc" class="">Branchenlebenszyklus</h3>
+							<figure id="64b00eed-efb6-4085-8c95-123bc9b261ad" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_11.28.49.png"><img
+										style="width:1154px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_11.28.49.png" /></a>
+							</figure>
+							<h3 id="1a84005e-4f43-41c2-998a-feb6d8fafcd7" class="">Übersicht hybrider
+								Wettbewerbsstrategien</h3>
+							<figure id="912d7e72-0c0d-415a-8948-e8c66b9b7f8a" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_11.31.47.png"><img
+										style="width:1266px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_11.31.47.png" /></a>
+							</figure>
+							<ul id="bd18c181-b17d-4ea4-ae70-d7b23c66eafc" class="bulleted-list">
+								<li style="list-style-type:disc">Simultane Strategie führt oft zu “stuck in the middle”.
+									Daher ist Vorsicht (!) geboten, wenn diese Strategie gewählt wird.<ul
+										id="679e5fd2-5dfa-45fe-83c1-395b4160e5ab" class="bulleted-list">
+										<li style="list-style-type:circle">Oftmals Voraussetzung damit diese Strategie
+											Erfolg haben kann: Viel Geld!</li>
+									</ul>
+								</li>
+							</ul>
+							<h3 id="039190d4-873d-4eae-a37a-fedcf711e73d" class="">Outpacing-Strategien</h3>
+							<figure id="ae1a4010-a272-462b-aba6-b7a5800bfebf" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_11.33.30.png"><img
+										style="width:1120px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_11.33.30.png" /></a>
+							</figure>
+							<h3 id="09266ecf-9553-4952-bfb4-e93d9c06744e" class="">Wettbewerbsstrategien im
+								Koopkurrenz-Modell</h3>
+							<figure id="d0064fe1-5a7e-4245-a773-1284b86e0a6f" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_11.41.49.png"><img
+										style="width:1070px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_11.41.49.png" /></a>
+							</figure>
+							<p id="b87d3d8d-8c1c-4ff8-969f-859cb9c81456" class="">Monopol Beispiel: Datev → Software für
+								Steuerberater</p>
+							<h3 id="e79c4ade-6817-4cbd-9044-366f6060188d" class="">Delta-Modell der
+								Wettbewerbsstrategien</h3>
+							<figure id="1572f274-98eb-4941-9f6a-077c91cd8d5a" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_11.46.21.png"><img
+										style="width:1294px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_11.46.21.png" /></a>
+							</figure>
+						</div>
+					</details>
+					<details open="">
+						<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Marktanalysen und -strategien
+						</summary>
+						<div class="indented">
+							<p id="8ba1a023-49ee-460a-8daa-9a89b67efabf" class=""><strong>Strategische
+									Fragestellungen:</strong></p>
+							<ul id="2ba2c91e-987b-4db2-a520-ab97186e0645" class="bulleted-list">
+								<li style="list-style-type:disc">Welche Märkte sind attraktiv und rentabel?</li>
+							</ul>
+							<ul id="293b0fc5-31b3-4d2d-92ca-352da861d9d0" class="bulleted-list">
+								<li style="list-style-type:disc">Wie ist ein Markt einzugrenzen und Marktsegmente
+									aufzuteilen?</li>
+							</ul>
+							<ul id="0c1b9408-1ad7-49c7-ae9a-61749bf1da10" class="bulleted-list">
+								<li style="list-style-type:disc">Welche Marktstrukturen herrschen in einem Marktsegment
+									vor?</li>
+							</ul>
+							<ul id="2e68f16b-cb26-47e3-a73a-3d8999517e23" class="bulleted-list">
+								<li style="list-style-type:disc">Wie kann sich ein Unternehmen erfolgreich in einem
+									Markt positionieren?</li>
+							</ul>
+							<ul id="a6755faf-8301-49f9-802a-e5dc7010c137" class="bulleted-list">
+								<li style="list-style-type:disc">Wie können Veränderungen in einem Markt genutzt werden?
+								</li>
+							</ul>
+							<h3 id="f8ea3abe-d035-45bc-aa4e-11e5f226ad33" class="">Elemente eines Marktes</h3>
+							<p id="972bbe04-5e79-4c95-b4f8-a052449cb9d4" class="">Ein Markt besteht aus den Nachfragern
+								und Anbietern eines bestimmten Produktes sowie den zur Abwicklung eines
+								Leistungsaustausches erforderlichen Beziehungen.</p>
+							<figure id="7c95544a-a347-4ecc-8561-c6a05cf1d977" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_11.56.37.png"><img
+										style="width:1354px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_11.56.37.png" /></a>
+							</figure>
+							<h3 id="b74e0f55-d165-4652-99e9-0fafac4bb7ff" class="">Voraussetzungen für eine
+								Marktsegmentierung</h3>
+							<p id="5bf9cbc6-cc01-4cb3-8c39-fc1844b2b28c" class="">Der <strong>relevante Markt</strong>
+								ist der Teil eines Gesamtmarktes, auf den das Unternehmen seine Aktivitäten konzentriert
+								und abstimmt.</p>
+							<ul id="01e45a20-99cf-44aa-9b90-e997ddfe315b" class="bulleted-list">
+								<li style="list-style-type:disc"><strong>Eindeutige Abgrenzungskriterien</strong> wie z.
+									B. funktionale, ästhetische, physikalische oder symbolische Produktunterschiede.
+								</li>
+							</ul>
+							<ul id="be8506ef-5de5-4dfb-b171-677fd6219b2c" class="bulleted-list">
+								<li style="list-style-type:disc">Der Gesamtmarkt erfordert eine <strong>minimale
+										Größe</strong>, damit mindestens zwei Teilmärkte unterschieden werden können.
+								</li>
+							</ul>
+							<ul id="3e13e01a-f8de-4944-ba91-d19bb3ef3c48" class="bulleted-list">
+								<li style="list-style-type:disc">Die Marktsegmente sollen möglichst <strong>eindeutig zu
+										unterscheiden</strong> sein.</li>
+							</ul>
+							<h3 id="255f29bb-40ac-4684-a2ec-aabb74496fc7" class="">Durchführung einer Marktsegmentierung
+							</h3>
+							<ul id="be646c4d-fd8d-44dd-b43a-c8df21c94f35" class="bulleted-list">
+								<li style="list-style-type:disc">Segmentbildung<ul
+										id="004e5f5c-b189-44ac-973d-fc64fa504249" class="bulleted-list">
+										<li style="list-style-type:circle">Kriterien zur Segmentierung<ul
+												id="7e54fe05-bfce-4215-99f4-a85b502d11c5" class="bulleted-list">
+												<li style="list-style-type:square">Kundenmerkmale</li>
+											</ul>
+											<ul id="ae17257d-4c0d-4a17-b444-1b72a0bd9132" class="bulleted-list">
+												<li style="list-style-type:square">Geografisch-regional</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<ul id="7b12cac9-9e07-4431-85f9-99667ba419b0" class="bulleted-list">
+								<li style="list-style-type:disc">Segmentbewertung und -auswahl</li>
+							</ul>
+							<ul id="08a9d0bd-f62e-4e0c-8aab-23618d4f2f80" class="bulleted-list">
+								<li style="list-style-type:disc">Marktpositionierung</li>
+							</ul>
+							<h3 id="db500ff4-4834-4cef-a28d-5e67470cdcbf" class="">Marktsegmentierung</h3>
+							<figure id="deffa5bb-d810-4d97-b6ee-32fb67e0b06a" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.10.22.png"><img
+										style="width:1032px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.10.22.png" /></a>
+							</figure>
+							<h3 id="7901f654-783c-448c-a5e4-8627997bc866" class="">Evolution der Marktanforderungen</h3>
+							<figure id="7bde8754-02bd-4969-8f79-a7a92d7dc852" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.11.17.png"><img
+										style="width:1212px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.11.17.png" /></a>
+							</figure>
+							<h3 id="f9271726-612f-4bb2-89f9-0be83c38180a" class="">Untersuchung folgender Merkmale
+								innerhalb einer Marktanalyse</h3>
+							<ul id="74f1dbf7-7b61-4af4-bc60-3730c5168695" class="bulleted-list">
+								<li style="list-style-type:disc">Marktgröße</li>
+							</ul>
+							<ul id="6d89c04c-d13c-4b69-9611-390f64fd64a7" class="bulleted-list">
+								<li style="list-style-type:disc">Marktdynamik</li>
+							</ul>
+							<ul id="ac1232dc-4889-4540-aa7b-a253cfd88f77" class="bulleted-list">
+								<li style="list-style-type:disc">Marktstruktur</li>
+							</ul>
+							<ul id="81cb68db-5040-4a4e-b401-1514b899d5b8" class="bulleted-list">
+								<li style="list-style-type:disc">Markteigenschaften</li>
+							</ul>
+							<ul id="ebc56c3c-ab2b-4d09-a912-d1beefd9dc2b" class="bulleted-list">
+								<li style="list-style-type:disc">Marktposition</li>
+							</ul>
+							<h3 id="98990b58-e63f-40bd-bb69-ae8c9e502e32" class="">Checkliste zur Marktanalyse</h3>
+							<figure id="4e6c9c8b-a0ab-43cd-8300-08775424982f" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.12.47.png"><img
+										style="width:1342px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.12.47.png" /></a>
+							</figure>
+							<h3 id="01a846a2-01a6-4be1-91e6-397be40c99e7" class="">Informationsquellen der
+								Marktforschung</h3>
+							<figure id="e0db8c53-0e75-4a90-bcbe-18c4683f0166" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.13.30.png"><img
+										style="width:1262px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.13.30.png" /></a>
+							</figure>
+							<h3 id="a421d7bb-9128-438c-bd17-88472b9aa455" class="">Produkt-Markt-Portfolio</h3>
+							<figure id="5b79db20-97b0-4e70-a45e-c40d2202005c" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.14.06.png"><img
+										style="width:1148px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.14.06.png" /></a>
+							</figure>
+							<h3 id="cc434da9-6d35-4846-816b-aeca4e881774" class="">Marktwachstums-Marktanteils-Portfolio
+							</h3>
+							<figure id="480908e0-531f-4501-857b-85f934a11290" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.15.49.png"><img
+										style="width:1076px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.15.49.png" /></a>
+							</figure>
+							<h3 id="05b07fa0-0a22-4865-a416-868176dc5d5f" class="">
+								Marktattraktivitäts-Wettbewerbsvorteils-Portfolio</h3>
+							<figure id="8805bdc1-aca2-42a9-aff0-9b02f6fc9c7e" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.17.02.png"><img
+										style="width:1296px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.17.02.png" /></a>
+							</figure>
+						</div>
+					</details>
+					<details open="">
+						<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Kundenanalyse und -strategien
+						</summary>
+						<div class="indented">
+							<p id="d7b6ef3a-9ec5-4952-b147-eb530fc41414" class=""><strong>Strategische
+									Fragestellungen:</strong></p>
+							<p id="80c3c0eb-4612-4a0e-835d-d5db02e4a285" class=""><strong>Kunden</strong> sind einzelne
+								Personen oder Gruppen, welche die Entscheidung für den Kauf einer Leistung des
+								Unternehmens treffen.</p>
+							<ul id="5c71b860-b3de-4b3c-8d5b-1f4e0d8dc29f" class="bulleted-list">
+								<li style="list-style-type:disc">Wer sind die bestehenden und potenziellen Kunden eines
+									Unternehmens?</li>
+							</ul>
+							<ul id="65038c8c-9b99-407b-b7f0-937347a64c23" class="bulleted-list">
+								<li style="list-style-type:disc">Welche Kunden sind für ein Unternehmen “wertvoll”?</li>
+							</ul>
+							<ul id="9e29ad13-8053-42e1-9061-ac3623a6210f" class="bulleted-list">
+								<li style="list-style-type:disc">Welche Kundengruppen soll wie viel Aufmerksamkeit
+									geschenkt werden?</li>
+							</ul>
+							<ul id="f7aa227d-ec42-4431-8eb4-14a05d56f226" class="bulleted-list">
+								<li style="list-style-type:disc">Welche Anforderungen haben bestehende und potenzielle
+									Kunden?</li>
+							</ul>
+							<ul id="f810b940-7392-4974-a00d-908537bd4d1b" class="bulleted-list">
+								<li style="list-style-type:disc">Wie können bestehende Kunden an das Unternehmen
+									gebunden werden?</li>
+							</ul>
+							<ul id="d658feb2-1158-4747-b597-5556ee559b1d" class="bulleted-list">
+								<li style="list-style-type:disc">Wie können bestehende Kunden gewonnen werden?</li>
+							</ul>
+							<ul id="ff4d6cc6-0f4e-4bd0-a895-d1137d124a86" class="bulleted-list">
+								<li style="list-style-type:disc">Wie können potenzielle Kunden gewonnen werden?</li>
+							</ul>
+							<ul id="41ed0de1-37ac-4a65-a1b3-a193d1d50817" class="bulleted-list">
+								<li style="list-style-type:disc">Wie kann sich das Unternehmen besser als seine
+									Wettbewerber positionieren?</li>
+							</ul>
+							<h3 id="aeb5fd74-7145-4138-b637-213a40d94e77" class="">Kriterien zur Kundensegmentierung
+							</h3>
+							<figure id="d6b2aec0-d5c3-403b-a8c4-f1eaee93dec8" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.20.45.png"><img
+										style="width:1258px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.20.45.png" /></a>
+							</figure>
+							<h3 id="5e23dfb9-9c0f-401e-be2f-e43eb0f65887" class="">Methoden der Kundenwertbestimmung
+							</h3>
+							<figure id="dce69378-121d-42df-8ea3-875d44273182" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.21.44.png"><img
+										style="width:1184px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.21.44.png" /></a>
+							</figure>
+							<p id="b522cd33-70ba-4d4b-b52c-d976f3d78437" class=""><strong>Beispiel
+									Anwendungsmethode:</strong> ABC-Analyse</p>
+							<h3 id="9dff2612-474d-498b-8261-72c8503cffe5" class="">Kunden-Umsatzanalyse</h3>
+							<figure id="69dcad7e-da00-4909-ae73-795173bdc767" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.22.19.png"><img
+										style="width:1270px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.22.19.png" /></a>
+							</figure>
+							<h3 id="5bdfafc8-4558-4fd1-b1fb-902a61aab99b" class="">Scoring-Ansatz zur Kundenbewertung
+							</h3>
+							<figure id="b0531f07-1e65-490d-8320-232d5a2e4674" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.23.04.png"><img
+										style="width:1368px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.23.04.png" /></a>
+							</figure>
+							<h3 id="5a61a6bd-2e9c-472c-acc7-af882fb72c49" class="">Kunden-Portfolio</h3>
+							<figure id="49c6cd36-8509-44fc-9c1d-727639713738" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.23.40.png"><img
+										style="width:1150px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.23.40.png" /></a>
+							</figure>
+							<h3 id="d7aad9d3-211e-4818-a0cd-21976a4f863f" class="">Kunden-Lebenszyklus</h3>
+							<figure id="ce5ad0af-592f-41bd-a457-39ec876d1486" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.24.44.png"><img
+										style="width:1222px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.24.44.png" /></a>
+							</figure>
+							<h3 id="d3482514-793c-474b-818f-d06a9cfbdc2c" class="">Kriterien für gute und schlechte
+								Kunden</h3>
+							<p id="131e21df-1012-4495-a988-00c576049389" class="">Gute Kunden sind rentabel, wenig
+								preissensibel und langfristige Geschäftspartner. Sie haben strategische Ziele, die nicht
+								im Widerspruch zu den eigenen Interessen liegen und besitzen Umsatz-, Weiterempfehlungs-
+								und Vorzeigepotenzial.</p>
+							<figure id="4b863b9f-b633-416f-b1e5-8986719f4e64" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.27.00.png"><img
+										style="width:1328px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.27.00.png" /></a>
+							</figure>
+							<h3 id="faff8317-4e1c-4980-b2b3-4a07bd45ef68" class="">Messung der Kundenzufriedenheit</h3>
+							<ul id="dd006e59-b2d2-4e9d-8048-8eb0df4d34f5" class="bulleted-list">
+								<li style="list-style-type:disc">Qualitative Methoden<ul
+										id="b88c3649-6aa9-4687-8268-5abc47b0d3e6" class="bulleted-list">
+										<li style="list-style-type:circle">Beschwerden und Reklamationen</li>
+									</ul>
+									<ul id="5771b4a0-7c62-434b-a9b5-799a3e736ea4" class="bulleted-list">
+										<li style="list-style-type:circle">Methoden der kritischen Ereignisse (Critical
+											Incident Method)</li>
+									</ul>
+									<ul id="031f0ff1-b79c-4505-b31a-e7dfa48b54e3" class="bulleted-list">
+										<li style="list-style-type:circle">Sequentielle Ereignismethode</li>
+									</ul>
+								</li>
+							</ul>
+							<ul id="bf43a9b7-e7c4-493d-ba2f-8160f69071ef" class="bulleted-list">
+								<li style="list-style-type:disc">Quantitative Methoden<ul
+										id="696b6e87-8a55-4419-a30f-7a6f721e78a7" class="bulleted-list">
+										<li style="list-style-type:circle">Diskrepanzmodelle</li>
+									</ul>
+									<ul id="57a3b483-ee04-4e74-9eef-11f5281bb3bd" class="bulleted-list">
+										<li style="list-style-type:circle">Gesamtzufriedenheitsbefragung</li>
+									</ul>
+									<ul id="9ed6058a-28e6-456c-ae5f-79db162d62df" class="bulleted-list">
+										<li style="list-style-type:circle">Multiattributive Messung</li>
+									</ul>
+								</li>
+							</ul>
+							<h3 id="0196319f-692b-4a82-988e-cf5d6040de01" class="">Aufbau eines Kunden-Fragebogens</h3>
+							<figure id="4e60f71d-59b3-4e23-9404-9db5bbb2d0ab" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.32.48.png"><img
+										style="width:1364px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.32.48.png" /></a>
+							</figure>
+							<figure id="a311f566-c8d8-461b-ad5f-d8c7557059e4" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.33.20.png"><img
+										style="width:1384px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.33.20.png" /></a>
+							</figure>
+							<h3 id="a0b25e7b-20b8-4b8c-b41f-2eceedae81c7" class="">Checkliste zur Kundenzufriedenheit
+							</h3>
+							<figure id="e7a6b024-963a-4d29-8898-114413d19776" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.33.53.png"><img
+										style="width:1256px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.33.53.png" /></a>
+							</figure>
+						</div>
+					</details>
+					<details open="">
+						<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Konkurrenzanalyse und
+							-strategien</summary>
+						<div class="indented">
+							<p id="a87a22eb-e51a-483c-8748-6db797ebeec9" class=""><strong>Strategische
+									Fragestellungen:</strong></p>
+							<ul id="1df95ffa-3246-493a-9db2-79e331615942" class="bulleted-list">
+								<li style="list-style-type:disc">Wer sind die Konkurrenten?</li>
+							</ul>
+							<ul id="f4abe091-3945-47a0-bd1f-665fac6163b3" class="bulleted-list">
+								<li style="list-style-type:disc">Was sind ihre strategischen Ziele?</li>
+							</ul>
+							<ul id="a5841c98-4e99-4b5e-97df-bb9b30121851" class="bulleted-list">
+								<li style="list-style-type:disc">Worin liegen ihre Stärken und Schwächen?</li>
+							</ul>
+							<ul id="dc4c5f4b-ebea-4416-9afc-7c74dbb32df5" class="bulleted-list">
+								<li style="list-style-type:disc">Welche Strategien verfolgen sie?</li>
+							</ul>
+							<h3 id="be61023a-8014-4079-9720-ca08078d62b1" class="">Unterscheidung der Konkurrenten</h3>
+							<p id="ecdbdf3d-a3bd-4a60-9c05-13b54651c470" class="">Konkurrenten bieten Produkte zur
+								Befragung der gleichen Kundenbedürfnisse an wie das eigene Unternehmen.</p>
+							<ul id="f0dbcf5c-b989-40af-a549-b44d880d0dc3" class="bulleted-list">
+								<li style="list-style-type:disc">Aktuelle Konkurrenten</li>
+							</ul>
+							<ul id="b45d1172-e9a7-4ffb-ba5d-dc92b9979ceb" class="bulleted-list">
+								<li style="list-style-type:disc">Neue Konkurrenten</li>
+							</ul>
+							<ul id="00547e4f-6998-47aa-b2ff-8570346acbf2" class="bulleted-list">
+								<li style="list-style-type:disc">Potenzielle Konkurrenten</li>
+							</ul>
+							<h3 id="479dc151-3aa4-46e5-9ca3-14c1caf9bf9f" class="">Gesamtbild einer Konkurrenzanalyse
+							</h3>
+							<p id="27f0f3ce-16c2-4337-9ece-40ec2adf4b06" class="">Die Konkurrenzanalyse beschäftigt sich
+								mit der systematischen Sammlung, Verdichtung, Auswertung und Interpretation von
+								Informationen über die derzeitige und zukünftige Situation der Wettbewerber.</p>
+							<figure id="0d1e673d-50c9-4eed-a787-aac519c0a4e1" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.46.45.png"><img
+										style="width:1284px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.46.45.png" /></a>
+							</figure>
+							<h3 id="97cba563-1830-477e-89e0-3ed46c3cfca3" class="">Untersuchungsbereiche der
+								Konkurrenzanalyse</h3>
+							<figure id="5255edde-466f-4390-a7f1-dcb3a45655bf" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.48.12.png"><img
+										style="width:1314px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.48.12.png" /></a>
+							</figure>
+							<figure id="fc0fc70c-f607-4164-9060-9a8dcce13b68" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.48.38.png"><img
+										style="width:1314px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.48.38.png" /></a>
+							</figure>
+							<h3 id="0f790d40-7352-4bbe-8bc9-66049deab23c" class="">Informationsquellen der
+								Konkurrenzanalyse</h3>
+							<figure id="5b7441e3-e783-40ef-9482-10dad1609c26" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.49.20.png"><img
+										style="width:1260px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.49.20.png" /></a>
+							</figure>
+							<h3 id="85486a25-20f4-42b9-ba76-9bdce345c501" class="">Stärken-Schwächen-Profil im
+								Wettbewerb</h3>
+							<figure id="8f28040f-3cb8-4ed0-9f0d-3c356b0e0a30" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.50.02.png"><img
+										style="width:1202px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.50.02.png" /></a>
+							</figure>
+							<h3 id="78e7bdc6-292f-461a-9cc5-f312076bd98d" class="">Elemente der Konkurrenzanalyse</h3>
+							<figure id="5df842f6-7059-48c1-b693-d35d0eb835c7" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.51.00.png"><img
+										style="width:1048px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.51.00.png" /></a>
+							</figure>
+							<h3 id="fb77bf77-b275-407b-a95d-d49bc8f29138" class="">Checkliste zur Konkurrenzanalyse</h3>
+							<figure id="937258a2-bc0f-416c-add2-2dbc64b17514" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.52.21.png"><img
+										style="width:1318px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.52.21.png" /></a>
+							</figure>
+							<h3 id="74a954f9-7ca8-49a9-be33-d8a29733e944" class="">Strategische Fragestellungen</h3>
+							<ul id="d8dfd3d2-65fb-41b2-a56c-4869d49a94d8" class="bulleted-list">
+								<li style="list-style-type:disc">Welche strategischen Maßnahmen treffen den
+									Konkurrenten?</li>
+							</ul>
+							<ul id="b87a4bd9-4e00-468b-9ee0-5909fd947471" class="bulleted-list">
+								<li style="list-style-type:disc">Welche dieser Maßnahmen provozieren eine Vergeltung?
+								</li>
+							</ul>
+							<ul id="80813e25-2f58-4962-a741-9dff32af36d1" class="bulleted-list">
+								<li style="list-style-type:disc">Wie sieht eine mögliche Vergeltung aus und ist der
+									Wettbewerb dazu imstande?</li>
+							</ul>
+							<h3 id="ee9071fd-e5db-4100-b6fe-74acc0402f52" class="">Anzeichen für einen dynamischen
+								Wettbewerb</h3>
+							<ul id="b8528ce8-b134-4b5a-8771-3e075120fd7f" class="bulleted-list">
+								<li style="list-style-type:disc">Produktlebenszyklen verkürzen sich wie z. B. für
+									Computer oder Mobiltelefone.</li>
+							</ul>
+							<ul id="4def9cc3-1075-4d26-aad5-590ba373b12b" class="bulleted-list">
+								<li style="list-style-type:disc">Entrittsbarrieren sinken wie z. B. in der
+									Telekommunikation oder der Post.</li>
+							</ul>
+							<ul id="6972979d-8a07-4f0e-8125-7ba8f6cbce0b" class="bulleted-list">
+								<li style="list-style-type:disc">Kunden und Lieferanten werden als Partner in der
+									Leistungserstellung einbezogen. Sie übernehmen dabei bestimmte Aktivitäten selbst,
+									wie z. B. der Kunde beim Online-Banking seine Buchungen selbst erfasst.</li>
+							</ul>
+							<ul id="aa2c4af1-8d91-463a-af20-b986f8cccbbd" class="bulleted-list">
+								<li style="list-style-type:disc">Das das Produkt- und Markt-Know-How schneller veraltet,
+									wird das Lernen, Verlernen und Umlernen für ein Unternehmen immer wichtiger.</li>
+							</ul>
+							<h3 id="3219f3f9-5bbf-4203-b05b-20adc9baf439" class="">Wettbewerbsarenen bei eskaliertem
+								Wettbewerb</h3>
+							<figure id="0060c92f-6e48-4af8-b84e-df85b432bb02" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.59.28.png"><img
+										style="width:1310px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_12.59.28.png" /></a>
+							</figure>
+							<h3 id="a348d250-0541-458d-807f-dd874c93bc68" class="">Reduzierte Dauerhaftigkeit von
+								Wettbewerbsvorteilen</h3>
+							<ul id="7dc6f262-f2df-4197-a783-9ef5659a4a49" class="bulleted-list">
+								<li style="list-style-type:disc">Künftige Maßnahmen der relevanten Wettbewerber sind
+									durch Konkurrenzanalyse zu prognostizieren.</li>
+							</ul>
+							<ul id="b2d756f4-89d0-4397-b879-61c614e0c0d6" class="bulleted-list">
+								<li style="list-style-type:disc">Die Wettbewerbsdynamik ist zu beurteilen, um
+									Wettbewerbsprozesse zu beeinflussen.</li>
+							</ul>
+							<figure id="74a49b00-eb3e-4e2c-a11e-9150ab5ce060" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_13.01.14.png"><img
+										style="width:1198px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_13.01.14.png" /></a>
+							</figure>
+							<h3 id="b9a26524-9e89-4167-a376-af00042b6dba" class="">Prozess dynamischer Strategien</h3>
+							<figure id="e7c8a8a5-c1f3-46ed-b9ab-f65275bfd608" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_13.02.23.png"><img
+										style="width:1322px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_13.02.23.png" /></a>
+							</figure>
+						</div>
+					</details>
+					<details open="">
+						<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Entwicklung marktorientierter
+							Strategien</summary>
+						<div class="indented">
+							<p id="ddb7e57f-a1eb-4c64-96bf-fcb727ce9b60" class=""><strong>Schritte marktorientierter
+									Strategien:</strong></p>
+							<ul id="7fbf158b-07e4-469a-9b8c-2789eb212be8" class="bulleted-list">
+								<li style="list-style-type:disc">Zusammenfassung der Chancen und Risiken</li>
+							</ul>
+							<ul id="0d4cf2e3-decf-451d-a627-4455019c1ebd" class="bulleted-list">
+								<li style="list-style-type:disc">Zusammenfassung der Stärken und Schwächen</li>
+							</ul>
+							<ul id="ef1c378d-f39f-44ef-bd57-342ec35356d6" class="bulleted-list">
+								<li style="list-style-type:disc">Priorisierung</li>
+							</ul>
+							<ul id="1c1d5be9-b1a1-41c8-a6f8-74fb3a7075fe" class="bulleted-list">
+								<li style="list-style-type:disc">Gegenüberstellung</li>
+							</ul>
+							<ul id="2dc37dd5-c5e1-4a8c-9a7b-161a14398504" class="bulleted-list">
+								<li style="list-style-type:disc">Ableitung von Normstrategien</li>
+							</ul>
+							<h3 id="b6b02376-eb29-4a2f-9129-bac798287efd" class="">SWOT-Matrix</h3>
+							<figure id="8f8e7197-ed0c-4191-8c7f-f6fbcb740b27" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_13.06.07.png"><img
+										style="width:1340px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-14_um_13.06.07.png" /></a>
+							</figure>
+						</div>
+					</details>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.875em;line-height:1.3">Unternehmensformen</summary>
+				<div class="indented">
+					<h2 id="b0459b00-0a4f-42a7-83ac-612764e687da" class="">Personengesellschaften</h2>
+					<h3 id="873e59d5-2943-43ed-b6a2-492ed43e44ab" class="">Einzelperson:</h3>
+					<ul id="acf7ac80-2770-41c8-9081-3d1bc4fba0b7" class="bulleted-list">
+						<li style="list-style-type:disc">eK
+							→ eingetragene*r Kaufmann/ Kauffrau
+							→ Haftet mit seinem/ ihrem Privatvermögen</li>
+					</ul>
+					<h3 id="e59fea17-fd72-4ee2-a8a6-db048f5a021e" class="">Zwei oder mehr Personen:</h3>
+					<ul id="9bd063ff-b536-43ec-ac07-cf1b2b9a1547" class="bulleted-list">
+						<li style="list-style-type:disc">GbR
+							→ Gesellschaft bürgerlichen Rechts
+							→ keine Formvorschrift - dadurch kann es unter Umständen zu Schwierigkeiten kommen bei
+							Uneinigkeiten, vor allem bei Insolvenz oder anderen Verfahren.
+							→ keine Unterscheidung zw. Betriebs- und Privatvermögen</li>
+					</ul>
+					<ul id="aa14feda-2756-43c7-bedf-3aa7ccde22c9" class="bulleted-list">
+						<li style="list-style-type:disc">OHG
+							→ offene Handelsgesellschaft
+							→ jeder ist mit seinem persönlichen Vermögen haftbar
+							→ jedoch deutlich besser geregelt als GbR, da interne Strukturen vorab vertraglich/ per
+							Satzung geregelt werden müssen - also wer wem was in welchem Fall schuldig ist, bzw. wer für
+							was haftet
+							→ ist Gründungsakt und wird eingetragen in Handelsregister</li>
+					</ul>
+					<ul id="a44d41ab-877e-49e4-a462-0b8533c98d51" class="bulleted-list">
+						<li style="list-style-type:disc">KG
+							→ Kommanditgesellschaft
+							→ eine Person in der KG haftet persönlich und die andere über das Unternehmen</li>
+					</ul>
+					<h2 id="6a0e10d3-03e8-4ab8-bed8-2712ceea9084" class="">Kapitalgesellschaften</h2>
+					<h3 id="f82ece02-d8c0-4c69-acf4-80181251f2b2" class="">Einer oder mehrere Gesellschafter</h3>
+					<ul id="224cc87b-8445-4a8f-8334-182029acfc10" class="bulleted-list">
+						<li style="list-style-type:disc">GmbH
+							→ Gesellschaft mit beschränkter Haftung
+							→ Haftung bleibt zu 100% im Unternehmen (z. B. bei Insolvenz)
+							→ 25.000€ Stammkapital muss eingebracht werden</li>
+					</ul>
+					<ul id="18fc651f-292d-4876-85c6-2ba5928687b2" class="bulleted-list">
+						<li style="list-style-type:disc">UG
+							→ UG ist Unterform von GmbH (ist damit im Prinzip auch eine GmbH) nur mit verringerten
+							Ansprüchen an das anfängliche Stammkapital. Man kann eine UG z. B. mit lediglich 500€
+							Stammkapital starten, MUSS ABER jedes Jahr 25% von seinem Gewinn auf das Stammkapital
+							einzahlen, bis 25.000€ erreicht sind. Dann kann anschließend die Umwandlung in eine GmbH
+							stattfinden.
+							Direkter Unterschied: UG wird als weniger seriös angesehen als GmbH.</li>
+					</ul>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.875em;line-height:1.3">Bilanz, GuV und Cashflow</summary>
+				<div class="indented">
+					<details open="">
+						<summary style="font-weight:600;font-size:1.5em;line-height:1.3">Magic-Triangle: Bilanz - GuV -
+							CF</summary>
+						<div class="indented">
+							<details open="">
+								<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Bilanz </summary>
+								<div class="indented">
+									<ul id="616e446e-120a-4e20-bf70-d28ac6dbb987" class="bulleted-list">
+										<li style="list-style-type:disc"><strong>Abschließende</strong> (auf einen
+											Stichtag bezogen - z. B. Jahresende) <strong>Gegenüberstellung von Einnahmen
+												und Ausgaben, Vermögen und Schulden</strong>.<ul
+												id="a0240066-3376-405e-830a-5b0b0fbfc125" class="bulleted-list">
+												<li style="list-style-type:circle">Bilanz/ Bilanzierung stellt eine
+													<strong>Übersicht über alle Vermögensbestandteile eines
+														Unternehmens</strong> sowie über <strong>deren Herkunft</strong>
+													dar.</li>
+											</ul>
+											<ul id="7417a570-8f6d-4d26-b5bb-8c2d3164100f" class="bulleted-list">
+												<li style="list-style-type:circle">Auch: Ergebnis, Fazit, abschließender
+													Überblick</li>
+											</ul>
+										</li>
+									</ul>
+									<ul id="fc658d24-610e-4076-a09f-ec6dee0b6012" class="bulleted-list">
+										<li style="list-style-type:disc">Bilanz bezieht sich auf einen Stichtag.<ul
+												id="a1598a20-d435-4cf3-bb02-ce680857d33a" class="bulleted-list">
+												<li style="list-style-type:circle">Immer: “Bilanz zum xx.xx.xxxx”</li>
+											</ul>
+										</li>
+									</ul>
+									<ul id="c93cf0d2-1150-47f6-8087-0f1e9ce4e265" class="bulleted-list">
+										<li style="list-style-type:disc"><strong>Cashflow</strong> (in Bilanz) ist die
+											Veränderung des Bestands in der Unternehmenskasse.</li>
+									</ul>
+									<ul id="62d00878-0330-4919-80b2-248f96bca996" class="bulleted-list">
+										<li style="list-style-type:disc">Zwei Seiten: Aktiva und Passiva<ul
+												id="33524080-6d69-4c9e-bef0-f413f7005896" class="bulleted-list">
+												<li style="list-style-type:circle"><strong>Aktiva-Seiten (A) </strong>→
+													<strong>Mittelverwendung</strong>
+													<ul id="0e1a0cb8-67ae-42f9-9e8f-4c885168b4f4" class="bulleted-list">
+														<li style="list-style-type:square"><strong>Anlagevermögen
+																(AV)</strong>
+															<ul id="0aada67b-cb87-4562-936d-3e012a5f3808"
+																class="bulleted-list">
+																<li style="list-style-type:disc"><strong>Δ SachAV
+																		(Sach-Anlagevermögen)</strong>:
+																	Alle <strong>Gegenstände die dauerhaft/ langfristig
+																		dem Geschäftsbetrieb dienen</strong> und damit
+																	zum Vermögen des Unternehmens zählen.<ul
+																		id="dd0fce39-dd4f-462a-a0ce-fab2a3bc4b61"
+																		class="bulleted-list">
+																		<li style="list-style-type:circle">Δ Delta →
+																			Steht für Veränderung zw. zwei Daten z. B.
+																			Jahresanfang/ -ende</li>
+																	</ul>
+																	<ul id="c64a0b96-11ec-4dc6-abf4-d1719ede421a"
+																		class="bulleted-list">
+																		<li style="list-style-type:circle">materielle
+																			und immaterielle Anlagevermögen</li>
+																	</ul>
+																	<ul id="f20184c2-3f4c-4291-a152-3f9d37d2b38b"
+																		class="bulleted-list">
+																		<li style="list-style-type:circle">z. B. BGA
+																			(Betriebs- und Geschäftsausstattung)
+																			→ z. B. PKW</li>
+																	</ul>
+																</li>
+															</ul>
+															<ul id="e039fbd5-04f6-4313-8d24-2591d4588732"
+																class="bulleted-list">
+																<li style="list-style-type:disc"><strong>Δ FinanzAV
+																		(Finanz-Anlagevermögen)</strong></li>
+															</ul>
+														</li>
+													</ul>
+													<ul id="0a2f99f6-4513-4d65-a42c-7a5b8b7e3974" class="bulleted-list">
+														<li style="list-style-type:square"><strong>Umlaufvermögen
+																(UV)</strong>
+															<ul id="3a580635-a74c-4ead-836b-fb9870c70d48"
+																class="bulleted-list">
+																<li style="list-style-type:disc"><strong>Gegenstände und
+																		Vermögen die nur kurzfristig im Unternehmen
+																		verbleiben</strong>.<ul
+																		id="38dea0e9-7761-4a18-b9a5-afdd2ee4545b"
+																		class="bulleted-list">
+																		<li style="list-style-type:circle"><strong>Δ
+																				RHB</strong> (RHB = Roh-, Hilfs- und
+																			Betriebsstoffe):
+																			a) Rohstoffe
+																			b) Waren
+																			d) Forderungen (s. u.)</li>
+																	</ul>
+																</li>
+															</ul>
+															<ul id="49483b05-a21a-48e0-a13c-411dff61ed4a"
+																class="bulleted-list">
+																<li style="list-style-type:disc"><strong>Δ Ford. a
+																		LuL</strong> (Forderungen aus Lieferung und
+																	Leistung)<ul
+																		id="1ef6839e-bcfb-4d5e-b805-a1e27b4dbecc"
+																		class="bulleted-list">
+																		<li style="list-style-type:circle">In Rechnung
+																			gestellte noch nicht bezahlte Beträge für
+																			Leistungen, die das eigene Unternehmen
+																			erbracht hat.</li>
+																	</ul>
+																</li>
+															</ul>
+															<ul id="3fd7fdd7-a1cc-48ac-bb7c-ec7baf751294"
+																class="bulleted-list">
+																<li style="list-style-type:disc"><strong>Δ
+																		Bankkonten</strong>
+																	<ul id="f110d527-5434-4f69-943e-307e34cd9d38"
+																		class="bulleted-list">
+																		<li style="list-style-type:circle">Liquide
+																			Mittel → Bankguthaben, Kassenbestände,
+																			Schecks, etc.</li>
+																	</ul>
+																</li>
+															</ul>
+															<ul id="25672792-59d9-4a70-a5ba-a00d5b6fc8ca"
+																class="bulleted-list">
+																<li style="list-style-type:disc"><strong>Δ
+																		Kasse</strong></li>
+															</ul>
+															<ul id="2cbc8479-9562-4d2c-b3e3-4fd54245b92c"
+																class="bulleted-list">
+																<li style="list-style-type:disc"><strong>ARAP</strong>
+																	(aktiver Rechnungsabgrenzungsposten)<ul
+																		id="f24a52fa-b536-4322-a7f5-7bcdcafee4d4"
+																		class="bulleted-list">
+																		<li style="list-style-type:circle">Vorzunehmen,
+																			wenn das eigene Unternehmen Aufwendungen für
+																			das nächste Geschäftsjahr bereits im
+																			laufenden Geschäftsjahr bezahlt.</li>
+																	</ul>
+																	<ul id="15195f39-3b8b-4878-a4f2-66e65c7a4c45"
+																		class="bulleted-list">
+																		<li style="list-style-type:circle">Ausgaben vor
+																			dem Bilanzstichtag + Aufwand im neuen
+																			Geschäftsjahr</li>
+																	</ul>
+																</li>
+															</ul>
+														</li>
+													</ul>
+												</li>
+											</ul>
+											<ul id="5dbdfa06-5f75-4d02-9eb8-72cede22a29c" class="bulleted-list">
+												<li style="list-style-type:circle"><strong>Passiva-Seite (P) </strong>→
+													<strong>Mittelherkunft</strong>
+													<ul id="ec7b60e7-5c82-4e54-b6e1-38e33b5f212e" class="bulleted-list">
+														<li style="list-style-type:square"><strong>Eigenkapital
+																(EK)</strong>
+															<ul id="c096443d-e171-4507-8340-c7d38dc5e8da"
+																class="bulleted-list">
+																<li style="list-style-type:disc"><strong>Δ
+																		Stammkapital</strong>
+																	→ Deckt sich exakt mit dem Ergebnis der GuV zu dem
+																	Stichtag der Bilanz!<ul
+																		id="def150cd-a20c-4163-beef-4fd698af82cc"
+																		class="bulleted-list">
+																		<li style="list-style-type:circle">Stammkapital
+																			wird auch <strong>gez. Kap.</strong>
+																			(gezeichnetes Kapital) genannt!</li>
+																	</ul>
+																	<ul id="4167d4a4-be25-4dbb-9763-b28901286741"
+																		class="bulleted-list">
+																		<li style="list-style-type:circle">
+																			<strong>KapRL</strong> (Kapitalrücklagen)
+																			gehören zum Stammkapital<ul
+																				id="656023d3-be63-4a3e-8dee-3ef86422a125"
+																				class="bulleted-list">
+																				<li style="list-style-type:square">Die
+																					Kapitalrücklage ist eine von
+																					Kapitalgesellschaften (z. B. GmbH)
+																					zu bildende Rücklage zur
+																					Verlustdeckung.</li>
+																			</ul>
+																		</li>
+																	</ul>
+																	<ul id="5563a0ec-50aa-4764-a5ae-7c9ffca8bc1e"
+																		class="bulleted-list">
+																		<li style="list-style-type:circle"><strong>Δ
+																				Gewinn/ Verlust</strong></li>
+																	</ul>
+																</li>
+															</ul>
+														</li>
+													</ul>
+													<ul id="a86871f6-721c-42c0-b8c8-3458d7e9676b" class="bulleted-list">
+														<li style="list-style-type:square"><strong>Fremdkapital
+																(FK)</strong>
+															<ul id="c8b747da-8974-4362-9eb8-e390ed8aa4c3"
+																class="bulleted-list">
+																<li style="list-style-type:disc"><strong>Δ Darlehen/
+																		Verbindlichkeiten</strong> (z. B. Bankkredite)
+																</li>
+															</ul>
+															<ul id="949c1836-4a15-4558-98ca-22bf6c1a8ec9"
+																class="bulleted-list">
+																<li style="list-style-type:disc"><strong>Δ Verb. a
+																		LuL</strong> (Verbindlichkeiten aus Lieferung
+																	und Leistung) <ul
+																		id="a0d49486-93e0-4740-9f1b-2e7163ee7d64"
+																		class="bulleted-list">
+																		<li style="list-style-type:circle">Geld das dem
+																			eigenen Unternehmen noch in Rechnung
+																			gestellt ist.</li>
+																	</ul>
+																	<ul id="980d3017-59ad-468e-80e5-71e530d1f96c"
+																		class="bulleted-list">
+																		<li style="list-style-type:circle">Gilt in
+																			Bilanz als Kredit der im Fremdkapital
+																			aufgeführt wird.</li>
+																	</ul>
+																</li>
+															</ul>
+															<ul id="2bb3766a-dbaf-4ef5-83c8-2cef301f3a14"
+																class="bulleted-list">
+																<li style="list-style-type:disc"><strong>PRAP</strong>
+																	(passiver Rechnungsabgrenzungsposten)<ul
+																		id="fc3fd9ea-3088-49b8-b2ed-926f5544575e"
+																		class="bulleted-list">
+																		<li style="list-style-type:circle">Vorzunehmen,
+																			wenn die Gegenseite des eigenen Unternehmens
+																			(z. B. Kunden) Aufwendungen für das nächste
+																			Geschäftsjahr bereits im laufenden
+																			Geschäftsjahr bezahlt. Das Unternehmen steht
+																			also in der Pflicht der Leistungserbringung.
+																		</li>
+																	</ul>
+																	<ul id="09f08e6b-ccd5-4dff-ac9b-5de626f360f1"
+																		class="bulleted-list">
+																		<li style="list-style-type:circle">Einnahmen vor
+																			dem Bilanzstichtag + Ertrag im neuen
+																			Geschäftsjahr</li>
+																	</ul>
+																</li>
+															</ul>
+														</li>
+													</ul>
+													<ul id="128a7bf4-2168-4dd4-8701-8848e67498a9" class="bulleted-list">
+														<li style="list-style-type:square"><strong>Δ
+																Rückstellung</strong>
+															<ul id="3235f86d-d2cc-49a6-818a-23bef550ec62"
+																class="bulleted-list">
+																<li style="list-style-type:disc">Stellt “ungewisse
+																	Verbindlichkeiten” dar</li>
+															</ul>
+															<ul id="32149a7b-c7e1-4525-b72c-22cc40224467"
+																class="bulleted-list">
+																<li style="list-style-type:disc">Verpflichtungen, die
+																	dem Grunde, der Höhe und dem Zeitpunkt nach noch
+																	nicht sicher feststehen.</li>
+															</ul>
+															<ul id="652ca526-f5e5-40c2-8ec2-52b58737f3bf"
+																class="bulleted-list">
+																<li style="list-style-type:disc">Ziel von
+																	Rückstellungen: Schulden abdecken, die
+																	wirtschaftlich in der aktuellen Periode angefallen
+																	sind, deren Höhe und/ oder Fälligkeit jedoch noch
+																	unbestimmt sind.</li>
+															</ul>
+															<ul id="608a0415-ba54-4048-bbd6-acf5b8839a9e"
+																class="bulleted-list">
+																<li style="list-style-type:disc">Rückstellungen sind mit
+																	Rücklagen (= Teil des Eigenkapitals)
+																	<strong>NICHT</strong> zu verwechseln! </li>
+															</ul>
+														</li>
+													</ul>
+													<p id="9ad466fd-99b7-4f16-992c-0b8221b04bb6" class="">
+													</p>
+												</li>
+											</ul>
+										</li>
+									</ul>
+									<figure id="fe93b877-4843-4441-b43a-a041a73363d8" class="image"><a
+											href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-15_um_10.37.23.png"><img
+												style="width:2350px"
+												src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-15_um_10.37.23.png" /></a>
+									</figure>
+									<figure id="6777fadb-cee3-4570-b266-c7c129e6bbf8" class="image"><a
+											href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-18_um_11.57.57.png"><img
+												style="width:870px"
+												src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-18_um_11.57.57.png" /></a>
+									</figure>
+								</div>
+							</details>
+							<details open="">
+								<summary style="font-weight:600;font-size:1.25em;line-height:1.3">GuV (Gewinn und
+									Verlustrechnung)</summary>
+								<div class="indented">
+									<ul id="d825bd16-0c9d-4bf6-b9fe-4d570b92fe82" class="bulleted-list">
+										<li style="list-style-type:disc"><strong>Dient der Übersichtlichkeit!</strong>
+											<ul id="51fb5c35-a10f-459b-a601-e384bde347f2" class="bulleted-list">
+												<li style="list-style-type:circle"><strong>Aufwendungen und Erträge der
+														Erfolgskonten</strong> (Unterkonten des Eigenkapitalkontos)
+													werden zuerst in der GuV “gesammelt” und anschließend auf das Konto
+													Eigenkapital gebucht. </li>
+											</ul>
+										</li>
+									</ul>
+									<ul id="bd43f224-1bc3-4f42-bf02-510280688654" class="bulleted-list">
+										<li style="list-style-type:disc">Betriebswirtschaftlich gesehen: Das
+											<strong>GuV-Konto ist ein Unterkonto des Kontos Eigenkapital</strong> (siehe
+											untenstehendes Bild und die Verbindung zw. Gewinn/ Verlust aus GuV und dem
+											Stammkapital auf der Passiva-Seite der Bilanz).</li>
+									</ul>
+									<ul id="426441b6-8719-4a57-9639-9581b4e218d8" class="bulleted-list">
+										<li style="list-style-type:disc">Ist <strong>Teil der Bilanz</strong> und damit
+											<strong>Bestandteil der doppelten Buchführung</strong>.
+											→ GuV ist in etwa der große Bruder der EÜR (Einnahmenüberschussrechnung)
+										</li>
+									</ul>
+									<ul id="577fff2e-78f7-4fa2-8c4a-fd94cba28e86" class="bulleted-list">
+										<li style="list-style-type:disc">P&amp;L (Profit &amp; Loss) im Englischen</li>
+									</ul>
+									<ul id="15af156d-a486-4ba2-9045-149ba7f8e119" class="bulleted-list">
+										<li style="list-style-type:disc"><strong>GuV bezieht sich auf einen
+												Zeitraum.</strong>
+											<ul id="de2b229f-1ee7-4d6d-8a48-6cca558b54b0" class="bulleted-list">
+												<li style="list-style-type:circle">z. B. Umsatzerlöse und Aufwendungen
+													innerhalb eines Jahres</li>
+											</ul>
+										</li>
+									</ul>
+									<ul id="5e7a331c-a65b-4191-8bac-6cb8fd25d678" class="bulleted-list">
+										<li style="list-style-type:disc"><strong>Positive</strong> Werte
+											(<strong>Einnahmen</strong>) werden als <strong>Erlöse</strong> bezeichnet
+											(z. B. Umsatzerlöse), <strong>negative</strong> Werte
+											(<strong>Ausgaben</strong>) als <strong>Aufwendungen.</strong>
+											<ul id="3c077df6-8d90-460f-8d1d-0d65241ac1f4" class="bulleted-list">
+												<li style="list-style-type:circle">Erlöse = Erträge aus gewöhnlichen
+													Geschäftstätigkeiten eines Unternehmens</li>
+											</ul>
+											<ul id="0b15a352-3cd1-4b41-9a36-700b7e9a4153" class="bulleted-list">
+												<li style="list-style-type:circle">Beispiele für Aufwendungen:
+													Miet-, Personal, Leasing-, Abschreibungs- (AfA → Absetzung für
+													Abnutzung) und Rückstellungsaufwendungen (z. B. Verbindlichkeiten
+													oder Verluste von Aufwendungen, die hinsichtlich ihrer Entstehung
+													oder Höhe ungewiss sind).</li>
+											</ul>
+										</li>
+									</ul>
+									<figure id="f7125dde-9825-4544-a3ee-0f9d7bc4cdf0" class="image"><a
+											href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-15_um_10.37.23%201.png"><img
+												style="width:2350px"
+												src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-15_um_10.37.23%201.png" /></a>
+									</figure>
+									<ul id="4368d115-cc10-47e5-b1ae-1f6bb017b34b" class="bulleted-list">
+										<li style="list-style-type:disc">Berechnung des Gewinns/ Verlusts innerhalb der
+											GuV (stark vereinfacht):<ul id="d2209179-fc81-4271-9268-7530013841b6"
+												class="bulleted-list">
+												<li style="list-style-type:circle">Umsatzerlöse</li>
+											</ul>
+											<ul id="2e88ae03-5411-4d1f-a163-8999793d9896" class="bulleted-list">
+												<li style="list-style-type:circle">- Materialaufwand und Personalaufwand
+												</li>
+											</ul>
+											<ul id="36d3261a-53d7-4048-944a-a9cb037dae42" class="bulleted-list">
+												<li style="list-style-type:circle">- Abschreibungen</li>
+											</ul>
+											<ul id="74b85c05-5d24-41cf-b03e-f77509b2c318" class="bulleted-list">
+												<li style="list-style-type:circle">+ Gewinne aus dem Verkauf von AV</li>
+											</ul>
+											<ul id="b022038f-3d5a-46f4-9a5c-ee1b01b2de8d" class="bulleted-list">
+												<li style="list-style-type:circle">- sonst. Aufwand</li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</details>
+							<details open="">
+								<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Cashflow</summary>
+								<div class="indented">
+									<p id="b47ce58e-00e2-48af-b068-855ddb801a9d" class="">Der Cashflow ist eine
+										Bilanzkennzahl, mit der der Geldzufluss oder -abfluss eines Unternehmens in
+										einer bestimmten Abrechnungsperiode ermittelt wird.</p>
+									<p id="509fcc9d-d73b-4ec3-91d9-f765c5d88e02" class=""><strong>Gesamter Cashflow =
+											operativer CF + CF aus Inv. (Investitionstätigkeiten) + CF aus Fin.
+											(Finanzierungstätigkeiten)</strong></p>
+									<ul id="1732f6fc-519f-40ab-8039-e8f91db0c464" class="toggle">
+										<li>
+											<details open="">
+												<summary><strong>Operativer Cashflow</strong> errechnet sich aus:
+												</summary>
+												<ul id="d7430f3e-02e2-4632-9e64-0274ce2bb4b5" class="bulleted-list">
+													<li style="list-style-type:disc">Gewinn</li>
+												</ul>
+												<ul id="803cf029-b2bb-4dfb-b14b-fa6cd9119efb" class="bulleted-list">
+													<li style="list-style-type:disc">+ Abschreibungen</li>
+												</ul>
+												<ul id="e5b13713-dcf3-48af-a915-7a7ee5cea7c0" class="bulleted-list">
+													<li style="list-style-type:disc">+/- Δ (Delta → Steht für
+														Veränderung zw. zwei Daten z. B. Jahresanfang/ -ende)
+														Rückstellung (+ Erh./ -Verm.) (Erhöhungen/ Verminderungen)</li>
+												</ul>
+												<ul id="530ef5be-8255-4631-bdd8-dc4785a84bb7" class="bulleted-list">
+													<li style="list-style-type:disc">+/- Gewinn/ Verlust aus dem Verkauf
+														von AV (Anlagevermögen)<ul
+															id="30681bee-7ed9-413c-85f3-cd9a4a0f6d31"
+															class="bulleted-list">
+															<li style="list-style-type:circle">Wenn PKW aus
+																Anlagevermögen nach kompletter Abschreibung noch für
+																1.000€ verkauft wird, muss an dieser Stelle (im
+																operativen Cashflow) jedoch -1.000€ gerechnet werden.
+																Die 1.000€ Gewinn werden schon oben beim <a
+																	href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147.html">Gewinn</a>
+																positiv verbucht, werden hier ausgeglichen und
+																anschließend wieder im “<a
+																	href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147.html">Cashflow
+																	aus Investitionstätigkeiten</a>” addiert → siehe <a
+																	href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147.html">Des-Investition
+																	in Investitionstätigkeiten</a>
+																Die 1.000€ werden hier nicht positiv verbucht, da diese
+																Art des Gewinns nicht aus dem operativen Geschäft kommt,
+																sondern aus einer Investitionstätigkeit resultiert.</li>
+														</ul>
+													</li>
+												</ul>
+												<ul id="40c373f8-7ed9-4183-9f90-8693396b5fde" class="bulleted-list">
+													<li style="list-style-type:disc">+/- Erhöhung/ Verminderung
+														Lagerbestand RHB/ Produkte<ul
+															id="a56b6498-e29e-4902-b12a-42a5e96f052e"
+															class="bulleted-list">
+															<li style="list-style-type:circle">RHB = Roh-, Hilfs- und
+																Betriebsstoffe</li>
+														</ul>
+													</li>
+												</ul>
+												<ul id="59c6e08d-372b-4014-82f3-e2dc63cbee54" class="bulleted-list">
+													<li style="list-style-type:disc">+/- Erhöhung/ Verminderung Ford.
+														LuL</li>
+												</ul>
+												<ul id="cfae1b99-b275-4076-8240-29fc34c5b194" class="bulleted-list">
+													<li style="list-style-type:disc">+/- Erhöhung/ Verminderung Verb.
+														LuL</li>
+												</ul>
+											</details>
+										</li>
+									</ul>
+									<ul id="8d9b59ce-d57e-490b-9613-0ea17be23011" class="toggle">
+										<li>
+											<details open="">
+												<summary><strong>Cashflow aus Investitionstätigkeit</strong> errechnet
+													sich aus:</summary>
+												<ul id="29386226-434b-4c06-be50-b78582b1c72a" class="bulleted-list">
+													<li style="list-style-type:disc">- Investition in materielle/
+														immaterielle AV (Anlagevermögen)</li>
+												</ul>
+												<ul id="faf0520e-96f5-4f52-bc10-55bd781930d0" class="bulleted-list">
+													<li style="list-style-type:disc">+ Des-Investition (Verkauf) von
+														materiellen/ immateriellen AV<ul
+															id="2d57a695-5543-44ad-89b0-8f3ba5f6770e"
+															class="bulleted-list">
+															<li style="list-style-type:circle">Gewinn resultiert z. B.
+																aus Verkauf von PKW aus Anlagevermögen, welcher komplett
+																abgeschrieben worden ist und damit laut dem Buch keinen
+																Wert mehr hat. (Beispiel: PKW wird nach der Abschreibung
+																für 1.000€ verkauft, dann steigt hier die
+																Des-Investition von materiellen Anlagevermögen um
+																+1.000€)
+																→ Für mehr Kontext zu diesem Sachverhalt siehe: <a
+																	href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147.html">Operativer
+																	Cashflow/ +/- Gewinn/ Verlust aus dem Verkauf von
+																	AV</a></li>
+														</ul>
+													</li>
+												</ul>
+												<ul id="5d85ea4c-70c2-4fe4-8233-1160ad2b8ca4" class="bulleted-list">
+													<li style="list-style-type:disc">- Kauf von FinanzAV</li>
+												</ul>
+												<ul id="dedc556d-6593-4775-af02-915e3dab49b9" class="bulleted-list">
+													<li style="list-style-type:disc">+ Verkauf von FinanzAV</li>
+												</ul>
+											</details>
+										</li>
+									</ul>
+									<ul id="f537e8f4-8ede-4652-862c-23603abf8c7c" class="toggle">
+										<li>
+											<details open="">
+												<summary><strong>Cashflow aus Finanzierungstätigkeit</strong> errechnet
+													sich aus:</summary>
+												<ul id="424fa50d-cdc8-4eac-9fd0-2166eea11875" class="bulleted-list">
+													<li style="list-style-type:disc">+ Erhöhung des EK (Eigenkapital)
+													</li>
+												</ul>
+												<ul id="e97098d7-c166-412c-8856-f70531e39165" class="bulleted-list">
+													<li style="list-style-type:disc">+ Aufnahme eines neuen Kredits
+														(Erhöhung von Krediten)</li>
+												</ul>
+												<ul id="c7a79b08-daba-4655-85f1-5af078d02a91" class="bulleted-list">
+													<li style="list-style-type:disc">- Tilgung von Krediten</li>
+												</ul>
+												<ul id="31b37b91-ba9a-4723-90c0-eb7a243613f2" class="bulleted-list">
+													<li style="list-style-type:disc">- Gewinnausschüttungen (Dividenden)
+													</li>
+												</ul>
+											</details>
+										</li>
+									</ul>
+								</div>
+							</details>
+							<p id="9c3ebc8b-7a58-444e-8819-f11916d38cf2" class="">Bilanz (Bewegungsbilanz) - noch nicht
+								done </p>
+						</div>
+					</details>
+					<details open="">
+						<summary style="font-weight:600;font-size:1.5em;line-height:1.3">Weiteres relevante Wissen zur
+							Bilanzierung:</summary>
+						<div class="indented">
+							<ul id="52c77301-9b7a-47e3-b364-a7405b2d75c4" class="bulleted-list">
+								<li style="list-style-type:disc">Das Ergebnis der GuV (Gewinn/ Verlust) <a
+										href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147.html">deckt
+										sich exakt mit dem Stammkapital</a> (Gewinn/ Verlust) auf der Passiva Seite der
+									Bilanz!</li>
+							</ul>
+							<ul id="a145a0b8-8f1d-4631-b79f-a6dfd1550afe" class="bulleted-list">
+								<li style="list-style-type:disc"><strong>Geschäftsführervertrag</strong> ist
+									<strong>Anstellungsvertrag</strong> und wird geschlossen zwischen dem Unternehmen,
+									vertreten durch seine Gesellschafter*innen und dem/ der angehenden
+									Geschäftsführer*in<ul id="1a25c74d-0b76-4568-9974-226933a89907"
+										class="bulleted-list">
+										<li style="list-style-type:circle"><strong>Festgelegtes Gehalt des/ der
+												Geschäftsführer*in </strong>wird dann als Lohnkosten/
+											Personalaufwendungen verbucht. </li>
+									</ul>
+									<ul id="2eb71e88-f617-44cd-aec5-812307ec8f11" class="bulleted-list">
+										<li style="list-style-type:circle">Wichtig: Im Falle einer
+											<strong>Insolvenz</strong> muss der <strong>Geschäftsführer</strong> (sofern
+											er/ sie auch Gesellschafter*in ist!) <strong>alle Gehälter der letzten 12
+												Monate</strong> (an das Finanzamt?) <strong>zurückzahlen</strong>, die
+											er/ sie erhalten hat!
+											→ Daher macht es im Falle einer androhenden Insolvenz Sinn, wenn sich der/
+											die Geschäftsführer*in KEIN Gehalt auszahlt!
+											→ Wenn Geschäftsführer*in lediglich Angestellte*r ist, gilt diese Regel
+											NICHT!</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</details>
+					<details open="">
+						<summary style="font-weight:600;font-size:1.5em;line-height:1.3">Integrierte Unternehmensplanung
+							(Aufbau und Bereiche)</summary>
+						<div class="indented">
+							<ol type="1" id="6436f27f-51d8-4cfe-8557-ac7481b5db62" class="numbered-list" start="1">
+								<li><strong>Ertragsplanung</strong>
+									<ul id="c123713e-093b-412d-aaf8-a9a1b337e4fe" class="bulleted-list">
+										<li style="list-style-type:disc">Erträge fließen aus Absatz- und Umsatzplanung
+											in GuV-Planung ein.</li>
+									</ul>
+								</li>
+							</ol>
+							<ol type="1" id="7d054a69-aae0-4514-a609-b3e8ee6dda48" class="numbered-list" start="2">
+								<li><strong>Aufwandsplanung</strong>
+									<ul id="cbc754ea-c02a-4180-9cc7-f429f0293e7f" class="bulleted-list">
+										<li style="list-style-type:disc">Aufwände aus Personalkostenplanung fließen in
+											Kostenstelleplanung und diese, sowie die GuV-Schlüssel fließen anschließend
+											in die GuV-Planung ein.</li>
+									</ul>
+								</li>
+							</ol>
+							<ol type="1" id="62f9d3fe-79fa-4e4f-9b46-c8a583416f08" class="numbered-list" start="3">
+								<li><strong>Investitionsplanung</strong>
+									<ul id="91bd8d9c-f6e6-47cd-8019-b262380f9f8f" class="bulleted-list">
+										<li style="list-style-type:disc">Δ AV fließt aus Investitions- und
+											Abschreibungsplanung in Bilanzplanung ein.<ul
+												id="8aaf320f-ee1b-43b4-847a-046187572abf" class="bulleted-list">
+												<li style="list-style-type:circle">Δ = Delta → Steht für Veränderung zw.
+													zwei Daten z. B. Jahresanfang/ -ende</li>
+											</ul>
+										</li>
+									</ul>
+									<ul id="a765c510-cb85-487c-98df-ad9619efb49e" class="bulleted-list">
+										<li style="list-style-type:disc">AfA fließen aus Investitions- und
+											Abschreibungsplanung in GuV-Planung ein.<ul
+												id="875d6e83-f9e4-475b-b6af-93267bcee95e" class="bulleted-list">
+												<li style="list-style-type:circle">Abschreibungen = AfA → Absetzung für
+													Abnutzung</li>
+											</ul>
+										</li>
+									</ul>
+									<ul id="dd775e90-34f5-4998-9edc-b21875520642" class="bulleted-list">
+										<li style="list-style-type:disc">Aufnahmen von Darlehen bzw. Tilgung fließen von
+											Darlehensplanung in Bilanzplanung.</li>
+									</ul>
+									<ul id="3cef4c5e-0f14-4a81-84a7-821727709322" class="bulleted-list">
+										<li style="list-style-type:disc">Der gesamte Zinsaufwand fließt von
+											Darlehensplanung in GuV-Planung.</li>
+									</ul>
+								</li>
+							</ol>
+							<ol type="1" id="158b9f98-6a60-454b-b89a-31157be19e38" class="numbered-list" start="4">
+								<li><strong>Finanzplanung</strong>
+									<ul id="8de3cc08-24e2-4ae3-867e-51c5be147e57" class="bulleted-list">
+										<li style="list-style-type:disc">Aktiva = Passiva in Bilanzplanung</li>
+									</ul>
+									<ul id="af6259d9-3794-4fb1-affa-7487b44ba0c4" class="bulleted-list">
+										<li style="list-style-type:disc">Gewinn wird sowohl in Bilanzplanung, als auch
+											in GuV-Planung abgebildet.</li>
+									</ul>
+								</li>
+							</ol>
+							<figure id="04808621-cb32-459f-9397-c8204db042ac" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-15_um_14.03.04.png"><img
+										style="width:2062px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-15_um_14.03.04.png" /></a>
+							</figure>
+						</div>
+					</details>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.875em;line-height:1.3">Unternehmensplanung</summary>
+				<div class="indented">
+					<h3 id="92a1d18b-9e0c-4123-80c8-b1e7f004e087" class="">Gesamter Folien-Satz:</h3>
+					<figure id="040628d4-8042-42c7-b34e-6f8bcac55380">
+						<div class="source"><a
+								href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Planung.pdf">Planung.pdf</a>
+						</div>
+					</figure>
+					<details open="">
+						<summary style="font-weight:600;font-size:1.5em;line-height:1.3">Unternehmensplanung</summary>
+						<div class="indented">
+							<p id="2c768436-bdd8-4477-a677-909c40573403" class="">Eine Planung der Ausführung ist ohne
+								Kontrolle zwecklos.
+								Eine Kontrolle der Planausführung ist ohne Planung nicht möglich. </p>
+							<ul id="775f0fa8-99cc-43ac-8985-39ba635e35eb" class="bulleted-list">
+								<li style="list-style-type:disc">Planung und Kontrolle bilden aus funktionaler Sicht
+									eine Einheit!</li>
+							</ul>
+							<h3 id="9967386c-575d-4603-ada6-93345afc25c1" class=""><strong>Der Planungs- und
+									Kontrollzyklus</strong></h3>
+							<figure id="26785552-39a9-4740-a080-537563398565" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-17_um_10.21.01.png"><img
+										style="width:1006px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-17_um_10.21.01.png" /></a>
+							</figure>
+							<p id="60785349-af89-4219-a785-5513f69c7a2d" class="">Potenzielle Krankheit, Urlaub,
+								Feiertage der Arbeitnehmer mit einberechnen!</p>
+							<p id="c6022e38-7faa-4302-9ad9-da528fac0c80" class="">Beispiel: </p>
+							<ul id="f93918f8-30bf-483f-ad2c-bce6fa92b278" class="bulleted-list">
+								<li style="list-style-type:disc">Zielwerte (Sollgrößen): <ul
+										id="4a268a6a-b3cd-4bb6-8c73-2b67a75f5d84" class="bulleted-list">
+										<li style="list-style-type:circle">1.000€ Umsatz pro Mitarbeiter/ Tag</li>
+									</ul>
+									<ul id="a1809bc2-7e23-4e23-b252-cce66b611caf" class="bulleted-list">
+										<li style="list-style-type:circle">Pro Monat: 21 Werktage - 2,5 Ferientage - 1
+											Tag krank = 17,5 Tage = 17.500€ Umsatz/ Mitarbeiter/ Monat</li>
+									</ul>
+								</li>
+							</ul>
+							<ul id="9d8d3ddc-5be0-4809-8085-73df2e8a0c0f" class="bulleted-list">
+								<li style="list-style-type:disc">Korrekturwerte (Sollgrößen):<ul
+										id="9389d220-cf40-483c-a31f-f689d5e43fe5" class="bulleted-list">
+										<li style="list-style-type:circle">1.000€ Umsatz pro Mitarbeiter/ Tag</li>
+									</ul>
+									<ul id="25b0e5b5-b18e-4f11-809b-9ffab508dc3c" class="bulleted-list">
+										<li style="list-style-type:circle">Pro Monat: 21 Werktage - 5 Ferientage - 2 Tag
+											krank = 14 Tage = 14.000€ Umsatz/ Mitarbeiter/ Monat</li>
+									</ul>
+								</li>
+							</ul>
+							<h3 id="beb432a3-d2e9-44a9-b987-766dc3a2db02" class="">Grundbestandteile eines Plans</h3>
+							<p id="7291f784-5e6e-4d9b-9ff3-7df19ab0e4a6" class="">Ein Plan beschreibt die gewährten
+								Entscheidungsalternativen und legt die für die Zielerreichung verantwortlichen
+								Aufgabenträger fest.</p>
+							<ul id="00d59156-d5a9-40ab-9b1a-c66ad49c1e86" class="bulleted-list">
+								<li style="list-style-type:disc"><strong>Ziele</strong> → Was, in welchem Ausmaß und bis
+									wann?<ul id="d7cf089b-9a1b-4a2b-a90d-904856224b73" class="bulleted-list">
+										<li style="list-style-type:circle">Umsatzsteigerung im nächsten Geschäftsjahr um
+											10%</li>
+									</ul>
+									<ul id="e487c543-df0f-42e1-9796-0afa7e892a3f" class="bulleted-list">
+										<li style="list-style-type:circle">Erhöhung des Marktanteils bis in drei Jahren
+											auf 20%</li>
+									</ul>
+									<ul id="29587e37-6e1c-43f8-bf82-07c1249ae4c8" class="bulleted-list">
+										<li style="list-style-type:circle">Ausweitung des Bekanntheitsgrades in einem
+											Jahr auf 80%</li>
+									</ul>
+								</li>
+							</ul>
+							<ul id="edd69407-8938-45bb-9301-759d52a7fabb" class="bulleted-list">
+								<li style="list-style-type:disc"><strong>Problemstellung</strong> → Warum?<ul
+										id="bef99b3a-d9cd-4797-b9ee-7da42772a456" class="bulleted-list">
+										<li style="list-style-type:circle">Konjunkturelle Entwicklung</li>
+									</ul>
+									<ul id="cdb5f0fc-11c0-4dfd-af29-cf67208deac5" class="bulleted-list">
+										<li style="list-style-type:circle">Devisenkurse</li>
+									</ul>
+									<ul id="bf8b8af1-df47-4dfd-97d9-cf57a7a30306" class="bulleted-list">
+										<li style="list-style-type:circle">Konkurrenzsituation</li>
+									</ul>
+								</li>
+							</ul>
+							<ul id="bc5e2042-8d51-4a47-894c-6ecfcaf8a085" class="bulleted-list">
+								<li style="list-style-type:disc"><strong>Prämisse</strong> → Unter welchen Bedingungen?
+									<ul id="cf65d7d9-6412-49d6-b103-ec8ce852912d" class="bulleted-list">
+										<li style="list-style-type:circle">Stagnierender Umsatz im laufenden
+											Geschäftsjahr</li>
+									</ul>
+									<ul id="e01d1d6d-9bf3-4c66-9561-176f679f8652" class="bulleted-list">
+										<li style="list-style-type:circle">Verzögerungen bei der Entwicklung neuer
+											Produkte</li>
+									</ul>
+									<ul id="d3c1ddf0-b31b-4597-b6e8-585c07b2f67c" class="bulleted-list">
+										<li style="list-style-type:circle">Eintritt neuer Konkurrenten in den Markt</li>
+									</ul>
+								</li>
+							</ul>
+							<ul id="6318d811-1e53-4c66-b979-df69ceba8950" class="bulleted-list">
+								<li style="list-style-type:disc"><strong>Maßnahmen</strong> → Wie?<ul
+										id="0fa2cb66-4562-4cc1-a57e-b0f25cd992c2" class="bulleted-list">
+										<li style="list-style-type:circle">Marketingkampagne</li>
+									</ul>
+									<ul id="57d23b69-437f-4fad-ab5a-999aa889dfe1" class="bulleted-list">
+										<li style="list-style-type:circle">Neueinstellungen von Entwicklungsingenieuren
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<ul id="5d7f6429-8ff4-4b97-9f97-1f3210a86486" class="bulleted-list">
+								<li style="list-style-type:disc"><strong>Ressourcen</strong> → Womit?<ul
+										id="25d88a17-68b1-4965-bfe6-29626bf7b3e1" class="bulleted-list">
+										<li style="list-style-type:circle">5 Mio. Euro für Marketingkampagne</li>
+									</ul>
+									<ul id="b31577fa-5509-47b5-9204-82d09e840554" class="bulleted-list">
+										<li style="list-style-type:circle">Einstellung von 10 neuen
+											Entwicklungsingenieuren mit einem Bruttogehalt von 60 TEuro</li>
+									</ul>
+									<ul id="ffbb5172-6507-4248-946e-07bd74d8efb1" class="bulleted-list">
+										<li style="list-style-type:circle">Entsendung von 10 Mitarbeitern und
+											Bereitstellungen von 20 Mio. Euro zum Aufbau einer Vertriebsgesellschaft in
+											Spanien</li>
+									</ul>
+								</li>
+							</ul>
+							<ul id="f5e3370b-2ca2-4da2-90e4-8c64b02c8ee6" class="bulleted-list">
+								<li style="list-style-type:disc"><strong>Termine</strong> → Wann?<ul
+										id="913ac4fb-3030-4423-bc13-851043856813" class="bulleted-list">
+										<li style="list-style-type:circle">Marketingkampagne beginnt zum 1. März des
+											Planjahres und läuft über einen Zeitraum von 2 Monaten</li>
+									</ul>
+									<ul id="95c77090-97fc-43c8-9979-786b25ab4635" class="bulleted-list">
+										<li style="list-style-type:circle">Einstellungen der Entwicklungsingenieure zum
+											Jahresbeginn</li>
+									</ul>
+									<ul id="e58c54bf-7fc0-4a65-acce-ad99ad95d25d" class="bulleted-list">
+										<li style="list-style-type:circle">Aufbau einer Vertriebsniederlassung zum 1.
+											Juli des Planjahres</li>
+									</ul>
+								</li>
+							</ul>
+							<ul id="4b7ddce7-436c-42d1-9b75-f5a288e0abdd" class="bulleted-list">
+								<li style="list-style-type:disc"><strong>Träger der Planerfüllung</strong> → Wer?<ul
+										id="2cf2d265-d223-4998-9007-bf63fb1cbd64" class="bulleted-list">
+										<li style="list-style-type:circle">Vertriebsleiter verantwortet die
+											Marketingkampagne</li>
+									</ul>
+									<ul id="d5c98932-9e00-47ce-8226-98e42863a24f" class="bulleted-list">
+										<li style="list-style-type:circle">Auswahl der neuen Entwicklungsingenieure
+											durch den Personalleiter und den Entwicklungsleiter</li>
+									</ul>
+									<ul id="ba81fbb8-80c5-47ba-952d-be6d7b175417" class="bulleted-list">
+										<li style="list-style-type:circle">Bestimmung der Vertriebsmitarbeiter, die nach
+											Spanien entsandt werden</li>
+									</ul>
+								</li>
+							</ul>
+							<ul id="f48c5204-c6bf-4c6a-bcda-c8d7a1417fe3" class="bulleted-list">
+								<li style="list-style-type:disc"><strong>Ergebnisse</strong> → Welche Wirkung?<ul
+										id="f007f6a9-757d-43ec-9a47-f815a80a7122" class="bulleted-list">
+										<li style="list-style-type:circle">3% Umsatzerhöhung im 2. Quartal durch die
+											Marketingkampagne</li>
+									</ul>
+									<ul id="052c7b38-9e4d-4976-a065-f4bb055c1c42" class="bulleted-list">
+										<li style="list-style-type:circle">Beschleunigung der Produktentwicklung durch
+											neue Entwicklungsingenieure um 3 Monate</li>
+									</ul>
+									<ul id="d6eec328-a50b-4f4b-9cf8-1a547de115ba" class="bulleted-list">
+										<li style="list-style-type:circle">Senkung der Herstellkosten um 5% durch
+											Rationalisierungsmaßnahmen</li>
+									</ul>
+								</li>
+							</ul>
+							<h3 id="14e75746-defb-4779-9e50-8ae1fe710c5b" class="">Ausprägung der Planung &amp;
+								Kontrolle nach dem Planungshorizont</h3>
+							<figure id="5905ed18-8987-4abb-91c1-3b1b4b8529a4" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-17_um_10.40.35.png"><img
+										style="width:1322px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-17_um_10.40.35.png" /></a>
+							</figure>
+							<h3 id="6f48026a-1e21-427f-b95a-aa256793e742" class="">Unterscheidung zwischen strategischer
+								und operativer Planung und -kontrolle</h3>
+							<figure id="74bc9078-5fa4-4b57-a13d-6482663fa3e3" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-17_um_10.51.19.png"><img
+										style="width:1284px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-17_um_10.51.19.png" /></a>
+							</figure>
+							<h3 id="a0741942-5065-40bf-96a4-e0fba97fdd49" class="">Ablauforganisation: Planungskalender
+							</h3>
+							<ul id="823e4cc1-d052-4a20-99b6-32fa1525f80a" class="bulleted-list">
+								<li style="list-style-type:disc"><strong>Rückwärtsplanung bei Projektplanung!</strong>
+									<ul id="affaba55-0caa-449a-94f6-0c52b9426b49" class="bulleted-list">
+										<li style="list-style-type:circle">Es wird von dem Zeitpunkt rückwärts
+											gerechnet, an dem das Produkt gedanklich schon (erfolgreich) verkauft wird.
+										</li>
+									</ul>
+									<ul id="f39c0a79-3aba-4f93-9238-cbb4a9a990e0" class="bulleted-list">
+										<li style="list-style-type:circle">Es wird erst einmal überlegt: <ol type="1"
+												id="0661a151-cb6d-41e8-bdfe-4769b52444b1" class="numbered-list"
+												start="1">
+												<li>Wie viel kann verkauft werden? → Absatzplan</li>
+											</ol>
+											<ol type="1" id="f4e13e9e-d21c-4701-b295-c1d9400779e6" class="numbered-list"
+												start="2">
+												<li>Zu welchem Preis kann jede Einheit verkauft werden? → Umsatzplan
+												</li>
+											</ol>
+											<ol type="1" id="45802fdf-3c6c-48c7-9238-d7e0006cab75" class="numbered-list"
+												start="3">
+												<li>Kann das verkauft werden, was wir planen zu verkaufen? →
+													Marketingplan, Produktionsplan, Kapazitätsplanung, Bestandsplanung
+												</li>
+											</ol>
+											<ol type="1" id="106bacc7-b123-4af5-9936-060ab82722e6" class="numbered-list"
+												start="4">
+												<li>Was muss zu welchem Preis beschafft werden? → Beschaffungsplanung
+												</li>
+											</ol>
+											<ol type="1" id="40d4af92-d747-4c40-8a1d-8f920ed280bb" class="numbered-list"
+												start="5">
+												<li>Muss etwas gewartet werden, wodurch die Herstellung ausfällt? →
+													Instandhaltungsplan</li>
+											</ol>
+											<ol type="1" id="f5873153-aaf7-405d-941f-e75d8c88989f" class="numbered-list"
+												start="6">
+												<li>Müssen Investitionen gemacht werden? → Investitionsplanung</li>
+											</ol>
+											<ol type="1" id="b291be38-82ed-4c81-9b32-8f0ed5c349cb" class="numbered-list"
+												start="7">
+												<li>Wieviele Mitarbeiter werden benötigt (für Herstellung, Vertrieb,
+													etc.)? → Personalplan</li>
+											</ol>
+										</li>
+									</ul>
+									<ul id="cdb9c0be-f652-4798-a77d-3cc2526124a7" class="bulleted-list">
+										<li style="list-style-type:circle">Aus all diesen Ergebnissen ergibt sich der
+											Finanzplan, die GuV und die Bilanz.</li>
+									</ul>
+								</li>
+							</ul>
+							<figure id="1a69386c-5815-422c-8c9d-c5e2dd10bca8" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-17_um_10.53.40.png"><img
+										style="width:1272px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-17_um_10.53.40.png" /></a>
+							</figure>
+							<h3 id="869d2725-a3da-4c5b-b600-5eb140cb9bbb" class="">Probleme der Planung und Kontrolle in
+								der Praxis</h3>
+							<p id="d8605d4c-96e5-4feb-adcb-a415110cf5c2" class="">→ In der Vorlesung wurde auf diese
+								Folie nicht eingegangen</p>
+							<ul id="516d3af1-c634-4f34-b510-0dac3035f67c" class="bulleted-list">
+								<li style="list-style-type:disc">Planung und Tagesroutine</li>
+							</ul>
+							<ul id="14597af9-570e-4c38-b455-7124fcf653f5" class="bulleted-list">
+								<li style="list-style-type:disc">Abneigung der Linieneinheiten gegen die Planung</li>
+							</ul>
+							<ul id="ea7edf42-8dea-4c23-856b-9697e0a341af" class="bulleted-list">
+								<li style="list-style-type:disc">Mangelndes Planungs-Know-How</li>
+							</ul>
+							<ul id="e76554bb-5cdd-436a-bfcc-ba4b7169d87a" class="bulleted-list">
+								<li style="list-style-type:disc">Optimistische Planungsmentalität</li>
+							</ul>
+							<ul id="84db4465-d7de-455b-ab7f-4f5bfe2e7b38" class="bulleted-list">
+								<li style="list-style-type:disc">Stille Reserven</li>
+							</ul>
+							<ul id="a5e11134-b230-4cfe-9cb2-321b2cd88c5b" class="bulleted-list">
+								<li style="list-style-type:disc">Termineinhaltung</li>
+							</ul>
+							<ul id="ac3ce7bc-894e-45a4-8dd3-9fe88cb8f48f" class="bulleted-list">
+								<li style="list-style-type:disc">Ressortegoismus</li>
+							</ul>
+							<ul id="cfc8e388-36f4-4ed6-9a9e-3b259879d2de" class="bulleted-list">
+								<li style="list-style-type:disc">Bürokratisches Verhalten</li>
+							</ul>
+							<ul id="7ec50655-52a4-417e-8846-f3ca5e90ef17" class="bulleted-list">
+								<li style="list-style-type:disc">Vernachlässigung strategischer Aspekte</li>
+							</ul>
+							<ul id="4f266144-edc8-4aba-97b4-c3ea9bcdda4f" class="bulleted-list">
+								<li style="list-style-type:disc">Strategieumsetzung</li>
+							</ul>
+						</div>
+					</details>
+					<details open="">
+						<summary style="font-weight:600;font-size:1.5em;line-height:1.3">Integrierte Unternehmensplanung
+						</summary>
+						<div class="indented">
+							<h3 id="54b411e0-c812-43b3-a4b4-bcafa7a5286b" class="">Begriffe und Wesen</h3>
+							<p id="a1be2598-b259-4999-b035-78f094795ba7" class="">Was wird integriert?</p>
+							<figure id="3503364a-2a68-44cf-ae9e-113c4783e37f" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-17_um_11.27.35.png"><img
+										style="width:974px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-17_um_11.27.35.png" /></a>
+							</figure>
+							<ul id="66957814-05aa-4043-a4f5-289f1a155915" class="bulleted-list">
+								<li style="list-style-type:disc">Vertikale Koordination für uns vermutlich erst einmal
+									irrelevant, da es sich dabei um die Koordination zwischen verschiedenen
+									Tochterunternehmen mit ihrem Mutterkonzern handelt.</li>
+							</ul>
+							<h3 id="3122e765-9ce3-442c-88aa-7978a12a2754" class="">Plansystem</h3>
+							<p id="30a55b8c-ebb5-4484-9db2-ee75cc5c5192" class="">Ein Plansystem ist die geordnete
+								Gesamtheit aufeinander abgestimmter (integrierter) Teilpläne, die untereinander in
+								Beziehung stehen.</p>
+							<h3 id="0dffbb73-4590-4011-a3c4-3ae1c28f0257" class="">Aufbau und Bereiche</h3>
+							<figure id="2d750b69-b3de-432e-aaaf-fd155bd93501" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-17_um_11.31.14.png"><img
+										style="width:1288px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-17_um_11.31.14.png" /></a>
+							</figure>
+							<h3 id="87dc7181-3199-40a0-8c35-ee9de31674c6" class="">Bestandteile der
+								Leistungsverwertungsplanung</h3>
+							<figure id="a2ee46fb-9f56-4c50-8e54-29847cfeaef7" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-17_um_11.50.31.png"><img
+										style="width:890px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-17_um_11.50.31.png" /></a>
+							</figure>
+							<p id="dcaa2511-103e-4429-abff-17f5627b6228" class=""><strong>Hauptparameter</strong>
+								(Kenngrößen):</p>
+							<div id="f3163e96-bf8b-40ec-a98c-369715612327" class="column-list">
+								<div id="88637910-089a-4b44-9956-b50bdd39ff7a" style="width:100%" class="column">
+									<ul id="b11c4a01-4f3d-4f51-a392-b821045fff1a" class="bulleted-list">
+										<li style="list-style-type:disc">Preise und Mengen</li>
+									</ul>
+									<ul id="083d028f-c804-4324-aba0-5628a873e2b3" class="bulleted-list">
+										<li style="list-style-type:disc">ggfs. zahlungsverhalten</li>
+									</ul>
+									<ul id="8d5b48b9-90a7-48aa-b7f4-e7f46793744c" class="bulleted-list">
+										<li style="list-style-type:disc">ggfs. Grenzplankosten
+											Kostenplanung</li>
+									</ul>
+								</div>
+								<div id="ebc9bffb-bbfc-4ff5-9cdb-7dcdc98ecb58" style="width:100%" class="column">
+									<p id="54bc4695-1363-4e70-9e7f-aaddc1e6fce8" class="">
+									</p>
+									<p id="d7ea5127-b337-4a8d-a6e1-8fce3d63f0c5" class="">→ Problematik integration</p>
+								</div>
+							</div>
+							<p id="4f680c77-80bb-4cc5-98aa-aed4496e8d8a" class="">
+							</p>
+							<p id="710ac5cc-48f5-47ac-937e-a62c0e53e53d" class="">
+								<strong>Strukturierungsaspekte:</strong></p>
+							<div id="a0670050-478b-4805-8933-c24a32c90067" class="column-list">
+								<div id="1dac6360-7c07-4467-9692-c41bc01a7770" style="width:50%" class="column">
+									<ul id="26ad972a-bd26-4d57-9f24-f775240e6c02" class="bulleted-list">
+										<li style="list-style-type:disc">Abnehmer</li>
+									</ul>
+									<ul id="ce7ac06f-4781-44c8-a073-986101bef780" class="bulleted-list">
+										<li style="list-style-type:disc">Absatzgebiete</li>
+									</ul>
+									<ul id="24769813-9385-4424-974f-c1d2244622fd" class="bulleted-list">
+										<li style="list-style-type:disc">Produkt</li>
+									</ul>
+									<ul id="25ea8f97-d471-4c95-b612-7cc6fb2ef66a" class="bulleted-list">
+										<li style="list-style-type:disc">Währung</li>
+									</ul>
+									<ul id="5d3c7e10-dc3f-42e7-9433-c695a47d7274" class="bulleted-list">
+										<li style="list-style-type:disc">…</li>
+									</ul>
+								</div>
+								<div id="b122d8ad-1ab5-410f-9f0b-7e28e413dd46" style="width:50%" class="column">
+									<p id="279811ac-fbc3-43a3-a1c3-9714dbd3a284" class="">
+									</p>
+									<p id="fb20e5c5-549f-4a03-9b2c-bf2ce3974b6f" class="">
+									</p>
+									<p id="115587b3-e2ae-4c7b-b8e9-560cea517b79" class="">→ Problematik bei
+										Planänderungen</p>
+								</div>
+							</div>
+							<p id="801a44cc-915e-4a56-9ce8-297a52bd3c92" class="">
+							</p>
+							<h3 id="b757e986-e72d-49e6-bad3-072c14cd1120" class="">Spezielle Problematiken in der
+								Leistungsverwertungsplanung</h3>
+							<ul id="099bc0ab-829b-4c2f-9899-560218f7d913" class="bulleted-list">
+								<li style="list-style-type:disc">Neue Planelemente (Planung der Strukturierungselemente)
+								</li>
+							</ul>
+							<ul id="e5ae9f6b-e735-473d-91ac-2c8c1dc56b3d" class="bulleted-list">
+								<li style="list-style-type:disc">Koordination mit Ist-Werten, Integration der
+									Materialwirtschaft</li>
+							</ul>
+							<ul id="d5077171-7139-4f85-afcd-218ffeccd5a6" class="bulleted-list">
+								<li style="list-style-type:disc">Planungsansätze<ul
+										id="71b5d391-9f6f-4fd8-9ee8-7a877a414af7" class="bulleted-list">
+										<li style="list-style-type:circle">Splashing (auch “break down” genannt)<ul
+												id="117e1b15-033e-48dd-9bbd-7227d45fce4e" class="bulleted-list">
+												<li style="list-style-type:square">proportional</li>
+											</ul>
+											<ul id="4911fe34-f26c-4e1b-85d9-17186e5554b8" class="bulleted-list">
+												<li style="list-style-type:square">absolut</li>
+											</ul>
+										</li>
+									</ul>
+									<ul id="10cbad95-09ce-44fd-b737-4026a466c281" class="bulleted-list">
+										<li style="list-style-type:circle">Festschreibung bei festen Zielen</li>
+									</ul>
+									<ul id="806aba1f-69e8-4b27-b775-a4cab514a9cd" class="bulleted-list">
+										<li style="list-style-type:circle">Erhöhung ab Zeitpunkt x</li>
+									</ul>
+									<ul id="48d23cd6-53c7-492e-aeae-db787b0f3492" class="bulleted-list">
+										<li style="list-style-type:circle">Wenn-Dann-Regeln</li>
+									</ul>
+								</li>
+							</ul>
+							<ul id="107a771f-2586-4faa-a330-07339822faa4" class="bulleted-list">
+								<li style="list-style-type:disc">Unsicherheit und Risiko</li>
+							</ul>
+							<ul id="ba705979-cebb-444a-bbd4-bfba3461079f" class="bulleted-list">
+								<li style="list-style-type:disc">Sprungfixe Kosten bei Berücksichtigung der
+									Grenzplankosten<ul id="6b113f57-aaa1-4b6c-b191-16ec174e6168" class="bulleted-list">
+										<li style="list-style-type:circle">Kosten, deren Höhe in bestimmten Bereichen/
+											Intervallen der Ausbringungsmenge konstant bleibt, bei Überschreitung einer
+											bestimmten Ausbringungsmenge jedoch sprunghaft auf ein höheres Niveau
+											ansteigt und die Fixkosten beeinflusst.</li>
+									</ul>
+								</li>
+							</ul>
+							<h3 id="a347b018-6d77-42f8-984c-fc6b99759069" class="">Kostenplanung - Aufbau</h3>
+							<ul id="dcf287ce-6cf3-4aa6-9089-0cdc7dfd41f4" class="bulleted-list">
+								<li style="list-style-type:disc">Kostenstelleplanung = Kostenartplanung = Konto</li>
+							</ul>
+							<ul id="9039f2c0-b4d2-4a39-a393-51c8648137e5" class="bulleted-list">
+								<li style="list-style-type:disc">GuV-Schlüssel kann ignoriert werden.</li>
+							</ul>
+							<figure id="84584a48-bc21-4fde-a016-2a386043cffa" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-17_um_12.07.53.png"><img
+										style="width:1280px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-17_um_12.07.53.png" /></a>
+							</figure>
+							<p id="dedf1f40-0054-4767-8cd5-8439eca2ad0b" class=""><strong>Mögliche Teilpläne:</strong>
+							</p>
+							<ul id="0145906c-aa90-4ece-b52e-e243d54cd7bd" class="bulleted-list">
+								<li style="list-style-type:disc">Produktionsplan</li>
+							</ul>
+							<ul id="c4a97968-67ab-4642-8d01-fe0021d2270c" class="bulleted-list">
+								<li style="list-style-type:disc">Stückkostenplan</li>
+							</ul>
+							<ul id="93cc3e10-32cd-4969-b20e-68f0f7dfe709" class="bulleted-list">
+								<li style="list-style-type:disc">Beschaffungsplan</li>
+							</ul>
+							<ul id="a7143378-814b-40ee-ae88-b8d529ac682b" class="bulleted-list">
+								<li style="list-style-type:disc">Lagerplan</li>
+							</ul>
+							<ul id="034f480a-5dfd-4084-b313-7a71058f0824" class="bulleted-list">
+								<li style="list-style-type:disc">Personalplan</li>
+							</ul>
+							<ul id="5f135eca-ade5-441f-bf2f-23ccd5aac8e4" class="bulleted-list">
+								<li style="list-style-type:disc">F&amp;E Planung</li>
+							</ul>
+							<ul id="e8a4694b-8840-4d8d-bd31-5231d5eb695e" class="bulleted-list">
+								<li style="list-style-type:disc">Allgemeine Kostenplanung (Fixkosten,
+									Kostenstellenplanung)</li>
+							</ul>
+							<ul id="c24cd8c9-8a2f-471c-a28d-cbc442c17681" class="bulleted-list">
+								<li style="list-style-type:disc">…</li>
+							</ul>
+							<p id="b01de110-9978-4590-862d-ebb171336b7d" class=""><strong>Abhängigkeit von der
+									Leistungsverwertungsplanung</strong></p>
+							<h3 id="98865fb8-e5ef-4402-a39a-871b015d9f02" class="">Kostenplanung - Allgemein</h3>
+							<p id="ff002928-8b35-49da-ad03-c25e1c84c385" class="">→ Viele Aspekte bei Startup (Neu)
+								Gründung irrelevant (durchgestrichen)</p>
+							<ul id="34d8947f-efd7-47ed-b751-004f7a1645a0" class="bulleted-list">
+								<li style="list-style-type:disc">Festlegung des Detailgrades hängt von
+									Planungsphilosophie ab<ul id="7ccf2ef9-c975-4818-8263-4e70b9441804"
+										class="bulleted-list">
+										<li style="list-style-type:circle">Frage ob man festlegt: “Wir kaufen 3 Stühle,
+											2 Tische, etc.” oder ob man sagt: “Wir wollen im ersten Gründungsjahr
+											maximal 2.000€ ausgeben, was wir davon kaufen ist ‘egal’.“</li>
+									</ul>
+								</li>
+							</ul>
+							<ul id="fded2a89-5d3c-47f4-aefb-0662512875bd" class="bulleted-list">
+								<li style="list-style-type:disc"><del>Vorjahresübernahme mit
+										Veränderungsparamentern</del>
+									<ul id="0815b70b-9e27-44a7-a39c-7c58457c3125" class="bulleted-list">
+										<li style="list-style-type:circle">Für Startup Gründung irrelevant</li>
+									</ul>
+								</li>
+							</ul>
+							<ul id="8b8df506-8074-4417-8c25-12cb51ee555f" class="bulleted-list">
+								<li style="list-style-type:disc"><del>Splashing (siehe </del><del><a
+											href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147.html">Leistungsverwertungsplanung</a></del><del>)</del>
+								</li>
+							</ul>
+							<ul id="f5b1fe83-70e7-45a7-89b5-4aa751bbf976" class="bulleted-list">
+								<li style="list-style-type:disc"><del>Kostenstellengenaue Kostenplanung bringt
+										Zuordnungs-Probleme</del></li>
+							</ul>
+							<ul id="649684da-fb1d-444f-88b5-c44afcc699e8" class="bulleted-list">
+								<li style="list-style-type:disc"><del>Problematik der innerbetrieblichen
+										Leistungsverrechnung → Übertragung auch auf die Planung?</del></li>
+							</ul>
+							<ul id="1d302fc1-09e2-4db2-af81-21b83548f5f7" class="bulleted-list">
+								<li style="list-style-type:disc">Planung des Zahlungsverhaltens<ul
+										id="3bfca29a-b8b8-46ba-a4d7-08af1f9d02fe" class="bulleted-list">
+										<li style="list-style-type:circle">direkt</li>
+									</ul>
+									<ul id="54a7cf09-5720-41ff-a720-038810d7232a" class="bulleted-list">
+										<li style="list-style-type:circle">später</li>
+									</ul>
+								</li>
+							</ul>
+							<h3 id="0beb8555-cf20-4a2e-bb6b-2865266a6476" class="">Kostenplanung -
+								Personal(kosten)planung</h3>
+							<ul id="54418996-3de1-4bcd-8a99-206bba89dfa7" class="bulleted-list">
+								<li style="list-style-type:disc">Kapazitäten (FTE) und Köpfe müssen geplant werden</li>
+							</ul>
+							<ul id="90bf6564-1377-47c7-bd48-72dc15b862cc" class="bulleted-list">
+								<li style="list-style-type:disc">Evtl. tarifliche Grundlagen</li>
+							</ul>
+							<ul id="5a7a332e-7031-4553-b8f5-123001879bb3" class="bulleted-list">
+								<li style="list-style-type:disc">Einmalzahlungen<ul
+										id="8153e4ed-d8d1-45d3-8989-c660ca06b634" class="bulleted-list">
+										<li style="list-style-type:circle">Bonuszahlungen wie z. B. dreizehntes Gehalt
+											(Weihnachtsgeld)</li>
+									</ul>
+								</li>
+							</ul>
+							<ul id="36ca1937-95e9-4331-959f-30c2085c25a8" class="bulleted-list">
+								<li style="list-style-type:disc">Variable Gehaltsbestandteile</li>
+							</ul>
+							<ul id="5f9537ad-424c-415c-9dc6-c1b0b8d2b335" class="bulleted-list">
+								<li style="list-style-type:disc">Nicht monetäre Gehaltskomponenten</li>
+							</ul>
+							<ul id="6bcdd466-e395-4da5-9995-ab13f5d21702" class="bulleted-list">
+								<li style="list-style-type:disc">Sozialversicherungsbeiträge</li>
+							</ul>
+							<h3 id="949cce06-7e2d-4f91-9c92-33a9fb2b2575" class="">Investitionsplanung - Besonderheiten
+							</h3>
+							<figure id="4d34d4d7-d055-43cf-afdb-3cd57c66a7a1" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-17_um_12.44.48.png"><img
+										style="width:1274px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-17_um_12.44.48.png" /></a>
+							</figure>
+							<ul id="b82f90e9-0668-424d-9ea5-51b253cc632d" class="bulleted-list">
+								<li style="list-style-type:disc">Projektorientierte Sichtweise<ul
+										id="fe90ecbb-da9b-4099-a71e-fb2831b7d419" class="bulleted-list">
+										<li style="list-style-type:circle">Vermischung unterschiedlicher Kostenarten
+										</li>
+									</ul>
+									<ul id="7db5bb87-43ff-46d9-ab26-59467ecb333c" class="bulleted-list">
+										<li style="list-style-type:circle">Aktivierungszwang, Aktivierungswahlrecht,
+											Sofortabschreibung</li>
+									</ul>
+								</li>
+							</ul>
+							<ul id="9e2cee89-3ef7-4d3e-80e0-055dd3b9737a" class="bulleted-list">
+								<li style="list-style-type:disc">Langfristigkeit von Investitionsprojekten</li>
+							</ul>
+							<ul id="9175a106-45da-41f5-9768-de550722b903" class="bulleted-list">
+								<li style="list-style-type:disc"><del>Überträge von “alten” Investitionsprojekten</del>
+									<ul id="6c22e44f-70f8-4381-b1c0-7d4c08f7390b" class="bulleted-list">
+										<li style="list-style-type:circle">Bei Gründung eines neuen Startups nicht
+											relevant</li>
+									</ul>
+								</li>
+							</ul>
+							<ul id="82db0516-5a8e-42f4-97f9-2e33d677adc1" class="bulleted-list">
+								<li style="list-style-type:disc">Flexibilität durch die Verschiedenartigkeit von
+									Investitionsprojekten</li>
+							</ul>
+							<ul id="45bbb044-c22a-4baf-90a7-cfbd7d468650" class="bulleted-list">
+								<li style="list-style-type:disc">Finanzbedarf von Investitionsprojekten</li>
+							</ul>
+							<h3 id="012fa228-253e-49f1-ab0e-59a6e424bc2f" class="">Darlehensplanung - Kapitalbeschaffung
+								- Besonderheiten</h3>
+							<ul id="722f2cfb-28e4-46e7-b43d-a36513904464" class="bulleted-list">
+								<li style="list-style-type:disc">Variabilität von Zins- und Tilgungsplänen</li>
+							</ul>
+							<ul id="e0b5a304-0cc4-48b7-804d-10f056dcba9e" class="bulleted-list">
+								<li style="list-style-type:disc">Mischformen von Eigen- und Fremdfinanzierung</li>
+							</ul>
+							<ul id="2fbd3a59-6cdb-46fb-b001-d8d90eea5a82" class="bulleted-list">
+								<li style="list-style-type:disc">Darlehens- versus Leasingfinanzierung</li>
+							</ul>
+							<ul id="269fff2b-48a4-4abe-a747-0ece91768ac5" class="bulleted-list">
+								<li style="list-style-type:disc">Kreditbedingung</li>
+							</ul>
+							<h3 id="0695bc02-ce42-4c88-a360-5d1019ca24fa" class="">Finanzplanung i. e. S. (im engeren
+								Sinne/ im Detail) - Allgemeines</h3>
+							<figure id="13203007-4afd-4c8c-9f48-e6c5d19fe412" class="image"><a
+									href="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-17_um_13.04.37.png"><img
+										style="width:1290px"
+										src="Business%20Models%20&amp;%20Plans%205d6c5f1372d847d9bfa549c25abb4147/Bildschirmfoto_2022-11-17_um_13.04.37.png" /></a>
+							</figure>
+							<ul id="39a56e0b-123e-4592-aece-026f6c48fc8e" class="bulleted-list">
+								<li style="list-style-type:disc">Bilanz und GuV müssen “aufgehen”<ul
+										id="6ffd7387-8247-4044-bfb1-4d07f0405da1" class="bulleted-list">
+										<li style="list-style-type:circle">Bilanzausgleichspositionen festlegen</li>
+									</ul>
+									<ul id="2a38a03f-68ca-4663-87e3-4bf0e6e25239" class="bulleted-list">
+										<li style="list-style-type:circle">Anstoßen des Ausgleichmechanismus festlegen
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<ul id="3e100c12-2986-44fe-bbff-a81081b893a5" class="bulleted-list">
+								<li style="list-style-type:disc">Manuelle Planung diverser Positionen<ul
+										id="1dadc3c7-6541-4d50-b78b-5dff6e4f3867" class="bulleted-list">
+										<li style="list-style-type:circle">GuV: z. B.:<ul
+												id="b1ebaf9e-4ee4-4dae-9be2-0b75e0dfc34a" class="bulleted-list">
+												<li style="list-style-type:square">Sonstige betriebliche Aufwendungen
+													und Erträge</li>
+											</ul>
+											<ul id="806ceaac-ddaf-4ffa-8199-707982bbcf32" class="bulleted-list">
+												<li style="list-style-type:square">Außerordentliche Aufwendungen und
+													Erträge</li>
+											</ul>
+											<ul id="a24d3939-fdec-4846-ace6-9a1856666b39" class="bulleted-list">
+												<li style="list-style-type:square">Steueraufwand (ggfs. automatisierbar)
+												</li>
+											</ul>
+										</li>
+									</ul>
+									<ul id="1b4ab023-933e-4f4f-bb84-6ccc6197c9a5" class="bulleted-list">
+										<li style="list-style-type:circle">Bilanz: z. B.:<ul
+												id="4d4b292e-c835-44b1-b1e9-ed86e46f764f" class="bulleted-list">
+												<li style="list-style-type:square">Sonstige Vermögensgegenstände,
+													sonstige Forderungen</li>
+											</ul>
+											<ul id="61a687fe-23ff-4d0d-850d-7e04b0a48f1b" class="bulleted-list">
+												<li style="list-style-type:square">ARAP, PRAP<ul
+														id="08d6b962-54e2-455e-bc2b-04b0ba399f8c" class="bulleted-list">
+														<li style="list-style-type:disc">ARAP = aktiver
+															Rechnungsabgrenzungsposten<ul
+																id="40b30ad5-6af8-4df0-9526-b70089265b7b"
+																class="bulleted-list">
+																<li style="list-style-type:circle">Vorzunehmen, wenn das
+																	eigene Unternehmen Aufwendungen für das nächste
+																	Geschäftsjahr bereits im laufenden Geschäftsjahr
+																	bezahlt.</li>
+															</ul>
+															<ul id="8cc3457a-0f58-4901-8174-8a5d99614030"
+																class="bulleted-list">
+																<li style="list-style-type:circle">Ausgaben vor dem
+																	Bilanzstichtag + Aufwand im neuen Geschäftsjahr</li>
+															</ul>
+														</li>
+													</ul>
+													<ul id="529015c5-c5d2-43d4-8a8b-89f142e67a4d" class="bulleted-list">
+														<li style="list-style-type:disc">PRAP = passiver
+															Rechnungsabgrenzungsposten<ul
+																id="e49dc87d-8436-455d-9617-76212a49e21d"
+																class="bulleted-list">
+																<li style="list-style-type:circle">Vorzunehmen, wenn die
+																	Gegenseite des eigenen Unternehmens (z. B. Kunden)
+																	Aufwendungen für das nächste Geschäftsjahr bereits
+																	im laufenden Geschäftsjahr bezahlt. Das Unternehmen
+																	steht also in der Pflicht der Leistungserbringung.
+																</li>
+															</ul>
+															<ul id="a3289b4e-f4d9-4c61-9666-0f25cc164f89"
+																class="bulleted-list">
+																<li style="list-style-type:circle">Einnahmen vor dem
+																	Bilanzstichtag + Ertrag im neuen Geschäftsjahr</li>
+															</ul>
+														</li>
+													</ul>
+												</li>
+											</ul>
+											<ul id="1000d3cb-c27e-41d1-aa95-8d391647608e" class="bulleted-list">
+												<li style="list-style-type:square">SoPo mit Rücklageanteil, Rückstellung
+												</li>
+											</ul>
+											<ul id="7b271fbb-5dbe-4d30-b1d9-dbf5fd3a4235" class="bulleted-list">
+												<li style="list-style-type:square">Erhaltene Anzahlungen</li>
+											</ul>
+											<ul id="9bc04396-e1ae-447d-9d36-b3e545468238" class="bulleted-list">
+												<li style="list-style-type:square">…</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<p id="5fd9b274-f1af-4800-97a3-f24057dadc5e" class="">
+							</p>
+						</div>
+					</details>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.875em;line-height:1.3">Businessplan - Abgabe</summary>
+				<div class="indented">
+					<ul id="b0386b90-a70d-4e0f-9f77-2fcdebcc6586" class="bulleted-list">
+						<li style="list-style-type:disc">Begründungen dafür finden, wie sich das Unternehmenswachstum
+							verhalten wird und warum und diese schriftlich erläutern.
+							→ z. B. Marketingmaßnahmen, andere Vorteile wie First-to-market und dadurch schnelleres
+							Wachstum weil große Kunden als Leitfiguren an Land gezogen werden können, wonach viele
+							weitere kleinere Kunden folgen. </li>
+					</ul>
+					<ul id="7e113bf2-a487-42e3-9396-05119bd05cf4" class="bulleted-list">
+						<li style="list-style-type:disc">Planung nach oder vor Gründung?!<ul
+								id="1f253146-7ddf-46b0-8ded-0fabb3c58bee" class="bulleted-list">
+								<li style="list-style-type:circle">Vor Gründung:
+									Gründungsbedingte Kosten (siehe auch Excel Template zum Kapitalbedarfsplan):
+									Makler-Kosten, Suche nach Büroräumen → Mietkosten evtl. zu Anfangs noch nicht
+									existent, Anwälte, Notar-Gebühren</li>
+							</ul>
+							<ul id="0cafbc43-439f-43e0-af53-c59d7f61a22d" class="bulleted-list">
+								<li style="list-style-type:circle">Nach Gründung:
+									laufende Kosten, … (siehe auch Excel Template zum Kapitalbedarfsplan)
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.875em;line-height:1.3">Fragen</summary>
+				<div class="indented">
+					<ul id="5a7a4d06-5f85-49d2-8772-81d60769cecb" class="bulleted-list">
+						<li style="list-style-type:disc">Beschreibung und Organisation der Leistungserstellung
+							→ Was ist das und was ist damit gemeint?<ul id="f5a98ca3-92d3-4381-85ed-765edc506779"
+								class="bulleted-list">
+								<li style="list-style-type:circle">Wie es produziert und bereitgestellt wird → richtige
+									know how welches know how wird gebraucht, welche sonstigen Ressourcen wie z. B.
+									IT-Infrastruktur</li>
+							</ul>
+							<ul id="23d83482-e3a9-4aa4-9d4b-5b1f2dc9e034" class="bulleted-list">
+								<li style="list-style-type:circle">Leistungsverwertung: Wie bekomme ich aus
+									Leistungserstellung Geld</li>
+							</ul>
+						</li>
+					</ul>
+					<ul id="d0df539d-e7fe-403a-a6e9-606440759a6e" class="bulleted-list">
+						<li style="list-style-type:disc">Müssen wir uns überlegen und begründen, welche Rechtsform unser
+							Unternehmen haben wird?
+							→ Wenn ja: Wo beschreiben? → unter “Geschäftsmodell” oder woanders?<ul
+								id="4999a55f-826e-40e0-b4e8-209ca9b6eaa0" class="bulleted-list">
+								<li style="list-style-type:circle">Auf jeden Fall was dazu schreiben - Stelle wo es
+									beschrieben wird ist relativ egal</li>
+							</ul>
+							<ul id="35c70059-0012-48ed-a4e2-278f56b302b2" class="bulleted-list">
+								<li style="list-style-type:circle">z. B. UG oder GmbH relativ egal → <a
+										href="https://www.youtube.com/watch?v=JVczKDzGztE">Video</a> zu Rechtsformen
+									noch einmal anschauen!
+									→ UG ist Unterform von GmbH (ist damit im Prinzip auch eine GmbH) nur mit
+									verringerten Ansprüchen an das anfängliche Stammkapital. Man kann eine UG z. B. mit
+									lediglich 500€ Stammkapital starten, MUSS ABER jedes Jahr ca. 25% von seinem Gewinn
+									auf das Stammkapital einzahlen, bis 25.000€ erreicht sind. Dann kann anschließend
+									die Umwandlung in eine GmbH stattfinden.
+									Direkter Unterschied: UG wird als weniger seriös angesehen als GmbH.</li>
+							</ul>
+						</li>
+					</ul>
+					<ul id="2347ab70-9fda-4aea-8aaa-ba667da8f43f" class="bulleted-list">
+						<li style="list-style-type:disc">Executive Summary + Conclusion machen? - oder überschneiden
+							sich diese beiden Punkte?<ul id="56a14ae3-053f-494e-b519-ea20f2859740"
+								class="bulleted-list">
+								<li style="list-style-type:circle">Conclusion kann gemacht werden, muss aber nicht!</li>
+							</ul>
+							<p id="95697f8d-82a7-48a0-b947-7e1e7b207c41" class="">
+							</p>
+							<ul id="c4639c47-d3a1-4230-bbb5-acdafb50ccbd" class="bulleted-list">
+								<li style="list-style-type:circle">Nächste Tasks:<ul
+										id="331d705b-a63d-45ff-a169-b112850ace42" class="bulleted-list">
+										<li style="list-style-type:square">Ausformulierten Texte der BMC-Teile um neu
+											hinzugekommene Details ergänzen/ Passagen falls nötig abändern @Michel</li>
+									</ul>
+									<ul id="ab190eef-9a4a-4322-9ed9-11ae2df7ca0d" class="bulleted-list">
+										<li style="list-style-type:square">Jeder liest noch einmal alle Texte durch,
+											damit beide auf demselben Stand sind und die vom andern entwickelten Ideen
+											mit aufgenommen werden können. @Beide</li>
+									</ul>
+									<ul id="84ad3073-10eb-4b82-92b6-93f3f6601b63" class="bulleted-list">
+										<li style="list-style-type:square">(Beschreibung und Organisation der)
+											Leistungserstellung @nochEinmalBesprechen</li>
+									</ul>
+									<ul id="7629d0b8-b09d-46ca-9c78-af86c24c34b1" class="bulleted-list">
+										<li style="list-style-type:square">Beide machen sich Gedanken bis zum Punkt 8.1
+											SWOT-Analyse und 8.2 SWOT-Strategien und schreiben stichpunktartig Idee dazu
+											auf -&gt; Diese werden am Fr., den 23.12. um 11:30 Uhr besprochen,
+											zusammengefügt und eventuell auch schon zu einem Text ausformuliert. (Das
+											Ausformulieren kann auch von einer Person im Anschluss mithilfe der
+											Stichpunkte gemacht werden.) @Beide</li>
+									</ul>
+								</li>
+							</ul>
+							<p id="a3eece87-e73e-4a5b-b865-b7d92ec70942" class="">
+							</p>
+						</li>
+					</ul>
+				</div>
+			</details>
+		</div>
+	</article>
+</body>
+
+</html>

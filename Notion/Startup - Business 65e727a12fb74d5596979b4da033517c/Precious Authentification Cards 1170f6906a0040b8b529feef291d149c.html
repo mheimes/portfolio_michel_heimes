@@ -1,0 +1,1145 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Precious Authentification Cards </title>
+	<style>
+		/* cspell:disable-file */
+		/* webkit printing magic: print all background colors */
+		html {
+			-webkit-print-color-adjust: exact;
+		}
+
+		* {
+			box-sizing: border-box;
+			-webkit-print-color-adjust: exact;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		@media only screen {
+			body {
+				margin: 2em auto;
+				max-width: 900px;
+				color: rgb(55, 53, 47);
+			}
+		}
+
+		body {
+			line-height: 1.5;
+			white-space: pre-wrap;
+		}
+
+		a,
+		a.visited {
+			color: inherit;
+			text-decoration: underline;
+		}
+
+		.pdf-relative-link-path {
+			font-size: 80%;
+			color: #444;
+		}
+
+		h1,
+		h2,
+		h3 {
+			letter-spacing: -0.01em;
+			line-height: 1.2;
+			font-weight: 600;
+			margin-bottom: 0;
+		}
+
+		.page-title {
+			font-size: 2.5rem;
+			font-weight: 700;
+			margin-top: 0;
+			margin-bottom: 0.75em;
+		}
+
+		h1 {
+			font-size: 1.875rem;
+			margin-top: 1.875rem;
+		}
+
+		h2 {
+			font-size: 1.5rem;
+			margin-top: 1.5rem;
+		}
+
+		h3 {
+			font-size: 1.25rem;
+			margin-top: 1.25rem;
+		}
+
+		.source {
+			border: 1px solid #ddd;
+			border-radius: 3px;
+			padding: 1.5em;
+			word-break: break-all;
+		}
+
+		.callout {
+			border-radius: 3px;
+			padding: 1rem;
+		}
+
+		figure {
+			margin: 1.25em 0;
+			page-break-inside: avoid;
+		}
+
+		figcaption {
+			opacity: 0.5;
+			font-size: 85%;
+			margin-top: 0.5em;
+		}
+
+		mark {
+			background-color: transparent;
+		}
+
+		.indented {
+			padding-left: 1.5em;
+		}
+
+		hr {
+			background: transparent;
+			display: block;
+			width: 100%;
+			height: 1px;
+			visibility: visible;
+			border: none;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+		}
+
+		img {
+			max-width: 100%;
+		}
+
+		@media only print {
+			img {
+				max-height: 100vh;
+				object-fit: contain;
+			}
+		}
+
+		@page {
+			margin: 1in;
+		}
+
+		.collection-content {
+			font-size: 0.875rem;
+		}
+
+		.column-list {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.column {
+			padding: 0 1em;
+		}
+
+		.column:first-child {
+			padding-left: 0;
+		}
+
+		.column:last-child {
+			padding-right: 0;
+		}
+
+		.table_of_contents-item {
+			display: block;
+			font-size: 0.875rem;
+			line-height: 1.3;
+			padding: 0.125rem;
+		}
+
+		.table_of_contents-indent-1 {
+			margin-left: 1.5rem;
+		}
+
+		.table_of_contents-indent-2 {
+			margin-left: 3rem;
+		}
+
+		.table_of_contents-indent-3 {
+			margin-left: 4.5rem;
+		}
+
+		.table_of_contents-link {
+			text-decoration: none;
+			opacity: 0.7;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid rgba(55, 53, 47, 0.09);
+			border-collapse: collapse;
+		}
+
+		table {
+			border-left: none;
+			border-right: none;
+		}
+
+		th,
+		td {
+			font-weight: normal;
+			padding: 0.25em 0.5em;
+			line-height: 1.5;
+			min-height: 1.5em;
+			text-align: left;
+		}
+
+		th {
+			color: rgba(55, 53, 47, 0.6);
+		}
+
+		ol,
+		ul {
+			margin: 0;
+			margin-block-start: 0.6em;
+			margin-block-end: 0.6em;
+		}
+
+		li>ol:first-child,
+		li>ul:first-child {
+			margin-block-start: 0.6em;
+		}
+
+		ul>li {
+			list-style: disc;
+		}
+
+		ul.to-do-list {
+			padding-inline-start: 0;
+		}
+
+		ul.to-do-list>li {
+			list-style: none;
+		}
+
+		.to-do-children-checked {
+			text-decoration: line-through;
+			opacity: 0.375;
+		}
+
+		ul.toggle>li {
+			list-style: none;
+		}
+
+		ul {
+			padding-inline-start: 1.7em;
+		}
+
+		ul>li {
+			padding-left: 0.1em;
+		}
+
+		ol {
+			padding-inline-start: 1.6em;
+		}
+
+		ol>li {
+			padding-left: 0.2em;
+		}
+
+		.mono ol {
+			padding-inline-start: 2em;
+		}
+
+		.mono ol>li {
+			text-indent: -0.4em;
+		}
+
+		.toggle {
+			padding-inline-start: 0em;
+			list-style-type: none;
+		}
+
+		/* Indent toggle children */
+		.toggle>li>details {
+			padding-left: 1.7em;
+		}
+
+		.toggle>li>details>summary {
+			margin-left: -1.1em;
+		}
+
+		.selected-value {
+			display: inline-block;
+			padding: 0 0.5em;
+			background: rgba(206, 205, 202, 0.5);
+			border-radius: 3px;
+			margin-right: 0.5em;
+			margin-top: 0.3em;
+			margin-bottom: 0.3em;
+			white-space: nowrap;
+		}
+
+		.collection-title {
+			display: inline-block;
+			margin-right: 1em;
+		}
+
+		.page-description {
+			margin-bottom: 2em;
+		}
+
+		.simple-table {
+			margin-top: 1em;
+			font-size: 0.875rem;
+			empty-cells: show;
+		}
+
+		.simple-table td {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table th {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table-header-color {
+			background: rgb(247, 246, 243);
+			color: black;
+		}
+
+		.simple-table-header {
+			font-weight: 500;
+		}
+
+		time {
+			opacity: 0.5;
+		}
+
+		.icon {
+			display: inline-block;
+			max-width: 1.2em;
+			max-height: 1.2em;
+			text-decoration: none;
+			vertical-align: text-bottom;
+			margin-right: 0.5em;
+		}
+
+		img.icon {
+			border-radius: 3px;
+		}
+
+		.user-icon {
+			width: 1.5em;
+			height: 1.5em;
+			border-radius: 100%;
+			margin-right: 0.5rem;
+		}
+
+		.user-icon-inner {
+			font-size: 0.8em;
+		}
+
+		.text-icon {
+			border: 1px solid #000;
+			text-align: center;
+		}
+
+		.page-cover-image {
+			display: block;
+			object-fit: cover;
+			width: 100%;
+			max-height: 30vh;
+		}
+
+		.page-header-icon {
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+
+		.page-header-icon-with-cover {
+			margin-top: -0.72em;
+			margin-left: 0.07em;
+		}
+
+		.page-header-icon img {
+			border-radius: 3px;
+		}
+
+		.link-to-page {
+			margin: 1em 0;
+			padding: 0;
+			border: none;
+			font-weight: 500;
+		}
+
+		p>.user {
+			opacity: 0.5;
+		}
+
+		td>.user,
+		td>time {
+			white-space: nowrap;
+		}
+
+		input[type="checkbox"] {
+			transform: scale(1.5);
+			margin-right: 0.6em;
+			vertical-align: middle;
+		}
+
+		p {
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.image {
+			border: none;
+			margin: 1.5em 0;
+			padding: 0;
+			border-radius: 0;
+			text-align: center;
+		}
+
+		.code,
+		code {
+			background: rgba(135, 131, 120, 0.15);
+			border-radius: 3px;
+			padding: 0.2em 0.4em;
+			border-radius: 3px;
+			font-size: 85%;
+			tab-size: 2;
+		}
+
+		code {
+			color: #eb5757;
+		}
+
+		.code {
+			padding: 1.5em 1em;
+		}
+
+		.code-wrap {
+			white-space: pre-wrap;
+			word-break: break-all;
+		}
+
+		.code>code {
+			background: none;
+			padding: 0;
+			font-size: 100%;
+			color: inherit;
+		}
+
+		blockquote {
+			font-size: 1.25em;
+			margin: 1em 0;
+			padding-left: 1em;
+			border-left: 3px solid rgb(55, 53, 47);
+		}
+
+		.bookmark {
+			text-decoration: none;
+			max-height: 8em;
+			padding: 0;
+			display: flex;
+			width: 100%;
+			align-items: stretch;
+		}
+
+		.bookmark-title {
+			font-size: 0.85em;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			height: 1.75em;
+			white-space: nowrap;
+		}
+
+		.bookmark-text {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.bookmark-info {
+			flex: 4 1 180px;
+			padding: 12px 14px 14px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.bookmark-image {
+			width: 33%;
+			flex: 1 1 180px;
+			display: block;
+			position: relative;
+			object-fit: cover;
+			border-radius: 1px;
+		}
+
+		.bookmark-description {
+			color: rgba(55, 53, 47, 0.6);
+			font-size: 0.75em;
+			overflow: hidden;
+			max-height: 4.5em;
+			word-break: break-word;
+		}
+
+		.bookmark-href {
+			font-size: 0.75em;
+			margin-top: 0.25em;
+		}
+
+		.sans {
+			font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+		}
+
+		.code {
+			font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+		}
+
+		.serif {
+			font-family: Lyon-Text, Georgia, ui-serif, serif;
+		}
+
+		.mono {
+			font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+		}
+
+		.pdf .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR';
+		}
+
+		.pdf .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.pdf .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR';
+		}
+
+		.pdf .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.highlight-default {
+			color: rgba(55, 53, 47, 1);
+		}
+
+		.highlight-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.highlight-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.highlight-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.highlight-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.highlight-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.highlight-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.highlight-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.highlight-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.highlight-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.highlight-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.highlight-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.highlight-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.highlight-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.highlight-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.highlight-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.highlight-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.highlight-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.highlight-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.block-color-default {
+			color: inherit;
+			fill: inherit;
+		}
+
+		.block-color-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.block-color-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.block-color-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.block-color-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.block-color-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.block-color-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.block-color-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.block-color-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.block-color-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.block-color-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.block-color-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.block-color-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.block-color-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.block-color-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.block-color-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.block-color-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.block-color-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.block-color-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.select-value-color-interactiveBlue {
+			background-color: rgba(35, 131, 226, .07);
+		}
+
+		.select-value-color-pink {
+			background-color: rgba(245, 224, 233, 1);
+		}
+
+		.select-value-color-purple {
+			background-color: rgba(232, 222, 238, 1);
+		}
+
+		.select-value-color-green {
+			background-color: rgba(219, 237, 219, 1);
+		}
+
+		.select-value-color-gray {
+			background-color: rgba(227, 226, 224, 1);
+		}
+
+		.select-value-color-translucentGray {
+			background-color: rgba(255, 255, 255, 0.0375);
+		}
+
+		.select-value-color-orange {
+			background-color: rgba(250, 222, 201, 1);
+		}
+
+		.select-value-color-brown {
+			background-color: rgba(238, 224, 218, 1);
+		}
+
+		.select-value-color-red {
+			background-color: rgba(255, 226, 221, 1);
+		}
+
+		.select-value-color-yellow {
+			background-color: rgba(253, 236, 200, 1);
+		}
+
+		.select-value-color-blue {
+			background-color: rgba(211, 229, 239, 1);
+		}
+
+		.select-value-color-pageGlass {
+			background-color: undefined;
+		}
+
+		.select-value-color-washGlass {
+			background-color: undefined;
+		}
+
+		.checkbox {
+			display: inline-flex;
+			vertical-align: text-bottom;
+			width: 16;
+			height: 16;
+			background-size: 16px;
+			margin-left: 2px;
+			margin-right: 5px;
+		}
+
+		.checkbox-on {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+
+		.checkbox-off {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+	</style>
+</head>
+
+<body>
+	<article id="1170f690-6a00-40b8-b529-feef291d149c" class="page sans">
+		<header>
+			<div class="page-header-icon undefined"><span class="icon">💳</span></div>
+			<h1 class="page-title">Precious Authentification Cards </h1>
+			<p class="page-description"></p>
+		</header>
+		<div class="page-body">
+			<details open="">
+				<summary style="font-weight:600;font-size:1.5em;line-height:1.3">Konzept</summary>
+				<div class="indented">
+					<details open="">
+						<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Hauptkonzept</summary>
+						<div class="indented">
+							<p id="45aeaf9e-aaaa-4f27-9e77-88b633b5d915" class="">Edle Karten (z. B. aus Aluminium oder
+								anderen Metallen) auf welcher Daten gespeichert und per NFC Chip (oder mit ähnlicher
+								Technologie) auch ausgelesen werden können.
+								Die gespeicherten Daten dienen der Authentifizierung eines mit der Karte verbundenen (i.
+								d. Rl. luxuriösen) Gegenstandes. Die Karte dient wie ein Echtheitszertifikat und kann
+								vom Händler entweder dazu gegeben oder vom Käufer extra erworben werden.
+								Ziel ist es, das i. d. R. physische Objekt mit einem digitalen Produkt, hier einem
+								Authentizitätsnachweis, zu verknüpfen um somit mehr Vertrauen beim Endkonsumenten zu
+								erzeugen beziehungsweise besonders auch um Zweitkäufern mehr Vertrauen zu bieten.</p>
+							<p id="cc05675c-f4ef-4fa6-8fa0-571cfb0ef4d0" class=""><strong>Unser Ziel: Vertrauen
+									stärken!</strong></p>
+							<p id="b800f72b-9b88-4c3e-878a-655b1317c87f" class="">Wichtig wäre ein fälschungssicheres
+								System z. B. durch einen zweifachen check und eine in bestimmten Intervallen neu
+								generierte ID, welche nur die Originalkarte generieren kann. Wird eine Karte optisch
+								gefälscht und die darauf enthaltenen Daten auch auf den NFC Chip geladen, so wird die
+								Karte beim Scannen dennoch nicht verifiziert.</p>
+							<p id="282d4119-5625-4c1c-8721-28720feaee3b" class="">
+							</p>
+							<p id="e4f64932-e17a-47c7-969d-8de528331931" class=""><strong>Wie sichergestellt wird, dass
+									die Karten/ Chips fälschungssicher sind:</strong></p>
+							<ul id="68110ff6-875d-4ac3-b421-18b103fdbc85" class="bulleted-list">
+								<li style="list-style-type:disc">Als aktuelle*r Besitzer*in eines Objekts mit einer
+									bestimmten Seriennummer ist eine fest definierte Person eingetragen. Wird der (NFT)
+									Chip der Karte eingescannt, so wird ein kryptographischer Identifier ausgelesen,
+									welcher die Karte authentifiziert. <p id="f13ad22c-7702-4cd4-bf83-b52e229637f7"
+										class="">ODER</p>
+								</li>
+							</ul>
+							<ul id="f24c7bde-69fc-476b-8a1e-f59e979412ea" class="bulleted-list">
+								<li style="list-style-type:disc">s. o.:
+									Mit jedem Abruf der Karte wird ein neuer Identifier erstellt, welcher sich z. B.
+									alle 5 Sekunden neu generiert, die Karte authentifiziert und diese damit so gut wie
+									fälschungssicher macht. <ul id="a00c4816-7bc9-4f12-9ffe-65366ada99c6"
+										class="bulleted-list">
+										<li style="list-style-type:circle">Vorbild: Google Validation App → Generiert
+											alle xx Sekunden für jedes verknüpfte Konto einen neuen Code</li>
+									</ul>
+								</li>
+							</ul>
+							<p id="59092134-9461-49bb-86b2-c0d7aa96619e" class="">
+							</p>
+							<p id="43db2b50-4503-4d17-9f83-f08c8816bee1" class=""><strong>Wie sichergestellt wird, dass
+									es sich bei dem Objekt um das authentische Original handelt:</strong></p>
+							<ul id="1f84e8ab-ccca-41e6-ad4c-82a5c30a4579" class="bulleted-list">
+								<li style="list-style-type:disc">…</li>
+							</ul>
+							<ul id="920d6df0-a342-4623-bc04-d20369cf95c9" class="bulleted-list">
+								<li style="list-style-type:disc">Man könnte sich ein Beispiel nehmen an <a
+										href="Precious%20Authentification%20Cards%201170f6906a0040b8b529feef291d149c.html">Origyn</a>
+									und das Objekt nach erfolgreicher Authentifizierung einscannen lassen. Dies
+									geschieht mithilfe eines kleinen Gerätes, welches wie eine Art Fotobox funktioniert,
+									in dem das Objekt platziert wird und welches hochauflösende Aufnahmen aus
+									verschiedenen Winkeln erstellt, woraus eine biometrisches Abbild dessen erstellt
+									werden kann. In der Folge kann das Objekt mit einer normalen Smartphone-Kamera
+									abfotografiert werden um eine Authentifizierung durchzuführen.</li>
+							</ul>
+							<p id="d4512cd2-8e1b-4d18-93ee-0ad4c277725f" class="">
+							</p>
+							<p id="91eee196-43db-4285-a3f4-d8c4f0047ca9" class=""><strong>Wieso muss es eine physische
+									Karte geben, wenn auch alle Prozessschritte online durchgeführt und Transaktionen
+									abgehandelt werden können? → z. B. durch NFTs only:</strong></p>
+							<ul id="234264ab-db31-4189-95ec-1567734627b3" class="bulleted-list">
+								<li style="list-style-type:disc">…</li>
+							</ul>
+						</div>
+					</details>
+					<details open="">
+						<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Hauptmotivationen</summary>
+						<div class="indented">
+							<ul id="3bfa8be1-2c61-4082-9db8-0df0438b3d1b" class="bulleted-list">
+								<li style="list-style-type:disc">Vertiefung der Beziehung zu Kunden<ul
+										id="6b29f336-f7b1-4446-8274-4dc99512a709" class="bulleted-list">
+										<li style="list-style-type:circle">maßgeschneiderten Empfehlungen während des
+											gesamten Besitzverhältnisses</li>
+									</ul>
+								</li>
+							</ul>
+							<ul id="d4202ad4-e329-4cd4-a5b8-76a946b06cf5" class="bulleted-list">
+								<li style="list-style-type:disc">Schaffung von Vertrauen und Sicherheit für insb. Käufer
+								</li>
+							</ul>
+						</div>
+					</details>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.5em;line-height:1.3">Mögliche Usecases. bzw. Einsatzgebiete
+					bei Brands/ Branchen</summary>
+				<div class="indented">
+					<ul id="4170a76f-202e-4f5b-8d12-02ba7295f502" class="bulleted-list">
+						<li style="list-style-type:disc">Ebay/ StockX/ GOAT/ etc.: Karte als physischer und nicht
+							fälschbarer Beweis zur Authentifizierung von Artikeln für Laien.<ul
+								id="3af2748e-3ced-4057-bf15-d6af110d82b7" class="bulleted-list">
+								<li style="list-style-type:circle">In diesem Beispiel erhalten Kunden der genannte
+									Plattformen die Karte eher als “Nice to have” aber auch als Mehrwert, falls sie das
+									gekaufte Produkt irgendwann noch einmal privat verkaufen wollen. Durch die Karte
+									herrscht weniger Misstrauen gegenüber dem Verkäufer, was im Umkehrschluss mehr
+									Vertrauen für den Zweit-/ Dritt-/ … Käufer bedeutet.<ul
+										id="820d8807-8f77-408c-bedd-9a54b8c0ca29" class="bulleted-list">
+										<li style="list-style-type:square">Frage: Ist der Einsatz einer solchen Karte
+											dann überhaupt im Interesse der genannten Plattformen, da sie ja eher
+											wollen, dass man die Artikel wieder über sie verkauft und die Karte durch
+											ihre eigenen Verifizierungsschritte nicht notwendig ist?<ul
+												id="6f70884b-abb2-4f08-befa-d2611613f02c" class="bulleted-list">
+												<li style="list-style-type:disc">Ich würde sagen: Ja, der Einsatz bist
+													dennoch Interessant, da de meisten der Kunden ihre Artikel auch
+													nutzen wollen und die Plattformen in den meisten Fällen nur Neuwaren
+													annehmen bzw. ihren Service nicht für gebrauchte Modelle anbieten.
+												</li>
+											</ul>
+											<p id="f20432bc-dd8d-4add-aa00-9298c06ef340" class="">
+											</p>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<p id="af89bcef-58d5-4a4a-81ac-1018e528d4d5" class="">
+					</p>
+					<ul id="04ca2022-cd79-4e7e-8dae-bfcccbf7158e" class="bulleted-list">
+						<li style="list-style-type:disc">Luxus-Uhrenhändler und Konsumenten: Weitere Informationen
+							bieten z. B. bezüglich der Besitzhistorie + Authentifizierung <ul
+								id="0947f02f-18bf-4067-a170-0204cc6bc45b" class="bulleted-list">
+								<li style="list-style-type:circle"><strong>State of the Art</strong>: Bei Modelle die
+									max. ca. 3-4 Jahre alt sind bekommt man beim Kauf ein Full-Set dazu, welches auch
+									aus einer Karte vom Hersteller (z. B. Rolex) samt NFC-Chip besteht. Laut einer
+									Aussage einer damit vertrauten Person wird man durch das Scannen der Karte
+									allerdings lediglich auf die Internetseite von Rolex weitergeleitet, was an sich
+									noch keine Verifizierung darstellen sollte. Vielleicht steckt aber auch mehr
+									dahinter. Dieser Punkt bedarf weiterer Recherche. </li>
+							</ul>
+							<ul id="f91e685f-89b4-42ab-bbe1-d54943bded13" class="bulleted-list">
+								<li style="list-style-type:circle"><strong>Besonders interessant</strong>: Wie gesagt
+									besitzen nur Modelle die nicht älter als ca. vier Jahre sind eine solchen digitale
+									Karte zur “Authentifizierung” von Uhren. Man könnte die Karten nun als weitere
+									Authentifizierung besonders für ältere Modelle einsetzen. Lediglich authorisierte
+									und zertifizierte Händler/ Hersteller(?) erhalten die “digitalisierten” Karten und
+									das Recht diese auszustellen und können sie nach einer erfolgreichen Uhreninspektion
+									und damit -verifizierung einrichten und herausgeben. Dies schafft eine deutlich
+									größere Vertrauensbasis auf dem Uhren-Markt, der laut Aussage eines Insiders
+									“<strong>stark auf gegenseitigem Vertrauen</strong> beruht”.</li>
+							</ul>
+							<ul id="5c8c3f7e-a01a-4d8c-8e31-bee841364192" class="bulleted-list">
+								<li style="list-style-type:circle">Bezogen auf den <strong>Privacy Aspekt</strong> bei
+									der Besitzhistorie könnte man die Option geben seinen Namen oder den Namen seines
+									Geschäftes anzugeben. Ansonsten ist auch eine anonyme Angabe möglich in Form einer
+									Kategorieangabe wie “Hersteller”, “Geschäft”, “Händler” oder “Privatperson”.</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.5em;line-height:1.3">Alternative Beispiele und Konkurrenz
+				</summary>
+				<div class="indented">
+					<ul id="4e429ec8-a1b4-49d5-8232-19242cfa1889" class="bulleted-list">
+						<li style="list-style-type:disc">Breitling nutzt bereits Blockchain Tech für digitalen
+							Authentizitätsnachweis + mehr Informationen bezüglich der eigenen Produkte (<a
+								href="https://de.watchpro.com/alle-neuen-breiting-uhren-werden-mit-einem-blockchain-basierten-digitalen-pass-ausgeliefert/">Quelle</a>)
+						</li>
+					</ul>
+					<ul id="abefb222-a68f-40cc-8141-5ed462e08fd4" class="bulleted-list">
+						<li style="list-style-type:disc"><a href="https://www.origyn.com/luxury">Origyn</a>:
+							Die biometrischen Daten eines Objektes/ Luxusgutes werden einmalig (scheinbar von Origyn
+							selber! - vor Ort) erfasst und dann gespeichert. Wird das Objekt nun noch einmal in Form
+							eines Fotos/ Videos abgescannt (nun aber mit dem Handy only), so kann anhand vieler
+							einzelner Faktoren sicher festgestellt werden, ob es sich um genau das authentische Objekt
+							handelt, das zuvor verifiziert wurde. </li>
+					</ul>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.5em;line-height:1.3">Interviews</summary>
+				<div class="indented">
+					<h3 id="06e5cf53-e8c9-4886-9e08-bc5c703741e8" class="">Leitfaden - Luxusuhren:</h3>
+					<ol type="1" id="3e1ae678-b8a4-41df-97a6-799720d9c9d6" class="numbered-list" start="1">
+						<li>Welche Rolle nimmst du ein bzw. in welcher Form interagierst du mit Luxusuhren oder anderen
+							Luxusgütern?</li>
+					</ol>
+					<ol type="1" id="d4dd596f-83af-41d8-9b0a-1984b5cc246e" class="numbered-list" start="2">
+						<li>Welches Interesse verfolgen die Menschen die mit dir bezüglich der Luxusuhren interagieren?
+							(z. B. persönlicher Besitz, Händler, Hersteller, …)</li>
+					</ol>
+					<ol type="1" id="5ef4f2d7-4278-4e0d-910d-f27b252dc91d" class="numbered-list" start="3">
+						<li>Gibt es negative Seiten an deinen Geschäften mit den Luxusuhren bzw. gibt es Dinge daran,
+							die dich bzw. die Menschen, mit denen du in Bezug darauf zu tun hast, immer wieder anmerken?
+						</li>
+					</ol>
+					<ol type="1" id="5d6e03cc-4c14-4da5-8b79-319bfe544e0f" class="numbered-list" start="4">
+						<li>Wie würdest du den Punkt von benötigtem gegenseitigem “Vertrauen” werten (im Bezug auf die
+							Authentizität und weitere relevante Merkmale der Produkte) (wichtig/ nicht wichtig)
+							→ Anders: Beruht der Markt deinem Gefühl nach mehr auf Vertrauen oder auf objektiven
+							Beweisen an denen man sich orientieren kann und die einem bei Kauf/ Verkauf/ Handel/ Besitz
+							helfen?</li>
+					</ol>
+					<ol type="1" id="c9bba243-7a1f-427c-aaae-c96d83d2086e" class="numbered-list" start="5">
+						<li>Hypothese:
+							Auf weiten Teilen des Luxusartikel-Marktes bestehen große Lücken und nicht wirklich
+							vorhandene Möglichkeiten die Authentizität und weitere wichtige Informationen, bezogen auf
+							ein spezielles Produkt, als Laie ohne großen Aufwand nachzuweisen.
+							Der Markt beruht dadurch stark auf gegenseitigem menschlichen Vertrauen zwischen Käufern und
+							Verkäufern, insbesondere wenn der Handel nicht über offizielle Händler stattfindet,
+							Informationen bezogen auf das Produkt fehlen oder undurchsichtig sind und keine Papiere mehr
+							vorhanden sind.
+							Der Markt bzw. die Produkte auf dem Markt sind nicht wirklich digitalisiert, was dadurch die
+							Notwendigkeit des menschlichen Vertrauens steigert und digitale Vertrauensunabhängigkeit
+							erschwert.</li>
+					</ol>
+					<ol type="1" id="02e68cb4-5878-43d1-8785-d660fff7c9c9" class="numbered-list" start="6">
+						<li>Pitch/ Idee/ Hintergrund:
+							Wir wollen herausfinden wo Lücken und Pain Points in der Consumer Experience und Hürden beim
+							Handel mit Luxusgütern wie Luxusuhren bestehen. Unser Fokus liegt dabei auf digitalen
+							Lösungsansätzen und Schnittstellen, mit denen die physischen Produkte um digitale
+							Informationen und Sicherheiten ergänzt werden können.<p
+								id="d7bca5c1-a6da-4410-9726-94f15eac4e45" class="">Genauer:
+								Wir möchten eine physische Karte (im Aussehen ähnlich zu einer edlen Bankkarte - z. B.
+								hochwertige Metall-/ Silberkarte) entwickeln, mit welcher relevante Informationen zu
+								einem spezifischen Produkt digital und fälschungssicher zugänglich gemacht werden
+								können. Zu diesen Informationen gehört z. B. die Authentizität des verbundenen
+								Produktes, Seriennummer &amp; Co., Informationen zu den Vorbesitzern und gegebenenfalls
+								vorgenommenen Reparaturen, etc.</p>
+							<p id="17551761-54c8-46a8-99aa-e519cecf8dc8" class="">Die Karte enthält dabei einen
+								fälschungssicheren NFC-Chip oder eine ähnliche Technologie, worüber die Informationen
+								einsichtbar werden.
+								Ziel ist es, Vertrauenslücken zwischen Käufern und Verkäufern zu schließen, insbesondere
+								wenn ein Kauf/ Verkauf nicht über offizielle Händler stattfindet, und einfach
+								zugängliche, verifizierte und fälschungssichere Informationen bereitzustellen - somit
+								soll ein insgesamt vertrauensvolleres System geschaffen werden.
+								Die Karte kann für werksfrische Uhren ausgestellt werden, aber auch nachträglich für
+								ältere (vintage) Modelle (anhand der verfügbaren Informationen - z. B. nach einer
+								Authentifizierung durch ein*n Uhrmacher*in oder eine*n Uhrhändler*in). Die Ausstellung
+								geschieht dabei ausschließlich durch autorisierte Händler und Hersteller.
+								Folglich stellt die Karte damit einen Mehrwert für den zukünftigen Besitz und Handel mit
+								dem Produkt dar und kann als Art Ersatz zu den Papieren der Uhr gesehen werden
+								(insbesondere wenn diese nicht mehr vorhanden sind).</p>
+							<p id="fd08c11b-7726-4fd4-aa30-88035c2f7729" class="">Der Vertrieb geschieht B2B an
+								Uhrhändler*innen und Uhrenhersteller*innen. Diese können die Karten ausstellen und ihren
+								Kunden mitgeben oder als zusätzliches Produkt anbieten. Die Karten können auf den
+								Händler (sowie auch für den Kunden) “personalisiert” werden.
+								Mehrwerte bestehen vor Allem für den Endkonsumenten, da die Karte so gesagt als weiteres
+								Informations- und Verifikations- und Authentifizierungs-Dokument (ähnlich zu den
+								offiziellen Papieren) gesehen werden kann.
+								Händler profitieren von der Einführung der Karten in ihr Sortiment, da sie dadurch mehr
+								Kunden anziehen können, für welche der Erwerb und Besitz der Karte einen deutlichen
+								Mehrwert darstellt.
+								Gleichzeitig eröffnen sich dadurch eine Vielzahl an neuen Möglichkeiten in Bezug auf die
+								Kunden-Marken-, in diesem Fall insbesondere die Kunden-Händler-Beziehung, wodurch
+								langfristigere Beziehungen und intensivere Kundenbindungen aufgebaut werden können. (<a
+									href="Sta%CC%88rkere%20Communitys%20(durch%20NFT%20Tech)%20c1f6f9072ffd4c3b97e1280fab2a53b6.html">Hier
+									gibt es ein wenig mehr Infos dazu, wenn auch nicht 100% passend</a>)</p>
+						</li>
+					</ol>
+					<details open="">
+						<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Flo</summary>
+					</details>
+					<details open="">
+						<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Ludi (Objectofillia)</summary>
+					</details>
+					<details open="">
+						<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Burak?</summary>
+					</details>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.5em;line-height:1.3">Fragen</summary>
+				<div class="indented">
+					<ul id="1077332d-d95b-482a-bbb0-90c8abfec913" class="bulleted-list">
+						<li style="list-style-type:disc">Welche Informationen stellen die Papiere von Luxusuhren bereit?
+							(Werden dort immer wieder Informationen eingetragen wie z. B. Reparaturen, etc.?)</li>
+					</ul>
+					<ul id="a13607ab-e09f-4935-b44b-702f0b5efb1a" class="bulleted-list">
+						<li style="list-style-type:disc">Welches und wessen Probleme gelten gelöst - was sind aktuelle
+							Pains und Gains mit denen die unterschiedlichen Akteure konfrontiert sind (Hersteller,
+							offizielle Laden-Händler, Zweitmarkt-Händler, Endkonsumenten, insbesondere Sammler)?</li>
+					</ul>
+					<ul id="3e01c382-eb7e-4adc-b2a5-1bc5d79abd90" class="bulleted-list">
+						<li style="list-style-type:disc">Was wird durch die aktuellen Lösungen (z. B. NFC-Karte vom
+							Hersteller) noch nicht gelöst? → Mehr relevante Informationen anzeigen</li>
+					</ul>
+					<ul id="6db1c01f-6c44-4c9c-b045-1d663cbdaea8" class="bulleted-list">
+						<li style="list-style-type:disc">Privacy Aspekt - Historie/ Traceability → Vorbesitzer → Frage:
+							Ist es im Interesse oder insbesondere NICHT im Interesse zu wissen wer die/ der
+							Vorbesitzer*in*innen war*en?</li>
+					</ul>
+					<ul id="b6584eae-768c-4400-9d6e-eee5a57057b3" class="bulleted-list">
+						<li style="list-style-type:disc">Wieder Historie/ Traceability:
+							Wäre es für Käufer einer Uhr alleine schon hilfreich zu wissen, wieviele Vorbesitzer es bei
+							dem Objekt gegeben hat und aus welcher Kategorie (“Hersteller”, “Geschäft”, “Händler” oder
+							“Privatperson”) sie stammen?</li>
+					</ul>
+					<ul id="02b16afc-6c37-4bde-aec9-b4238de5bb74" class="bulleted-list">
+						<li style="list-style-type:disc">Plumper „Flex“/ Proof of Ownership als edle Karte interessant
+							für Endkonsumenten oder Händler als edler Add-On?</li>
+					</ul>
+					<ul id="4426da63-086f-4697-8999-2689a7977126" class="bulleted-list">
+						<li style="list-style-type:disc">Ist es möglich das Problem von Fälschungen anzugehen?
+							Wo sind Lösungsansätze?
+							Ist eine Lösung mithilfe einer solchen Karte mit digitaler Schnittstelle und vielen
+							“verifizierten” Informationen denkbar?</li>
+					</ul>
+				</div>
+			</details>
+		</div>
+	</article>
+</body>
+
+</html>

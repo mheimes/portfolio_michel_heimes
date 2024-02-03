@@ -1,0 +1,1497 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Stärkere Communitys (durch NFT Tech)</title>
+	<style>
+		/* cspell:disable-file */
+		/* webkit printing magic: print all background colors */
+		html {
+			-webkit-print-color-adjust: exact;
+		}
+
+		* {
+			box-sizing: border-box;
+			-webkit-print-color-adjust: exact;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		@media only screen {
+			body {
+				margin: 2em auto;
+				max-width: 900px;
+				color: rgb(55, 53, 47);
+			}
+		}
+
+		body {
+			line-height: 1.5;
+			white-space: pre-wrap;
+		}
+
+		a,
+		a.visited {
+			color: inherit;
+			text-decoration: underline;
+		}
+
+		.pdf-relative-link-path {
+			font-size: 80%;
+			color: #444;
+		}
+
+		h1,
+		h2,
+		h3 {
+			letter-spacing: -0.01em;
+			line-height: 1.2;
+			font-weight: 600;
+			margin-bottom: 0;
+		}
+
+		.page-title {
+			font-size: 2.5rem;
+			font-weight: 700;
+			margin-top: 0;
+			margin-bottom: 0.75em;
+		}
+
+		h1 {
+			font-size: 1.875rem;
+			margin-top: 1.875rem;
+		}
+
+		h2 {
+			font-size: 1.5rem;
+			margin-top: 1.5rem;
+		}
+
+		h3 {
+			font-size: 1.25rem;
+			margin-top: 1.25rem;
+		}
+
+		.source {
+			border: 1px solid #ddd;
+			border-radius: 3px;
+			padding: 1.5em;
+			word-break: break-all;
+		}
+
+		.callout {
+			border-radius: 3px;
+			padding: 1rem;
+		}
+
+		figure {
+			margin: 1.25em 0;
+			page-break-inside: avoid;
+		}
+
+		figcaption {
+			opacity: 0.5;
+			font-size: 85%;
+			margin-top: 0.5em;
+		}
+
+		mark {
+			background-color: transparent;
+		}
+
+		.indented {
+			padding-left: 1.5em;
+		}
+
+		hr {
+			background: transparent;
+			display: block;
+			width: 100%;
+			height: 1px;
+			visibility: visible;
+			border: none;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+		}
+
+		img {
+			max-width: 100%;
+		}
+
+		@media only print {
+			img {
+				max-height: 100vh;
+				object-fit: contain;
+			}
+		}
+
+		@page {
+			margin: 1in;
+		}
+
+		.collection-content {
+			font-size: 0.875rem;
+		}
+
+		.column-list {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.column {
+			padding: 0 1em;
+		}
+
+		.column:first-child {
+			padding-left: 0;
+		}
+
+		.column:last-child {
+			padding-right: 0;
+		}
+
+		.table_of_contents-item {
+			display: block;
+			font-size: 0.875rem;
+			line-height: 1.3;
+			padding: 0.125rem;
+		}
+
+		.table_of_contents-indent-1 {
+			margin-left: 1.5rem;
+		}
+
+		.table_of_contents-indent-2 {
+			margin-left: 3rem;
+		}
+
+		.table_of_contents-indent-3 {
+			margin-left: 4.5rem;
+		}
+
+		.table_of_contents-link {
+			text-decoration: none;
+			opacity: 0.7;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid rgba(55, 53, 47, 0.09);
+			border-collapse: collapse;
+		}
+
+		table {
+			border-left: none;
+			border-right: none;
+		}
+
+		th,
+		td {
+			font-weight: normal;
+			padding: 0.25em 0.5em;
+			line-height: 1.5;
+			min-height: 1.5em;
+			text-align: left;
+		}
+
+		th {
+			color: rgba(55, 53, 47, 0.6);
+		}
+
+		ol,
+		ul {
+			margin: 0;
+			margin-block-start: 0.6em;
+			margin-block-end: 0.6em;
+		}
+
+		li>ol:first-child,
+		li>ul:first-child {
+			margin-block-start: 0.6em;
+		}
+
+		ul>li {
+			list-style: disc;
+		}
+
+		ul.to-do-list {
+			padding-inline-start: 0;
+		}
+
+		ul.to-do-list>li {
+			list-style: none;
+		}
+
+		.to-do-children-checked {
+			text-decoration: line-through;
+			opacity: 0.375;
+		}
+
+		ul.toggle>li {
+			list-style: none;
+		}
+
+		ul {
+			padding-inline-start: 1.7em;
+		}
+
+		ul>li {
+			padding-left: 0.1em;
+		}
+
+		ol {
+			padding-inline-start: 1.6em;
+		}
+
+		ol>li {
+			padding-left: 0.2em;
+		}
+
+		.mono ol {
+			padding-inline-start: 2em;
+		}
+
+		.mono ol>li {
+			text-indent: -0.4em;
+		}
+
+		.toggle {
+			padding-inline-start: 0em;
+			list-style-type: none;
+		}
+
+		/* Indent toggle children */
+		.toggle>li>details {
+			padding-left: 1.7em;
+		}
+
+		.toggle>li>details>summary {
+			margin-left: -1.1em;
+		}
+
+		.selected-value {
+			display: inline-block;
+			padding: 0 0.5em;
+			background: rgba(206, 205, 202, 0.5);
+			border-radius: 3px;
+			margin-right: 0.5em;
+			margin-top: 0.3em;
+			margin-bottom: 0.3em;
+			white-space: nowrap;
+		}
+
+		.collection-title {
+			display: inline-block;
+			margin-right: 1em;
+		}
+
+		.page-description {
+			margin-bottom: 2em;
+		}
+
+		.simple-table {
+			margin-top: 1em;
+			font-size: 0.875rem;
+			empty-cells: show;
+		}
+
+		.simple-table td {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table th {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table-header-color {
+			background: rgb(247, 246, 243);
+			color: black;
+		}
+
+		.simple-table-header {
+			font-weight: 500;
+		}
+
+		time {
+			opacity: 0.5;
+		}
+
+		.icon {
+			display: inline-block;
+			max-width: 1.2em;
+			max-height: 1.2em;
+			text-decoration: none;
+			vertical-align: text-bottom;
+			margin-right: 0.5em;
+		}
+
+		img.icon {
+			border-radius: 3px;
+		}
+
+		.user-icon {
+			width: 1.5em;
+			height: 1.5em;
+			border-radius: 100%;
+			margin-right: 0.5rem;
+		}
+
+		.user-icon-inner {
+			font-size: 0.8em;
+		}
+
+		.text-icon {
+			border: 1px solid #000;
+			text-align: center;
+		}
+
+		.page-cover-image {
+			display: block;
+			object-fit: cover;
+			width: 100%;
+			max-height: 30vh;
+		}
+
+		.page-header-icon {
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+
+		.page-header-icon-with-cover {
+			margin-top: -0.72em;
+			margin-left: 0.07em;
+		}
+
+		.page-header-icon img {
+			border-radius: 3px;
+		}
+
+		.link-to-page {
+			margin: 1em 0;
+			padding: 0;
+			border: none;
+			font-weight: 500;
+		}
+
+		p>.user {
+			opacity: 0.5;
+		}
+
+		td>.user,
+		td>time {
+			white-space: nowrap;
+		}
+
+		input[type="checkbox"] {
+			transform: scale(1.5);
+			margin-right: 0.6em;
+			vertical-align: middle;
+		}
+
+		p {
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.image {
+			border: none;
+			margin: 1.5em 0;
+			padding: 0;
+			border-radius: 0;
+			text-align: center;
+		}
+
+		.code,
+		code {
+			background: rgba(135, 131, 120, 0.15);
+			border-radius: 3px;
+			padding: 0.2em 0.4em;
+			border-radius: 3px;
+			font-size: 85%;
+			tab-size: 2;
+		}
+
+		code {
+			color: #eb5757;
+		}
+
+		.code {
+			padding: 1.5em 1em;
+		}
+
+		.code-wrap {
+			white-space: pre-wrap;
+			word-break: break-all;
+		}
+
+		.code>code {
+			background: none;
+			padding: 0;
+			font-size: 100%;
+			color: inherit;
+		}
+
+		blockquote {
+			font-size: 1.25em;
+			margin: 1em 0;
+			padding-left: 1em;
+			border-left: 3px solid rgb(55, 53, 47);
+		}
+
+		.bookmark {
+			text-decoration: none;
+			max-height: 8em;
+			padding: 0;
+			display: flex;
+			width: 100%;
+			align-items: stretch;
+		}
+
+		.bookmark-title {
+			font-size: 0.85em;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			height: 1.75em;
+			white-space: nowrap;
+		}
+
+		.bookmark-text {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.bookmark-info {
+			flex: 4 1 180px;
+			padding: 12px 14px 14px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.bookmark-image {
+			width: 33%;
+			flex: 1 1 180px;
+			display: block;
+			position: relative;
+			object-fit: cover;
+			border-radius: 1px;
+		}
+
+		.bookmark-description {
+			color: rgba(55, 53, 47, 0.6);
+			font-size: 0.75em;
+			overflow: hidden;
+			max-height: 4.5em;
+			word-break: break-word;
+		}
+
+		.bookmark-href {
+			font-size: 0.75em;
+			margin-top: 0.25em;
+		}
+
+		.sans {
+			font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+		}
+
+		.code {
+			font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+		}
+
+		.serif {
+			font-family: Lyon-Text, Georgia, ui-serif, serif;
+		}
+
+		.mono {
+			font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+		}
+
+		.pdf .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR';
+		}
+
+		.pdf .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.pdf .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR';
+		}
+
+		.pdf .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.highlight-default {
+			color: rgba(55, 53, 47, 1);
+		}
+
+		.highlight-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.highlight-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.highlight-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.highlight-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.highlight-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.highlight-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.highlight-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.highlight-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.highlight-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.highlight-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.highlight-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.highlight-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.highlight-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.highlight-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.highlight-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.highlight-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.highlight-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.highlight-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.block-color-default {
+			color: inherit;
+			fill: inherit;
+		}
+
+		.block-color-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.block-color-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.block-color-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.block-color-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.block-color-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.block-color-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.block-color-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.block-color-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.block-color-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.block-color-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.block-color-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.block-color-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.block-color-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.block-color-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.block-color-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.block-color-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.block-color-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.block-color-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.select-value-color-interactiveBlue {
+			background-color: rgba(35, 131, 226, .07);
+		}
+
+		.select-value-color-pink {
+			background-color: rgba(245, 224, 233, 1);
+		}
+
+		.select-value-color-purple {
+			background-color: rgba(232, 222, 238, 1);
+		}
+
+		.select-value-color-green {
+			background-color: rgba(219, 237, 219, 1);
+		}
+
+		.select-value-color-gray {
+			background-color: rgba(227, 226, 224, 1);
+		}
+
+		.select-value-color-translucentGray {
+			background-color: rgba(255, 255, 255, 0.0375);
+		}
+
+		.select-value-color-orange {
+			background-color: rgba(250, 222, 201, 1);
+		}
+
+		.select-value-color-brown {
+			background-color: rgba(238, 224, 218, 1);
+		}
+
+		.select-value-color-red {
+			background-color: rgba(255, 226, 221, 1);
+		}
+
+		.select-value-color-yellow {
+			background-color: rgba(253, 236, 200, 1);
+		}
+
+		.select-value-color-blue {
+			background-color: rgba(211, 229, 239, 1);
+		}
+
+		.select-value-color-pageGlass {
+			background-color: undefined;
+		}
+
+		.select-value-color-washGlass {
+			background-color: undefined;
+		}
+
+		.checkbox {
+			display: inline-flex;
+			vertical-align: text-bottom;
+			width: 16;
+			height: 16;
+			background-size: 16px;
+			margin-left: 2px;
+			margin-right: 5px;
+		}
+
+		.checkbox-on {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+
+		.checkbox-off {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+	</style>
+</head>
+
+<body>
+	<article id="c1f6f907-2ffd-4c3b-97e1-280fab2a53b6" class="page sans">
+		<header>
+			<div class="page-header-icon undefined"><span class="icon">👥</span></div>
+			<h1 class="page-title">Stärkere Communitys (durch NFT Tech)</h1>
+			<p class="page-description"></p>
+		</header>
+		<div class="page-body">
+			<blockquote id="a6cb6f40-3a61-4b27-9f9f-e61aef480556" class="">Web3-Technologien lösen globale
+				Koordinationsprobleme.
+				~ Louis Schulze</blockquote>
+			<h3 id="c0a12a5d-0739-4516-ac6f-a3015f596a45" class="">Business Model Canvas:</h3>
+			<p id="5a0c7bf4-5aeb-463b-9f57-d90a761fd40c" class="">…</p>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Businessidee:</summary>
+				<div class="indented">
+					<p id="83e89523-097f-4182-8313-8afc932668c9" class="">Es handelt sich um ein B2B SaaS
+						Geschäftsmodell bei dem Marken aus dem Web2 Bereich und ihren Kunden der Zugang zu Web3,
+						insbesondere NFTs und Cryptowährungen, niedrigschwellig zugänglich gemacht werden soll.</p>
+					<p id="d62363d3-36b3-4cb4-8a48-29432bc3484e" class="">
+					</p>
+					<p id="47d873e8-3da7-4e05-a2cc-ecec604888fc" class=""><strong>Die Anwendung der NFT Technologie
+							ermöglicht es diesen Unternehmen:</strong></p>
+					<p id="6c6da5f7-5013-4396-a807-ff900290eb4f" class="">a) Ihren Kunden “tokengated” Angebote und
+						Erlebnisse zugänglich zu machen. Dies bedeutet, dass Kunden ausgewählte Internetseiten oder auch
+						physische Events nur besuchen können, wenn sie bestimmte digitale Produkte besitzen.</p>
+					<p id="1f009fd5-f10e-4bd4-b6df-0fc60b7fe8f8" class="">b) Ihren Kunden einen zusätzlichen Mehrwert zu
+						bieten durch den Kauf ihres Produkts. Durch einen Kauf erhalten sie neben dem i. d. R.
+						physischen Produkt auch ein digitales Produkt (in Form eines NFTs), welches ihnen in Zukunft
+						Vorteile im Zusammenspiel mit der Marke oder mit Kooperationspartnern verschaffen kann und
+						oftmals auch einen monetären Wert hat.</p>
+					<p id="0ec340f3-9ba3-4522-96f1-8609a307eaf8" class="">c) Kunden mit einem digitalen Produkt für
+						ausgewählte Interaktionen, einfach so oder durch Auslosung belohnen zu können (Airdrop). Dieses
+						können sie anschließend auch handeln, da es sich technisch gesehen um einen non-fungible token
+						handelt, was diesem somit einen neu geschaffenen Wert zuweist.
+						Mit Anwendung dieser Technik schafft man es, den Kunden der B2B-Kunden “etwas vorstellbares/
+						greifbares” in die Hand/ in den Account zu geben, was nicht bloß ein unpersonalisierter
+						Kundenvorteil ist, der nicht übertragbar und generell i. d. R. auch relativ unspektakulär ist.
+						Anstatt dessen erhalten sie etwas, was sie genau wie physische Werte/ Gegenstände bewegen,
+						handeln und anwenden können.</p>
+					<p id="0a18174b-772e-4c2b-b083-f2e947c80ed1" class="">d) Ihren Kunden eine neuartige Erfahrung eines
+						Loyalty-Programms zu bieten. Loyalität wird nicht mehr bloß bestimmt durch die Menge an
+						eingekauften Artikeln und die Anzahl der Leute mit denen man die Marke geteilt hat, was i. d. R.
+						exklusiv im Kunden-Account auf der Kundenseite der B2B-Kunden sichtbar ist. Stattdessen wird
+						Markenloyalität (transparent) auf einer globalen Plattform dargestellt und zelebriert und loyale
+						Anhänger werden regelmäßig durch für sie exklusive Aktionen belohnt.</p>
+					<p id="00c23ab0-f576-474e-9416-2d12f82a6334" class="">e) Ihren Kunden ihre physischen Produkte auch
+						im digitalen Raum darstellbar und repräsentierbar zu machen. Der digitale Raum gewinnt immer
+						mehr an Bedeutung, besonders für die aktuelle Generation Z/ Alpha.</p>
+					<p id="099029ff-500d-4ceb-968e-3c0a8335ce14" class="">e) Mehr Einsichten über ihr Kundenverhalten zu
+						erhalten. Alle Aktionen ihrer Kunden mit den digitalen Produkten, welche oft auch gekoppelt sind
+						mit physischen Produkten, können über die Blockchain eingesehen und analysiert werden. (Analyse
+						könnte als Add-On Service angeboten werden!)</p>
+					<p id="e2121434-1842-47cb-993d-986c0d404115" class="">f) Nicht nur digitale Produkte nach ihren
+						individuellen Vorstellungen handelbar anbieten zu können, sondern auch individualisiert
+						festzulegen, was die digitalen Produkte können und was nicht. Beispielsweise kann ein
+						Ablaufdatum eingebaut werden, wodurch das digitale Produkt (z. B. ein Rabattgutschein) seine
+						Wertigkeit verliert oder es kann festgelegt werden, dass das digitale Produkt nicht übertragen
+						werden kann (SBT). Viele weitere Möglichkeiten der Individualisierung (innerhalb eines Smart
+						Contracts) sind möglich.</p>
+					<p id="e6320f0c-cae2-495b-9ecb-00a9ea549032" class="">Das verfolgte Ziel durch das Verwenden dieser
+						Technologie ist es, Kunden der B2B-Kunden eine spannendere Kunden-Marken-Interaktion anzubieten,
+						Interaktion mit der Marke und Loyalität belohnen zu können, die Kunden-Marken-Beziehung zu
+						stärken und dadurch eine verstärkte Kundenloyalität zu erzielen.</p>
+					<p id="08624081-76d8-4229-b905-a1ac30388a3d" class="">
+					</p>
+					<p id="e7cad673-7825-46ce-b76c-83a2100fd319" class=""><strong>Gegenstände der Geschäftsidee sind:
+						</strong></p>
+					<p id="22e0eab0-306b-473b-be4e-8284f0c7409e" class="">a) Eine Blockchain Infrastruktur, welche die
+						Erstellung, das “Minten” und das Transferieren/ Handeln mit den digitalen Produkten ermöglicht.
+					</p>
+					<p id="45453ca3-fda7-4e21-8c31-bb9c0cf3df37" class="">b) Ein zugehörigen Interface, welches es den
+						B2B Kunden ermöglicht, entsprechend ihrer Anforderungen, eigene Serien, Kollektionen und
+						einzigartige digitale Produkte individualisiert zu erstellen.
+						Unter Umständen Einbindung einer simplen Applikation um einfache 3D Modelle self-branded zu
+						erstellen und einem Klick Animationen einzubauen. (Beispiel Moongrove:)</p>
+					<figure id="6c321d53-9ec3-44b2-b2f8-0423ec80e8d2" class="image"><a
+							href="Sta%CC%88rkere%20Communitys%20(durch%20NFT%20Tech)%20c1f6f9072ffd4c3b97e1280fab2a53b6/Animation_Moongrove.gif"><img
+								style="width:2366px"
+								src="Sta%CC%88rkere%20Communitys%20(durch%20NFT%20Tech)%20c1f6f9072ffd4c3b97e1280fab2a53b6/Animation_Moongrove.gif" /></a>
+					</figure>
+					<p id="c0370543-8c6c-448e-b491-89796658b60b" class="">c) Eine eigene “Wallet”, in welcher die Kunden
+						unserer B2B Kunden ihre digitalen Produkte sammeln, ansehen und transferieren können.
+						Grund für das Kreieren einer eigenen “Wallet” ist, dass so besonders das Design an die Enduser
+						angepasst wird. So steht z. B. nicht mehr die “wallet address” im Vordergrund, sondern der
+						gewählte Username und das gesamte Design setzt keine Web3/ Blockchain/ Crypto Kenntnisse voraus
+						(wie z. B. Wissen über Bridging oder Hashes)
+						Gleichzeitig muss es nicht umbedingt eine eigene Wallet sein, die Erstellt wird, sondern es
+						reicht oftmals auch, wenn die NFTs über einen (Claim-)Link per email/ SMS/ etc. versendet werden
+						und anschließend im Kunden-Account auf der Kundenseite des B2B Kunden liegen. Dann müssten diese
+						jedoch auch wieder irgendeine Art der Wallet-Integrierung einbauen. Die eleganteste Möglichkeit
+						wäre vermutlich doch die Entwicklung einer eigenen Wallet, in welcher die digitalen Produkte,
+						unabhängig der Kunden-Accounts auf der Kundenseite der B2B Kunden, zugänglich gemacht werden
+						können. Diese kann entweder von den B2B Kunden in ihre Internetseiten integriert werden oder es
+						kann sich mit dieser extern verbunden werden (z. B. über Chrome Extension).
+						Verworfene Idee:
+						Cryptowährungen verschwinden aus der Wallet oder werden nur in abgewandelter Form dargestellt,
+						wie einer Anzahl, wieviele Transaktionen man noch vornehmen kann (aufgrund der Menge an
+						vorhandener Cryptowährung in der Wallet). → Wird die Menge der benötigten Cryptowährung knapp,
+						hat man die Möglichkeit, sich mit FIAT/ Crypto mehr zu kaufen.
+						Verworfen da:
+						Cryptowährungen sollten eine Rolle spielen und auch die Währungen auch so genannt werden, wie
+						sie heißen. Ist dies nicht der Fall, gibt es Chaos wenn Kunden der B2B Kunden die digitalen
+						Produkte handeln wollen (kaufen/ verkaufen) und dafür schließlich die entsprechende
+						Cryprowährung (hier z. B. Matic → Polygon) eine Rolle spielt.</p>
+					<p id="2d3d79ce-c6d9-4179-a97b-93f5c2d5faad" class="">d) Eine eigene Plattform/ ein eigener
+						Marktplatz mit dem sich die Nutzer mit Hilfe ihrer “Wallet” verknüpfen können und wo,
+						freigeschaltet durch die digitalen Produkte in ihrer “Wallet” (wie eine Art Schlüssel), sie
+						(immersive) Erfahrungen erleben können, sie die digitalen Produkte handeln können und mehr
+						Kontext zu den dahinterstehenden Marken erfahren können, insbesondere der Vorteile durch den
+						Besitz der digitalen Produkte.</p>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Macht NFT Tech überhaupt Sinn - was
+					sind Vorteile?</summary>
+				<div class="indented">
+					<ul id="3be22304-d239-401b-94a1-5fd193221fdf" class="bulleted-list">
+						<li style="list-style-type:disc">Viele Shops haben bereits ihre internen i. d. R.
+							punktebasierten Loyalty Systeme (z. B. Skatedeluxe, LVR, Adidas, TNF, …) </li>
+					</ul>
+					<ul id="31212ffd-c076-460e-9a0c-a79c811f51dd" class="bulleted-list">
+						<li style="list-style-type:disc">Was würde ein NFT Tech basiertes System ändern und verbessern?
+							<p id="6b236e07-9a96-4465-aeda-fa82a7529c61" class="">Ideen:</p>
+							<ol type="1" id="38c84772-207b-4ccf-bc0f-d298f5a67d1a" class="numbered-list" start="1">
+								<li>Markeninterne und -übergreifende Handelbarkeit der digitalen Gegenstände möglich
+								</li>
+							</ol>
+							<ol type="1" id="690e8b1c-6830-4c8b-a3b4-2f0399ca9a8e" class="numbered-list" start="2">
+								<li>Emotionale Verbindung der Kunden zur Marke/ den Produkten der Marke dadurch
+									steigern, dass Kunden ihre Produkte in irgendeiner Art auch im digitalen Raum
+									darstellen, präsentieren und repräsentieren können</li>
+							</ol>
+							<ol type="1" id="f68851f6-5f85-4ab7-9a5b-5530f62b1e82" class="numbered-list" start="3">
+								<li>Einfache Darstellung eines Kunden-Leaderboards o.ä. wodurch Kunden emotionaler mit
+									der Marke interagieren können.</li>
+							</ol>
+						</li>
+					</ul>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Gedanken/ Notizen</summary>
+				<div class="indented">
+					<ul id="679b281e-7169-428a-8880-ff53d68d4c66" class="bulleted-list">
+						<li style="list-style-type:disc">How to onboard the typical internet user who‘s not native/ used
+							to crypto/ blockchain tech to use it as a functions and new tool, not especially an
+							investment?</li>
+					</ul>
+					<ul id="7643f257-65b5-4150-89e7-815e3a3d8257" class="bulleted-list">
+						<li style="list-style-type:disc">Turn (just) fans into a community.</li>
+					</ul>
+					<ul id="d1290451-0001-4225-a56c-5d13d76a3f14" class="bulleted-list">
+						<li style="list-style-type:disc">Reward the biggest fans and supporters with special perks based
+							on their interaction history (purchased items/ tickets/ etc.) - for example with a special
+							concert just for the biggest supporters/ a special item just designed for them/ etc.</li>
+					</ul>
+					<ul id="83f72f17-ab4c-4423-b1b2-4b268a111927" class="bulleted-list">
+						<li style="list-style-type:disc">Different platforms for different categories like fashion
+							lifestyle brands, music artists, etc.</li>
+					</ul>
+					<ul id="b50ad818-eb61-437b-ac56-6d87396f4eed" class="bulleted-list">
+						<li style="list-style-type:disc">For the people who want to be seen individually/ as an
+							individual by the artist.<ul id="7e924959-f714-4abc-9182-4830cfedaa1d"
+								class="bulleted-list">
+								<li style="list-style-type:circle">Give people the feeling they get at a concert when
+									the artist is pointing at them and sees them as an individual</li>
+							</ul>
+						</li>
+					</ul>
+					<ul id="4ddd5cef-d692-4a33-a569-ff546230389d" class="bulleted-list">
+						<li style="list-style-type:disc">Implement loyalty system - like Adidas does to reflect their
+							status within the brand ecosystem</li>
+					</ul>
+					<ul id="8a67c655-dd9f-44cb-9aca-ad8f31a3a7fa" class="bulleted-list">
+						<li style="list-style-type:disc">Focus on how to take what was created digitally and bring it
+							into physical spaces</li>
+					</ul>
+					<ul id="b1e407b9-a239-4e80-b0fc-fb01531f04e9" class="bulleted-list">
+						<li style="list-style-type:disc">Management of community/ user</li>
+					</ul>
+					<ul id="062de421-7d40-439e-9dde-2a2a09017817" class="bulleted-list">
+						<li style="list-style-type:disc">Marken werde MIT der Community gebaut und NICHT FÜR die
+							Community.</li>
+					</ul>
+					<ul id="8246a06e-736a-45e6-b6f8-0c2c47fbbdf2" class="bulleted-list">
+						<li style="list-style-type:disc">Besonders interessant für Lifestyle Marken</li>
+					</ul>
+					<ul id="5dd6d7cd-a1e7-4c29-87a7-003e6a29dd68" class="bulleted-list">
+						<li style="list-style-type:disc">Leute fühlen sich der Community unheimlich nah und interagieren
+							viel stärker mit der Community/ Marke</li>
+					</ul>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Die DNA einer Community - noch
+					bearbeiten</summary>
+				<div class="indented">
+					<ul id="06a2d313-f879-434f-97a0-6784cf3ba36a" class="bulleted-list">
+						<li style="list-style-type:disc">Gemeinsame Wahrnehmung von Zugehörigkeit und Leidenschaft </li>
+					</ul>
+					<ul id="bdddd64b-319a-4c79-bdb2-5f9d50b093f0" class="bulleted-list">
+						<li style="list-style-type:disc">Many-to-many Beziehung
+							Beispiel anhand einer Gruppe von 10 Personen:
+							→ <strong>Community</strong>: Alle Personen sitzen im Stuhlkreis und schauen sich alle
+							gegenseitig an
+							WÄHREND
+							→ <strong>Publikum</strong>: 9 Personen sitzen gerichtet auf eine Person die vorne steht
+						</li>
+					</ul>
+					<ul id="aa22ad4c-399a-4337-b675-6ad5c83beb95" class="bulleted-list">
+						<li style="list-style-type:disc">Rituals and togetherness</li>
+					</ul>
+					<ul id="f7c222de-a32c-47bd-abff-f1abae337dcd" class="bulleted-list">
+						<li style="list-style-type:disc">Strong sense of identity</li>
+					</ul>
+					<ul id="c78c26f3-a291-49e3-883a-21f247d6c76d" class="bulleted-list">
+						<li style="list-style-type:disc">Community stays active also without new content input</li>
+					</ul>
+					<ul id="16010ebc-de6d-49c9-8ea8-868c393a9882" class="bulleted-list">
+						<li style="list-style-type:disc">Focus is on helping each other</li>
+					</ul>
+					<ul id="360f6760-2b35-4f90-98a7-a6d210c3bc96" class="bulleted-list">
+						<li style="list-style-type:disc">Community gives voices to its members</li>
+					</ul>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Competitors/ ähnliche Anbieter
+				</summary>
+				<div class="indented">
+					<ul id="25b77909-cabd-4a07-b516-47adfa3511b9" class="bulleted-list">
+						<li style="list-style-type:disc"><a
+								href="https://bouncyapp.com/de/">https://bouncyapp.com/de/</a>
+							<ul id="e5e47fff-2451-48c5-a1ae-3e134ceb746e" class="bulleted-list">
+								<li style="list-style-type:circle">Bouncy</li>
+							</ul>
+							<ul id="2a43589d-45b3-4989-8a4f-a47fa95278a4" class="bulleted-list">
+								<li style="list-style-type:circle">“Bouncy wurde […] gegründet, um Artists zu
+									ermöglichen, magische Momente für ihre Fans zu schaffen und gleichzeitig eine neue,
+									nachhaltige Einnahmequelle zu kreieren. Wir schaffen eine noch nie dagewesene
+									Interaktion zwischen Artists und Fans – weltweit.”</li>
+							</ul>
+							<ul id="2e25af35-fa24-4af4-a8ba-c70887e54fbf" class="bulleted-list">
+								<li style="list-style-type:circle">Plattform über die Stars und andere bekannte
+									Persönlichkeiten mit ihren (Super-) Fans in Kontakt treten können.
+									→ Abonnement Modell pro Artist ähnlich wie Onlyfans</li>
+							</ul>
+						</li>
+					</ul>
+					<ul id="ebda788c-c0f9-4b1d-9bb2-c838884b4c05" class="bulleted-list">
+						<li style="list-style-type:disc"><a href="https://guild.xyz/">https://guild.xyz/</a>
+							<ul id="55a682fa-d24d-4459-a6b9-df6c508534f2" class="bulleted-list">
+								<li style="list-style-type:circle">Guild</li>
+							</ul>
+							<ul id="786f2266-dbd9-4a39-b57f-e5f0c769ae81" class="bulleted-list">
+								<li style="list-style-type:circle">“Build your tokenized Guild
+									Automated membership management for the platforms your community already uses.”</li>
+							</ul>
+							<ul id="de7742b3-bde7-4a29-8416-cf2df72341cd" class="bulleted-list">
+								<li style="list-style-type:circle">Add on: Automatisiertes Mitgliedsmanagement (bringt
+									auch tokenization ein) für bestehende Communities für Plattformen, welche die
+									Community bereits nutzt. (z. B. Discord, Telegram, Twitter, …)</li>
+							</ul>
+						</li>
+					</ul>
+					<ul id="eb7cbae7-08b7-4ed2-81bb-efcbb5afa2e7" class="bulleted-list">
+						<li style="list-style-type:disc"><a
+								href="https://www.moongrove.com/">https://www.moongrove.com/</a>
+							<ul id="0d113a68-774a-4628-8e23-f875c87dd4a6" class="bulleted-list">
+								<li style="list-style-type:circle">Moongrove
+									→ sehr ähnlich, wenn nicht genau das, was ich auch vorhabe</li>
+							</ul>
+							<ul id="f486c811-09e9-48a5-b1ec-20413e8a4144" class="bulleted-list">
+								<li style="list-style-type:circle">“One-Click Digital Collectibles
+									Get more customers.Keep them longer with loyalty NFTs.”</li>
+							</ul>
+							<ul id="e43bb136-105d-4ed7-82bf-6b2c1c10e342" class="bulleted-list">
+								<li style="list-style-type:circle">Plattform die Businesses jeder Größe anbietet, NFTs
+									zu erstellen um damit brand loyalty zu steigern.
+									Pricing-Modell: Free, $99/ month, $149/ month, $249/ month und Enterprise</li>
+							</ul>
+							<ul id="071a3d12-d8bb-4648-bbd9-c53c54d6046b" class="bulleted-list">
+								<li style="list-style-type:circle">Interessante Artikel:
+									<a href="https://www.moongrove.com/post/ecommerce-web3-simple">Ecommerce &amp; Web3:
+										It’s simpler than you think.</a>
+									<a href="https://www.moongrove.com/post/you-dont-need-to-sell-nfts">You don’t need
+										to sell NFTs</a>
+									<a href="https://www.moongrove.com/post/ecommerce-nft-one-click-link">What You Can
+										Do with a Link</a>
+									<a href="https://www.moongrove.com/post/ecommerce-email-marketing-identical">Why
+										Does All Email Marketing Sound the Same?</a>
+								</li>
+							</ul>
+							<ul id="75fc3a10-314b-4ee8-b6bd-d103322495ad" class="bulleted-list">
+								<li style="list-style-type:circle">“Your product is your product, the NFT just makes
+									people like it more”</li>
+							</ul>
+							<ul id="310eb70f-597f-4ee0-b837-2e3640d9b274" class="bulleted-list">
+								<li style="list-style-type:circle">“The […] long-term application of NFTs will
+									[<strong>not</strong>] be about selling and speculation. […] What digital
+									collectibles, and their underlying technology, can and will do is signify
+									membership, reward achievements, or incentivize behavior. In this way, NFTs
+									represent a new kind of digital identity, and a new way to interact with the
+									communities, websites, and brands you love. Not a way to get rich.”</li>
+							</ul>
+							<ul id="7a263117-8bd0-4cab-90c1-0a0b3fa1db08" class="bulleted-list">
+								<li style="list-style-type:circle">“If you’re a brand that already has a product, you
+									shouldn’t try to sell NFTs, you should just give them away.”</li>
+							</ul>
+							<ul id="80d85d12-eb3f-4083-9381-b0a3797088d2" class="bulleted-list">
+								<li style="list-style-type:circle">“Don’t worry, you can still give people that don’t
+									hold your NFTs their welcome discount but NFTs are a fantastic way to make people
+									feel special.”</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Interessante Quotes zum Thema
+				</summary>
+				<div class="indented">
+					<ul id="514632d6-0360-45c8-8ce3-d737b045130c" class="bulleted-list">
+						<li style="list-style-type:disc">NFTs/ Crypto <strong>long-term - change that’s needed</strong>
+							<ul id="6d818c04-506b-49fb-ada2-66c266604146" class="bulleted-list">
+								<li style="list-style-type:circle">“The […] long-term application of NFTs will
+									[<strong>not</strong>] be about selling and speculation. […] <strong>What digital
+										collectibles, and their underlying technology, can and will do is signify
+										membership, reward achievements, or incentivize behavior</strong>. In this way,
+									<strong>NFTs represent a new kind of digital identity</strong>, and <strong>a new
+										way to interact with the communities, websites, and brands you love</strong>.
+									Not a way to get rich.”</li>
+							</ul>
+							<ul id="f5383391-f96a-4718-afae-c263baef2cd0" class="bulleted-list">
+								<li style="list-style-type:circle">“Reddit quietly onboarded 3 million users into crypto
+									by <strong>calling NFTs “digital collectibles” and calling their “custodied wallet”
+										a “vault”.</strong> Starbucks, an innovator in the loyalty and rewards space,
+									will be rolling out their web3-driven Odyssey program in the coming months and we
+									have to imagine the presentation will be similar.”<ul
+										id="05fefd8a-d824-4ce8-9d0f-711154a1206a" class="bulleted-list">
+										<li style="list-style-type:square">Essence: <strong>Just don’t call it NFTs and
+												make it too complicated!</strong></li>
+									</ul>
+								</li>
+							</ul>
+							<ul id="e93094a1-580f-457b-b6ca-4b7167d98067" class="bulleted-list">
+								<li style="list-style-type:circle">“Ecommerce brands shouldn’t be thinking about web3 as
+									a side project. Adding NFTs into [their] existing growth plan or marketing stack
+									shouldn’t be a six figure investment that involves bespoke agency services and
+									custom code development. Taking advantage of the latest technology doesn’t have to
+									be a “wait and see” line item on your annual plan.”</li>
+							</ul>
+							<ul id="d6bb4df0-35ae-4aae-9625-1924987c06b4" class="bulleted-list">
+								<li style="list-style-type:circle">“This approach to NFTs (one-off “drops” that make a
+									big chunk of cash and then go away) ignores longevity, loyalty, and true connective
+									community.”</li>
+							</ul>
+							<ul id="923b53ea-19d3-4ae7-bb40-73eda45057c7" class="bulleted-list">
+								<li style="list-style-type:circle">“One of <strong>crypto’s major pain points</strong>
+									has been <strong>UX</strong>.”</li>
+							</ul>
+						</li>
+					</ul>
+					<ul id="59508424-f514-450a-b489-5441339053a0" class="bulleted-list">
+						<li style="list-style-type:disc"><strong>You sell YOUR product - the NFTs
+							</strong><em><strong>just</strong></em><strong> SELLS it</strong>
+							<ul id="182b88f0-c752-4412-b4e1-cb9e6147c321" class="bulleted-list">
+								<li style="list-style-type:circle">“<strong>Your product is your product, the NFT just
+										makes people like it more.</strong>”</li>
+							</ul>
+							<ul id="e833bbbd-fbe9-4820-b389-a21e85018258" class="bulleted-list">
+								<li style="list-style-type:circle">“<strong>If you’re a brand that already has a
+										product, you shouldn’t try to sell NFTs, you should just give them
+										away.</strong>”</li>
+							</ul>
+							<ul id="29eb159d-4d66-4b48-9fab-2c778b8f0669" class="bulleted-list">
+								<li style="list-style-type:circle">“<strong>Most brands shouldn’t sell NFTs</strong>.
+									They should be given away for free, as a way to <strong>aid the development of that
+										brand loyalty without distracting from the product itself</strong>. Why? At the
+									end of the day, your product is still the star of the show. If your digital
+									collectible confers a host of incredible benefits and rewards over time,
+									<strong>your customers who own it will organically buy more from you</strong>; that
+									activity comes to your core business, <strong>not through some discrete sales model
+										that relies on trading and speculation of an item that isn’t even the star of
+										your show</strong>.”</li>
+							</ul>
+							<ul id="6fd86a7a-0018-4250-af56-7b72afffbb2d" class="bulleted-list">
+								<li style="list-style-type:circle">“When someone owns an NFT, they are <strong>more
+										willing to participate in things that are exclusive to NFT holders</strong>.”
+								</li>
+							</ul>
+							<ul id="94ed72c1-d1dd-47b0-8faf-ef7ef8f6e879" class="bulleted-list">
+								<li style="list-style-type:circle">“Creating <strong>token-gated experiences or
+										pricing</strong> is a way to bring people in and <strong>show off all you have
+										to offer</strong>.”</li>
+							</ul>
+							<ul id="11301067-8b41-4794-a486-804fdd9adbb7" class="bulleted-list">
+								<li style="list-style-type:circle">“Don’t worry, you can still give people that don’t
+									hold your NFTs their welcome discount but <strong>NFTs are a fantastic way to make
+										people feel special</strong>.”</li>
+							</ul>
+							<ul id="438cf800-b054-4227-bba7-21193c9670c7" class="bulleted-list">
+								<li style="list-style-type:circle">“And least of all, this part of <strong>your
+										strategy</strong> (adding NFTs into the existing growth plan and marketing
+									stack) <strong>shouldn’t be reliant
+										on </strong><strong><em>selling</em></strong><strong> NFTs, since that’s not
+										really the point of your business</strong>. You’re selling coffee, or skincare
+									products, or jewelry, or apparel, or healthy snacks—you name it.”</li>
+							</ul>
+							<ul id="dc070f84-fe87-49c4-9e3b-17c7ea9c90ef" class="bulleted-list">
+								<li style="list-style-type:circle">“You can <strong>start interacting with your
+										customers in a whole new way</strong>, using the latest technology, and
+									<strong>creating a psychological shift</strong> that is additive to your core
+									business.”</li>
+							</ul>
+						</li>
+					</ul>
+					<ul id="f8d65242-1bac-4f25-b56d-7ad0488f3233" class="bulleted-list">
+						<li style="list-style-type:disc">“What if <strong>after their 3rd purchase</strong>, holding a
+							post-purchase NFT designated a customer as a VIP member of your brand community, and
+							<strong>you</strong> could <strong>send them early-access campaigns before your next
+								seasonal sale</strong>?
+							What if <strong>after their 5th purchase</strong>, you gave your customers an audio NFT of
+							your <strong>founder personally thanking them for their purchase</strong>?
+							What if you gave customers an <strong>NFT on their birthday that let them shop on a hidden
+								section of your website</strong>?”</li>
+					</ul>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Web3/ NFT Marketing Ansatz Vergleiche
+					zu Web2.0 Marketing Strategien</summary>
+				<div class="indented">
+					<ul id="7b571541-2e4d-44a6-8ec5-55bc2faa9e93" class="bulleted-list">
+						<li style="list-style-type:disc"><strong>Replacement</strong> for the <strong>traditional
+								loyalty program</strong>
+							<ul id="6463eaf2-4ab2-447f-bae3-11a45b4dc1b6" class="bulleted-list">
+								<li style="list-style-type:circle">“<strong>CAC is expensive</strong>, every incremental
+									purchase you get from a customer is gravy and helps your bottom line. <strong>Give
+										your customers a Loyalty NFT in exchange for becoming a subscriber.</strong> The
+									most simple benefit - give subscribers or repeat purchasers better and better
+									pricing the longer someone has subscribed, or the more someone has spent.”</li>
+							</ul>
+							<ul id="974d7853-452c-409c-b09a-d3a7b8e74203" class="bulleted-list">
+								<li style="list-style-type:circle">“Now contrast this (traditional loyalty programs -
+									buy 10, get 1 free) to <strong>a brand giving its customers a digital record of
+										membership that they own and can use to access to unique experiences and rewards
+										both on- and offline</strong>. […] <strong>The decisions you make and the
+										actions you take flow through a mechanism that further enriches you, deepens
+										relationships, and creates value. And you own it!</strong>”</li>
+							</ul>
+						</li>
+					</ul>
+					<ul id="e480809d-3d76-42d0-8a54-4181886e9eb3" class="bulleted-list">
+						<li style="list-style-type:disc">Current but <strong>outdated marketing methods</strong>
+							<ul id="56dd8463-5f67-4bcf-b254-b997e8eabcf4" class="bulleted-list">
+								<li style="list-style-type:circle">“We’re all too familiar with the boring email pop-up.
+									Leave your email and phone number for 15% off!”</li>
+							</ul>
+							<ul id="b72b6217-6ffb-40b3-9dd6-64c25c2dffa0" class="bulleted-list">
+								<li style="list-style-type:circle">“<strong>Consumer inboxes are saturated with
+										promotional emails these days</strong>, and honestly, there’s normally
+									<strong>very little reason to react with any urgency</strong>.”</li>
+							</ul>
+							<ul id="38c86d08-c879-4162-9332-c134e8f8fff7" class="bulleted-list">
+								<li style="list-style-type:circle">“<strong>The list of innovations in ecommerce over
+										the last ten years is a lengthy one</strong>, and […] all of these things have
+									made the online shopping experience easier, better, more delightful, and in many
+									cases, more profitable for brands. These represent advances in efficiency, both
+									operationally and financially.
+									<strong>What these innovations did to a much lesser degree was usher in a
+										fundamental shift in the psychology of digital commerce.</strong>”
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul id="a7b70bf8-31df-494f-aa69-4402716b1fa1" class="bulleted-list">
+						<li style="list-style-type:disc"><strong>Emotional section</strong> - <strong>customer-brand
+								relationship</strong>
+							<ul id="691c80fc-e234-4865-acb0-ecb9f5583464" class="bulleted-list">
+								<li style="list-style-type:circle">“Do <strong>people adore you as a founder</strong>
+									(of course they do) or <strong>want to feel closer to your brand</strong>?
+									<strong>Let people in</strong> - <strong>host periodic interactive sessions</strong>
+									for your very best customers (with an NFT to prove it) with you as the founder and
+									<strong>give people a sneak peek into what’s next</strong>. <strong>This is also a
+										great way to drive anticipation and even create a waitlist for a new product
+										launch.</strong>”</li>
+							</ul>
+						</li>
+					</ul>
+					<ul id="a4b8d328-5ecc-45fc-b86c-7aea6c8fd9da" class="bulleted-list">
+						<li style="list-style-type:disc"><strong>CAC</strong> (Customer Acquisition Cost) &amp;
+							<strong>LTV</strong> (Lifetime Value)<ul id="02a72f22-922b-402f-afed-ae7b925538a6"
+								class="bulleted-list">
+								<li style="list-style-type:circle">“In a world where <strong>CAC</strong> (the cost of
+									acquiring a new customer) <strong>is spiraling out of control for brands, LTV
+									</strong>(or how much a customer is “worth” to a brand) <strong>matters more than
+										ever </strong>and <strong>NFTs present a unique opportunity to gamify a
+										customer’s interaction with your brand</strong>.
+									<strong>An opportunity to stand out from the sea of virtually identical pop-ups,
+										email automations, ads and storefronts.</strong>”
+								</li>
+							</ul>
+							<ul id="8a2d56d2-9db0-4591-8c34-a8ef45af0103" class="bulleted-list">
+								<li style="list-style-type:circle">“<strong>For an online brand, you break free from the
+										cycle of spending a lot to acquire a customer, spending even more trying to get
+										them to purchase again</strong>, and devaluing your product with repetitive
+									discount codes and other flimsy strategies that just don’t work the way they used
+									to. <strong>You give your customers a roadmap of reasons to stay
+										engaged</strong>—and if you do it correctly, your customers enthusiastically
+									agree with those reasons.”</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Möglichkeiten der
+					Plattform-Nutzbarkeit:</summary>
+				<div class="indented">
+					<ol type="1" id="7ca9851e-0bea-4008-be48-16103ff1217d" class="numbered-list" start="1">
+						<li>Nutzung und Integrierung der zugrundeliegenden Technik über eigene Webseite der Brand (z. B.
+							als Sub-Domain) als Service (API Anbindung)</li>
+					</ol>
+					<ol type="1" id="c596233c-3388-419f-9dfe-e43441116262" class="numbered-list" start="2">
+						<li>Nutzung der Technik über eine zentrale Plattform (meines Unternehmens)
+							→ Entweder als ein Teil der Plattform mit Plattform Design z. B. unter:
+							meinunternehmen.com/nofaithstudios
+							→ oder als eigener Teil über die Webseite mit custom design z. B. unter:
+							nofaithstudios.meinunternehmen.com</li>
+					</ol>
+					<ol type="1" id="112bfc95-d665-4cfc-8163-c83b8d28bdcc" class="numbered-list" start="3">
+						<li>Lediglich das Tool, damit Brands individuell Kollektionen erstellen können → ähnlich <a
+								href="https://www.moongrove.com/">moongrove.com</a>
+							<ul id="3ae48f59-64e2-4c32-ac95-6f04a6a4e4dd" class="bulleted-list">
+								<li style="list-style-type:disc">Macht meiner Meinung nach in meinem Case nicht so viel
+									Sinn, da dadurch der Character der Marke für die Brands (Nutzer) ein anderer ist.
+									→ Von wegen: Nur eins der vielen Tools mit denen man NFTs erstellen kann.</li>
+							</ul>
+						</li>
+					</ol>
+					<p id="8c892614-625f-4f3d-84b4-78f3f6896910" class="">
+					</p>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Fragebogen für Interviews (mit Brand
+					Ownern)</summary>
+				<div class="indented">
+					<ol type="1" id="89a43c3d-9c44-46ca-9bd8-fbd7cab77bed" class="numbered-list" start="1">
+						<li>Was sind klassische tägliche Interaktionen deiner Community mit dir/ deiner Marke? </li>
+					</ol>
+					<ol type="1" id="b8f4b253-66b1-47a2-a5e5-4446d922636a" class="numbered-list" start="2">
+						<li>Über welche Wege geschehen diese Interaktionen?</li>
+					</ol>
+					<ol type="1" id="8efdce88-069d-404f-953d-96dec2768152" class="numbered-list" start="3">
+						<li>Wie stark gehst du auf die Interaktionen von Seiten deiner Community ein? </li>
+					</ol>
+					<ol type="1" id="f5c0dd61-9a6b-4e94-8058-d6dda4766f6a" class="numbered-list" start="4">
+						<li>Über welche Kanäle/ Wege gehst du darauf ein?</li>
+					</ol>
+					<ol type="1" id="c549f3c8-5815-429d-b9ea-31dabfb6656c" class="numbered-list" start="5">
+						<li>Was sind die extremsten aber regelmäßig auftretenden Interaktionen von Community Mitgliedern
+							mit dir und/ oder deiner Marke?</li>
+					</ol>
+					<ol type="1" id="21eeb26d-6375-45a3-bc19-bde2972e3007" class="numbered-list" start="6">
+						<li>Erkennst du Trends, wenn du gezielt in Interaktionen mit der Community trittst?<ul
+								id="03c020f9-d500-4063-83dd-26aa6e6a2681" class="bulleted-list">
+								<li style="list-style-type:disc"> Beispiele: Höhere Gesamtverkaufszahlen, mehr Käufe pro
+									Person, mehr Neukunden, mehr Follower, …</li>
+							</ul>
+						</li>
+					</ol>
+					<ol type="1" id="ea132447-9b94-49d3-9def-c3eac1b4cf30" class="numbered-list" start="7">
+						<li>Was ist dir wichtig für deine Beziehung zu deiner Community bzw. die Beziehung zwischen
+							Brand und Community?<ul id="126c07da-6d09-4243-9c32-361c843ee488" class="bulleted-list">
+								<li style="list-style-type:disc">Vorbilds-Funktion, Nähe zur Community (z. B. durch
+									Events) für und mit der Community, (Verkaufs-) Zahlen, …</li>
+							</ul>
+						</li>
+					</ol>
+					<ol type="1" id="ae676d75-fd04-479f-b9ec-df126d17b2d1" class="numbered-list" start="8">
+						<li>Siehst du einen Vorteil darin, deine Community noch stärker in den Alltag der Marke
+							einzubinden?</li>
+					</ol>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Public Umfragen über größere
+					„Fan“-Accounts auf Social Media gerichtet an die Communitys (Fans)</summary>
+				<div class="indented">
+					<ul id="cddfa0a4-a6a8-4a05-9850-c48514190b8a" class="bulleted-list">
+						<li style="list-style-type:disc">Fragen sehr einfach und intuitiv gestalten und nicht mit
+							“professionellen” Umfragen-Tools arbeiten auf deren Link “niemand” klickt, sondern
+							Partizipation an der Umfrage so niedrigschwellig halten wie möglich.</li>
+					</ul>
+					<p id="c9ce48fe-31a9-4bda-ba85-0320cb8182c2" class=""><strong>Beispiel Fragen-Verlauf Instagram
+							Story:</strong></p>
+					<h3 id="778afdb8-aa3f-468e-99ee-d5731b170551" class="">1. “</h3>
+					<figure id="dcb20f22-86ed-4167-8f6d-458852b11699" class="image"><a
+							href="Sta%CC%88rkere%20Communitys%20(durch%20NFT%20Tech)%20c1f6f9072ffd4c3b97e1280fab2a53b6/4FF46514-1F72-4C98-8135-756C6C703FBF.png"><img
+								style="width:1170px"
+								src="Sta%CC%88rkere%20Communitys%20(durch%20NFT%20Tech)%20c1f6f9072ffd4c3b97e1280fab2a53b6/4FF46514-1F72-4C98-8135-756C6C703FBF.png" /></a>
+					</figure>
+					<h3 id="1b817caf-f283-4bd3-ae0c-f5a1e0636740" class="">2. Noch keine konkreten Ansätze der Art der
+						Interaktion vorgeben, sondern Teilnehmer von sich selber antworten lassen. Dadurch erhält man
+						(hoffentlich) noch authentischere Antworten, die wirklich die Gedanken und needs der Zielgruppe
+						widerspiegeln.</h3>
+					<figure id="11bfb65f-a288-42fc-ab4f-a355a00c579f" class="image"><a
+							href="Sta%CC%88rkere%20Communitys%20(durch%20NFT%20Tech)%20c1f6f9072ffd4c3b97e1280fab2a53b6/A3BEF037-E847-4C9E-97AD-2C80BD4E9338.png"><img
+								style="width:1170px"
+								src="Sta%CC%88rkere%20Communitys%20(durch%20NFT%20Tech)%20c1f6f9072ffd4c3b97e1280fab2a53b6/A3BEF037-E847-4C9E-97AD-2C80BD4E9338.png" /></a>
+					</figure>
+					<h3 id="209325db-615e-403f-8562-1340170d711e" class="">3. Im Anschluss und zuletzt noch mehrere
+						mögliche Optionen nennen. Ist den Teilnehmern in der vorherigen Story bereits etwas eingefallen,
+						werden sie diese Story vermutlich überspringen, ist ihnen noch nicht konkret etwas eingefallen,
+						können sie hier noch einmal mitteilen, was sie interessant fänden. </h3>
+					<figure id="4728b478-91da-4698-8445-2060ea3e2217" class="image"><a
+							href="Sta%CC%88rkere%20Communitys%20(durch%20NFT%20Tech)%20c1f6f9072ffd4c3b97e1280fab2a53b6/747DE350-51CC-467A-8758-E97271529B8F.png"><img
+								style="width:1170px"
+								src="Sta%CC%88rkere%20Communitys%20(durch%20NFT%20Tech)%20c1f6f9072ffd4c3b97e1280fab2a53b6/747DE350-51CC-467A-8758-E97271529B8F.png" /></a>
+					</figure>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Mögliches Gründungsteam - Skills
+				</summary>
+				<div class="indented">
+					<ul id="eda1c732-5e46-48fb-8ef4-421373fa1f25" class="bulleted-list">
+						<li style="list-style-type:disc"><strong>Coder</strong> - all things tech/ web3 person -
+							<strong>builds stuff
+							</strong>→ Code is his language and web3 is his playground.</li>
+					</ul>
+					<ul id="c45d18b3-686b-437b-b814-9f3b4f48b193" class="bulleted-list">
+						<li style="list-style-type:disc"><strong>Market Psychologist</strong> (Wirtschaftspsychologie?)
+							- analyzes customer behaviour - <strong>analyzes stuff</strong>
+							→ Understands what exactly customers want and why.
+							→ Thinks about it from a very emotional perspective.</li>
+					</ul>
+					<ul id="d7a5b27e-6a85-4310-8471-fdbfe69c019a" class="bulleted-list">
+						<li style="list-style-type:disc"><strong>Communications</strong> - Has a great overview about
+							the product, the mission and can deliver its core values to potential customers -
+							<strong>plans &amp; communicates stuff</strong>
+							→ Understands the way brands think and what their needs are.</li>
+					</ul>
+					<ul id="357cbbf6-dd52-4b99-9c6d-54e64d1ae1ee" class="bulleted-list">
+						<li style="list-style-type:disc"><strong>Design</strong> - Product Design at heart (both digital
+							and physical) - <strong>designs stuff</strong>
+							→ Understands UI/ UX like their grandma knows her garden and understands lifestyle brands
+							likewise through deeply rooted experiences.</li>
+					</ul>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Gas free minting</summary>
+				<div class="indented">
+					<ul id="f7604dc1-4aff-4a97-8917-ca56f6616418" class="bulleted-list">
+						<li style="list-style-type:disc"><a
+								href="https://polygon.technology/blog/how-to-mint-nfts-with-utility-gas-free-on-polygon">How
+								to Mint NFTs With Utility Gas-Free on Polygon</a></li>
+					</ul>
+					<ul id="b7a13d84-4afa-4ae3-8736-5f681578c262" class="bulleted-list">
+						<li style="list-style-type:disc"><a href="https://www.biconomy.io/gasless-page">Biconomy - Go
+								Gasless</a> (e.g. used by Polygon, ETH, Avalanche, Arbitrum, BNB Chain, fantom, …)</li>
+					</ul>
+				</div>
+			</details>
+			<p id="74598ca0-ff8f-457f-ad75-5e9c114930d2" class="">
+			</p>
+		</div>
+	</article>
+</body>
+
+</html>

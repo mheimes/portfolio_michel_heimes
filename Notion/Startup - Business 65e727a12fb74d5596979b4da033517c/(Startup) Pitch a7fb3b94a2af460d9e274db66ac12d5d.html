@@ -1,0 +1,1335 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>(Startup) Pitch</title>
+	<style>
+		/* cspell:disable-file */
+		/* webkit printing magic: print all background colors */
+		html {
+			-webkit-print-color-adjust: exact;
+		}
+
+		* {
+			box-sizing: border-box;
+			-webkit-print-color-adjust: exact;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		@media only screen {
+			body {
+				margin: 2em auto;
+				max-width: 900px;
+				color: rgb(55, 53, 47);
+			}
+		}
+
+		body {
+			line-height: 1.5;
+			white-space: pre-wrap;
+		}
+
+		a,
+		a.visited {
+			color: inherit;
+			text-decoration: underline;
+		}
+
+		.pdf-relative-link-path {
+			font-size: 80%;
+			color: #444;
+		}
+
+		h1,
+		h2,
+		h3 {
+			letter-spacing: -0.01em;
+			line-height: 1.2;
+			font-weight: 600;
+			margin-bottom: 0;
+		}
+
+		.page-title {
+			font-size: 2.5rem;
+			font-weight: 700;
+			margin-top: 0;
+			margin-bottom: 0.75em;
+		}
+
+		h1 {
+			font-size: 1.875rem;
+			margin-top: 1.875rem;
+		}
+
+		h2 {
+			font-size: 1.5rem;
+			margin-top: 1.5rem;
+		}
+
+		h3 {
+			font-size: 1.25rem;
+			margin-top: 1.25rem;
+		}
+
+		.source {
+			border: 1px solid #ddd;
+			border-radius: 3px;
+			padding: 1.5em;
+			word-break: break-all;
+		}
+
+		.callout {
+			border-radius: 3px;
+			padding: 1rem;
+		}
+
+		figure {
+			margin: 1.25em 0;
+			page-break-inside: avoid;
+		}
+
+		figcaption {
+			opacity: 0.5;
+			font-size: 85%;
+			margin-top: 0.5em;
+		}
+
+		mark {
+			background-color: transparent;
+		}
+
+		.indented {
+			padding-left: 1.5em;
+		}
+
+		hr {
+			background: transparent;
+			display: block;
+			width: 100%;
+			height: 1px;
+			visibility: visible;
+			border: none;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+		}
+
+		img {
+			max-width: 100%;
+		}
+
+		@media only print {
+			img {
+				max-height: 100vh;
+				object-fit: contain;
+			}
+		}
+
+		@page {
+			margin: 1in;
+		}
+
+		.collection-content {
+			font-size: 0.875rem;
+		}
+
+		.column-list {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.column {
+			padding: 0 1em;
+		}
+
+		.column:first-child {
+			padding-left: 0;
+		}
+
+		.column:last-child {
+			padding-right: 0;
+		}
+
+		.table_of_contents-item {
+			display: block;
+			font-size: 0.875rem;
+			line-height: 1.3;
+			padding: 0.125rem;
+		}
+
+		.table_of_contents-indent-1 {
+			margin-left: 1.5rem;
+		}
+
+		.table_of_contents-indent-2 {
+			margin-left: 3rem;
+		}
+
+		.table_of_contents-indent-3 {
+			margin-left: 4.5rem;
+		}
+
+		.table_of_contents-link {
+			text-decoration: none;
+			opacity: 0.7;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid rgba(55, 53, 47, 0.09);
+			border-collapse: collapse;
+		}
+
+		table {
+			border-left: none;
+			border-right: none;
+		}
+
+		th,
+		td {
+			font-weight: normal;
+			padding: 0.25em 0.5em;
+			line-height: 1.5;
+			min-height: 1.5em;
+			text-align: left;
+		}
+
+		th {
+			color: rgba(55, 53, 47, 0.6);
+		}
+
+		ol,
+		ul {
+			margin: 0;
+			margin-block-start: 0.6em;
+			margin-block-end: 0.6em;
+		}
+
+		li>ol:first-child,
+		li>ul:first-child {
+			margin-block-start: 0.6em;
+		}
+
+		ul>li {
+			list-style: disc;
+		}
+
+		ul.to-do-list {
+			padding-inline-start: 0;
+		}
+
+		ul.to-do-list>li {
+			list-style: none;
+		}
+
+		.to-do-children-checked {
+			text-decoration: line-through;
+			opacity: 0.375;
+		}
+
+		ul.toggle>li {
+			list-style: none;
+		}
+
+		ul {
+			padding-inline-start: 1.7em;
+		}
+
+		ul>li {
+			padding-left: 0.1em;
+		}
+
+		ol {
+			padding-inline-start: 1.6em;
+		}
+
+		ol>li {
+			padding-left: 0.2em;
+		}
+
+		.mono ol {
+			padding-inline-start: 2em;
+		}
+
+		.mono ol>li {
+			text-indent: -0.4em;
+		}
+
+		.toggle {
+			padding-inline-start: 0em;
+			list-style-type: none;
+		}
+
+		/* Indent toggle children */
+		.toggle>li>details {
+			padding-left: 1.7em;
+		}
+
+		.toggle>li>details>summary {
+			margin-left: -1.1em;
+		}
+
+		.selected-value {
+			display: inline-block;
+			padding: 0 0.5em;
+			background: rgba(206, 205, 202, 0.5);
+			border-radius: 3px;
+			margin-right: 0.5em;
+			margin-top: 0.3em;
+			margin-bottom: 0.3em;
+			white-space: nowrap;
+		}
+
+		.collection-title {
+			display: inline-block;
+			margin-right: 1em;
+		}
+
+		.page-description {
+			margin-bottom: 2em;
+		}
+
+		.simple-table {
+			margin-top: 1em;
+			font-size: 0.875rem;
+			empty-cells: show;
+		}
+
+		.simple-table td {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table th {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table-header-color {
+			background: rgb(247, 246, 243);
+			color: black;
+		}
+
+		.simple-table-header {
+			font-weight: 500;
+		}
+
+		time {
+			opacity: 0.5;
+		}
+
+		.icon {
+			display: inline-block;
+			max-width: 1.2em;
+			max-height: 1.2em;
+			text-decoration: none;
+			vertical-align: text-bottom;
+			margin-right: 0.5em;
+		}
+
+		img.icon {
+			border-radius: 3px;
+		}
+
+		.user-icon {
+			width: 1.5em;
+			height: 1.5em;
+			border-radius: 100%;
+			margin-right: 0.5rem;
+		}
+
+		.user-icon-inner {
+			font-size: 0.8em;
+		}
+
+		.text-icon {
+			border: 1px solid #000;
+			text-align: center;
+		}
+
+		.page-cover-image {
+			display: block;
+			object-fit: cover;
+			width: 100%;
+			max-height: 30vh;
+		}
+
+		.page-header-icon {
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+
+		.page-header-icon-with-cover {
+			margin-top: -0.72em;
+			margin-left: 0.07em;
+		}
+
+		.page-header-icon img {
+			border-radius: 3px;
+		}
+
+		.link-to-page {
+			margin: 1em 0;
+			padding: 0;
+			border: none;
+			font-weight: 500;
+		}
+
+		p>.user {
+			opacity: 0.5;
+		}
+
+		td>.user,
+		td>time {
+			white-space: nowrap;
+		}
+
+		input[type="checkbox"] {
+			transform: scale(1.5);
+			margin-right: 0.6em;
+			vertical-align: middle;
+		}
+
+		p {
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.image {
+			border: none;
+			margin: 1.5em 0;
+			padding: 0;
+			border-radius: 0;
+			text-align: center;
+		}
+
+		.code,
+		code {
+			background: rgba(135, 131, 120, 0.15);
+			border-radius: 3px;
+			padding: 0.2em 0.4em;
+			border-radius: 3px;
+			font-size: 85%;
+			tab-size: 2;
+		}
+
+		code {
+			color: #eb5757;
+		}
+
+		.code {
+			padding: 1.5em 1em;
+		}
+
+		.code-wrap {
+			white-space: pre-wrap;
+			word-break: break-all;
+		}
+
+		.code>code {
+			background: none;
+			padding: 0;
+			font-size: 100%;
+			color: inherit;
+		}
+
+		blockquote {
+			font-size: 1.25em;
+			margin: 1em 0;
+			padding-left: 1em;
+			border-left: 3px solid rgb(55, 53, 47);
+		}
+
+		.bookmark {
+			text-decoration: none;
+			max-height: 8em;
+			padding: 0;
+			display: flex;
+			width: 100%;
+			align-items: stretch;
+		}
+
+		.bookmark-title {
+			font-size: 0.85em;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			height: 1.75em;
+			white-space: nowrap;
+		}
+
+		.bookmark-text {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.bookmark-info {
+			flex: 4 1 180px;
+			padding: 12px 14px 14px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.bookmark-image {
+			width: 33%;
+			flex: 1 1 180px;
+			display: block;
+			position: relative;
+			object-fit: cover;
+			border-radius: 1px;
+		}
+
+		.bookmark-description {
+			color: rgba(55, 53, 47, 0.6);
+			font-size: 0.75em;
+			overflow: hidden;
+			max-height: 4.5em;
+			word-break: break-word;
+		}
+
+		.bookmark-href {
+			font-size: 0.75em;
+			margin-top: 0.25em;
+		}
+
+		.sans {
+			font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+		}
+
+		.code {
+			font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+		}
+
+		.serif {
+			font-family: Lyon-Text, Georgia, ui-serif, serif;
+		}
+
+		.mono {
+			font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+		}
+
+		.pdf .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR';
+		}
+
+		.pdf .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.pdf .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR';
+		}
+
+		.pdf .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.highlight-default {
+			color: rgba(55, 53, 47, 1);
+		}
+
+		.highlight-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.highlight-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.highlight-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.highlight-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.highlight-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.highlight-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.highlight-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.highlight-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.highlight-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.highlight-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.highlight-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.highlight-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.highlight-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.highlight-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.highlight-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.highlight-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.highlight-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.highlight-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.block-color-default {
+			color: inherit;
+			fill: inherit;
+		}
+
+		.block-color-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.block-color-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.block-color-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.block-color-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.block-color-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.block-color-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.block-color-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.block-color-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.block-color-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.block-color-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.block-color-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.block-color-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.block-color-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.block-color-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.block-color-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.block-color-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.block-color-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.block-color-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.select-value-color-interactiveBlue {
+			background-color: rgba(35, 131, 226, .07);
+		}
+
+		.select-value-color-pink {
+			background-color: rgba(245, 224, 233, 1);
+		}
+
+		.select-value-color-purple {
+			background-color: rgba(232, 222, 238, 1);
+		}
+
+		.select-value-color-green {
+			background-color: rgba(219, 237, 219, 1);
+		}
+
+		.select-value-color-gray {
+			background-color: rgba(227, 226, 224, 1);
+		}
+
+		.select-value-color-translucentGray {
+			background-color: rgba(255, 255, 255, 0.0375);
+		}
+
+		.select-value-color-orange {
+			background-color: rgba(250, 222, 201, 1);
+		}
+
+		.select-value-color-brown {
+			background-color: rgba(238, 224, 218, 1);
+		}
+
+		.select-value-color-red {
+			background-color: rgba(255, 226, 221, 1);
+		}
+
+		.select-value-color-yellow {
+			background-color: rgba(253, 236, 200, 1);
+		}
+
+		.select-value-color-blue {
+			background-color: rgba(211, 229, 239, 1);
+		}
+
+		.select-value-color-pageGlass {
+			background-color: undefined;
+		}
+
+		.select-value-color-washGlass {
+			background-color: undefined;
+		}
+
+		.checkbox {
+			display: inline-flex;
+			vertical-align: text-bottom;
+			width: 16;
+			height: 16;
+			background-size: 16px;
+			margin-left: 2px;
+			margin-right: 5px;
+		}
+
+		.checkbox-on {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+
+		.checkbox-off {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+	</style>
+</head>
+
+<body>
+	<article id="a7fb3b94-a2af-460d-9e27-4db66ac12d5d" class="page sans">
+		<header>
+			<div class="page-header-icon undefined"><span class="icon">📣</span></div>
+			<h1 class="page-title">(Startup) Pitch</h1>
+			<p class="page-description"></p>
+		</header>
+		<div class="page-body">
+			<h3 id="6d39f633-6018-48bf-bcb8-316810c8dc3d" class="">Tipps:</h3>
+			<ul id="3dce4bae-8f49-4764-a18c-15b7942fe488" class="bulleted-list">
+				<li style="list-style-type:disc">Wenn Bilderserie verwendet wird um Merkmale/ Vorteile/ Nachteile/ etc.
+					darzustellen, sollten im Optimalfall Bilder im selben Stil am besten sogar vom (/ von der) selben
+					Fotografen*in verwendet werden.<ul id="9b039a7d-9788-4940-81c9-1cdc8a5dca03" class="bulleted-list">
+						<li style="list-style-type:circle">Hilfreiches Mittel wenn die Farben der Bilder nicht ganz
+							stimmig sind: Farben anpassen (z. B. schwarz-weiß wenn es sich bei den Darstellungen sogar
+							um Pain-Points bzw. das Problem handelt)</li>
+					</ul>
+				</li>
+			</ul>
+			<ul id="5a136bcf-90cf-4c49-bf97-64919b66fd54" class="bulleted-list">
+				<li style="list-style-type:disc">Piktogramme im selben Stil verwenden</li>
+			</ul>
+			<p id="7c651924-6f05-4a93-a29a-d2c173335057" class="">
+			</p>
+			<h3 id="3c6dbc45-3612-483e-84d9-ce5def816c9a" class=""><a
+					href="Nachhall-%20tiges%20Pra%CC%88sentieren%20c075b5621fad46309a7e0a6880760f68.html">Nachhall-
+					tiges Präsentieren Seite beachten!</a></h3>
+			<p id="2683cf55-6914-4b80-8302-ab613476e288" class="">
+			</p>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Aufbau eines Pitches</summary>
+				<div class="indented">
+					<p id="a45e59f4-3ed4-4e9d-b495-a0278ba70e93" class="">Orientiert an <a
+							href="https://slidebean.com/blog/airbnb-pitch-deck">dieser Webseite</a>!</p>
+					<p id="4a8be61b-9fea-4253-9657-2b87605acb67" class="">
+					</p>
+					<p id="1211b187-0205-4c59-bd84-033ccd4a04e9" class="">A pitch deck is usually a 10-15 slide
+						presentation deck designed to give a short summary of your company, your business plan and your
+						startup vision.</p>
+					<p id="bddef1cd-1348-4d28-92bb-23720e64bde8" class="">A pitch deck presentation serves different
+						purposes, from trying to get a meeting with a new investor, to presenting in front of a stage,
+						and each one of them follows a different structure! </p>
+					<p id="7ae1b28f-5a61-47e2-b9d1-288e018b0100" class="">
+					</p>
+					<ol type="1" id="d47d9554-08d7-484a-a711-e34fa6a43de5" class="numbered-list" start="1">
+						<li><strong>Cover</strong>
+							<ul id="b82483b2-607f-4f83-9900-117965cb08b0" class="bulleted-list">
+								<li style="list-style-type:disc">Very basic: company and tagline (5-7 words that
+									summarize the <strong>core mission of the company</strong> - appropriate jargon/
+									language)</li>
+							</ul>
+							<ul id="660da63a-d945-41b1-906f-1839a2cf9aea" class="bulleted-list">
+								<li style="list-style-type:disc">Tagline example (Airbnb): “Book rooms with locals,
+									rather than hotels”</li>
+							</ul>
+							<figure id="fb3ac966-42f0-40ea-8c17-626bc1b8c443" class="image"><a
+									href="(Startup)%20Pitch%20a7fb3b94a2af460d9e274db66ac12d5d/Bildschirmfoto_2022-11-12_um_19.29.38.png"><img
+										style="width:2046px"
+										src="(Startup)%20Pitch%20a7fb3b94a2af460d9e274db66ac12d5d/Bildschirmfoto_2022-11-12_um_19.29.38.png" /></a>
+							</figure>
+						</li>
+					</ol>
+					<ol type="1" id="106d2ce8-3e70-41d4-ba3f-a4ec6c8ae020" class="numbered-list" start="2">
+						<li><strong>Problem slide</strong>
+							<ul id="140bbcdf-eba8-432c-8154-70a4fef20e5a" class="bulleted-list">
+								<li style="list-style-type:disc">Describe exactly the problems (the three greatest
+									problems) for which you will be offering solutions in simple words and in a way that
+									allows your listeners to empathize with the problems easily.</li>
+							</ul>
+							<ul id="7ca12aee-0a90-4be9-a5e4-f02f6db44b6d" class="bulleted-list">
+								<li style="list-style-type:disc">Highlight the most important keyword/ keyphrase in each
+									problem sentence that should stick. </li>
+							</ul>
+							<ul id="48d28b6c-feba-4eef-9868-dcd94b398fcc" class="bulleted-list">
+								<li style="list-style-type:disc">Problems example (Airbnb):<ul
+										id="b0868c86-015c-410e-ae71-5f198e7f3aa6" class="bulleted-list">
+										<li style="list-style-type:circle">“<strong>Price</strong> is an important
+											concern for customers booking travel online.”</li>
+									</ul>
+									<ul id="636748d0-292a-41f0-b111-89ac48666b47" class="bulleted-list">
+										<li style="list-style-type:circle">“<strong>Hotels</strong> leave you
+											disconnected from the city and its culture.”</li>
+									</ul>
+									<ul id="f3c4399e-7c67-48f0-884b-2502064d7db7" class="bulleted-list">
+										<li style="list-style-type:circle">“<strong>No easy way exists</strong> to book
+											a room with a local or become a host.”</li>
+									</ul>
+								</li>
+							</ul>
+							<figure id="ca6630be-38b7-4dbe-bd62-d56d24beb777" class="image"><a
+									href="(Startup)%20Pitch%20a7fb3b94a2af460d9e274db66ac12d5d/Bildschirmfoto_2022-11-14_um_22.30.07.png"><img
+										style="width:2030px"
+										src="(Startup)%20Pitch%20a7fb3b94a2af460d9e274db66ac12d5d/Bildschirmfoto_2022-11-14_um_22.30.07.png" /></a>
+							</figure>
+						</li>
+					</ol>
+					<ol type="1" id="b3becaa6-2946-4da7-89be-644b815664fc" class="numbered-list" start="3">
+						<li><strong>Solution slide</strong>
+							<ul id="6531b665-45bb-42c3-a95f-415c5a990854" class="bulleted-list">
+								<li style="list-style-type:disc">Describe the <strong>product</strong> in a simple
+									sentence.</li>
+							</ul>
+							<ul id="7cec9514-8580-43e8-a50f-58d65f5f31b6" class="bulleted-list">
+								<li style="list-style-type:disc">Summarize the three most important reasons why a
+									customer would buy your product → core value proposition.</li>
+							</ul>
+							<ul id="5be1de29-5a5d-4c87-9c62-c8c95883d3f1" class="bulleted-list">
+								<li style="list-style-type:disc">Talk about the benefits rather than the features and
+									summarize the benefits so that they can be seen as a great solution to the problem
+									by the majority and not only by a niche.</li>
+							</ul>
+							<ul id="c8e62e97-e69e-4e1b-acad-07041e5fb26f" class="bulleted-list">
+								<li style="list-style-type:disc">Solutions example (Airbnb):<ul
+										id="aa8e8f1f-6c2e-4445-8c86-65c48c4667ca" class="bulleted-list">
+										<li style="list-style-type:circle">Product description: “A web platform where
+											users can rent out their space to travelers to “…</li>
+									</ul>
+									<ul id="87a47b3c-7fe9-4905-b348-3b8b50d991b5" class="bulleted-list">
+										<li style="list-style-type:circle">… “<strong>Save Money</strong> when
+											traveling”</li>
+									</ul>
+									<ul id="ebdb73ec-aa60-4466-9a8a-c87b62295993" class="bulleted-list">
+										<li style="list-style-type:circle">… “Make Money when hosting”</li>
+									</ul>
+									<ul id="5d4e2ad0-8190-4eb4-911a-eec6922b4dbb" class="bulleted-list">
+										<li style="list-style-type:circle">… “Share Culture local connection to the
+											city”</li>
+									</ul>
+								</li>
+							</ul>
+							<figure id="6a16c7c9-e3ee-4ae1-987f-ed69f99372f6" class="image"><a
+									href="(Startup)%20Pitch%20a7fb3b94a2af460d9e274db66ac12d5d/Bildschirmfoto_2022-11-14_um_22.31.42.png"><img
+										style="width:2034px"
+										src="(Startup)%20Pitch%20a7fb3b94a2af460d9e274db66ac12d5d/Bildschirmfoto_2022-11-14_um_22.31.42.png" /></a>
+							</figure>
+						</li>
+					</ol>
+					<ol type="1" id="2c14af70-99bf-4399-9273-37b7e45270c4" class="numbered-list" start="4">
+						<li><strong>Market validation </strong>
+							<ul id="c97db63d-495f-418f-ad19-ee4b8130ec51" class="bulleted-list">
+								<li style="list-style-type:disc">Comparison to the user numbers of comparable companies
+								</li>
+							</ul>
+							<ul id="f4395fe9-f5e7-45ff-9308-cf5e07adcf7d" class="bulleted-list">
+								<li style="list-style-type:disc">Provide the closest existing reference to a company in
+									your space, to give investors a real idea of your market opportunity.</li>
+							</ul>
+							<ul id="db84d64b-08c4-4302-b544-acd91b239378" class="bulleted-list">
+								<li style="list-style-type:disc">Example:<ul id="766f12d6-1ff1-4cfd-a04d-88cff2aa0dbc"
+										class="bulleted-list">
+										<li style="list-style-type:circle">“craigslist.com 670,000 TOTAL USERS”</li>
+									</ul>
+									<ul id="b8dae793-1113-4980-8cd8-a28e987534cc" class="bulleted-list">
+										<li style="list-style-type:circle">couchsurfing.com 17,000 TEMPORARY HOUSING
+											LISTINGS In SF &amp; NYC from 7/09 to 7/16”</li>
+									</ul>
+								</li>
+							</ul>
+							<figure id="3f53f671-11bb-4ae2-93fc-20147ccd2e2a" class="image"><a
+									href="(Startup)%20Pitch%20a7fb3b94a2af460d9e274db66ac12d5d/Bildschirmfoto_2022-11-14_um_22.32.10.png"><img
+										style="width:2084px"
+										src="(Startup)%20Pitch%20a7fb3b94a2af460d9e274db66ac12d5d/Bildschirmfoto_2022-11-14_um_22.32.10.png" /></a>
+							</figure>
+						</li>
+					</ol>
+					<ol type="1" id="4443a16d-28d7-4fa0-a722-247269b2039a" class="numbered-list" start="5">
+						<li><strong>Market size</strong>
+							<ul id="516368eb-b3b4-475e-b522-e1ef3b9f9a9b" class="bulleted-list">
+								<li style="list-style-type:disc">TAM/ SAM/ SOM</li>
+							</ul>
+							<ul id="6a5269aa-8c56-4cf5-89cf-757de28c11a4" class="bulleted-list">
+								<li style="list-style-type:disc">Show the size of your opportunity - size of industry
+									and its expected behavior for the upcoming years.</li>
+							</ul>
+							<ul id="097ee957-8a4a-4659-b0a3-6d6010eb167f" class="bulleted-list">
+								<li style="list-style-type:disc">Confirm credible 3rd party proof for the data you
+									provide.</li>
+							</ul>
+							<figure id="ef0bb8f4-a3d5-45c7-a493-fd0eef057339" class="image"><a
+									href="(Startup)%20Pitch%20a7fb3b94a2af460d9e274db66ac12d5d/Bildschirmfoto_2022-11-14_um_22.32.31.png"><img
+										style="width:1498px"
+										src="(Startup)%20Pitch%20a7fb3b94a2af460d9e274db66ac12d5d/Bildschirmfoto_2022-11-14_um_22.32.31.png" /></a>
+							</figure>
+						</li>
+					</ol>
+					<ol type="1" id="51fbe826-3303-4fe1-965f-4e03585ebb0c" class="numbered-list" start="6">
+						<li><strong>Product</strong>
+							<ul id="88ae358f-30ed-44c5-8e8c-78f055996b40" class="bulleted-list">
+								<li style="list-style-type:disc">Summarize core functionality of the product in as few
+									words/ images as possible.</li>
+							</ul>
+							<ul id="2c84d068-f635-44da-942d-020f5957f52c" class="bulleted-list">
+								<li style="list-style-type:disc">Another great way to approach this this slide is with a
+									short 30 second video. A video is truly worth a thousand images. That’s definitely
+									the way you should go.
+									→ Make sure to keep the images version around just in case sound, internet, etc.
+									fails.</li>
+							</ul>
+							<ul id="8cbefb8b-098b-4a36-adda-41381df577ac" class="bulleted-list">
+								<li style="list-style-type:disc">Example:<ul id="1347671d-5709-4124-9de3-0cfe93a21593"
+										class="bulleted-list">
+										<li style="list-style-type:circle">Search by city → Review listings → Book it!
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<ul id="f2a14aab-f442-4414-91f9-9bc5a8658ac8" class="bulleted-list">
+								<li style="list-style-type:disc"><strong>“Product Cover”:</strong></li>
+							</ul>
+							<figure id="8d92539d-baa9-44e7-bdd4-0c18eaeb3e0f" class="image"><a
+									href="(Startup)%20Pitch%20a7fb3b94a2af460d9e274db66ac12d5d/Bildschirmfoto_2022-11-14_um_22.38.51.png"><img
+										style="width:2036px"
+										src="(Startup)%20Pitch%20a7fb3b94a2af460d9e274db66ac12d5d/Bildschirmfoto_2022-11-14_um_22.38.51.png" /></a>
+							</figure>
+							<ul id="251fb339-65ae-4094-ba54-275e780b9531" class="bulleted-list">
+								<li style="list-style-type:disc"><strong>Feature 1:</strong></li>
+							</ul>
+							<figure id="e70eb099-ee71-4225-ad43-f792c2ecb4e9" class="image"><a
+									href="(Startup)%20Pitch%20a7fb3b94a2af460d9e274db66ac12d5d/Bildschirmfoto_2022-11-14_um_22.39.45.png"><img
+										style="width:2056px"
+										src="(Startup)%20Pitch%20a7fb3b94a2af460d9e274db66ac12d5d/Bildschirmfoto_2022-11-14_um_22.39.45.png" /></a>
+							</figure>
+							<ul id="afa4f247-1b8d-4b86-a770-3d79e86fb0c6" class="bulleted-list">
+								<li style="list-style-type:disc"><strong>Feature 2:</strong></li>
+							</ul>
+							<figure id="6b42f76d-7445-4223-834d-5457ee20eb3d" class="image"><a
+									href="(Startup)%20Pitch%20a7fb3b94a2af460d9e274db66ac12d5d/Bildschirmfoto_2022-11-14_um_22.40.37.png"><img
+										style="width:2052px"
+										src="(Startup)%20Pitch%20a7fb3b94a2af460d9e274db66ac12d5d/Bildschirmfoto_2022-11-14_um_22.40.37.png" /></a>
+							</figure>
+							<ul id="4c034f53-8f96-437b-9a39-ec3a8d717050" class="bulleted-list">
+								<li style="list-style-type:disc"><strong>Feature 3:</strong></li>
+							</ul>
+							<figure id="0ce7afa5-e3a3-4d4e-a505-a9521e43986c" class="image"><a
+									href="(Startup)%20Pitch%20a7fb3b94a2af460d9e274db66ac12d5d/Bildschirmfoto_2022-11-14_um_22.41.53.png"><img
+										style="width:2056px"
+										src="(Startup)%20Pitch%20a7fb3b94a2af460d9e274db66ac12d5d/Bildschirmfoto_2022-11-14_um_22.41.53.png" /></a>
+							</figure>
+							<ul id="defefcd0-57a5-4426-bd3f-78dbdff66d4e" class="bulleted-list">
+								<li style="list-style-type:disc"><strong>Another option that doesn’t allow to appreciate
+										the product as much as the version before but is still a great way to showcase
+										the product in a single slide:</strong></li>
+							</ul>
+							<figure id="b09d2190-c9f3-45dd-87ee-739ed85d3d77" class="image"><a
+									href="(Startup)%20Pitch%20a7fb3b94a2af460d9e274db66ac12d5d/Bildschirmfoto_2022-11-14_um_22.44.15.png"><img
+										style="width:1498px"
+										src="(Startup)%20Pitch%20a7fb3b94a2af460d9e274db66ac12d5d/Bildschirmfoto_2022-11-14_um_22.44.15.png" /></a>
+							</figure>
+						</li>
+					</ol>
+					<ol type="1" id="348e3af0-6e3a-41de-87e1-12acf1a3dd5f" class="numbered-list" start="7">
+						<li><strong>Business Model</strong>
+							<ul id="905bc775-303d-4798-8cec-c0ef7830aee8" class="bulleted-list">
+								<li style="list-style-type:disc">Summarize your business model in a single line like:
+									→ “We take 10% commission on each transaction.”</li>
+							</ul>
+							<ul id="eeb3c2b0-b7bf-4e00-9eae-95eb5fb9c11c" class="bulleted-list">
+								<li style="list-style-type:disc">Describe your revenue streams by simplifying them with
+									example calculations with average numbers.</li>
+							</ul>
+							<ul id="b26f8726-2a87-410e-91c3-9cf9296be900" class="bulleted-list">
+								<li style="list-style-type:disc">Reference to previous slides, especially the slide on
+									market size.</li>
+							</ul>
+							<ul id="fe164d0d-ba77-43ea-9a43-c47f4010214b" class="bulleted-list">
+								<li style="list-style-type:disc">Can be a killer slide (in a positive way) if well
+									structured.
+									<strong>Can show/ define:</strong>
+									<ul id="1dae46e4-6e75-4c61-ab5c-a8bef8f5e02d" class="bulleted-list">
+										<li style="list-style-type:circle">simple business model</li>
+									</ul>
+									<ul id="cad74afa-029a-4d24-ba30-8fdf4aac66eb" class="bulleted-list">
+										<li style="list-style-type:circle">(huge) potential the company has (in an
+											existing market)</li>
+									</ul>
+									<ul id="1fb1851b-2906-4e9b-9d6f-37cf986ce2c1" class="bulleted-list">
+										<li style="list-style-type:circle">the future vision where the company expect
+											the product to be in x years time</li>
+									</ul>
+								</li>
+							</ul>
+							<figure id="9422b811-dd16-49c5-89b5-9911ead3c1eb" class="image"><a
+									href="(Startup)%20Pitch%20a7fb3b94a2af460d9e274db66ac12d5d/Bildschirmfoto_2022-11-14_um_22.56.44.png"><img
+										style="width:2038px"
+										src="(Startup)%20Pitch%20a7fb3b94a2af460d9e274db66ac12d5d/Bildschirmfoto_2022-11-14_um_22.56.44.png" /></a>
+							</figure>
+						</li>
+					</ol>
+					<ol type="1" id="281de097-3c1e-4b5f-981f-b6eef884ade4" class="numbered-list" start="8">
+						<li><strong>Adoption Strategy/ Market Adoption</strong>
+							<ul id="1712eac3-b7b6-452b-8b50-3f7906ab2e47" class="bulleted-list">
+								<li style="list-style-type:disc">Summarize 2-3 core customer acquisition hacks that you
+									will use to grow the business.<ul id="ea0df5dc-7b83-4609-9e0d-7cf214192fe5"
+										class="bulleted-list">
+										<li style="list-style-type:circle">What methods are better, more scalable and
+											more profitable than your competition? → Show them here!</li>
+									</ul>
+								</li>
+							</ul>
+							<figure id="57759d06-588f-4914-ad7f-6a53b761d011" class="image"><a
+									href="(Startup)%20Pitch%20a7fb3b94a2af460d9e274db66ac12d5d/Bildschirmfoto_2022-11-14_um_23.01.09.png"><img
+										style="width:1494px"
+										src="(Startup)%20Pitch%20a7fb3b94a2af460d9e274db66ac12d5d/Bildschirmfoto_2022-11-14_um_23.01.09.png" /></a>
+							</figure>
+							<figure id="5ae1021d-d692-4149-9a7a-f7abcc38abbe" class="image"><a
+									href="(Startup)%20Pitch%20a7fb3b94a2af460d9e274db66ac12d5d/Bildschirmfoto_2022-11-14_um_23.01.31.png"><img
+										style="width:2052px"
+										src="(Startup)%20Pitch%20a7fb3b94a2af460d9e274db66ac12d5d/Bildschirmfoto_2022-11-14_um_23.01.31.png" /></a>
+							</figure>
+						</li>
+					</ol>
+					<ol type="1" id="c4b702a7-ab88-4b58-a60e-081f3dd4d324" class="numbered-list" start="9">
+						<li><strong>Competition</strong>
+							<ul id="18d45fcb-2336-481c-9058-9fa7a12df6bc" class="bulleted-list">
+								<li style="list-style-type:disc">A 2-axis diagram is the perfect way to establish
+									against your competition.</li>
+							</ul>
+							<ul id="045a09a6-0e5c-4256-a655-d7cb6a0aade2" class="bulleted-list">
+								<li style="list-style-type:disc">Define two USPs (the two core differentiators) of your
+									product as the horizontal and the vertical axis. <ul
+										id="0df764a9-9376-40e1-ac6b-2f67ff2c70a3" class="bulleted-list">
+										<li style="list-style-type:circle">Easy way to visually convey your unique
+											selling points.</li>
+									</ul>
+									<ul id="f5b97926-eba7-46e5-94c9-58eba3594a20" class="bulleted-list">
+										<li style="list-style-type:circle">Make sure to setup the chart so that your
+											product shows up in the top right corner of the chart.</li>
+									</ul>
+								</li>
+							</ul>
+							<figure id="c8639eab-6735-492f-beb8-494103065624" class="image"><a
+									href="(Startup)%20Pitch%20a7fb3b94a2af460d9e274db66ac12d5d/Bildschirmfoto_2022-11-14_um_23.15.37.png"><img
+										style="width:1580px"
+										src="(Startup)%20Pitch%20a7fb3b94a2af460d9e274db66ac12d5d/Bildschirmfoto_2022-11-14_um_23.15.37.png" /></a>
+							</figure>
+						</li>
+					</ol>
+					<ol type="1" id="37b8e59d-a249-49bc-9909-4ff40f7ea7f0" class="numbered-list" start="10">
+						<li><strong>Competitive Advantages</strong>
+							<ul id="f1a612a0-fb77-47ec-a416-274db4a00b62" class="bulleted-list">
+								<li style="list-style-type:disc">Goal if the slide: Answer questions before they come
+									up!</li>
+							</ul>
+							<ul id="22f7d09b-8913-431f-b91c-8426ba2d86ca" class="bulleted-list">
+								<li style="list-style-type:disc">Point out the core benefits (, not features!) that will
+									allow you to outrun your competitors.</li>
+							</ul>
+							<figure id="c74200f8-5383-4291-9d6d-ac24719b65d2" class="image"><a
+									href="(Startup)%20Pitch%20a7fb3b94a2af460d9e274db66ac12d5d/Bildschirmfoto_2022-11-14_um_23.19.21.png"><img
+										style="width:2068px"
+										src="(Startup)%20Pitch%20a7fb3b94a2af460d9e274db66ac12d5d/Bildschirmfoto_2022-11-14_um_23.19.21.png" /></a>
+							</figure>
+						</li>
+					</ol>
+					<ol type="1" id="80f7fa34-62da-43f8-9fbb-aada652c4a86" class="numbered-list" start="11">
+						<li><strong>Team</strong>
+							<ul id="77a3d259-42ec-4796-b82b-05829f6bc03c" class="bulleted-list">
+								<li style="list-style-type:disc">Stick to the founding team for this slide<ul
+										id="c87e76d8-b4bc-4a21-862f-87487d289ba3" class="bulleted-list">
+										<li style="list-style-type:circle"> The “Hustler/ Hacker/ Hipster” trio is often
+											an ideal combination here.</li>
+									</ul>
+									<ul id="046b8dfe-ea2e-4998-8816-c9d9cd10410d" class="bulleted-list">
+										<li style="list-style-type:circle">Avoid adding advisors on this slide as they
+											are usually not relevant enough to make the cut for your pitch deck.</li>
+									</ul>
+									<ul id="c0a27009-7668-4a90-bd5a-a16f9924933b" class="bulleted-list">
+										<li style="list-style-type:circle">Focus particularly on listing each founder’s
+											entrepreneurial achievements, rather than their academic titles.<ul
+												id="b48ab7be-d03f-455e-909b-c68bc703d51a" class="bulleted-list">
+												<li style="list-style-type:square"> In the end, experience matters a LOT
+													more than academic titles.</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<figure id="20e89a8e-0979-4d88-81b4-19a194ce0279" class="image"><a
+									href="(Startup)%20Pitch%20a7fb3b94a2af460d9e274db66ac12d5d/Bildschirmfoto_2022-11-14_um_23.33.24.png"><img
+										style="width:2072px"
+										src="(Startup)%20Pitch%20a7fb3b94a2af460d9e274db66ac12d5d/Bildschirmfoto_2022-11-14_um_23.33.24.png" /></a>
+							</figure>
+						</li>
+					</ol>
+					<ol type="1" id="ef3f3eaa-a140-4323-b179-37ae0aca244a" class="numbered-list" start="12">
+						<li><strong>Press</strong>
+							<ul id="35ccb4ac-c4dc-4035-93cc-a6f7f1200ce3" class="bulleted-list">
+								<li style="list-style-type:disc">Provide validation a credibility<ul
+										id="e763406e-5bb3-4085-ade3-0737a3bbd698" class="bulleted-list">
+										<li style="list-style-type:circle">Goals of the press slide:<ol type="1"
+												id="20402b99-1c8c-419e-a9b9-0429243b2b62" class="numbered-list"
+												start="1">
+												<li>Prove that your product/ concept is interesting enough to be
+													featured in ___.</li>
+											</ol>
+											<ol type="1" id="68cec20d-3f01-4620-8375-6ea5c0f824db" class="numbered-list"
+												start="2">
+												<li>Proves that your team was clever enough to get you featured.</li>
+											</ol>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<ul id="53141f06-43bf-4613-860b-87f14d32c1e7" class="bulleted-list">
+								<li style="list-style-type:disc">For the user testimonials, make sure to pick reviews
+									that talk about the core benefits of your product, as a confirmation that your
+									customers are understanding the underlying value.</li>
+							</ul>
+							<figure id="1b48913a-3f2a-478f-ab0a-6b8dfe9f17cd" class="image"><a
+									href="(Startup)%20Pitch%20a7fb3b94a2af460d9e274db66ac12d5d/Bildschirmfoto_2022-11-14_um_23.40.25.png"><img
+										style="width:2028px"
+										src="(Startup)%20Pitch%20a7fb3b94a2af460d9e274db66ac12d5d/Bildschirmfoto_2022-11-14_um_23.40.25.png" /></a>
+							</figure>
+						</li>
+					</ol>
+					<ol type="1" id="bd4fd12e-053a-41c6-bbd5-4b002d05989e" class="numbered-list" start="13">
+						<li><strong>User testimonials</strong>
+							<ul id="7b25c468-a898-447a-b4ac-d9ad12c6477e" class="bulleted-list">
+								<li style="list-style-type:disc">For the user testimonials, make sure to pick reviews
+									that talk about the core benefits of your product, as a confirmation that your
+									customers are understanding the underlying value.</li>
+							</ul>
+							<figure id="6f62a170-46b9-4237-9bc2-8f495ac021d7" class="image"><a
+									href="(Startup)%20Pitch%20a7fb3b94a2af460d9e274db66ac12d5d/Bildschirmfoto_2022-11-14_um_23.41.08.png"><img
+										style="width:2036px"
+										src="(Startup)%20Pitch%20a7fb3b94a2af460d9e274db66ac12d5d/Bildschirmfoto_2022-11-14_um_23.41.08.png" /></a>
+							</figure>
+						</li>
+					</ol>
+					<ol type="1" id="117d1663-bc9f-4d05-9df5-064a1f7bb787" class="numbered-list" start="14">
+						<li><strong>Financial</strong>
+							<ul id="bc6fd715-9c7d-4dbd-81c5-4ccddb328309" class="bulleted-list">
+								<li style="list-style-type:disc">Only relevant if you are actually looking for funds →
+									the “Ask” slide<ul id="4b4a38d9-53b0-49ed-9830-345f32c82cd3" class="bulleted-list">
+										<li style="list-style-type:circle">This slide includes the details of your round
+											or fundraising efforts. </li>
+									</ul>
+									<ul id="aa8c2336-aded-4b66-aac9-2a137044601c" class="bulleted-list">
+										<li style="list-style-type:circle">Be careful with the information that you
+											disclose here, general solicitation legislation prohibits the disclosure of
+											some information, that might jeopardize your company and even your investors
+											in the future.<ul id="2dfc24de-3d41-4430-a54f-5b3eb075b7d5"
+												class="bulleted-list">
+												<li style="list-style-type:square">Have at least two versions of your
+													pitch deck. <strong>One deck with no financials</strong>, that you
+													can share around to get intros and meetings, and <strong>another
+														deck with disclosed details</strong> of your company’s
+													financials and projections for meetings once you established link
+													with your investor(s).</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ol>
+				</div>
+			</details>
+			<details open="">
+				<summary style="font-weight:600;font-size:1.25em;line-height:1.3">Aufbau eines auf das nötigste
+					reduzierte Pitch decks</summary>
+				<div class="indented">
+					<h3 id="c6b9ebd7-77b7-4977-82b6-70ada2587d83" class="">Struktur entsprechend nach Guy Kawasaki</h3>
+					<p id="e785d7ec-c8fa-4e87-8928-07d067b8fcd5" class=""><strong>3 main rules: </strong></p>
+					<ol type="1" id="5d943672-f181-4257-bc67-268d859396d1" class="numbered-list" start="1">
+						<li>A pitch should consist of 10 slides &amp; no more than 15.</li>
+					</ol>
+					<ol type="1" id="8a30255b-9964-459e-8e24-fb1aeaf697a0" class="numbered-list" start="2">
+						<li>The presentation should last no more than 20 minutes.</li>
+					</ol>
+					<ol type="1" id="eec58420-138b-4019-9c81-092dd9b146f3" class="numbered-list" start="3">
+						<li>The font to it should be smaller than 30 points.</li>
+					</ol>
+					<p id="9050c435-4d06-4d3f-9d54-c12aae8a8182" class="">
+					</p>
+					<p id="abd7c53f-4a86-4589-bccf-6e4ff9c41a76" class=""><strong>Structure:</strong></p>
+					<ol type="1" id="72530df5-601d-4b57-a72f-59bfd021fa92" class="numbered-list" start="1">
+						<li>Cover</li>
+					</ol>
+					<ol type="1" id="37b438f7-2e51-4070-9c85-2019c7e860b2" class="numbered-list" start="2">
+						<li>Problem (/ Opportunity)</li>
+					</ol>
+					<ol type="1" id="45bc3898-28d2-42e0-82da-eaa0ae2ba4c9" class="numbered-list" start="3">
+						<li>Solution (/ Value Proposition)</li>
+					</ol>
+					<ol type="1" id="55d313ca-dc82-46bb-813a-30e986056cfc" class="numbered-list" start="4">
+						<li>Underlying Magic (describe/ “brag about” your product or service)</li>
+					</ol>
+					<ol type="1" id="e7b1c10d-ab86-4b2c-8279-76c3625f2e52" class="numbered-list" start="5">
+						<li>Business Model</li>
+					</ol>
+					<ol type="1" id="4db76898-6aef-4f14-8844-a918f2bf173a" class="numbered-list" start="6">
+						<li>Adoption Strategy (/ Go-to-Market Plan)</li>
+					</ol>
+					<ol type="1" id="9dc957ae-1014-4b80-a0ec-7ac5cacf48b2" class="numbered-list" start="7">
+						<li>Competition</li>
+					</ol>
+					<ol type="1" id="ff353d8b-9c03-4de0-958d-b6ed9b8676b9" class="numbered-list" start="8">
+						<li>Team</li>
+					</ol>
+					<ol type="1" id="ec94569d-e557-495a-bf7f-fdfb96312dec" class="numbered-list" start="9">
+						<li>Financial (Projections and Key Metrics)</li>
+					</ol>
+					<ol type="1" id="f1c12adb-2089-4ebb-8d12-bca51d9b0596" class="numbered-list" start="10">
+						<li>Current status, accomplishments to date, timeline and use of funds </li>
+					</ol>
+				</div>
+			</details>
+		</div>
+	</article>
+</body>
+
+</html>

@@ -1,0 +1,1110 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Decentralized Finance (DeFi)</title>
+	<style>
+		/* cspell:disable-file */
+		/* webkit printing magic: print all background colors */
+		html {
+			-webkit-print-color-adjust: exact;
+		}
+
+		* {
+			box-sizing: border-box;
+			-webkit-print-color-adjust: exact;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		@media only screen {
+			body {
+				margin: 2em auto;
+				max-width: 900px;
+				color: rgb(55, 53, 47);
+			}
+		}
+
+		body {
+			line-height: 1.5;
+			white-space: pre-wrap;
+		}
+
+		a,
+		a.visited {
+			color: inherit;
+			text-decoration: underline;
+		}
+
+		.pdf-relative-link-path {
+			font-size: 80%;
+			color: #444;
+		}
+
+		h1,
+		h2,
+		h3 {
+			letter-spacing: -0.01em;
+			line-height: 1.2;
+			font-weight: 600;
+			margin-bottom: 0;
+		}
+
+		.page-title {
+			font-size: 2.5rem;
+			font-weight: 700;
+			margin-top: 0;
+			margin-bottom: 0.75em;
+		}
+
+		h1 {
+			font-size: 1.875rem;
+			margin-top: 1.875rem;
+		}
+
+		h2 {
+			font-size: 1.5rem;
+			margin-top: 1.5rem;
+		}
+
+		h3 {
+			font-size: 1.25rem;
+			margin-top: 1.25rem;
+		}
+
+		.source {
+			border: 1px solid #ddd;
+			border-radius: 3px;
+			padding: 1.5em;
+			word-break: break-all;
+		}
+
+		.callout {
+			border-radius: 3px;
+			padding: 1rem;
+		}
+
+		figure {
+			margin: 1.25em 0;
+			page-break-inside: avoid;
+		}
+
+		figcaption {
+			opacity: 0.5;
+			font-size: 85%;
+			margin-top: 0.5em;
+		}
+
+		mark {
+			background-color: transparent;
+		}
+
+		.indented {
+			padding-left: 1.5em;
+		}
+
+		hr {
+			background: transparent;
+			display: block;
+			width: 100%;
+			height: 1px;
+			visibility: visible;
+			border: none;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+		}
+
+		img {
+			max-width: 100%;
+		}
+
+		@media only print {
+			img {
+				max-height: 100vh;
+				object-fit: contain;
+			}
+		}
+
+		@page {
+			margin: 1in;
+		}
+
+		.collection-content {
+			font-size: 0.875rem;
+		}
+
+		.column-list {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.column {
+			padding: 0 1em;
+		}
+
+		.column:first-child {
+			padding-left: 0;
+		}
+
+		.column:last-child {
+			padding-right: 0;
+		}
+
+		.table_of_contents-item {
+			display: block;
+			font-size: 0.875rem;
+			line-height: 1.3;
+			padding: 0.125rem;
+		}
+
+		.table_of_contents-indent-1 {
+			margin-left: 1.5rem;
+		}
+
+		.table_of_contents-indent-2 {
+			margin-left: 3rem;
+		}
+
+		.table_of_contents-indent-3 {
+			margin-left: 4.5rem;
+		}
+
+		.table_of_contents-link {
+			text-decoration: none;
+			opacity: 0.7;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid rgba(55, 53, 47, 0.09);
+			border-collapse: collapse;
+		}
+
+		table {
+			border-left: none;
+			border-right: none;
+		}
+
+		th,
+		td {
+			font-weight: normal;
+			padding: 0.25em 0.5em;
+			line-height: 1.5;
+			min-height: 1.5em;
+			text-align: left;
+		}
+
+		th {
+			color: rgba(55, 53, 47, 0.6);
+		}
+
+		ol,
+		ul {
+			margin: 0;
+			margin-block-start: 0.6em;
+			margin-block-end: 0.6em;
+		}
+
+		li>ol:first-child,
+		li>ul:first-child {
+			margin-block-start: 0.6em;
+		}
+
+		ul>li {
+			list-style: disc;
+		}
+
+		ul.to-do-list {
+			padding-inline-start: 0;
+		}
+
+		ul.to-do-list>li {
+			list-style: none;
+		}
+
+		.to-do-children-checked {
+			text-decoration: line-through;
+			opacity: 0.375;
+		}
+
+		ul.toggle>li {
+			list-style: none;
+		}
+
+		ul {
+			padding-inline-start: 1.7em;
+		}
+
+		ul>li {
+			padding-left: 0.1em;
+		}
+
+		ol {
+			padding-inline-start: 1.6em;
+		}
+
+		ol>li {
+			padding-left: 0.2em;
+		}
+
+		.mono ol {
+			padding-inline-start: 2em;
+		}
+
+		.mono ol>li {
+			text-indent: -0.4em;
+		}
+
+		.toggle {
+			padding-inline-start: 0em;
+			list-style-type: none;
+		}
+
+		/* Indent toggle children */
+		.toggle>li>details {
+			padding-left: 1.7em;
+		}
+
+		.toggle>li>details>summary {
+			margin-left: -1.1em;
+		}
+
+		.selected-value {
+			display: inline-block;
+			padding: 0 0.5em;
+			background: rgba(206, 205, 202, 0.5);
+			border-radius: 3px;
+			margin-right: 0.5em;
+			margin-top: 0.3em;
+			margin-bottom: 0.3em;
+			white-space: nowrap;
+		}
+
+		.collection-title {
+			display: inline-block;
+			margin-right: 1em;
+		}
+
+		.page-description {
+			margin-bottom: 2em;
+		}
+
+		.simple-table {
+			margin-top: 1em;
+			font-size: 0.875rem;
+			empty-cells: show;
+		}
+
+		.simple-table td {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table th {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table-header-color {
+			background: rgb(247, 246, 243);
+			color: black;
+		}
+
+		.simple-table-header {
+			font-weight: 500;
+		}
+
+		time {
+			opacity: 0.5;
+		}
+
+		.icon {
+			display: inline-block;
+			max-width: 1.2em;
+			max-height: 1.2em;
+			text-decoration: none;
+			vertical-align: text-bottom;
+			margin-right: 0.5em;
+		}
+
+		img.icon {
+			border-radius: 3px;
+		}
+
+		.user-icon {
+			width: 1.5em;
+			height: 1.5em;
+			border-radius: 100%;
+			margin-right: 0.5rem;
+		}
+
+		.user-icon-inner {
+			font-size: 0.8em;
+		}
+
+		.text-icon {
+			border: 1px solid #000;
+			text-align: center;
+		}
+
+		.page-cover-image {
+			display: block;
+			object-fit: cover;
+			width: 100%;
+			max-height: 30vh;
+		}
+
+		.page-header-icon {
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+
+		.page-header-icon-with-cover {
+			margin-top: -0.72em;
+			margin-left: 0.07em;
+		}
+
+		.page-header-icon img {
+			border-radius: 3px;
+		}
+
+		.link-to-page {
+			margin: 1em 0;
+			padding: 0;
+			border: none;
+			font-weight: 500;
+		}
+
+		p>.user {
+			opacity: 0.5;
+		}
+
+		td>.user,
+		td>time {
+			white-space: nowrap;
+		}
+
+		input[type="checkbox"] {
+			transform: scale(1.5);
+			margin-right: 0.6em;
+			vertical-align: middle;
+		}
+
+		p {
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.image {
+			border: none;
+			margin: 1.5em 0;
+			padding: 0;
+			border-radius: 0;
+			text-align: center;
+		}
+
+		.code,
+		code {
+			background: rgba(135, 131, 120, 0.15);
+			border-radius: 3px;
+			padding: 0.2em 0.4em;
+			border-radius: 3px;
+			font-size: 85%;
+			tab-size: 2;
+		}
+
+		code {
+			color: #eb5757;
+		}
+
+		.code {
+			padding: 1.5em 1em;
+		}
+
+		.code-wrap {
+			white-space: pre-wrap;
+			word-break: break-all;
+		}
+
+		.code>code {
+			background: none;
+			padding: 0;
+			font-size: 100%;
+			color: inherit;
+		}
+
+		blockquote {
+			font-size: 1.25em;
+			margin: 1em 0;
+			padding-left: 1em;
+			border-left: 3px solid rgb(55, 53, 47);
+		}
+
+		.bookmark {
+			text-decoration: none;
+			max-height: 8em;
+			padding: 0;
+			display: flex;
+			width: 100%;
+			align-items: stretch;
+		}
+
+		.bookmark-title {
+			font-size: 0.85em;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			height: 1.75em;
+			white-space: nowrap;
+		}
+
+		.bookmark-text {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.bookmark-info {
+			flex: 4 1 180px;
+			padding: 12px 14px 14px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.bookmark-image {
+			width: 33%;
+			flex: 1 1 180px;
+			display: block;
+			position: relative;
+			object-fit: cover;
+			border-radius: 1px;
+		}
+
+		.bookmark-description {
+			color: rgba(55, 53, 47, 0.6);
+			font-size: 0.75em;
+			overflow: hidden;
+			max-height: 4.5em;
+			word-break: break-word;
+		}
+
+		.bookmark-href {
+			font-size: 0.75em;
+			margin-top: 0.25em;
+		}
+
+		.sans {
+			font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+		}
+
+		.code {
+			font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+		}
+
+		.serif {
+			font-family: Lyon-Text, Georgia, ui-serif, serif;
+		}
+
+		.mono {
+			font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+		}
+
+		.pdf .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR';
+		}
+
+		.pdf .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.pdf .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR';
+		}
+
+		.pdf .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.highlight-default {
+			color: rgba(55, 53, 47, 1);
+		}
+
+		.highlight-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.highlight-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.highlight-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.highlight-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.highlight-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.highlight-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.highlight-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.highlight-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.highlight-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.highlight-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.highlight-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.highlight-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.highlight-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.highlight-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.highlight-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.highlight-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.highlight-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.highlight-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.block-color-default {
+			color: inherit;
+			fill: inherit;
+		}
+
+		.block-color-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.block-color-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.block-color-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.block-color-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.block-color-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.block-color-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.block-color-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.block-color-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.block-color-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.block-color-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.block-color-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.block-color-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.block-color-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.block-color-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.block-color-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.block-color-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.block-color-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.block-color-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.select-value-color-interactiveBlue {
+			background-color: rgba(35, 131, 226, .07);
+		}
+
+		.select-value-color-pink {
+			background-color: rgba(245, 224, 233, 1);
+		}
+
+		.select-value-color-purple {
+			background-color: rgba(232, 222, 238, 1);
+		}
+
+		.select-value-color-green {
+			background-color: rgba(219, 237, 219, 1);
+		}
+
+		.select-value-color-gray {
+			background-color: rgba(227, 226, 224, 1);
+		}
+
+		.select-value-color-translucentGray {
+			background-color: rgba(255, 255, 255, 0.0375);
+		}
+
+		.select-value-color-orange {
+			background-color: rgba(250, 222, 201, 1);
+		}
+
+		.select-value-color-brown {
+			background-color: rgba(238, 224, 218, 1);
+		}
+
+		.select-value-color-red {
+			background-color: rgba(255, 226, 221, 1);
+		}
+
+		.select-value-color-yellow {
+			background-color: rgba(253, 236, 200, 1);
+		}
+
+		.select-value-color-blue {
+			background-color: rgba(211, 229, 239, 1);
+		}
+
+		.select-value-color-pageGlass {
+			background-color: undefined;
+		}
+
+		.select-value-color-washGlass {
+			background-color: undefined;
+		}
+
+		.checkbox {
+			display: inline-flex;
+			vertical-align: text-bottom;
+			width: 16;
+			height: 16;
+			background-size: 16px;
+			margin-left: 2px;
+			margin-right: 5px;
+		}
+
+		.checkbox-on {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+
+		.checkbox-off {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+	</style>
+</head>
+
+<body>
+	<article id="f34f7213-689d-4eaf-ac0b-34704946af7b" class="page sans">
+		<header>
+			<div class="page-header-icon undefined"><span class="icon">💱</span></div>
+			<h1 class="page-title">Decentralized Finance (DeFi)</h1>
+			<p class="page-description"></p>
+		</header>
+		<div class="page-body">
+			<p id="ddfb0c50-e72f-43e9-aff5-de4678935734" class="">
+			</p>
+			<h3 id="9c7e49d8-6720-405a-9f41-b8bb9498d91f" class="">Main-Takeaways - DeFi in kurz:</h3>
+			<ul id="33e144a2-bca0-411e-85b8-7207fe2a2cfa" class="bulleted-list">
+				<li style="list-style-type:disc">Weltweite digitale finanzielle Interaktion ohne behördliche
+					Einschränkungen und mit deutlich weniger Bürokratie, da zentrale Finanzinstitute wegfallen.
+					→ Menschen weltweit werden werden Teil finanzieller Inklusion - durch eigenes Konto! (25% der
+					erwachsenen Weltbevölkerung lebt ohne Bankkonto, deutlich höherer Anteil in Entwicklungsländern!)
+				</li>
+			</ul>
+			<ul id="a7eb1df9-beb2-4bfc-8168-e04be72b9494" class="bulleted-list">
+				<li style="list-style-type:disc">Gibt Menschen mehr Kontrolle über ihr Geld./ Gibt ihnen die Kontrolle
+					über ihr Geld zurück.</li>
+			</ul>
+			<p id="4f2a4511-6ea5-4e93-9be3-3a4addce381c" class="">
+			</p>
+			<h3 id="c1347796-084e-457b-8648-25b34a8642c3" class=""><em><strong>Two of DeFi&#x27;s goals include reducing
+						transaction times and increasing access to financial services.</strong></em></h3>
+			<p id="e44f2324-3564-428e-9599-d76e797ec4d8" class="">
+			</p>
+			<ul id="15c4a8be-c552-4a3c-a919-e8ec4fd15ba4" class="bulleted-list">
+				<li style="list-style-type:disc">DeFi sieht es vor, <strong>Dritte und zentrale finanzielle
+						Institutionen aus Finanztransaktionen</strong> zu <strong>entfernen</strong>.
+					→ DeFi eliminiert entsprechend auch alle Gebühren, die Banken oder andere Finanzinstitutionen für
+					ihren Service verlangen.</li>
+			</ul>
+			<ul id="89c753ce-d82e-47d2-ad3d-e1456dfffd96" class="bulleted-list">
+				<li style="list-style-type:disc">Individuen werden mit digitalen Peer-to-Peer Exchanges dazu befähigt,
+					gegenseitig Finanzleistungen zu erbringen und dafür Zinsen zu verlangen.
+					→ Sie können mithilfe von DeFi Finanzmittel verleihen, handeln und borgen</li>
+			</ul>
+			<ul id="4bcbdd3b-cc64-4974-a880-69fc9062cb44" class="bulleted-list">
+				<li style="list-style-type:disc">In der Praxis sind DeFi-Anbieter Protokolle wie Celsius, Aave und Lido
+					→ Assets liegen in Decentralized Wallets wie Metamask, die mit den DeFi Protokollen verbunden werden
+					kann.</li>
+			</ul>
+			<ul id="16283dac-e964-4b6e-9426-cae7bb9b8642" class="bulleted-list">
+				<li style="list-style-type:disc">Unabhängig der geographischen Lage sowie politischer, religiöser und
+					gesellschaftlicher Herkunft:
+					<strong>Jeder Mensch</strong> (mit einer Internetverbindung) <strong>wird dazu befähigt,
+						Finanztransaktionen zu tätigen und sich ein Konto</strong>/ Depot <strong>anzulegen</strong>.
+					→ <strong>Knapp 1/4 aller Erwachsenen Menschen auf der Welt ab 15 Jahren hat keinen Zugang zu einem
+						Bankkonto!</strong> (<a
+						href="https://de.statista.com/infografik/18482/top-10-laender-nach-anteil-der-erwachsenen-die-kein-bankkonto-haben/">2021</a>)
+					(Die große Mehrheit davon leben in Entwicklungsländern, wo der Anteil der Personen ohne Bankkonto
+					entscheidend höher ist und deutlich mehr als nur 1/4 der erwachsenen Bevölkerung betrifft. →
+					Beispiel: Pakistan 79%)
+					→ <strong>Eigenes Bankkonto ist Grundvoraussetzung finanzieller Inklusion</strong>!
+					→ <span style="border-bottom:0.05em solid"><strong>Gründe</strong></span><strong>:</strong>
+					- Physische Distanz zu Bank zu hoch.
+					- Mindestguthaben zur Eröffnung eines Bankkontos (ohne Gebühren zahlen zu müssen) nicht vorhanden.
+					- Kosten zur Eröffnung eines Bankkontos zu hoch
+					- Vertrauen in Finanzinstitute fehlt
+					→ Inflationsrate in vielen Entwicklungsländern unheimlich hoch (teilweise bis zu 600% p.a.)
+					→ Nutzung stabiler Werte wie z. B. Stablecoins sind dort unheimlich wertvoll, um nachhaltig
+					Wohlstand zu erzeugen.
+					→ <span style="border-bottom:0.05em solid"><strong>Auswirkungen</strong></span><strong>:</strong>
+					- Sicheres und rentables Sparen nicht möglich.
+					→ Kein Aufbau finanzieller Sicherheit möglich.
+					- Keine legale Anstellung möglich.
+					- Keine sichere Unterkunft möglich.
+					- Verschließt Möglichkeiten des Existenzaufbaus:
+					z. B. der Erweiterung des eigenen Geschäfts oder der Investition in Bildung
+					- Keine Nutzung wertvoller Online-Dienste möglich.
+				</li>
+			</ul>
+			<ul id="3468efca-6b79-4338-98b8-ed34fe632cd9" class="bulleted-list">
+				<li style="list-style-type:disc">DeFi gibt seinen Nutzern mehr Kontrolle über ihr Geld
+					→ Durch persönliche Wallets und Handelsdienste die auf Einzelpersonen ausgerichtet sind.</li>
+			</ul>
+			<p id="a7289aad-a03a-460c-b0f0-0cf05a54d379" class="">
+			</p>
+			<p id="a33f5357-9831-4e63-abba-ecf3cbc745e2" class="">
+			</p>
+			<h3 id="e49f2257-c93d-43a8-b240-2d2d947ce223" class="">Centralized Finance vs. Decentralized Finance:</h3>
+			<div id="86a3ea0c-5adc-4990-8bf7-efb3d4bd7520" class="column-list">
+				<div id="b8ff2f6b-fbfd-44b9-a03d-5d84c2699359" style="width:100%" class="column">
+					<h3 id="b0fbc263-3c34-4bbb-b303-efd63121810c" class="">Centralized Finance:</h3>
+					<p id="34ee6419-e0c2-432e-985c-3ee8160ac820" class="">Banken verwalten selber das Geld ihrer Kunden
+						→ <strong>Risiko</strong>: Konkurs oder Not der Bank und dadurch Verlust der eigenen Einlagen
+					</p>
+				</div>
+				<div id="1e477b67-e3da-44df-814c-c622ea03c653" style="width:100%" class="column">
+					<h3 id="4f5c4413-9ca7-47d9-91f8-b922a4d3b0aa" class="">Decentralized Finance:</h3>
+					<p id="b032c0b6-af0d-4727-9d12-531d12c8d346" class="">DeFi-Protokolle ermöglichen den Handel und das
+						Vertrauen zwischen unterschiedlichen Parteien, <strong>sind aber selber nicht im Besitz der
+							Finanzmittel ihrer Kunden</strong>.</p>
+				</div>
+			</div>
+			<hr id="c9affe06-6cd9-4d3c-9115-78eae98c22fe" />
+			<div id="9c7d5c99-269d-4674-a240-95bbcd8a201e" class="column-list">
+				<div id="1b558362-ae68-4525-ae25-2dd0a441131c" style="width:100%" class="column">
+					<p id="37481902-1f8c-4189-b732-77defd5bec84" class=""><strong>Lange Gebührenkette</strong> für den
+						Service</p>
+				</div>
+				<div id="f5f1bf63-7724-4a8e-947a-1880863b12a4" style="width:100%" class="column">
+					<p id="e796ecab-0280-48ea-aa87-60e2d2f8a3bd" class=""><strong>Niedrige Gebührenstruktur</strong>
+						bzw. <strong>keine direkten Gebühren</strong> bei Transaktionen.
+						→ Einnahmen der Plattform durch z. B.
+						a) Einen Teil der interest-rates (Zinsen) die durch die Liquidität der User generiert, aber
+						nicht zu 100% an diese weitergegeben werden.
+						b) Weitere Anwendungen die zusätzlich zum DeFi-Protokoll gelauncht werden wie z. B. ein
+						subscription-Modell eines Portfolio Trackers</p>
+				</div>
+			</div>
+			<hr id="5c60d26b-d419-4012-ac1f-f6fa0fddae5e" />
+			<div id="d2d469de-ada9-4b4f-b2b3-a3e7042806fe" class="column-list">
+				<div id="47d2325f-bb07-43dc-8162-60818e53a10f" style="width:100%" class="column">
+					<p id="782a8baa-0ace-442e-8750-63b5fb6255bb" class=""><strong>Alle Finanztransaktionen
+							werden</strong> in Zusammenhang mit der Identität des Auftraggebers und des
+						Zahlungsempfängers <strong>vom zentralen Finanzinstitut überwacht</strong>.</p>
+				</div>
+				<div id="8455fbb9-cec9-4095-985f-f217481df242" style="width:100%" class="column">
+					<p id="518e3e2a-f401-497c-91c2-c95669b19dc7" class=""><strong>Personenbezogene</strong>
+						<strong>Überwachung</strong> von Transaktionen durch Anonymität innerhalb der Blockchain
+						<strong>NICHT möglich</strong>.</p>
+				</div>
+			</div>
+			<hr id="3afb4e64-6f1f-442f-8707-1a3270e95f7e" />
+			<p id="ec988cb0-bd13-47cb-bf36-d9e2ec6cde6a" class="">
+			</p>
+			<h3 id="aa35cdbe-6e2d-4eea-a4d7-01e0aa6c9333" class="">Vorteile DeFi:</h3>
+			<ul id="8dcda14b-f1d0-494a-b6b5-e2cc41e0da9a" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>Accessibility</strong>:
+					<strong>Jede Person mit einer Internetverbindung</strong> kann DeFi nutzen um Transaktionen zu
+					tätigen - <strong>unabhängig ihrer Herkunft und geographischen Lage.</strong>
+				</li>
+			</ul>
+			<ul id="c756b1fa-e19e-41ac-b44c-8bae74e2cce0" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>Security</strong>:
+					DeFi Protokolle bieten ein Ökosystem und Schnittstellen zum Handel mit Assets wie Cryptowährungen.
+					<strong>Transaktionen und Besitztümer sind nachträglich unveränderbar</strong> auf der Blockchain
+					gespeichert (<strong>Immutability</strong>). </li>
+			</ul>
+			<ul id="51fa1f78-645c-444e-83b1-002d55049c6e" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>Transparency</strong>:
+					Die Smart Contracts, die den Transaktionen zu Grunde liegen und die damit durchgeführten
+					<strong>Transaktionen sind nachvollziehbar</strong> auf der Blockchain einsehbar - es findet
+					allerdings <strong>KEINE Aufdeckung der Identität</strong> der an Transaktionen beteiligten
+					Parteien.</li>
+			</ul>
+			<ul id="c723ae78-61ed-4f63-b286-276d359411c1" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>Permissionless</strong>:
+					Transaktionen können jederzeit und ohne Erlaubnis zentraler Kreditinstitute erfolgen.</li>
+			</ul>
+			<ul id="a642f9cd-1b71-4f9f-8078-317b6efc16dd" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>Autonomy</strong>:
+					DeFi-Plattformen sind <strong>NICHT abhängig von zentralisierten finanziellen Institutionen</strong>
+					und können daher <strong>NICHT von (Geld-) Not oder Konkurs (Bankrott) betroffen</strong> sein.</li>
+			</ul>
+			<ul id="905c2a2b-f3ef-44a0-9cb4-2c82ffae0f9a" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>Niedrige Gebühren und hohe interest-rates (Zinsen)</strong>:
+					<strong>DeFi ermöglicht es, dass sich zwei beliebigen Parteien Geld leihen und direkt über
+						DeFi-Netzwerke Zinssätze (interest rates) aushandeln können.</strong> Regelung und Absicherung
+					mithilfe von Smart Contracts.
+					→ Lending and Borrowing Applications (Peer-to-Peer lending and borrowing)
+				</li>
+			</ul>
+			<h3 id="6403367e-1c0f-439c-bc13-28e2da5bbb64" class="">Aktuelle Nachteile DeFi:</h3>
+			<ul id="7b0f1d30-726c-453a-a28e-2bdf23287673" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>Scalability</strong>:
+					Viele dezentralisierte Cryptowährungen haben eine nur sehr geringe Anzahl an möglichen Transactions
+					per second (TPS), wodurch eine massenfähige Adaption noch schwer umzusetzen ist.
+					→ ETH 2.0 aktuell z. B. ca. 14 TPS (05.10.2022)
+					→ Es gibt jedoch auch einige andere Cryptowährungen die einen deutlich höheren TPS-Wert besitzen!
+					→ Mit der weiteren Entwicklung von Ethereum 2.0 sollen laut Vitalik Buterin schließlich 100.000 TPS
+					möglich sein!</li>
+			</ul>
+			<ul id="0395f2f7-ee10-4fea-951d-f9667950ee45" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>Complexity</strong>:
+					In der Regel braucht es ein gewisses Maß an Wissen und die Erfüllung weiterer Schritte (wie z. B.
+					die Erstellung einer Wallet) um DeFi nutzen zu können.
+					→ Stellt für viele Menschen eine <strong>hohe Einstiegshürde</strong> dar.</li>
+			</ul>
+			<ul id="96f4baed-f35d-4d0d-bb2c-c05821a6bc11" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>Concerns of Liquidity</strong>:
+					Nutzer haben Bedenken, dass ihr Geld, aufgrund der zum traditionellen Finanzmarkt kleinen Größe des
+					DeFi Marktes, nicht sicher genug ist.
+					→ Der heutige DeFi-Markt ist deutlich kleiner als der Markt der traditionellen Finanzsysteme (ca.
+					USD 57Mrd. vs. USD 8.488Mrd. alleine schon im digital payment-Sektor → DeFi marktgröße max. 0,0067%
+					vom traditionellen Markt)</li>
+			</ul>
+			<ul id="f863018d-1a8b-4566-bdfb-f8f7bf01a725" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>Shared Responsibilty</strong>:
+					Nutzer sind in der Eigenverantwortung, keine (menschlichen) Fehler zu machen, wodurch funds und
+					assets verloren gehen können. Werden Fehler begangen, ist das DeFi Protokoll weder verantwortlich
+					dafür, noch kann es etwas dagegen tun und bei der Wiederbeschaffung der Werte helfen.
+					→ Mittelinstanzen fehlen (was schließlich der Dezentralisierungsgedanke ist).
+					→ Langfristig braucht es dafür dennoch Lösungen und Werkzeuge um menschliches Versagen und Fehler zu
+					vermeiden bzw. diese in irgendeiner Weise abzusichern.</li>
+			</ul>
+			<p id="5e599f91-ddec-486b-b45d-9d72c29d1ba6" class="">
+			</p>
+			<h3 id="ca769054-3732-41ad-99c4-f0475a6edde6" class="">Buzzwords:</h3>
+			<ul id="03fc0c41-43d3-4a6c-afc7-ddfac6a749d0" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>DeFi</strong>:
+					→ Decentralized Finance</li>
+			</ul>
+			<ul id="57df6f7b-288c-4729-b176-87cca0e3d390" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>dApp</strong>:
+					→ decentralized Application → dezentrale Anwendungen, die auf der Blockchain gebaut sind → examples:
+					MakerDAO, Uniswap, Pancakeswap, Axie Infinity, OpenSea</li>
+			</ul>
+			<ul id="a92598fc-eca4-4633-bc4a-362f15a379e3" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>P2P</strong>:
+					→ In this context: Peer-to-Peer trustless transactions that function without a central governing
+					entity</li>
+			</ul>
+			<ul id="6db15bb9-abe8-4f73-9af3-ab177a62daa6" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>Lending Protocol</strong>:
+					→ Leihprotokolle die es jeder Person ermöglichen, Geld einzuzahlen und dafür eine jährliche Rendite
+					zu erhalten.
+					→ Neben der Einzahlung kann man auch Token gegen seine eingezahlten Token als Sicherheit
+					(collateral) ausleihen.</li>
+			</ul>
+			<ul id="6ac35869-f0ea-4805-baa5-99e413f3709d" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>Staking</strong>:
+					→ Beim Staking wird ein Teil der Kryptowährung für einen bestimmten Zeitraum “gesperrt”, um einen
+					Beitrag zu einem Blockchain Netzwerk zu leisten. Im Gegenzug verdienen Staker dadurch Belohnungen in
+					Form zusätzlicher Token.</li>
+			</ul>
+			<ul id="61c7377b-f39f-4ecf-a26d-0bb3c58c11e0" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>APY</strong>:
+					→ Annual Percentage Yield: → Includes compounding → Is compound interest (Zinseszins)</li>
+			</ul>
+			<ul id="7f1df61e-9fb6-417d-85fb-7fffcd94068d" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>APR</strong>:
+					→ Annual Percentage Rate: → Does not include compounding → Is simple interest (Zinsen)</li>
+			</ul>
+			<ul id="44d3fb97-833f-4b25-b2c3-e1e5540bd8b4" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>Compounding rate</strong>:
+					→ Zinseszins</li>
+			</ul>
+			<ul id="cdb9b0a2-6e9d-4009-88f6-a04d03c38e20" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>DEX</strong>:
+					→ Decentralized Exchange → example: Uniswap, Pancakeswap, SushiSwap, Curve → DEXs sind gleichzeitig
+					auch dApps!</li>
+			</ul>
+			<ul id="b3a071f6-3267-4911-bd83-db76ad0f66f4" class="bulleted-list">
+				<li style="list-style-type:disc"><strong>CEX</strong>:
+					→ Centralized Exchange → example: Binance, Coinbase, Kraken → These exchanges have their own order
+					books.</li>
+			</ul>
+			<p id="ca18f6ee-ec07-4d07-bc1d-80fb01b9d471" class="">
+			</p>
+			<p id="5257e3fc-15cb-43ea-aa11-c9cc12c33acc" class="">Quellen:</p>
+			<p id="19156a88-0a87-4034-8d26-cafadbc97340" class=""><a
+					href="https://www.investopedia.com/decentralized-finance-defi-5113835">https://www.investopedia.com/decentralized-finance-defi-5113835</a>
+			</p>
+			<p id="6e29b558-2101-41b8-93a3-96021c43b623" class=""><a
+					href="https://yieldapp.medium.com/why-defi-can-drive-financial-inclusion-in-developing-countries-8865ba60771b">https://yieldapp.medium.com/why-defi-can-drive-financial-inclusion-in-developing-countries-8865ba60771b</a>
+			</p>
+			<p id="2524b514-d3b0-4834-b3a8-2744bed42b5e" class=""><a
+					href="https://www.forbes.com/sites/niallmccarthy/2018/06/08/1-7-billion-adults-worldwide-do-not-have-access-to-a-bank-account-infographic/?sh=52d085284b01">https://www.forbes.com/sites/niallmccarthy/2018/06/08/1-7-billion-adults-worldwide-do-not-have-access-to-a-bank-account-infographic/?sh=52d085284b01</a>
+			</p>
+			<p id="e19b40c9-b715-4130-8b19-c496d057c2e3" class=""><a
+					href="https://de.statista.com/infografik/18482/top-10-laender-nach-anteil-der-erwachsenen-die-kein-bankkonto-haben/">https://de.statista.com/infografik/18482/top-10-laender-nach-anteil-der-erwachsenen-die-kein-bankkonto-haben/</a>
+			</p>
+			<p id="ca3ed1d7-ecf3-4c16-a0c3-6563535606a6" class=""><a
+					href="https://edition.cnn.com/2012/04/19/business/poor-bank-accounts/index.html#:~:text=75%25%20of%20the%20world&#x27;s%20poor,the%20world&#x27;s%20poor%2C%20says%20Zoellick.">https://edition.cnn.com/2012/04/19/business/poor-bank-accounts/index.html#:~:text=75%25
+					of the world&#x27;s poor,the world&#x27;s poor%2C says Zoellick.</a></p>
+			<p id="fd655df9-f763-4ec2-bf55-69424c66b8bc" class=""><a
+					href="https://101blockchains.com/pros-and-cons-of-decentralized-finance/">https://101blockchains.com/pros-and-cons-of-decentralized-finance/</a>
+			</p>
+			<p id="637bdfd1-55e1-4f86-8cc7-84176ea3f5b7" class=""><a
+					href="https://www.statista.com/outlook/dmo/fintech/worldwide">https://www.statista.com/outlook/dmo/fintech/worldwide</a>
+			</p>
+			<p id="5944e035-f283-4cc6-a962-d07c43afdb77" class=""><a
+					href="https://medium.com/kogecoin/apr-apy-in-depth-guide-for-defi-5a3bc8cb51c2">https://medium.com/kogecoin/apr-apy-in-depth-guide-for-defi-5a3bc8cb51c2</a>
+			</p>
+			<p id="7d854410-eff2-4381-b8e6-0138d5047766" class=""><a
+					href="https://decrypt.co/73356/top-decentralized-exchanges-dex-uniswap-sushiswap">https://decrypt.co/73356/top-decentralized-exchanges-dex-uniswap-sushiswap</a>
+			</p>
+			<p id="30275bdc-4999-45f7-9c41-81d971084a61" class="">
+			</p>
+		</div>
+	</article>
+</body>
+
+</html>

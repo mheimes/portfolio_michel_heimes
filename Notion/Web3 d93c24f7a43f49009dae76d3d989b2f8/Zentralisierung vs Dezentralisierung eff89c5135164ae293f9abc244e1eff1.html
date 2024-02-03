@@ -1,0 +1,999 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Zentralisierung vs. Dezentralisierung</title>
+	<style>
+		/* cspell:disable-file */
+		/* webkit printing magic: print all background colors */
+		html {
+			-webkit-print-color-adjust: exact;
+		}
+
+		* {
+			box-sizing: border-box;
+			-webkit-print-color-adjust: exact;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		@media only screen {
+			body {
+				margin: 2em auto;
+				max-width: 900px;
+				color: rgb(55, 53, 47);
+			}
+		}
+
+		body {
+			line-height: 1.5;
+			white-space: pre-wrap;
+		}
+
+		a,
+		a.visited {
+			color: inherit;
+			text-decoration: underline;
+		}
+
+		.pdf-relative-link-path {
+			font-size: 80%;
+			color: #444;
+		}
+
+		h1,
+		h2,
+		h3 {
+			letter-spacing: -0.01em;
+			line-height: 1.2;
+			font-weight: 600;
+			margin-bottom: 0;
+		}
+
+		.page-title {
+			font-size: 2.5rem;
+			font-weight: 700;
+			margin-top: 0;
+			margin-bottom: 0.75em;
+		}
+
+		h1 {
+			font-size: 1.875rem;
+			margin-top: 1.875rem;
+		}
+
+		h2 {
+			font-size: 1.5rem;
+			margin-top: 1.5rem;
+		}
+
+		h3 {
+			font-size: 1.25rem;
+			margin-top: 1.25rem;
+		}
+
+		.source {
+			border: 1px solid #ddd;
+			border-radius: 3px;
+			padding: 1.5em;
+			word-break: break-all;
+		}
+
+		.callout {
+			border-radius: 3px;
+			padding: 1rem;
+		}
+
+		figure {
+			margin: 1.25em 0;
+			page-break-inside: avoid;
+		}
+
+		figcaption {
+			opacity: 0.5;
+			font-size: 85%;
+			margin-top: 0.5em;
+		}
+
+		mark {
+			background-color: transparent;
+		}
+
+		.indented {
+			padding-left: 1.5em;
+		}
+
+		hr {
+			background: transparent;
+			display: block;
+			width: 100%;
+			height: 1px;
+			visibility: visible;
+			border: none;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+		}
+
+		img {
+			max-width: 100%;
+		}
+
+		@media only print {
+			img {
+				max-height: 100vh;
+				object-fit: contain;
+			}
+		}
+
+		@page {
+			margin: 1in;
+		}
+
+		.collection-content {
+			font-size: 0.875rem;
+		}
+
+		.column-list {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.column {
+			padding: 0 1em;
+		}
+
+		.column:first-child {
+			padding-left: 0;
+		}
+
+		.column:last-child {
+			padding-right: 0;
+		}
+
+		.table_of_contents-item {
+			display: block;
+			font-size: 0.875rem;
+			line-height: 1.3;
+			padding: 0.125rem;
+		}
+
+		.table_of_contents-indent-1 {
+			margin-left: 1.5rem;
+		}
+
+		.table_of_contents-indent-2 {
+			margin-left: 3rem;
+		}
+
+		.table_of_contents-indent-3 {
+			margin-left: 4.5rem;
+		}
+
+		.table_of_contents-link {
+			text-decoration: none;
+			opacity: 0.7;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid rgba(55, 53, 47, 0.09);
+			border-collapse: collapse;
+		}
+
+		table {
+			border-left: none;
+			border-right: none;
+		}
+
+		th,
+		td {
+			font-weight: normal;
+			padding: 0.25em 0.5em;
+			line-height: 1.5;
+			min-height: 1.5em;
+			text-align: left;
+		}
+
+		th {
+			color: rgba(55, 53, 47, 0.6);
+		}
+
+		ol,
+		ul {
+			margin: 0;
+			margin-block-start: 0.6em;
+			margin-block-end: 0.6em;
+		}
+
+		li>ol:first-child,
+		li>ul:first-child {
+			margin-block-start: 0.6em;
+		}
+
+		ul>li {
+			list-style: disc;
+		}
+
+		ul.to-do-list {
+			padding-inline-start: 0;
+		}
+
+		ul.to-do-list>li {
+			list-style: none;
+		}
+
+		.to-do-children-checked {
+			text-decoration: line-through;
+			opacity: 0.375;
+		}
+
+		ul.toggle>li {
+			list-style: none;
+		}
+
+		ul {
+			padding-inline-start: 1.7em;
+		}
+
+		ul>li {
+			padding-left: 0.1em;
+		}
+
+		ol {
+			padding-inline-start: 1.6em;
+		}
+
+		ol>li {
+			padding-left: 0.2em;
+		}
+
+		.mono ol {
+			padding-inline-start: 2em;
+		}
+
+		.mono ol>li {
+			text-indent: -0.4em;
+		}
+
+		.toggle {
+			padding-inline-start: 0em;
+			list-style-type: none;
+		}
+
+		/* Indent toggle children */
+		.toggle>li>details {
+			padding-left: 1.7em;
+		}
+
+		.toggle>li>details>summary {
+			margin-left: -1.1em;
+		}
+
+		.selected-value {
+			display: inline-block;
+			padding: 0 0.5em;
+			background: rgba(206, 205, 202, 0.5);
+			border-radius: 3px;
+			margin-right: 0.5em;
+			margin-top: 0.3em;
+			margin-bottom: 0.3em;
+			white-space: nowrap;
+		}
+
+		.collection-title {
+			display: inline-block;
+			margin-right: 1em;
+		}
+
+		.page-description {
+			margin-bottom: 2em;
+		}
+
+		.simple-table {
+			margin-top: 1em;
+			font-size: 0.875rem;
+			empty-cells: show;
+		}
+
+		.simple-table td {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table th {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table-header-color {
+			background: rgb(247, 246, 243);
+			color: black;
+		}
+
+		.simple-table-header {
+			font-weight: 500;
+		}
+
+		time {
+			opacity: 0.5;
+		}
+
+		.icon {
+			display: inline-block;
+			max-width: 1.2em;
+			max-height: 1.2em;
+			text-decoration: none;
+			vertical-align: text-bottom;
+			margin-right: 0.5em;
+		}
+
+		img.icon {
+			border-radius: 3px;
+		}
+
+		.user-icon {
+			width: 1.5em;
+			height: 1.5em;
+			border-radius: 100%;
+			margin-right: 0.5rem;
+		}
+
+		.user-icon-inner {
+			font-size: 0.8em;
+		}
+
+		.text-icon {
+			border: 1px solid #000;
+			text-align: center;
+		}
+
+		.page-cover-image {
+			display: block;
+			object-fit: cover;
+			width: 100%;
+			max-height: 30vh;
+		}
+
+		.page-header-icon {
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+
+		.page-header-icon-with-cover {
+			margin-top: -0.72em;
+			margin-left: 0.07em;
+		}
+
+		.page-header-icon img {
+			border-radius: 3px;
+		}
+
+		.link-to-page {
+			margin: 1em 0;
+			padding: 0;
+			border: none;
+			font-weight: 500;
+		}
+
+		p>.user {
+			opacity: 0.5;
+		}
+
+		td>.user,
+		td>time {
+			white-space: nowrap;
+		}
+
+		input[type="checkbox"] {
+			transform: scale(1.5);
+			margin-right: 0.6em;
+			vertical-align: middle;
+		}
+
+		p {
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.image {
+			border: none;
+			margin: 1.5em 0;
+			padding: 0;
+			border-radius: 0;
+			text-align: center;
+		}
+
+		.code,
+		code {
+			background: rgba(135, 131, 120, 0.15);
+			border-radius: 3px;
+			padding: 0.2em 0.4em;
+			border-radius: 3px;
+			font-size: 85%;
+			tab-size: 2;
+		}
+
+		code {
+			color: #eb5757;
+		}
+
+		.code {
+			padding: 1.5em 1em;
+		}
+
+		.code-wrap {
+			white-space: pre-wrap;
+			word-break: break-all;
+		}
+
+		.code>code {
+			background: none;
+			padding: 0;
+			font-size: 100%;
+			color: inherit;
+		}
+
+		blockquote {
+			font-size: 1.25em;
+			margin: 1em 0;
+			padding-left: 1em;
+			border-left: 3px solid rgb(55, 53, 47);
+		}
+
+		.bookmark {
+			text-decoration: none;
+			max-height: 8em;
+			padding: 0;
+			display: flex;
+			width: 100%;
+			align-items: stretch;
+		}
+
+		.bookmark-title {
+			font-size: 0.85em;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			height: 1.75em;
+			white-space: nowrap;
+		}
+
+		.bookmark-text {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.bookmark-info {
+			flex: 4 1 180px;
+			padding: 12px 14px 14px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.bookmark-image {
+			width: 33%;
+			flex: 1 1 180px;
+			display: block;
+			position: relative;
+			object-fit: cover;
+			border-radius: 1px;
+		}
+
+		.bookmark-description {
+			color: rgba(55, 53, 47, 0.6);
+			font-size: 0.75em;
+			overflow: hidden;
+			max-height: 4.5em;
+			word-break: break-word;
+		}
+
+		.bookmark-href {
+			font-size: 0.75em;
+			margin-top: 0.25em;
+		}
+
+		.sans {
+			font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+		}
+
+		.code {
+			font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+		}
+
+		.serif {
+			font-family: Lyon-Text, Georgia, ui-serif, serif;
+		}
+
+		.mono {
+			font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+		}
+
+		.pdf .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR';
+		}
+
+		.pdf .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.pdf .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR';
+		}
+
+		.pdf .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.highlight-default {
+			color: rgba(55, 53, 47, 1);
+		}
+
+		.highlight-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.highlight-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.highlight-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.highlight-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.highlight-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.highlight-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.highlight-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.highlight-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.highlight-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.highlight-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.highlight-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.highlight-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.highlight-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.highlight-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.highlight-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.highlight-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.highlight-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.highlight-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.block-color-default {
+			color: inherit;
+			fill: inherit;
+		}
+
+		.block-color-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.block-color-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.block-color-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.block-color-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.block-color-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.block-color-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.block-color-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.block-color-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.block-color-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.block-color-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.block-color-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.block-color-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.block-color-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.block-color-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.block-color-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.block-color-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.block-color-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.block-color-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.select-value-color-interactiveBlue {
+			background-color: rgba(35, 131, 226, .07);
+		}
+
+		.select-value-color-pink {
+			background-color: rgba(245, 224, 233, 1);
+		}
+
+		.select-value-color-purple {
+			background-color: rgba(232, 222, 238, 1);
+		}
+
+		.select-value-color-green {
+			background-color: rgba(219, 237, 219, 1);
+		}
+
+		.select-value-color-gray {
+			background-color: rgba(227, 226, 224, 1);
+		}
+
+		.select-value-color-translucentGray {
+			background-color: rgba(255, 255, 255, 0.0375);
+		}
+
+		.select-value-color-orange {
+			background-color: rgba(250, 222, 201, 1);
+		}
+
+		.select-value-color-brown {
+			background-color: rgba(238, 224, 218, 1);
+		}
+
+		.select-value-color-red {
+			background-color: rgba(255, 226, 221, 1);
+		}
+
+		.select-value-color-yellow {
+			background-color: rgba(253, 236, 200, 1);
+		}
+
+		.select-value-color-blue {
+			background-color: rgba(211, 229, 239, 1);
+		}
+
+		.select-value-color-pageGlass {
+			background-color: undefined;
+		}
+
+		.select-value-color-washGlass {
+			background-color: undefined;
+		}
+
+		.checkbox {
+			display: inline-flex;
+			vertical-align: text-bottom;
+			width: 16;
+			height: 16;
+			background-size: 16px;
+			margin-left: 2px;
+			margin-right: 5px;
+		}
+
+		.checkbox-on {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+
+		.checkbox-off {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+	</style>
+</head>
+
+<body>
+	<article id="eff89c51-3516-4ae2-93f9-abc244e1eff1" class="page sans">
+		<header>
+			<div class="page-header-icon undefined"><span class="icon">🕸️</span></div>
+			<h1 class="page-title">Zentralisierung vs. Dezentralisierung</h1>
+			<p class="page-description"></p>
+		</header>
+		<div class="page-body">
+			<p id="ff33bffc-1a42-4e7c-a66f-db5c1e7af90f" class="">
+			</p>
+			<h3 id="2f084924-6d84-4d20-8c35-f11fd21d1738" class="">Main-Takeaways - Dezentralisierung in kurz:</h3>
+			<ul id="166ddb3f-d661-4133-9d0e-4fea55bb1212" class="bulleted-list">
+				<li style="list-style-type:disc">Mit dem aktuellen Entwicklungsstand ist es für den Enduser in der Regel
+					noch deutlich einfacher und angenehmer, zentral koordinierte Systeme zu nutzen.
+					→ Schnellere Datenverarbeitung
+					→ Leistungsfähiger
+					→ einfachere Nutzung da einfacherer Implementierung in bestehende Strukturen
+					→ Einheitliches System und Koordinierung dessen, da zentrales Unternehmen entscheiden kann, was in
+					das System eingebunden wird und was nicht.</li>
+			</ul>
+			<ul id="9b96f1ea-50ca-4c90-9881-7b0ca9073385" class="bulleted-list">
+				<li style="list-style-type:disc">Dennoch bietet Dezentralisierung viele Vorteile, die vor allem im
+					Crypto Kontext mit der Zeit reifen und wachsen.
+					→ Netzwerksicherheit: KEIN Single Point of Failure
+					→ Eigenständigkeit der User im Bezug auf die Partizipation im Netzwerk
+					→ Keine besonderen Eintrittshürden
+					→ Keine direkten Restriktionen bezüglich der Art der Beiträge (ist das etwas Gutes oder etwas
+					Schlechtes?!)</li>
+			</ul>
+			<p id="22eb2bc1-8022-4900-a342-69e0e0a8e97c" class="">
+			</p>
+			<p id="04870151-01cc-45c6-842b-6c8ab2e009af" class="">Gerne auch an konkreten Beispielen:</p>
+			<ul id="f3c6edef-2d3f-4525-a419-035018e07575" class="bulleted-list">
+				<li style="list-style-type:disc">Banken vs. DeFi
+					→ Traditionelle Banken vs. Protokolle wie Aave</li>
+			</ul>
+			<ul id="01393c0f-73f5-43f8-b223-fa32d6694cb5" class="bulleted-list">
+				<li style="list-style-type:disc">Facebook vs. DeSocialMedia</li>
+			</ul>
+			<ul id="3ffcc3fb-603b-4543-a434-9922d1e8f313" class="bulleted-list">
+				<li style="list-style-type:disc">…</li>
+			</ul>
+			<p id="b7cde00f-b8ef-4e93-b39a-2bf73d20018f" class="">
+			</p>
+			<h3 id="3332de1e-a167-4e29-a453-6a2f8683263f" class=""><em>Kein Netzwerk ist komplett zentralisiert oder
+					dezentralisiert.</em></h3>
+			<p id="a84a355c-4e5b-456d-890f-6eed3c5d549f" class="">
+			</p>
+			<div id="655552e4-0bb9-4ca9-96ff-13b8731d1941" class="column-list">
+				<div id="8d3e3820-cb73-4fec-b3f5-1e0d186182b9" style="width:100%" class="column">
+					<h3 id="bc5324aa-9861-4705-beeb-f7948f0fce88" class="">Zentralisierte Systeme:</h3>
+					<p id="780f81bb-2d78-4c1f-bb6d-f44fb629ce21" class=""><em><strong>Vorteil</strong></em>
+						<strong>Schnelle Verarbeitung und Verbreitung von Informationen</strong>, da sie von einer
+						zentralen Behörde mit viel Rechenpower durchgeführt wird.
+					</p>
+				</div>
+				<div id="27ecbe4e-506a-4dc3-8b8b-7eb63a1d3c08" style="width:100%" class="column">
+					<h3 id="4de767d5-20da-4202-8800-6d658d8d8c29" class="">Dezentralisierte Systeme</h3>
+					<p id="19f76a32-9f96-4090-b062-8e29b5d531ef" class=""><em><strong>Nachteil</strong></em>
+						I<strong>nformationsverbreitung dauert länger.</strong></p>
+				</div>
+			</div>
+			<hr id="6ed732ee-7bc7-4a46-a4e8-67da9186a682" />
+			<div id="25ed99e4-7e3e-4c86-98ac-1e98a3bdcd6c" class="column-list">
+				<div id="8127abc2-8df0-4342-9449-4aff185ce4ec" style="width:100%" class="column">
+					<p id="18c2fafa-e9c0-4f22-852e-9a9dac59de74" class=""><em><strong>Nachteil</strong></em>
+						<strong>Single Point of Failure:
+						</strong>Das Netzwerk kann deutlich einfacher ausgeschaltet oder infiltriert werden, da dafür
+						kein flächendeckender Angriff nötig ist, sondern zentralisierte Systeme meist auf einem
+						zentralen System laufen.
+					</p>
+				</div>
+				<div id="1b9dde73-192d-467a-8d78-9640500a904f" style="width:100%" class="column">
+					<p id="16d70c61-b3e4-42a1-9056-086c8e803117" class=""><em><strong>Vorteil</strong></em>
+						<strong>KEIN Single Point of Failure:
+						</strong>Das Netzwerk kann auch dann noch funktionieren, wenn ein großer Teil der Teilnehmer
+						angegriffen/ ausgeschaltet wird!
+					</p>
+				</div>
+			</div>
+			<hr id="45a9a129-05b0-4dd6-81a9-9205e2509534" />
+			<div id="47a5ef51-278b-4a0d-83ab-226c40ed0717" class="column-list">
+				<div id="5ded5827-9bc7-41e6-a79b-e4df931b0a2b" style="width:100%" class="column">
+					<p id="036e1451-caaf-43da-b481-58aff9835151" class=""><em><strong>Vorteil</strong></em>
+						In der Regel <strong>leistungsfähiger</strong> (höherer Durchsatz, geringerer Gesamtaufwand an
+						Rechenressourcen) und <strong>einfacher zu implementieren</strong>.</p>
+				</div>
+				<div id="9af035a9-0881-435c-8d2f-60e1b0bb87aa" style="width:100%" class="column">
+					<p id="78b8570f-7666-406d-a1ef-6f7c30ca0707" class=""><em><strong>Nachteil</strong></em>
+						In der Regel <strong>geringere Leistung</strong> (geringerer Durchsatz, höherer Gesamtaufwand an
+						Rechenressourcen) <strong>komplexere Implementierung</strong>. </p>
+				</div>
+			</div>
+			<hr id="d5705e8b-a097-4145-90cd-7ce1604ca066" />
+			<div id="43ca5c0e-097e-4092-91c6-37d04a98482d" class="column-list">
+				<div id="a2d3e097-8afd-40b9-bfcb-3e4e3a87a277" style="width:100%" class="column">
+					<p id="728220ea-9171-45f9-b491-b0ba2088e2a7" class=""><em><strong>Nachteil</strong></em>
+						Censorship - <strong>Zentrale Authoritäten haben die Macht Daten zu zensieren</strong> und somit
+						Teile des Netzwerks von der Interaktion mit dem Rest des Netzwerks auszugrenzen.</p>
+				</div>
+				<div id="15bf8328-b83f-4bbd-b18f-b0ff3814cb74" style="width:100%" class="column">
+					<p id="98b5f5db-eb37-4044-b5d1-43ac78d38f87" class=""><strong>Neutral/
+						</strong><em><strong>Vorteil</strong></em>
+						Permissonless - <strong>Datenzensur kann nicht so leicht stattfinden</strong>, da grundsätzlich
+						jeder Nutzer die Möglichkeit hat Beiträge ohne externe Erlaubnis zu leisten.
+						Außerdem können sich Informationen auf vielen Wegen über das Netz verbreiten.</p>
+				</div>
+			</div>
+			<hr id="01d588d2-3c7a-4cf3-8fdd-7b88cb3baee6" />
+			<div id="d22b6a66-150f-4aad-b4ee-38b10251bf10" class="column-list">
+				<div id="fa58221a-7f71-4ffa-987a-18e260b4580b" style="width:100%" class="column">
+					<p id="e97acd0b-413b-4c25-8a29-a478f7415309" class=""><em><strong>Vorteil</strong></em>
+						Im Falle widersprüchlicher Daten ist die Lösung klar und einfach. Die <strong>zentrale Behörde
+							ist die ultimative Quelle der “Wahrheit”</strong>.</p>
+					<p id="0ef17e69-6800-4f6c-b849-a7626aa4f657" class="">
+					</p>
+				</div>
+				<div id="0df4f7e8-4519-4995-9a3c-7f3fd5eaa831" style="width:100%" class="column">
+					<p id="14e599de-1e13-419c-bc3f-69fb508631b3" class=""><em><strong>Neutral/
+								Nachteil</strong></em><em>
+						</em>Es ist ein (oft komplexes) <strong>Protokoll nötig, um Unklarheiten und Streitigkeiten
+							aufzulösen,</strong> wenn Mitglieder des Netzwerks widersprüchliche Angaben über den Zustand
+						von Daten machen, die von allen Mitgliedern synchronisiert werden sollen. → Lösungssysteme
+						existieren (z. B. Ethereum) und funktionieren!</p>
+				</div>
+			</div>
+			<hr id="4d11c030-5d8f-497c-bf33-a838f5e6e498" />
+			<div id="43c5c410-cdf6-4701-9fc2-b73e1b727f0b" class="column-list">
+				<div id="5fbf3c10-ea0f-4e41-823a-0f184a90a0cb" style="width:100%" class="column">
+					<p id="288e876c-cfa5-4be9-8d97-b3159ad171ca" class=""><strong>Nachteil</strong>
+						Eine <strong>zentrale Authorität kontrolliert</strong> (die Art, der Umfang und der Inhalt)
+						<strong>Teilhabe im Netzwerk</strong>. </p>
+					<p id="a2e2e6cc-8fae-4245-8363-52be7cd01e40" class="">
+					</p>
+				</div>
+				<div id="12acae02-114f-416d-ad13-0c49cbedead5" style="width:100%" class="column">
+					<p id="549ea6f8-35e4-4d9b-b867-2d43480f1193" class=""><strong>Vorteil</strong>
+						<strong>Jede Person kann am Netzwerk partizipieren</strong>. Es gibt keine “Türsteher” an denen
+						man erst einmal vorbei kommen muss. (Optimalerweise sind die Kosten der Partizipation gering
+						gehalten.)
+					</p>
+				</div>
+			</div>
+			<hr id="fdca67c7-f1b2-4171-a9c1-d9d5e569cd6e" />
+			<div id="90f42e6f-2453-48b8-9cb3-f0621b5dca9b" class="column-list">
+				<div id="e0250f05-6f3c-4778-b3a4-eda0b9be0355" style="width:100%" class="column">
+					<p id="9c36664f-fda2-4945-a74b-5fdd97cc4f0a" class=""><strong>Vorteil</strong>
+						Die <strong>Koordinierung zwischen Netzteilnehmern</strong> ist <strong>viel einfacher</strong>
+						und <strong>wird von der zentralen Behörde übernommen</strong>. Sie kann Netzteilnehmer außerdem
+						(ohne große Reibungsverluste) dazu zwingen Upgrades oder Protokollaktualisierungen
+						durchzuführen.</p>
+					<p id="e0e18ca1-0cd0-42a3-a960-92d4658ee546" class="">
+					</p>
+				</div>
+				<div id="2cd25d4c-ade5-4477-a147-6c7d587cda7f" style="width:100%" class="column">
+					<p id="216868a1-e151-44a2-affe-110fee05ab6a" class=""><strong>Nachteil</strong>
+						<strong>Koordinierung von Neuerungen </strong>ist<strong> oft umständlicher</strong>, da keine
+						einzelne Instanz die Entscheidungsmacht auf der Netzebene und z. B. bei
+						Protokollaktualisierungen hat. Im schlimmsten Fall können Unstimmigkeiten über Netzwerk-/
+						Protokolländerungen dazu führen, dass sich das Netzwerk aufspaltet (Fracturing → Forking).
+					</p>
+				</div>
+			</div>
+			<hr id="97a49c73-d712-4e89-bcef-1d8cfca52c3a" />
+			<p id="d5a5ef03-f847-49b9-af7d-ef6800516937" class="">
+			</p>
+			<p id="98eee226-9c40-4ab4-a67c-f6f69d9afed1" class="">
+			</p>
+			<p id="56433f97-4121-44ea-a0c6-62c13150bb5d" class="">Quellen:</p>
+			<p id="c7e00b50-4aa8-4264-bc4e-65cab79abb92" class=""><a
+					href="https://ethereum.org/en/developers/docs/web2-vs-web3/">https://ethereum.org/en/developers/docs/web2-vs-web3/</a>
+			</p>
+		</div>
+	</article>
+</body>
+
+</html>
