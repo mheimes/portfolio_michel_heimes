@@ -405,8 +405,7 @@
     .image_sneaker {
         width: auto;
         height: 22rem;
-        padding: 2rem;
-        padding-right: 1rem;
+        padding: 2rem 1rem 2rem 0rem;
         margin-top: 5rem;
     }
     
