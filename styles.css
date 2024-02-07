@@ -69,6 +69,14 @@
         margin-bottom: 1rem;
         line-height: 140%;
     }
+
+    @media (max-width:800px) {
+        .text_content {
+            font-size: 28px;
+            margin-bottom: 1rem;
+            line-height: 140%;
+        }
+    }   
     
     .subheadline_content_difference_to_text_content {
         font-family: Courier;
