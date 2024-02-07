@@ -47,7 +47,7 @@
         color: #1f1f1f; /* 2e2727 */
         font-family: Courier;
         font-weight: 200;
-        font-size: 32px; /* 200% */
+        font-size: 30px; /* 200% */
         margin-bottom: 1rem;
     }
 
@@ -56,7 +56,7 @@
     }
     
     .extra_headline_content {
-        font-size: 48px; /* 300% */
+        font-size: 38px; /* 300% */
     }
     
     .bold_smaller_headline {
