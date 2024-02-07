@@ -70,7 +70,7 @@
         line-height: 140%;
     }
 
-    @media (max-width:800px) {
+    @media (max-width:1291px) {
         .text_content {
             font-size: 28px;
             margin-bottom: 1rem;
