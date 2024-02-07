@@ -77,7 +77,19 @@
             line-height: 140%;
         }
     }
+
+    @media (min-width:1291px) {
+        .delete_if_desktop_user {
+            display: none;
+        }
+    }
     
+    @media (max-width:1291px) {
+        .delete_if_mobile_user {
+            display: none;
+        }
+    }
+
     .subheadline_content_difference_to_text_content {
         font-family: Courier;
         font-size: 19px; /* 125% */
