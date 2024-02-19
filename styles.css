@@ -333,6 +333,43 @@
         flex-direction: row;
     }
 
+    /*
+    @media (max-width:1290px) {
+        .me-mobile {
+            color: black;
+        }
+    }
+
+    @media (min-width:1291px) {
+        .me-desktop {
+            color: black;
+        }
+    }
+    */
+
+    .me-mobile, .me-desktop {
+        display: none;
+    }
+    
+
+    @media screen and (max-width: 767px) {
+        .me-mobile {
+            display: block;
+        }
+        .me-desktop {
+            display:none;
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        .me-desktop {
+            display: block;
+        }
+        .me-mobile {
+            display:none;
+        }
+    }
+
     .container_me_1_1 {
         display: flex;
         justify-content: space-between;
