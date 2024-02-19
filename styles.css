@@ -333,20 +333,6 @@
         flex-direction: row;
     }
 
-    /*
-    @media (max-width:1290px) {
-        .me-mobile {
-            color: black;
-        }
-    }
-
-    @media (min-width:1291px) {
-        .me-desktop {
-            color: black;
-        }
-    }
-    */
-
     .me-mobile, .me-desktop {
         display: none;
     }
@@ -355,7 +341,7 @@
     @media screen and (max-width: 1000px) {
         .me-mobile {
             display: block;
-            font-size: 14px;
+            font-size: 20px;
         }
         .me-desktop {
             display:none;
