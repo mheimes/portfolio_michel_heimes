@@ -645,10 +645,12 @@
         left: 50%;
         transform: translateX(-50%);
         padding-bottom: 0.25rem;
+        font-size: 20px;
       }
       
       .right-content {
         position: absolute;
         right: 0;
         padding-bottom: 0.25rem;
+        font-size: 15px;
       }
