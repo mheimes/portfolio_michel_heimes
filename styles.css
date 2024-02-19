@@ -352,7 +352,7 @@
     }
     
 
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 1290px) {
         .me-mobile {
             display: block;
         }
@@ -361,7 +361,7 @@
         }
     }
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 1291px) {
         .me-desktop {
             display: block;
         }
