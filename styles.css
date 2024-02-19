@@ -355,6 +355,7 @@
     @media screen and (max-width: 1000px) {
         .me-mobile {
             display: block;
+            font-size: 14px;
         }
         .me-desktop {
             display:none;
